@@ -4,6 +4,7 @@ import Image from "next/image";
 const Container = styled.div`
   display: grid;
   grid-template-columns: auto auto;
+  text-align: center;
 `;
 
 const Col = styled.div`
