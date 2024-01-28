@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+
 const Title = styled.h1``;
 const Section = styled.div`
   align-content: center;
@@ -31,7 +32,7 @@ export default function Hackers() {
         src="/hackersatupc.png"
         alt="Logotype of HackersAtUPC"
         width="35%"
-      ></Image>
+      />
 
       <Description>
         Throughout the year, we organize national and international events in
@@ -42,7 +43,7 @@ export default function Hackers() {
         Our mission is to foster learning, designing, and building to turn
         students' ideas into a reality!
       </Description>
-      <Button href={"https://hackersatupc.org"}>Go to website</Button>
+      <Button href="https://hackersatupc.org">Go to website</Button>
     </Section>
   );
 }
