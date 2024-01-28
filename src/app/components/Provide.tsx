@@ -23,7 +23,7 @@ export default function Provide() {
   return (
     <Container>
       <Col>
-        <Image src="" width={50} height={50} alt="" />
+        <Image src="" width={50} height={50} alt="food" />
         <Title>Food</Title>
         <Description>
           We’ve got you covered, we even have midnight snacks. Besides, you can
@@ -31,7 +31,7 @@ export default function Provide() {
         </Description>
       </Col>
       <Col>
-        <Image src="" width={50} height={50} alt="" />
+        <Image src="" width={50} height={50} alt="sleeping" />
         <Title>Sleeping</Title>
         <Description>
           Both nights so you can rest your energy levels. Check out the FAQ for
@@ -39,7 +39,7 @@ export default function Provide() {
         </Description>
       </Col>
       <Col>
-        <Image src="" width={50} height={50} alt="" />
+        <Image src="" width={50} height={50} alt="sponsors" />
         <Title>Sponsors</Title>
         <Description>
           You can also visit our sponsors’ stands or meet them remotely! They'll
@@ -48,7 +48,7 @@ export default function Provide() {
         </Description>
       </Col>
       <Col>
-        <Image src="" width={50} height={50} alt="" />
+        <Image src="" width={50} height={50} alt="live" />
         <Title>Live</Title>
         <Description>
           When and where will all of this happen? Check out our live page to
