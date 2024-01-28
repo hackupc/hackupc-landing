@@ -1,0 +1,38 @@
+name: HackUPC CI
+
+defaults:
+  run:
+    working-directory: .
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/hackupc_ci.yml"
+    branches: [master, develop]
+  workflow_dispatch:
+
+env:
+  DEBUG: 1
+  IMAGE_TAG: ${{ github.job }}-${{ github.sha }}
+
+jobs:
+  lint:
+    name: 🦄 Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🦄 Check format (prettier)
+        run: npm run check-format
+
+      - name: 🦄 Check lint (eslint)
+        run: npm run check-lint
