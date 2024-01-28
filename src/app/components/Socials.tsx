@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Content_wrapper = styled.div`
+const ContentWrapper = styled.div`
   display: table-row;
   margin: 0 auto;
   max-width: 1000px;
@@ -18,7 +18,7 @@ const Title = styled.h2`
   padding: 1rem 2rem;
 `;
 const Content = styled.p`
-  #background: #fff;
+  background: #fff;
   border: 3px solid white;
   border-radius: 0 0 2rem 2rem;
   display: inline-flex;
@@ -28,16 +28,16 @@ const Content = styled.p`
   margin: auto;
   padding: 0.5rem 3rem;
 `;
-const Socials_list = styled.ul`
+const SocialsList = styled.ul`
   margin-top: 1rem;
   position: relative;
   text-align: center;
   display: inline-flex;
 `;
 
-const Social_item = styled.li`
+const SocialItem = styled.li`
   text-align: center;
-  #background: #fff;
+  background: #fff;
   margin-left: 1rem;
   margin-right: 1rem;
   display: block;
@@ -47,11 +47,11 @@ const Social_item = styled.li`
 `;
 export default function Socials() {
   return (
-    <Content_wrapper>
+    <ContentWrapper>
       <Title>Stay tuned, and don't miss a bit</Title>
       <Content>Check our social media networks.</Content>
-      <Socials_list>
-        <Social_item>
+      <SocialsList>
+        <SocialItem>
           <a
             href="https://x.com/hackupc"
             target="_blank"
@@ -60,8 +60,8 @@ export default function Socials() {
           >
             <img src="" alt="Twitter" />
           </a>
-        </Social_item>
-        <Social_item>
+        </SocialItem>
+        <SocialItem>
           <a
             href="https://www.instagram.com/hackupc"
             target="_blank"
@@ -70,8 +70,8 @@ export default function Socials() {
           >
             <img src="../logos/instagram-logo.svg" alt="Instagram" />
           </a>
-        </Social_item>
-        <Social_item>
+        </SocialItem>
+        <SocialItem>
           <a
             href="https://www.facebook.com/hackupc"
             target="_blank"
@@ -80,31 +80,31 @@ export default function Socials() {
           >
             <img src="" alt="Facebook" />
           </a>
-        </Social_item>
-        <Social_item>
+        </SocialItem>
+        <SocialItem>
           <a href="mailto:contact@hackupc.com" aria-label="Email">
             <img src="" alt="Email" />
           </a>
-        </Social_item>
-        <Social_item>
+        </SocialItem>
+        <SocialItem>
           <a
             href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"
             aria-label="Youtube"
           >
             <img src="" alt="Youtube" />
           </a>
-        </Social_item>
-        <Social_item>
+        </SocialItem>
+        <SocialItem>
           <a href="https://medium.com/@hackupc" aria-label="Medium">
             <img src="" alt="Medium" />
           </a>
-        </Social_item>
-        <Social_item>
+        </SocialItem>
+        <SocialItem>
           <a href="https://github.com/hackupc" aria-label="Github">
             <img src="" alt="Github" />
           </a>
-        </Social_item>
-      </Socials_list>
-    </Content_wrapper>
+        </SocialItem>
+      </SocialsList>
+    </ContentWrapper>
   );
 }
