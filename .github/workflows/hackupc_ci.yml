@@ -7,8 +7,8 @@ defaults:
 on:
   pull_request:
     paths:
-      - '.github/workflows/hackupc_ci.yml'
-    branches: [ master, develop ]
+      - ".github/workflows/hackupc_ci.yml"
+    branches: [master, develop]
   workflow_dispatch:
 
 env:
