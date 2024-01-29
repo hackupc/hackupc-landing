@@ -76,7 +76,7 @@ export default function TrailerSection() {
           src="https://www.youtube.com/embed/83RvKXCmcZ8?rel=0&showinfo=0"
           allowFullScreen
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        ></StyledIframe>
+        />
       </VideoWrapper>
       <ButtonContainer>
         <StyledButton href="#" bgColor="#E23532">
