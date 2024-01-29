@@ -1,20 +1,7 @@
 import styled from "styled-components";
 
-// Breakpoints for responsive design
-const sizes = {
-  desktop: 1024,
-  tablet: 768,
-  phone: 576,
-};
-
-// Media queries
-const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => `@media (max-width: ${sizes[label]}px) { ${args} }`;
-  return acc;
-}, {});
-
 const Section = styled.section`
-  background-color: #ae8dce;
+  background-color: #0f062a;
   width: 100%;
   padding: 2rem;
   text-align: center;
@@ -37,48 +24,38 @@ const ButtonContainer = styled.div`
 const StyledButton = styled.button`
   padding: 1.1rem 1rem;
   color: white;
-  font-size: 1.25rem;
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
   font-weight: bold;
   text-transform: uppercase;
   border: none;
-  border-radius: 25px;
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   background-color: ${(props) => props.bgColor};
   cursor: pointer;
   transition: all 0.3s ease;
   display: block;
-  width: 35%;
+  max-width: 30rem;
+  width: 100%;
   margin: 0 auto;
 
   &:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
+    &:before {
+      transform: scale(1);
+    }
   }
 
-  // Responsive adjustments
-  ${media.desktop(`
-    width: 50%;
-  `)}
-  ${media.tablet(`
-    width: 70%;
-    font-size: 1rem;
-    padding: 0.8rem 1.6rem; 
-  `)}
-    ${media.phone(`
-    width: 90%;
-    font-size: 0.9rem;
-    padding: 0.7rem 1.4rem; 
-  `)}
+  &:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(0.5rem);
+  }
 `;
 
 const Heading = styled.h2`
-  color: #190536;
+  color: #fff;
   font-size: 3rem;
   font-weight: bold;
-
-  // Responsive adjustments
-  ${media.tablet`font-size: 2.5rem;`}
-  ${media.phone`font-size: 2rem;`}
 `;
 
 const StyledIframe = styled.iframe`
@@ -87,11 +64,6 @@ const StyledIframe = styled.iframe`
   border-radius: 15px;
   border: none;
   overflow: hidden;
-
-  // Make the iframe responsive
-  ${media.desktop`height: 450px;`}
-  ${media.tablet`height: 400px;`}
-  ${media.phone`height: 300px;`}
 `;
 
 export default function TrailerSection() {
