@@ -1,35 +1,45 @@
 import styled from "styled-components";
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faGithub,
+  faInstagram,
+  faMedium,
+  faXTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 const ContentWrapper = styled.div`
-  display: table-row;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 1000px;
   position: relative;
   text-align: center;
+  padding: 2rem;
 `;
 
 const Title = styled.h2`
-  border: 7px solid #fff;
   text-align: center;
-  border-radius: 2rem;
   font-size: 3rem;
   font-weight: 700;
+  display: flex;
   margin: auto;
-  padding: 1rem 2rem;
+  padding-bottom: 0.5rem;
 `;
-const Content = styled.p`
-  background: #fff;
-  border: 3px solid white;
-  border-radius: 0 0 2rem 2rem;
+const Content = styled.div`
   display: inline-flex;
-  color: #1cae86;
+  white-space: nowrap;
+  color: red;
   font-size: 1.75rem;
   font-weight: 600;
   margin: auto;
   padding: 0.5rem 3rem;
 `;
 const SocialsList = styled.ul`
-  margin-top: 1rem;
+  padding-top: 1rem;
   position: relative;
   text-align: center;
   display: inline-flex;
@@ -37,38 +47,50 @@ const SocialsList = styled.ul`
 
 const SocialItem = styled.li`
   text-align: center;
-  background: #fff;
   margin-left: 1rem;
   margin-right: 1rem;
-  display: block;
+  display: flex;
   transition: transform 0.3s cubic-bezier(0.17, 2.55, 0.69, 0.4);
   width: 5rem;
   will-change: transform;
 `;
+
+const Image = styled.img`
+  width: ${(props) => props.width || "15%"};
+  padding-left: 1rem;
+`;
+
 export default function Socials() {
   return (
     <ContentWrapper>
       <Title>Stay tuned, and don't miss a bit</Title>
-      <Content>Check our social media networks.</Content>
+      <Content>
+        Check our social media networks.
+        <Image
+          src="/telescope.svg"
+          alt="Logotype of HackersAtUPC"
+          width="13%"
+        />
+      </Content>
       <SocialsList>
         <SocialItem>
           <a
-            href="https://x.com/hackupc"
+            href="https://twitter.com/hackupc"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Twitter"
+            aria-label="X"
           >
-            <img src="" alt="Twitter" />
+            <FontAwesomeIcon icon={faXTwitter} size="3x" bounce />
           </a>
         </SocialItem>
         <SocialItem>
           <a
-            href="https://www.instagram.com/hackupc"
+            href="https://www.instagram.com/hackupc/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <img src="../logos/instagram-logo.svg" alt="Instagram" />
+            <FontAwesomeIcon icon={faInstagram} size="3x" bounce />
           </a>
         </SocialItem>
         <SocialItem>
@@ -76,32 +98,49 @@ export default function Socials() {
             href="https://www.facebook.com/hackupc"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Facebook"
+            aria-label="Instagram"
           >
-            <img src="" alt="Facebook" />
+            <FontAwesomeIcon icon={faFacebook} size="3x" bounce />
           </a>
         </SocialItem>
         <SocialItem>
-          <a href="mailto:contact@hackupc.com" aria-label="Email">
-            <img src="" alt="Email" />
+          <a
+            href="mailto:contact@hackupc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon icon={faEnvelope} size="3x" bounce />
           </a>
         </SocialItem>
         <SocialItem>
           <a
             href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"
-            aria-label="Youtube"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
           >
-            <img src="" alt="Youtube" />
+            <FontAwesomeIcon icon={faYoutube} size="3x" bounce />
           </a>
         </SocialItem>
         <SocialItem>
-          <a href="https://medium.com/@hackupc" aria-label="Medium">
-            <img src="" alt="Medium" />
+          <a
+            href="https://medium.com/@hackupc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon icon={faMedium} size="3x" bounce />
           </a>
         </SocialItem>
         <SocialItem>
-          <a href="https://github.com/hackupc" aria-label="Github">
-            <img src="" alt="Github" />
+          <a
+            href="https://github.com/hackupc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon icon={faGithub} size="3x" bounce />
           </a>
         </SocialItem>
       </SocialsList>
