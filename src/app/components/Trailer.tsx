@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Section = styled.section`
   background-color: #0f062a;
+  opacity: 90%;
   width: 100%;
   padding: 2rem;
   text-align: center;
@@ -30,7 +31,6 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  background-color: ${(props) => props.bgColor};
   cursor: pointer;
   transition: all 0.3s ease;
   display: block;
@@ -79,12 +79,8 @@ export default function TrailerSection() {
         />
       </VideoWrapper>
       <ButtonContainer>
-        <StyledButton href="#" bgColor="#E23532">
-          Apply as a hacker
-        </StyledButton>
-        <StyledButton href="#" bgColor="#563065">
-          Apply as a volunteer
-        </StyledButton>
+        <StyledButton>Apply as a hacker</StyledButton>
+        <StyledButton>Apply as a volunteer</StyledButton>
       </ButtonContainer>
     </Section>
   );
