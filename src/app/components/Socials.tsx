@@ -66,11 +66,7 @@ export default function Socials() {
       <Title>Stay tuned, and don't miss a bit</Title>
       <Content>
         Check our social media networks.
-        <Image
-          src="/telescope.svg"
-          alt="Logotype of HackersAtUPC"
-          width="13%"
-        />
+        <Image src="/telescope.svg" alt="Telescope" width="13%" />
       </Content>
       <SocialsList>
         <SocialItem>
