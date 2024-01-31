@@ -58,7 +58,8 @@ export default function During() {
       <p>INSERTAR DISSENY TO UAPO</p>
       <TheMission>
         <SpecialTitle>
-          <ColoredSpecialTitle>THE MISSION:</ColoredSpecialTitle>HACKUPC
+          <ColoredSpecialTitle>THE MISSION:</ColoredSpecialTitle>
+          HACKUPC
         </SpecialTitle>
         <Description>
           Get ready for your weekend mission! HackUPC is like a space race full
