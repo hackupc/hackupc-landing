@@ -14,7 +14,7 @@ import {
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: auto;
   max-width: 1000px;
   position: relative;
   text-align: center;
@@ -39,20 +39,21 @@ const Content = styled.div`
   padding: 0.5rem 3rem;
 `;
 const SocialsList = styled.ul`
-  padding-top: 1rem;
   position: relative;
-  text-align: center;
+  align-items: center;
   display: inline-flex;
+  flex-wrap: wrap;
+  gap: -0.5rem;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid #fff;
+  border-radius: 2rem;
 `;
 
 const SocialItem = styled.li`
   text-align: center;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: auto;
   display: flex;
-  transition: transform 0.3s cubic-bezier(0.17, 2.55, 0.69, 0.4);
-  width: 5rem;
-  will-change: transform;
 `;
 
 const Image = styled.img`
@@ -76,7 +77,7 @@ export default function Socials() {
             rel="noopener noreferrer"
             aria-label="X"
           >
-            <FontAwesomeIcon icon={faXTwitter} size="3x" bounce />
+            <FontAwesomeIcon icon={faXTwitter} size="3x" />
           </a>
         </SocialItem>
         <SocialItem>
@@ -86,7 +87,7 @@ export default function Socials() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <FontAwesomeIcon icon={faInstagram} size="3x" bounce />
+            <FontAwesomeIcon icon={faInstagram} size="3x" />
           </a>
         </SocialItem>
         <SocialItem>
@@ -96,7 +97,7 @@ export default function Socials() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <FontAwesomeIcon icon={faFacebook} size="3x" bounce />
+            <FontAwesomeIcon icon={faFacebook} size="3x" />
           </a>
         </SocialItem>
         <SocialItem>
@@ -106,7 +107,7 @@ export default function Socials() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <FontAwesomeIcon icon={faEnvelope} size="3x" bounce />
+            <FontAwesomeIcon icon={faEnvelope} size="3x" />
           </a>
         </SocialItem>
         <SocialItem>
@@ -116,7 +117,7 @@ export default function Socials() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <FontAwesomeIcon icon={faYoutube} size="3x" bounce />
+            <FontAwesomeIcon icon={faYoutube} size="3x" />
           </a>
         </SocialItem>
         <SocialItem>
@@ -126,7 +127,7 @@ export default function Socials() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <FontAwesomeIcon icon={faMedium} size="3x" bounce />
+            <FontAwesomeIcon icon={faMedium} size="3x" />
           </a>
         </SocialItem>
         <SocialItem>
@@ -136,7 +137,7 @@ export default function Socials() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <FontAwesomeIcon icon={faGithub} size="3x" bounce />
+            <FontAwesomeIcon icon={faGithub} size="3x" />
           </a>
         </SocialItem>
       </SocialsList>
