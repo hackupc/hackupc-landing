@@ -43,7 +43,7 @@ const SocialsList = styled.ul`
   align-items: center;
   display: inline-flex;
   flex-wrap: wrap;
-  gap: -0.5rem;
+  gap: 0.5rem;
   justify-content: center;
   padding: 0.5rem 1rem;
   border: 1.5px solid #fff;
@@ -75,7 +75,7 @@ export default function Socials() {
             href="https://twitter.com/hackupc"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="X"
+            aria-label="Twitter"
           >
             <FontAwesomeIcon icon={faXTwitter} size="3x" />
           </a>
@@ -95,7 +95,7 @@ export default function Socials() {
             href="https://www.facebook.com/hackupc"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
+            aria-label="Facebook"
           >
             <FontAwesomeIcon icon={faFacebook} size="3x" />
           </a>
@@ -105,7 +105,7 @@ export default function Socials() {
             href="mailto:contact@hackupc.com"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
+            aria-label="Email"
           >
             <FontAwesomeIcon icon={faEnvelope} size="3x" />
           </a>
@@ -115,7 +115,7 @@ export default function Socials() {
             href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
+            aria-label="Youtube"
           >
             <FontAwesomeIcon icon={faYoutube} size="3x" />
           </a>
@@ -125,7 +125,7 @@ export default function Socials() {
             href="https://medium.com/@hackupc"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
+            aria-label="Medium"
           >
             <FontAwesomeIcon icon={faMedium} size="3x" />
           </a>
@@ -135,7 +135,7 @@ export default function Socials() {
             href="https://github.com/hackupc"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
+            aria-label="Github"
           >
             <FontAwesomeIcon icon={faGithub} size="3x" />
           </a>
