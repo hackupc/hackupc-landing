@@ -23,15 +23,15 @@ export default function Provide() {
   return (
     <Container>
       <Col>
-        <Image src="" width={50} height={50} alt="food" />
+        <Image src="/hotdog.svg" width={85} height={85} alt="Hotdog icon" />
         <Title>Food</Title>
         <Description>
-          We’ve got you covered, we even have midnight snacks. Besides, you can
+          We've got you covered, we even have midnight snacks. Besides, you can
           always serve yourself with cafeteria snacks.
         </Description>
       </Col>
       <Col>
-        <Image src="" width={50} height={50} alt="sleeping" />
+        <Image src="/bed.svg" width={85} height={85} alt="Bed icon" />
         <Title>Sleeping</Title>
         <Description>
           Both nights so you can rest your energy levels. Check out the FAQ for
@@ -39,16 +39,21 @@ export default function Provide() {
         </Description>
       </Col>
       <Col>
-        <Image src="" width={50} height={50} alt="sponsors" />
+        <Image src="/oldTv.svg" width={85} height={85} alt="Old TV icon" />
         <Title>Sponsors</Title>
         <Description>
-          You can also visit our sponsors’ stands or meet them remotely! They'll
+          You can also visit our sponsors' stands or meet them remotely! They'll
           be available during the day and would love to talk to you! (you may
           even get some swag as well)
         </Description>
       </Col>
       <Col>
-        <Image src="" width={50} height={50} alt="live" />
+        <Image
+          src="/antenna.svg"
+          width={85}
+          height={85}
+          alt="Broadcast antenna icon"
+        />
         <Title>Live</Title>
         <Description>
           When and where will all of this happen? Check out our live page to
