@@ -1,94 +1,143 @@
 import React from "react";
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 
+const rotate = keyframes`
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+`;
+
+const SectionTitle = styled.p`
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+`;
+      
 const Section = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin: 0 auto;
+  margin-bottom: 4rem;
 `;
 
-const Image = styled.img`
-  width: ${(props) => props.width || "15%"};
+const Image = styled.a`
+  display: inline-block;
+  width: 15%;
+  margin-right: 20px;  /* Adjust the margin as needed */
+  animation: ${rotate} 3s infinite linear;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(2) rotate(360deg);
+  }
+
+  & > img {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 30%;
+  align-items: center;
+  width: 50%;
+  max-width: 1000px;
 `;
 
-const Title = styled.h2`
+const Title = styled.p`
   font-weight: bold;
+  font-size: 1.5rem;
   color: ${(props) => props.color || "#000"};
+  margin-bottom: 1rem;
 `;
 
 const Button = styled.button`
   padding: 1rem;
-  background-color: ${(props) => props.color || "#000"};
-  color: #fff;
+  background-color: ${(props) => props.color};
+  color: ${(props) => (props.color === "#D9AFFF" ? "#240059" : "#fff")};
+  font-weight: bold;
   border: none;
+  border-radius: 1rem;
   cursor: pointer;
+`;
+
+const Text = styled.p`
+  width: 50%;
+  margin-bottom: 1rem;
 `;
 
 export default function HowToParticipate() {
   return (
     <div>
-      <h1 style={{ textAlign: "center", fontWeight: "bold" }}>
-        How to participate
-      </h1>
+      <SectionTitle>How to participate</SectionTitle>
 
       <Section>
-        <Image src="/planetMentor.svg" width="15%" />
+        <Image href="https://mentorApplication.com">
+          <img src="/planetMentor.svg" alt="altText" />
+        </Image>
         <TextContainer>
           <Title color="#E23532">Mentor</Title>
-          <p>
+          <Text>
             Help and motivate hackers with your knowledge. Either because you
             are passionate about it, or if you've graduated more than a year ago
             and can't participate as a hacker, apply now as a mentor!
-          </p>
+          </Text>
           <Button color="#E23532">Apply as Mentor</Button>
         </TextContainer>
       </Section>
 
       <Section style={{ flexDirection: "row-reverse" }}>
-        <Image src="/planetVolunteer.svg" width="15%" />
+        <Image href="https://volunteerApplication.com">
+          <img src="/planetVolunteer.svg" alt="altText" />
+        </Image>
         <TextContainer>
           <Title color="#D9AFFF">Volunteer</Title>
-          <p>
+          <Text>
             Volunteers make HackUPC possible by assisting the hackers and
             preparing the event. By joining our team of volunteers, you will get
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
-          </p>
+          </Text>
           <Button color="#D9AFFF">Apply as Volunteer</Button>
         </TextContainer>
       </Section>
 
       <Section>
-        <Image src="/planetPartner.svg" width="15%" />
+        <Image href="https://partnerMail.com">
+          <img src="/planetPartner.svg" alt="altText" />
+        </Image> 
         <TextContainer>
           <Title color="#E23532">Partner</Title>
-          <p>
+          <Text>
             Gain visibility for your brand, introduce your products to future
             talents. Join us and be remembered as part of this hackathon by our
             participants!
-          </p>
+          </Text>
           <Button color="#E23532">Apply as Partner</Button>
         </TextContainer>
       </Section>
 
       <Section style={{ flexDirection: "row-reverse" }}>
-        <Image src="/planetSponsor.svg" width="15%" />
+        <Image href="https://sponsorMail.com">
+          <img src="/planetSponsor.svg" alt="altText" />
+        </Image>
         <TextContainer>
           <Title color="#D9AFFF">Sponsor</Title>
-          <p>
+          <Text>
             Don't just put your brand on another wall. Take the chance to shape
             the tech scene of tomorrow by adding real value and making it
             possible for hackers to build something they're proud of.
-          </p>
+          </Text>
           <Button color="#D9AFFF">Apply as Sponsor</Button>
         </TextContainer>
       </Section>
