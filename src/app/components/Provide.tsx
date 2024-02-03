@@ -12,18 +12,23 @@ const Col = styled.div`
 `;
 
 const Title = styled.div`
+  color: #e23532;
+  font-size: 32px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 30px;
   font-weight: bold;
 `;
 const Description = styled.div`
-  font-size: 20px;
+  font-size: 28px;
+  color: #f9fdff;
 `;
 
 export default function Provide() {
   return (
     <Container>
       <Col>
-        <Image src="/hotdog.svg" width={85} height={85} alt="Hotdog icon" />
+        <Image src="/hotdog.svg" width={80} height={80} alt="Hotdog icon" />
         <Title>Food</Title>
         <Description>
           We've got you covered, we even have midnight snacks. Besides, you can
@@ -31,7 +36,7 @@ export default function Provide() {
         </Description>
       </Col>
       <Col>
-        <Image src="/bed.svg" width={85} height={85} alt="Bed icon" />
+        <Image src="/bed.svg" width={80} height={80} alt="Bed icon" />
         <Title>Sleeping</Title>
         <Description>
           Both nights so you can rest your energy levels. Check out the FAQ for
@@ -39,7 +44,7 @@ export default function Provide() {
         </Description>
       </Col>
       <Col>
-        <Image src="/oldTv.svg" width={85} height={85} alt="Old TV icon" />
+        <Image src="/oldTv.svg" width={80} height={80} alt="Old TV icon" />
         <Title>Sponsors</Title>
         <Description>
           You can also visit our sponsors' stands or meet them remotely! They'll
@@ -50,8 +55,8 @@ export default function Provide() {
       <Col>
         <Image
           src="/antenna.svg"
-          width={85}
-          height={85}
+          width={80}
+          height={80}
           alt="Broadcast antenna icon"
         />
         <Title>Live</Title>
