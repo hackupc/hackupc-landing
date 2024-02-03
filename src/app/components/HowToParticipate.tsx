@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import { keyframes } from "styled-components";
+import Image from "next/image";
+import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
   0% {
@@ -29,7 +29,7 @@ const Section = styled.div`
   margin-bottom: 4rem;
 `;
 
-const Image = styled.a`
+const ImageButton = styled.a`
   display: inline-block;
   width: 15%;
   margin-right: 20px; /* Adjust the margin as needed */
@@ -80,11 +80,10 @@ export default function HowToParticipate() {
   return (
     <div>
       <SectionTitle>How to participate</SectionTitle>
-
       <Section>
-        <Image href="https://mentorApplication.com">
-          <img src="/planetMentor.svg" alt="altText" />
-        </Image>
+        <ImageButton href="https://mentorApplication.com">
+          <Image src="/planetMentor.svg" alt="altText" width="15" height="15" />
+        </ImageButton>
         <TextContainer>
           <Title color="#E23532">Mentor</Title>
           <Text>
@@ -97,9 +96,14 @@ export default function HowToParticipate() {
       </Section>
 
       <Section style={{ flexDirection: "row-reverse" }}>
-        <Image href="https://volunteerApplication.com">
-          <img src="/planetVolunteer.svg" alt="altText" />
-        </Image>
+        <ImageButton href="https://volunteerApplication.com">
+          <Image
+            src="/planetVolunteer.svg"
+            alt="altText"
+            width="15"
+            height="15"
+          />
+        </ImageButton>
         <TextContainer>
           <Title color="#D9AFFF">Volunteer</Title>
           <Text>
@@ -113,9 +117,14 @@ export default function HowToParticipate() {
       </Section>
 
       <Section>
-        <Image href="https://partnerMail.com">
-          <img src="/planetPartner.svg" alt="altText" />
-        </Image>
+        <ImageButton href="https://partnerMail.com">
+          <Image
+            src="/planetPartner.svg"
+            alt="altText"
+            width="15"
+            height="15"
+          />
+        </ImageButton>
         <TextContainer>
           <Title color="#E23532">Partner</Title>
           <Text>
@@ -128,9 +137,14 @@ export default function HowToParticipate() {
       </Section>
 
       <Section style={{ flexDirection: "row-reverse" }}>
-        <Image href="https://sponsorMail.com">
-          <img src="/planetSponsor.svg" alt="altText" />
-        </Image>
+        <ImageButton href="https://sponsorMail.com">
+          <Image
+            src="/planetSponsor.svg"
+            alt="altText"
+            width="15"
+            height="15"
+          />
+        </ImageButton>
         <TextContainer>
           <Title color="#D9AFFF">Sponsor</Title>
           <Text>
