@@ -53,8 +53,10 @@ export default function About() {
             </ImgSection>
             <Subtitle>What is a hackathon?</Subtitle>
             <Description>
-              The word hackathon is a combination of the words "<b>HACK</b>
-              ", standing for creative problem-solving, and "<b>MARATHON</b>
+              The word hackathon is a combination of the words "
+              <b>HACK</b>
+              ", standing for creative problem-solving, and "
+              <b>MARATHON</b>
               ". These are awesome events full of creativity, technology, and
               passionate tech-related students of different skill levels
               collaborating and creating. During a certain period of time,
