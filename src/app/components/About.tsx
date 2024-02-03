@@ -5,13 +5,22 @@ const Card = styled.div`
   padding: 10px;
 `;
 
+const Section = styled.div`
+  background-color: #EAF7FF;
+  color: #240059;
+`;
+
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 `;
 
 const ImgSection = styled.div`
   align-content: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 `;
 const Title = styled.h1`
   font-weight: bold;
@@ -27,6 +36,7 @@ const Description = styled.p``;
 export default function About() {
   return (
     <div>
+      <Section>
       <div>
         <Title>HackUPC beyond the stars</Title>
       </div>
@@ -62,6 +72,7 @@ export default function About() {
           </Description>
         </Card>
       </Container>
+      </Section>
     </div>
   );
 }
