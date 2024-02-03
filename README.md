@@ -1,15 +1,15 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
-## todo: readme 
+
+## todo: readme
 
 quick reminder
 
 nvm install 20.10.0
 nvm use 20.10.0
-npm install 
+npm install
 npm run dev
-
 
 First, run the development server:
 
