@@ -44,7 +44,12 @@ export default function About() {
         <Container>
           <Card>
             <ImgSection>
-              <Image src="/saturnPlanet.svg" width={110} height={110} alt="Saturn Planet" />
+              <Image
+                src="/saturnPlanet.svg"
+                width={110}
+                height={110}
+                alt="Saturn Planet"
+              />
             </ImgSection>
             <Subtitle>What is a hackathon?</Subtitle>
             <Description>
@@ -60,7 +65,12 @@ export default function About() {
           </Card>
           <Card>
             <ImgSection>
-              <Image src="/hackupcLogo.svg" width={90} height={90} alt="HackUPC Logo" />
+              <Image
+                src="/hackupcLogo.svg"
+                width={90}
+                height={90}
+                alt="HackUPC Logo"
+              />
             </ImgSection>
             <Subtitle>About HackUPC?</Subtitle>
             <Description>
