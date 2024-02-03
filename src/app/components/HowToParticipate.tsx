@@ -20,7 +20,7 @@ const SectionTitle = styled.p`
   font-size: 2rem;
   margin-bottom: 4rem;
 `;
-      
+
 const Section = styled.div`
   display: flex;
   justify-content: center;
@@ -32,7 +32,7 @@ const Section = styled.div`
 const Image = styled.a`
   display: inline-block;
   width: 15%;
-  margin-right: 20px;  /* Adjust the margin as needed */
+  margin-right: 20px; /* Adjust the margin as needed */
   animation: ${rotate} 3s infinite linear;
   transition: transform 0.3s ease-in-out;
 
@@ -115,7 +115,7 @@ export default function HowToParticipate() {
       <Section>
         <Image href="https://partnerMail.com">
           <img src="/planetPartner.svg" alt="altText" />
-        </Image> 
+        </Image>
         <TextContainer>
           <Title color="#E23532">Partner</Title>
           <Text>
