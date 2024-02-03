@@ -1,20 +1,29 @@
 import styled from "styled-components";
 import React from "react";
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  font-size: 44px;
+`;
 const Section = styled.div`
   align-content: center;
   text-align: center;
+  background-color: #12042ab3;
 `;
 const Description = styled.p`
   padding: 10px;
+  font-size: 28px;
 `;
 const Button = styled.a`
-  padding: 10px;
+  padding: 10px 24px 10px 24px;
   border-radius: 10px;
+  background-color: #c379e0;
+  display: inline-block;
+  margin-top: 30px;
 `;
 
 const Image = styled.img`
+  margin-top: 50px;
+  margin-bottom: 50px;
   width: ${(props) => props.width || "15%"};
 `;
 
@@ -29,9 +38,9 @@ export default function Hackers() {
       </Description>
 
       <Image
-        src="/hackersatupc.png"
+        src="/hackersatupc.svg"
         alt="Logotype of HackersAtUPC"
-        width="35%"
+        width="375px"
       />
 
       <Description>
