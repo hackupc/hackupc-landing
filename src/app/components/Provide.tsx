@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const Container = styled.div`
   display: grid;
+  background-color: #12042ab3;
   grid-template-columns: auto auto;
   text-align: center;
 `;
