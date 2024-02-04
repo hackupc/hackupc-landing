@@ -102,7 +102,11 @@ export default function HowToParticipate() {
             are passionate about it, or if you've graduated more than a year ago
             and can't participate as a hacker, apply now as a mentor!
           </Text>
-          <a href="https://my.hackupc.com/user/signup/mentor/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://my.hackupc.com/user/signup/mentor/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button color="#E23532">Apply as Mentor</Button>
           </a>
         </TextContainer>
@@ -140,7 +144,11 @@ export default function HowToParticipate() {
       </Section>
 
       <Section>
-        <ImageButton href="mailto:logistics@hackupc.com" target="_blank" rel="noopener noreferrer">
+        <ImageButton
+          href="mailto:logistics@hackupc.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image
             src="/planetPartner.svg"
             alt="altText"
@@ -155,14 +163,22 @@ export default function HowToParticipate() {
             talents. Join us and be remembered as part of this hackathon by our
             participants!
           </Text>
-          <a href="mailto:logistics@hackupc.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="mailto:logistics@hackupc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button color="#E23532">Contact us</Button>
           </a>
         </TextContainer>
       </Section>
 
       <Section style={{ flexDirection: "row-reverse" }}>
-        <ImageButton href="mailto:sponsor@hackupc.com" target="_blank" rel="noopener noreferrer">
+        <ImageButton
+          href="mailto:sponsor@hackupc.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image
             src="/planetSponsor.svg"
             alt="altText"
@@ -177,7 +193,11 @@ export default function HowToParticipate() {
             the tech scene of tomorrow by adding real value and making it
             possible for hackers to build something they're proud of.
           </Text>
-          <a href="mailto:sponsor@hackupc.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="mailto:sponsor@hackupc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button color="#D9AFFF">Contact us</Button>
           </a>
         </TextContainer>
