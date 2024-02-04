@@ -3,24 +3,24 @@ import styled from "styled-components";
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 3rem auto;
+  margin: 48px auto;
   max-width: 1000px;
   position: relative;
   text-align: center;
 `;
 const Title = styled.h2`
   text-align: center;
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 700;
   margin: auto;
-  padding-right: 2rem;
+  padding-right: 32px;
 `;
 const Info = styled.h3`
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-top: 48px;
+  margin-bottom: 32px;
   text-align: center;
   border: 4px dotted #c379e0;
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
 `;
 const TheMission = styled.div`
   border: 3px solid #c379e0;
@@ -29,24 +29,24 @@ const TheMission = styled.div`
   max-width: 1000px;
   position: relative;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 32px;
 `;
 const SpecialTitle = styled.h3`
   text-align: center;
   margin: auto;
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 500;
   font-style: oblique;
   display: inline-flex;
 `;
 const ColoredSpecialTitle = styled(SpecialTitle)`
   color: #e23532;
-  margin-right: 1rem;
+  margin-right: 16px;
 `;
 const Description = styled.p`
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 700;
-  margin: 1rem 0;
+  margin: 16px 0;
 `;
 export default function During() {
   return (
