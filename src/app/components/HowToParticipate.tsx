@@ -69,6 +69,13 @@ const Button = styled.button`
   border: none;
   border-radius: 1rem;
   cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: ${(props) =>
+      props.color === "#D9AFFF" ? "#ac4dff" : "#9c1916"};
+    color: #fff;
+  }
 `;
 
 const Text = styled.p`
@@ -81,7 +88,10 @@ export default function HowToParticipate() {
     <div>
       <SectionTitle>How to participate</SectionTitle>
       <Section>
-        <ImageButton href="https://mentorApplication.com">
+        <ImageButton
+          href="https://my.hackupc.com/user/signup/mentor/"
+          target="_blank"
+        >
           <Image src="/planetMentor.svg" alt="altText" width="15" height="15" />
         </ImageButton>
         <TextContainer>
@@ -91,12 +101,17 @@ export default function HowToParticipate() {
             are passionate about it, or if you've graduated more than a year ago
             and can't participate as a hacker, apply now as a mentor!
           </Text>
-          <Button color="#E23532">Apply as Mentor</Button>
+          <a href="https://my.hackupc.com/user/signup/mentor/" target="_blank">
+            <Button color="#E23532">Apply as Mentor</Button>
+          </a>
         </TextContainer>
       </Section>
 
       <Section style={{ flexDirection: "row-reverse" }}>
-        <ImageButton href="https://volunteerApplication.com">
+        <ImageButton
+          href="https://my.hackupc.com/user/signup/volunteer/"
+          target="_blank"
+        >
           <Image
             src="/planetVolunteer.svg"
             alt="altText"
@@ -112,12 +127,17 @@ export default function HowToParticipate() {
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
           </Text>
-          <Button color="#D9AFFF">Apply as Volunteer</Button>
+          <a
+            href="https://my.hackupc.com/user/signup/volunteer/"
+            target="_blank"
+          >
+            <Button color="#D9AFFF">Apply as Volunteer</Button>
+          </a>
         </TextContainer>
       </Section>
 
       <Section>
-        <ImageButton href="https://partnerMail.com">
+        <ImageButton href="mailto:logistics@hackupc.com" target="_blank">
           <Image
             src="/planetPartner.svg"
             alt="altText"
@@ -132,12 +152,14 @@ export default function HowToParticipate() {
             talents. Join us and be remembered as part of this hackathon by our
             participants!
           </Text>
-          <Button color="#E23532">Apply as Partner</Button>
+          <a href="mailto:logistics@hackupc.com" target="_blank">
+            <Button color="#E23532">Contact us</Button>
+          </a>
         </TextContainer>
       </Section>
 
       <Section style={{ flexDirection: "row-reverse" }}>
-        <ImageButton href="https://sponsorMail.com">
+        <ImageButton href="mailto:sponsor@hackupc.com" target="_blank">
           <Image
             src="/planetSponsor.svg"
             alt="altText"
@@ -152,7 +174,9 @@ export default function HowToParticipate() {
             the tech scene of tomorrow by adding real value and making it
             possible for hackers to build something they're proud of.
           </Text>
-          <Button color="#D9AFFF">Apply as Sponsor</Button>
+          <a href="mailto:sponsor@hackupc.com" target="_blank">
+            <Button color="#D9AFFF">Contact us</Button>
+          </a>
         </TextContainer>
       </Section>
     </div>
