@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -18,36 +19,36 @@ const ContentWrapper = styled.div`
   max-width: 1000px;
   position: relative;
   text-align: center;
-  padding: 2rem;
+  padding: 32px;
 `;
 
 const Title = styled.h2`
   text-align: center;
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 700;
   display: flex;
   margin: auto;
-  padding-bottom: 0.5rem;
+  padding-bottom: 8px;
 `;
 const Content = styled.div`
   display: inline-flex;
   white-space: nowrap;
   color: red;
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: 600;
   margin: auto;
-  padding: 0.5rem 3rem;
+  padding: 8px 48px;
 `;
 const SocialsList = styled.ul`
   position: relative;
   align-items: center;
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 8px;
   justify-content: center;
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   border: 1.5px solid #fff;
-  border-radius: 2rem;
+  border-radius: 32px;
 `;
 
 const SocialItem = styled.li`
@@ -56,18 +57,13 @@ const SocialItem = styled.li`
   display: flex;
 `;
 
-const Image = styled.img`
-  width: ${(props) => props.width || "15%"};
-  padding-left: 1rem;
-`;
-
 export default function Socials() {
   return (
     <ContentWrapper>
       <Title>Stay tuned, and don't miss a bit</Title>
       <Content>
         Check our social media networks.
-        <Image src="/telescope.svg" alt="Telescope" width="13%" />
+        <Image src="/telescope.svg" alt="Telescope" width={40} height={40} />
       </Content>
       <SocialsList>
         <SocialItem>
