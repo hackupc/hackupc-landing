@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -13,23 +14,21 @@ const Title = styled.h2`
   font-size: 48px;
   font-weight: 700;
   margin: auto;
-  padding-right: 32px;
 `;
 const Info = styled.h3`
   margin-top: 48px;
-  margin-bottom: 32px;
   text-align: center;
-  border: 4px dotted #c379e0;
-  padding: 8px 16px;
 `;
 const TheMission = styled.div`
-  border: 3px solid #c379e0;
   display: flex;
   flex-direction: column;
   max-width: 1000px;
   position: relative;
   text-align: center;
-  margin-top: 32px;
+`;
+const ImageContainer = styled.div`
+  margin: auto;
+  position: relative;
 `;
 const SpecialTitle = styled.h3`
   text-align: center;
@@ -55,7 +54,14 @@ export default function During() {
       <Info>
         Coding is the main part of HackUPC, but we have many more activities
       </Info>
-      <p>INSERTAR DISSENY TO UAPO</p>
+      <ImageContainer>
+        <Image
+          src="/activities.svg"
+          alt="The Mission"
+          height={500}
+          width={700}
+        />
+      </ImageContainer>
       <TheMission>
         <SpecialTitle>
           <ColoredSpecialTitle>THE MISSION:</ColoredSpecialTitle>
