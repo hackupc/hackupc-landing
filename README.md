@@ -5,7 +5,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5865fbbe-4f1a-41b2-ac97-b787dd7feb3c/deploy-status)](https://app.netlify.com/sites/roaring-valkyrie-eb612f/deploys)
 [![](https://github.com/hackupc/new_hackupc/actions/workflows/hackupc_ci.yml/badge.svg)](https://github.com/hackupc/new_hackupc/actions/workflows/hackupc_ci.yml)
 
-
 > Welcome to HackUPC's landing page source code, made in [Next.js](https://nextjs.org/).
 
 > This repository is live since the 10th edition of HackUPC in 2024, you can see the old releases in [Old repository]()

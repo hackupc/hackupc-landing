@@ -32,7 +32,7 @@ const Subtitle = styled.h2`
   font-weight: bold;
 `;
 
-const Description = styled.p``;
+const Description = styled.div``;
 
 export default function About() {
   return (
@@ -53,18 +53,13 @@ export default function About() {
             </ImgSection>
             <Subtitle>What is a hackathon?</Subtitle>
             <Description>
-              The word hackathon is a combination of the words "
-              <b>HACK</b>
-              ", standing for creative problem-solving, and "
-              <b>MARATHON</b>
+              The word hackathon is a combination of the words "<b>HACK</b>
+              ", standing for creative problem-solving, and "<b>MARATHON</b>
               ". These are awesome events full of creativity, technology, and
               passionate tech-related students of different skill levels
               collaborating and creating. During a certain period of time,
-              attendees work in
-              <b>TEAMS</b>
-              to develop apps, games, robots… literally anything you want to{" "}
-              <b>BUILD & LEARN</b>
-              about!
+              attendees work in <b>TEAMS</b> to develop apps, games, robots…
+              literally anything you want to <b>BUILD & LEARN</b> about!
             </Description>
           </Card>
           <Card>
@@ -82,10 +77,9 @@ export default function About() {
               aim to provide a space for students of all experience levels from
               all around the world where they can improve and learn new skills,
               meet awesome people, and overall have a great experience! This
-              year's edition will be the first since the pandemic to have a
-              <b>FULLY IN-PERSON</b>
-              format, meaning that you can only participate by physically
-              attending the event.
+              year's edition will be the first since the pandemic to have a{" "}
+              <b>FULLY IN-PERSON</b> format, meaning that you can only
+              participate by physically attending the event.
             </Description>
           </Card>
         </Container>
