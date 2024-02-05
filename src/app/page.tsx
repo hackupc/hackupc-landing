@@ -10,13 +10,12 @@ import FAQs from "@/app/components/FAQs";
 import Socials from "@/app/components/Socials";
 import SponsorsAndPartners from "@/app/components/SponsorsAndPartners";
 import Hackers from "@/app/components/Hackers";
-import ThroughTheYears from "@/app/components/ThroughTheYears";
+// TODO: import ThroughTheYears from "@/app/components/ThroughTheYears";
 import Hero from "./components/Hero";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main>
       <Hero />
       <About />
       <HowToParticipate />
@@ -28,7 +27,7 @@ export default function Home() {
       <Socials />
       <SponsorsAndPartners />
       <Hackers />
-      <ThroughTheYears />
+      {/* TODO: <ThroughTheYears /> */}
     </main>
   );
 }
