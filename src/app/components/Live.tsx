@@ -41,6 +41,10 @@ export default function Live() {
   return (
     <Container>
       <h2>Friday</h2>
+
+      <div
+        style={{ display: "flex", gridTemplateColumns: "repeat(4, 1fr)" }}
+      ></div>
       <TimeColumn>
         {liveSchedule.map((item, index) => (
           <TimeSlot key={index}>
