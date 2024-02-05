@@ -20,22 +20,23 @@
 
 1. Clone the repository
 
-    ```bash
-     git clone https://github.com/hackupc/new_hackupc.git
-    ```
+   ```bash
+    git clone https://github.com/hackupc/new_hackupc.git
+   ```
 
 2. Install the dependencies
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 ### Run the project for development
 
 1. Run the development server
-    ```bash
-    npm run dev
-    ```
+
+   ```bash
+   npm run dev
+   ```
 
 2. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -43,7 +44,7 @@
 
 ## Linting and formatting
 
-We are using ```eslint``` and ```prettier``` to lint and format the code, you can run the following commands to check if the code is correctly formatted and linted:
+We are using `eslint` and `prettier` to lint and format the code, you can run the following commands to check if the code is correctly formatted and linted:
 
 ```bash
 npm run lint
@@ -62,7 +63,6 @@ npm run check-lint
 ```bash
 npm run check-format
 ```
-
 
 ## Deployment
 
