@@ -6,37 +6,59 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Title = styled.h1`
-  margin-top: 20px;
+const Title = styled.h2`
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  margin: auto;
 `;
 
 interface BoxInput {
-  box_width: number;
-  box_height: number;
+  boxWidth: string;
+  boxHeight: string;
 }
 
-const PackageBox = ({ box_width, box_height }: BoxInput) => styled.div`
+const PackageBox = ({ boxWidth, boxHeight }: BoxInput) => styled.div`
   display: flex;
   justify-content: center;
   margin: 15px;
-  width: ${box_width}px;
-  height: ${box_height}px;
+  width: ${boxWidth};
+  height: ${boxHeight};
   overflow: hidden;
   background-color: #88a7b7;
   border-radius: 20px;
 `;
 
-const PetaBox = PackageBox({ box_width: 250, box_height: 150 });
-const TeraBox = PackageBox({ box_width: 200, box_height: 120 });
-const GigaBox = PackageBox({ box_width: 175, box_height: 100 });
-const MegaBox = PackageBox({ box_width: 150, box_height: 80 });
-const KiloBox = PackageBox({ box_width: 125, box_height: 65 });
-const MiliBox = PackageBox({ box_width: 100, box_height: 50 });
+const PetaBox = PackageBox({
+  boxWidth: "math.div(100%, 3)",
+  boxHeight: "8rem",
+});
+const TeraBox = PackageBox({
+  boxWidth: "math.div(100%, 3)",
+  boxHeight: "8rem",
+});
+const GigaBox = PackageBox({
+  boxWidth: "100% * 0.25",
+  boxHeight: "8rem * 0.85",
+});
+const MegaBox = PackageBox({
+  boxWidth: "100% * 0.2",
+  boxHeight: "8rem * 0.85 * 0.85",
+});
+const KiloBox = PackageBox({
+  boxWidth: "math.div(100%, 6)",
+  boxHeight: "8rem * 0.85 * 0.85 * 0.85",
+});
+const MiliBox = PackageBox({
+  boxWidth: "math.div(100%, 7)",
+  boxHeight: "8rem * 0.85 * 0.85 * 0.85 * 0.85",
+});
 
 const SponsorImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
+  box-sizing: border-box;
   padding: 10px;
 `;
 
