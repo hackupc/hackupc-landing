@@ -1,6 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
+import { Body, Title1, Title2 } from "@/app/genericComponents/Fonts";
+import {
+  Mobile,
+  PrimaryColor,
+  SecondaryColor,
+} from "@/app/genericComponents/constants";
+import { GenericButton } from "@/app/genericComponents/Buttons";
 
 const rotate = keyframes`
   0% {
@@ -14,19 +21,18 @@ const rotate = keyframes`
   }
 `;
 
-const SectionTitle = styled.p`
-  text-align: center;
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 4rem;
-`;
-
-const Section = styled.div`
+const RoleBlock = styled.div<{ imageLeft?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem;
+  gap: 100px;
+  flex-direction: ${(props) => (props.imageLeft ? "row-reverse" : "row")};
+
+  @media (max-width: ${Mobile}) {
+    flex-direction: column;
+    gap: 50px;
+  }
 `;
 
 const ImageButton = styled.a`
@@ -44,50 +50,39 @@ const ImageButton = styled.a`
     width: 100%;
     height: auto;
   }
+
+  @media (max-width: ${Mobile}) {
+    width: 30%;
+  }
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 50%;
   max-width: 1000px;
+
+  @media (max-width: ${Mobile}) {
+    width: 100%;
+  }
 `;
 
-const Title = styled.p`
+const Title = styled(Title2)`
   font-weight: bold;
-  font-size: 1.5rem;
   color: ${(props) => props.color || "#000"};
   margin-bottom: 1rem;
 `;
 
-const Button = styled.button`
-  padding: 1rem;
-  background-color: ${(props) => props.color};
-  color: ${(props) => (props.color === "#D9AFFF" ? "#240059" : "#fff")};
-  font-weight: bold;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-
-  &:hover {
-    background-color: ${(props) =>
-      props.color === "#D9AFFF" ? "#ac4dff" : "#9c1916"};
-    color: #fff;
-  }
-`;
-
-const Text = styled.p`
-  width: 50%;
+const Text = styled(Body)`
   margin-bottom: 1rem;
 `;
 
 export default function HowToParticipate() {
   return (
     <div>
-      <SectionTitle>How to participate</SectionTitle>
-      <Section>
+      <Title1>How to participate</Title1>
+      <RoleBlock>
         <ImageButton
           href="https://my.hackupc.com/user/signup/mentor/"
           target="_blank"
@@ -96,7 +91,7 @@ export default function HowToParticipate() {
           <Image src="/planetMentor.svg" alt="altText" width="15" height="15" />
         </ImageButton>
         <TextContainer>
-          <Title color="#E23532">Mentor</Title>
+          <Title color={PrimaryColor}>Mentor</Title>
           <Text>
             Help and motivate hackers with your knowledge. Either because you
             are passionate about it, or if you've graduated more than a year ago
@@ -107,12 +102,12 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button color="#E23532">Apply as Mentor</Button>
+            <GenericButton color={PrimaryColor}>Apply as Mentor</GenericButton>
           </a>
         </TextContainer>
-      </Section>
+      </RoleBlock>
 
-      <Section style={{ flexDirection: "row-reverse" }}>
+      <RoleBlock imageLeft>
         <ImageButton
           href="https://my.hackupc.com/user/signup/volunteer/"
           target="_blank"
@@ -126,7 +121,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color="#D9AFFF">Volunteer</Title>
+          <Title color={SecondaryColor}>Volunteer</Title>
           <Text>
             Volunteers make HackUPC possible by assisting the hackers and
             preparing the event. By joining our team of volunteers, you will get
@@ -138,12 +133,14 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button color="#D9AFFF">Apply as Volunteer</Button>
+            <GenericButton color={SecondaryColor}>
+              Apply as Volunteer
+            </GenericButton>
           </a>
         </TextContainer>
-      </Section>
+      </RoleBlock>
 
-      <Section>
+      <RoleBlock>
         <ImageButton
           href="mailto:logistics@hackupc.com"
           target="_blank"
@@ -157,7 +154,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color="#E23532">Partner</Title>
+          <Title color={PrimaryColor}>Partner</Title>
           <Text>
             Gain visibility for your brand, introduce your products to future
             talents. Join us and be remembered as part of this hackathon by our
@@ -168,12 +165,12 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button color="#E23532">Contact us</Button>
+            <GenericButton color={PrimaryColor}>Contact us</GenericButton>
           </a>
         </TextContainer>
-      </Section>
+      </RoleBlock>
 
-      <Section style={{ flexDirection: "row-reverse" }}>
+      <RoleBlock imageLeft>
         <ImageButton
           href="mailto:sponsor@hackupc.com"
           target="_blank"
@@ -187,7 +184,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color="#D9AFFF">Sponsor</Title>
+          <Title color={SecondaryColor}>Sponsor</Title>
           <Text>
             Don't just put your brand on another wall. Take the chance to shape
             the tech scene of tomorrow by adding real value and making it
@@ -198,10 +195,10 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button color="#D9AFFF">Contact us</Button>
+            <GenericButton color={SecondaryColor}>Contact us</GenericButton>
           </a>
         </TextContainer>
-      </Section>
+      </RoleBlock>
     </div>
   );
 }
