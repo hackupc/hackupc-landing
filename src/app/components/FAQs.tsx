@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { hackupc_faqs } from "@/app/data/faqs_data";
+import { hackupc_faqs, travel_faqs } from "@/app/data/faqs_data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Section = styled.div`
@@ -83,6 +83,15 @@ export default function FAQs() {
           </QuestionsBlock>
           <QuestionsBlock>
             <BlockTitle>Travel Reimbursement</BlockTitle>
+            {travel_faqs.map((faq) => (
+              <Question key={faq.question}>
+                <QuestionTitleBlock>
+                  <QuestionTitle>{faq.question}</QuestionTitle>
+                  <FontAwesomeIcon icon={["fas", "angle-down"]} />
+                </QuestionTitleBlock>
+                <QuestionAnswer>{faq.answer}</QuestionAnswer>
+              </Question>
+            ))}
           </QuestionsBlock>
         </ColumnsQuestions>
         <ColumnsQuestions>

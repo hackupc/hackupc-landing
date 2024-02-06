@@ -68,6 +68,12 @@ export const travel_faqs: FAQs[] = [
     id: 2,
     question: "Is travel reimbursement available?",
     answer:
-      "Of course! The quantity changes depending on where you come from. We are giving up to €50 for Spaniards outside of Catalonia, €120 if you are coming from Europe and up to €200 if you come from outside Europe. We want to give all of you the opportunity to join us! However, you must remember that not all participants will be eligible to receive travel reimbursement. In the end, we have a limited budget, and we want to help our participants, but we are a student organization and we have limited resources.",
+      "Once you are accepted to the hackathon, you will need to confirm your spot, and at that moment you will be able to ask for travel reimbursement. Select the option if you want to request it. In case the option doesn't show, that means that we have run out of travel reimbursement. You will then introduce your travel cost, but take in account the receiving amount can change depending on the budget we have left.",
+  },
+  {
+    id: 3,
+    question: "Travel reimbursement conditions and steps",
+    answer:
+      "To be able to receive Travel Reimbursement money, you need to match the following criteria: <ol><li>Upload your tickets before 19th April to our platform (we only accept flight, bus, or train tickets) alongside your PayPal account (we only pay this way).</li><li>The arrival tickets should be after April 26th and the departure tickets should be prior to May 10th.</li><li>In the hackathon, it’s mandatory to demo your project to HackUPC judges, presenting only to sponsors will not be considered valid.</li><li>The project should follow all the HackUPC rules.</li><li>After the hackathon, upload your Devpost link to our platform.</li></ol>",
   },
 ];
