@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { Body, Title1, Title2 } from "@/app/genericComponents/Fonts";
+import { Body, SectionTitle, Title2 } from "@/app/genericComponents/Fonts";
 import {
   Mobile,
   PrimaryColor,
   SecondaryColor,
-} from "@/app/genericComponents/constants";
+} from "@/app/genericComponents/tokens";
 import { GenericButton } from "@/app/genericComponents/Buttons";
 
 const rotate = keyframes`
@@ -69,9 +69,7 @@ const TextContainer = styled.div`
 `;
 
 const Title = styled(Title2)`
-  font-weight: bold;
   color: ${(props) => props.color || "#000"};
-  margin-bottom: 1rem;
 `;
 
 const Text = styled(Body)`
@@ -81,7 +79,7 @@ const Text = styled(Body)`
 export default function HowToParticipate() {
   return (
     <div>
-      <Title1>How to participate</Title1>
+      <SectionTitle>How to participate</SectionTitle>
       <RoleBlock>
         <ImageButton
           href="https://my.hackupc.com/user/signup/mentor/"
