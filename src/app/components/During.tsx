@@ -30,7 +30,7 @@ const ImageContainer = styled.div`
   margin: auto;
   position: relative;
 `;
-const SpecialTitle = styled.h3`
+const SpecialTitle = styled.div`
   text-align: center;
   margin: auto;
   font-size: 48px;
