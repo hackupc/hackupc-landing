@@ -1,6 +1,17 @@
 import React from "react";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
+import { Body, SectionTitle, BlockTitle } from "@/app/genericComponents/Fonts";
+import {
+  MobileBreakpoint,
+  Primary100,
+  Secondary500,
+  SpacingL,
+  SpacingM,
+  SpacingS,
+} from "@/app/genericComponents/tokens";
+import { GenericButton } from "@/app/genericComponents/Buttons";
+import { Section } from "@/app/genericComponents/General";
 
 const rotate = keyframes`
   0% {
@@ -14,25 +25,22 @@ const rotate = keyframes`
   }
 `;
 
-const SectionTitle = styled.p`
-  text-align: center;
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 4rem;
-`;
-
-const Section = styled.div`
+const RoleBlock = styled.div<{ imageLeft?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  margin-bottom: 4rem;
+  margin-bottom: ${SpacingL};
+  gap: ${SpacingM};
+  flex-direction: ${(props) => (props.imageLeft ? "row-reverse" : "row")};
+
+  @media (max-width: ${MobileBreakpoint}) {
+    flex-direction: column;
+  }
 `;
 
 const ImageButton = styled.a`
   display: inline-block;
-  width: 15%;
-  margin-right: 20px; /* Adjust the margin as needed */
+  width: 20%;
   animation: ${rotate} 3s infinite linear;
   transition: transform 0.3s ease-in-out;
 
@@ -44,50 +52,33 @@ const ImageButton = styled.a`
     width: 100%;
     height: auto;
   }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 30%;
+  }
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 50%;
+  align-items: flex-start;
+  width: 80%;
   max-width: 1000px;
-`;
 
-const Title = styled.p`
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: ${(props) => props.color || "#000"};
-  margin-bottom: 1rem;
-`;
-
-const Button = styled.button`
-  padding: 1rem;
-  background-color: ${(props) => props.color};
-  color: ${(props) => (props.color === "#D9AFFF" ? "#240059" : "#fff")};
-  font-weight: bold;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-
-  &:hover {
-    background-color: ${(props) =>
-      props.color === "#D9AFFF" ? "#ac4dff" : "#9c1916"};
-    color: #fff;
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 100%;
   }
 `;
 
-const Text = styled.p`
-  width: 50%;
-  margin-bottom: 1rem;
+const Text = styled(Body)`
+  margin-bottom: ${SpacingS};
 `;
 
 export default function HowToParticipate() {
   return (
-    <div>
+    <Section>
       <SectionTitle>How to participate</SectionTitle>
-      <Section>
+      <RoleBlock>
         <ImageButton
           href="https://my.hackupc.com/user/signup/mentor/"
           target="_blank"
@@ -96,7 +87,7 @@ export default function HowToParticipate() {
           <Image src="/planetMentor.svg" alt="altText" width="15" height="15" />
         </ImageButton>
         <TextContainer>
-          <Title color="#E23532">Mentor</Title>
+          <BlockTitle color={Secondary500}>Mentor</BlockTitle>
           <Text>
             Help and motivate hackers with your knowledge. Either because you
             are passionate about it, or if you've graduated more than a year ago
@@ -107,12 +98,12 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button color="#E23532">Apply as Mentor</Button>
+            <GenericButton color={Secondary500}>Apply as Mentor</GenericButton>
           </a>
         </TextContainer>
-      </Section>
+      </RoleBlock>
 
-      <Section style={{ flexDirection: "row-reverse" }}>
+      <RoleBlock imageLeft>
         <ImageButton
           href="https://my.hackupc.com/user/signup/volunteer/"
           target="_blank"
@@ -126,7 +117,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color="#D9AFFF">Volunteer</Title>
+          <BlockTitle color={Primary100}>Volunteer</BlockTitle>
           <Text>
             Volunteers make HackUPC possible by assisting the hackers and
             preparing the event. By joining our team of volunteers, you will get
@@ -138,12 +129,12 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button color="#D9AFFF">Apply as Volunteer</Button>
+            <GenericButton color={Primary100}>Apply as Volunteer</GenericButton>
           </a>
         </TextContainer>
-      </Section>
+      </RoleBlock>
 
-      <Section>
+      <RoleBlock>
         <ImageButton
           href="mailto:logistics@hackupc.com"
           target="_blank"
@@ -157,7 +148,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color="#E23532">Partner</Title>
+          <BlockTitle color={Secondary500}>Partner</BlockTitle>
           <Text>
             Gain visibility for your brand, introduce your products to future
             talents. Join us and be remembered as part of this hackathon by our
@@ -168,12 +159,12 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button color="#E23532">Contact us</Button>
+            <GenericButton color={Secondary500}>Contact us</GenericButton>
           </a>
         </TextContainer>
-      </Section>
+      </RoleBlock>
 
-      <Section style={{ flexDirection: "row-reverse" }}>
+      <RoleBlock imageLeft>
         <ImageButton
           href="mailto:sponsor@hackupc.com"
           target="_blank"
@@ -187,7 +178,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color="#D9AFFF">Sponsor</Title>
+          <BlockTitle color={Primary100}>Sponsor</BlockTitle>
           <Text>
             Don't just put your brand on another wall. Take the chance to shape
             the tech scene of tomorrow by adding real value and making it
@@ -198,10 +189,10 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button color="#D9AFFF">Contact us</Button>
+            <GenericButton color={Primary100}>Contact us</GenericButton>
           </a>
         </TextContainer>
-      </Section>
-    </div>
+      </RoleBlock>
+    </Section>
   );
 }
