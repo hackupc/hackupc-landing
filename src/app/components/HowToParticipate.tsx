@@ -1,13 +1,17 @@
 import React from "react";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { Body, SectionTitle, Title2 } from "@/app/genericComponents/Fonts";
+import { Body, SectionTitle, BlockTitle } from "@/app/genericComponents/Fonts";
 import {
   Mobile,
-  PrimaryColor,
-  SecondaryColor,
+  Primary100,
+  Secondary500,
+  SpacingL,
+  SpacingM,
+  SpacingS,
 } from "@/app/genericComponents/tokens";
 import { GenericButton } from "@/app/genericComponents/Buttons";
+import { Section } from "@/app/genericComponents/General";
 
 const rotate = keyframes`
   0% {
@@ -25,19 +29,19 @@ const RoleBlock = styled.div<{ imageLeft?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 4rem;
-  gap: 100px;
+  margin-bottom: ${SpacingL};
+  gap: ${SpacingL};
   flex-direction: ${(props) => (props.imageLeft ? "row-reverse" : "row")};
 
   @media (max-width: ${Mobile}) {
     flex-direction: column;
-    gap: 50px;
+    gap: ${SpacingM};
   }
 `;
 
 const ImageButton = styled.a`
   display: inline-block;
-  width: 15%;
+  width: 20%;
   margin-right: 20px; /* Adjust the margin as needed */
   animation: ${rotate} 3s infinite linear;
   transition: transform 0.3s ease-in-out;
@@ -60,7 +64,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 50%;
+  width: 80%;
   max-width: 1000px;
 
   @media (max-width: ${Mobile}) {
@@ -68,17 +72,17 @@ const TextContainer = styled.div`
   }
 `;
 
-const Title = styled(Title2)`
+const Title = styled(BlockTitle)`
   color: ${(props) => props.color || "#000"};
 `;
 
 const Text = styled(Body)`
-  margin-bottom: 1rem;
+  margin-bottom: ${SpacingS};
 `;
 
 export default function HowToParticipate() {
   return (
-    <div>
+    <Section>
       <SectionTitle>How to participate</SectionTitle>
       <RoleBlock>
         <ImageButton
@@ -89,7 +93,7 @@ export default function HowToParticipate() {
           <Image src="/planetMentor.svg" alt="altText" width="15" height="15" />
         </ImageButton>
         <TextContainer>
-          <Title color={PrimaryColor}>Mentor</Title>
+          <Title color={Secondary500}>Mentor</Title>
           <Text>
             Help and motivate hackers with your knowledge. Either because you
             are passionate about it, or if you've graduated more than a year ago
@@ -100,7 +104,7 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GenericButton color={PrimaryColor}>Apply as Mentor</GenericButton>
+            <GenericButton color={Secondary500}>Apply as Mentor</GenericButton>
           </a>
         </TextContainer>
       </RoleBlock>
@@ -119,7 +123,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color={SecondaryColor}>Volunteer</Title>
+          <Title color={Primary100}>Volunteer</Title>
           <Text>
             Volunteers make HackUPC possible by assisting the hackers and
             preparing the event. By joining our team of volunteers, you will get
@@ -131,9 +135,7 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GenericButton color={SecondaryColor}>
-              Apply as Volunteer
-            </GenericButton>
+            <GenericButton color={Primary100}>Apply as Volunteer</GenericButton>
           </a>
         </TextContainer>
       </RoleBlock>
@@ -152,7 +154,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color={PrimaryColor}>Partner</Title>
+          <Title color={Secondary500}>Partner</Title>
           <Text>
             Gain visibility for your brand, introduce your products to future
             talents. Join us and be remembered as part of this hackathon by our
@@ -163,7 +165,7 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GenericButton color={PrimaryColor}>Contact us</GenericButton>
+            <GenericButton color={Secondary500}>Contact us</GenericButton>
           </a>
         </TextContainer>
       </RoleBlock>
@@ -182,7 +184,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color={SecondaryColor}>Sponsor</Title>
+          <Title color={Primary100}>Sponsor</Title>
           <Text>
             Don't just put your brand on another wall. Take the chance to shape
             the tech scene of tomorrow by adding real value and making it
@@ -193,10 +195,10 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GenericButton color={SecondaryColor}>Contact us</GenericButton>
+            <GenericButton color={Primary100}>Contact us</GenericButton>
           </a>
         </TextContainer>
       </RoleBlock>
-    </div>
+    </Section>
   );
 }

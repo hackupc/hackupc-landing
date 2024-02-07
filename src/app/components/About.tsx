@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { Body, SectionTitle, Title2 } from "@/app/genericComponents/Fonts";
-import { Mobile } from "@/app/genericComponents/tokens";
+import { Body, SectionTitle, BlockTitle } from "@/app/genericComponents/Fonts";
+import { Mobile, SpacingM } from "@/app/genericComponents/tokens";
+import { Section } from "@/app/genericComponents/General";
 
-const Section = styled.div`
-  background-color: #eaf7ff;
+const SectionStyled = styled(Section)`
+  background-color: rgba(234, 247, 255, 0.9);
   color: #240059;
 `;
 
@@ -23,12 +24,12 @@ const ImgSection = styled.div`
   align-content: center;
   display: flex;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: ${SpacingM};
 `;
 
 export default function About() {
   return (
-    <Section>
+    <SectionStyled>
       <SectionTitle>HackUPC beyond the stars</SectionTitle>
       <Container>
         <div>
@@ -40,7 +41,7 @@ export default function About() {
               alt="Saturn Planet"
             />
           </ImgSection>
-          <Title2>What is a hackathon?</Title2>
+          <BlockTitle>What is a hackathon?</BlockTitle>
           <Body>
             The word hackathon is a combination of the words "<b>HACK</b>
             ", standing for creative problem-solving, and "<b>MARATHON</b>
@@ -60,7 +61,7 @@ export default function About() {
               alt="HackUPC Logo"
             />
           </ImgSection>
-          <Title2>About HackUPC?</Title2>
+          <BlockTitle>About HackUPC?</BlockTitle>
           <Body>
             HackUPC is the first student hackathon in Spain. Once a year, we aim
             to provide a space for students of all experience levels from all
@@ -72,6 +73,6 @@ export default function About() {
           </Body>
         </div>
       </Container>
-    </Section>
+    </SectionStyled>
   );
 }
