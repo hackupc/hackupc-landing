@@ -6,6 +6,14 @@ export const BodyText: string = "18px";
 export const BodyTextMedium: string = "16px";
 export const BodyTextSmall: string = "14px";
 
+// Mobile font sizes
+export const MobileTitleL: string = "32px";
+export const MobileTitleM: string = "26px";
+export const MobileTitleS: string = "20px";
+export const MobileBodyText: string = "18px";
+export const MobileBodyTextMedium: string = "16px";
+export const MobileBodyTextSmall: string = "14px";
+
 // Colors
 export const Primary500: string = "#240059";
 export const Primary400: string = "#410658";
@@ -29,7 +37,7 @@ export const Neutral100: string = "#F9FDFF";
 export const BackgroundWithOpacity: string = "rgba(19, 3, 51, 0.7)";
 
 // Responsive breakpoints
-export const Mobile: string = "640px";
+export const MobileBreakpoint: string = "640px";
 
 // Spacing
 export const SpacingS: string = "16px";

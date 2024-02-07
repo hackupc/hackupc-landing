@@ -3,7 +3,7 @@ import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 import { Body, SectionTitle, BlockTitle } from "@/app/genericComponents/Fonts";
 import {
-  Mobile,
+  MobileBreakpoint,
   Primary100,
   Secondary500,
   SpacingL,
@@ -30,19 +30,17 @@ const RoleBlock = styled.div<{ imageLeft?: boolean }>`
   justify-content: center;
   align-items: center;
   margin-bottom: ${SpacingL};
-  gap: ${SpacingL};
+  gap: ${SpacingM};
   flex-direction: ${(props) => (props.imageLeft ? "row-reverse" : "row")};
 
-  @media (max-width: ${Mobile}) {
+  @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
-    gap: ${SpacingM};
   }
 `;
 
 const ImageButton = styled.a`
   display: inline-block;
   width: 20%;
-  margin-right: 20px; /* Adjust the margin as needed */
   animation: ${rotate} 3s infinite linear;
   transition: transform 0.3s ease-in-out;
 
@@ -55,7 +53,7 @@ const ImageButton = styled.a`
     height: auto;
   }
 
-  @media (max-width: ${Mobile}) {
+  @media (max-width: ${MobileBreakpoint}) {
     width: 30%;
   }
 `;
@@ -67,13 +65,9 @@ const TextContainer = styled.div`
   width: 80%;
   max-width: 1000px;
 
-  @media (max-width: ${Mobile}) {
+  @media (max-width: ${MobileBreakpoint}) {
     width: 100%;
   }
-`;
-
-const Title = styled(BlockTitle)`
-  color: ${(props) => props.color || "#000"};
 `;
 
 const Text = styled(Body)`
@@ -93,7 +87,7 @@ export default function HowToParticipate() {
           <Image src="/planetMentor.svg" alt="altText" width="15" height="15" />
         </ImageButton>
         <TextContainer>
-          <Title color={Secondary500}>Mentor</Title>
+          <BlockTitle color={Secondary500}>Mentor</BlockTitle>
           <Text>
             Help and motivate hackers with your knowledge. Either because you
             are passionate about it, or if you've graduated more than a year ago
@@ -123,7 +117,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color={Primary100}>Volunteer</Title>
+          <BlockTitle color={Primary100}>Volunteer</BlockTitle>
           <Text>
             Volunteers make HackUPC possible by assisting the hackers and
             preparing the event. By joining our team of volunteers, you will get
@@ -154,7 +148,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color={Secondary500}>Partner</Title>
+          <BlockTitle color={Secondary500}>Partner</BlockTitle>
           <Text>
             Gain visibility for your brand, introduce your products to future
             talents. Join us and be remembered as part of this hackathon by our
@@ -184,7 +178,7 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <Title color={Primary100}>Sponsor</Title>
+          <BlockTitle color={Primary100}>Sponsor</BlockTitle>
           <Text>
             Don't just put your brand on another wall. Take the chance to shape
             the tech scene of tomorrow by adding real value and making it
