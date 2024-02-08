@@ -7,11 +7,14 @@ import {
   Primary100,
   Secondary500,
   SpacingL,
-  SpacingM,
   SpacingS,
+  SpacingXL,
 } from "@/app/genericComponents/tokens";
-import { GenericButton } from "@/app/genericComponents/Buttons";
 import { Section } from "@/app/genericComponents/General";
+import {
+  PrimaryOutlineButton,
+  SecondaryOutlineButton,
+} from "@/app/genericComponents/Buttons";
 
 const rotate = keyframes`
   0% {
@@ -30,7 +33,7 @@ const RoleBlock = styled.div<{ imageLeft?: boolean }>`
   justify-content: center;
   align-items: center;
   margin-bottom: ${SpacingL};
-  gap: ${SpacingM};
+  gap: ${SpacingXL};
   flex-direction: ${(props) => (props.imageLeft ? "row-reverse" : "row")};
 
   @media (max-width: ${MobileBreakpoint}) {
@@ -63,7 +66,6 @@ const TextContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 80%;
-  max-width: 1000px;
 
   @media (max-width: ${MobileBreakpoint}) {
     width: 100%;
@@ -93,13 +95,7 @@ export default function HowToParticipate() {
             are passionate about it, or if you've graduated more than a year ago
             and can't participate as a hacker, apply now as a mentor!
           </Text>
-          <a
-            href="https://my.hackupc.com/user/signup/mentor/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GenericButton color={Secondary500}>Apply as Mentor</GenericButton>
-          </a>
+          <SecondaryOutlineButton disabled>CLOSED</SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
@@ -124,13 +120,7 @@ export default function HowToParticipate() {
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
           </Text>
-          <a
-            href="https://my.hackupc.com/user/signup/volunteer/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GenericButton color={Primary100}>Apply as Volunteer</GenericButton>
-          </a>
+          <PrimaryOutlineButton disabled>Closed</PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
@@ -159,7 +149,7 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GenericButton color={Secondary500}>Contact us</GenericButton>
+            <SecondaryOutlineButton>Contact us</SecondaryOutlineButton>
           </a>
         </TextContainer>
       </RoleBlock>
@@ -189,7 +179,7 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GenericButton color={Primary100}>Contact us</GenericButton>
+            <PrimaryOutlineButton>Contact us</PrimaryOutlineButton>
           </a>
         </TextContainer>
       </RoleBlock>
