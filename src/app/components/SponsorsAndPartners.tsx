@@ -30,28 +30,28 @@ const PackageBox = ({ boxWidth, boxHeight }: BoxInput) => styled.div`
 `;
 
 const PetaBox = PackageBox({
-  boxWidth: "math.div(100%, 3)",
-  boxHeight: "8rem",
+  boxWidth: "35%",
+  boxHeight: "12rem",
 });
 const TeraBox = PackageBox({
-  boxWidth: "math.div(100%, 3)",
+  boxWidth: "33.33%",
   boxHeight: "8rem",
 });
 const GigaBox = PackageBox({
-  boxWidth: "100% * 0.25",
-  boxHeight: "8rem * 0.85",
+  boxWidth: "25%",
+  boxHeight: "6.8rem",
 });
 const MegaBox = PackageBox({
-  boxWidth: "100% * 0.2",
-  boxHeight: "8rem * 0.85 * 0.85",
+  boxWidth: "20%",
+  boxHeight: "5.78rem",
 });
 const KiloBox = PackageBox({
-  boxWidth: "math.div(100%, 6)",
-  boxHeight: "8rem * 0.85 * 0.85 * 0.85",
+  boxWidth: "16.667%",
+  boxHeight: "4.913rem",
 });
 const MiliBox = PackageBox({
-  boxWidth: "math.div(100%, 7)",
-  boxHeight: "8rem * 0.85 * 0.85 * 0.85 * 0.85",
+  boxWidth: "14.285%",
+  boxHeight: "4.17605rem",
 });
 
 const SponsorImage = styled.img`
@@ -66,22 +66,55 @@ export default function SponsorsAndPartners() {
   return (
     <Container>
       <Title>Sponsors</Title>
-      <a href="https://www.intel.com" target="_blank" rel="noopener noreferrer">
-        <PetaBox>
-          <SponsorImage src="/Intel.png" alt="Intel Logo" />
-        </PetaBox>
-      </a>
+      <a
+        href="https://www.intel.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      ></a>
+      <PetaBox>
+        <SponsorImage src="/Intel.png" alt="Intel Logo" />
+      </PetaBox>
 
-      <div style={{ display: "flex", gridTemplateColumns: "repeat(2, 1fr)" }}>
-        <GigaBox>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          gridTemplateColumns: "repeat(2, 1fr)",
+        }}
+      >
+        <TeraBox>
           <SponsorImage src="/optiver.png" alt="Optiver Logo" />
+        </TeraBox>
+        <TeraBox>
+          <SponsorImage src="/ESA.png" alt="Esa Logo" />
+        </TeraBox>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          gridTemplateColumns: "repeat(2, 1fr)",
+        }}
+      >
+        <GigaBox>
+          <SponsorImage src="/Optiver.png" alt="Optiver Logo" />
         </GigaBox>
         <GigaBox>
           <SponsorImage src="/ESA.png" alt="ESA Logo" />
         </GigaBox>
       </div>
 
-      <div style={{ display: "flex", gridTemplateColumns: "repeat(4, 1fr)" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          gridTemplateColumns: "repeat(4, 1fr)",
+        }}
+      >
         <MegaBox>
           <SponsorImage src="/vueling.png" alt="Vueling Logo" />
         </MegaBox>
@@ -96,8 +129,50 @@ export default function SponsorsAndPartners() {
         </MegaBox>
       </div>
 
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          gridTemplateColumns: "repeat(3, 1fr)",
+        }}
+      >
+        <KiloBox>
+          <SponsorImage src="/vueling.png" alt="Vueling Logo" />
+        </KiloBox>
+        <KiloBox>
+          <SponsorImage src="/Seidor.png" alt="Seidor Logo" />
+        </KiloBox>
+        <KiloBox>
+          <SponsorImage src="/grafana.png" alt="Grafana Logo" />
+        </KiloBox>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          gridTemplateColumns: "repeat(2, 1fr)",
+        }}
+      >
+        <MiliBox>
+          <SponsorImage src="/vueling.png" alt="Vueling Logo" />
+        </MiliBox>
+        <MiliBox>
+          <SponsorImage src="/Seidor.png" alt="Seidor Logo" />
+        </MiliBox>
+      </div>
+
       <Title>Partners</Title>
-      <div style={{ display: "flex", gridTemplateColumns: "repeat(6, 1fr)" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          gridTemplateColumns: "repeat(6, 1fr)",
+        }}
+      >
         <KiloBox>
           <SponsorImage src="/kitkat.png" alt="KitKat Logo" />
         </KiloBox>
