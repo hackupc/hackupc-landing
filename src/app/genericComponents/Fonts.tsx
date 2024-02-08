@@ -33,12 +33,13 @@ export const SectionTitle = styled.p`
 
 interface BlockTitleProps {
   color?: string;
+  haveMargin?: boolean;
 }
 
 export const BlockTitle = styled.div<BlockTitleProps>`
   font-weight: bold;
   font-size: ${TitleM};
-  margin-bottom: ${SpacingS};
+  margin-bottom: ${(props) => (props.haveMargin ? SpacingS : "0")};
   color: ${(props) => props.color || "white"};
 
   @media (max-width: ${MobileBreakpoint}) {
