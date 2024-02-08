@@ -1,57 +1,62 @@
 import styled from "styled-components";
+import { Section } from "@/app/genericComponents/General";
+import { SectionTitle } from "@/app/genericComponents/Fonts";
+import { SpacingL } from "@/app/genericComponents/tokens";
 
-const Container = styled.div`
+const SponsorsBlock = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  align-content: center;
+  margin-bottom: ${SpacingL};
 `;
 
-const Title = styled.h2`
-  text-align: center;
-  font-size: 48px;
-  font-weight: 700;
-  margin: auto;
+const SponsorRow = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 interface BoxInput {
-  boxWidth: string;
-  boxHeight: string;
+  width: string;
+  height: string;
 }
-
-const PackageBox = ({ boxWidth, boxHeight }: BoxInput) => styled.div`
+const PackageBox = ({ width, height }: BoxInput) => styled.div`
   display: flex;
   justify-content: center;
   margin: 15px;
-  width: ${boxWidth};
-  height: ${boxHeight};
+  width: ${width};
+  height: ${height};
   overflow: hidden;
   background-color: #88a7b7;
   border-radius: 20px;
 `;
 
 const PetaBox = PackageBox({
-  boxWidth: "35%",
-  boxHeight: "12rem",
+  width: "160px",
+  height: "144px",
 });
 const TeraBox = PackageBox({
-  boxWidth: "33.33%",
-  boxHeight: "8rem",
+  width: "128px",
+  height: "112px",
 });
 const GigaBox = PackageBox({
-  boxWidth: "25%",
-  boxHeight: "6.8rem",
+  width: "120px",
+  height: "104px",
 });
 const MegaBox = PackageBox({
-  boxWidth: "20%",
-  boxHeight: "5.78rem",
+  width: "112px",
+  height: "96px",
 });
 const KiloBox = PackageBox({
-  boxWidth: "16.667%",
-  boxHeight: "4.913rem",
+  width: "104px",
+  height: "88px",
 });
 const MiliBox = PackageBox({
-  boxWidth: "14.285%",
-  boxHeight: "4.17605rem",
+  width: "96px",
+  height: "80px",
 });
 
 const SponsorImage = styled.img`
@@ -64,134 +69,79 @@ const SponsorImage = styled.img`
 
 export default function SponsorsAndPartners() {
   return (
-    <Container>
-      <Title>Sponsors</Title>
-      <a
-        href="https://www.intel.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      ></a>
-      <PetaBox>
-        <SponsorImage src="/Intel.png" alt="Intel Logo" />
-      </PetaBox>
+    <Section>
+      <SectionTitle>Sponsors</SectionTitle>
+      <SponsorsBlock>
+        <SponsorRow>
+          <PetaBox>
+            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          </PetaBox>
+        </SponsorRow>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          gridTemplateColumns: "repeat(2, 1fr)",
-        }}
-      >
-        <TeraBox>
-          <SponsorImage src="/optiver.png" alt="Optiver Logo" />
-        </TeraBox>
-        <TeraBox>
-          <SponsorImage src="/ESA.png" alt="Esa Logo" />
-        </TeraBox>
-      </div>
+        <SponsorRow>
+          <GigaBox>
+            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          </GigaBox>
+          <GigaBox>
+            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          </GigaBox>
+        </SponsorRow>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          gridTemplateColumns: "repeat(2, 1fr)",
-        }}
-      >
-        <GigaBox>
-          <SponsorImage src="/Optiver.png" alt="Optiver Logo" />
-        </GigaBox>
-        <GigaBox>
-          <SponsorImage src="/ESA.png" alt="ESA Logo" />
-        </GigaBox>
-      </div>
+        <SponsorRow>
+          <MegaBox>
+            <SponsorImage src="/Sponsors/grafana.png" alt="Grafana Logo" />
+          </MegaBox>
+          <MegaBox>
+            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          </MegaBox>
+          <MegaBox>
+            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          </MegaBox>
+          <MegaBox>
+            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          </MegaBox>
+        </SponsorRow>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          gridTemplateColumns: "repeat(4, 1fr)",
-        }}
-      >
-        <MegaBox>
-          <SponsorImage src="/vueling.png" alt="Vueling Logo" />
-        </MegaBox>
-        <MegaBox>
-          <SponsorImage src="/Seidor.png" alt="Seidor Logo" />
-        </MegaBox>
-        <MegaBox>
-          <SponsorImage src="/grafana.png" alt="Grafana Logo" />
-        </MegaBox>
-        <MegaBox>
-          <SponsorImage src="/Restb.png" alt="Restb.ai Logo" />
-        </MegaBox>
-      </div>
+        <SponsorRow>
+          <KiloBox>
+            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          </KiloBox>
+          <KiloBox>
+            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          </KiloBox>
+          <KiloBox>
+            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          </KiloBox>
+        </SponsorRow>
+      </SponsorsBlock>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          gridTemplateColumns: "repeat(3, 1fr)",
-        }}
-      >
+      <SectionTitle>Partners</SectionTitle>
+      <SponsorRow>
         <KiloBox>
-          <SponsorImage src="/vueling.png" alt="Vueling Logo" />
+          <SponsorImage src="/Partners/upc.svg" alt="UPC Logo" />
         </KiloBox>
         <KiloBox>
-          <SponsorImage src="/Seidor.png" alt="Seidor Logo" />
+          <SponsorImage src="/Partners/fib.svg" alt="FIB Logo" />
         </KiloBox>
         <KiloBox>
-          <SponsorImage src="/grafana.png" alt="Grafana Logo" />
-        </KiloBox>
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          gridTemplateColumns: "repeat(2, 1fr)",
-        }}
-      >
-        <MiliBox>
-          <SponsorImage src="/vueling.png" alt="Vueling Logo" />
-        </MiliBox>
-        <MiliBox>
-          <SponsorImage src="/Seidor.png" alt="Seidor Logo" />
-        </MiliBox>
-      </div>
-
-      <Title>Partners</Title>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          gridTemplateColumns: "repeat(6, 1fr)",
-        }}
-      >
-        <KiloBox>
-          <SponsorImage src="/kitkat.png" alt="KitKat Logo" />
+          <SponsorImage src="/Partners/telecos.png" alt="Telecos Logo" />
         </KiloBox>
         <KiloBox>
-          <SponsorImage src="/kitkat.png" alt="KitKat Logo" />
+          <SponsorImage src="/Partners/cfis.svg" alt="CFIS Logo" />
         </KiloBox>
         <KiloBox>
-          <SponsorImage src="/kitkat.png" alt="KitKat Logo" />
+          <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
         </KiloBox>
         <KiloBox>
-          <SponsorImage src="/kitkat.png" alt="KitKat Logo" />
+          <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
         </KiloBox>
         <KiloBox>
-          <SponsorImage src="/kitkat.png" alt="KitKat Logo" />
+          <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
         </KiloBox>
         <KiloBox>
-          <SponsorImage src="/kitkat.png" alt="KitKat Logo" />
+          <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
         </KiloBox>
-      </div>
-    </Container>
+      </SponsorRow>
+    </Section>
   );
 }
