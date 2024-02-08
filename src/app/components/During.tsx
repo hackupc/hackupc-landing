@@ -1,59 +1,48 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { Section } from "@/app/genericComponents/General";
+import { BlockTitle, Body, SectionTitle } from "@/app/genericComponents/Fonts";
+import {
+  MobileBreakpoint,
+  Secondary500,
+  SpacingS,
+  SpacingXS,
+} from "@/app/genericComponents/tokens";
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 48px auto;
-  max-width: 1000px;
-  position: relative;
-  text-align: center;
-`;
-const Title = styled.h2`
-  text-align: center;
-  font-size: 48px;
-  font-weight: 700;
-  margin: auto;
-`;
-const Info = styled.h3`
-  margin-top: 48px;
-  text-align: center;
-`;
 const TheMission = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
   position: relative;
   text-align: center;
 `;
 const ImageContainer = styled.div`
-  margin: auto;
-  position: relative;
+  justify-content: center;
+  justify-items: center;
 `;
-const SpecialTitle = styled.div`
+const TextWrapper = styled.div`
   text-align: center;
-  margin: auto;
-  font-size: 48px;
-  font-weight: 500;
+  justify-content: center;
+  gap: ${SpacingXS};
   font-style: oblique;
   display: inline-flex;
+  @media (max-width: ${MobileBreakpoint}) {
+    flex-direction: column;
+    gap: 0;
+  }
 `;
-const ColoredSpecialTitle = styled(SpecialTitle)`
-  color: #e23532;
-  margin-right: 16px;
+const StyledTitle = styled(BlockTitle)`
+  margin-bottom: ${SpacingS};
 `;
-const Description = styled.p`
-  font-size: 18px;
-  font-weight: 700;
-  margin: 16px 0;
+const StyledBodyText = styled(Body)`
+  max-width: 1000px;
 `;
 export default function During() {
   return (
-    <ContentWrapper>
-      <Title>DURING THE EVENT</Title>
-      <Info>
+    <Section>
+      <SectionTitle>DURING THE EVENT</SectionTitle>
+      <Body>
         Coding is the main part of HackUPC, but we have many more activities
-      </Info>
+      </Body>
       <ImageContainer>
         <Image
           src="/activities.svg"
@@ -63,16 +52,16 @@ export default function During() {
         />
       </ImageContainer>
       <TheMission>
-        <SpecialTitle>
-          <ColoredSpecialTitle>THE MISSION:</ColoredSpecialTitle>
-          HACKUPC
-        </SpecialTitle>
-        <Description>
+        <TextWrapper>
+          <StyledTitle color={Secondary500}>THE MISSION:</StyledTitle>
+          <StyledTitle>HACKUPC</StyledTitle>
+        </TextWrapper>
+        <StyledBodyText>
           Get ready for your weekend mission! HackUPC is like a space race full
           of activities. Have fun, complete the objectives, and get fantastic
           surprises. Will you be able to travel beyond the stars?
-        </Description>
+        </StyledBodyText>
       </TheMission>
-    </ContentWrapper>
+    </Section>
   );
 }

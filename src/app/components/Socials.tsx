@@ -11,60 +11,59 @@ import {
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { Section } from "@/app/genericComponents/General";
+import { BlockTitle, SectionTitle } from "@/app/genericComponents/Fonts";
+import {
+  MobileBreakpoint,
+  Secondary500,
+  SpacingM,
+  SpacingS,
+  SpacingXS,
+} from "@/app/genericComponents/tokens";
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  max-width: 1000px;
-  position: relative;
+const StyledSectionTitle = styled(SectionTitle)`
+  margin-bottom: ${SpacingS};
+`;
+const StyledBlockTitle = styled(BlockTitle)`
+  margin-bottom: 0;
   text-align: center;
-  padding: 32px;
 `;
-
-const Title = styled.h2`
-  text-align: center;
-  font-size: 48px;
-  font-weight: 700;
+const Subtitle = styled.div`
   display: flex;
-  margin: auto;
-  padding-bottom: 8px;
-`;
-const Content = styled.div`
-  display: inline-flex;
-  white-space: nowrap;
-  color: red;
-  font-size: 28px;
-  font-weight: 600;
-  margin: auto;
-  padding: 8px 48px;
-`;
-const SocialsList = styled.ul`
-  position: relative;
-  align-items: center;
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  gap: ${SpacingS};
+  margin-bottom: ${SpacingM};
   justify-content: center;
-  padding: 8px 16px;
-  border: 1.5px solid #fff;
-  border-radius: 32px;
+  align-items: center;
+  @media (max-width: ${MobileBreakpoint}) {
+    flex-direction: column-reverse;
+    gap: ${SpacingXS};
+  }
+`;
+const SocialsList = styled.div`
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${SpacingM};
+  justify-content: space-around;
+  padding: ${SpacingXS} ${SpacingS};
+  max-width: 1000px;
 `;
 
-const SocialItem = styled.li`
+const SocialItem = styled.div`
   text-align: center;
-  margin: auto;
-  display: flex;
 `;
 
 export default function Socials() {
   return (
-    <ContentWrapper>
-      <Title>Stay tuned, and don't miss a bit</Title>
-      <Content>
-        Check our social media networks.
+    <Section>
+      <StyledSectionTitle>Stay tuned, and don't miss a bit</StyledSectionTitle>
+      <Subtitle>
+        <StyledBlockTitle color={Secondary500}>
+          Check our social media networks
+        </StyledBlockTitle>
         <Image src="/telescope.svg" alt="Telescope" width={40} height={40} />
-      </Content>
+      </Subtitle>
+
       <SocialsList>
         <SocialItem>
           <a
@@ -137,6 +136,6 @@ export default function Socials() {
           </a>
         </SocialItem>
       </SocialsList>
-    </ContentWrapper>
+    </Section>
   );
 }
