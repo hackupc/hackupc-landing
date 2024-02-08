@@ -24,16 +24,12 @@ import {
 const StyledSectionTitle = styled(SectionTitle)`
   margin-bottom: ${SpacingS};
 `;
-const StyledBlockTitle = styled(BlockTitle)`
-  margin-bottom: 0;
-  text-align: center;
-`;
 const Subtitle = styled.div`
   display: flex;
   gap: ${SpacingS};
   margin-bottom: ${SpacingM};
-  justify-content: center;
   align-items: center;
+  text-align: center;
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column-reverse;
     gap: ${SpacingXS};
@@ -46,7 +42,6 @@ const SocialsList = styled.div`
   gap: ${SpacingM};
   justify-content: space-around;
   padding: ${SpacingXS} ${SpacingS};
-  max-width: 1000px;
 `;
 
 const SocialItem = styled.div`
@@ -58,9 +53,9 @@ export default function Socials() {
     <Section>
       <StyledSectionTitle>Stay tuned, and don't miss a bit</StyledSectionTitle>
       <Subtitle>
-        <StyledBlockTitle color={Secondary500}>
+        <BlockTitle color={Secondary500}>
           Check our social media networks
-        </StyledBlockTitle>
+        </BlockTitle>
         <Image src="/telescope.svg" alt="Telescope" width={40} height={40} />
       </Subtitle>
 
