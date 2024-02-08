@@ -33,7 +33,7 @@ const ButtonGeneric = styled.button<ButtonProps>`
 
   @media (max-width: ${MobileBreakpoint}) {
     padding: ${SpacingS};
-    width: ${(props) => props.width && "100%"};
+    width: 100%;
   }
 `;
 

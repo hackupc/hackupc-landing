@@ -38,6 +38,7 @@ const RoleBlock = styled.div<{ imageLeft?: boolean }>`
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
+    gap: ${SpacingS};
   }
 `;
 
@@ -144,13 +145,15 @@ export default function HowToParticipate() {
             talents. Join us and be remembered as part of this hackathon by our
             participants!
           </Text>
-          <a
-            href="mailto:logistics@hackupc.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SecondaryOutlineButton>Contact us</SecondaryOutlineButton>
-          </a>
+          <SecondaryOutlineButton>
+            <a
+              href="mailto:logistics@hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact us
+            </a>
+          </SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
@@ -174,13 +177,15 @@ export default function HowToParticipate() {
             the tech scene of tomorrow by adding real value and making it
             possible for hackers to build something they're proud of.
           </Text>
-          <a
-            href="mailto:sponsor@hackupc.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <PrimaryOutlineButton>Contact us</PrimaryOutlineButton>
-          </a>
+          <PrimaryOutlineButton>
+            <a
+              href="mailto:sponsor@hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact us
+            </a>
+          </PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
     </Section>

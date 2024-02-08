@@ -10,6 +10,9 @@ import {
   MobileTitleL,
   MobileTitleM,
   MobileTitleS,
+  Primary300,
+  Primary400,
+  Primary500,
   SpacingM,
   SpacingS,
   TitleL,
@@ -57,6 +60,25 @@ export const Body = styled.div`
     font-size: ${MobileBodyText};
   }
 `;
+
+export const BodyLink = styled.a`
+  font-size: ${BodyText};
+  font-weight: 700;
+  color: ${Primary300};
+
+  &:hover {
+    color: ${Primary400};
+  }
+
+  &:active {
+    color: ${Primary500};
+  }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileBodyText};
+  }
+`;
+
 export const BodyBold = styled.div`
   font-size: ${BodyText};
   font-weight: 700;
