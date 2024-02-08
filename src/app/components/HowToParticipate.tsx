@@ -90,7 +90,9 @@ export default function HowToParticipate() {
           <Image src="/planetMentor.svg" alt="altText" width="15" height="15" />
         </ImageButton>
         <TextContainer>
-          <BlockTitle color={Secondary500}>Mentor</BlockTitle>
+          <BlockTitle color={Secondary500} haveMargin>
+            Mentor
+          </BlockTitle>
           <Text>
             Help and motivate hackers with your knowledge. Either because you
             are passionate about it, or if you've graduated more than a year ago
@@ -114,7 +116,9 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <BlockTitle color={Primary100}>Volunteer</BlockTitle>
+          <BlockTitle color={Primary100} haveMargin>
+            Volunteer
+          </BlockTitle>
           <Text>
             Volunteers make HackUPC possible by assisting the hackers and
             preparing the event. By joining our team of volunteers, you will get
@@ -139,7 +143,9 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <BlockTitle color={Secondary500}>Partner</BlockTitle>
+          <BlockTitle color={Secondary500} haveMargin>
+            Partner
+          </BlockTitle>
           <Text>
             Gain visibility for your brand, introduce your products to future
             talents. Join us and be remembered as part of this hackathon by our
@@ -171,7 +177,9 @@ export default function HowToParticipate() {
           />
         </ImageButton>
         <TextContainer>
-          <BlockTitle color={Primary100}>Sponsor</BlockTitle>
+          <BlockTitle color={Primary100} haveMargin>
+            Sponsor
+          </BlockTitle>
           <Text>
             Don't just put your brand on another wall. Take the chance to shape
             the tech scene of tomorrow by adding real value and making it

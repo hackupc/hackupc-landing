@@ -45,7 +45,9 @@ export default function About() {
                 alt="Saturn Planet"
               />
             </ImgSection>
-            <BlockTitle color={Primary500}>What is a hackathon?</BlockTitle>
+            <BlockTitle color={Primary500} haveMargin>
+              What is a hackathon?
+            </BlockTitle>
             <Body>
               The word hackathon is a combination of the words "<b>HACK</b>",
               standing for creative problem-solving, and "<b>MARATHON</b>".
@@ -65,7 +67,9 @@ export default function About() {
                 alt="HackUPC Logo"
               />
             </ImgSection>
-            <BlockTitle color={Primary500}>About HackUPC?</BlockTitle>
+            <BlockTitle color={Primary500} haveMargin>
+              About HackUPC?
+            </BlockTitle>
             <Body>
               HackUPC is the first student hackathon in Spain. Once a year, we
               aim to provide students of <b>all experience levels</b> from{" "}
