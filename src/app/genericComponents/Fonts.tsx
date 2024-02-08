@@ -59,6 +59,13 @@ export const Body = styled.div`
     font-size: ${MobileBodyText};
   }
 `;
+export const BodyBold = styled.div`
+  font-size: ${BodyText};
+  font-weight: 700;
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileBodyText};
+  }
+`;
 
 export const BodyMedium = styled.div`
   font-size: ${BodyTextMedium};
