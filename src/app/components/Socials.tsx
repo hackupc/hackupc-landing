@@ -22,11 +22,6 @@ import {
   SpacingXS,
 } from "@/app/genericComponents/tokens";
 
-const ContentWrapper = styled(Section)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 const StyledSectionTitle = styled(SectionTitle)`
   margin-bottom: ${SpacingS};
 `;
@@ -61,7 +56,7 @@ const SocialItem = styled.div`
 
 export default function Socials() {
   return (
-    <ContentWrapper>
+    <Section>
       <StyledSectionTitle>Stay tuned, and don't miss a bit</StyledSectionTitle>
       <Subtitle>
         <StyledBlockTitle color={Secondary500}>
@@ -142,6 +137,6 @@ export default function Socials() {
           </a>
         </SocialItem>
       </SocialsList>
-    </ContentWrapper>
+    </Section>
   );
 }

@@ -12,6 +12,10 @@ interface SectionProps {
 
 export const Section = styled.div<SectionProps>`
   padding: ${SpacingL};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background-color: ${(props) =>
     props.haveBackground ? BackgroundWithOpacity : "transparent"};
 `;
