@@ -21,6 +21,8 @@ export const Primary300: string = "#7F27A2";
 export const Primary200: string = "#C379E0";
 export const Primary100: string = "#E3C3FF";
 
+export const Secondary800: string = "#9F1D15";
+export const Secondary600: string = "#E4281D";
 export const Secondary500: string = "#E23532";
 export const Secondary400: string = "#FC5C5A";
 export const Secondary300: string = "#FF8886";
