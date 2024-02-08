@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Fonts";
-import { SpacingL } from "@/app/genericComponents/tokens";
+import { SpacingL, SpacingS } from "@/app/genericComponents/tokens";
 
 const SponsorsBlock = styled.div`
   display: flex;
@@ -35,39 +35,38 @@ const PackageBox = ({ width, height }: BoxInput) => styled.div`
 `;
 
 const PetaBox = PackageBox({
-  width: "160px",
-  height: "144px",
+  width: "200px",
+  height: "136px",
 });
 /*
 const TeraBox = PackageBox({
-  width: "128px",
-  height: "112px",
+  width: "144px",
+  height: "104px",
 });
 */
 const GigaBox = PackageBox({
-  width: "120px",
-  height: "104px",
-});
-const MegaBox = PackageBox({
-  width: "112px",
+  width: "136px",
   height: "96px",
 });
-const KiloBox = PackageBox({
-  width: "104px",
+const MegaBox = PackageBox({
+  width: "128px",
   height: "88px",
 });
-/*
-const MiliBox = PackageBox({
-  width: "96px",
+const KiloBox = PackageBox({
+  width: "120px",
   height: "80px",
 });
-*/
+const MiliBox = PackageBox({
+  width: "112px",
+  height: "72px",
+});
+
 const SponsorImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
   box-sizing: border-box;
-  padding: 10px;
+  padding: ${SpacingS};
 `;
 
 export default function SponsorsAndPartners() {
@@ -120,30 +119,30 @@ export default function SponsorsAndPartners() {
 
       <SectionTitle>Partners</SectionTitle>
       <SponsorRow>
-        <KiloBox>
+        <MiliBox>
           <SponsorImage src="/Partners/upc.svg" alt="UPC Logo" />
-        </KiloBox>
-        <KiloBox>
+        </MiliBox>
+        <MiliBox>
           <SponsorImage src="/Partners/fib.svg" alt="FIB Logo" />
-        </KiloBox>
-        <KiloBox>
+        </MiliBox>
+        <MiliBox>
           <SponsorImage src="/Partners/telecos.png" alt="Telecos Logo" />
-        </KiloBox>
-        <KiloBox>
+        </MiliBox>
+        <MiliBox>
           <SponsorImage src="/Partners/cfis.svg" alt="CFIS Logo" />
-        </KiloBox>
-        <KiloBox>
+        </MiliBox>
+        <MiliBox>
           <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
-        </KiloBox>
-        <KiloBox>
+        </MiliBox>
+        <MiliBox>
           <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
-        </KiloBox>
-        <KiloBox>
+        </MiliBox>
+        <MiliBox>
           <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
-        </KiloBox>
-        <KiloBox>
+        </MiliBox>
+        <MiliBox>
           <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
-        </KiloBox>
+        </MiliBox>
       </SponsorRow>
     </Section>
   );
