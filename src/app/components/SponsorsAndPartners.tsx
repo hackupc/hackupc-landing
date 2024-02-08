@@ -38,10 +38,12 @@ const PetaBox = PackageBox({
   width: "160px",
   height: "144px",
 });
+/*
 const TeraBox = PackageBox({
   width: "128px",
   height: "112px",
 });
+*/
 const GigaBox = PackageBox({
   width: "120px",
   height: "104px",
@@ -54,11 +56,12 @@ const KiloBox = PackageBox({
   width: "104px",
   height: "88px",
 });
+/*
 const MiliBox = PackageBox({
   width: "96px",
   height: "80px",
 });
-
+*/
 const SponsorImage = styled.img`
   width: 100%;
   height: 100%;

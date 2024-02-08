@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { Body, BodyBold, SectionTitle } from "@/app/genericComponents/Fonts";
 import { PrimaryButton } from "@/app/genericComponents/Buttons";
