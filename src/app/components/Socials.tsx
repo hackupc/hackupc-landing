@@ -16,7 +16,6 @@ import { BlockTitle, SectionTitle } from "@/app/genericComponents/Fonts";
 import {
   MobileBreakpoint,
   Secondary500,
-  SpacingL,
   SpacingM,
   SpacingS,
   SpacingXS,

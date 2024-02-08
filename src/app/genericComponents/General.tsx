@@ -2,8 +2,6 @@ import styled from "styled-components";
 import {
   BackgroundWithOpacity,
   SpacingL,
-  SpacingXS,
-  SpacingM,
 } from "@/app/genericComponents/tokens";
 
 interface SectionProps {

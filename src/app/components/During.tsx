@@ -5,7 +5,6 @@ import { BlockTitle, Body, SectionTitle } from "@/app/genericComponents/Fonts";
 import {
   MobileBreakpoint,
   Secondary500,
-  SpacingM,
   SpacingS,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
