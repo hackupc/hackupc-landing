@@ -10,7 +10,6 @@ import {
   MobileTitleL,
   MobileTitleM,
   MobileTitleS,
-  SpacingL,
   SpacingM,
   SpacingS,
   TitleL,
@@ -22,7 +21,7 @@ export const SectionTitle = styled.p`
   font-size: ${TitleL};
   text-align: center;
   font-weight: bold;
-  margin-bottom: ${SpacingL};
+  margin-bottom: ${SpacingM};
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileTitleL};

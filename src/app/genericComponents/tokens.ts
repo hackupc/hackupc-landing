@@ -40,9 +40,11 @@ export const BackgroundWithOpacity: string = "rgba(19, 3, 51, 0.7)";
 
 // Responsive breakpoints
 export const MobileBreakpoint: string = "640px";
+export const MaxScreenSize: string = "1200px";
 
 // Spacing
 export const SpacingXS: string = "8px";
 export const SpacingS: string = "16px";
 export const SpacingM: string = "32px";
 export const SpacingL: string = "64px";
+export const SpacingXL: string = "96px";
