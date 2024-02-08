@@ -25,7 +25,6 @@ export const SectionTitle = styled.p`
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileTitleL};
-    margin-bottom: ${SpacingM};
   }
 `;
 

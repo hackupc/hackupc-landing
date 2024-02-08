@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
   BodyText,
+  MobileBreakpoint,
   Primary100,
   Primary200,
   Primary300,
@@ -18,7 +19,7 @@ import {
 } from "@/app/genericComponents/tokens";
 
 interface ButtonProps {
-  fullWidth?: string;
+  width?: string;
 }
 
 const ButtonGeneric = styled.button<ButtonProps>`
@@ -26,9 +27,14 @@ const ButtonGeneric = styled.button<ButtonProps>`
   border-radius: ${SpacingXS};
   text-transform: uppercase;
   font-size: ${BodyText};
-  width: ${(props) => (props.fullWidth ? "80%" : "fit-content")};
+  width: ${(props) => props.width || "fit-content"};
   margin-top: ${SpacingS};
   cursor: pointer;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    padding: ${SpacingS};
+    width: ${(props) => props.width && "100%"};
+  }
 `;
 
 export const SecondaryButton = styled(ButtonGeneric)`
