@@ -2,7 +2,9 @@ import styled from "styled-components";
 import {
   BackgroundWithOpacity,
   MaxScreenSize,
+  MobileBreakpoint,
   SpacingL,
+  SpacingM,
 } from "@/app/genericComponents/tokens";
 
 interface SectionProps {
@@ -28,4 +30,8 @@ export const Section = styled.div`
   align-content: center;
   max-width: ${MaxScreenSize};
   margin: 0 auto;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    padding: ${SpacingL} ${SpacingM};
+  }
 `;

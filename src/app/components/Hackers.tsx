@@ -1,58 +1,77 @@
 import styled from "styled-components";
 import React from "react";
+import Image from "next/image";
+import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { Body, SectionTitle, SmallTitle } from "@/app/genericComponents/Fonts";
+import {
+  MobileBreakpoint,
+  SpacingM,
+  SpacingS,
+} from "@/app/genericComponents/tokens";
+import { PrimaryOutlineButton } from "@/app/genericComponents/Buttons";
 
-const Title = styled.h1`
-  font-size: 44px;
+const StyledImage = styled(Image)`
+  width: 100%;
 `;
-const Section = styled.div`
-  align-content: center;
+
+const InformationBlock = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${SpacingM};
+
+  @media (max-width: ${MobileBreakpoint}) {
+    flex-direction: column;
+  }
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${SpacingS};
+`;
+
+const StyledSmallTitle = styled(SmallTitle)`
+  margin-bottom: ${SpacingM};
   text-align: center;
-  background-color: #12042ab3;
-`;
-const Description = styled.p`
-  padding: 10px;
-  font-size: 28px;
-`;
-const Button = styled.a`
-  padding: 10px 24px 10px 24px;
-  border-radius: 10px;
-  background-color: #c379e0;
-  display: inline-block;
-  margin-top: 30px;
-`;
-
-const Image = styled.img`
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: ${(props) => props.width || "15%"};
 `;
 
 export default function Hackers() {
   return (
-    <Section>
-      <Title>The organization behind HackUPC</Title>
+    <SectionBackground haveBackground>
+      <Section>
+        <SectionTitle>The organization behind HackUPC</SectionTitle>
 
-      <Description>
-        Hackers@UPC is a non-profit student organization at Universitat
-        Politècnica de Catalunya.
-      </Description>
+        <StyledSmallTitle>
+          Hackers@UPC is a non-profit student organization at Universitat
+          Politècnica de Catalunya.
+        </StyledSmallTitle>
 
-      <Image
-        src="/hackersatupc.svg"
-        alt="Logotype of HackersAtUPC"
-        width="375px"
-      />
+        <InformationBlock>
+          <StyledImage
+            src="/hackersatupc.svg"
+            alt="Logotype of HackersAtUPC"
+            width={100}
+            height={100}
+          />
+          <TextContainer>
+            <Body>
+              Throughout the year, we organize national and international events
+              in order to promote science and technology among students and
+              create a great community in the technological world.
+            </Body>
+            <Body>
+              Our mission is to foster learning, designing, and building to turn
+              students' ideas into a reality!
+            </Body>
+          </TextContainer>
+        </InformationBlock>
 
-      <Description>
-        Throughout the year, we organize national and international events in
-        order to promote science and technology among students and create a
-        great community in the technological world.
-      </Description>
-      <Description>
-        Our mission is to foster learning, designing, and building to turn
-        students' ideas into a reality!
-      </Description>
-      <Button href="https://hackersatupc.org">Go to website</Button>
-    </Section>
+        <PrimaryOutlineButton>
+          <a href="https://hackersatupc.org" target="_blank" rel="noreferrer">
+            Go to website
+          </a>
+        </PrimaryOutlineButton>
+      </Section>
+    </SectionBackground>
   );
 }
