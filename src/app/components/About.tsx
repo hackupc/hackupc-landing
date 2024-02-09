@@ -22,6 +22,9 @@ const Container = styled.div`
     flex-direction: column;
   }
 `;
+const Col = styled.div`
+  flex: 1
+`;
 
 const ImgSection = styled.div`
   align-content: center;
@@ -51,7 +54,7 @@ export default function About() {
         <SectionStyled>
           <SectionTitle>HackUPC beyond the stars</SectionTitle>
           <Container>
-            <div>
+            <Col>
               <ImgSection>
                 <Image
                   src="/saturnPlanet.svg"
@@ -69,11 +72,11 @@ export default function About() {
                 These are awesome events full of creativity, technology, and
                 passionate tech-related students of different skill levels
                 collaborating and creating. During a certain period of time,
-                attendees work in <b>teams</b> to develop apps, games, robots…
-                literally anything you want to <b>build & learn</b> about!
+                attendees work in <b>TEAMS</b> to develop apps, games, robots…
+                literally anything you want to <b>BUILD & LEARN</b> about!
               </Body>
-            </div>
-            <div>
+            </Col>
+            <Col>
               <ImgSection>
                 <Image
                   src="/hackupcLogo.svg"
@@ -83,7 +86,7 @@ export default function About() {
                 />
               </ImgSection>
               <BlockTitle color={Primary500} haveMargin>
-                About HackUPC?
+                About HackUPC
               </BlockTitle>
               <Body>
                 HackUPC is the first student hackathon in Spain. Once a year, we
@@ -92,7 +95,7 @@ export default function About() {
                 and learn new skills, meet awesome people, and have an overall
                 great experience!
               </Body>
-            </div>
+            </Col>
           </Container>
         </SectionStyled>
       </SectionBackground>
