@@ -19,7 +19,13 @@ import {
   SpacingXS,
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
-import { BlockTitle, Body, SectionTitle } from "@/app/genericComponents/Fonts";
+import {
+  BlockTitle,
+  Body,
+  BodyBold,
+  BodyLink,
+  SectionTitle,
+} from "@/app/genericComponents/Fonts";
 
 const Split = styled.div`
   display: flex;
@@ -54,9 +60,8 @@ const Question = styled.div`
   gap: ${SpacingS};
 `;
 
-const QuestionTitle = styled(Body)`
+const QuestionTitle = styled(BodyBold)`
   margin-bottom: ${SpacingXS};
-  font-weight: 700;
 `;
 
 const LastBlock = styled.div`
@@ -146,16 +151,21 @@ export default function FAQs() {
         </ColumnsQuestions>
       </Split>
       <LastBlock>
-        <BlockTitle color={Secondary500}>
+        <BlockTitle color={Secondary500} haveMargin>
           What if I have another question?
         </BlockTitle>
         <Body style={{ paddingBottom: SpacingS }}>
-          DM or tag us on X @hackupc or, if you want to contact us via email,
-          drop us a line at contact@hackupc.com.
+          DM us on instagram or X @hackupc or, if you want to contact us via
+          email, drop us a line at{" "}
+          <BodyLink href="mailto:contact@hackupc.com">
+            contact@hackupc.com
+          </BodyLink>
         </Body>
         <Body>
-          If your issue is related to Travel Reimbursment, write us at
-          reimbursements@hackupc.com
+          If your issue is related to Travel Reimbursement, write us at{" "}
+          <BodyLink href="mailto:reimbursements@hackupc.com">
+            reimbursements@hackupc.com
+          </BodyLink>
         </Body>
       </LastBlock>
     </Section>

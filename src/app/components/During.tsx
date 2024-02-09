@@ -25,13 +25,14 @@ const TextWrapper = styled.div`
   gap: ${SpacingXS};
   font-style: oblique;
   display: inline-flex;
+  margin-bottom: ${SpacingS};
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
     gap: 0;
   }
 `;
 const StyledTitle = styled(BlockTitle)`
-  margin-bottom: ${SpacingS};
+  margin-bottom: 0;
 `;
 const StyledBodyText = styled(Body)`
   max-width: 1000px;

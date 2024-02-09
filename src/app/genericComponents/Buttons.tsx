@@ -1,47 +1,45 @@
 import styled from "styled-components";
 import {
   BodyText,
+  MobileBreakpoint,
+  Primary100,
+  Primary200,
+  Primary300,
+  Primary400,
+  Primary500,
   Secondary100,
+  Secondary200,
   Secondary300,
   Secondary500,
   Secondary600,
   Secondary800,
-  SpacingM,
+  SpacingL,
   SpacingS,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
 
 interface ButtonProps {
-  color: string;
+  width?: string;
 }
 
-export const GenericButton = styled.button<ButtonProps>`
-  padding: 1rem;
-  background-color: ${(props) => props.color};
-  color: ${(props) => (props.color === "#D9AFFF" ? "#240059" : "#fff")};
-  font-weight: bold;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-
-  &:hover {
-    background-color: ${(props) =>
-      props.color === "#D9AFFF" ? "#ac4dff" : "#9c1916"};
-    color: #fff;
-  }
-`;
-
-export const PrimaryButton = styled.button`
-  padding: ${SpacingS} ${SpacingM};
-  background-color: ${Secondary500};
-  border: none;
+const ButtonGeneric = styled.button<ButtonProps>`
+  padding: ${SpacingS} ${SpacingL};
   border-radius: ${SpacingXS};
   text-transform: uppercase;
   font-size: ${BodyText};
-  width: fit-content;
+  width: ${(props) => props.width || "fit-content"};
   margin-top: ${SpacingS};
   cursor: pointer;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    padding: ${SpacingS};
+    width: 100%;
+  }
+`;
+
+export const SecondaryButton = styled(ButtonGeneric)`
+  border: none;
+  background-color: ${Secondary500};
   color: white;
 
   &:hover {
@@ -52,6 +50,69 @@ export const PrimaryButton = styled.button`
   }
   &:disabled {
     background-color: ${Secondary100};
+    color: ${Secondary300};
+  }
+`;
+
+export const PrimaryButton = styled(ButtonGeneric)`
+  border: none;
+  background-color: ${Primary300};
+  color: ${Primary100};
+
+  &:hover {
+    background-color: ${Primary400};
+    color: white;
+  }
+  &:active {
+    background-color: ${Primary500};
+    color: white;
+  }
+  &:disabled {
+    background-color: ${Primary100};
+    color: ${Primary300};
+  }
+`;
+
+export const PrimaryOutlineButton = styled(ButtonGeneric)`
+  background-color: transparent;
+  border: 2px solid ${Primary100};
+  color: ${Primary100};
+
+  &:hover {
+    background-color: ${Primary100};
+    border-color: ${Primary500};
+    color: ${Primary500};
+  }
+  &:active {
+    background-color: ${Primary200};
+    border-color: ${Primary500};
+    color: ${Primary500};
+  }
+  &:disabled {
+    background-color: ${Primary100};
+    border-color: ${Primary200};
+    color: ${Primary300};
+  }
+`;
+
+export const SecondaryOutlineButton = styled(ButtonGeneric)`
+  background-color: transparent;
+  border: 2px solid ${Secondary500};
+  color: ${Secondary500};
+
+  &:hover {
+    background-color: ${Secondary100};
+    border-color: ${Secondary500};
+    color: ${Secondary500};
+  }
+  &:active {
+    background-color: ${Secondary200};
+    border-color: ${Secondary500};
+    color: ${Secondary500};
+  }
+  &:disabled {
+    background-color: ${Secondary100};
+    border-color: ${Secondary200};
     color: ${Secondary300};
   }
 `;

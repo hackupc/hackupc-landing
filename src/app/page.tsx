@@ -12,10 +12,14 @@ import SponsorsAndPartners from "@/app/components/SponsorsAndPartners";
 import Hackers from "@/app/components/Hackers";
 // TODO: import ThroughTheYears from "@/app/components/ThroughTheYears";
 import Hero from "./components/Hero";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
+import ThroughTheYears from "@/app/components/ThroughTheYears";
 
 export default function Home() {
   return (
     <main>
+      <Header />
       <Hero />
       <About />
       <HowToParticipate />
@@ -27,7 +31,8 @@ export default function Home() {
       <Socials />
       <SponsorsAndPartners />
       <Hackers />
-      {/* TODO: <ThroughTheYears /> */}
+      <ThroughTheYears />
+      <Footer />
     </main>
   );
 }

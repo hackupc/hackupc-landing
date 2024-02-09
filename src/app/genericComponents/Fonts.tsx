@@ -10,7 +10,9 @@ import {
   MobileTitleL,
   MobileTitleM,
   MobileTitleS,
-  SpacingL,
+  Primary300,
+  Primary400,
+  Primary500,
   SpacingM,
   SpacingS,
   TitleL,
@@ -22,22 +24,22 @@ export const SectionTitle = styled.p`
   font-size: ${TitleL};
   text-align: center;
   font-weight: bold;
-  margin-bottom: ${SpacingL};
+  margin-bottom: ${SpacingM};
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileTitleL};
-    margin-bottom: ${SpacingM};
   }
 `;
 
 interface BlockTitleProps {
   color?: string;
+  haveMargin?: boolean;
 }
 
 export const BlockTitle = styled.div<BlockTitleProps>`
   font-weight: bold;
   font-size: ${TitleM};
-  margin-bottom: ${SpacingS};
+  margin-bottom: ${(props) => (props.haveMargin ? SpacingS : "0")};
   color: ${(props) => props.color || "white"};
 
   @media (max-width: ${MobileBreakpoint}) {
@@ -59,6 +61,25 @@ export const Body = styled.div`
     font-size: ${MobileBodyText};
   }
 `;
+
+export const BodyLink = styled.a`
+  font-size: ${BodyText};
+  font-weight: 700;
+  color: ${Primary300};
+
+  &:hover {
+    color: ${Primary400};
+  }
+
+  &:active {
+    color: ${Primary500};
+  }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileBodyText};
+  }
+`;
+
 export const BodyBold = styled.div`
   font-size: ${BodyText};
   font-weight: 700;

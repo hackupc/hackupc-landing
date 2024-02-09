@@ -7,11 +7,14 @@ import {
   Primary100,
   Secondary500,
   SpacingL,
-  SpacingM,
   SpacingS,
+  SpacingXL,
 } from "@/app/genericComponents/tokens";
-import { GenericButton } from "@/app/genericComponents/Buttons";
 import { Section } from "@/app/genericComponents/General";
+import {
+  PrimaryOutlineButton,
+  SecondaryOutlineButton,
+} from "@/app/genericComponents/Buttons";
 
 const rotate = keyframes`
   0% {
@@ -30,11 +33,12 @@ const RoleBlock = styled.div<{ imageLeft?: boolean }>`
   justify-content: center;
   align-items: center;
   margin-bottom: ${SpacingL};
-  gap: ${SpacingM};
+  gap: ${SpacingXL};
   flex-direction: ${(props) => (props.imageLeft ? "row-reverse" : "row")};
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
+    gap: ${SpacingS};
   }
 `;
 
@@ -63,7 +67,6 @@ const TextContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 80%;
-  max-width: 1000px;
 
   @media (max-width: ${MobileBreakpoint}) {
     width: 100%;
@@ -80,57 +83,78 @@ export default function HowToParticipate() {
       <SectionTitle>How to participate</SectionTitle>
       <RoleBlock>
         <ImageButton
-          href="https://my.hackupc.com/user/signup/mentor/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image src="/planetMentor.svg" alt="altText" width="15" height="15" />
-        </ImageButton>
-        <TextContainer>
-          <BlockTitle color={Secondary500}>Mentor</BlockTitle>
-          <Text>
-            Help and motivate hackers with your knowledge. Either because you
-            are passionate about it, or if you've graduated more than a year ago
-            and can't participate as a hacker, apply now as a mentor!
-          </Text>
-          <a
-            href="https://my.hackupc.com/user/signup/mentor/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GenericButton color={Secondary500}>Apply as Mentor</GenericButton>
-          </a>
-        </TextContainer>
-      </RoleBlock>
-
-      <RoleBlock imageLeft>
-        <ImageButton
-          href="https://my.hackupc.com/user/signup/volunteer/"
+          //href="https://my.hackupc.com/user/signup/mentor/"
+          href={"javascript:void(0);"}
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
-            src="/planetVolunteer.svg"
+            src="/Planets/planetMentor.svg"
             alt="altText"
             width="15"
             height="15"
           />
         </ImageButton>
         <TextContainer>
-          <BlockTitle color={Primary100}>Volunteer</BlockTitle>
+          <BlockTitle color={Secondary500} haveMargin>
+            Mentor
+          </BlockTitle>
+          <Text>
+            Help and motivate hackers with your knowledge. Either because you
+            are passionate about it, or if you've graduated more than a year ago
+            and can't participate as a hacker, apply now as a mentor!
+          </Text>
+          <SecondaryOutlineButton disabled>
+            {/*
+            <a
+              href="https://my.hackupc.com/user/signup/mentor/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apply as a volunteer
+            </a>
+            */}
+            CLOSED
+          </SecondaryOutlineButton>
+        </TextContainer>
+      </RoleBlock>
+
+      <RoleBlock imageLeft>
+        <ImageButton
+          //href="https://my.hackupc.com/user/signup/volunteer/"
+          href="javascript:void(0);"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/Planets/planetVolunteer.svg"
+            alt="altText"
+            width="15"
+            height="15"
+          />
+        </ImageButton>
+        <TextContainer>
+          <BlockTitle color={Primary100} haveMargin>
+            Volunteer
+          </BlockTitle>
           <Text>
             Volunteers make HackUPC possible by assisting the hackers and
             preparing the event. By joining our team of volunteers, you will get
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
           </Text>
-          <a
-            href="https://my.hackupc.com/user/signup/volunteer/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GenericButton color={Primary100}>Apply as Volunteer</GenericButton>
-          </a>
+          <PrimaryOutlineButton disabled>
+            {/*
+            <a
+              href="https://my.hackupc.com/user/signup/volunteer/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apply as a volunteer
+            </a>
+            */}
+            Closed
+          </PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
@@ -141,26 +165,30 @@ export default function HowToParticipate() {
           rel="noopener noreferrer"
         >
           <Image
-            src="/planetPartner.svg"
+            src="/Planets/planetPartner.svg"
             alt="altText"
             width="15"
             height="15"
           />
         </ImageButton>
         <TextContainer>
-          <BlockTitle color={Secondary500}>Partner</BlockTitle>
+          <BlockTitle color={Secondary500} haveMargin>
+            Partner
+          </BlockTitle>
           <Text>
             Gain visibility for your brand, introduce your products to future
             talents. Join us and be remembered as part of this hackathon by our
             participants!
           </Text>
-          <a
-            href="mailto:logistics@hackupc.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GenericButton color={Secondary500}>Contact us</GenericButton>
-          </a>
+          <SecondaryOutlineButton>
+            <a
+              href="mailto:logistics@hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact us
+            </a>
+          </SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
@@ -171,26 +199,30 @@ export default function HowToParticipate() {
           rel="noopener noreferrer"
         >
           <Image
-            src="/planetSponsor.svg"
+            src="/Planets/planetSponsor.svg"
             alt="altText"
             width="15"
             height="15"
           />
         </ImageButton>
         <TextContainer>
-          <BlockTitle color={Primary100}>Sponsor</BlockTitle>
+          <BlockTitle color={Primary100} haveMargin>
+            Sponsor
+          </BlockTitle>
           <Text>
             Don't just put your brand on another wall. Take the chance to shape
             the tech scene of tomorrow by adding real value and making it
             possible for hackers to build something they're proud of.
           </Text>
-          <a
-            href="mailto:sponsor@hackupc.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GenericButton color={Primary100}>Contact us</GenericButton>
-          </a>
+          <PrimaryOutlineButton>
+            <a
+              href="mailto:sponsor@hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact us
+            </a>
+          </PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
     </Section>
