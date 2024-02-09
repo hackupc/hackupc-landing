@@ -57,7 +57,8 @@ export default function Hackers() {
             <Body>
               Throughout the year, we organize national and international events
               in order to promote science and technology among students and
-              create a great community in the technological world.
+              create a great community in the technological world. We also
+              attend hackathons worldwide as a team.
             </Body>
             <Body>
               Our mission is to foster learning, designing, and building to turn

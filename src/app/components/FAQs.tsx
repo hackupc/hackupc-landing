@@ -162,7 +162,7 @@ export default function FAQs() {
           </BodyLink>
         </Body>
         <Body>
-          If your issue is related to Travel Reimbursment, write us at{" "}
+          If your issue is related to Travel Reimbursement, write us at{" "}
           <BodyLink href="mailto:reimbursements@hackupc.com">
             reimbursements@hackupc.com
           </BodyLink>
