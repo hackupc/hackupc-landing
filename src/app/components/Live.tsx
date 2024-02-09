@@ -22,7 +22,15 @@ export default function Live() {
           during HackUPC.
         </Body>
       </TextContainer>
-      <PrimaryButton disabled>Comming soon...</PrimaryButton>
+      <PrimaryButton>
+        <a
+          href="https://live.hackupc.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Check last year's live
+        </a>
+      </PrimaryButton>
     </Section>
   );
 }

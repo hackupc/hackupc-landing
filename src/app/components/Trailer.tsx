@@ -48,8 +48,27 @@ export default function TrailerSection() {
           />
         </VideoWrapper>
         <ButtonContainer>
-          <SecondaryButton width={"60%"}>Apply as a hacker</SecondaryButton>
-          <PrimaryButton width={"60%"}>Apply as a volunteer</PrimaryButton>
+          <SecondaryButton width={"60%"}>
+            <a
+              href="https://my.hackupc.com/user/signup/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apply as a hacker
+            </a>
+          </SecondaryButton>
+          <PrimaryButton width={"60%"} disabled>
+            {/*
+            <a
+              href="https://my.hackupc.com/user/signup/volunteer/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apply as a volunteer
+            </a>
+            */}
+            Volunteers coming soon...
+          </PrimaryButton>
         </ButtonContainer>
       </Section>
     </SectionBackground>
