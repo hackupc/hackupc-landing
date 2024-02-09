@@ -36,7 +36,12 @@ export default function Provide() {
         <SectionTitle>We also provide...</SectionTitle>
         <BlockWrapper>
           <ProvideBlock>
-            <Image src="/hotdog.svg" width={80} height={80} alt="Hotdog icon" />
+            <Image
+              src="/Provide/food-icon.svg"
+              width={80}
+              height={80}
+              alt="Food icon"
+            />
             <BlockTitle color={Secondary500}>Food</BlockTitle>
             <Body>
               We’ve got you completely covered, we even have midnight snacks.
@@ -44,7 +49,12 @@ export default function Provide() {
             </Body>
           </ProvideBlock>
           <ProvideBlock>
-            <Image src="/bed.svg" width={80} height={80} alt="Bed icon" />
+            <Image
+              src="/Provide/sleeping-icon.svg"
+              width={80}
+              height={80}
+              alt="Sleeping icon"
+            />
             <BlockTitle color={Secondary500}>Sleeping</BlockTitle>
             <Body>
               We will provide air mattresses both nights so you can boost your
@@ -52,7 +62,12 @@ export default function Provide() {
             </Body>
           </ProvideBlock>
           <ProvideBlock>
-            <Image src="/oldTv.svg" width={80} height={80} alt="Old TV icon" />
+            <Image
+              src="/Provide/sponsors-icon.svg"
+              width={80}
+              height={80}
+              alt="Sponsors icon"
+            />
             <BlockTitle color={Secondary500}>Sponsors</BlockTitle>
             <Body>
               You can also visit our sponsors' stands or meet them remotely!
@@ -62,10 +77,10 @@ export default function Provide() {
           </ProvideBlock>
           <ProvideBlock>
             <Image
-              src="/antenna.svg"
+              src="/Provide/live-icon.svg"
               width={80}
               height={80}
-              alt="Broadcast antenna icon"
+              alt="Live icon"
             />
             <BlockTitle color={Secondary500}>Live</BlockTitle>
             <Body>

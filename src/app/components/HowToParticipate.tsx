@@ -87,7 +87,12 @@ export default function HowToParticipate() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/planetMentor.svg" alt="altText" width="15" height="15" />
+          <Image
+            src="/Planets/planetMentor.svg"
+            alt="altText"
+            width="15"
+            height="15"
+          />
         </ImageButton>
         <TextContainer>
           <BlockTitle color={Secondary500} haveMargin>
@@ -109,7 +114,7 @@ export default function HowToParticipate() {
           rel="noopener noreferrer"
         >
           <Image
-            src="/planetVolunteer.svg"
+            src="/Planets/planetVolunteer.svg"
             alt="altText"
             width="15"
             height="15"
@@ -136,7 +141,7 @@ export default function HowToParticipate() {
           rel="noopener noreferrer"
         >
           <Image
-            src="/planetPartner.svg"
+            src="/Planets/planetPartner.svg"
             alt="altText"
             width="15"
             height="15"
@@ -170,7 +175,7 @@ export default function HowToParticipate() {
           rel="noopener noreferrer"
         >
           <Image
-            src="/planetSponsor.svg"
+            src="/Planets/planetSponsor.svg"
             alt="altText"
             width="15"
             height="15"
