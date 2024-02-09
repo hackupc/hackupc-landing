@@ -23,7 +23,7 @@ const Container = styled.div`
   }
 `;
 const Col = styled.div`
-  flex: 1
+  flex: 1;
 `;
 
 const ImgSection = styled.div`
@@ -38,7 +38,7 @@ const Smoke = styled(Image)`
   height: auto;
 `;
 const FixedSmoke = styled(Smoke)`
-  margin-bottom:-5px;
+  margin-bottom: -5px;
 `;
 
 export default function About() {
