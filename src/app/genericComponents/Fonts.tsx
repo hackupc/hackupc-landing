@@ -10,9 +10,9 @@ import {
   MobileTitleL,
   MobileTitleM,
   MobileTitleS,
+  Primary200,
   Primary300,
-  Primary400,
-  Primary500,
+  Secondary200,
   SpacingM,
   SpacingS,
   TitleL,
@@ -65,14 +65,15 @@ export const Body = styled.div`
 export const BodyLink = styled.a`
   font-size: ${BodyText};
   font-weight: 700;
-  color: ${Primary300};
+  color: ${Primary200};
+  cursor: pointer;
 
   &:hover {
-    color: ${Primary400};
+    color: ${Primary300};
   }
 
   &:active {
-    color: ${Primary500};
+    color: ${Secondary200};
   }
 
   @media (max-width: ${MobileBreakpoint}) {
