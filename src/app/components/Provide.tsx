@@ -1,12 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
-import {
-  BlockTitle,
-  Body,
-  BodyLink,
-  SectionTitle,
-} from "@/app/genericComponents/Fonts";
+import { BlockTitle, Body, SectionTitle } from "@/app/genericComponents/Fonts";
 import {
   Secondary500,
   SpacingM,
@@ -73,22 +68,6 @@ export default function Provide() {
               You can also visit our sponsors' stands or meet them remotely!
               They'll be available during the day and would love to talk to you!
               (you may even get some swag as well)
-            </Body>
-          </ProvideBlock>
-          <ProvideBlock>
-            <Image
-              src="/Provide/live-icon.svg"
-              width={80}
-              height={80}
-              alt="Live icon"
-            />
-            <BlockTitle color={Secondary500}>Live</BlockTitle>
-            <Body>
-              When and where will all of this happen? Check out our{" "}
-              <BodyLink href="javascript:void(0)">live page</BodyLink> to find
-              it out! It will be available before HackUPC so that you can
-              prepare everything you might need! And during to check out all the
-              activities happening
             </Body>
           </ProvideBlock>
         </BlockWrapper>
