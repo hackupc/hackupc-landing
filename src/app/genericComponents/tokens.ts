@@ -39,7 +39,8 @@ export const Neutral100: string = "#F9FDFF";
 export const BackgroundWithOpacity: string = "rgba(19, 3, 51, 0.7)";
 
 // Responsive breakpoints
-export const MobileBreakpoint: string = "640px";
+export const MobilePixels: number = 640;
+export const MobileBreakpoint: string = MobilePixels + "px";
 export const MaxScreenSize: string = "1200px";
 
 // Spacing

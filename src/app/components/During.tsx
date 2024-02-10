@@ -4,10 +4,12 @@ import { Section } from "@/app/genericComponents/General";
 import { BlockTitle, Body, SectionTitle } from "@/app/genericComponents/Fonts";
 import {
   MobileBreakpoint,
+  MobilePixels,
   Secondary500,
   SpacingS,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
+import { useEffect, useState } from "react";
 
 const TheMission = styled.div`
   display: flex;
@@ -37,6 +39,31 @@ const StyledTitle = styled(BlockTitle)`
 const StyledBodyText = styled(Body)`
   max-width: 1000px;
 `;
+
+const ActivitiesImage = () => {
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Update window width on mount and resize
+    const updateWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    updateWindowWidth(); // Set initial width
+    window.addEventListener("resize", updateWindowWidth);
+
+    // Cleanup listener on component unmount
+    return () => window.removeEventListener("resize", updateWindowWidth);
+  }, [windowWidth]);
+
+  const image =
+    windowWidth || 0 >= MobilePixels
+      ? "/activitiesDesktop.svg"
+      : "/activitiesMobile.svg";
+
+  return <Image src={image} alt="The Mission" height={500} width={700} />;
+};
+
 export default function During() {
   return (
     <Section>
@@ -45,12 +72,7 @@ export default function During() {
         Coding is the main part of HackUPC, but we have many more activities
       </Body>
       <ImageContainer>
-        <Image
-          src="/activities.svg"
-          alt="The Mission"
-          height={500}
-          width={700}
-        />
+        <ActivitiesImage />
       </ImageContainer>
       <TheMission>
         <TextWrapper>
