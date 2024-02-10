@@ -83,8 +83,7 @@ export default function HowToParticipate() {
       <SectionTitle>How to participate</SectionTitle>
       <RoleBlock>
         <ImageButton
-          //href="https://my.hackupc.com/user/signup/mentor/"
-          href={"javascript:void(0);"}
+          href="https://my.hackupc.com/user/signup/mentor/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -104,8 +103,7 @@ export default function HowToParticipate() {
             are passionate about it, or if you've graduated more than a year ago
             and can't participate as a hacker, apply now as a mentor!
           </Text>
-          <SecondaryOutlineButton disabled>
-            {/*
+          <SecondaryOutlineButton>
             <a
               href="https://my.hackupc.com/user/signup/mentor/"
               target="_blank"
@@ -113,16 +111,13 @@ export default function HowToParticipate() {
             >
               Apply as a volunteer
             </a>
-            */}
-            CLOSED
           </SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
       <RoleBlock imageLeft>
         <ImageButton
-          //href="https://my.hackupc.com/user/signup/volunteer/"
-          href="javascript:void(0);"
+          href="https://my.hackupc.com/user/signup/volunteer/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -143,8 +138,7 @@ export default function HowToParticipate() {
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
           </Text>
-          <PrimaryOutlineButton disabled>
-            {/*
+          <PrimaryOutlineButton>
             <a
               href="https://my.hackupc.com/user/signup/volunteer/"
               target="_blank"
@@ -152,8 +146,6 @@ export default function HowToParticipate() {
             >
               Apply as a volunteer
             </a>
-            */}
-            Closed
           </PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
