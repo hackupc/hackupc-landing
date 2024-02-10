@@ -10,9 +10,9 @@ import {
   MobileTitleL,
   MobileTitleM,
   MobileTitleS,
+  Primary200,
   Primary300,
-  Primary400,
-  Primary500,
+  Secondary200,
   SpacingM,
   SpacingS,
   TitleL,
@@ -20,7 +20,7 @@ import {
   TitleS,
 } from "@/app/genericComponents/tokens";
 
-export const SectionTitle = styled.p`
+export const SectionTitle = styled.div`
   font-size: ${TitleL};
   text-align: center;
   font-weight: bold;
@@ -46,7 +46,7 @@ export const BlockTitle = styled.div<BlockTitleProps>`
     font-size: ${MobileTitleM};
   }
 `;
-export const SmallTitle = styled.p`
+export const SmallTitle = styled.div`
   font-size: ${TitleS};
 
   @media (max-width: ${MobileBreakpoint}) {
@@ -65,14 +65,15 @@ export const Body = styled.div`
 export const BodyLink = styled.a`
   font-size: ${BodyText};
   font-weight: 700;
-  color: ${Primary300};
+  color: ${Primary200};
+  cursor: pointer;
 
   &:hover {
-    color: ${Primary400};
+    color: ${Primary300};
   }
 
   &:active {
-    color: ${Primary500};
+    color: ${Secondary200};
   }
 
   @media (max-width: ${MobileBreakpoint}) {
