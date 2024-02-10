@@ -20,7 +20,7 @@ import {
   TitleS,
 } from "@/app/genericComponents/tokens";
 
-export const SectionTitle = styled.p`
+export const SectionTitle = styled.div`
   font-size: ${TitleL};
   text-align: center;
   font-weight: bold;
@@ -46,7 +46,7 @@ export const BlockTitle = styled.div<BlockTitleProps>`
     font-size: ${MobileTitleM};
   }
 `;
-export const SmallTitle = styled.p`
+export const SmallTitle = styled.div`
   font-size: ${TitleS};
 
   @media (max-width: ${MobileBreakpoint}) {
