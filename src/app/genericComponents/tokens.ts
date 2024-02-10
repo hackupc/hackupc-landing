@@ -43,6 +43,7 @@ export const MobileBreakpoint: string = "640px";
 export const MaxScreenSize: string = "1200px";
 
 // Spacing
+export const SpacingXXS: string = "4px";
 export const SpacingXS: string = "8px";
 export const SpacingS: string = "16px";
 export const SpacingM: string = "32px";

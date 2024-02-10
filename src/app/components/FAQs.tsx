@@ -17,6 +17,7 @@ import {
   SpacingM,
   SpacingS,
   SpacingXS,
+  SpacingXXS,
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
 import {
@@ -26,6 +27,7 @@ import {
   BodyLink,
   SectionTitle,
 } from "@/app/genericComponents/Fonts";
+import { AnswerOptions } from "@/app/data/interfaces";
 
 const Split = styled.div`
   display: flex;
@@ -62,6 +64,7 @@ const Question = styled.div`
 
 const QuestionTitle = styled(BodyBold)`
   margin-bottom: ${SpacingXS};
+  cursor: pointer;
 `;
 
 const LastBlock = styled.div`
@@ -69,7 +72,7 @@ const LastBlock = styled.div`
   margin-top: ${SpacingM};
 `;
 
-const StyledBody = styled(Body)<{ isVisible: boolean }>`
+const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
   transform-origin: top;
   transition:
     transform 0.5s ease,
@@ -89,6 +92,56 @@ const StyledBody = styled(Body)<{ isVisible: boolean }>`
     `}
 `;
 
+const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
+  cursor: pointer;
+  margin-top: ${SpacingXXS};
+`;
+
+function renderAnswer(answers: AnswerOptions[]) {
+  return answers.map((answer, index) => {
+    switch (answer.type) {
+      case "Link":
+        return (
+          <BodyLink key={index} href={answer.link} rel="noopener noreferrer">
+            {answer.answer}
+          </BodyLink>
+        );
+      case "Enumeration":
+        return (
+          <>
+            <Body style={{ paddingBottom: SpacingXS }}>
+              {parse(answer.answer)}
+            </Body>
+            <ol style={{ paddingLeft: SpacingM }}>
+              {answer.options?.map((option) => (
+                <li style={{ paddingBottom: SpacingXS }} key={option}>
+                  {parse(option)}
+                </li>
+              ))}
+            </ol>
+          </>
+        );
+      case "List":
+        return (
+          <>
+            <Body style={{ paddingBottom: SpacingXS }}>
+              {parse(answer.answer)}
+            </Body>
+            <ul style={{ paddingLeft: SpacingM }}>
+              {answer.options?.map((option) => (
+                <li style={{ paddingBottom: SpacingXS }} key={option}>
+                  {parse(option)}
+                </li>
+              ))}
+            </ul>
+          </>
+        );
+      default:
+        return <span>{parse(answer.answer)}</span>;
+    }
+  });
+}
+
 export default function FAQs() {
   const [activeFaqId, setActiveFaqId] = useState<null | number>(null);
 
@@ -105,17 +158,19 @@ export default function FAQs() {
           <QuestionsBlock>
             <BlockTitle color={Secondary500}>About HackUPC</BlockTitle>
             {hackupc_faqs.map((faq) => (
-              <Question key={faq.id} onClick={() => toggleFaq(faq.id)}>
-                <FontAwesomeIcon
+              <Question key={faq.id}>
+                <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  style={{ marginTop: 4 }}
                   color={activeFaqId === faq.id ? Secondary500 : Primary100}
+                  onClick={() => toggleFaq(faq.id)}
                 />
                 <div>
-                  <QuestionTitle>{faq.question}</QuestionTitle>
-                  <StyledBody isVisible={activeFaqId === faq.id}>
-                    {parse(faq.answer)}
-                  </StyledBody>
+                  <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                    {faq.question}
+                  </QuestionTitle>
+                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                    {renderAnswer(faq.answer)}
+                  </QuestionAnswer>
                 </div>
               </Question>
             ))}
@@ -123,17 +178,19 @@ export default function FAQs() {
           <QuestionsBlock>
             <BlockTitle color={Secondary500}>Travel Reimbursement</BlockTitle>
             {travel_faqs.map((faq) => (
-              <Question key={faq.id} onClick={() => toggleFaq(faq.id)}>
-                <FontAwesomeIcon
+              <Question key={faq.id}>
+                <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  style={{ marginTop: 4 }}
                   color={activeFaqId === faq.id ? Secondary500 : Primary100}
+                  onClick={() => toggleFaq(faq.id)}
                 />
                 <div>
-                  <QuestionTitle>{faq.question}</QuestionTitle>
-                  <StyledBody isVisible={activeFaqId === faq.id}>
-                    {parse(faq.answer)}
-                  </StyledBody>
+                  <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                    {faq.question}
+                  </QuestionTitle>
+                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                    {renderAnswer(faq.answer)}
+                  </QuestionAnswer>
                 </div>
               </Question>
             ))}
@@ -143,17 +200,19 @@ export default function FAQs() {
           <QuestionsBlock>
             <BlockTitle color={Secondary500}>Applications</BlockTitle>
             {applications_faqs.map((faq) => (
-              <Question key={faq.id} onClick={() => toggleFaq(faq.id)}>
-                <FontAwesomeIcon
+              <Question key={faq.id}>
+                <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  style={{ marginTop: 4 }}
                   color={activeFaqId === faq.id ? Secondary500 : Primary100}
+                  onClick={() => toggleFaq(faq.id)}
                 />
                 <div>
-                  <QuestionTitle>{faq.question}</QuestionTitle>
-                  <StyledBody isVisible={activeFaqId === faq.id}>
-                    {parse(faq.answer)}
-                  </StyledBody>
+                  <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                    {faq.question}
+                  </QuestionTitle>
+                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                    {renderAnswer(faq.answer)}
+                  </QuestionAnswer>
                 </div>
               </Question>
             ))}
@@ -161,17 +220,19 @@ export default function FAQs() {
           <QuestionsBlock>
             <BlockTitle color={Secondary500}>Teams</BlockTitle>
             {teams_faqs.map((faq) => (
-              <Question key={faq.id} onClick={() => toggleFaq(faq.id)}>
-                <FontAwesomeIcon
+              <Question key={faq.id}>
+                <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  style={{ marginTop: 4 }}
                   color={activeFaqId === faq.id ? Secondary500 : Primary100}
+                  onClick={() => toggleFaq(faq.id)}
                 />
                 <div>
-                  <QuestionTitle>{faq.question}</QuestionTitle>
-                  <StyledBody isVisible={activeFaqId === faq.id}>
-                    {parse(faq.answer)}
-                  </StyledBody>
+                  <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                    {faq.question}
+                  </QuestionTitle>
+                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                    {renderAnswer(faq.answer)}
+                  </QuestionAnswer>
                 </div>
               </Question>
             ))}

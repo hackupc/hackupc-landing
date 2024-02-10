@@ -1,5 +1,12 @@
+export interface AnswerOptions {
+  type: "Link" | "Text" | "List" | "Enumeration";
+  answer: string;
+  link?: string;
+  options?: string[];
+}
+
 export interface FAQs {
   id: number;
   question: string;
-  answer: string;
+  answer: AnswerOptions[];
 }
