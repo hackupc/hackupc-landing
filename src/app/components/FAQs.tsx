@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   applications_faqs,
   hackupc_faqs,
@@ -69,6 +69,26 @@ const LastBlock = styled.div`
   margin-top: ${SpacingM};
 `;
 
+const StyledBody = styled(Body)<{ isVisible: boolean }>`
+  transform-origin: top;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  transform: scaleY(0);
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+
+  ${(props) =>
+    props.isVisible &&
+    css`
+      transform: scaleY(1);
+      opacity: 1;
+      height: auto;
+      visibility: visible;
+    `}
+`;
+
 export default function FAQs() {
   const [activeFaqId, setActiveFaqId] = useState<null | number>(null);
 
@@ -93,7 +113,9 @@ export default function FAQs() {
                 />
                 <div>
                   <QuestionTitle>{faq.question}</QuestionTitle>
-                  {activeFaqId === faq.id && <Body>{parse(faq.answer)}</Body>}
+                  <StyledBody isVisible={activeFaqId === faq.id}>
+                    {parse(faq.answer)}
+                  </StyledBody>
                 </div>
               </Question>
             ))}
@@ -109,7 +131,9 @@ export default function FAQs() {
                 />
                 <div>
                   <QuestionTitle>{faq.question}</QuestionTitle>
-                  {activeFaqId === faq.id && <Body>{parse(faq.answer)}</Body>}
+                  <StyledBody isVisible={activeFaqId === faq.id}>
+                    {parse(faq.answer)}
+                  </StyledBody>
                 </div>
               </Question>
             ))}
@@ -127,7 +151,9 @@ export default function FAQs() {
                 />
                 <div>
                   <QuestionTitle>{faq.question}</QuestionTitle>
-                  {activeFaqId === faq.id && <Body>{parse(faq.answer)}</Body>}
+                  <StyledBody isVisible={activeFaqId === faq.id}>
+                    {parse(faq.answer)}
+                  </StyledBody>
                 </div>
               </Question>
             ))}
@@ -143,7 +169,9 @@ export default function FAQs() {
                 />
                 <div>
                   <QuestionTitle>{faq.question}</QuestionTitle>
-                  {activeFaqId === faq.id && <Body>{parse(faq.answer)}</Body>}
+                  <StyledBody isVisible={activeFaqId === faq.id}>
+                    {parse(faq.answer)}
+                  </StyledBody>
                 </div>
               </Question>
             ))}
