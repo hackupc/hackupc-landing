@@ -11,6 +11,7 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 `;
 
 const ClickableLogo = styled.div`
