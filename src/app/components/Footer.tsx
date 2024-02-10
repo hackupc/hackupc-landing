@@ -17,6 +17,7 @@ import {
   faInstagram,
   faLinkedin,
   faMedium,
+  faTwitch,
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
@@ -105,6 +106,14 @@ export default function Footer() {
               aria-label="Youtube"
             >
               <FontAwesomeIcon icon={faYoutube} size="lg" />
+            </a>
+            <a
+              href="https://www.twitch.tv/hackersupc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Youtube"
+            >
+              <FontAwesomeIcon icon={faTwitch} size="lg" />
             </a>
             <a
               href="https://medium.com/@hackupc"
