@@ -40,7 +40,7 @@ const StyledBodyText = styled(Body)`
 export default function During() {
   return (
     <Section>
-      <SectionTitle>DURING THE EVENT</SectionTitle>
+      <SectionTitle>During the event</SectionTitle>
       <Body>
         Coding is the main part of HackUPC, but we have many more activities
       </Body>
