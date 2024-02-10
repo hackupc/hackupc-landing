@@ -1,26 +1,28 @@
 import styled from "styled-components";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Fonts";
-import { SpacingM, SpacingS, SpacingXS } from "@/app/genericComponents/tokens";
+import {
+  Neutral500,
+  SpacingM,
+  SpacingS,
+  SpacingXL,
+  SpacingXS,
+} from "@/app/genericComponents/tokens";
 import {
   PrimaryButton,
   SecondaryButton,
 } from "@/app/genericComponents/Buttons";
 
-const VideoWrapper = styled.div`
+/*const VideoWrapper = styled.div`
   position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  width: 80%;
+  padding-top: 45%;  16:9 aspect ratio
   margin-bottom: ${SpacingM};
-`;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: ${SpacingS};
-  width: 100%;
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 100%;
+    padding-top: 56.25%;  16:9 aspect ratio
+  }
 `;
 
 const StyledIframe = styled.iframe`
@@ -32,21 +34,39 @@ const StyledIframe = styled.iframe`
   border-radius: ${SpacingXS};
   border: none;
   overflow: hidden;
+`; */
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: ${SpacingM};
+  gap: ${SpacingS};
+  width: 100%;
 `;
 
-export default function TrailerSection() {
+const VideoNotAvailable = styled.div`
+  padding: ${SpacingXL};
+  background-color: ${Neutral500};
+  text-align: center;
+  border-radius: ${SpacingXS};
+`;
+
+export default function Trailer() {
   return (
     <SectionBackground haveBackground>
       <Section>
         <SectionTitle>Teaser</SectionTitle>
-        <VideoWrapper>
+        <VideoNotAvailable> Teaser coming soon.. </VideoNotAvailable>
+        {/* <VideoWrapper>
           <StyledIframe
             title="Teaser video"
             src="https://www.youtube.com/embed/83RvKXCmcZ8?rel=0&showinfo=0"
             allowFullScreen
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
           />
-        </VideoWrapper>
+        </VideoWrapper> */}
         <ButtonContainer>
           <SecondaryButton width={"60%"}>
             <a
@@ -57,7 +77,7 @@ export default function TrailerSection() {
               Apply as a hacker
             </a>
           </SecondaryButton>
-          <PrimaryButton width={"60%"} disabled>
+          <PrimaryButton width={"60%"} disabled style={{ marginTop: 0 }}>
             {/*
             <a
               href="https://my.hackupc.com/user/signup/volunteer/"
