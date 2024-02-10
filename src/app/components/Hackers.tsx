@@ -18,6 +18,7 @@ const InformationBlock = styled.div`
   display: flex;
   align-items: center;
   gap: ${SpacingM};
+  margin-bottom: ${SpacingS};
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
