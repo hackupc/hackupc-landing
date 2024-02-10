@@ -34,7 +34,7 @@ export default function Header() {
         }}
       >
         <Image
-          src="/hackupc_unrevealed.svg"
+          src="/hackupcLogoWhite.svg"
           alt="hackupc-logo"
           height={30}
           width={30}
