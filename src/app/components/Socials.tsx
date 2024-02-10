@@ -7,7 +7,9 @@ import {
   faFacebook,
   faGithub,
   faInstagram,
+  faLinkedin,
   faMedium,
+  faTwitch,
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
@@ -65,6 +67,16 @@ export default function Socials() {
         <SocialsList>
           <SocialItem>
             <a
+              href="mailto:contact@hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+            >
+              <FontAwesomeIcon icon={faEnvelope} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
               href="https://twitter.com/hackupc"
               target="_blank"
               rel="noopener noreferrer"
@@ -95,12 +107,12 @@ export default function Socials() {
           </SocialItem>
           <SocialItem>
             <a
-              href="mailto:contact@hackupc.com"
+              href="https://linkedin.com/company/hack-upc"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
             >
-              <FontAwesomeIcon icon={faEnvelope} size="3x" />
+              <FontAwesomeIcon icon={faLinkedin} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
@@ -111,6 +123,16 @@ export default function Socials() {
               aria-label="Youtube"
             >
               <FontAwesomeIcon icon={faYoutube} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
+              href="https://www.twitch.tv/hackersupc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Youtube"
+            >
+              <FontAwesomeIcon icon={faTwitch} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
