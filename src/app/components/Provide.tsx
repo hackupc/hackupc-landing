@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
-import { BlockTitle, Body, SectionTitle } from "@/app/genericComponents/Fonts";
+import {
+  BlockTitle,
+  Body,
+  SectionTitle,
+} from "@/app/genericComponents/Typography";
 import {
   Secondary500,
   SpacingM,

@@ -14,7 +14,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
-import { BlockTitle, SectionTitle } from "@/app/genericComponents/Fonts";
+import { BlockTitle, SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   Secondary500,

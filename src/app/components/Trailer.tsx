@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
-import { SectionTitle } from "@/app/genericComponents/Fonts";
+import { SectionTitle } from "@/app/genericComponents/Typography";
 import {
   Neutral300,
   Neutral500,
@@ -9,10 +9,10 @@ import {
   SpacingXL,
 } from "@/app/genericComponents/tokens";
 import {
-  ButtonLinkContainer,
   PrimaryButton,
   SecondaryButton,
 } from "@/app/genericComponents/Buttons";
+import { silom } from "@/app/genericComponents/fonts";
 
 /*const VideoWrapper = styled.div`
   position: relative;
@@ -98,24 +98,24 @@ export default function Trailer() {
             allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
           />
         </VideoWrapper> */}
-        <ButtonContainer>
-          <ButtonLinkContainer
+        <ButtonContainer className={silom.className}>
+          <SecondaryButton
+            width={"60%"}
             href="https://my.hackupc.com/user/signup/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ width: "100%" }}
           >
-            <SecondaryButton width={"60%"}>Apply as a hacker</SecondaryButton>
-          </ButtonLinkContainer>
-          <ButtonLinkContainer
+            Apply as a hacker
+          </SecondaryButton>
+          <PrimaryButton
             href="https://my.hackupc.com/user/signup/volunteer/"
             target="_blank"
             rel="noopener noreferrer"
+            width={"60%"}
+            style={{ marginTop: 0 }}
           >
-            <PrimaryButton width={"60%"} style={{ marginTop: 0 }}>
-              Apply as a volunteer
-            </PrimaryButton>
-          </ButtonLinkContainer>
+            Apply as a volunteer
+          </PrimaryButton>
         </ButtonContainer>
       </Section>
     </SectionBackground>

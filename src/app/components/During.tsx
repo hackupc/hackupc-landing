@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import { BlockTitle, Body, SectionTitle } from "@/app/genericComponents/Fonts";
+import {
+  BlockTitle,
+  Body,
+  SectionTitle,
+} from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   Secondary500,

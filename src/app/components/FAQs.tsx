@@ -26,7 +26,7 @@ import {
   BodyBold,
   BodyLink,
   SectionTitle,
-} from "@/app/genericComponents/Fonts";
+} from "@/app/genericComponents/Typography";
 import { AnswerOptions } from "@/app/data/interfaces";
 
 const Split = styled.div`
