@@ -1,6 +1,6 @@
 export interface AnswerOptions {
   type: "Link" | "Text" | "List" | "Enumeration";
-  answer: string;
+  content: string;
   link?: string;
   options?: string[];
 }

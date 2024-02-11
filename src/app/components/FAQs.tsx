@@ -103,14 +103,14 @@ function renderAnswer(answers: AnswerOptions[]) {
       case "Link":
         return (
           <BodyLink key={index} href={answer.link} rel="noopener noreferrer">
-            {answer.answer}
+            {answer.content}
           </BodyLink>
         );
       case "Enumeration":
         return (
           <>
             <Body style={{ paddingBottom: SpacingXS }}>
-              {parse(answer.answer)}
+              {parse(answer.content)}
             </Body>
             <ol style={{ paddingLeft: SpacingM }}>
               {answer.options?.map((option) => (
@@ -125,7 +125,7 @@ function renderAnswer(answers: AnswerOptions[]) {
         return (
           <>
             <Body style={{ paddingBottom: SpacingXS }}>
-              {parse(answer.answer)}
+              {parse(answer.content)}
             </Body>
             <ul style={{ paddingLeft: SpacingM }}>
               {answer.options?.map((option) => (
@@ -137,7 +137,7 @@ function renderAnswer(answers: AnswerOptions[]) {
           </>
         );
       default:
-        return <span>{parse(answer.answer)}</span>;
+        return <span>{parse(answer.content)}</span>;
     }
   });
 }
