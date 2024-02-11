@@ -8,10 +8,7 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-import {
-  ButtonLinkContainer,
-  PrimaryOutlineButton,
-} from "@/app/genericComponents/Buttons";
+import { PrimaryOutlineButton } from "@/app/genericComponents/Buttons";
 
 const StyledImage = styled(Image)`
   width: 100%;
@@ -71,13 +68,13 @@ export default function Hackers() {
           </TextContainer>
         </InformationBlock>
 
-        <ButtonLinkContainer
+        <PrimaryOutlineButton
           href="https://hackersatupc.org"
           target="_blank"
           rel="noreferrer"
         >
-          <PrimaryOutlineButton>Go to website</PrimaryOutlineButton>
-        </ButtonLinkContainer>
+          Go to website
+        </PrimaryOutlineButton>
       </Section>
     </SectionBackground>
   );

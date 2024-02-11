@@ -12,7 +12,6 @@ import {
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
 import {
-  ButtonLinkContainer,
   PrimaryOutlineButton,
   SecondaryOutlineButton,
 } from "@/app/genericComponents/Buttons";
@@ -104,16 +103,13 @@ export default function HowToParticipate() {
             are passionate about it, or if you've graduated more than a year ago
             and can't participate as a hacker, apply now as a mentor!
           </Text>
-          <ButtonLinkContainer
+          <SecondaryOutlineButton
             href="https://my.hackupc.com/user/signup/mentor/"
             target="_blank"
             rel="noopener noreferrer"
-            left
           >
-            <SecondaryOutlineButton>
-              Apply as a volunteer
-            </SecondaryOutlineButton>
-          </ButtonLinkContainer>
+            Apply as a volunteer
+          </SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
@@ -140,14 +136,13 @@ export default function HowToParticipate() {
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
           </Text>
-          <ButtonLinkContainer
+          <PrimaryOutlineButton
             href="https://my.hackupc.com/user/signup/volunteer/"
             target="_blank"
             rel="noopener noreferrer"
-            left
           >
-            <PrimaryOutlineButton>Apply as a volunteer</PrimaryOutlineButton>
-          </ButtonLinkContainer>
+            Apply as a volunteer
+          </PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
@@ -173,14 +168,13 @@ export default function HowToParticipate() {
             talents. Join us and be remembered as part of this hackathon by our
             participants!
           </Text>
-          <ButtonLinkContainer
+          <SecondaryOutlineButton
             href="mailto:logistics@hackupc.com"
             target="_blank"
             rel="noopener noreferrer"
-            left
           >
-            <SecondaryOutlineButton>Contact us</SecondaryOutlineButton>
-          </ButtonLinkContainer>
+            Contact us
+          </SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
@@ -206,14 +200,13 @@ export default function HowToParticipate() {
             the tech scene of tomorrow by adding real value and making it
             possible for hackers to build something they're proud of.
           </Text>
-          <ButtonLinkContainer
+          <PrimaryOutlineButton
             href="mailto:sponsor@hackupc.com"
             target="_blank"
             rel="noopener noreferrer"
-            left
           >
-            <PrimaryOutlineButton>Contact us</PrimaryOutlineButton>
-          </ButtonLinkContainer>
+            Contact us
+          </PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
     </Section>

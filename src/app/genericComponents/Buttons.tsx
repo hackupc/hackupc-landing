@@ -20,11 +20,13 @@ import {
 
 interface ButtonProps {
   width?: string;
+  disabled?: boolean;
 }
 
-const ButtonGeneric = styled.button<ButtonProps>`
+const ButtonGeneric = styled.a<ButtonProps>`
   padding: ${SpacingS} ${SpacingL};
   border-radius: ${SpacingXS};
+  text-align: center;
   text-transform: uppercase;
   font-size: ${BodyText};
   width: ${(props) => props.width || "fit-content"};
@@ -35,12 +37,6 @@ const ButtonGeneric = styled.button<ButtonProps>`
     padding: ${SpacingS};
     width: 100%;
   }
-`;
-
-export const ButtonLinkContainer = styled.a<{ left?: boolean }>`
-  width: 100%;
-  display: flex;
-  justify-content: ${(props) => (props.left ? "flex-start" : "center")};
 `;
 
 export const SecondaryButton = styled(ButtonGeneric)`
