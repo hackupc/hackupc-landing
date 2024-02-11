@@ -40,13 +40,13 @@ export default function Header() {
         />
         HackUPC
       </ClickableLogo>
-      <a
+      <BodyLink
         href="https://my.hackupc.com/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <BodyLink>Login</BodyLink>
-      </a>
+        Login
+      </BodyLink>
     </HeaderContainer>
   );
 }
