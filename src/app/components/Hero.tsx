@@ -76,34 +76,101 @@ const ButtonsContainer = styled.div`
   }
 `;
 
+const Comet = styled.img`
+  position: absolute;
+  z-index: -1;
+`;
+
+const CometRedBigDesktop = styled(Comet)`
+  left: 10%;
+  top: 5%;
+  @media (max-width: ${MobileBreakpoint}) {
+    display: none;
+  }
+`;
+const CometRedSmallDesktop = styled(Comet)`
+  right: 7%;
+  top: 20%;
+  @media (max-width: ${MobileBreakpoint}) {
+    display: none;
+  }
+`;
+const CometPurpleBigDesktop = styled(Comet)`
+  left: 8%;
+  bottom: 30%;
+  @media (max-width: ${MobileBreakpoint}) {
+    display: none;
+  }
+`;
+const CometPurpleSmallDektop = styled(Comet)`
+  right: 14%;
+  bottom: 40%;
+  @media (max-width: ${MobileBreakpoint}) {
+    display: none;
+  }
+`;
+const CometRedBigMobile = styled(Comet)`
+  display: none;
+  @media (max-width: ${MobileBreakpoint}) {
+    left: 8%;
+    top: 7%;
+    display: block;
+  }
+`;
+const CometRedSmallMobile = styled(Comet)`
+  display: none;
+  @media (max-width: ${MobileBreakpoint}) {
+    right: 6%;
+    top: 14%;
+    display: block;
+  }
+`;
+
 export default function Hero() {
   return (
-    <HeroContainer className={silom.className}>
-      <Image src="/biene.svg" width={100} height={150} alt="biene" />
-      <TextsContainer>
-        <HackUPCTitle>HackUPC</HackUPCTitle>
-        <HackUPCParticipants>750 Hackers</HackUPCParticipants>
-        <HackUPCDates>May 3-5 2024 – 36 H</HackUPCDates>
-      </TextsContainer>
-      <ButtonsContainer>
-        <SecondaryButton
-          href="https://my.hackupc.com/user/signup/"
-          target="_blank"
-          rel="noopener noreferrer"
-          width="100%"
-        >
-          Apply as Hacker
-        </SecondaryButton>
-        <PrimaryButton
-          href="https://my.hackupc.com/user/signup/volunteer/"
-          target="_blank"
-          rel="noopener noreferrer"
-          width="100%"
-          style={{ marginTop: 0 }}
-        >
-          Apply as Volunteer
-        </PrimaryButton>
-      </ButtonsContainer>
-    </HeroContainer>
+    <div>
+      <CometRedBigMobile src="/cometa_big_red_mobile.svg" alt="Big red comet" />
+      <CometRedSmallMobile
+        src="/cometa_small_red_mobile.svg"
+        alt="Small red comet"
+      />
+      <CometRedBigDesktop src="/cometa_big_red.svg" alt="Big red comet" />
+      <CometRedSmallDesktop src="/cometa_small_red.svg" alt="Small red comet" />
+      <CometPurpleBigDesktop
+        src="/cometa_big_purple.svg"
+        alt="Big purple comet"
+      />
+      <CometPurpleSmallDektop
+        src="/cometa_small_purple.svg"
+        alt="Small purple comet"
+      />
+      <HeroContainer className={silom.className}>
+        <Image src="/biene.svg" width={100} height={150} alt="biene" />
+        <TextsContainer>
+          <HackUPCTitle>HackUPC</HackUPCTitle>
+          <HackUPCParticipants>750 Hackers</HackUPCParticipants>
+          <HackUPCDates>May 3-5 2024 – 36 H</HackUPCDates>
+        </TextsContainer>
+        <ButtonsContainer>
+          <SecondaryButton
+            href="https://my.hackupc.com/user/signup/"
+            target="_blank"
+            rel="noopener noreferrer"
+            width="100%"
+          >
+            Apply as Hacker
+          </SecondaryButton>
+          <PrimaryButton
+            href="https://my.hackupc.com/user/signup/volunteer/"
+            target="_blank"
+            rel="noopener noreferrer"
+            width="100%"
+            style={{ marginTop: 0 }}
+          >
+            Apply as Volunteer
+          </PrimaryButton>
+        </ButtonsContainer>
+      </HeroContainer>
+    </div>
   );
 }
