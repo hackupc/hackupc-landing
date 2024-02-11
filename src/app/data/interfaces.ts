@@ -1,16 +1,16 @@
 export type AnswerOptions =
   | {
       type: "Text";
-      answer: string;
+      content: string;
     }
   | {
       type: "List" | "Enumeration";
-      answer: string;
+      content: string;
       options: string[];
     }
   | {
       type: "Link";
-      answer: string;
+      content: string;
       link: string;
     };
 
