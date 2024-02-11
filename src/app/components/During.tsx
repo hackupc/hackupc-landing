@@ -10,7 +10,6 @@ import {
   SpacingS,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
-import { useEffect, useState } from "react";
 
 const TheMission = styled.div`
   display: flex;
