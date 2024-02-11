@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import { SpacingM, SpacingS } from "@/app/genericComponents/tokens";
+import {
+  MaxScreenSize,
+  SpacingM,
+  SpacingS,
+} from "@/app/genericComponents/tokens";
 import Image from "next/image";
 import { BodyLink } from "@/app/genericComponents/Fonts";
 

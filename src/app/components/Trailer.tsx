@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Fonts";
 import {
+  Neutral300,
   Neutral500,
   SpacingM,
   SpacingS,
@@ -9,6 +10,7 @@ import {
   SpacingXS,
 } from "@/app/genericComponents/tokens";
 import {
+  ButtonLinkContainer,
   PrimaryButton,
   SecondaryButton,
 } from "@/app/genericComponents/Buttons";
@@ -39,6 +41,7 @@ const StyledIframe = styled.iframe`
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-content: center;
   align-items: center;
   justify-content: center;
   margin-top: ${SpacingM};
@@ -46,11 +49,40 @@ const ButtonContainer = styled.div`
   width: 100%;
 `;
 
+const shimmerAnimation = keyframes`
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+`;
+
 const VideoNotAvailable = styled.div`
   padding: ${SpacingXL};
   background-color: ${Neutral500};
   text-align: center;
-  border-radius: ${SpacingXS};
+  border-radius: ${SpacingS};
+  position: relative;
+  overflow: hidden;
+  color: ${Neutral300};
+
+  /* Shimmer effect layer */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to right,
+      rgba(35, 47, 52, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(35, 47, 52, 0) 100%
+    );
+    animation: ${shimmerAnimation} 3s infinite linear; /* Apply the animation */
+  }
 `;
 
 export default function Trailer() {
@@ -68,27 +100,23 @@ export default function Trailer() {
           />
         </VideoWrapper> */}
         <ButtonContainer>
-          <SecondaryButton width={"60%"}>
-            <a
-              href="https://my.hackupc.com/user/signup/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Apply as a hacker
-            </a>
-          </SecondaryButton>
-          <PrimaryButton width={"60%"} disabled style={{ marginTop: 0 }}>
-            {/*
-            <a
-              href="https://my.hackupc.com/user/signup/volunteer/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <ButtonLinkContainer
+            href="https://my.hackupc.com/user/signup/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ width: "100%" }}
+          >
+            <SecondaryButton width={"60%"}>Apply as a hacker</SecondaryButton>
+          </ButtonLinkContainer>
+          <ButtonLinkContainer
+            href="https://my.hackupc.com/user/signup/volunteer/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <PrimaryButton width={"60%"} disabled style={{ marginTop: 0 }}>
               Apply as a volunteer
-            </a>
-            */}
-            Volunteers coming soon...
-          </PrimaryButton>
+            </PrimaryButton>
+          </ButtonLinkContainer>
         </ButtonContainer>
       </Section>
     </SectionBackground>

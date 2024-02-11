@@ -37,6 +37,12 @@ const ButtonGeneric = styled.button<ButtonProps>`
   }
 `;
 
+export const ButtonLinkContainer = styled.a`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
 export const SecondaryButton = styled(ButtonGeneric)`
   border: none;
   background-color: ${Secondary500};
