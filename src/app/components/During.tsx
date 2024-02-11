@@ -40,29 +40,12 @@ const StyledBodyText = styled(Body)`
   max-width: 1000px;
 `;
 
-const ActivitiesImage = () => {
-  let windowSize = 0;
-  if (typeof window !== "undefined") {
-    windowSize = window.innerWidth;
+const ImageStyled = styled.img`
+  @media (max-width: ${MobileBreakpoint}) {
+    margin-top: ${SpacingM};
+    margin-bottom: ${SpacingS};
   }
-
-  return windowSize >= MobilePixels ? (
-    <Image
-      src="/activitiesDesktop.svg"
-      alt="The Mission"
-      height={500}
-      width={700}
-    />
-  ) : (
-    <Image
-      src="/activitiesMobile.svg"
-      alt="The Mission"
-      height={800}
-      width={700}
-      style={{ marginTop: SpacingM, marginBottom: SpacingS }}
-    />
-  );
-};
+`;
 
 export default function During() {
   return (
@@ -72,7 +55,22 @@ export default function During() {
         Coding is the main part of HackUPC, but we have many more activities
       </Body>
       <ImageContainer>
-        <ActivitiesImage />
+        <picture>
+          <source
+            media={`(max-width: ${MobileBreakpoint})`}
+            srcSet="/activitiesMobile.svg"
+            height={800}
+            width={700}
+            style={{ marginTop: SpacingM, marginBottom: SpacingS }}
+          />
+          <source
+            media={`(min-width: ${MobileBreakpoint})`}
+            srcSet="/activitiesDesktop.svg"
+            height={500}
+            width={700}
+          />
+          <ImageStyled src="/activitiesMobile.svg" alt="HackUPC activities" />
+        </picture>
       </ImageContainer>
       <TheMission>
         <TextWrapper>
