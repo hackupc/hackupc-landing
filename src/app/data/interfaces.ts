@@ -1,9 +1,18 @@
-export interface AnswerOptions {
-  type: "Link" | "Text" | "List" | "Enumeration";
-  content: string;
-  link?: string;
-  options?: string[];
-}
+export type AnswerOptions =
+  | {
+      type: "Text";
+      answer: string;
+    }
+  | {
+      type: "List" | "Enumeration";
+      answer: string;
+      options: string[];
+    }
+  | {
+      type: "Link";
+      answer: string;
+      link: string;
+    };
 
 export interface FAQs {
   id: number;
