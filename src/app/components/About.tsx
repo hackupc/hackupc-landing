@@ -47,10 +47,7 @@ const Smoke = styled.img`
 export default function About() {
   return (
     <div>
-      <Smoke
-        src="/smoke_start.svg"
-        alt="Rocket Smoke"
-      />
+      <Smoke src="/smoke_start.svg" alt="Rocket Smoke" />
       <SectionBackground specialBackground={"rgba(234, 247, 255, 1)"}>
         <SectionStyled>
           <SectionTitle>HackUPC beyond the stars</SectionTitle>
@@ -100,10 +97,7 @@ export default function About() {
           </Container>
         </SectionStyled>
       </SectionBackground>
-      <Smoke
-        src="/smoke_end.svg"
-        alt="Rocket Smoke"
-      />
+      <Smoke src="/smoke_end.svg" alt="Rocket Smoke" />
     </div>
   );
 }
