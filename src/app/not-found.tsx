@@ -5,7 +5,7 @@ import {
   BlockTitle,
   BodyLink,
   SectionTitle,
-} from "@/app/genericComponents/Fonts";
+} from "@/app/genericComponents/Typography";
 import { Secondary500 } from "@/app/genericComponents/tokens";
 
 export default function NotFound() {

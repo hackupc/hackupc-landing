@@ -4,7 +4,7 @@ import {
   BodyBold,
   BodyLink,
   SectionTitle,
-} from "@/app/genericComponents/Fonts";
+} from "@/app/genericComponents/Typography";
 import { PrimaryButton } from "@/app/genericComponents/Buttons";
 import {
   Secondary500,

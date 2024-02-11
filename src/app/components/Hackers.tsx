@@ -2,7 +2,11 @@ import styled from "styled-components";
 import React from "react";
 import Image from "next/image";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
-import { Body, SectionTitle, SmallTitle } from "@/app/genericComponents/Fonts";
+import {
+  Body,
+  SectionTitle,
+  SmallTitle,
+} from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   SpacingM,

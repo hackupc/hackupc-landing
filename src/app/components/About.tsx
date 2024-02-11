@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { Body, SectionTitle, BlockTitle } from "@/app/genericComponents/Fonts";
+import {
+  Body,
+  SectionTitle,
+  BlockTitle,
+} from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   Primary500,
@@ -62,8 +66,8 @@ export default function About() {
             <ImgSection>
               <Image
                 src="/hackupcLogo.svg"
-                width={90}
-                height={90}
+                width={110}
+                height={110}
                 alt="HackUPC Logo"
               />
             </ImgSection>

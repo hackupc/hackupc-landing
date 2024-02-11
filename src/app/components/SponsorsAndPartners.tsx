@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import { SectionTitle } from "@/app/genericComponents/Fonts";
+import { SectionTitle } from "@/app/genericComponents/Typography";
 import { SpacingL, SpacingS } from "@/app/genericComponents/tokens";
 
 const SponsorsBlock = styled.div`

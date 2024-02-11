@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { Body, SectionTitle, BlockTitle } from "@/app/genericComponents/Fonts";
+import {
+  Body,
+  SectionTitle,
+  BlockTitle,
+} from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   Primary100,
@@ -108,7 +112,7 @@ export default function HowToParticipate() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Apply as a volunteer
+            Apply as a mentor
           </SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
