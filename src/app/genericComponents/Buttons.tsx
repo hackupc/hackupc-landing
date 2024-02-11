@@ -41,8 +41,9 @@ const ButtonGeneric = styled.a<ButtonProps>`
 
 export const SecondaryButton = styled(ButtonGeneric)`
   border: none;
-  background-color: ${Secondary500};
-  color: white;
+  background-color: ${(props) =>
+    props.disabled ? Secondary100 : Secondary500};
+  color: ${(props) => (props.disabled ? Secondary300 : "white")};
 
   &:hover {
     background-color: ${Secondary600};
@@ -50,16 +51,12 @@ export const SecondaryButton = styled(ButtonGeneric)`
   &:active {
     background-color: ${Secondary800};
   }
-  &:disabled {
-    background-color: ${Secondary100};
-    color: ${Secondary300};
-  }
 `;
 
 export const PrimaryButton = styled(ButtonGeneric)`
   border: none;
-  background-color: ${Primary300};
-  color: ${Primary100};
+  background-color: ${(props) => (props.disabled ? Primary100 : Primary300)};
+  color: ${(props) => (props.disabled ? Primary300 : Primary100)};
 
   &:hover {
     background-color: ${Primary400};
@@ -69,38 +66,31 @@ export const PrimaryButton = styled(ButtonGeneric)`
     background-color: ${Primary500};
     color: white;
   }
-  &:disabled {
-    background-color: ${Primary100};
-    color: ${Primary300};
-  }
 `;
 
 export const PrimaryOutlineButton = styled(ButtonGeneric)`
-  background-color: transparent;
-  border: 2px solid ${Primary100};
-  color: ${Primary100};
+  background-color: ${(props) => (props.disabled ? Primary100 : "transparent")};
+  border: 2px solid ${(props) => (props.disabled ? Primary200 : Primary100)};
+  color: ${(props) => (props.disabled ? Primary300 : Primary100)};
 
   &:hover {
     background-color: ${Primary100};
     border-color: ${Primary500};
     color: ${Primary500};
   }
+
   &:active {
     background-color: ${Primary200};
     border-color: ${Primary500};
     color: ${Primary500};
   }
-  &:disabled {
-    background-color: ${Primary100};
-    border-color: ${Primary200};
-    color: ${Primary300};
-  }
 `;
 
 export const SecondaryOutlineButton = styled(ButtonGeneric)`
-  background-color: transparent;
-  border: 2px solid ${Secondary500};
-  color: ${Secondary500};
+  background-color: ${(props) =>
+    props.disabled ? Secondary100 : "transparent"};
+  border: 2px solid ${(props) => (props.disabled ? Secondary200 : Secondary500)};
+  color: ${(props) => (props.disabled ? Secondary300 : Secondary500)};
 
   &:hover {
     background-color: ${Secondary100};
@@ -111,10 +101,5 @@ export const SecondaryOutlineButton = styled(ButtonGeneric)`
     background-color: ${Secondary200};
     border-color: ${Secondary500};
     color: ${Secondary500};
-  }
-  &:disabled {
-    background-color: ${Secondary100};
-    border-color: ${Secondary200};
-    color: ${Secondary300};
   }
 `;
