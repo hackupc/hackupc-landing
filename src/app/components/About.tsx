@@ -15,6 +15,7 @@ import { Section, SectionBackground } from "@/app/genericComponents/General";
 
 const SectionStyled = styled(Section)`
   color: ${Primary500};
+  padding-bottom: 0;
 `;
 
 const Container = styled.div`
@@ -37,21 +38,17 @@ const ImgSection = styled.div`
   margin-bottom: ${SpacingS};
 `;
 
-const Smoke = styled(Image)`
+const Smoke = styled.img`
   width: 100%;
   height: auto;
-`;
-const FixedSmoke = styled(Smoke)`
-  margin-bottom: -5px;
+  display: block;
 `;
 
 export default function About() {
   return (
     <div>
-      <FixedSmoke
+      <Smoke
         src="/smoke_start.svg"
-        width={1000}
-        height={1000}
         alt="Rocket Smoke"
       />
       <SectionBackground specialBackground={"rgba(234, 247, 255, 1)"}>
@@ -76,8 +73,8 @@ export default function About() {
                 These are awesome events full of creativity, technology, and
                 passionate tech-related students of different skill levels
                 collaborating and creating. During a certain period of time,
-                attendees work in <b>TEAMS</b> to develop apps, games, robots…
-                literally anything you want to <b>BUILD & LEARN</b> about!
+                attendees work in <b>teams</b> to develop apps, games, robots…
+                literally anything you want to <b>build & learn</b> about!
               </Body>
             </Col>
             <Col>
@@ -105,8 +102,6 @@ export default function About() {
       </SectionBackground>
       <Smoke
         src="/smoke_end.svg"
-        width={1000}
-        height={1000}
         alt="Rocket Smoke"
       />
     </div>
