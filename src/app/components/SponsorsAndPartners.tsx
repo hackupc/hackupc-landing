@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import { SectionTitle } from "@/app/genericComponents/Fonts";
+import { SectionTitle } from "@/app/genericComponents/Typography";
 import {
   Neutral300,
   SpacingL,
