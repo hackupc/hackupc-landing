@@ -112,7 +112,7 @@ export default function Trailer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <PrimaryButton width={"60%"} disabled style={{ marginTop: 0 }}>
+            <PrimaryButton width={"60%"} style={{ marginTop: 0 }}>
               Apply as a volunteer
             </PrimaryButton>
           </ButtonLinkContainer>

@@ -37,10 +37,10 @@ const ButtonGeneric = styled.button<ButtonProps>`
   }
 `;
 
-export const ButtonLinkContainer = styled.a`
+export const ButtonLinkContainer = styled.a<{ left?: boolean }>`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: ${(props) => (props.left ? "flex-start" : "center")};
 `;
 
 export const SecondaryButton = styled(ButtonGeneric)`
