@@ -1,10 +1,8 @@
 import styled from "styled-components";
-import Image from "next/image";
 import { Section } from "@/app/genericComponents/General";
 import { BlockTitle, Body, SectionTitle } from "@/app/genericComponents/Fonts";
 import {
   MobileBreakpoint,
-  MobilePixels,
   Secondary500,
   SpacingM,
   SpacingS,
