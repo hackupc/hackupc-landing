@@ -87,11 +87,11 @@ body {
 
 body {
   color: white;
-  cursor: url('/rocket.svg'), auto;
+  cursor: url("/rocket.svg"), auto;
 }
 
 .bg {
-  background-image: url("/stars.jpeg");
+  background-image: url("stars.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
