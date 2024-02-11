@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import StyledComponentsRegistry from "@/app/lib/registry";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
+config.autoAddCss = false;
 const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <StyledComponentsRegistry>
+        <body className={montserrat.className}>{children}</body>
+      </StyledComponentsRegistry>
     </html>
   );
 }

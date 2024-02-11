@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Image from "next/image";
 import { Section } from "@/app/genericComponents/General";
 import { BlockTitle, Body, SectionTitle } from "@/app/genericComponents/Fonts";
 import {
   MobileBreakpoint,
   Secondary500,
+  SpacingM,
   SpacingS,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
@@ -37,20 +37,38 @@ const StyledTitle = styled(BlockTitle)`
 const StyledBodyText = styled(Body)`
   max-width: 1000px;
 `;
+
+const ImageStyled = styled.img`
+  @media (max-width: ${MobileBreakpoint}) {
+    margin-top: ${SpacingM};
+    margin-bottom: ${SpacingS};
+  }
+`;
+
 export default function During() {
   return (
     <Section>
-      <SectionTitle>DURING THE EVENT</SectionTitle>
+      <SectionTitle>During the event</SectionTitle>
       <Body>
         Coding is the main part of HackUPC, but we have many more activities
       </Body>
       <ImageContainer>
-        <Image
-          src="/activities.svg"
-          alt="The Mission"
-          height={500}
-          width={700}
-        />
+        <picture>
+          <source
+            media={`(max-width: ${MobileBreakpoint})`}
+            srcSet="/activitiesMobile.svg"
+            height={800}
+            width={700}
+            style={{ marginTop: SpacingM, marginBottom: SpacingS }}
+          />
+          <source
+            media={`(min-width: ${MobileBreakpoint})`}
+            srcSet="/activitiesDesktop.svg"
+            height={500}
+            width={700}
+          />
+          <ImageStyled src="/activitiesMobile.svg" alt="HackUPC activities" />
+        </picture>
       </ImageContainer>
       <TheMission>
         <TextWrapper>

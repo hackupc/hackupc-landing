@@ -8,7 +8,10 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-import { PrimaryOutlineButton } from "@/app/genericComponents/Buttons";
+import {
+  ButtonLinkContainer,
+  PrimaryOutlineButton,
+} from "@/app/genericComponents/Buttons";
 
 const StyledImage = styled(Image)`
   width: 100%;
@@ -18,6 +21,7 @@ const InformationBlock = styled.div`
   display: flex;
   align-items: center;
   gap: ${SpacingM};
+  margin-bottom: ${SpacingS};
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
@@ -67,11 +71,13 @@ export default function Hackers() {
           </TextContainer>
         </InformationBlock>
 
-        <PrimaryOutlineButton>
-          <a href="https://hackersatupc.org" target="_blank" rel="noreferrer">
-            Go to website
-          </a>
-        </PrimaryOutlineButton>
+        <ButtonLinkContainer
+          href="https://hackersatupc.org"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <PrimaryOutlineButton>Go to website</PrimaryOutlineButton>
+        </ButtonLinkContainer>
       </Section>
     </SectionBackground>
   );

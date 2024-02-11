@@ -37,6 +37,12 @@ const ButtonGeneric = styled.button<ButtonProps>`
   }
 `;
 
+export const ButtonLinkContainer = styled.a<{ left?: boolean }>`
+  width: 100%;
+  display: flex;
+  justify-content: ${(props) => (props.left ? "flex-start" : "center")};
+`;
+
 export const SecondaryButton = styled(ButtonGeneric)`
   border: none;
   background-color: ${Secondary500};
