@@ -87,6 +87,7 @@ body {
 
 body {
   color: white;
+  cursor: url('/rocket.svg'), auto;
 }
 
 .bg {
