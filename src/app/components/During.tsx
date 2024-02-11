@@ -6,6 +6,7 @@ import {
   MobileBreakpoint,
   MobilePixels,
   Secondary500,
+  SpacingM,
   SpacingS,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
@@ -41,27 +42,22 @@ const StyledBodyText = styled(Body)`
 `;
 
 const ActivitiesImage = () => {
-  const [windowWidth, setWindowWidth] = useState<number | null>(null);
-
-  useEffect(() => {
-    // Update window width on mount and resize
-    const updateWindowWidth = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    updateWindowWidth(); // Set initial width
-    window.addEventListener("resize", updateWindowWidth);
-
-    // Cleanup listener on component unmount
-    return () => window.removeEventListener("resize", updateWindowWidth);
-  }, [windowWidth]);
-
-  const image =
-    windowWidth || 0 >= MobilePixels
-      ? "/activitiesDesktop.svg"
-      : "/activitiesMobile.svg";
-
-  return <Image src={image} alt="The Mission" height={500} width={700} />;
+  return window.innerWidth >= MobilePixels ? (
+    <Image
+      src="/activitiesDesktop.svg"
+      alt="The Mission"
+      height={500}
+      width={700}
+    />
+  ) : (
+    <Image
+      src="/activitiesMobile.svg"
+      alt="The Mission"
+      height={800}
+      width={700}
+      style={{ marginTop: SpacingM, marginBottom: SpacingS }}
+    />
+  );
 };
 
 export default function During() {
