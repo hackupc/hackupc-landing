@@ -2,7 +2,11 @@ import styled from "styled-components";
 import React from "react";
 import Image from "next/image";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
-import { Body, SectionTitle, SmallTitle } from "@/app/genericComponents/Fonts";
+import {
+  Body,
+  SectionTitle,
+  SmallTitle,
+} from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   SpacingM,
@@ -18,6 +22,7 @@ const InformationBlock = styled.div`
   display: flex;
   align-items: center;
   gap: ${SpacingM};
+  margin-bottom: ${SpacingS};
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
@@ -67,10 +72,12 @@ export default function Hackers() {
           </TextContainer>
         </InformationBlock>
 
-        <PrimaryOutlineButton>
-          <a href="https://hackersatupc.org" target="_blank" rel="noreferrer">
-            Go to website
-          </a>
+        <PrimaryOutlineButton
+          href="https://hackersatupc.org"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Go to website
         </PrimaryOutlineButton>
       </Section>
     </SectionBackground>

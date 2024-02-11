@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import { SectionTitle } from "@/app/genericComponents/Fonts";
+import { SectionTitle } from "@/app/genericComponents/Typography";
 import { SpacingL, SpacingS } from "@/app/genericComponents/tokens";
 
 const SponsorsBlock = styled.div`
@@ -91,7 +91,7 @@ export default function SponsorsAndPartners() {
 
         <SponsorRow>
           <MegaBox>
-            <SponsorImage src="/Sponsors/grafana.png" alt="Grafana Logo" />
+            <SponsorImage src="/Sponsors/grafana.svg" alt="Grafana Logo" />
           </MegaBox>
           <MegaBox>
             <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />

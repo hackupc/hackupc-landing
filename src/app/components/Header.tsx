@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { SpacingM, SpacingS } from "@/app/genericComponents/tokens";
 import Image from "next/image";
-import { BodyLink } from "@/app/genericComponents/Fonts";
+import { BodyLink } from "@/app/genericComponents/Typography";
 
 const HeaderContainer = styled.div`
   position: fixed;
@@ -11,6 +11,7 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 `;
 
 const ClickableLogo = styled.div`
@@ -33,7 +34,7 @@ export default function Header() {
         }}
       >
         <Image
-          src="/hackupc_unrevealed.svg"
+          src="/hackupcLogoWhite.svg"
           alt="hackupc-logo"
           height={30}
           width={30}

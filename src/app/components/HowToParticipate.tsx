@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { Body, SectionTitle, BlockTitle } from "@/app/genericComponents/Fonts";
+import {
+  Body,
+  SectionTitle,
+  BlockTitle,
+} from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   Primary100,
@@ -83,8 +87,7 @@ export default function HowToParticipate() {
       <SectionTitle>How to participate</SectionTitle>
       <RoleBlock>
         <ImageButton
-          //href="https://my.hackupc.com/user/signup/mentor/"
-          href={"javascript:void(0);"}
+          href="https://my.hackupc.com/user/signup/mentor/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -104,25 +107,19 @@ export default function HowToParticipate() {
             are passionate about it, or if you've graduated more than a year ago
             and can't participate as a hacker, apply now as a mentor!
           </Text>
-          <SecondaryOutlineButton disabled>
-            {/*
-            <a
-              href="https://my.hackupc.com/user/signup/mentor/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Apply as a volunteer
-            </a>
-            */}
-            CLOSED
+          <SecondaryOutlineButton
+            href="https://my.hackupc.com/user/signup/mentor/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apply as a mentor
           </SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
       <RoleBlock imageLeft>
         <ImageButton
-          //href="https://my.hackupc.com/user/signup/volunteer/"
-          href="javascript:void(0);"
+          href="https://my.hackupc.com/user/signup/volunteer/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -143,17 +140,12 @@ export default function HowToParticipate() {
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
           </Text>
-          <PrimaryOutlineButton disabled>
-            {/*
-            <a
-              href="https://my.hackupc.com/user/signup/volunteer/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Apply as a volunteer
-            </a>
-            */}
-            Closed
+          <PrimaryOutlineButton
+            href="https://my.hackupc.com/user/signup/volunteer/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apply as a volunteer
           </PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
@@ -180,14 +172,12 @@ export default function HowToParticipate() {
             talents. Join us and be remembered as part of this hackathon by our
             participants!
           </Text>
-          <SecondaryOutlineButton>
-            <a
-              href="mailto:logistics@hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contact us
-            </a>
+          <SecondaryOutlineButton
+            href="mailto:logistics@hackupc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contact us
           </SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
@@ -214,14 +204,12 @@ export default function HowToParticipate() {
             the tech scene of tomorrow by adding real value and making it
             possible for hackers to build something they're proud of.
           </Text>
-          <PrimaryOutlineButton>
-            <a
-              href="mailto:sponsor@hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contact us
-            </a>
+          <PrimaryOutlineButton
+            href="mailto:sponsor@hackupc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contact us
           </PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
