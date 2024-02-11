@@ -41,7 +41,12 @@ const StyledBodyText = styled(Body)`
 `;
 
 const ActivitiesImage = () => {
-  return window.innerWidth >= MobilePixels ? (
+  let windowSize = 0;
+  if (typeof window !== "undefined") {
+    windowSize = window.innerWidth;
+  }
+
+  return windowSize >= MobilePixels ? (
     <Image
       src="/activitiesDesktop.svg"
       alt="The Mission"
