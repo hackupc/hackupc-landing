@@ -10,9 +10,9 @@ export const BodyTextSmall: string = "14px";
 export const MobileTitleL: string = "32px";
 export const MobileTitleM: string = "26px";
 export const MobileTitleS: string = "20px";
-export const MobileBodyText: string = "18px";
-export const MobileBodyTextMedium: string = "16px";
-export const MobileBodyTextSmall: string = "14px";
+export const MobileBodyText: string = "17px";
+export const MobileBodyTextMedium: string = "14px";
+export const MobileBodyTextSmall: string = "13px";
 
 // Colors
 export const Primary500: string = "#240059";
