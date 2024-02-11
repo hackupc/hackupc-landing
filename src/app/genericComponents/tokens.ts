@@ -1,4 +1,6 @@
 // Font sizes
+export const TitleXXL: string = "78px";
+export const TitleXL: string = "50px";
 export const TitleL: string = "32px";
 export const TitleM: string = "26px";
 export const TitleS: string = "20px";
@@ -7,6 +9,7 @@ export const BodyTextMedium: string = "16px";
 export const BodyTextSmall: string = "14px";
 
 // Mobile font sizes
+export const MobileTitleXL: string = "48px";
 export const MobileTitleL: string = "32px";
 export const MobileTitleM: string = "26px";
 export const MobileTitleS: string = "20px";
@@ -50,3 +53,4 @@ export const SpacingS: string = "16px";
 export const SpacingM: string = "32px";
 export const SpacingL: string = "64px";
 export const SpacingXL: string = "96px";
+export const SpacingXXL: string = "160px";
