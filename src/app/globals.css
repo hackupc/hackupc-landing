@@ -82,27 +82,12 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevents horizontal scrollbar */
 }
 
 body {
   color: white;
   cursor: url("/rocket.png"), auto;
-}
-
-.bg {
-  background-image: url("/stars.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-}
-
-.content {
-  position: absolute;
-  width: 100%;
 }
 
 a {
