@@ -66,7 +66,6 @@ export const BodyLink = styled.a`
   font-size: ${BodyText};
   font-weight: 700;
   color: ${Primary200};
-  cursor: pointer;
 
   &:hover {
     color: ${Primary300};

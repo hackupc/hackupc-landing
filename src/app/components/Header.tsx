@@ -18,7 +18,7 @@ const ClickableLogo = styled.div`
   display: flex;
   align-items: center;
   gap: ${SpacingS};
-  cursor: pointer;
+  cursor: url("/rocket-fire.png"), auto;
 `;
 
 export default function Header() {

@@ -64,7 +64,7 @@ const Question = styled.div`
 
 const QuestionTitle = styled(BodyBold)`
   margin-bottom: ${SpacingXS};
-  cursor: pointer;
+  cursor: url("/rocket-fire.png"), auto;
 `;
 
 const LastBlock = styled.div`
@@ -93,7 +93,7 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
 `;
 
 const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
-  cursor: pointer;
+  cursor: url("/rocket-fire.png"), auto;
   margin-top: ${SpacingXXS};
 `;
 
