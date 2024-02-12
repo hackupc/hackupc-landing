@@ -56,6 +56,7 @@ export const SmallTitle = styled.div`
 
 export const Body = styled.div`
   font-size: ${BodyText};
+  line-height: 1.5rem;
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileBodyText};
@@ -66,7 +67,6 @@ export const BodyLink = styled.a`
   font-size: ${BodyText};
   font-weight: 700;
   color: ${Primary200};
-  cursor: pointer;
 
   &:hover {
     color: ${Primary300};

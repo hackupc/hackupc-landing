@@ -16,6 +16,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import ThroughTheYears from "@/app/components/ThroughTheYears";
 import styled from "styled-components";
+import { MobileBreakpoint } from "@/app/genericComponents/tokens";
 
 const Background = styled.div`
   position: fixed;
@@ -26,10 +27,14 @@ const Background = styled.div`
   height: 100%;
   min-height: 100vh;
   min-width: 100vw;
-  background-image: url("/stars.jpeg");
+  background-image: url("/stars_desktop.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    background-image: url("/stars_mobile.jpg");
+  }
 `;
 
 export default function Home() {

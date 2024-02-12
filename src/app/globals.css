@@ -93,4 +93,5 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: url("/rocket-fire.png"), auto;
 }

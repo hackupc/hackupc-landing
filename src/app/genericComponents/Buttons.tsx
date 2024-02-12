@@ -31,7 +31,6 @@ const ButtonGeneric = styled.a<ButtonProps>`
   font-size: ${BodyText};
   width: ${(props) => props.width || "fit-content"};
   margin-top: ${SpacingS};
-  cursor: pointer;
 
   @media (max-width: ${MobileBreakpoint}) {
     padding: ${SpacingS};
@@ -46,10 +45,10 @@ export const SecondaryButton = styled(ButtonGeneric)`
   color: ${(props) => (props.disabled ? Secondary300 : "white")};
 
   &:hover {
-    background-color: ${Secondary600};
+    background-color: ${(props) => !props.disabled && Secondary600};
   }
   &:active {
-    background-color: ${Secondary800};
+    background-color: ${(props) => !props.disabled && Secondary800};
   }
 `;
 
@@ -57,14 +56,15 @@ export const PrimaryButton = styled(ButtonGeneric)`
   border: none;
   background-color: ${(props) => (props.disabled ? Primary100 : Primary300)};
   color: ${(props) => (props.disabled ? Primary300 : Primary100)};
+  cursor: ${(props) => props.disabled && "not-allowed"};
 
   &:hover {
-    background-color: ${Primary400};
-    color: white;
+    background-color: ${(props) => !props.disabled && Primary400};
+    color: ${(props) => !props.disabled && "white"};
   }
   &:active {
-    background-color: ${Primary500};
-    color: white;
+    background-color: ${(props) => !props.disabled && Primary500};
+    color: ${(props) => !props.disabled && "white"};
   }
 `;
 
@@ -74,15 +74,15 @@ export const PrimaryOutlineButton = styled(ButtonGeneric)`
   color: ${(props) => (props.disabled ? Primary300 : Primary100)};
 
   &:hover {
-    background-color: ${Primary100};
-    border-color: ${Primary500};
-    color: ${Primary500};
+    background-color: ${(props) => !props.disabled && Primary100};
+    border-color: ${(props) => !props.disabled && Primary500};
+    color: ${(props) => !props.disabled && Primary500};
   }
 
   &:active {
-    background-color: ${Primary200};
-    border-color: ${Primary500};
-    color: ${Primary500};
+    background-color: ${(props) => !props.disabled && Primary200};
+    border-color: ${(props) => !props.disabled && Primary500};
+    color: ${(props) => !props.disabled && Primary500};
   }
 `;
 
@@ -93,13 +93,13 @@ export const SecondaryOutlineButton = styled(ButtonGeneric)`
   color: ${(props) => (props.disabled ? Secondary300 : Secondary500)};
 
   &:hover {
-    background-color: ${Secondary100};
-    border-color: ${Secondary500};
-    color: ${Secondary500};
+    background-color: ${(props) => !props.disabled && Secondary100};
+    border-color: ${(props) => !props.disabled && Secondary500};
+    color: ${(props) => !props.disabled && Secondary500};
   }
   &:active {
-    background-color: ${Secondary200};
-    border-color: ${Secondary500};
-    color: ${Secondary500};
+    background-color: ${(props) => !props.disabled && Secondary200};
+    border-color: ${(props) => !props.disabled && Secondary500};
+    color: ${(props) => !props.disabled && Secondary500};
   }
 `;
