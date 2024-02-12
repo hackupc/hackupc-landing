@@ -1,9 +1,14 @@
 import styled from "styled-components";
-import { SpacingM, SpacingS } from "@/app/genericComponents/tokens";
+import {
+  BackgroundWithOpacity,
+  SpacingM,
+  SpacingS,
+} from "@/app/genericComponents/tokens";
 import Image from "next/image";
 import { BodyLink } from "@/app/genericComponents/Typography";
+import { useEffect, useState } from "react";
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.div<{ isScrolled: boolean }>`
   position: fixed;
   top: 0;
   width: 100%;
@@ -12,18 +17,35 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  background-color: ${({ isScrolled }) =>
+    isScrolled ? BackgroundWithOpacity : "transparent"};
 `;
 
 const ClickableLogo = styled.div`
   display: flex;
   align-items: center;
   gap: ${SpacingS};
-  cursor: pointer;
+  cursor: url("/rocket-fire.png"), auto;
 `;
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <HeaderContainer>
+    <HeaderContainer isScrolled={isScrolled}>
       <ClickableLogo
         onClick={() => {
           window.scroll({

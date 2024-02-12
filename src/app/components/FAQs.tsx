@@ -64,7 +64,7 @@ const Question = styled.div`
 
 const QuestionTitle = styled(BodyBold)`
   margin-bottom: ${SpacingXS};
-  cursor: pointer;
+  cursor: url("/rocket-fire.png"), auto;
 `;
 
 const LastBlock = styled.div`
@@ -79,6 +79,7 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
     opacity 0.5s ease;
   transform: scaleY(0);
   opacity: 0;
+  line-height: 1.5rem;
   height: 0;
   visibility: hidden;
 
@@ -93,7 +94,7 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
 `;
 
 const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
-  cursor: pointer;
+  cursor: url("/rocket-fire.png"), auto;
   margin-top: ${SpacingXXS};
 `;
 
@@ -162,7 +163,6 @@ export default function FAQs() {
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
                   color={activeFaqId === faq.id ? Secondary500 : Primary100}
-                  onClick={() => toggleFaq(faq.id)}
                 />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
