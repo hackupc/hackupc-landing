@@ -1,7 +1,16 @@
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
-import { SpacingL, SpacingS } from "@/app/genericComponents/tokens";
+import { SpacingL, SpacingM, SpacingS } from "@/app/genericComponents/tokens";
+import {
+  GigaBox,
+  KiloBox,
+  MegaBox,
+  MiliBox,
+  PetaBox,
+  SponsorLogo,
+  SponsorUnrevealed,
+} from "@/app/genericComponents/Sponsors";
 
 const SponsorsBlock = styled.div`
   display: flex;
@@ -17,56 +26,8 @@ const SponsorRow = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-`;
-
-interface BoxInput {
-  width: string;
-  height: string;
-}
-const PackageBox = ({ width, height }: BoxInput) => styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 15px;
-  width: ${width};
-  height: ${height};
-  overflow: hidden;
-  background-color: #88a7b7;
-  border-radius: 20px;
-`;
-
-const PetaBox = PackageBox({
-  width: "200px",
-  height: "136px",
-});
-/*
-const TeraBox = PackageBox({
-  width: "144px",
-  height: "104px",
-});
-*/
-const GigaBox = PackageBox({
-  width: "136px",
-  height: "96px",
-});
-const MegaBox = PackageBox({
-  width: "128px",
-  height: "88px",
-});
-const KiloBox = PackageBox({
-  width: "120px",
-  height: "80px",
-});
-const MiliBox = PackageBox({
-  width: "112px",
-  height: "72px",
-});
-
-const SponsorImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  box-sizing: border-box;
-  padding: ${SpacingS};
+  gap: ${SpacingS};
+  margin-bottom: ${SpacingM};
 `;
 
 export default function SponsorsAndPartners() {
@@ -76,43 +37,47 @@ export default function SponsorsAndPartners() {
       <SponsorsBlock>
         <SponsorRow>
           <PetaBox>
-            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+            <SponsorUnrevealed />
           </PetaBox>
         </SponsorRow>
 
         <SponsorRow>
           <GigaBox>
-            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+            <SponsorUnrevealed />
           </GigaBox>
           <GigaBox>
-            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+            <SponsorUnrevealed />
           </GigaBox>
         </SponsorRow>
 
         <SponsorRow>
           <MegaBox>
-            <SponsorImage src="/Sponsors/grafana.svg" alt="Grafana Logo" />
+            <SponsorLogo
+              imageSrc={"/Sponsors/grafana.svg"}
+              imageAlt={"grafana"}
+              sponsorLink={"https://grafana.com/"}
+            />
           </MegaBox>
           <MegaBox>
-            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+            <SponsorUnrevealed />
           </MegaBox>
           <MegaBox>
-            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+            <SponsorUnrevealed />
           </MegaBox>
           <MegaBox>
-            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+            <SponsorUnrevealed />
           </MegaBox>
         </SponsorRow>
 
         <SponsorRow>
           <KiloBox>
-            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+            <SponsorUnrevealed />
           </KiloBox>
           <KiloBox>
-            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+            <SponsorUnrevealed />
           </KiloBox>
           <KiloBox>
-            <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+            <SponsorUnrevealed />
           </KiloBox>
         </SponsorRow>
       </SponsorsBlock>
@@ -120,28 +85,44 @@ export default function SponsorsAndPartners() {
       <SectionTitle>Partners</SectionTitle>
       <SponsorRow>
         <MiliBox>
-          <SponsorImage src="/Partners/upc.svg" alt="UPC Logo" />
+          <SponsorLogo
+            imageSrc={"/Partners/upc.svg"}
+            imageAlt={"upc"}
+            sponsorLink={"https://www.upc.edu/"}
+          />
         </MiliBox>
         <MiliBox>
-          <SponsorImage src="/Partners/fib.svg" alt="FIB Logo" />
+          <SponsorLogo
+            imageSrc={"/Partners/fib.svg"}
+            imageAlt={"fib"}
+            sponsorLink={"https://www.fib.upc.edu/"}
+          />
         </MiliBox>
         <MiliBox>
-          <SponsorImage src="/Partners/telecos.png" alt="Telecos Logo" />
+          <SponsorLogo
+            imageSrc={"/Partners/telecos.png"}
+            imageAlt={"telecos"}
+            sponsorLink={"https://telecos.upc.edu/"}
+          />
         </MiliBox>
         <MiliBox>
-          <SponsorImage src="/Partners/cfis.svg" alt="CFIS Logo" />
+          <SponsorLogo
+            imageSrc={"/Partners/cfis.svg"}
+            imageAlt={"cfis"}
+            sponsorLink={"https://cfis.upc.edu/"}
+          />
         </MiliBox>
         <MiliBox>
-          <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          <SponsorUnrevealed />
         </MiliBox>
         <MiliBox>
-          <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          <SponsorUnrevealed />
         </MiliBox>
         <MiliBox>
-          <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          <SponsorUnrevealed />
         </MiliBox>
         <MiliBox>
-          <SponsorImage src="/hackupc_unrevealed.svg" alt="Top Secret" />
+          <SponsorUnrevealed />
         </MiliBox>
       </SponsorRow>
     </Section>
