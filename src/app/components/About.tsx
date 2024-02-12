@@ -111,7 +111,7 @@ export default function About() {
         </SectionStyled>
       </SectionBackground>
       <Smoke src="/smoke_end.svg" alt="Rocket Smoke" />
-      <SmokeMobile src="/smoke_start_mobile.svg" alt="Rocket Smoke" />
+      <SmokeMobile src="/smoke_end_mobile.svg" alt="Rocket Smoke" />
     </div>
   );
 }
