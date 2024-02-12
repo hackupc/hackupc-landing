@@ -111,7 +111,7 @@ export function SponsorLogo(props: SponsorLogoProps) {
 export function SponsorUnrevealed() {
   return (
     <BoxContainerUnrevealed>
-      <SponsorImage src={"/hackupc_unrevealed.svg"} alt={"Top Secret"} />
+      <SponsorImage src={"/hackupcLogoWhite.svg"} alt={"Top Secret"} />
       <HoverText>Top Secret</HoverText>
     </BoxContainerUnrevealed>
   );

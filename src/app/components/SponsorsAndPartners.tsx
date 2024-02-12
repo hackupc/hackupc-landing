@@ -100,7 +100,7 @@ export default function SponsorsAndPartners() {
         </MiliBox>
         <MiliBox>
           <SponsorLogo
-            imageSrc={"/Partners/telecos.svg"}
+            imageSrc={"/Partners/telecos.png"}
             imageAlt={"telecos"}
             sponsorLink={"https://telecos.upc.edu/"}
           />
