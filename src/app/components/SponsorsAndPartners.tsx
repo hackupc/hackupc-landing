@@ -74,70 +74,11 @@ const SponsorImage = styled.img`
   object-fit: contain;
   box-sizing: border-box;
   padding: ${SpacingS};
-
-  &::before,
-  &::after {
-    position: absolute;
-    content: "";
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  &::before {
-    z-index: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 1em;
-    backdrop-filter: blur(0.5rem);
-    background-color: rgb(255 255 255 / 25%);
-    pointer-events: none;
-    transition: opacity 400ms cubic-bezier(0.23, 0.96, 0.17, 1);
-  }
-
-  &::after {
-    z-index: 2;
-    top: 50%;
-    right: 0;
-    left: 0;
-    content: "Go to website";
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: 0.03em;
-    transform: translate(0, -50%) translateY(1em);
-    transition:
-      opacity 300ms $ease-quad,
-      transform 200ms $ease-quad;
-    // will-change: transform, opacity;
-  }
-
-  &:hover {
-    &::before {
-      opacity: 1;
-    }
-
-    &::after {
-      opacity: 1;
-      transform: translate(0, -50%) translateY(0);
-    }
-  }
-
-  &:active {
-    box-shadow: 0 1rem 1rem -0.5rem transparent;
-    transform: scale(0.975) translateY(0.25rem);
-  }
 `;
 
 const SponsorUnrevealed = styled(SponsorImage)`
   cursor: help;
   opacity: 0.5;
-
-  &::after {
-    color: $c-bg-dark;
-    content: "Top secret";
-    text-transform: uppercase;
-  }
 `;
 
 export default function SponsorsAndPartners() {
