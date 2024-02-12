@@ -79,6 +79,7 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
     opacity 0.5s ease;
   transform: scaleY(0);
   opacity: 0;
+  line-height: 1.5rem;
   height: 0;
   visibility: hidden;
 

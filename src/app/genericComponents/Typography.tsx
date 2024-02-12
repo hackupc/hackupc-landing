@@ -56,6 +56,7 @@ export const SmallTitle = styled.div`
 
 export const Body = styled.div`
   font-size: ${BodyText};
+  line-height: 1.5rem;
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileBodyText};
