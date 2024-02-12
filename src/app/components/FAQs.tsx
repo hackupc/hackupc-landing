@@ -162,7 +162,6 @@ export default function FAQs() {
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
                   color={activeFaqId === faq.id ? Secondary500 : Primary100}
-                  onClick={() => toggleFaq(faq.id)}
                 />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
