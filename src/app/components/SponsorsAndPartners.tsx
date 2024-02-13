@@ -113,7 +113,11 @@ export default function SponsorsAndPartners() {
           />
         </MiliBox>
         <MiliBox>
-          <SponsorUnrevealed />
+          <SponsorLogo
+            imageSrc={"/Partners/mlh.svg"}
+            imageAlt={"mlh"}
+            sponsorLink={"https://mlh.io/eu"}
+          />
         </MiliBox>
         <MiliBox>
           <SponsorUnrevealed />

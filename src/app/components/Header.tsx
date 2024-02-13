@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
   BackgroundWithOpacity,
+  MobileBreakpoint,
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
@@ -26,6 +27,14 @@ const ClickableLogo = styled.div`
   align-items: center;
   gap: ${SpacingS};
   cursor: url("/rocket-fire.png"), auto;
+`;
+
+const StyledBodyLink = styled(BodyLink)`
+  margin-right: 150px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin-right: 90px;
+  }
 `;
 
 export default function Header() {
@@ -63,13 +72,13 @@ export default function Header() {
         />
         HackUPC
       </ClickableLogo>
-      <BodyLink
+      <StyledBodyLink
         href="https://my.hackupc.com/"
         target="_blank"
         rel="noopener noreferrer"
       >
         Login
-      </BodyLink>
+      </StyledBodyLink>
     </HeaderContainer>
   );
 }
