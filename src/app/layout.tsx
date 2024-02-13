@@ -18,31 +18,33 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <a
-        id="mlh-trust-badge"
-        style={{
-          display: "block",
-          maxWidth: 100,
-          minWidth: 60,
-          position: "fixed",
-          right: 50,
-          top: 0,
-          width: "10%",
-          zIndex: 10000,
-        }}
-        href="https://mlh.io/eu?utm_source=eu-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=black"
-        target="_blank"
-        rel="noreferrer"
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-black.svg"
-          alt="Major League Hacking 2024 Hackathon Season"
-          style={{ width: "100%" }}
-        />
-      </a>
       <StyledComponentsRegistry>
-        <body className={montserrat.className}>{children}</body>
+        <body className={montserrat.className}>
+          <a
+            id="mlh-trust-badge"
+            style={{
+              display: "block",
+              maxWidth: 100,
+              minWidth: 60,
+              position: "fixed",
+              right: 50,
+              top: 0,
+              width: "10%",
+              zIndex: 10000,
+            }}
+            href="https://mlh.io/eu?utm_source=eu-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=black"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-black.svg"
+              alt="Major League Hacking 2024 Hackathon Season"
+              style={{ width: "100%" }}
+            />
+          </a>
+          {children}
+        </body>
       </StyledComponentsRegistry>
     </html>
   );
