@@ -89,7 +89,7 @@ export default function Trailer() {
     <SectionBackground haveBackground>
       <Section>
         <SectionTitle>Teaser</SectionTitle>
-        <VideoNotAvailable> Teaser coming soon.. </VideoNotAvailable>
+        <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>
         {/* <VideoWrapper>
           <StyledIframe
             title="Teaser video"
