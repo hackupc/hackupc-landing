@@ -42,13 +42,26 @@ const Smoke = styled.img`
   width: 100%;
   height: auto;
   display: block;
+  @media (max-width: ${MobileBreakpoint}) {
+    display: none;
+  }
+`;
+
+const SmokeMobile = styled.img`
+  display: none;
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 `;
 
 export default function About() {
   return (
     <div>
       <Smoke src="/smoke_start.svg" alt="Rocket Smoke" />
-      <SectionBackground specialBackground={"rgba(234, 247, 255, 1)"}>
+      <SmokeMobile src="/smoke_start_mobile.svg" alt="Rocket Smoke" />
+      <SectionBackground specialBackground={"rgba(234,247,255,.85)"}>
         <SectionStyled>
           <SectionTitle>HackUPC beyond the stars</SectionTitle>
           <Container>
@@ -98,6 +111,7 @@ export default function About() {
         </SectionStyled>
       </SectionBackground>
       <Smoke src="/smoke_end.svg" alt="Rocket Smoke" />
+      <SmokeMobile src="/smoke_end_mobile.svg" alt="Rocket Smoke" />
     </div>
   );
 }
