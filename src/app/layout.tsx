@@ -14,9 +14,6 @@ export const metadata: Metadata = {
   keywords: [
     "Hackathon, Hacker, Student, University, College, Programming, Technology, UPC, Barcelona, Spain",
   ],
-  city: "Barcelona",
-  country: "Spain",
-  distribution: "global",
   twitter: {
     site: "@hackupc",
     card: "summary_large_image",
