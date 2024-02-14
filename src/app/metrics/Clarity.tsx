@@ -3,7 +3,6 @@ import Script from "next/script";
 export const Clarity = () => {
   return (
     <>
-      <script type="text/javascript">;</script>
       <Script
         id="microsoft-clarity-init"
         strategy="afterInteractive"

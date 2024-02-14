@@ -54,7 +54,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script async src="https://easter-egg.hackupc.com/index.js"></Script>
       <StyledComponentsRegistry>
         <body className={montserrat.className}>
           <a
@@ -87,6 +86,7 @@ export default function RootLayout({
           <GoogleAnalytics gaId="G-WFBH19BZ64" />
         </body>
       </StyledComponentsRegistry>
+      <Script async src="https://easter-egg.hackupc.com/index.js"></Script>
     </html>
   );
 }

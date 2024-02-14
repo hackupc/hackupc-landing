@@ -8,7 +8,6 @@ import {
   SpacingL,
   SpacingM,
   SpacingS,
-  SpacingXS,
 } from "@/app/genericComponents/tokens";
 import { Body, BodyLink } from "@/app/genericComponents/Typography";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
