@@ -5,6 +5,9 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { montserrat } from "@/app/genericComponents/fonts";
 import Script from "next/script";
+import { Clarity } from "@/app/metrics/Clarity";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { EventStructuredData } from "@/app/metrics/EventStructuredData";
 
 config.autoAddCss = false;
 export const metadata: Metadata = {
@@ -22,8 +25,8 @@ export const metadata: Metadata = {
     description:
       "36 hours student hackathon in Barcelona in May starting on the 3 ending the 5",
     images: {
-      url: "https://hackupc.com/ogimage.png?v=2023-v2",
-      secureUrl: "https://hackupc.com/ogimage.png?v=2023-v2",
+      url: "https://hackupc.com/ogimage.png?v=2024",
+      secureUrl: "https://hackupc.com/ogimage.png?v=2024",
       alt: "HackUPC 2024 | May 3-5 | Student hackathon in Barcelona",
     },
   },
@@ -36,8 +39,8 @@ export const metadata: Metadata = {
       "36 hours student hackathon in Barcelona in May starting on the 3 ending the 5",
     url: "https://hackupc.com",
     images: {
-      url: "https://hackupc.com/ogimage.png?v=2023-v2",
-      secureUrl: "https://hackupc.com/ogimage.png?v=2023-v2",
+      url: "https://hackupc.com/ogimage.png?v=2024",
+      secureUrl: "https://hackupc.com/ogimage.png?v=2024",
       alt: "HackUPC landing page screenshot",
     },
   },
@@ -77,6 +80,9 @@ export default function RootLayout({
             />
           </a>
           {children}
+          <Clarity />
+          <EventStructuredData />
+          <GoogleAnalytics gaId="G-WFBH19BZ64" />
         </body>
       </StyledComponentsRegistry>
     </html>
