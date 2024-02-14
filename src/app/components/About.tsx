@@ -81,7 +81,7 @@ export default function About() {
                 The word hackathon is a combination of the words "<b>HACK</b>",
                 standing for creative problem-solving, and "<b>MARATHON</b>".
                 These are awesome events full of creativity, technology, and
-                passionate tech-related students of different skill levels
+                passionate tech-related students of different skill ranges
                 collaborating and creating. During a certain period of time,
                 attendees work in <b>teams</b> to develop apps, games, robots…
                 literally anything you want to <b>build & learn</b> about!
@@ -101,9 +101,9 @@ export default function About() {
               </BlockTitle>
               <Body>
                 HackUPC is the first student hackathon in Spain. Once a year, we
-                aim to provide students of <b>all experience levels</b> from{" "}
+                aim to provide participants of <b>all experience levels</b> from{" "}
                 <b>all around the world</b> with a space where they can improve
-                and learn new skills, meet awesome people, and have an overall
+                and learn new skills, meet amazing people, and have an overall
                 great experience!
               </Body>
             </Col>
