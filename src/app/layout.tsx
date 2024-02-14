@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     site: "@hackupc",
     card: "summary_large_image",
     creator: "@hackupc",
-    title: "HackUPC 2024 | May 3-5  | Student hackathon Barcelona",
+    title: "HackUPC 2024 | May 3-5 | Student hackathon Barcelona",
     description:
       "36 hours student hackathon in Barcelona in May starting on the 3 ending the 5",
     images: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "HackUPC 2024 | May 3-5  | Student hackathon Barcelona",
+    title: "HackUPC 2024 | May 3-5 | Student hackathon Barcelona",
     type: "website",
     siteName: "HackUPC",
     locale: "en_GB",
