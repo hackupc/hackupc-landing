@@ -5,6 +5,7 @@ import {
   MobileBreakpoint,
   MobileTitleXL,
   Primary100,
+  Primary300,
   Secondary500,
   SpacingM,
   SpacingS,
@@ -35,6 +36,15 @@ export const HackUPCTitle = styled.h1`
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileTitleXL};
+  }
+`;
+
+export const HackUPCAniversary = styled.div`
+  font-size: 42px;
+  color: ${Primary300};
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: 22px;
   }
 `;
 
@@ -147,7 +157,10 @@ export default function Hero() {
       <HeroContainer className={silom.className}>
         <Image src="/biene.svg" width={100} height={150} alt="biene" />
         <TextsContainer>
-          <HackUPCTitle>HackUPC</HackUPCTitle>
+          <div style={{ textAlign: "center" }}>
+            <HackUPCTitle>HackUPC</HackUPCTitle>
+            <HackUPCAniversary>Join us on our 10th edition</HackUPCAniversary>
+          </div>
           <HackUPCParticipants>750 Hackers</HackUPCParticipants>
           <HackUPCDates>May 3-5 2024 – 36 H</HackUPCDates>
         </TextsContainer>
