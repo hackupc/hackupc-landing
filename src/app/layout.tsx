@@ -8,6 +8,7 @@ import Script from "next/script";
 import { Clarity } from "@/app/metrics/Clarity";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { EventStructuredData } from "@/app/metrics/EventStructuredData";
+import CookiesBanner from "@/app/components/CookiesBanner";
 
 config.autoAddCss = false;
 export const metadata: Metadata = {
@@ -79,6 +80,7 @@ export default function RootLayout({
               style={{ width: "100%" }}
             />
           </a>
+          <CookiesBanner />
           {children}
           <Clarity />
           <EventStructuredData />
