@@ -126,7 +126,7 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Link",
         content: "Code of conduct",
-        link: "https://hackupc.com/code-of-conduct",
+        link: "https://legal.hackersatupc.org/hackupc/code_of_conduct",
       },
       {
         type: "Text",
