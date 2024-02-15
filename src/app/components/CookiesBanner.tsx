@@ -49,6 +49,11 @@ const TextContainer = styled.div`
   align-items: center;
 `;
 
+const StyledButton = styled(FontAwesomeIcon)`
+  cursor: url("/rocket-fire.png"), auto;
+  padding: ${SpacingS};
+`;
+
 export default function CookiesBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -87,7 +92,7 @@ export default function CookiesBanner() {
         </Body>
       </TextContainer>
 
-      <FontAwesomeIcon
+      <StyledButton
         icon={faClose}
         onClick={handleClose}
         aria-label="Close GDPR notification"
