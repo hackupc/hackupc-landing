@@ -61,8 +61,8 @@ export default function During() {
           <source
             media={`(max-width: ${MobileBreakpoint})`}
             srcSet="/activitiesMobile.svg"
-            height={800}
-            width={700}
+            height="auto"
+            width="100%"
             style={{ marginTop: SpacingM, marginBottom: SpacingS }}
           />
           <source
