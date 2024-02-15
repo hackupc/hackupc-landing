@@ -103,7 +103,12 @@ function renderAnswer(answers: AnswerOptions[]) {
     switch (answer.type) {
       case "Link":
         return (
-          <BodyLink key={index} href={answer.link} rel="noopener noreferrer">
+          <BodyLink
+            key={index}
+            href={answer.link}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             {answer.content}
           </BodyLink>
         );

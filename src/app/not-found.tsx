@@ -1,6 +1,6 @@
 "use client";
 
-import { Section } from "@/app/genericComponents/General";
+import { Background, Section } from "@/app/genericComponents/General";
 import {
   BlockTitle,
   BodyLink,
@@ -11,9 +11,10 @@ import { Secondary500 } from "@/app/genericComponents/tokens";
 export default function NotFound() {
   return (
     <Section>
-      <SectionTitle>Not Found</SectionTitle>
+      <Background />
+      <SectionTitle>404 Page not found</SectionTitle>
       <BlockTitle color={Secondary500} haveMargin>
-        Could not find requested resource
+        The URL you are looking for does not exist
       </BlockTitle>
       <BodyLink href="/">Return Home</BodyLink>
     </Section>
