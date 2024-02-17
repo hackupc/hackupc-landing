@@ -48,6 +48,10 @@ const SocialsList = styled.div`
 
 const SocialItem = styled.div`
   text-align: center;
+
+  &:hover {
+    transform: scale(1.5);
+  }
 `;
 
 export default function Socials() {
