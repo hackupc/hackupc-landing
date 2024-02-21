@@ -71,7 +71,11 @@ export default function SponsorsAndPartners() {
 
         <SponsorRow>
           <KiloBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/github.svg"}
+              imageAlt={"github"}
+              sponsorLink={"https://education.github.com/"}
+            />
           </KiloBox>
           <KiloBox>
             <SponsorUnrevealed />
