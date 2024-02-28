@@ -121,12 +121,21 @@ export const hackupc_faqs: FAQs[] = [
     answer: [
       {
         type: "Text",
-        content: "Yes, here it is: ",
+        content: "Yes, here they are: Our ",
       },
       {
         type: "Link",
         content: "Code of conduct",
         link: "https://legal.hackersatupc.org/hackupc/code_of_conduct",
+      },
+      {
+        type: "Text",
+        content: " and also ",
+      },
+      {
+        type: "Link",
+        content: "MLH code of conduct.",
+        link: "https://static.mlh.io/docs/mlh-code-of-conduct.pdf",
       },
       {
         type: "Text",
