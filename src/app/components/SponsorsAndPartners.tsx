@@ -78,9 +78,11 @@ export default function SponsorsAndPartners() {
             />
           </KiloBox>
           <KiloBox>
-            imageSrc={"/Sponsors/flanks.svg"}
-            imageAlt={"flanks"}
-            sponsorLink={"https://www.flanks.io/"}
+            <SponsorLogo
+              imageSrc={"/Sponsors/flanks.svg"}
+              imageAlt={"flanks"}
+              sponsorLink={"https://www.flanks.io/"}
+            />
           </KiloBox>
           <KiloBox>
             <SponsorUnrevealed />
