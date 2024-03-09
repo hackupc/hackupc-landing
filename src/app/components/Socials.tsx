@@ -56,7 +56,7 @@ const SocialItem = styled.div`
 
 export default function Socials() {
   return (
-    <SectionBackground haveBackground>
+    <SectionBackground haveBackground id="socials">
       <Section>
         <StyledSectionTitle>
           Stay tuned, and don't miss a bit
