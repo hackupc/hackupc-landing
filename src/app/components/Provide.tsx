@@ -30,7 +30,7 @@ const ProvideBlock = styled.div`
 
 export default function Provide() {
   return (
-    <SectionBackground haveBackground>
+    <SectionBackground haveBackground id="provide">
       <Section>
         <SectionTitle>We also provide...</SectionTitle>
         <BlockWrapper>

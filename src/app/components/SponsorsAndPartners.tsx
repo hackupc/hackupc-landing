@@ -32,7 +32,7 @@ const SponsorRow = styled.div`
 
 export default function SponsorsAndPartners() {
   return (
-    <Section>
+    <Section id="sponsors">
       <SectionTitle>Sponsors</SectionTitle>
       <SponsorsBlock>
         <SponsorRow>

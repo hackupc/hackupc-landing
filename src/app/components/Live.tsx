@@ -46,7 +46,7 @@ const LiveDotAnimated = styled.div`
 
 export default function Live() {
   return (
-    <Section>
+    <Section id="live">
       <StyledSectionTitle>
         <LiveDotAnimated />
         Live
