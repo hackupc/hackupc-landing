@@ -83,7 +83,7 @@ const Text = styled(Body)`
 
 export default function HowToParticipate() {
   return (
-    <Section>
+    <Section id="howtoparticipate">
       <SectionTitle>How to participate</SectionTitle>
       <RoleBlock>
         <ImageButton

@@ -58,7 +58,7 @@ const SmokeMobile = styled.img`
 
 export default function About() {
   return (
-    <div>
+    <div id="about">
       <Smoke src="/smoke_start.svg" alt="Rocket Smoke" />
       <SmokeMobile src="/smoke_start_mobile.svg" alt="Rocket Smoke" />
       <SectionBackground specialBackground={"rgba(234,247,255,.85)"}>

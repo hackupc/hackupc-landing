@@ -157,7 +157,7 @@ export default function FAQs() {
   };
 
   return (
-    <Section>
+    <Section id="faqs">
       <SectionTitle>FAQs</SectionTitle>
       <Split>
         <ColumnsQuestions>
