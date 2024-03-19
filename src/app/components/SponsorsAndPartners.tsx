@@ -128,7 +128,11 @@ export default function SponsorsAndPartners() {
           />
         </MiliBox>
         <MiliBox>
-          <SponsorUnrevealed />
+          <SponsorLogo
+            imageSrc={"/Partners/nissin.svg"}
+            imageAlt={"nissin"}
+            sponsorLink={"https://www.nissinfoods.com/"}
+          />
         </MiliBox>
         <MiliBox>
           <SponsorUnrevealed />
