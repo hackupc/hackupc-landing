@@ -106,7 +106,7 @@ export default function ThroughTheYears() {
   const [emblaRef] = useEmblaCarousel();
   const OPTIONS: EmblaOptionsType = {
     align: "start",
-    loop: false,
+    loop: true,
     slidesToScroll: 2,
   };
 

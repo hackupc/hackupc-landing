@@ -1,11 +1,11 @@
 .embla {
     margin: auto;
-    max-width: 1100px;
+    max-width: 1000px;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 100%;
-    --slide-spacing-sm: 1.6rem;
-    --slide-size-sm: 50%;
+    --slide-spacing-sm: 0.5rem;
+    --slide-size-sm: 20%;
     --slide-spacing-lg: 2rem;
     --slide-size-lg: calc(100% / 4);
 }
@@ -30,13 +30,22 @@
 }
 .embla__slide {
     min-width: 0;
-    justify-content: center;
-    align-items: center;
     flex: 0 0 var(--slide-size);
     padding-left: var(--slide-spacing);
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+
 }
+
+@media (min-width: 300px) {
+    .embla__slide {
+        flex: 0 0 var(--slide-size-sm);
+        padding-left: var(--slide-spacing-sm);
+    }
+}
+
 @media (min-width: 750px) {
     .embla__slide {
         flex: 0 0 var(--slide-size-sm);
@@ -59,6 +68,7 @@
     justify-content: center;
     height: var(--slide-height);
 }
+
 .embla__controls {
     display: flex;
     justify-content: center;
@@ -112,7 +122,7 @@
     touch-action: manipulation;
     display: inline-flex;
     text-decoration: none;
-    cursor: pointer;
+    cursor: url("/rocket-fire.png"), auto;
     border: 0;
     padding: 0;
     margin: 0.1rem;
