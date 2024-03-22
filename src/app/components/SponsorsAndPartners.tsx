@@ -129,16 +129,16 @@ export default function SponsorsAndPartners() {
         </MiliBox>
         <MiliBox>
           <SponsorLogo
-            imageSrc={"/Partners/nissin.svg"}
-            imageAlt={"nissin"}
-            sponsorLink={"https://www.nissinfoods.com/"}
+            imageSrc={"/Partners/coeinf.png"}
+            imageAlt={"coeinf"}
+            sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
           />
         </MiliBox>
         <MiliBox>
           <SponsorLogo
-            imageSrc={"/Partners/coeinf.png"}
-            imageAlt={"coeinf"}
-            sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
+            imageSrc={"/Partners/nissin.svg"}
+            imageAlt={"nissin"}
+            sponsorLink={"https://www.nissinfoods.com/"}
           />
         </MiliBox>
         <MiliBox>
