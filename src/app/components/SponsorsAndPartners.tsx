@@ -135,7 +135,11 @@ export default function SponsorsAndPartners() {
           />
         </MiliBox>
         <MiliBox>
-          <SponsorUnrevealed />
+          <SponsorLogo
+            imageSrc={"/Partners/coeinf.png"}
+            imageAlt={"coeinf"}
+            sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
+          />
         </MiliBox>
         <MiliBox>
           <SponsorUnrevealed />
