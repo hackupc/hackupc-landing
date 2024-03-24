@@ -129,15 +129,9 @@ export default function SponsorsAndPartners() {
         </MiliBox>
         <MiliBox>
           <SponsorLogo
-<<<<<<< HEAD
             imageSrc={"/Partners/coeinf.png"}
             imageAlt={"coeinf"}
             sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
-=======
-            imageSrc={"/Partners/nissin.svg"}
-            imageAlt={"nissin"}
-            sponsorLink={"https://www.nissinfoods.com/"}
->>>>>>> 82dee66 (New Partner - Nissin (#49))
           />
         </MiliBox>
         <MiliBox>
