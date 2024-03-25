@@ -82,6 +82,7 @@ export default function SponsorsAndPartners() {
               imageSrc={"/Sponsors/flanks.svg"}
               imageAlt={"flanks"}
               sponsorLink={"https://www.flanks.io/"}
+              smallPadding
             />
           </KiloBox>
           <KiloBox>
@@ -97,6 +98,7 @@ export default function SponsorsAndPartners() {
             imageSrc={"/Partners/upc.svg"}
             imageAlt={"upc"}
             sponsorLink={"https://www.upc.edu/"}
+            smallPadding
           />
         </MiliBox>
         <MiliBox>
@@ -132,6 +134,7 @@ export default function SponsorsAndPartners() {
             imageSrc={"/Partners/coeinf.png"}
             imageAlt={"coeinf"}
             sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
+            smallPadding
           />
         </MiliBox>
         <MiliBox>
@@ -142,7 +145,12 @@ export default function SponsorsAndPartners() {
           />
         </MiliBox>
         <MiliBox>
-          <SponsorUnrevealed />
+          <SponsorLogo
+            imageSrc={"/Partners/frit_ravich.png"}
+            imageAlt={"fritravich"}
+            sponsorLink={"https://www.fritravich.com/en/"}
+            smallPadding
+          />
         </MiliBox>
       </SponsorRow>
     </Section>
