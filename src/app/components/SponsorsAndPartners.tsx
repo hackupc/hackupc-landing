@@ -32,7 +32,7 @@ const SponsorRow = styled.div`
 
 export default function SponsorsAndPartners() {
   return (
-    <Section>
+    <Section id="sponsors">
       <SectionTitle>Sponsors</SectionTitle>
       <SponsorsBlock>
         <SponsorRow>
@@ -132,10 +132,18 @@ export default function SponsorsAndPartners() {
           />
         </MiliBox>
         <MiliBox>
-          <SponsorUnrevealed />
+          <SponsorLogo
+            imageSrc={"/Partners/coeinf.png"}
+            imageAlt={"coeinf"}
+            sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
+          />
         </MiliBox>
         <MiliBox>
-          <SponsorUnrevealed />
+          <SponsorLogo
+            imageSrc={"/Partners/nissin.svg"}
+            imageAlt={"nissin"}
+            sponsorLink={"https://www.nissinfoods.com/"}
+          />
         </MiliBox>
         <MiliBox>
           <SponsorUnrevealed />

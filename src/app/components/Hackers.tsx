@@ -42,7 +42,7 @@ const StyledSmallTitle = styled(SmallTitle)`
 
 export default function Hackers() {
   return (
-    <SectionBackground haveBackground>
+    <SectionBackground haveBackground id="hackers">
       <Section>
         <SectionTitle>The organization behind HackUPC</SectionTitle>
 

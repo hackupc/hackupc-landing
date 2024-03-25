@@ -86,7 +86,7 @@ const VideoNotAvailable = styled.div`
 
 export default function Trailer() {
   return (
-    <SectionBackground haveBackground>
+    <SectionBackground haveBackground id="trailer">
       <Section>
         <SectionTitle>Teaser</SectionTitle>
         <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>

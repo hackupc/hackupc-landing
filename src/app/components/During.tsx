@@ -51,7 +51,7 @@ const ImageStyled = styled.img`
 
 export default function During() {
   return (
-    <Section>
+    <Section id="during">
       <SectionTitle>During the event</SectionTitle>
       <Body>
         Coding is the main part of HackUPC, but we have many more activities
