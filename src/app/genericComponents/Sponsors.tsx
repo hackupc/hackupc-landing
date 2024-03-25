@@ -5,7 +5,6 @@ import {
   SpacingXS,
 } from "@/app/genericComponents/tokens";
 import { BodyBold } from "@/app/genericComponents/Typography";
-import { bool } from "prop-types";
 
 interface BoxInput {
   width: string;
