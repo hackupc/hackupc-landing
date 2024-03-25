@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     creator: "@hackupc",
     title: "HackUPC 2024 | May 3-5 | Student hackathon Barcelona",
     description:
-      "36 hours student hackathon in Barcelona in May starting on the 3th ending the 5th",
+      "36 hours student hackathon in Barcelona in May starting on the 3rd ending the 5th",
     images: {
       url: "https://hackupc.com/ogimage.png?v=2024",
       secureUrl: "https://hackupc.com/ogimage.png?v=2024",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "HackUPC",
     locale: "en_GB",
     description:
-      "36 hours student hackathon in Barcelona in May starting on the 3th ending the 5th",
+      "36 hours student hackathon in Barcelona in May starting on the 3rd ending the 5th",
     url: "https://hackupc.com",
     images: {
       url: "https://hackupc.com/ogimage.png?v=2024",
