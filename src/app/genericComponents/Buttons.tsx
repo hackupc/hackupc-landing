@@ -31,6 +31,7 @@ const ButtonGeneric = styled.a<ButtonProps>`
   font-size: ${BodyText};
   width: ${(props) => props.width || "fit-content"};
   margin-top: ${SpacingS};
+  cursor: ${(props) => props.disabled && "not-allowed"};
 
   @media (max-width: ${MobileBreakpoint}) {
     padding: ${SpacingS};
@@ -56,7 +57,6 @@ export const PrimaryButton = styled(ButtonGeneric)`
   border: none;
   background-color: ${(props) => (props.disabled ? Primary100 : Primary300)};
   color: ${(props) => (props.disabled ? Primary300 : Primary100)};
-  cursor: ${(props) => props.disabled && "not-allowed"};
 
   &:hover {
     background-color: ${(props) => !props.disabled && Primary400};
