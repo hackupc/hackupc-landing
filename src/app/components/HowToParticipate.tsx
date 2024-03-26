@@ -107,13 +107,7 @@ export default function HowToParticipate() {
             are passionate about it, or if you've graduated more than a year ago
             and can't participate as a hacker, apply now as a mentor!
           </Text>
-          <SecondaryOutlineButton
-            href="https://my.hackupc.com/user/signup/mentor/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Apply as a mentor
-          </SecondaryOutlineButton>
+          <SecondaryOutlineButton disabled>Closed</SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
