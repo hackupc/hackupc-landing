@@ -49,7 +49,11 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/inditex.svg"}
+              imageAlt={"inditex"}
+              sponsorLink={"https://www.zaratalent.com/es/tech/"}
+            />
           </MegaBox>
           <MegaBox>
             <SponsorUnrevealed />
