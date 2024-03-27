@@ -7,7 +7,6 @@ import {
   KiloBox,
   MegaBox,
   MiliBox,
-  PetaBox,
   SponsorLogo,
   SponsorUnrevealed,
 } from "@/app/genericComponents/Sponsors";
