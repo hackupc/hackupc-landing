@@ -36,7 +36,11 @@ export default function SponsorsAndPartners() {
       <SponsorsBlock>
         <SponsorRow>
           <GigaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/intersystems.svg"}
+              imageAlt={"instersystems"}
+              sponsorLink={"https://www.intersystems.com/"}
+            />
           </GigaBox>
         </SponsorRow>
 
@@ -59,6 +63,11 @@ export default function SponsorsAndPartners() {
           <MegaBox>
             <SponsorUnrevealed />
           </MegaBox>
+          <MegaBox>
+            <SponsorUnrevealed />
+          </MegaBox>
+        </SponsorRow>
+        <SponsorRow>
           <MegaBox>
             <SponsorUnrevealed />
           </MegaBox>
