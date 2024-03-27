@@ -53,6 +53,7 @@ export default function SponsorsAndPartners() {
               imageSrc={"/Sponsors/inditex.svg"}
               imageAlt={"inditex"}
               sponsorLink={"https://www.zaratalent.com/es/tech/"}
+              smallPadding
             />
           </MegaBox>
           <MegaBox>
