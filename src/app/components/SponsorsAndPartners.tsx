@@ -7,7 +7,6 @@ import {
   KiloBox,
   MegaBox,
   MiliBox,
-  PetaBox,
   SponsorLogo,
   SponsorUnrevealed,
 } from "@/app/genericComponents/Sponsors";
@@ -36,15 +35,6 @@ export default function SponsorsAndPartners() {
       <SectionTitle>Sponsors</SectionTitle>
       <SponsorsBlock>
         <SponsorRow>
-          <PetaBox>
-            <SponsorUnrevealed />
-          </PetaBox>
-        </SponsorRow>
-
-        <SponsorRow>
-          <GigaBox>
-            <SponsorUnrevealed />
-          </GigaBox>
           <GigaBox>
             <SponsorUnrevealed />
           </GigaBox>
@@ -63,8 +53,17 @@ export default function SponsorsAndPartners() {
               imageSrc={"/Sponsors/inditex.svg"}
               imageAlt={"inditex"}
               sponsorLink={"https://www.zaratalent.com/es/tech/"}
+              smallPadding
             />
           </MegaBox>
+          <MegaBox>
+            <SponsorUnrevealed />
+          </MegaBox>
+          <MegaBox>
+            <SponsorUnrevealed />
+          </MegaBox>
+        </SponsorRow>
+        <SponsorRow>
           <MegaBox>
             <SponsorUnrevealed />
           </MegaBox>
@@ -141,6 +140,8 @@ export default function SponsorsAndPartners() {
             smallPadding
           />
         </MiliBox>
+      </SponsorRow>
+      <SponsorRow>
         <MiliBox>
           <SponsorLogo
             imageSrc={"/Partners/nissin.svg"}
@@ -153,6 +154,14 @@ export default function SponsorsAndPartners() {
             imageSrc={"/Partners/frit_ravich.png"}
             imageAlt={"fritravich"}
             sponsorLink={"https://www.fritravich.com/en/"}
+            smallPadding
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/cocacola.png"}
+            imageAlt={"cocacola"}
+            sponsorLink={"https://www.coca-cola.com/"}
             smallPadding
           />
         </MiliBox>
