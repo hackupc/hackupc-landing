@@ -76,14 +76,6 @@ export default function SponsorsAndPartners() {
           <MegaBox>
             <SponsorUnrevealed />
           </MegaBox>
-        </SponsorRow>
-        <SponsorRow>
-          <MegaBox>
-            <SponsorUnrevealed />
-          </MegaBox>
-          <MegaBox>
-            <SponsorUnrevealed />
-          </MegaBox>
           <MegaBox>
             <SponsorUnrevealed />
           </MegaBox>
