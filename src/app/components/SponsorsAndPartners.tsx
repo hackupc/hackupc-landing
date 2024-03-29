@@ -61,13 +61,13 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/travelperk.svg"}
+              imageAlt={"travelperk"}
+              sponsorLink={"https://www.travelperk.com/"}
+              smallPadding
+            />
           </MegaBox>
-          <MegaBox>
-            <SponsorUnrevealed />
-          </MegaBox>
-        </SponsorRow>
-        <SponsorRow>
           <MegaBox>
             <SponsorUnrevealed />
           </MegaBox>
