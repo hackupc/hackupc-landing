@@ -1,43 +1,14 @@
 import React from "react";
 
 import styled, { keyframes } from "styled-components";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { Section } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
-import { MaxScreenSize } from "@/app/genericComponents/tokens";
-import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import EmblaCarousel from "./ThroughTheYears/EmblaCarousel";
+import EmblaCarousel from "./EmblaCarousel";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { EmblaOptionsType } from "embla-carousel";
 
-//import "./ThroughTheYears/css/base.css";
-
-import "./ThroughTheYears/css/embla.css";
-
-//import "./ThroughTheYears/css/sandbox.css";
-
-const Bullet = styled.span`
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background-color: lightslategrey;
-  border-radius: 50%;
-  margin: 0 5px;
-
-  &:hover {
-    background-color: orangered;
-  }
-
-  &.Wactive {
-    background-color: orangered;
-  }
-`;
-
-const Edition = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  scroll-snap-align: start;
-`;
+import "./css/embla.css";
 
 export default function ThroughTheYears() {
   const PREVIOUS_EDITIONS = [

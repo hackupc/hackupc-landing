@@ -1,7 +1,6 @@
 import { React, useState, useEffect, useCallback } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
-import { usePrevNextButtons } from "./EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import Link from "next/link";

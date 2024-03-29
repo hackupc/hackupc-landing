@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { EmblaCarouselType } from "embla-carousel";
 
 type UseDotButtonType = {
