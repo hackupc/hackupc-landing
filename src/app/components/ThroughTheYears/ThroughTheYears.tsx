@@ -1,9 +1,7 @@
 import React from "react";
 
-import styled, { keyframes } from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
-import useEmblaCarousel from "embla-carousel-react";
 import EmblaCarousel from "./EmblaCarousel";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { EmblaOptionsType } from "embla-carousel";
@@ -72,7 +70,6 @@ export default function ThroughTheYears() {
     },
   ];
 
-  const [emblaRef] = useEmblaCarousel();
   const OPTIONS: EmblaOptionsType = {
     align: "start",
     loop: true,

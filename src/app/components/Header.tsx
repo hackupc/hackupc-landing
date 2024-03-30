@@ -54,7 +54,7 @@ export default function Header() {
   }, []);
 
   return (
-    <HeaderContainer isScrolled={isScrolled}>
+    <HeaderContainer $isScrolled={isScrolled}>
       <ClickableLogo
         onClick={() => {
           window.scroll({

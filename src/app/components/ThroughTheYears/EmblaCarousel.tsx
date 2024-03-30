@@ -1,4 +1,6 @@
+// @ts-ignore
 import { React, useState, useEffect, useCallback } from "react";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { EmblaOptionsType } from "embla-carousel";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import useEmblaCarousel from "embla-carousel-react";
@@ -69,17 +71,6 @@ const EmblaSlide = styled.div`
     padding-left: var(--slide-spacing-lg);
   }
 `;
-
-const EmblaSlideNumber = styled.div`
-  border-radius: 1.8rem;
-  font-size: 4rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--slide-height);
-`;
-
 const EmblaControls = styled.div`
   display: flex;
   justify-content: center;
@@ -90,38 +81,6 @@ const EmblaControls = styled.div`
     display: none;
   }
 `;
-
-const EmblaButtons = styled.div`
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-`;
-
-const EmblaButton = styled.button`
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  touch-action: manipulation;
-  display: inline-flex;
-  text-decoration: none;
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  width: 3.6rem;
-  height: 3.6rem;
-  z-index: 1;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const EmblaButtonSvg = styled.svg`
-  width: 35%;
-  height: 35%;
-`;
-
 const EmblaDots = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -141,6 +100,7 @@ const EmblaPlay = styled.button`
 `;
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
+  // eslint-disable-next-line react/prop-types
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     AutoScroll({ playOnInit: true }),
@@ -149,8 +109,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
-
-  const onButtonAutoplayClick = useCallback(
+  useCallback(
     (callback: () => void) => {
       const autoScroll = emblaApi?.plugins()?.autoScroll;
       if (!autoScroll) return;
@@ -191,7 +150,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <Embla>
       <EmblaViewport ref={emblaRef}>
         <EmblaContainer>
-          {slides.map((edition, index, currentIndex) => (
+          {/* eslint-disable-next-line react/prop-types */}
+          {slides.map((edition, index) => (
             <EmblaSlide key={index}>
               <Link href={edition.url} target="_blank">
                 <Image
@@ -227,5 +187,4 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     </Embla>
   );
 };
-
 export default EmblaCarousel;
