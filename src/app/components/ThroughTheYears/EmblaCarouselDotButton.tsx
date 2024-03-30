@@ -69,32 +69,38 @@ const EmblaDot = styled.button<{ selectedIndex: boolean }>`
   text-decoration: none;
   cursor: url("/rocket-fire.png"), auto;
   border: 0;
-  padding: 0;
+  padding: 0.6rem;
   margin: 0.1rem;
-  width: 1rem;
-  height: 1rem;
+  width: 1.0rem;
+  height: 1.0rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   position: relative;
+  user-select: none;
+  outline: none;
+  
+  
   background-color: ${(props) => {
     return props.selectedIndex ? "orangered" : "slategray";
-  }}; 
+  }};
+
+ 
+}
 
 
-
-  &::after {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+&::after {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const DotButton: React.FC<PropType> = ({

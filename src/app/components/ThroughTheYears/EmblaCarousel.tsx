@@ -111,7 +111,7 @@ const EmblaPlay = styled.button`
 
 const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({ playOnInit: true }),
+    AutoScroll({ playOnInit: true, speed: 0.5 }),
   ]);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
