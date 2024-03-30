@@ -99,6 +99,7 @@ export const DotButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
+    // eslint-disable-next-line react/prop-types
     <EmblaDot selected={props.selected} {...restProps}>
       {children}
     </EmblaDot>
