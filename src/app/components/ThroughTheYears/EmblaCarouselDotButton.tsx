@@ -6,6 +6,7 @@ import React, {
 } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { EmblaCarouselType } from "embla-carousel";
+import styled from "styled-components";
 
 type UseDotButtonType = {
   selectedIndex: number;
@@ -59,12 +60,47 @@ type PropType = PropsWithChildren<
   >
 >;
 
+const EmblaDot = styled.button`
+  appearance: none;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: url("/rocket-fire.png"), auto;
+  border: 0;
+  padding: 0;
+  margin: 0.1rem;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+  background-color: ${(props) =>
+    props.selected
+      ? "orangered"
+      : "slategray"}; // Change 'blue' to your desired color
+
+  
+  &::after {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`;
+
 export const DotButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button type="button" {...restProps}>
+    <EmblaDot selected={props.selected} {...restProps}>
       {children}
-    </button>
+    </EmblaDot>
   );
 };

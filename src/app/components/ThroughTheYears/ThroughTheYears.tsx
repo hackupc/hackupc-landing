@@ -8,8 +8,6 @@ import EmblaCarousel from "./EmblaCarousel";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { EmblaOptionsType } from "embla-carousel";
 
-import "./css/embla.css";
-
 export default function ThroughTheYears() {
   const PREVIOUS_EDITIONS = [
     {
