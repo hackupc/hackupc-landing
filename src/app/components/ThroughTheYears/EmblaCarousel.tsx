@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import {
-  EmblaCarouselType,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   EmblaEventType,
   EmblaOptionsType,
 } from "embla-carousel";
