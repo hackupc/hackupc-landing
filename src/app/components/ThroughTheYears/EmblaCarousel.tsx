@@ -1,19 +1,27 @@
-import { React, useState, useEffect, useCallback } from "react";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { EmblaOptionsType } from "embla-carousel";
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
-import useEmblaCarousel from "embla-carousel-react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import {
+  EmblaCarouselType,
+  EmblaEventType,
+  EmblaOptionsType,
+} from "embla-carousel";
 import AutoScroll from "embla-carousel-auto-scroll";
-
 import styled from "styled-components";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
+import Link from "next/link";
+import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import useEmblaCarousel from "embla-carousel-react";
+
+type Edition = {
+  url: string;
+  img: string;
+  name: string;
+  date: string;
+};
 
 type PropType = {
-  slides: number[];
+  slides: Edition[];
   options?: EmblaOptionsType;
 };
 
@@ -70,6 +78,7 @@ const EmblaSlide = styled.div`
     padding-left: var(--slide-spacing-lg);
   }
 `;
+
 const EmblaControls = styled.div`
   display: flex;
   justify-content: center;
@@ -80,6 +89,7 @@ const EmblaControls = styled.div`
     display: none;
   }
 `;
+
 const EmblaDots = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -98,58 +108,80 @@ const EmblaPlay = styled.button`
   margin: 0px 0px 0px 10px;
 `;
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const { slides, options } = props;
+const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     AutoScroll({ playOnInit: true }),
   ]);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
-  useCallback(
-    (callback: () => void) => {
-      const autoScroll = emblaApi?.plugins()?.autoScroll;
-      if (!autoScroll) return;
 
-      const resetOrStop =
-        autoScroll.options.stopOnInteraction === false
-          ? autoScroll.reset
-          : autoScroll.stop;
+  useCallback(() => {
+    const autoScroll = emblaApi?.plugins()?.autoScroll;
+    if (!autoScroll) return;
 
-      resetOrStop();
-      callback();
-    },
-    [emblaApi],
-  );
+    const options = autoScroll.options as { stopOnInteraction?: boolean };
+    const stopOnInteraction = options?.stopOnInteraction ?? false;
+
+    const reset =
+      typeof autoScroll.reset === "function" ? autoScroll.reset : undefined;
+    const stop =
+      typeof autoScroll.stop === "function" ? autoScroll.stop : undefined;
+
+    if (stopOnInteraction && reset) {
+      reset();
+    } else if (stop) {
+      stop();
+    }
+  }, [emblaApi]);
 
   const toggleAutoplay = useCallback(() => {
     const autoScroll = emblaApi?.plugins()?.autoScroll;
     if (!autoScroll) return;
 
-    const playOrStop = autoScroll.isPlaying()
-      ? autoScroll.stop
-      : autoScroll.play;
-    playOrStop();
+    if (typeof autoScroll.isPlaying === "function") {
+      const playOrStop = autoScroll.isPlaying()
+        ? (autoScroll.stop as () => void)
+        : (autoScroll.play as () => void);
+      playOrStop?.();
+    }
   }, [emblaApi]);
+
+  const isMounted = useRef<boolean>(false);
 
   useEffect(() => {
     const autoScroll = emblaApi?.plugins()?.autoScroll;
     if (!autoScroll) return;
 
-    setIsPlaying(autoScroll.isPlaying());
-    emblaApi
-      .on("autoScroll:play", () => setIsPlaying(true))
-      .on("autoScroll:stop", () => setIsPlaying(false))
-      .on("reInit", () => setIsPlaying(false));
+    const isAutoScrollPlaying = autoScroll.isPlaying as () => boolean;
+    setIsPlaying(!!isAutoScrollPlaying());
+
+    const eventHandlers = {
+      "autoScroll:play": () => setIsPlaying(true),
+      "autoScroll:stop": () => setIsPlaying(false),
+      reInit: () => setIsPlaying(false),
+    };
+
+    Object.entries(eventHandlers).forEach(([event, handler]) => {
+      emblaApi.on(event as EmblaEventType, handler);
+    });
+
+    isMounted.current = true;
+
+    return () => {
+      if (isMounted.current) {
+        Object.entries(eventHandlers).forEach(([event, handler]) => {
+          emblaApi.off(event as EmblaEventType, handler);
+        });
+      }
+    };
   }, [emblaApi]);
 
   return (
     <Embla>
       <EmblaViewport ref={emblaRef}>
         <EmblaContainer>
-          {/* eslint-disable-next-line react/prop-types */}
           {slides.map((edition, index) => (
             <EmblaSlide key={index}>
               <Link href={edition.url} target="_blank">
@@ -172,7 +204,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              selected={selectedIndex === index}
+              selectedIndex={selectedIndex === index}
             />
           ))}
         </EmblaDots>
@@ -186,4 +218,5 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     </Embla>
   );
 };
+
 export default EmblaCarousel;

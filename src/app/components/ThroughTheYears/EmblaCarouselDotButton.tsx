@@ -57,10 +57,12 @@ type PropType = PropsWithChildren<
   React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
-  >
+  > & {
+    selectedIndex: boolean;
+  }
 >;
 
-const EmblaDot = styled.button`
+const EmblaDot = styled.button<{ selectedIndex: boolean }>`
   appearance: none;
   touch-action: manipulation;
   display: inline-flex;
@@ -76,12 +78,12 @@ const EmblaDot = styled.button`
   justify-content: center;
   border-radius: 50%;
   position: relative;
-  background-color: ${(props) =>
-    props.selected
-      ? "orangered"
-      : "slategray"}; // Change 'blue' to your desired color
+  background-color: ${(props) => {
+    return props.selectedIndex ? "orangered" : "slategray";
+  }}; 
 
-  
+
+
   &::after {
     width: 1rem;
     height: 1rem;
@@ -95,12 +97,14 @@ const EmblaDot = styled.button`
     transform: translate(-50%, -50%);
 `;
 
-export const DotButton: React.FC<PropType> = (props) => {
-  const { children, ...restProps } = props;
-
+export const DotButton: React.FC<PropType> = ({
+  selectedIndex,
+  children,
+  ...restProps
+}) => {
+  // Extract the selectedIndex prop and pass the rest of the props to the styled component
   return (
-    // eslint-disable-next-line react/prop-types
-    <EmblaDot selected={props.selected} {...restProps}>
+    <EmblaDot selectedIndex={selectedIndex} {...restProps}>
       {children}
     </EmblaDot>
   );
