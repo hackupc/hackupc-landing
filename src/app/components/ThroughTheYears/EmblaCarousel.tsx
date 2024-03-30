@@ -1,4 +1,3 @@
-// @ts-ignore
 import { React, useState, useEffect, useCallback } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { EmblaOptionsType } from "embla-carousel";
