@@ -98,7 +98,12 @@ export default function SponsorsAndPartners() {
             />
           </KiloBox>
           <KiloBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/bluetab.png"}
+              imageAlt={"bluetab"}
+              sponsorLink={"https://www.bluetab.net/es/"}
+              smallPadding
+            />
           </KiloBox>
         </SponsorRow>
       </SponsorsBlock>
