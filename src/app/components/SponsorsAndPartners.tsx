@@ -189,6 +189,13 @@ export default function SponsorsAndPartners() {
             smallPadding
           />
         </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/incapto.svg"}
+            imageAlt={"incapto"}
+            sponsorLink={"https://incapto.com/profesional/"}
+          />
+        </MiliBox>
       </SponsorRow>
     </Section>
   );
