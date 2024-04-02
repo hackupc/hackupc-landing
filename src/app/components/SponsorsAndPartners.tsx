@@ -106,6 +106,16 @@ export default function SponsorsAndPartners() {
             />
           </KiloBox>
         </SponsorRow>
+
+        <SponsorRow>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Sponsors/ithinkupc.svg"}
+              imageAlt={"ithinkupc"}
+              sponsorLink={"https://www.ithinkupc.com/es"}
+            />
+          </MiliBox>
+        </SponsorRow>
       </SponsorsBlock>
 
       <SectionTitle>Partners</SectionTitle>
