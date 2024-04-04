@@ -204,7 +204,13 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
           {scrollSnaps.map((_, index) => (
             <DotButton
               key={index}
-              onClick={() => onDotButtonClick(index)}
+              onClick={() => {
+                onDotButtonClick(index);
+                const autoScroll = emblaApi?.plugins()?.autoScroll;
+                if (autoScroll && typeof autoScroll.stop === "function") {
+                  autoScroll.stop();
+                }
+              }}
               selectedIndex={selectedIndex === index}
             />
           ))}

@@ -65,14 +65,11 @@ type PropType = PropsWithChildren<
 const EmblaDot = styled.button<{ selectedIndex: boolean }>`
   appearance: none;
   touch-action: manipulation;
-  display: inline-flex;
   text-decoration: none;
   cursor: url("/rocket-fire.png"), auto;
   border: 0;
   padding: 0.6rem;
   margin: 0.1rem;
-  width: 1.0rem;
-  height: 1.0rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,27 +77,10 @@ const EmblaDot = styled.button<{ selectedIndex: boolean }>`
   position: relative;
   user-select: none;
   outline: none;
-  
-  
+
   background-color: ${(props) => {
     return props.selectedIndex ? "orangered" : "slategray";
   }};
-
- 
-}
-
-
-&::after {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 `;
 
 export const DotButton: React.FC<PropType> = ({
@@ -108,7 +88,6 @@ export const DotButton: React.FC<PropType> = ({
   children,
   ...restProps
 }) => {
-  // Extract the selectedIndex prop and pass the rest of the props to the styled component
   return (
     <EmblaDot selectedIndex={selectedIndex} {...restProps}>
       {children}
