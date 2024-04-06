@@ -185,16 +185,29 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
         <EmblaContainer>
           {slides.map((edition, index) => (
             <EmblaSlide key={index}>
-              <Link href={edition.url} target="_blank">
-                <Image
-                  src={edition.img}
-                  alt="altText"
-                  width="150"
-                  height="150"
-                />
-                <h3>{edition.name}</h3>
-                <p>{edition.date}</p>
-              </Link>
+              {edition.url ? (
+                <Link href={edition.url} target="_blank">
+                  <Image
+                    src={edition.img}
+                    alt="altText"
+                    width="150"
+                    height="150"
+                  />
+                  <h3>{edition.name}</h3>
+                  <p>{edition.date}</p>
+                </Link>
+              ) : (
+                <div>
+                  <Image
+                    src={edition.img}
+                    alt="altText"
+                    width="150"
+                    height="150"
+                  />
+                  <h3>{edition.name}</h3>
+                  <p>{edition.date}</p>
+                </div>
+              )}
             </EmblaSlide>
           ))}
         </EmblaContainer>
