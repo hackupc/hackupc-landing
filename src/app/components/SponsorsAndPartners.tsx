@@ -98,8 +98,23 @@ export default function SponsorsAndPartners() {
             />
           </KiloBox>
           <KiloBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/bluetab.png"}
+              imageAlt={"bluetab"}
+              sponsorLink={"https://www.bluetab.net/es/"}
+              smallPadding
+            />
           </KiloBox>
+        </SponsorRow>
+
+        <SponsorRow>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Sponsors/ithinkupc.svg"}
+              imageAlt={"ithinkupc"}
+              sponsorLink={"https://www.ithinkupc.com/es"}
+            />
+          </MiliBox>
         </SponsorRow>
       </SponsorsBlock>
 
@@ -172,6 +187,13 @@ export default function SponsorsAndPartners() {
             imageAlt={"cocacola"}
             sponsorLink={"https://www.coca-cola.com/"}
             smallPadding
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/incapto.svg"}
+            imageAlt={"incapto"}
+            sponsorLink={"https://incapto.com/profesional/"}
           />
         </MiliBox>
       </SponsorRow>
