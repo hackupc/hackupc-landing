@@ -191,6 +191,13 @@ export default function SponsorsAndPartners() {
         </MiliBox>
         <MiliBox>
           <SponsorLogo
+            imageSrc={"/Partners/nestle.svg"}
+            imageAlt={"nestle"}
+            sponsorLink={"https://www.nestle.com/"}
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
             imageSrc={"/Partners/incapto.svg"}
             imageAlt={"incapto"}
             sponsorLink={"https://incapto.com/profesional/"}
