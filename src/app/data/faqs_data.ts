@@ -178,7 +178,7 @@ export const travel_faqs: FAQs[] = [
         content:
           "To be able to receive Travel Reimbursement money, you need to match the following criteria:",
         options: [
-          "Upload your tickets before 19th April to our platform (we only accept flight, bus, or train tickets) alongside your PayPal account (we only pay this way).",
+          "Upload your tickets before 2nd May to our platform (we only accept flight, bus, or train tickets) alongside your PayPal account (we only pay this way).",
           "The arrival tickets should be after April 26th and the departure tickets should be prior to May 10th.",
           "In the hackathon, it’s mandatory to demo your project to HackUPC judges, presenting only to sponsors will not be considered valid.",
           "The project should follow all the HackUPC rules.",
