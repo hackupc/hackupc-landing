@@ -17,7 +17,6 @@ const VideoWrapper = styled.div`
   width: 80%;
   padding-top: 45%;
   aspect-ratio: 16 / 9;
-  margin-bottom: ${SpacingM};
 
   @media (max-width: ${MobileBreakpoint}) {
     width: 100%;
