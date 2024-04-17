@@ -79,7 +79,11 @@ export default function SponsorsAndPartners() {
         </SponsorRow>
         <SponsorRow>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/seidor.svg"}
+              imageAlt={"seidor"}
+              sponsorLink={"https://www.seidor.com"}
+            />
           </MegaBox>
           <MegaBox>
             <SponsorUnrevealed />
