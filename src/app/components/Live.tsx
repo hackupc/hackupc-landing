@@ -2,7 +2,6 @@ import { Section } from "@/app/genericComponents/General";
 import {
   Body,
   BodyBold,
-  BodyLink,
   SectionTitle,
 } from "@/app/genericComponents/Typography";
 import { PrimaryButton } from "@/app/genericComponents/Buttons";
