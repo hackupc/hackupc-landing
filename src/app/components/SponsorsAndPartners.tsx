@@ -8,7 +8,6 @@ import {
   MegaBox,
   MiliBox,
   SponsorLogo,
-  SponsorUnrevealed,
 } from "@/app/genericComponents/Sponsors";
 
 const SponsorsBlock = styled.div`
