@@ -86,7 +86,11 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/esa.svg"}
+              imageAlt={"esa"}
+              sponsorLink={"https://www.esa.int/"}
+            />
           </MegaBox>
         </SponsorRow>
 
