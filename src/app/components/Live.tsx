@@ -60,14 +60,12 @@ export default function Live() {
           check out all the activities happening during the event.
         </Body>
       </TextContainer>
-      <PrimaryButton>
-        <a
-          href="https://live.hackupc.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Check live
-        </a>
+      <PrimaryButton
+        href="https://live.hackupc.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Check live
       </PrimaryButton>
     </Section>
   );
