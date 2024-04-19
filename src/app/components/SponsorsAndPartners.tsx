@@ -8,7 +8,6 @@ import {
   MegaBox,
   MiliBox,
   SponsorLogo,
-  SponsorUnrevealed,
 } from "@/app/genericComponents/Sponsors";
 
 const SponsorsBlock = styled.div`
@@ -86,7 +85,11 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/esa.svg"}
+              imageAlt={"esa"}
+              sponsorLink={"https://www.esa.int/"}
+            />
           </MegaBox>
         </SponsorRow>
 
