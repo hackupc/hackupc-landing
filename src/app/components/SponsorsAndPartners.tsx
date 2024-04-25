@@ -215,6 +215,14 @@ export default function SponsorsAndPartners() {
             sponsorLink={"https://incapto.com/profesional/"}
           />
         </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/cacaolat.png"}
+            imageAlt={"cacaolat"}
+            sponsorLink={"https://www.cacaolat.es/en"}
+            smallPadding
+          />
+        </MiliBox>
       </SponsorRow>
     </Section>
   );
