@@ -8,7 +8,6 @@ import {
   MegaBox,
   MiliBox,
   SponsorLogo,
-  SponsorUnrevealed,
 } from "@/app/genericComponents/Sponsors";
 
 const SponsorsBlock = styled.div`
@@ -69,15 +68,28 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/vueling.svg"}
+              imageAlt={"vueling"}
+              sponsorLink={"https://www.vueling.com/ca"}
+              smallPadding
+            />
           </MegaBox>
         </SponsorRow>
         <SponsorRow>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/seidor.svg"}
+              imageAlt={"seidor"}
+              sponsorLink={"https://www.seidor.com"}
+            />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/esa.svg"}
+              imageAlt={"esa"}
+              sponsorLink={"https://www.esa.int/"}
+            />
           </MegaBox>
         </SponsorRow>
 
@@ -191,9 +203,24 @@ export default function SponsorsAndPartners() {
         </MiliBox>
         <MiliBox>
           <SponsorLogo
+            imageSrc={"/Partners/nestle.svg"}
+            imageAlt={"nestle"}
+            sponsorLink={"https://www.nestle.com/"}
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
             imageSrc={"/Partners/incapto.svg"}
             imageAlt={"incapto"}
             sponsorLink={"https://incapto.com/profesional/"}
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/cacaolat.png"}
+            imageAlt={"cacaolat"}
+            sponsorLink={"https://www.cacaolat.es/en"}
+            smallPadding
           />
         </MiliBox>
       </SponsorRow>

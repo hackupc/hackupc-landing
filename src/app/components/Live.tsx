@@ -2,7 +2,6 @@ import { Section } from "@/app/genericComponents/General";
 import {
   Body,
   BodyBold,
-  BodyLink,
   SectionTitle,
 } from "@/app/genericComponents/Typography";
 import { PrimaryButton } from "@/app/genericComponents/Buttons";
@@ -58,27 +57,15 @@ export default function Live() {
         <Body>
           In our live page you will find it out! It will be available before
           HackUPC so that you can prepare everything you might need! And also to
-          check out all the activities happening during the event. You can also
-          check our{" "}
-          <BodyLink
-            href="https://live.hackupc.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            last year's live page
-          </BodyLink>{" "}
-          and see what happened.
+          check out all the activities happening during the event.
         </Body>
       </TextContainer>
-      <PrimaryButton disabled>
-        {/* <a
-          href="https://live.hackupc.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Check live
-        </a> */}
-        Coming soon...
+      <PrimaryButton
+        href="https://live.hackupc.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Check live
       </PrimaryButton>
     </Section>
   );
