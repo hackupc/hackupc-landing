@@ -10,11 +10,10 @@ import FAQs from "@/app/components/FAQs";
 import Socials from "@/app/components/Socials";
 import SponsorsAndPartners from "@/app/components/SponsorsAndPartners";
 import Hackers from "@/app/components/Hackers";
-// TODO: import ThroughTheYears from "@/app/components/ThroughTheYears";
 import Hero from "./components/Hero";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import ThroughTheYears from "@/app/components/ThroughTheYears";
+import ThroughTheYears from "@/app/components/ThroughTheYears/ThroughTheYears";
 import { Background } from "@/app/genericComponents/General";
 
 export default function Home() {
