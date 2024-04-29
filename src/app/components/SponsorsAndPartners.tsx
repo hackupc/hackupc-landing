@@ -176,6 +176,14 @@ export default function SponsorsAndPartners() {
             smallPadding
           />
         </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/replexica.svg"}
+            imageAlt={"replexica"}
+            sponsorLink={"https://replexica.com/en"}
+            smallPadding
+          />
+        </MiliBox>
       </SponsorRow>
       <SponsorRow>
         <MiliBox>
@@ -220,6 +228,14 @@ export default function SponsorsAndPartners() {
             imageSrc={"/Partners/cacaolat.png"}
             imageAlt={"cacaolat"}
             sponsorLink={"https://www.cacaolat.es/en"}
+            smallPadding
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/risi.png"}
+            imageAlt={"risi"}
+            sponsorLink={"https://risi.es/es/"}
             smallPadding
           />
         </MiliBox>
