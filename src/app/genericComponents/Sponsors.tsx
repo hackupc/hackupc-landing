@@ -26,12 +26,12 @@ export const PetaBox = PackageBox({
 });
 
 export const TeraBox = PackageBox({
-  width: "144px",
-  height: "104px",
+  width: "170px",
+  height: "130px",
 });
 export const GigaBox = PackageBox({
-  width: "136px",
-  height: "96px",
+  width: "144px",
+  height: "104px",
 });
 export const MegaBox = PackageBox({
   width: "128px",

@@ -7,9 +7,7 @@ import {
   KiloBox,
   MegaBox,
   MiliBox,
-  PetaBox,
   SponsorLogo,
-  SponsorUnrevealed,
 } from "@/app/genericComponents/Sponsors";
 
 const SponsorsBlock = styled.div`
@@ -36,17 +34,12 @@ export default function SponsorsAndPartners() {
       <SectionTitle>Sponsors</SectionTitle>
       <SponsorsBlock>
         <SponsorRow>
-          <PetaBox>
-            <SponsorUnrevealed />
-          </PetaBox>
-        </SponsorRow>
-
-        <SponsorRow>
           <GigaBox>
-            <SponsorUnrevealed />
-          </GigaBox>
-          <GigaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/intersystems.svg"}
+              imageAlt={"instersystems"}
+              sponsorLink={"https://www.intersystems.com/"}
+            />
           </GigaBox>
         </SponsorRow>
 
@@ -59,13 +52,44 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/inditex.svg"}
+              imageAlt={"inditex"}
+              sponsorLink={"https://www.zaratalent.com/es/tech/"}
+              smallPadding
+            />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/travelperk.svg"}
+              imageAlt={"travelperk"}
+              sponsorLink={"https://www.travelperk.com/"}
+              smallPadding
+            />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/vueling.svg"}
+              imageAlt={"vueling"}
+              sponsorLink={"https://www.vueling.com/ca"}
+              smallPadding
+            />
+          </MegaBox>
+        </SponsorRow>
+        <SponsorRow>
+          <MegaBox>
+            <SponsorLogo
+              imageSrc={"/Sponsors/seidor.svg"}
+              imageAlt={"seidor"}
+              sponsorLink={"https://www.seidor.com"}
+            />
+          </MegaBox>
+          <MegaBox>
+            <SponsorLogo
+              imageSrc={"/Sponsors/esa.svg"}
+              imageAlt={"esa"}
+              sponsorLink={"https://www.esa.int/"}
+            />
           </MegaBox>
         </SponsorRow>
 
@@ -86,8 +110,23 @@ export default function SponsorsAndPartners() {
             />
           </KiloBox>
           <KiloBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/bluetab.png"}
+              imageAlt={"bluetab"}
+              sponsorLink={"https://www.bluetab.net/es/"}
+              smallPadding
+            />
           </KiloBox>
+        </SponsorRow>
+
+        <SponsorRow>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Sponsors/ithinkupc.svg"}
+              imageAlt={"ithinkupc"}
+              sponsorLink={"https://www.ithinkupc.com/es"}
+            />
+          </MiliBox>
         </SponsorRow>
       </SponsorsBlock>
 
@@ -137,6 +176,8 @@ export default function SponsorsAndPartners() {
             smallPadding
           />
         </MiliBox>
+      </SponsorRow>
+      <SponsorRow>
         <MiliBox>
           <SponsorLogo
             imageSrc={"/Partners/nissin.svg"}
@@ -149,6 +190,36 @@ export default function SponsorsAndPartners() {
             imageSrc={"/Partners/frit_ravich.png"}
             imageAlt={"fritravich"}
             sponsorLink={"https://www.fritravich.com/en/"}
+            smallPadding
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/cocacola.png"}
+            imageAlt={"cocacola"}
+            sponsorLink={"https://www.coca-cola.com/"}
+            smallPadding
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/nestle.svg"}
+            imageAlt={"nestle"}
+            sponsorLink={"https://www.nestle.com/"}
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/incapto.svg"}
+            imageAlt={"incapto"}
+            sponsorLink={"https://incapto.com/profesional/"}
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
+            imageSrc={"/Partners/cacaolat.png"}
+            imageAlt={"cacaolat"}
+            sponsorLink={"https://www.cacaolat.es/en"}
             smallPadding
           />
         </MiliBox>
