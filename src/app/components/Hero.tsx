@@ -13,10 +13,7 @@ import {
   SpacingXXL,
   TitleXXL,
 } from "@/app/genericComponents/tokens";
-import {
-  PrimaryButton,
-  SecondaryButton,
-} from "@/app/genericComponents/Buttons";
+import { SecondaryButton } from "@/app/genericComponents/Buttons";
 import { silom } from "@/app/genericComponents/fonts";
 
 const HeroContainer = styled.div`
@@ -166,22 +163,13 @@ export default function Hero() {
         </TextsContainer>
         <ButtonsContainer>
           <SecondaryButton
-            href="https://my.hackupc.com/user/signup/"
+            href="https://live.hackupc.com/"
             target="_blank"
             rel="noopener noreferrer"
             width="100%"
           >
-            Apply as Hacker
+            Check our live page
           </SecondaryButton>
-          <PrimaryButton
-            href="https://my.hackupc.com/user/signup/volunteer/"
-            target="_blank"
-            rel="noopener noreferrer"
-            width="100%"
-            style={{ marginTop: 0 }}
-          >
-            Apply as Volunteer
-          </PrimaryButton>
         </ButtonsContainer>
       </HeroContainer>
     </div>
