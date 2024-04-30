@@ -6,11 +6,9 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-import {
-  PrimaryButton,
-  SecondaryButton,
-} from "@/app/genericComponents/Buttons";
+import { PrimaryOutlineButton } from "@/app/genericComponents/Buttons";
 import { silom } from "@/app/genericComponents/fonts";
+import React from "react";
 
 const VideoWrapper = styled.div`
   position: relative;
@@ -96,23 +94,9 @@ export default function Trailer() {
           />
         </VideoWrapper>
         <ButtonContainer className={silom.className}>
-          <SecondaryButton
-            width={"60%"}
-            href="https://my.hackupc.com/user/signup/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Apply as a hacker
-          </SecondaryButton>
-          <PrimaryButton
-            href="https://my.hackupc.com/user/signup/volunteer/"
-            target="_blank"
-            rel="noopener noreferrer"
-            width={"60%"}
-            style={{ marginTop: 0 }}
-          >
-            Apply as a volunteer
-          </PrimaryButton>
+          <PrimaryOutlineButton disabled>
+            Applications are closed
+          </PrimaryOutlineButton>
         </ButtonContainer>
       </Section>
     </SectionBackground>
