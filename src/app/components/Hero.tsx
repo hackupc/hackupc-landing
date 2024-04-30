@@ -13,11 +13,7 @@ import {
   SpacingXXL,
   TitleXXL,
 } from "@/app/genericComponents/tokens";
-import {
-  PrimaryButton,
-  SecondaryButton,
-  SecondaryOutlineButton,
-} from "@/app/genericComponents/Buttons";
+import { SecondaryOutlineButton } from "@/app/genericComponents/Buttons";
 import { silom } from "@/app/genericComponents/fonts";
 import React from "react";
 
