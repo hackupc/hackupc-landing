@@ -134,13 +134,7 @@ export default function HowToParticipate() {
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
           </Text>
-          <PrimaryOutlineButton
-            href="https://my.hackupc.com/user/signup/volunteer/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Apply as a volunteer
-          </PrimaryOutlineButton>
+          <SecondaryOutlineButton disabled>Closed</SecondaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 

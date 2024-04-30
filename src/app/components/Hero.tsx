@@ -16,8 +16,10 @@ import {
 import {
   PrimaryButton,
   SecondaryButton,
+  SecondaryOutlineButton,
 } from "@/app/genericComponents/Buttons";
 import { silom } from "@/app/genericComponents/fonts";
+import React from "react";
 
 const HeroContainer = styled.div`
   display: flex;
@@ -165,23 +167,9 @@ export default function Hero() {
           <HackUPCDates>May 3-5 2024 – 36 H</HackUPCDates>
         </TextsContainer>
         <ButtonsContainer>
-          <SecondaryButton
-            href="https://my.hackupc.com/user/signup/"
-            target="_blank"
-            rel="noopener noreferrer"
-            width="100%"
-          >
-            Apply as Hacker
-          </SecondaryButton>
-          <PrimaryButton
-            href="https://my.hackupc.com/user/signup/volunteer/"
-            target="_blank"
-            rel="noopener noreferrer"
-            width="100%"
-            style={{ marginTop: 0 }}
-          >
-            Apply as Volunteer
-          </PrimaryButton>
+          <SecondaryOutlineButton disabled>
+            Applications Closed
+          </SecondaryOutlineButton>
         </ButtonsContainer>
       </HeroContainer>
     </div>
