@@ -13,9 +13,8 @@ import {
   SpacingXXL,
   TitleXXL,
 } from "@/app/genericComponents/tokens";
-import { SecondaryOutlineButton } from "@/app/genericComponents/Buttons";
+import { SecondaryButton } from "@/app/genericComponents/Buttons";
 import { silom } from "@/app/genericComponents/fonts";
-import React from "react";
 
 const HeroContainer = styled.div`
   display: flex;
@@ -163,9 +162,14 @@ export default function Hero() {
           <HackUPCDates>May 3-5 2024 – 36 H</HackUPCDates>
         </TextsContainer>
         <ButtonsContainer>
-          <SecondaryOutlineButton disabled>
-            Applications Closed
-          </SecondaryOutlineButton>
+          <SecondaryButton
+            href="https://live.hackupc.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            width="100%"
+          >
+            Check our live page
+          </SecondaryButton>
         </ButtonsContainer>
       </HeroContainer>
     </div>

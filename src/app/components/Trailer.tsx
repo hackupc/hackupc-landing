@@ -95,7 +95,7 @@ export default function Trailer() {
         </VideoWrapper>
         <ButtonContainer className={silom.className}>
           <SecondaryOutlineButton disabled>
-            Applications Closed
+            Applications are closed
           </SecondaryOutlineButton>
         </ButtonContainer>
       </Section>
