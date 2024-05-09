@@ -163,6 +163,14 @@ export default function SponsorsAndPartners() {
         </MiliBox>
         <MiliBox>
           <SponsorLogo
+            imageSrc={"/Partners/incibe.png"}
+            imageAlt={"incibe"}
+            sponsorLink={"https://www.incibe.es/"}
+            smallPadding
+          />
+        </MiliBox>
+        <MiliBox>
+          <SponsorLogo
             imageSrc={"/Partners/mlh.svg"}
             imageAlt={"mlh"}
             sponsorLink={"https://mlh.io/eu"}
