@@ -163,9 +163,9 @@ export default function SponsorsAndPartners() {
         </MiliBox>
         <MiliBox>
           <SponsorLogo
-            imageSrc={"/Partners/incibe.png"}
-            imageAlt={"incibe"}
-            sponsorLink={"https://www.incibe.es/"}
+            imageSrc={"/Partners/carisma_ciber_upc.png"}
+            imageAlt={"carismatica"}
+            sponsorLink={"https://carismatica.upc.edu/ca/"}
             smallPadding
           />
         </MiliBox>
