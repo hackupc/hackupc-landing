@@ -6,7 +6,7 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-import {PrimaryOutlineButton, SecondaryButton} from "@/app/genericComponents/Buttons";
+import {SecondaryButton} from "@/app/genericComponents/Buttons";
 import { silom } from "@/app/genericComponents/fonts";
 import React from "react";
 
