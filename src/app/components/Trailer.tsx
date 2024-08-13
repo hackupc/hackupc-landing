@@ -6,7 +6,7 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-import { PrimaryOutlineButton } from "@/app/genericComponents/Buttons";
+import {PrimaryOutlineButton, SecondaryButton} from "@/app/genericComponents/Buttons";
 import { silom } from "@/app/genericComponents/fonts";
 import React from "react";
 
@@ -94,9 +94,13 @@ export default function Trailer() {
           />
         </VideoWrapper>
         <ButtonContainer className={silom.className}>
-          <PrimaryOutlineButton disabled>
-            Applications are closed
-          </PrimaryOutlineButton>
+          <SecondaryButton
+              href="https://hackersatupc.typeform.com/to/WOhCwF8m"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            Subscribe
+          </SecondaryButton>
         </ButtonContainer>
       </Section>
     </SectionBackground>
