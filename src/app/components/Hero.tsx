@@ -163,12 +163,12 @@ export default function Hero() {
         </TextsContainer>
         <ButtonsContainer>
           <SecondaryButton
-            href="https://live.hackupc.com/"
+            href="https://hackersatupc.typeform.com/to/WOhCwF8m"
             target="_blank"
             rel="noopener noreferrer"
             width="100%"
           >
-            Check our live page
+            Subscribe
           </SecondaryButton>
         </ButtonsContainer>
       </HeroContainer>
