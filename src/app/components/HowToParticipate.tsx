@@ -134,7 +134,9 @@ export default function HowToParticipate() {
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
           </Text>
-          <PrimaryOutlineButton href="https://hackersatupc.typeform.com/to/pPdpTexb">Subscribe</PrimaryOutlineButton>
+          <PrimaryOutlineButton href="https://hackersatupc.typeform.com/to/pPdpTexb">
+            Subscribe
+          </PrimaryOutlineButton>
         </TextContainer>
       </RoleBlock>
 
