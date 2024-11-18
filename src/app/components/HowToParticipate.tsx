@@ -16,8 +16,7 @@ import {
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
 import {
-  PrimaryButton,
-  PrimaryOutlineButton, SecondaryButton,
+  PrimaryOutlineButton,
   SecondaryOutlineButton,
 } from "@/app/genericComponents/Buttons";
 
