@@ -16,6 +16,7 @@ import {
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
 import {
+  PrimaryButton,
   PrimaryOutlineButton,
   SecondaryOutlineButton,
 } from "@/app/genericComponents/Buttons";
@@ -87,7 +88,7 @@ export default function HowToParticipate() {
       <SectionTitle>How to participate</SectionTitle>
       <RoleBlock>
         <ImageButton
-          href="https://my.hackupc.com/user/signup/mentor/"
+          //href="https://my.hackupc.com/user/signup/mentor/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -113,7 +114,7 @@ export default function HowToParticipate() {
 
       <RoleBlock imageLeft>
         <ImageButton
-          href="https://my.hackupc.com/user/signup/volunteer/"
+          href="https://hackersatupc.typeform.com/to/pPdpTexb"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -134,7 +135,9 @@ export default function HowToParticipate() {
             to know how this amazing event works from the inside, meet amazing
             people and live a great experience!
           </Text>
-          <PrimaryOutlineButton disabled>Closed</PrimaryOutlineButton>
+          <PrimaryButton href="https://hackersatupc.typeform.com/to/pPdpTexb">
+            Subscribe
+          </PrimaryButton>
         </TextContainer>
       </RoleBlock>
 
