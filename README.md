@@ -21,7 +21,7 @@
 1. Clone the repository
 
    ```bash
-    git clone https://github.com/hackupc/new_hackupc.git
+    git clone https://github.com/hackupc/hackupc-landing.git
    ```
 
 2. Install the dependencies
