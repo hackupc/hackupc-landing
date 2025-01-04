@@ -1,7 +1,7 @@
 # HackUPC Landing Page
 
-[![NPM 10.2.5](https://img.shields.io/badge/npm-10.1.0-blue.svg)](https://www.npmjs.com/package/npm/v/10.1.0)
-[![Node.js 20.10.0](https://img.shields.io/badge/node-14.17.0-green.svg)](https://nodejs.org/en/download/releases/)
+[![NPM 10.2.5](https://img.shields.io/badge/npm-10.2.5-blue.svg)](https://www.npmjs.com/package/npm/v/10.2.5)
+[![Node.js 20.10.0](https://img.shields.io/badge/node-20.10.0-green.svg)](https://nodejs.org/en/download/releases/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5865fbbe-4f1a-41b2-ac97-b787dd7feb3c/deploy-status)](https://app.netlify.com/sites/roaring-valkyrie-eb612f/deploys)
 [![](https://github.com/hackupc/new_hackupc/actions/workflows/hackupc_ci.yml/badge.svg)](https://github.com/hackupc/new_hackupc/actions/workflows/hackupc_ci.yml)
 
