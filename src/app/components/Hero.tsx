@@ -3,175 +3,159 @@ import styled from "styled-components";
 import {
   MaxScreenSize,
   MobileBreakpoint,
-  MobileTitleXL,
-  Primary100,
-  Primary300,
-  Secondary500,
   SpacingM,
   SpacingS,
   SpacingXL,
   SpacingXXL,
   TitleXXL,
+  TitleL,
+  TitleM,
 } from "@/app/genericComponents/tokens";
-import { SecondaryButton } from "@/app/genericComponents/Buttons";
-import { silom } from "@/app/genericComponents/fonts";
+import { silkscreen } from "@/app/genericComponents/fonts";
+
+const Colors = {
+  Background: "#0F0F24",
+  Title: "#FFD700", 
+  SubText: "#FFFFFF", 
+  PlayerBackground: "#1A1A36",
+  PlayerText: "#00FFFF",
+  VolunteerText: "#FFA500",
+  ButtonBackground: "#FF0000",
+  ButtonText: "#FFFFFF",
+  BoxBorder: "#FFD700",
+};
 
 const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 0;
   padding: ${SpacingXL} 0 ${SpacingXXL} 0;
   gap: ${SpacingM};
-  max-width: ${MaxScreenSize};
+  width: 100vw;
+  background-color: ${Colors.Background};
+  position: relative;
 `;
 
-export const HackUPCTitle = styled.h1`
+const Title = styled.h1`
   font-size: ${TitleXXL};
+  color: ${Colors.Title};
   text-transform: uppercase;
-  color: ${Primary100};
+  text-align: center;
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: ${MobileTitleXL};
+    font-size: ${TitleL};
   }
 `;
 
-export const HackUPCAniversary = styled.div`
-  font-size: 42px;
-  color: ${Primary300};
+const SubText = styled.div`
+  font-size: ${TitleM};
+  color: ${Colors.SubText};
+  text-align: center;
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: 22px;
+    font-size: ${TitleM};
   }
 `;
 
-const HackUPCParticipants = styled.div`
-  font-size: 55px;
-  text-transform: uppercase;
-  color: ${Secondary500};
-
-  @media (max-width: ${MobileBreakpoint}) {
-    font-size: 35px;
-  }
-`;
-
-const HackUPCDates = styled.div`
-  font-size: 42px;
-  color: ${Primary100};
-
-  @media (max-width: ${MobileBreakpoint}) {
-    font-size: 22px;
-  }
-`;
-
-const TextsContainer = styled.div`
+const PlayAsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: ${Colors.PlayerBackground};
+  border: 2px solid ${Colors.BoxBorder};
+  border-radius: 8px;
+  padding: ${SpacingM};
+  width: 80%;
+  max-width: 600px;
   gap: ${SpacingS};
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 90%;
+  }
 `;
 
-const ButtonsContainer = styled.div`
+const PlayAsTitleBox = styled.div`
+  color: ${Colors.Title};
+  padding: ${SpacingS};
+  border-radius: 8px;
+  border: 2px solid ${Colors.Title};
+  font-size: ${TitleM};
+  font-weight: bold;
+  text-align: center;
+  width: 50%;
+  margin-bottom: ${SpacingS};
+`;
+
+const PlayerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: ${SpacingM};
+  justify-content: center;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const PlayerCard = styled.div<{ playerType: "hacker" | "volunteer" }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${SpacingS};
-
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 100%;
-    padding: 0 ${SpacingS};
-  }
+  justify-content: center;
+  background-color: ${Colors.PlayerBackground};
+  padding: ${SpacingM};
+  border: 2px solid ${Colors.BoxBorder};
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  color: ${(props) =>
+    props.playerType === "hacker" ? Colors.PlayerText : Colors.VolunteerText};
 `;
 
-const Comet = styled.img`
-  position: absolute;
-  z-index: -1;
-`;
+const SurpriseButton = styled.div`
+  background-color: ${Colors.ButtonBackground};
+  color: ${Colors.ButtonText};
+  padding: ${SpacingS} ${SpacingM};
+  border-radius: 8px;
+  margin-top: ${SpacingM};
+  cursor: pointer;
+  font-weight: bold;
 
-const CometRedBigDesktop = styled(Comet)`
-  left: 10%;
-  top: 5%;
-  @media (max-width: ${MobileBreakpoint}) {
-    display: none;
-  }
-`;
-const CometRedSmallDesktop = styled(Comet)`
-  right: 7%;
-  top: 20%;
-  @media (max-width: ${MobileBreakpoint}) {
-    display: none;
-  }
-`;
-const CometPurpleBigDesktop = styled(Comet)`
-  left: 8%;
-  bottom: 30%;
-  @media (max-width: ${MobileBreakpoint}) {
-    display: none;
-  }
-`;
-const CometPurpleSmallDektop = styled(Comet)`
-  right: 14%;
-  bottom: 40%;
-  @media (max-width: ${MobileBreakpoint}) {
-    display: none;
-  }
-`;
-const CometRedBigMobile = styled(Comet)`
-  display: none;
-  @media (max-width: ${MobileBreakpoint}) {
-    left: 8%;
-    top: 7%;
-    display: block;
-  }
-`;
-const CometRedSmallMobile = styled(Comet)`
-  display: none;
-  @media (max-width: ${MobileBreakpoint}) {
-    right: 6%;
-    top: 14%;
-    display: block;
+  &:hover {
+    background-color: ${Colors.Title};
+    color: ${Colors.Background};
   }
 `;
 
 export default function Hero() {
   return (
-    <div>
-      <CometRedBigMobile src="/cometa_big_red_mobile.svg" alt="Big red comet" />
-      <CometRedSmallMobile
-        src="/cometa_small_red_mobile.svg"
-        alt="Small red comet"
-      />
-      <CometRedBigDesktop src="/cometa_big_red.svg" alt="Big red comet" />
-      <CometRedSmallDesktop src="/cometa_small_red.svg" alt="Small red comet" />
-      <CometPurpleBigDesktop
-        src="/cometa_big_purple.svg"
-        alt="Big purple comet"
-      />
-      <CometPurpleSmallDektop
-        src="/cometa_small_purple.svg"
-        alt="Small purple comet"
-      />
-      <HeroContainer className={silom.className}>
-        <Image src="/biene.svg" width={100} height={150} alt="biene" />
-        <TextsContainer>
-          <div style={{ textAlign: "center" }}>
-            <HackUPCTitle>HackUPC</HackUPCTitle>
-            <HackUPCAniversary>Join us on our 10th edition</HackUPCAniversary>
-          </div>
-          <HackUPCParticipants>750 Hackers</HackUPCParticipants>
-          <HackUPCDates>May 3-5 2024 – 36 H</HackUPCDates>
-        </TextsContainer>
-        <ButtonsContainer>
-          <SecondaryButton
-            href="https://hackersatupc.typeform.com/to/WOhCwF8m"
-            target="_blank"
-            rel="noopener noreferrer"
-            width="100%"
-          >
-            Subscribe
-          </SecondaryButton>
-        </ButtonsContainer>
-      </HeroContainer>
-    </div>
+    <HeroContainer className={silkscreen.className}>
+      <Title>HackUPC</Title>
+      <SubText>700 Hackers | 2-4 May | 36h</SubText>
+      <PlayAsContainer>
+        <PlayAsTitleBox>Play as</PlayAsTitleBox>
+        <PlayerContainer>
+          <PlayerCard playerType="hacker">
+            <Image src="/player1.png" width={100} height={100} alt="Player 1" />
+            <div>Hacker</div>
+          </PlayerCard>
+          <PlayerCard playerType="volunteer">
+            <Image
+              src="/player2.png"
+              width={100}
+              height={100}
+              alt="Player 2"
+            />
+            <div>Volunteer</div>
+          </PlayerCard>
+        </PlayerContainer>
+      </PlayAsContainer>
+      <SurpriseButton>Surprise</SurpriseButton>
+    </HeroContainer>
   );
 }
