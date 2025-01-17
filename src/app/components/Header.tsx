@@ -5,6 +5,7 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
+import { silkscreen } from "../genericComponents/fonts";
 import Image from "next/image";
 import { BodyLink } from "@/app/genericComponents/Typography";
 import { useEffect, useState } from "react";
@@ -31,6 +32,10 @@ const ClickableLogo = styled.div`
 
 const StyledBodyLink = styled(BodyLink)`
   margin-right: 150px;
+  font-family: ${silkscreen};
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
 
   @media (max-width: ${MobileBreakpoint}) {
     margin-right: 90px;

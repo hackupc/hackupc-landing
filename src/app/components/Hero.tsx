@@ -1,177 +1,254 @@
 import Image from "next/image";
 import styled from "styled-components";
 import {
-  MaxScreenSize,
   MobileBreakpoint,
-  MobileTitleXL,
-  Primary100,
-  Primary300,
-  Secondary500,
   SpacingM,
   SpacingS,
   SpacingXL,
   SpacingXXL,
   TitleXXL,
+  TitleL,
+  TitleM,
+  TitleS,
+  SpacingL,
+  SpacingXS,
 } from "@/app/genericComponents/tokens";
-import { SecondaryButton } from "@/app/genericComponents/Buttons";
-import { silom } from "@/app/genericComponents/fonts";
+import { silkscreen } from "@/app/genericComponents/fonts";
+
+const Colors = {
+  HeroYellow: "#FCFC01",
+  HeroBlue: "#0060BF",
+  HeroNeutral: "#231F20",
+  HeroBlack: "#000000",
+};
 
 const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 0;
   padding: ${SpacingXL} 0 ${SpacingXXL} 0;
   gap: ${SpacingM};
-  max-width: ${MaxScreenSize};
+  width: 100vw;
+  background-color: ${Colors.HeroNeutral};
+  background-image: 
+    url("/background_piece.svg"), 
+    url("/pixelated_biene.svg"), 
+    url("/red_ghost.svg"), 
+    url("/blue_ghost.svg"), 
+    url("/purple_ghost.svg");
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 
+    80px 80px, 
+    40px 40px, 
+    40px 40px, 
+    40px 40px, 
+    40px 40px;
+  background-position: 
+    0 0, 
+    50% 50%, 
+    10% 10%,
+    90% 10%,
+    50% 90%;
+
+  animation: moveAll 10s linear infinite;
+
+  @keyframes moveAll {
+    0% {
+      background-position: 
+        0 0, 
+        50% 50%, 
+        10% 10%, 
+        90% 10%, 
+        50% 90%;
+    }
+    25% {
+      background-position: 
+        0 0, 
+        50% 50%, 
+        10% 50%, 
+        90% 50%, 
+        50% 10%;
+    }
+    50% {
+      background-position: 
+        0 0, 
+        50% 50%, 
+        50% 50%, 
+        50% 50%, 
+        10% 50%;
+    }
+    75% {
+      background-position: 
+        0 0, 
+        50% 50%, 
+        50% 10%, 
+        50% 10%, 
+        10% 10%;
+    }
+    100% {
+      background-position: 
+        0 0, 
+        50% 50%, 
+        10% 10%, 
+        90% 10%, 
+        50% 90%;
+    }
+  }
 `;
 
-export const HackUPCTitle = styled.h1`
+
+
+const Title = styled.h1`
   font-size: ${TitleXXL};
+  color: ${Colors.HeroYellow};
   text-transform: uppercase;
-  color: ${Primary100};
+  text-align: center;
+  backdrop-filter: blur(2px);
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: ${MobileTitleXL};
+    font-size: ${TitleL};
   }
 `;
 
-export const HackUPCAniversary = styled.div`
-  font-size: 42px;
-  color: ${Primary300};
+const TitleContainer = styled.div`
+  width: 80%;
+  max-width: 600px;
+`;
+
+const SubText = styled.div`
+  font-size: ${TitleS};
+  color: ${Colors.HeroBlue};
+  text-align: center;
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: 22px;
+    font-size: ${TitleM};
   }
 `;
 
-const HackUPCParticipants = styled.div`
-  font-size: 55px;
-  text-transform: uppercase;
-  color: ${Secondary500};
-
-  @media (max-width: ${MobileBreakpoint}) {
-    font-size: 35px;
-  }
-`;
-
-const HackUPCDates = styled.div`
-  font-size: 42px;
-  color: ${Primary100};
-
-  @media (max-width: ${MobileBreakpoint}) {
-    font-size: 22px;
-  }
-`;
-
-const TextsContainer = styled.div`
+const PlayAsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  background-color: ${Colors.HeroBlack};
+  border: 2px solid ${Colors.HeroBlue};
+  border-radius: 8px;
+  padding: ${SpacingM};
+  margin-top: ${SpacingM};
+  width: 80%;
+  max-width: 600px;
   gap: ${SpacingS};
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 90%;
+  }
 `;
 
-const ButtonsContainer = styled.div`
+const YellowDottedLine100 = styled.div`
+  margin-top: ${SpacingM};
+  border-top: ${SpacingXS} dotted yellow;
+  width: 100%;
+`;
+
+
+const PlayAsTitleBox = styled.div`
+  color: ${Colors.HeroYellow};
+  padding: ${SpacingS};
+  border-radius: 8px;
+  border: 2px solid ${Colors.HeroBlue};
+  font-size: ${TitleM};
+  font-weight: bold;
+  text-align: center;
+  width: 50%;
+  margin-bottom: ${SpacingS};
+  margin-top: -${SpacingL};
+  align-self: center;
+  background-color: ${Colors.HeroBlack};
+`;
+
+const PlayerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: ${SpacingM};
+  justify-content: center;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const PlayerCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${SpacingS};
-
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 100%;
-    padding: 0 ${SpacingS};
-  }
+  justify-content: center;
+  padding: ${SpacingM};
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  color: ${Colors.HeroYellow};
 `;
 
-const Comet = styled.img`
-  position: absolute;
-  z-index: -1;
+const PlayerText = styled.div`
+  font-size: ${TitleS};
+  font-weight: bold;
+  margin-top: ${SpacingS};
 `;
 
-const CometRedBigDesktop = styled(Comet)`
-  left: 10%;
-  top: 5%;
-  @media (max-width: ${MobileBreakpoint}) {
-    display: none;
-  }
-`;
-const CometRedSmallDesktop = styled(Comet)`
-  right: 7%;
-  top: 20%;
-  @media (max-width: ${MobileBreakpoint}) {
-    display: none;
-  }
-`;
-const CometPurpleBigDesktop = styled(Comet)`
-  left: 8%;
-  bottom: 30%;
-  @media (max-width: ${MobileBreakpoint}) {
-    display: none;
-  }
-`;
-const CometPurpleSmallDektop = styled(Comet)`
-  right: 14%;
-  bottom: 40%;
-  @media (max-width: ${MobileBreakpoint}) {
-    display: none;
-  }
-`;
-const CometRedBigMobile = styled(Comet)`
-  display: none;
-  @media (max-width: ${MobileBreakpoint}) {
-    left: 8%;
-    top: 7%;
-    display: block;
-  }
-`;
-const CometRedSmallMobile = styled(Comet)`
-  display: none;
-  @media (max-width: ${MobileBreakpoint}) {
-    right: 6%;
-    top: 14%;
-    display: block;
+const SurpriseButton = styled.div`
+  background-color: ${Colors.HeroYellow};
+  color: #000000;
+  padding: ${SpacingS} ${SpacingM};
+  border-radius: 8px;
+  margin-top: ${SpacingM};
+  cursor: pointer;
+  font-weight: bold;
+  font-size: ${TitleS};
+
+  &:hover {
+    background-color: ${Colors.HeroBlue};
+    color: #FFFFFF
   }
 `;
 
 export default function Hero() {
   return (
-    <div>
-      <CometRedBigMobile src="/cometa_big_red_mobile.svg" alt="Big red comet" />
-      <CometRedSmallMobile
-        src="/cometa_small_red_mobile.svg"
-        alt="Small red comet"
-      />
-      <CometRedBigDesktop src="/cometa_big_red.svg" alt="Big red comet" />
-      <CometRedSmallDesktop src="/cometa_small_red.svg" alt="Small red comet" />
-      <CometPurpleBigDesktop
-        src="/cometa_big_purple.svg"
-        alt="Big purple comet"
-      />
-      <CometPurpleSmallDektop
-        src="/cometa_small_purple.svg"
-        alt="Small purple comet"
-      />
-      <HeroContainer className={silom.className}>
-        <Image src="/biene.svg" width={100} height={150} alt="biene" />
-        <TextsContainer>
-          <div style={{ textAlign: "center" }}>
-            <HackUPCTitle>HackUPC</HackUPCTitle>
-            <HackUPCAniversary>Join us on our 10th edition</HackUPCAniversary>
-          </div>
-          <HackUPCParticipants>750 Hackers</HackUPCParticipants>
-          <HackUPCDates>May 3-5 2024 – 36 H</HackUPCDates>
-        </TextsContainer>
-        <ButtonsContainer>
-          <SecondaryButton
-            href="https://hackersatupc.typeform.com/to/WOhCwF8m"
-            target="_blank"
-            rel="noopener noreferrer"
-            width="100%"
-          >
-            Subscribe
-          </SecondaryButton>
-        </ButtonsContainer>
-      </HeroContainer>
-    </div>
+    <HeroContainer className={silkscreen.className}>
+      <TitleContainer>
+        <Title>
+          <YellowDottedLine100 />
+          HackUPC
+          <SubText>700 Hackers | 2-4 May | 36h</SubText>
+          <YellowDottedLine100 />
+        </Title>
+      </TitleContainer>
+      <PlayAsContainer>
+        <PlayAsTitleBox>Play as</PlayAsTitleBox>
+        <PlayerContainer>
+          <PlayerCard>
+            <Image 
+              src="/player1.png" 
+              width={100}
+              height={100}
+              alt="Player 1" />
+            <PlayerText>Hacker</PlayerText>
+          </PlayerCard>
+          <PlayerCard>
+            <Image
+              src="/player2.png"
+              width={100}
+              height={100}
+              alt="Player 2"
+            />
+            <PlayerText>Volunteer</PlayerText>
+          </PlayerCard>
+        </PlayerContainer>
+      </PlayAsContainer>
+      <SurpriseButton>Surprise</SurpriseButton>
+    </HeroContainer>
   );
 }
