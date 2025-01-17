@@ -11,8 +11,6 @@ import {
   Secondary200,
   Secondary300,
   Secondary500,
-  Secondary600,
-  Secondary800,
   SpacingL,
   SpacingS,
   SpacingXS,
@@ -46,10 +44,10 @@ export const SecondaryButton = styled(ButtonGeneric)`
   color: ${(props) => (props.disabled ? Secondary300 : "white")};
 
   &:hover {
-    background-color: ${(props) => !props.disabled && Secondary600};
+    background-color: ${(props) => !props.disabled && Secondary500};
   }
   &:active {
-    background-color: ${(props) => !props.disabled && Secondary800};
+    background-color: ${(props) => !props.disabled && Secondary500};
   }
 `;
 
