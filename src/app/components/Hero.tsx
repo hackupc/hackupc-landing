@@ -34,35 +34,71 @@ const HeroContainer = styled.div`
   background-color: ${Colors.HeroNeutral};
   background-image: 
     url("/background_piece.svg"), 
-    url("/pixelated_biene.svg");
-  background-repeat: repeat, no-repeat;
+    url("/pixelated_biene.svg"), 
+    url("/red_ghost.svg"), 
+    url("/blue_ghost.svg"), 
+    url("/purple_ghost.svg");
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: 
     80px 80px, 
+    40px 40px, 
+    40px 40px, 
+    40px 40px, 
     40px 40px;
   background-position: 
-    0 0,
-    50% 50%;
+    0 0, 
+    50% 50%, 
+    10% 10%,
+    90% 10%,
+    50% 90%;
 
-  animation: moveBiene 10s linear infinite;
+  animation: moveAll 10s linear infinite;
 
-  @keyframes moveBiene {
+  @keyframes moveAll {
     0% {
-      background-position: 0 0, 12% 0%;
+      background-position: 
+        0 0, 
+        50% 50%, 
+        10% 10%, 
+        90% 10%, 
+        50% 90%;
     }
     25% {
-      background-position: 0 0, 12% 50%;
+      background-position: 
+        0 0, 
+        50% 50%, 
+        10% 50%, 
+        90% 50%, 
+        50% 10%;
     }
     50% {
-      background-position: 0 0, 30% 50%;
+      background-position: 
+        0 0, 
+        50% 50%, 
+        50% 50%, 
+        50% 50%, 
+        10% 50%;
     }
     75% {
-      background-position: 0 0, 12% 50%;
+      background-position: 
+        0 0, 
+        50% 50%, 
+        50% 10%, 
+        50% 10%, 
+        10% 10%;
     }
     100% {
-      background-position: 0 0, 12% 0%;
+      background-position: 
+        0 0, 
+        50% 50%, 
+        10% 10%, 
+        90% 10%, 
+        50% 90%;
     }
   }
 `;
+
+
 
 const Title = styled.h1`
   font-size: ${TitleXXL};
