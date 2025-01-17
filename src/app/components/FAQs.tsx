@@ -5,6 +5,7 @@ import {
   teams_faqs,
   travel_faqs,
 } from "@/app/data/faqs_data";
+import Image from "next/image";
 import parse from "html-react-parser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
@@ -19,7 +20,7 @@ import {
   SpacingXS,
   SpacingXXS,
 } from "@/app/genericComponents/tokens";
-import { Section } from "@/app/genericComponents/General";
+import { SectionBackground } from "@/app/genericComponents/General";
 import {
   BlockTitle,
   Body,
@@ -53,6 +54,7 @@ const ColumnsQuestions = styled.div`
 const QuestionsBlock = styled.div`
   display: flex;
   flex-direction: column;
+  padding: ${SpacingS};
   gap: ${SpacingS};
 `;
 
@@ -60,6 +62,10 @@ const Question = styled.div`
   display: flex;
   justify-content: flex-start;
   gap: ${SpacingS};
+  padding: ${SpacingXS};
+  background-color: rgba(1, 1, 1, .5);
+  border-radius: 10px;
+;
 `;
 
 const QuestionTitle = styled(BodyBold)`
@@ -70,6 +76,14 @@ const QuestionTitle = styled(BodyBold)`
 const LastBlock = styled.div`
   text-align: center;
   margin-top: ${SpacingM};
+`;
+
+const BrickSection = styled.div`
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: ${SpacingS};
+  margin-top: ${SpacingS};
 `;
 
 const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
@@ -157,7 +171,7 @@ export default function FAQs() {
   };
 
   return (
-    <Section id="faqs">
+    <SectionBackground specialBackground={"#29ABE2"} id="faqs">
       <SectionTitle>FAQs</SectionTitle>
       <Split>
         <ColumnsQuestions>
@@ -181,6 +195,14 @@ export default function FAQs() {
               </Question>
             ))}
           </QuestionsBlock>
+          <BrickSection>
+          <Image
+            src="/brick_separator.svg"
+            width={163}
+            height={54}
+            alt="Brick block"
+            />
+          </BrickSection>
           <QuestionsBlock>
             <BlockTitle color={Secondary500}>Travel Reimbursement</BlockTitle>
             {travel_faqs.map((faq) => (
@@ -202,6 +224,14 @@ export default function FAQs() {
             ))}
           </QuestionsBlock>
         </ColumnsQuestions>
+        <BrickSection>
+        <Image
+            src="/brick_separator.svg"
+            width={163}
+            height={54}
+            alt="Brick block"
+            />
+          </BrickSection>
         <ColumnsQuestions>
           <QuestionsBlock>
             <BlockTitle color={Secondary500}>Applications</BlockTitle>
@@ -223,6 +253,14 @@ export default function FAQs() {
               </Question>
             ))}
           </QuestionsBlock>
+          <BrickSection>
+          <Image
+            src="/brick_separator.svg"
+            width={163}
+            height={54}
+            alt="Brick block"
+            />
+          </BrickSection>
           <QuestionsBlock>
             <BlockTitle color={Secondary500}>Teams</BlockTitle>
             {teams_faqs.map((faq) => (
@@ -263,6 +301,6 @@ export default function FAQs() {
           </BodyLink>
         </Body>
       </LastBlock>
-    </Section>
+    </SectionBackground>
   );
 }
