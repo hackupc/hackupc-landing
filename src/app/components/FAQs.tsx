@@ -5,6 +5,7 @@ import {
   teams_faqs,
   travel_faqs,
 } from "@/app/data/faqs_data";
+import Image from "next/image";
 import parse from "html-react-parser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
@@ -19,7 +20,7 @@ import {
   SpacingXS,
   SpacingXXS,
 } from "@/app/genericComponents/tokens";
-import { Section } from "@/app/genericComponents/General";
+import { SectionBackground } from "@/app/genericComponents/General";
 import {
   BlockTitle,
   Body,
@@ -53,6 +54,7 @@ const ColumnsQuestions = styled.div`
 const QuestionsBlock = styled.div`
   display: flex;
   flex-direction: column;
+  padding: ${SpacingS};
   gap: ${SpacingS};
 `;
 
@@ -60,6 +62,10 @@ const Question = styled.div`
   display: flex;
   justify-content: flex-start;
   gap: ${SpacingS};
+  padding: ${SpacingXS};
+  background-color: rgba(1, 1, 1, .5);
+  border-radius: 10px;
+;
 `;
 
 const QuestionTitle = styled(BodyBold)`
@@ -67,10 +73,19 @@ const QuestionTitle = styled(BodyBold)`
   cursor: url("/rocket-fire.png"), auto;
 `;
 
-const LastBlock = styled.div`
-  text-align: center;
-  margin-top: ${SpacingM};
+// const LastBlock = styled.div`
+//   text-align: center;
+//   margin-top: ${SpacingM};
+// `;
+
+const BrickSection = styled.div`
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: ${SpacingS};
+  margin-top: ${SpacingS};
 `;
+
 
 const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
   transform-origin: top;
@@ -157,19 +172,29 @@ export default function FAQs() {
   };
 
   return (
-    <Section id="faqs">
+    <SectionBackground specialBackground={"#29ABE2"} id="faqs">
       <SectionTitle>FAQs</SectionTitle>
       <Split>
         <ColumnsQuestions>
+          <div>
+
+          <BrickSection>
+          <Image
+            src="/brick_separator.svg"
+            width={163}
+            height={54}
+            alt="Brick block"
+            />
+          </BrickSection>
           <QuestionsBlock>
-            <BlockTitle color={Secondary500}>About HackUPC</BlockTitle>
+            <BlockTitle color={"white"}>About HackUPC</BlockTitle>
             {hackupc_faqs.map((faq) => (
               <Question key={faq.id}>
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? Secondary500 : Primary100}
+                  color={activeFaqId === faq.id ? "grey" : "white"}
                   onClick={() => toggleFaq(faq.id)}
-                />
+                  />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                     {faq.question}
@@ -181,15 +206,27 @@ export default function FAQs() {
               </Question>
             ))}
           </QuestionsBlock>
+          </div>
+
+            <div>
+
+          <BrickSection>
+          <Image
+            src="/brick_separator.svg"
+            width={163}
+            height={54}
+            alt="Brick block"
+            />
+          </BrickSection>
           <QuestionsBlock>
-            <BlockTitle color={Secondary500}>Travel Reimbursement</BlockTitle>
+            <BlockTitle color={"white"}>Travel Reimbursement</BlockTitle>
             {travel_faqs.map((faq) => (
               <Question key={faq.id}>
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? Secondary500 : Primary100}
+                  color={activeFaqId === faq.id ? "grey" : "white"}
                   onClick={() => toggleFaq(faq.id)}
-                />
+                  />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                     {faq.question}
@@ -201,17 +238,28 @@ export default function FAQs() {
               </Question>
             ))}
           </QuestionsBlock>
+        </div>
         </ColumnsQuestions>
-        <ColumnsQuestions>
+
+            <ColumnsQuestions>
+        <div>
+            <BrickSection>
+            <Image
+                src="/brick_separator.svg"
+                width={163}
+                height={54}
+                alt="Brick block"
+                />
+              </BrickSection>
           <QuestionsBlock>
-            <BlockTitle color={Secondary500}>Applications</BlockTitle>
+            <BlockTitle color={"white"}>Applications</BlockTitle>
             {applications_faqs.map((faq) => (
               <Question key={faq.id}>
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? Secondary500 : Primary100}
+                  color={activeFaqId === faq.id ? "grey" : "white"}
                   onClick={() => toggleFaq(faq.id)}
-                />
+                  />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                     {faq.question}
@@ -223,15 +271,26 @@ export default function FAQs() {
               </Question>
             ))}
           </QuestionsBlock>
+          </div>
+          <div>
+
+          <BrickSection>
+          <Image
+            src="/brick_separator.svg"
+            width={163}
+            height={54}
+            alt="Brick block"
+            />
+          </BrickSection>
           <QuestionsBlock>
-            <BlockTitle color={Secondary500}>Teams</BlockTitle>
+            <BlockTitle color={"white"}>Teams</BlockTitle>
             {teams_faqs.map((faq) => (
               <Question key={faq.id}>
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? Secondary500 : Primary100}
+                  color={activeFaqId === faq.id ? "grey" : "white"}
                   onClick={() => toggleFaq(faq.id)}
-                />
+                  />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                     {faq.question}
@@ -243,9 +302,10 @@ export default function FAQs() {
               </Question>
             ))}
           </QuestionsBlock>
+          </div>
         </ColumnsQuestions>
       </Split>
-      <LastBlock>
+      {/* <LastBlock>
         <BlockTitle color={Secondary500} haveMargin>
           What if I have another question?
         </BlockTitle>
@@ -262,7 +322,7 @@ export default function FAQs() {
             reimbursements@hackupc.com
           </BodyLink>
         </Body>
-      </LastBlock>
-    </Section>
+      </LastBlock> */}
+    </SectionBackground>
   );
 }
