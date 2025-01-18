@@ -1,4 +1,5 @@
-import styled from "styled-components";
+//import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
 import {SpacingXXL, SpacingXL, SpacingL, SpacingM, SpacingS } from "@/app/genericComponents/tokens";
@@ -50,16 +51,38 @@ const SponsorRow = styled.div`
   z-index: 2;
 `;
 
+const moveBall = keyframes`
+  0% {
+    top: 15%; /* Izquierda arriba */
+    left: 7%;
+  }
+  25% {
+    top: 50%; /* Centro derecha */
+    left: 93%;
+  }
+  50% {
+    top: 92%; /* Izquierda abajo */
+    left: 7%;
+  }
+  75% {
+    top: 15%; /* Derecha arriba */
+    left: 93%;
+  }
+  100% {
+    top: 15%; /* Vuelve al principio (Izquierda arriba) */
+    left: 7%;
+  }
+`;
+
 const Ball = styled.div`
   position: absolute;
   width: 30px;
   height: 30px; 
   background-color: white;
   border-radius: 50%; 
-  top: 55%; 
-  left: 30%; 
   transform: translate(-50%, -50%);
   z-index: 1;
+  animation: ${moveBall} 15s linear infinite;
 `;
 
 const SideLineBase = styled.div`
@@ -79,14 +102,51 @@ const MiddleLineBase = styled.div`
   z-index: 1;
 `;
 
+const moveLeftLine = keyframes`
+  0% {
+    top: 8%; /* Coincide con la pelota al inicio (esquina superior izquierda) */
+  }
+  25% {
+    top: 50%; /* Coincide con la pelota en el centro izquierdo */
+  }
+  50% {
+    top: 80%; /* Coincide con la pelota en la esquina inferior izquierda */
+  }
+  75% {
+    top: 50%; /* Vuelve al centro izquierdo */
+  }
+  100% {
+    top: 8%; /* Regresa a la posición inicial */
+  }
+`;
+
+// Animación para la barra derecha
+const moveRightLine = keyframes`
+  0% {
+    top: 25%; /* Coincide con la pelota al inicio (esquina inferior derecha) */
+  }
+  25% {
+    top: 40%; /* Coincide con la pelota en el centro derecho */
+  }
+  50% {
+    top: 25%; /* Coincide con la pelota en la esquina superior derecha */
+  }
+  75% {
+    top: 8%; /* Vuelve al centro derecho */
+  }
+  100% {
+    top: 25%; /* Regresa a la posición inicial */
+  }
+`;
+
 const LeftLine = styled(SideLineBase)`
   left: 5%;
-  top: 25%;
+  animation: ${moveLeftLine} 15s ease-in-out infinite;
 `;
 
 const RightLine = styled(SideLineBase)`
   right: 5%;
-  bottom: 25%;
+  animation: ${moveRightLine} 15s ease-in-out infinite;
 `;
 
 const TopLine = styled(MiddleLineBase)`
