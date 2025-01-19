@@ -52,26 +52,45 @@ const SponsorRow = styled.div`
 `;
 
 const moveBall = keyframes`
-  0% {
-    top: 15%; /* Izquierda arriba */
-    left: 7%;
-  }
-  25% {
-    top: 50%; /* Centro derecha */
-    left: 93%;
-  }
-  50% {
-    top: 92%; /* Izquierda abajo */
-    left: 7%;
-  }
-  75% {
-    top: 15%; /* Derecha arriba */
-    left: 93%;
-  }
-  100% {
-    top: 15%; /* Vuelve al principio (Izquierda arriba) */
-    left: 7%;
-  }
+  0% {top: 75%; left: 7%;}
+  10% {top: 50%; left: 93%;}
+  20% {top: 92%; left: 7%;}
+  30% {top: 75%; left: 93%;}
+  40% {top: 50%; left: 7%;}
+  50% {top: 25%; left: 93%;}
+  60% {top: 15%; left: 7%;}
+  70% {top: 25%; left: 93%;}
+  80% {top: 60%; left: 7%;}
+  90% {top: 50%; left: 93%;}
+  100% {top: 75%; left: 7%;}
+`;
+
+const moveLeftLine = keyframes`
+  0% {top: 70%;}
+  10% {top: 65%;}
+  20% {top: 78%;}
+  30% {top: 60%;}
+  40% {top: 38%;}
+  50% {top: 45%;}
+  60% {top: 10%;}
+  70% {top: 45%;}
+  80% {top: 52%;}
+  90% {top: 45%;}
+  100% {top: 70%;}
+`;
+
+const moveRightLine = keyframes`
+  0% {top: 60%;}
+  10% {top: 43%;}
+  20% {top: 50%;}
+  30% {top: 70%;}
+  40% {top: 45%;}
+  50% {top: 20%;}
+  60% {top: 50%;}
+  70% {top: 20%;}
+  80% {top: 55%;}
+  90% {top: 38%;}
+  100% {top: 60%;}
 `;
 
 const Ball = styled.div`
@@ -82,7 +101,7 @@ const Ball = styled.div`
   border-radius: 50%; 
   transform: translate(-50%, -50%);
   z-index: 1;
-  animation: ${moveBall} 15s linear infinite;
+  animation: ${moveBall} 30s linear infinite;
 `;
 
 const SideLineBase = styled.div`
@@ -95,58 +114,21 @@ const SideLineBase = styled.div`
 
 const MiddleLineBase = styled.div`
   position: absolute;
-  height: 50px;
+  height: 75px;
   width: 5px;
   background-color: white;
   left: 50%;
   z-index: 1;
 `;
 
-const moveLeftLine = keyframes`
-  0% {
-    top: 8%; /* Coincide con la pelota al inicio (esquina superior izquierda) */
-  }
-  25% {
-    top: 50%; /* Coincide con la pelota en el centro izquierdo */
-  }
-  50% {
-    top: 80%; /* Coincide con la pelota en la esquina inferior izquierda */
-  }
-  75% {
-    top: 50%; /* Vuelve al centro izquierdo */
-  }
-  100% {
-    top: 8%; /* Regresa a la posición inicial */
-  }
-`;
-
-// Animación para la barra derecha
-const moveRightLine = keyframes`
-  0% {
-    top: 25%; /* Coincide con la pelota al inicio (esquina inferior derecha) */
-  }
-  25% {
-    top: 40%; /* Coincide con la pelota en el centro derecho */
-  }
-  50% {
-    top: 25%; /* Coincide con la pelota en la esquina superior derecha */
-  }
-  75% {
-    top: 8%; /* Vuelve al centro derecho */
-  }
-  100% {
-    top: 25%; /* Regresa a la posición inicial */
-  }
-`;
-
 const LeftLine = styled(SideLineBase)`
   left: 5%;
-  animation: ${moveLeftLine} 15s ease-in-out infinite;
+  animation: ${moveLeftLine} 30s ease-in-out infinite;
 `;
 
 const RightLine = styled(SideLineBase)`
   right: 5%;
-  animation: ${moveRightLine} 15s ease-in-out infinite;
+  animation: ${moveRightLine} 30s ease-in-out infinite;
 `;
 
 const TopLine = styled(MiddleLineBase)`
