@@ -1,16 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import {
   Body,
-  SectionTitle,
   BlockTitle,
 } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint, MobileTitleL,
   Primary100,
   Secondary500,
-  SpacingL, SpacingM,
+  SpacingM,
   SpacingS,
   SpacingXL, TitleL,
 } from "@/app/genericComponents/tokens";
