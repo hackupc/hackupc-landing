@@ -55,10 +55,20 @@ const SocialItem = styled.div`
   }
 `;
 
+const CustomImage = styled(Image)`
+  margin-bottom: ${SpacingM};
+`;
+
 export default function Socials() {
   return (
     <SectionBackground haveBackground id="socials">
       <Section>
+        <CustomImage
+          src="/biene_ghost.svg"
+          alt="Ghost Biene"
+          width={102}
+          height={168}
+        />
         <StyledSectionTitle>
           Stay tuned, and don't miss a bit
         </StyledSectionTitle>
