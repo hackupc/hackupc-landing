@@ -48,6 +48,7 @@ const SocialsList = styled.div`
 
 const SocialItem = styled.div`
   text-align: center;
+  transition: transform .2s ease-in-out;
 
   &:hover {
     transform: scale(1.5);
@@ -65,7 +66,6 @@ export default function Socials() {
           <BlockTitle color={Secondary500}>
             Check our social media networks
           </BlockTitle>
-          <Image src="/telescope.svg" alt="Telescope" width={40} height={40} />
         </Subtitle>
 
         <SocialsList>
