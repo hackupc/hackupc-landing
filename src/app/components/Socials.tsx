@@ -59,10 +59,26 @@ const CustomImage = styled(Image)`
   margin-bottom: ${SpacingM};
 `;
 
+const Colors = {
+  HeroYellow: "#FCFC01",
+  HeroBlue: "#0060BF",
+  HeroNeutral: "#231F20",
+  HeroBlack: "#000000",
+};
+
+const CustomBackground = styled(SectionBackground)`
+  width: 100vw;
+  background-color: ${Colors.HeroNeutral};
+  background-image: url("/background_piece.svg");
+  background-repeat: repeat;
+  background-size: 80px 80px;
+`;
+
 export default function Socials() {
   return (
-    <SectionBackground haveBackground id="socials">
+    <CustomBackground id="socials">
       <Section>
+
         <CustomImage
           src="/biene_ghost.svg"
           alt="Ghost Biene"
@@ -171,6 +187,6 @@ export default function Socials() {
           </SocialItem>
         </SocialsList>
       </Section>
-    </SectionBackground>
+    </CustomBackground>
   );
 }
