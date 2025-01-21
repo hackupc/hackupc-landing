@@ -58,6 +58,21 @@ const SocialItem = styled.div`
 
 const CustomImage = styled(Image)`
   margin-bottom: ${SpacingM};
+  animation: blink 5s infinite;
+  @keyframes blink {
+    0% {
+      content: url("/biene_ghost_2.svg");
+    }
+    30% {
+      content: url("/biene_ghost_2.svg");
+    }
+    31% {
+      content: url("/biene_ghost.svg");
+    }
+    100% {
+      content: url("/biene_ghost.svg");
+    }
+  }
 `;
 
 const Colors = {
