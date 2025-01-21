@@ -45,6 +45,10 @@ const SocialsList = styled.div`
   gap: ${SpacingM};
   justify-content: space-around;
   padding: ${SpacingXS} ${SpacingS};
+  @media (max-width: ${MobileBreakpoint}) {
+    gap: ${SpacingXS};
+    padding: 0 ${SpacingXS};
+  }
 `;
 
 const SocialItem = styled.div`
@@ -54,7 +58,12 @@ const SocialItem = styled.div`
   &:hover {
     transform: scale(1.5);
   }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    transform: scale(0.8);
+  }
 `;
+
 
 const CustomImage = styled(Image)`
   margin-bottom: ${SpacingM};
@@ -80,6 +89,7 @@ const Colors = {
   HeroBlue: "#0060BF",
   HeroNeutral: "#231F20",
   HeroBlack: "#000000",
+  HeroBlack80: "rgba(0, 0, 0, 0.8)",
 };
 
 const CustomBackground = styled(SectionBackground)`
@@ -90,17 +100,31 @@ const CustomBackground = styled(SectionBackground)`
   background-size: 80px 80px;
 `;
 
+const BlueContainer = styled.div`
+  background-color: ${Colors.HeroBlack80};
+  border: 2px solid ${Colors.HeroBlue};
+  border-radius: 8px;
+  padding: ${SpacingM};
+  margin-top: ${SpacingM};
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
 export default function Socials() {
   return (
     <CustomBackground id="socials">
       <Section>
-
+      <BlueContainer>
         <CustomImage
           src="/biene_ghost.svg"
           alt="Ghost Biene"
           width={102}
           height={168}
-        />
+          
+          />
         <StyledSectionTitle className={silkscreen.className}>
           Stay tuned, and don't miss a bit
         </StyledSectionTitle>
@@ -127,7 +151,7 @@ export default function Socials() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
-            >
+              >
               <FontAwesomeIcon icon={faXTwitter} size="3x" />
             </a>
           </SocialItem>
@@ -137,7 +161,7 @@ export default function Socials() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-            >
+              >
               <FontAwesomeIcon icon={faInstagram} size="3x" />
             </a>
           </SocialItem>
@@ -147,7 +171,7 @@ export default function Socials() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-            >
+              >
               <FontAwesomeIcon icon={faFacebook} size="3x" />
             </a>
           </SocialItem>
@@ -157,7 +181,7 @@ export default function Socials() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
-            >
+              >
               <FontAwesomeIcon icon={faLinkedin} size="3x" />
             </a>
           </SocialItem>
@@ -167,7 +191,7 @@ export default function Socials() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Youtube"
-            >
+              >
               <FontAwesomeIcon icon={faYoutube} size="3x" />
             </a>
           </SocialItem>
@@ -177,7 +201,7 @@ export default function Socials() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Youtube"
-            >
+              >
               <FontAwesomeIcon icon={faTwitch} size="3x" />
             </a>
           </SocialItem>
@@ -187,7 +211,7 @@ export default function Socials() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Medium"
-            >
+              >
               <FontAwesomeIcon icon={faMedium} size="3x" />
             </a>
           </SocialItem>
@@ -197,11 +221,12 @@ export default function Socials() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Github"
-            >
+              >
               <FontAwesomeIcon icon={faGithub} size="3x" />
             </a>
           </SocialItem>
         </SocialsList>
+        </BlueContainer>
       </Section>
     </CustomBackground>
   );
