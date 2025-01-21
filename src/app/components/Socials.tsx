@@ -14,7 +14,8 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
-import { BlockTitle, SectionTitle } from "@/app/genericComponents/Typography";
+import { BlockTitle, SectionTitle }from "@/app/genericComponents/Typography";
+import { silkscreen } from "@/app/genericComponents/fonts";
 import {
   MobileBreakpoint,
   Secondary500,
@@ -85,7 +86,7 @@ export default function Socials() {
           width={102}
           height={168}
         />
-        <StyledSectionTitle>
+        <StyledSectionTitle className={silkscreen.className}>
           Stay tuned, and don't miss a bit
         </StyledSectionTitle>
         <Subtitle>
