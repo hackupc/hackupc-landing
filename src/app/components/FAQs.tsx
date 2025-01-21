@@ -30,6 +30,10 @@ import {
 } from "@/app/genericComponents/Typography";
 import { AnswerOptions } from "@/app/data/interfaces";
 
+const TitleSpacer = styled.div`
+  padding-top: ${SpacingM};
+`;
+
 const Split = styled.div`
   display: flex;
   justify-content: center;
@@ -173,7 +177,9 @@ export default function FAQs() {
 
   return (
     <SectionBackground specialBackground={"#29ABE2"} id="faqs">
-      <SectionTitle>FAQs</SectionTitle>
+      <TitleSpacer>
+        <SectionTitle>FAQs</SectionTitle>
+      </TitleSpacer>
       <Split>
         <ColumnsQuestions>
           <div>
@@ -192,7 +198,7 @@ export default function FAQs() {
               <Question key={faq.id}>
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? "grey" : "white"}
+                  color={activeFaqId === faq.id ? "#E3C3FF" : "white"}
                   onClick={() => toggleFaq(faq.id)}
                   />
                 <div>
@@ -224,7 +230,7 @@ export default function FAQs() {
               <Question key={faq.id}>
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? "grey" : "white"}
+                  color={activeFaqId === faq.id ? "#E3C3FF" : "white"}
                   onClick={() => toggleFaq(faq.id)}
                   />
                 <div>
@@ -257,7 +263,7 @@ export default function FAQs() {
               <Question key={faq.id}>
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? "grey" : "white"}
+                  color={activeFaqId === faq.id ? "#E3C3FF" : "white"}
                   onClick={() => toggleFaq(faq.id)}
                   />
                 <div>
@@ -288,7 +294,7 @@ export default function FAQs() {
               <Question key={faq.id}>
                 <FontAwesomeIconStyled
                   icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? "grey" : "white"}
+                  color={activeFaqId === faq.id ? "#E3C3FF" : "white"}
                   onClick={() => toggleFaq(faq.id)}
                   />
                 <div>
