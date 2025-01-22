@@ -77,10 +77,6 @@ const QuestionTitle = styled(BodyBold)`
   cursor: url("/rocket-fire.png"), auto;
 `;
 
-// const LastBlock = styled.div`
-//   text-align: center;
-//   margin-top: ${SpacingM};
-// `;
 
 const BrickSection = styled.div`
   align-content: center;
@@ -88,6 +84,9 @@ const BrickSection = styled.div`
   justify-content: center;
   margin-bottom: ${SpacingS};
   margin-top: ${SpacingS};
+  // on click render animation of mario bros coin, use coin.svg and animate it
+  
+
 `;
 
 
@@ -311,24 +310,6 @@ export default function FAQs() {
           </div>
         </ColumnsQuestions>
       </Split>
-      {/* <LastBlock>
-        <BlockTitle color={Secondary500} haveMargin>
-          What if I have another question?
-        </BlockTitle>
-        <Body style={{ paddingBottom: SpacingS }}>
-          DM us on instagram or X @hackupc or, if you want to contact us via
-          email, drop us a line at{" "}
-          <BodyLink href="mailto:contact@hackupc.com">
-            contact@hackupc.com
-          </BodyLink>
-        </Body>
-        <Body>
-          If your issue is related to Travel Reimbursement, write us at{" "}
-          <BodyLink href="mailto:reimbursements@hackupc.com">
-            reimbursements@hackupc.com
-          </BodyLink>
-        </Body>
-      </LastBlock> */}
     </SectionBackground>
   );
 }
