@@ -14,12 +14,17 @@ import {
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 
 const SectionStyled = styled(Section)`
-  color: ${Primary500};
+  color: ${"#000000"};
   padding-bottom: 0;
+`;
+
+const UnderlineTitle = styled(SectionTitle)`
+  border-bottom: 3px solid black;
 `;
 
 const Container = styled.div`
   display: flex;
+  border: 3px solid black;
   flex-direction: row;
   gap: ${SpacingM};
 
@@ -63,40 +68,40 @@ export default function About() {
       <SmokeMobile src="/smoke_start_mobile.svg" alt="Rocket Smoke" />
       <SectionBackground specialBackground={"rgba(234,247,255,.85)"}>
         <SectionStyled>
-          <SectionTitle>HackUPC beyond the stars</SectionTitle>
+          <UnderlineTitle>About HackUPC</UnderlineTitle>
           <Container>
             <Col>
               <ImgSection>
                 <Image
-                  src="/saturnPlanet.svg"
-                  width={110}
-                  height={110}
-                  alt="Saturn Planet"
+                  src="/snake.svg"
+                  width={180}
+                  height={180}
+                  alt="Snake"
                 />
               </ImgSection>
-              <BlockTitle color={Primary500} haveMargin>
+              <BlockTitle color={"#000000"} haveMargin>
                 What is a hackathon?
               </BlockTitle>
               <Body>
-                The word hackathon is a combination of the words "<b>HACK</b>",
-                standing for creative problem-solving, and "<b>MARATHON</b>".
+                The word hackathon is a combination of the words "HACK",
+                standing for creative problem-solving, and "MARATHON".
                 These are awesome events full of creativity, technology, and
                 passionate tech-related students of different skill ranges
                 collaborating and creating. During a certain period of time,
-                attendees work in <b>teams</b> to develop apps, games, robots…
-                literally anything you want to <b>build & learn</b> about!
+                attendees work in teams to develop apps, games, robots…
+                literally anything you want to build & learn about!
               </Body>
             </Col>
             <Col>
               <ImgSection>
                 <Image
-                  src="/hackupcLogo.svg"
+                  src="/hackupcLogoBlack.svg"
                   width={110}
                   height={110}
                   alt="HackUPC Logo"
                 />
               </ImgSection>
-              <BlockTitle color={Primary500} haveMargin>
+              <BlockTitle color={"#000000"} haveMargin>
                 About HackUPC
               </BlockTitle>
               <Body>
