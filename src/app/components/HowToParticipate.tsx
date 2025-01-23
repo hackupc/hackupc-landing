@@ -46,6 +46,9 @@ const ImageIcon = styled(Image)`
   width: 50px;
   height: 50px;
   margin-bottom: ${SpacingS};
+  &:hover {
+    transform: scale(1.5);
+  }
 `;
 
 const SpecialSection = styled(Section)`
