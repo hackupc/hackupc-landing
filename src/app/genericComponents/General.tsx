@@ -51,6 +51,6 @@ export const Background = styled.div`
   background-position: center;
 
   @media (max-width: ${MobileBreakpoint}) {
-    background-image: url("/stars_mobile.jpg");
+    background-image: url("/stars_desktop.jpg");
   }
 `;
