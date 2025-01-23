@@ -13,13 +13,36 @@ import {
 } from "@/app/genericComponents/tokens";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 
+const Colors = {
+  background: "#",
+};
+
+const SnakeImage = styled(Image)`
+  width: 120px; /* Smaller width for the snake image */
+  height: auto;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 180px; /* Original size for mobile */
+  }
+`;
+
+const AppleImage = styled(Image)`
+  padding-top:  8px;
+  display: none; /* Hide by default */
+
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block; /* Show for mobile */
+  }
+`;
+
 const SectionStyled = styled(Section)`
   color: ${"#000000"};
-  padding-bottom: 0;
+  padding-bottom: 50px;
 `;
 
 const UnderlineTitle = styled(SectionTitle)`
   border-bottom: 3px solid black;
+  width: 325px;
 `;
 
 const Container = styled.div`
@@ -27,6 +50,8 @@ const Container = styled.div`
   border: 3px solid black;
   flex-direction: row;
   gap: ${SpacingM};
+  padding: 20px;
+
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
@@ -64,18 +89,16 @@ const SmokeMobile = styled.img`
 export default function About() {
   return (
     <div id="about">
-      <Smoke src="/smoke_start.svg" alt="Rocket Smoke" />
-      <SmokeMobile src="/smoke_start_mobile.svg" alt="Rocket Smoke" />
-      <SectionBackground specialBackground={"rgba(234,247,255,.85)"}>
+      <SectionBackground specialBackground={"#99C11C"}>
         <SectionStyled>
           <UnderlineTitle>About HackUPC</UnderlineTitle>
           <Container>
             <Col>
               <ImgSection>
-                <Image
-                  src="/snake.svg"
-                  width={180}
-                  height={180}
+                <SnakeImage
+                  src="/snake.png"
+                  width={172}
+                  height={172}
                   alt="Snake"
                 />
               </ImgSection>
@@ -96,8 +119,8 @@ export default function About() {
               <ImgSection>
                 <Image
                   src="/hackupcLogoBlack.svg"
-                  width={110}
-                  height={110}
+                  width={95}
+                  height={95}
                   alt="HackUPC Logo"
                 />
               </ImgSection>
@@ -105,18 +128,25 @@ export default function About() {
                 About HackUPC
               </BlockTitle>
               <Body>
-                HackUPC is the first student hackathon in Spain. Once a year, we
-                aim to provide participants of <b>all experience levels</b> from{" "}
-                <b>all around the world</b> with a space where they can improve
-                and learn new skills, meet amazing people, and have an overall
-                great experience!
+              HackUPC is the first student hackathon in Spain. Once a year, we aim to provide
+              a space for students of all experience levels from all around the world where they
+              can improve and learn new skills, meet awesome people, and overall have a great 
+              experience! This year's edition will be the first since the pandemic to have a
+              FULLY IN-PERSON format, meaning that you can only participate by physically
+              attending the event.
               </Body>
+              <ImgSection>
+                <AppleImage
+                  src="/apple.png"
+                  width={28}
+                  height={30}
+                  alt="manzana snake"
+                /> 
+              </ImgSection>
             </Col>
           </Container>
         </SectionStyled>
       </SectionBackground>
-      <Smoke src="/smoke_end.svg" alt="Rocket Smoke" />
-      <SmokeMobile src="/smoke_end_mobile.svg" alt="Rocket Smoke" />
     </div>
   );
 }
