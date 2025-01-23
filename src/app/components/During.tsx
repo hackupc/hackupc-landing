@@ -95,7 +95,7 @@ const BarrelFront2 = styled.img`
 
 const BarrelBack = styled.img`
   position: absolute;
-  top: 75px;
+  top: 100px;
   right: -40px;
   z-index: 1; /* Detrás */
 
