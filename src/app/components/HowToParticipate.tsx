@@ -19,6 +19,7 @@ import {
   PrimaryOutlineButton, SecondaryButton,
   SecondaryOutlineButton,
 } from "@/app/genericComponents/Buttons";
+import {silkscreen} from "@/app/genericComponents/fonts";
 
 const GridContainer = styled.div`
   display: grid;
@@ -78,11 +79,11 @@ const Text = styled(Body)`
 export default function HowToParticipate() {
   return (
       <SpecialSection id="howtoparticipate">
-        <HowToTitle>How to Participate</HowToTitle>
+        <HowToTitle className={silkscreen.className}>How to Participate</HowToTitle>
         <GridContainer>
           <RoleBlock>
             <ImageIcon src="greenAlien.svg" alt="Mentor" width={50} height={50} />
-            <BlockTitle color={Secondary500} haveMargin>Mentor</BlockTitle>
+            <BlockTitle className={silkscreen.className} color={Secondary500} haveMargin>Mentor</BlockTitle>
             <Text>
               Help and motivate hackers with your knowledge. Either because you are passionate about it, or if you've graduated more than a year ago and can't participate as a hacker, apply now as a mentor!
             </Text>
@@ -91,7 +92,7 @@ export default function HowToParticipate() {
 
           <RoleBlock>
             <ImageIcon src="blueAlien.svg" alt="Volunteer" width={50} height={50} />
-            <BlockTitle color={Primary100} haveMargin>Volunteer</BlockTitle>
+            <BlockTitle className={silkscreen.className} color={Primary100} haveMargin>Volunteer</BlockTitle>
             <Text>
               Volunteers make HackUPC possible by assisting the hackers and preparing the event. By joining our team of volunteers, you will get to know how this amazing event works from the inside, meet amazing people and live a great experience!
             </Text>
@@ -100,7 +101,7 @@ export default function HowToParticipate() {
 
           <RoleBlock>
             <ImageIcon src="yellowAlien.svg" alt="Partner" width={50} height={50} />
-            <BlockTitle color={Secondary500} haveMargin>Partner</BlockTitle>
+            <BlockTitle className={silkscreen.className} color={Secondary500} haveMargin>Partner</BlockTitle>
             <Text>
               Gain visibility for your brand, introduce your products to future talents. Join us and be remembered as part of this hackathon by our participants!
             </Text>
@@ -109,7 +110,7 @@ export default function HowToParticipate() {
 
           <RoleBlock>
             <ImageIcon src="redAlien.svg" alt="Sponsor" width={50} height={50} />
-            <BlockTitle color={Primary100} haveMargin>Sponsor</BlockTitle>
+            <BlockTitle className={silkscreen.className} color={Primary100} haveMargin>Sponsor</BlockTitle>
             <Text>
               Don't just put your brand on another wall. Take the chance to shape the tech scene of tomorrow by adding real value and making it possible for hackers to build something they're proud of.
             </Text>
