@@ -7,15 +7,11 @@ import {
 } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  Primary500,
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 
-const Colors = {
-  background: "#",
-};
 
 const SnakeImage = styled(Image)`
   width: 120px; /* Smaller width for the snake image */
@@ -68,23 +64,6 @@ const ImgSection = styled.div`
   margin-bottom: ${SpacingS};
 `;
 
-const Smoke = styled.img`
-  width: 100%;
-  height: auto;
-  display: block;
-  @media (max-width: ${MobileBreakpoint}) {
-    display: none;
-  }
-`;
-
-const SmokeMobile = styled.img`
-  display: none;
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-`;
 
 export default function About() {
   return (
