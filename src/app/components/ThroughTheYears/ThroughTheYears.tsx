@@ -1,86 +1,136 @@
 import React from "react";
 
-import { Section } from "@/app/genericComponents/General";
+import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
-import EmblaCarousel from "./EmblaCarousel";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { EmblaOptionsType } from "embla-carousel";
+import styled from "styled-components";
+import { silkscreen } from "@/app/genericComponents/fonts";
+
+const TetrisContainer = styled.div`
+  position: relative;
+  width: 250px;
+  height: 750px;
+  background-color: #000;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const TetrisPiece = styled.img<{ x: number; y: number; w: number }>`
+  position: absolute;
+  height: auto;
+  width: ${(props) => props.w}px;
+  left: ${(props) => props.x}px;
+  top: ${(props) => props.y}px;
+`;
 
 export default function ThroughTheYears() {
-  const PREVIOUS_EDITIONS = [
-    {
-      name: "Spring 2016",
-      date: "Feb 19-21",
-      img: "/Planets/ThroughTheYears/Spring2016.svg",
-      url: "https://s2016.hackupc.com/",
-    },
-    {
-      name: "Fall 2016",
-      date: "Oct 7-9",
-      img: "/Planets/ThroughTheYears/Fall2016.svg",
-      url: "https://f2016.hackupc.com/",
-    },
-
-    {
-      name: "Fall 2017",
-      date: "Oct 13-15",
-      img: "/Planets/ThroughTheYears/Fall2017.svg",
-      url: "https://f2017.hackupc.com/",
-    },
-    {
-      name: "Winter 2017",
-      date: "March 3-5",
-      img: "/Planets/ThroughTheYears/Winter2017.svg",
-      url: "https://w2017.hackupc.com/",
-    },
-    {
-      name: "2018",
-      date: "Oct 19-21",
-      img: "/Planets/ThroughTheYears/2018.svg",
-      url: "https://2018.hackupc.com/",
-    },
-    {
-      name: "2019",
-      date: "Oct 11-13",
-      img: "/Planets/ThroughTheYears/2019.svg",
-      url: "https://2019.hackupc.com/",
-    },
-    {
-      name: "2020",
-      date: "CANCELLED",
-      img: "/Planets/ThroughTheYears/2020.svg",
-      url: "",
-    },
-    {
-      name: "2021",
-      date: "May 14-16",
-      img: "/Planets/ThroughTheYears/2021.svg",
-      url: "https://2021.hackupc.com/",
-    },
-    {
-      name: "2022",
-      date: "April 21-May 1",
-      img: "/Planets/ThroughTheYears/2022.svg",
-      url: "https://2022.hackupc.com/",
-    },
-    {
-      name: "2023",
-      date: "May 12-14",
-      img: "/Planets/ThroughTheYears/2023.svg",
-      url: "https://2023.hackupc.com/",
-    },
-  ];
-
-  const OPTIONS: EmblaOptionsType = {
-    align: "start",
-    loop: true,
-    slidesToScroll: 2,
-  };
-
   return (
-    <Section>
-      <SectionTitle>Through The Years</SectionTitle>
-      <EmblaCarousel slides={PREVIOUS_EDITIONS} options={OPTIONS} />
-    </Section>
+    <div id="ThroughTheYears">
+      <SectionBackground specialBackground={"#171B48"}>
+        <Section>
+          <SectionTitle className={silkscreen.className}>
+            Through The Years
+          </SectionTitle>
+          <TetrisContainer>
+            <a
+              href="https://2024.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris_2024.png"
+                x={200}
+                y={50}
+                w={50}
+              />
+            </a>
+            <a
+              href="https://2023.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris_2023.png"
+                x={0}
+                y={200}
+                w={100}
+              />
+            </a>
+            <a
+              href="https://2022.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris_2022.png"
+                x={0}
+                y={300}
+                w={150}
+              />
+            </a>
+            <a
+              href="https://2021.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris_2021.png"
+                x={101}
+                y={305}
+                w={100}
+              />
+            </a>
+            <a
+              href="https://2018.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris_2018.png"
+                x={150}
+                y={450}
+                w={100}
+              />
+            </a>
+            <a
+              href="https://2017f.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris_2017f.png"
+                x={100}
+                y={550}
+                w={150}
+              />
+            </a>
+            <a
+              href="https://2026w.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris_2016w.png"
+                x={151}
+                y={603}
+                w={100}
+              />
+            </a>
+            <a
+              href="https://2016s.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris_2016s.png"
+                x={0}
+                y={650}
+                w={150}
+              />
+            </a>
+          </TetrisContainer>
+        </Section>
+      </SectionBackground>
+    </div>
   );
 }
