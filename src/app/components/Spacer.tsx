@@ -1,27 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebook,
-  faGithub,
-  faInstagram,
-  faLinkedin,
-  faMedium,
-  faTwitch,
-  faXTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
-import { BlockTitle, SectionTitle } from "@/app/genericComponents/Typography";
-import {
-  MobileBreakpoint,
-  Secondary500,
-  SpacingM,
-  SpacingS,
-  SpacingXS,
-} from "@/app/genericComponents/tokens";
+import { SectionBackground } from "@/app/genericComponents/General";
 
 
 const SpacerBackground = styled(SectionBackground)`
