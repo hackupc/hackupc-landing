@@ -3,50 +3,36 @@ import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  Neutral300,
-  Neutral500,
-  SpacingM,
   SpacingS,
-  SpacingXL,
 } from "@/app/genericComponents/tokens";
-import { SecondaryButton } from "@/app/genericComponents/Buttons";
-import { silom } from "@/app/genericComponents/fonts";
+import { silkscreen } from "@/app/genericComponents/fonts";
 import React from "react";
 import Image from "next/image";
 
-const VideoWrapper = styled.div`
-  position: relative;
-  width: 80%;
-  padding-top: 45%;
-  aspect-ratio: 16 / 9;
+// const VideoWrapper = styled.div`
+//   position: relative;
+//   width: 80%;
+//   padding-top: 45%;
+//   aspect-ratio: 16 / 9;
 
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 100%;
-    padding-top: 56.25%;
-  }
-`;
+//   @media (max-width: ${MobileBreakpoint}) {
+//     width: 100%;
+//     padding-top: 56.25%;
+//   }
+// `;
 
-const StyledIframe = styled.iframe`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: ${SpacingS};
-  border: none;
-  overflow: hidden;
-`;
+// const StyledIframe = styled.iframe`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: ${SpacingS};
+//   border: none;
+//   overflow: hidden;
+// `;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  margin-top: ${SpacingM};
-  gap: ${SpacingS};
-  width: 100%;
-`;
+
 
 const shimmerAnimation = keyframes`
     0% {
@@ -115,19 +101,19 @@ const StyledButtons = styled(Image)`
 
 export default function Trailer() {
   return (
-    <SectionBackground haveBackground id="trailer">
-      <Section>
+    <SectionBackground specialBackground="#594F4F"> 
+      <Section className={silkscreen.className}>
 
       <ConsolePlayer>
         <InnerConsole>
 
-        <SectionTitle>Teaser</SectionTitle>
+        <SectionTitle className={silkscreen.className}>Teaser</SectionTitle>
         <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>
         {/* <VideoWrapper>
           <StyledIframe
           title="HackUPC 2024 | Trailer"
           src="https://www.youtube.com/embed/iDinGlzSpbI?si=ZzSusoVrzekuuanx"
-          allowFullScreen
+          allowFullScreenspecialBackground
           allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
           />
           </VideoWrapper> */}
