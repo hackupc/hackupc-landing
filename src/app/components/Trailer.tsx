@@ -99,15 +99,19 @@ const StyledButtons = styled(Image)`
   width: 80%;
   `;
 
+const CustomTitle = styled(SectionTitle)`
+color: #000;
+`;
+
 export default function Trailer() {
   return (
-    <SectionBackground specialBackground="#594F4F"> 
+    <SectionBackground specialBackground="#231F20"> 
       <Section className={silkscreen.className}>
 
       <ConsolePlayer>
         <InnerConsole>
 
-        <SectionTitle className={silkscreen.className}>Teaser</SectionTitle>
+        <CustomTitle className={silkscreen.className}>Teaser</CustomTitle>
         <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>
         {/* <VideoWrapper>
           <StyledIframe
