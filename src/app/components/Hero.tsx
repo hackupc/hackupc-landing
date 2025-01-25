@@ -34,15 +34,22 @@ const HeroContainer = styled.div`
   background-color: ${Colors.HeroNeutral};
   background-image: 
     url("/background_piece.svg"), 
-    url("/pixelated_biene.svg"), 
+    url("/biene_pacman.svg"), 
+    url("/green_ghost.svg"), 
     url("/red_ghost.svg"), 
-    url("/blue_ghost.svg"), 
+    url("/orange_ghost.svg"), 
+    url("/white_ghost.svg"), 
+    url("/pink_ghost.svg"), 
     url("/purple_ghost.svg");
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: 
     80px 80px, 
     32px 32px, 
     32px 32px, 
+    32px 32px,
+    32px 32px,
+    32px 32px,
     32px 32px, 
     32px 32px;
 
@@ -55,7 +62,7 @@ const HeroContainer = styled.div`
         50% 50%, 
         10% 10%, 
         90% 10%, 
-        50% 90%;
+        50% 90%,
     }
     25% {
       background-position: 
@@ -191,18 +198,24 @@ const PlayerText = styled.div`
 
 export default function Hero() {
   const [showHero, setShowHero] = useState(true);
-  const [bienePosition, setBienePosition] = useState({ x: 128, y: 128 });
+  const [bienePosition, setBienePosition] = useState({ x: 64, y: 64 });
+  const [animatedPosition, setAnimatedPosition] = useState({ x: 64, y: 64 });
   const [ghostPositions, setGhostPositions] = useState([
-    { x: 80 * 0, y: 80 * 10 }, // red
-    { x: 80 * 6, y: 80 * 6 },  // blue
-    { x: 80 * 10, y: 80 * 10 }, // purple
+    { x: -16 + 80 * 5, y: -16 + 80 * 3 }, // green
+    { x: -16 + 80 * 6, y: -16 + 80 * 9 },  // red
+    { x: -16 + 80 * 7, y: -16 + 80 * 10 }, // orange
+    { x: -16 + 80 * 8, y: -16 + 80 * 6 }, // white
+    { x: -16 + 80 * 9, y: -16 + 80 * 8 }, // pink
+    { x: -16 + 80 * 10, y: -16 + 80 * 5 }, // purple
   ]);
   
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
         e.preventDefault();
+
         setShowHero(false);
+        
         const screenW = window.innerWidth - 80;
         const screenH = window.innerHeight - 64;
         
@@ -222,6 +235,7 @@ export default function Hero() {
                   newPos.x = Math.min(screenW, prev.x + 80);
                   break;
                 }
+                setAnimatedPosition(newPos);
                 return newPos;
               });
             }
@@ -269,11 +283,15 @@ export default function Hero() {
         style={{
           backgroundPosition: `
           0 0, 
-          ${bienePosition.x}px ${bienePosition.y}px, 
+          ${animatedPosition.x}px ${animatedPosition.y}px,
           ${ghostPositions[0].x}px ${ghostPositions[0].y}px, 
           ${ghostPositions[1].x}px ${ghostPositions[1].y}px, 
-          ${ghostPositions[2].x}px ${ghostPositions[2].y}px`,
+          ${ghostPositions[2].x}px ${ghostPositions[2].y}px,
+          ${ghostPositions[3].x}px ${ghostPositions[3].y}px,
+          ${ghostPositions[4].x}px ${ghostPositions[4].y}px,
+          ${ghostPositions[5].x}px ${ghostPositions[5].y}px`,
           animation: showHero ? "moveAll 10s linear infinite" : "none",
+          transition: showHero ? "none" : "background-position 0.3s ease-in-out",
         }}
       >
         <TitleContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
