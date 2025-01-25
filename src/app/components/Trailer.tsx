@@ -45,6 +45,9 @@ const shimmerAnimation = keyframes`
 
 const VideoNotAvailable = styled.div`
   padding: 120px;
+  @media (max-width: ${MobileBreakpoint}) {
+    padding: 60px;
+  }
   background-color: #00A0B0;
   text-align: center;
   border-radius: ${SpacingS};
