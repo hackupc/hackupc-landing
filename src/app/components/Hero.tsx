@@ -41,10 +41,10 @@ const HeroContainer = styled.div`
   background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: 
     80px 80px, 
-    40px 40px, 
-    40px 40px, 
-    40px 40px, 
-    40px 40px;
+    32px 32px, 
+    32px 32px, 
+    32px 32px, 
+    32px 32px;
 
   animation: moveAll 10s linear infinite;
 
@@ -191,37 +191,74 @@ const PlayerText = styled.div`
 
 export default function Hero() {
   const [showHero, setShowHero] = useState(true);
-  const [bienePosition, setBienePosition] = useState({ x: 50, y: 50 });
-
+  const [bienePosition, setBienePosition] = useState({ x: 128, y: 128 });
+  const [ghostPositions, setGhostPositions] = useState([
+    { x: 64 * 0, y: 64 * 10 }, // red
+    { x: 64 * 6, y: 64 * 6 },  // blue
+    { x: 64 * 10, y: 64 * 10 }, // purple
+  ]);
+  
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
         e.preventDefault();
         setShowHero(false);
-
+        const screenW = window.innerWidth - 80;
+        const screenH = window.innerHeight - 64;
+        
         setBienePosition((prev) => {
           const newPos = { ...prev };
           switch (e.key) {
             case "ArrowUp":
-              newPos.y = Math.max(0, prev.y - 1);
+              newPos.y = Math.max(64, prev.y - 80);
               break;
-            case "ArrowDown":
-              newPos.y = Math.min(100, prev.y + 1);
+              case "ArrowDown":
+                newPos.y = Math.min(screenH, prev.y + 80);
+                break;
+                case "ArrowLeft":
+                  newPos.x = Math.max(64, prev.x - 80);
+                  break;
+                  default: // ArrowRight
+                  newPos.x = Math.min(screenW, prev.x + 80);
+                  break;
+                }
+                return newPos;
+              });
+            }
+          };
+
+          window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const screenW = window.innerWidth - 80;
+      const screenH = window.innerHeight - 64;
+      setGhostPositions((prevPositions) =>
+        prevPositions.map((pos) => {
+          const direction = Math.floor(Math.random() * 4);
+          const newPos = { ...pos };
+          switch (direction) {
+            case 0: // up
+              newPos.y = Math.max(64, pos.y - 80);
               break;
-            case "ArrowLeft":
-              newPos.x = Math.max(0, prev.x - 1);
+            case 1: // down
+              newPos.y = Math.min(screenH, pos.y + 80);
               break;
-            case "ArrowRight":
-              newPos.x = Math.min(100, prev.x + 1);
+            case 2: // left
+              newPos.x = Math.max(64, pos.x - 80);
+              break;
+            default: // right
+              newPos.x = Math.min(screenW, pos.x + 80);
               break;
           }
           return newPos;
-        });
-      }
-    };
+        })
+      );
+    }, 500);
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -232,10 +269,10 @@ export default function Hero() {
         style={{
           backgroundPosition: `
           0 0, 
-          ${bienePosition.x}% ${bienePosition.y}%, 
-          10% 10%, 
-          90% 10%, 
-          50% 90%`,
+          ${bienePosition.x}px ${bienePosition.y}px, 
+          ${ghostPositions[0].x}px ${ghostPositions[0].y}px, 
+          ${ghostPositions[1].x}px ${ghostPositions[1].y}px, 
+          ${ghostPositions[2].x}px ${ghostPositions[2].y}px,
           animation: showHero ? "moveAll 10s linear infinite" : "none",
         }}
       >
@@ -261,4 +298,5 @@ export default function Hero() {
       </HeroContainer>
     </>
   );
-};
+}
+
