@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import {
@@ -5,7 +6,7 @@ import {
   SpacingM,
   SpacingS,
   SpacingXL,
-  SpacingXXL,
+  SpacingXXXL,
   TitleXXL,
   TitleL,
   TitleM,
@@ -27,7 +28,7 @@ const HeroContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0;
-  padding: ${SpacingXL} 0 ${SpacingXXL} 0;
+  padding: ${SpacingXL} 0 ${SpacingXXXL} 0;
   gap: ${SpacingM};
   width: 100vw;
   background-color: ${Colors.HeroNeutral};
@@ -44,12 +45,6 @@ const HeroContainer = styled.div`
     40px 40px, 
     40px 40px, 
     40px 40px;
-  background-position: 
-    0 0, 
-    50% 50%, 
-    10% 10%,
-    90% 10%,
-    50% 90%;
 
   animation: moveAll 10s linear infinite;
 
@@ -97,8 +92,6 @@ const HeroContainer = styled.div`
   }
 `;
 
-
-
 const Title = styled.h1`
   font-size: ${TitleXXL};
   color: ${Colors.HeroYellow};
@@ -114,6 +107,9 @@ const Title = styled.h1`
 const TitleContainer = styled.div`
   width: 80%;
   max-width: 600px;
+  border-top: ${SpacingXS} dotted yellow;
+  border-bottom: ${SpacingXS} dotted yellow;
+  padding-bottom: ${SpacingM};
 `;
 
 const SubText = styled.div`
@@ -144,12 +140,6 @@ const PlayAsContainer = styled.div`
   @media (max-width: ${MobileBreakpoint}) {
     width: 90%;
   }
-`;
-
-const YellowDottedLine100 = styled.div`
-  margin-top: ${SpacingM};
-  border-top: ${SpacingXS} dotted yellow;
-  width: 100%;
 `;
 
 
@@ -199,56 +189,76 @@ const PlayerText = styled.div`
   margin-top: ${SpacingS};
 `;
 
-const SurpriseButton = styled.div`
-  background-color: ${Colors.HeroYellow};
-  color: #000000;
-  padding: ${SpacingS} ${SpacingM};
-  border-radius: 8px;
-  margin-top: ${SpacingM};
-  cursor: pointer;
-  font-weight: bold;
-  font-size: ${TitleS};
-
-  &:hover {
-    background-color: ${Colors.HeroBlue};
-    color: #FFFFFF
-  }
-`;
-
 export default function Hero() {
+  const [showHero, setShowHero] = useState(true);
+  const [bienePosition, setBienePosition] = useState({ x: 50, y: 50 });
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+        e.preventDefault();
+        setShowHero(false);
+
+        setBienePosition((prev) => {
+          const newPos = { ...prev };
+          switch (e.key) {
+            case "ArrowUp":
+              newPos.y = Math.max(0, prev.y - 1);
+              break;
+            case "ArrowDown":
+              newPos.y = Math.min(100, prev.y + 1);
+              break;
+            case "ArrowLeft":
+              newPos.x = Math.max(0, prev.x - 1);
+              break;
+            case "ArrowRight":
+              newPos.x = Math.min(100, prev.x + 1);
+              break;
+          }
+          return newPos;
+        });
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
-    <HeroContainer className={silkscreen.className}>
-      <TitleContainer>
-        <Title>
-          <YellowDottedLine100 />
-          HackUPC
-          <SubText>700 Hackers | 2-4 May | 36h</SubText>
-          <YellowDottedLine100 />
-        </Title>
-      </TitleContainer>
-      <PlayAsContainer>
-        <PlayAsTitleBox>Play as</PlayAsTitleBox>
-        <PlayerContainer>
-          <PlayerCard>
-            <Image 
-              src="/player1.png" 
-              width={100}
-              height={100}
-              alt="Player 1" />
-            <PlayerText>Hacker</PlayerText>
-          </PlayerCard>
-          <PlayerCard>
-            <Image
-              src="/player2.png"
-              width={100}
-              height={100}
-              alt="Player 2"
-            />
-            <PlayerText>Volunteer</PlayerText>
-          </PlayerCard>
-        </PlayerContainer>
-      </PlayAsContainer>
-      <SurpriseButton>Surprise</SurpriseButton>
-    </HeroContainer>
+    <>
+      <HeroContainer
+        key={`${bienePosition.x}-${bienePosition.y}`}
+        className={silkscreen.className}
+        style={{
+          backgroundPosition: `
+          0 0, 
+          ${bienePosition.x}% ${bienePosition.y}%, 
+          10% 10%, 
+          90% 10%, 
+          50% 90%`,
+          animation: showHero ? "moveAll 10s linear infinite" : "none",
+        }}
+      >
+        <TitleContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
+          <Title>
+            HackUPC
+            <SubText>700 Hackers | 2-4 May 2025 | 36h</SubText>
+          </Title>
+        </TitleContainer>
+        <PlayAsContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
+          <PlayAsTitleBox>Play as</PlayAsTitleBox>
+          <PlayerContainer>
+            <PlayerCard>
+              <Image src="/player1.png" width={100} height={100} alt="Player 1" />
+              <PlayerText>Hacker</PlayerText>
+            </PlayerCard>
+            <PlayerCard>
+              <Image src="/player2.png" width={100} height={100} alt="Player 2" />
+              <PlayerText>Volunteer</PlayerText>
+            </PlayerCard>
+          </PlayerContainer>
+        </PlayAsContainer>
+      </HeroContainer>
+    </>
   );
-}
+};

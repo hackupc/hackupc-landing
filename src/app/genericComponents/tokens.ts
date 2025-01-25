@@ -52,3 +52,4 @@ export const SpacingM: string = "32px";
 export const SpacingL: string = "64px";
 export const SpacingXL: string = "96px";
 export const SpacingXXL: string = "160px";
+export const SpacingXXXL: string = "240px";
