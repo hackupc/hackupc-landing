@@ -193,11 +193,14 @@ export default function FAQs() {
             <BlockTitle color={"white"}>About HackUPC</BlockTitle>
             {hackupc_faqs.map((faq) => (
               <Question key={faq.id}>
-                <FontAwesomeIconStyled
-                  icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? "#E3C3FF" : "white"}
+                <Image
+                  src={activeFaqId === faq.id ? "/used_question_mark_block.svg" : "/question_mark_block.svg"}
+                  width={32}
+                  height={32}
+                  alt="Question Mark Block"
                   onClick={() => toggleFaq(faq.id)}
-                  />
+                  style={{ cursor: 'pointer' }}
+                />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                     {faq.question}
@@ -224,21 +227,24 @@ export default function FAQs() {
           <QuestionsBlock>
             <BlockTitle color={"white"}>Travel Reimbursement</BlockTitle>
             {travel_faqs.map((faq) => (
-              <Question key={faq.id}>
-                <FontAwesomeIconStyled
-                  icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? "#E3C3FF" : "white"}
+                <Question key={faq.id}>
+                <Image
+                  src={activeFaqId === faq.id ? "/used_question_mark_block.svg" : "/question_mark_block.svg"}
+                  width={32}
+                  height={32}
+                  alt="Question Mark Block"
                   onClick={() => toggleFaq(faq.id)}
-                  />
+                  style={{ cursor: 'pointer' }}
+                />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                    {faq.question}
+                  {faq.question}
                   </QuestionTitle>
                   <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                    {renderAnswer(faq.answer)}
+                  {renderAnswer(faq.answer)}
                   </QuestionAnswer>
                 </div>
-              </Question>
+                </Question>
             ))}
           </QuestionsBlock>
         </div>
@@ -258,11 +264,14 @@ export default function FAQs() {
             <BlockTitle color={"white"}>Applications</BlockTitle>
             {applications_faqs.map((faq) => (
               <Question key={faq.id}>
-                <FontAwesomeIconStyled
-                  icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? "#E3C3FF" : "white"}
+                <Image
+                  src={activeFaqId === faq.id ? "/used_question_mark_block.svg" : "/question_mark_block.svg"}
+                  width={32}
+                  height={32}
+                  alt="Question Mark Block"
                   onClick={() => toggleFaq(faq.id)}
-                  />
+                  style={{ cursor: 'pointer' }}
+                />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                     {faq.question}
@@ -289,11 +298,14 @@ export default function FAQs() {
             <BlockTitle color={"white"}>Teams</BlockTitle>
             {teams_faqs.map((faq) => (
               <Question key={faq.id}>
-                <FontAwesomeIconStyled
-                  icon={activeFaqId === faq.id ? faMinus : faPlus}
-                  color={activeFaqId === faq.id ? "#E3C3FF" : "white"}
+                <Image
+                  src={activeFaqId === faq.id ? "/used_question_mark_block.svg" : "/question_mark_block.svg"}
+                  width={32}
+                  height={32}
+                  alt="Question Mark Block"
                   onClick={() => toggleFaq(faq.id)}
-                  />
+                  style={{ cursor: 'pointer' }}
+                />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                     {faq.question}
