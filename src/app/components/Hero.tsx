@@ -40,9 +40,10 @@ const HeroContainer = styled.div`
     url("/orange_ghost.svg"), 
     url("/white_ghost.svg"), 
     url("/pink_ghost.svg"), 
-    url("/purple_ghost.svg");
+    url("/purple_ghost.svg"),
+    url("/hackupcLogoWhite.svg");
 
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: 
     80px 80px, 
     32px 32px, 
@@ -51,6 +52,7 @@ const HeroContainer = styled.div`
     32px 32px,
     32px 32px,
     32px 32px, 
+    32px 32px,
     32px 32px;
 
   animation: moveAll 10s linear infinite;
@@ -202,49 +204,88 @@ export default function Hero() {
   const [animatedPosition, setAnimatedPosition] = useState({ x: 64, y: 64 });
   const [ghostPositions, setGhostPositions] = useState([
     { x: -16 + 80 * 5, y: -16 + 80 * 3 }, // green
-    { x: -16 + 80 * 6, y: -16 + 80 * 9 },  // red
+    { x: -16 + 80 * 6, y: -16 + 80 * 9 }, // red
     { x: -16 + 80 * 7, y: -16 + 80 * 10 }, // orange
     { x: -16 + 80 * 8, y: -16 + 80 * 6 }, // white
     { x: -16 + 80 * 9, y: -16 + 80 * 8 }, // pink
     { x: -16 + 80 * 10, y: -16 + 80 * 5 }, // purple
   ]);
-  
+
+  const [spriteIndex, setSpriteIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSpriteIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 250);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+  const [logoPositions, setLogoPositions] = useState(() => {
+    const positions = [];
+    for (let i = 0; i < 16; i++) {
+      positions.push({
+        x: -16 + Math.floor(Math.random() * 10) * 80,
+        y: -16 + Math.floor(Math.random() * 10) * 80,
+      });
+    }
+    return positions;
+  });
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
         e.preventDefault();
-
         setShowHero(false);
-        
+
         const screenW = window.innerWidth - 80;
         const screenH = window.innerHeight - 64;
-        
+
         setBienePosition((prev) => {
           const newPos = { ...prev };
           switch (e.key) {
             case "ArrowUp":
               newPos.y = Math.max(64, prev.y - 80);
               break;
-              case "ArrowDown":
-                newPos.y = Math.min(screenH, prev.y + 80);
-                break;
-                case "ArrowLeft":
-                  newPos.x = Math.max(64, prev.x - 80);
-                  break;
-                  default: // ArrowRight
-                  newPos.x = Math.min(screenW, prev.x + 80);
-                  break;
-                }
-                setAnimatedPosition(newPos);
-                return newPos;
-              });
-            }
-          };
+            case "ArrowDown":
+              newPos.y = Math.min(screenH, prev.y + 80);
+              break;
+            case "ArrowLeft":
+              newPos.x = Math.max(64, prev.x - 80);
+              break;
+            default: // ArrowRight
+              newPos.x = Math.min(screenW, prev.x + 80);
+              break;
+          }
 
-          window.addEventListener("keydown", handleKeyDown);
+          setAnimatedPosition(newPos);
+
+          setLogoPositions((logos) =>
+            logos.filter(
+              (logo) => logo.x !== newPos.x || logo.y !== newPos.y
+            )
+          );
+
+          setGhostPositions((ghosts) =>
+            ghosts.map((ghost) => {
+                if (ghost.x === newPos.x && ghost.y === newPos.y) {
+                  // alert("Sadly, you lost! We hope HackUPC awaits more luck for you!"); --> Alert not working, it's throwing 1000 alerts per second
+                  setShowHero(true);
+                }
+              return ghost;
+            })  
+          );
+
+          return newPos;
+        });
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       const screenW = window.innerWidth - 80;
@@ -270,7 +311,7 @@ export default function Hero() {
           return newPos;
         })
       );
-    }, 500);
+    }, 250);
 
     return () => clearInterval(interval);
   }, []);
@@ -289,7 +330,18 @@ export default function Hero() {
           ${ghostPositions[2].x}px ${ghostPositions[2].y}px,
           ${ghostPositions[3].x}px ${ghostPositions[3].y}px,
           ${ghostPositions[4].x}px ${ghostPositions[4].y}px,
-          ${ghostPositions[5].x}px ${ghostPositions[5].y}px`,
+          ${ghostPositions[5].x}px ${ghostPositions[5].y}px,
+          ${logoPositions.map((logo) => `${logo.x}px ${logo.y}px`).join(", ")}`,
+          backgroundImage: ` 
+          url("/background_piece.svg"), 
+          url(${spriteIndex === 0 ? "/biene_pacman.svg" : "/biene_pacman_2.svg"}), 
+          url("/green_ghost.svg"), 
+          url("/red_ghost.svg"), 
+          url("/orange_ghost.svg"), 
+          url("/white_ghost.svg"), 
+          url("/pink_ghost.svg"), 
+          url("/purple_ghost.svg"),
+          url("/hackupcLogoWhite.svg"); `,
           animation: showHero ? "moveAll 10s linear infinite" : "none",
           transition: showHero ? "none" : "background-position 0.3s ease-in-out",
         }}
@@ -304,11 +356,11 @@ export default function Hero() {
           <PlayAsTitleBox>Play as</PlayAsTitleBox>
           <PlayerContainer>
             <PlayerCard>
-              <Image src="/player1.png" width={100} height={100} alt="Player 1" />
+              <Image src="/red_ghost.svg" width={100} height={100} alt="Player 1" />
               <PlayerText>Hacker</PlayerText>
             </PlayerCard>
             <PlayerCard>
-              <Image src="/player2.png" width={100} height={100} alt="Player 2" />
+              <Image src="/green_ghost.svg" width={100} height={100} alt="Player 2" />
               <PlayerText>Volunteer</PlayerText>
             </PlayerCard>
           </PlayerContainer>
@@ -317,4 +369,5 @@ export default function Hero() {
     </>
   );
 }
+
 
