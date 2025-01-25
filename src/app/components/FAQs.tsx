@@ -7,16 +7,13 @@ import {
 } from "@/app/data/faqs_data";
 import Image from "next/image";
 import parse from "html-react-parser";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import {
   MobileBreakpoint,
   SpacingL,
   SpacingM,
   SpacingS,
   SpacingXS,
-  SpacingXXS,
 } from "@/app/genericComponents/tokens";
 import { SectionBackground } from "@/app/genericComponents/General";
 import {
@@ -109,9 +106,14 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
     `}
 `;
 
-const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
-  cursor: url("/rocket-fire.png"), auto;
-  padding: ${SpacingXXS} ${SpacingXS};
+const CustomBackground = styled(SectionBackground)`
+  background-image: url("/clouds.svg");
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: center;
+  background-position-y: 20px; 
+  background-position-x: 20px; 
+  
 `;
 
 function renderAnswer(answers: AnswerOptions[]) {
@@ -173,7 +175,7 @@ export default function FAQs() {
   };
 
   return (
-    <SectionBackground specialBackground={"#29ABE2"} id="faqs">
+    <CustomBackground specialBackground={"#29ABE2"} id="faqs">
       <TitleSpacer>
         <SectionTitle>FAQs</SectionTitle>
       </TitleSpacer>
@@ -199,7 +201,7 @@ export default function FAQs() {
                   height={32}
                   alt="Question Mark Block"
                   onClick={() => toggleFaq(faq.id)}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -234,7 +236,7 @@ export default function FAQs() {
                   height={32}
                   alt="Question Mark Block"
                   onClick={() => toggleFaq(faq.id)}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -270,7 +272,7 @@ export default function FAQs() {
                   height={32}
                   alt="Question Mark Block"
                   onClick={() => toggleFaq(faq.id)}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -304,7 +306,7 @@ export default function FAQs() {
                   height={32}
                   alt="Question Mark Block"
                   onClick={() => toggleFaq(faq.id)}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 />
                 <div>
                   <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -320,6 +322,6 @@ export default function FAQs() {
           </div>
         </ColumnsQuestions>
       </Split>
-    </SectionBackground>
+    </CustomBackground>
   );
 }
