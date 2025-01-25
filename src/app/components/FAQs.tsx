@@ -12,8 +12,6 @@ import React, { useState } from "react";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import {
   MobileBreakpoint,
-  Primary100,
-  Secondary500,
   SpacingL,
   SpacingM,
   SpacingS,
