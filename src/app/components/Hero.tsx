@@ -193,9 +193,9 @@ export default function Hero() {
   const [showHero, setShowHero] = useState(true);
   const [bienePosition, setBienePosition] = useState({ x: 128, y: 128 });
   const [ghostPositions, setGhostPositions] = useState([
-    { x: 64 * 0, y: 64 * 10 }, // red
-    { x: 64 * 6, y: 64 * 6 },  // blue
-    { x: 64 * 10, y: 64 * 10 }, // purple
+    { x: 80 * 0, y: 80 * 10 }, // red
+    { x: 80 * 6, y: 80 * 6 },  // blue
+    { x: 80 * 10, y: 80 * 10 }, // purple
   ]);
   
   useEffect(() => {
@@ -272,7 +272,7 @@ export default function Hero() {
           ${bienePosition.x}px ${bienePosition.y}px, 
           ${ghostPositions[0].x}px ${ghostPositions[0].y}px, 
           ${ghostPositions[1].x}px ${ghostPositions[1].y}px, 
-          ${ghostPositions[2].x}px ${ghostPositions[2].y}px,
+          ${ghostPositions[2].x}px ${ghostPositions[2].y}px`,
           animation: showHero ? "moveAll 10s linear infinite" : "none",
         }}
       >
