@@ -1,14 +1,18 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
+  Neutral300,
+  Neutral500,
   SpacingM,
   SpacingS,
+  SpacingXL,
 } from "@/app/genericComponents/tokens";
 import { SecondaryButton } from "@/app/genericComponents/Buttons";
 import { silom } from "@/app/genericComponents/fonts";
 import React from "react";
+import Image from "next/image";
 
 const VideoWrapper = styled.div`
   position: relative;
@@ -44,7 +48,7 @@ const ButtonContainer = styled.div`
   width: 100%;
 `;
 
-/*const shimmerAnimation = keyframes`
+const shimmerAnimation = keyframes`
     0% {
         transform: translateX(-100%);
     }
@@ -54,13 +58,15 @@ const ButtonContainer = styled.div`
 `;
 
 const VideoNotAvailable = styled.div`
-  padding: ${SpacingXL};
-  background-color: ${Neutral500};
+  padding: 120px;
+  background-color: #00A0B0;
   text-align: center;
   border-radius: ${SpacingS};
   position: relative;
   overflow: hidden;
-  color: ${Neutral300};
+  color: black;
+  font-weight: bold;
+  
 
   &::before {
     content: "";
@@ -77,31 +83,58 @@ const VideoNotAvailable = styled.div`
     );
     animation: ${shimmerAnimation} 3s infinite linear;
   }
-`; */
+`; 
+
+const ConsolePlayer = styled.div`
+  width: 100%;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  background-color: #594F4F;
+  
+  
+`;
+
+const InnerConsole = styled.div`
+background-color: #F4EAD5;
+border-radius: 15px;
+padding: 20px;
+// center the content
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+`;
+
+const StyledButtons = styled(Image)`
+@media (max-width: ${MobileBreakpoint}) {
+  width: 90%;
+}
+  width: 80%;
+  `;
 
 export default function Trailer() {
   return (
     <SectionBackground haveBackground id="trailer">
       <Section>
+
+      <ConsolePlayer>
+        <InnerConsole>
+
         <SectionTitle>Teaser</SectionTitle>
-        {/* <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable> */}
-        <VideoWrapper>
+        <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>
+        {/* <VideoWrapper>
           <StyledIframe
-            title="HackUPC 2024 | Trailer"
-            src="https://www.youtube.com/embed/iDinGlzSpbI?si=ZzSusoVrzekuuanx"
-            allowFullScreen
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          title="HackUPC 2024 | Trailer"
+          src="https://www.youtube.com/embed/iDinGlzSpbI?si=ZzSusoVrzekuuanx"
+          allowFullScreen
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
           />
-        </VideoWrapper>
-        <ButtonContainer className={silom.className}>
-          <SecondaryButton
-            href="https://hackersatupc.typeform.com/to/WOhCwF8m"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Subscribe
-          </SecondaryButton>
-        </ButtonContainer>
+          </VideoWrapper> */}
+        
+          <StyledButtons src="/console_buttons.svg" alt="console buttons" width={420} height={120} />
+          </InnerConsole>
+        </ConsolePlayer>
       </Section>
     </SectionBackground>
   );
