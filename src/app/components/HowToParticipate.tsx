@@ -20,7 +20,6 @@ import {
   SecondaryOutlineButton,
 } from "@/app/genericComponents/Buttons";
 import {silkscreen} from "@/app/genericComponents/fonts";
-import SpaceInvaders from "@/app/components/HowToParticipate/SpaceInvaders";
 
 const GridContainer = styled.div`
   display: grid;
@@ -56,10 +55,6 @@ const RoleBlock = styled.div`
   min-height: 250px;
   justify-content: space-between;
 `;
-
-const GameBlock = styled.div`
-  position: relative;
-`
 
 const SpecialSection = styled(Section)`
     background: black;
