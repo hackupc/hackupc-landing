@@ -11,6 +11,7 @@ import {
   SpacingXS,
 } from "@/app/genericComponents/tokens";
 import styled, { keyframes } from "styled-components";
+import {silkscreen} from "@/app/genericComponents/fonts";
 
 const live = keyframes`
   0% {
@@ -46,7 +47,7 @@ const LiveDotAnimated = styled.div`
 export default function Live() {
   return (
     <Section id="live">
-      <StyledSectionTitle>
+      <StyledSectionTitle className={silkscreen.className}>
         <LiveDotAnimated />
         Live
       </StyledSectionTitle>
@@ -60,7 +61,7 @@ export default function Live() {
           check out all the activities happening during the event.
         </Body>
       </TextContainer>
-      <PrimaryButton
+      <PrimaryButton className={silkscreen.className}
         href="https://live.hackupc.com/"
         target="_blank"
         rel="noopener noreferrer"
