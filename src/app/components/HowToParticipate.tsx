@@ -11,9 +11,9 @@ import {
   Secondary500,
   SpacingM,
   SpacingS,
-  SpacingXL, TitleL,
+  SpacingXL, SpacingXXL, TitleL,
 } from "@/app/genericComponents/tokens";
-import { Section } from "@/app/genericComponents/General";
+import {Section} from "@/app/genericComponents/General";
 import {
   PrimaryButton,
   PrimaryOutlineButton, SecondaryButton,
@@ -50,14 +50,87 @@ const RoleBlock = styled.div`
   flex-direction: column;
   align-items: center;
   padding: ${SpacingM};
-  border: 3px dashed;
-  border-radius: 15px;
   min-height: 250px;
   justify-content: space-between;
+  position: relative;
+  border: none; /* Remove default border */
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 20px);
+    height: 10px;
+  }
+
+  &::before {
+    top: 0;
+    left: 10px;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 10px;
+  }
+
+  &:nth-child(1)::before,
+  &:nth-child(1)::after {
+    background: repeating-linear-gradient(
+      90deg,
+      green,
+      green 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+
+  &:nth-child(2)::before,
+  &:nth-child(2)::after {
+    background: repeating-linear-gradient(
+      90deg,
+      blue,
+      blue 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+
+  &:nth-child(3)::before,
+  &:nth-child(3)::after {
+    background: repeating-linear-gradient(
+      90deg,
+      yellow,
+      yellow 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+
+  &:nth-child(4)::before,
+  &:nth-child(4)::after {
+    background: repeating-linear-gradient(
+      90deg,
+      red,
+      red 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
 `;
 
-const SpecialSection = styled(Section)`
-    background: black;
+
+
+const SpecialSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: ${SpacingXL} 0 ${SpacingXXL} 0;
+  gap: ${SpacingM};
+  width: 100vw;
+  background-color: black;
+  position: relative;
+  z-index: 0;
 `
 
 const ImageIcon = styled(Image)`
@@ -92,29 +165,30 @@ const Text = styled(Body)`
 
 export default function HowToParticipate() {
   return (
-      <SpecialSection id="howtoparticipate">
+      <SpecialSection>
+        <Section id="howtoparticipate">
           <HowToTitle className={silkscreen.className}>How to Participate</HowToTitle>
           <GridContainer>
             <RoleBlock>
-              <ImageIcon src="greenAlien.svg" alt="Mentor" width={50} height={50} />
+              <ImageIcon src="greenAlien.svg" alt="Mentor" width={50} height={50}/>
               <BlockTitle className={silkscreen.className} color={Secondary500} haveMargin>Mentor</BlockTitle>
               <Text>
                 Help and motivate hackers with your knowledge. Either because you are passionate about it, or if you've graduated more than a year ago and can't participate as a hacker, apply now as a mentor!
               </Text>
-              <PrimaryButton href="https://my.hackupc.com/user/signup/mentor/">Apply Now</PrimaryButton>
+              <SecondaryButton href="https://my.hackupc.com/user/signup/mentor/">Apply Now</SecondaryButton>
             </RoleBlock>
 
             <RoleBlock>
-              <ImageIcon src="blueAlien.svg" alt="Volunteer" width={50} height={50} />
+              <ImageIcon src="blueAlien.svg" alt="Volunteer" width={50} height={50}/>
               <BlockTitle className={silkscreen.className} color={Primary100} haveMargin>Volunteer</BlockTitle>
               <Text>
                 Volunteers make HackUPC possible by assisting the hackers and preparing the event. By joining our team of volunteers, you will get to know how this amazing event works from the inside, meet amazing people and live a great experience!
               </Text>
-              <SecondaryButton href="https://my.hackupc.com/user/signup/volunteer/">Apply now</SecondaryButton>
+              <PrimaryButton href="https://my.hackupc.com/user/signup/volunteer/">Apply now</PrimaryButton>
             </RoleBlock>
 
             <RoleBlock>
-              <ImageIcon src="yellowAlien.svg" alt="Partner" width={50} height={50} />
+              <ImageIcon src="yellowAlien.svg" alt="Partner" width={50} height={50} href="mailto:logistics@hackupc.com"/>
               <BlockTitle className={silkscreen.className} color={Secondary500} haveMargin>Partner</BlockTitle>
               <Text>
                 Gain visibility for your brand, introduce your products to future talents. Join us and be remembered as part of this hackathon by our participants!
@@ -131,6 +205,7 @@ export default function HowToParticipate() {
               <PrimaryOutlineButton href="mailto:sponsor@hackupc.com">Contact us</PrimaryOutlineButton>
             </RoleBlock>
           </GridContainer>
+        </Section>
       </SpecialSection>
   );
 }
