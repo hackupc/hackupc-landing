@@ -175,7 +175,7 @@ export default function HowToParticipate() {
               <Text>
                 Help and motivate hackers with your knowledge. Either because you are passionate about it, or if you've graduated more than a year ago and can't participate as a hacker, apply now as a mentor!
               </Text>
-              <SecondaryButton href="https://my.hackupc.com/user/signup/mentor/">Apply Now</SecondaryButton>
+              <SecondaryButton className={silkscreen.className} href="https://my.hackupc.com/user/signup/mentor/">Apply Now</SecondaryButton>
             </RoleBlock>
 
             <RoleBlock>
@@ -184,7 +184,7 @@ export default function HowToParticipate() {
               <Text>
                 Volunteers make HackUPC possible by assisting the hackers and preparing the event. By joining our team of volunteers, you will get to know how this amazing event works from the inside, meet amazing people and live a great experience!
               </Text>
-              <PrimaryButton href="https://my.hackupc.com/user/signup/volunteer/">Apply now</PrimaryButton>
+              <PrimaryButton className={silkscreen.className} href="https://my.hackupc.com/user/signup/volunteer/">Apply now</PrimaryButton>
             </RoleBlock>
 
             <RoleBlock>
@@ -193,7 +193,7 @@ export default function HowToParticipate() {
               <Text>
                 Gain visibility for your brand, introduce your products to future talents. Join us and be remembered as part of this hackathon by our participants!
               </Text>
-              <SecondaryOutlineButton href="mailto:logistics@hackupc.com">Contact us</SecondaryOutlineButton>
+              <SecondaryOutlineButton className={silkscreen.className} href="mailto:logistics@hackupc.com">Contact us</SecondaryOutlineButton>
             </RoleBlock>
 
             <RoleBlock>
@@ -202,7 +202,7 @@ export default function HowToParticipate() {
               <Text>
                 Don't just put your brand on another wall. Take the chance to shape the tech scene of tomorrow by adding real value and making it possible for hackers to build something they're proud of.
               </Text>
-              <PrimaryOutlineButton href="mailto:sponsor@hackupc.com">Contact us</PrimaryOutlineButton>
+              <PrimaryOutlineButton className={silkscreen.className} href="mailto:sponsor@hackupc.com">Contact us</PrimaryOutlineButton>
             </RoleBlock>
           </GridContainer>
         </Section>
