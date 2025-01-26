@@ -188,7 +188,7 @@ export default function HowToParticipate() {
             </RoleBlock>
 
             <RoleBlock>
-              <ImageIcon src="yellowAlien.svg" alt="Partner" width={50} height={50} href="mailto:logistics@hackupc.com"/>
+              <ImageIcon src="yellowAlien.svg" alt="Partner" width={50} height={50}/>
               <BlockTitle className={silkscreen.className} color={Secondary500} haveMargin>Partner</BlockTitle>
               <Text>
                 Gain visibility for your brand, introduce your products to future talents. Join us and be remembered as part of this hackathon by our participants!
