@@ -33,25 +33,25 @@ const HeroContainer = styled.div`
   width: 100vw;
   background-color: ${Colors.HeroNeutral};
   background-image: 
-    url("/background_piece.svg"), 
-    url("/biene_pacman.svg"), 
-    url("/green_ghost.svg"), 
-    url("/red_ghost.svg"), 
-    url("/orange_ghost.svg"), 
-    url("/white_ghost.svg"), 
-    url("/pink_ghost.svg"), 
+    url("/background_piece.svg"),
+    url("/biene_pacman.svg"),
+    url("/green_ghost.svg"),
+    url("/red_ghost.svg"),
+    url("/orange_ghost.svg"),
+    url("/white_ghost.svg"),
+    url("/pink_ghost.svg"),
     url("/purple_ghost.svg"),
     url("/hackupcLogoWhite.svg");
-
+  
   background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: 
-    80px 80px, 
-    32px 32px, 
-    32px 32px, 
+    80px 80px,
     32px 32px,
     32px 32px,
     32px 32px,
-    32px 32px, 
+    32px 32px,
+    32px 32px,
+    32px 32px,
     32px 32px,
     32px 32px;
 
@@ -62,44 +62,65 @@ const HeroContainer = styled.div`
       background-position: 
         0 0, 
         50% 50%, 
-        10% 10%, 
-        90% 10%, 
-        50% 90%,
+        ${-16 + 80 * 5}px ${-16 + 80 * 3}px, 
+        ${-16 + 80 * 6}px ${-16 + 80 * 9}px, 
+        ${-16 + 80 * 7}px ${-16 + 80 * 10}px,
+        ${-16 + 80 * 18}px ${-16 + 80 * 2}px, 
+        ${-16 + 80 * 18}px ${-16 + 80 * 8}px, 
+        ${-16 + 80 * 22}px ${-16 + 80 * 5}px,
+        50% 50%;
     }
     25% {
       background-position: 
-        0 0, 
-        50% 50%, 
-        10% 50%, 
-        90% 50%, 
-        50% 10%;
+        0 0,
+        55% 55%,
+        ${-16 + 80 * 7}px ${-16 + 80 * 3}px,
+        ${-16 + 80 * 6}px ${-16 + 80 * 7}px,
+        ${-16 + 80 * 5}px ${-16 + 80 * 10}px,
+        ${-16 + 80 * 20}px ${-16 + 80 * 2}px,
+        ${-16 + 80 * 20}px ${-16 + 80 * 8}px,
+        ${-16 + 80 * 22}px ${-16 + 80 * 7}px,
+        50% 45%;
     }
     50% {
       background-position: 
-        0 0, 
-        50% 50%, 
-        50% 50%, 
-        50% 50%, 
-        10% 50%;
+        0 0,
+        60% 60%,
+        ${-16 + 80 * 9}px ${-16 + 80 * 3}px,
+        ${-16 + 80 * 6}px ${-16 + 80 * 5}px,
+        ${-16 + 80 * 5}px ${-16 + 80 * 8}px,
+        ${-16 + 80 * 22}px ${-16 + 80 * 2}px,
+        ${-16 + 80 * 20}px ${-16 + 80 * 10}px,
+        ${-16 + 80 * 22}px ${-16 + 80 * 9}px,
+        45% 50%;
     }
     75% {
       background-position: 
-        0 0, 
-        50% 50%, 
-        50% 10%, 
-        50% 10%, 
-        10% 10%;
+        0 0,
+        55% 45%,
+        ${-16 + 80 * 7}px ${-16 + 80 * 3}px,
+        ${-16 + 80 * 6}px ${-16 + 80 * 7}px,
+        ${-16 + 80 * 5}px ${-16 + 80 * 10}px,
+        ${-16 + 80 * 20}px ${-16 + 80 * 2}px,
+        ${-16 + 80 * 20}px ${-16 + 80 * 8}px,
+        ${-16 + 80 * 22}px ${-16 + 80 * 7}px,
+        50% 55%;
     }
     100% {
       background-position: 
-        0 0, 
-        50% 50%, 
-        10% 10%, 
-        90% 10%, 
-        50% 90%;
+        0 0,
+        50% 50%,
+        ${-16 + 80 * 5}px ${-16 + 80 * 3}px,
+        ${-16 + 80 * 6}px ${-16 + 80 * 9}px,
+        ${-16 + 80 * 7}px ${-16 + 80 * 10}px,
+        ${-16 + 80 * 18}px ${-16 + 80 * 2}px,
+        ${-16 + 80 * 18}px ${-16 + 80 * 8}px,
+        ${-16 + 80 * 22}px ${-16 + 80 * 5}px,
+        50% 50%;
     }
   }
 `;
+
 
 const Title = styled.h1`
   font-size: ${TitleXXL};
@@ -311,7 +332,7 @@ export default function Hero() {
           return newPos;
         })
       );
-    }, 250);
+    }, 500);
 
     return () => clearInterval(interval);
   }, []);
@@ -319,7 +340,7 @@ export default function Hero() {
   return (
     <>
       <HeroContainer
-        key={`${bienePosition.x}-${bienePosition.y}`}
+        key={showHero ? `${bienePosition.x}-${bienePosition.y}` : `${spriteIndex}`}
         className={silkscreen.className}
         style={{
           backgroundPosition: `
