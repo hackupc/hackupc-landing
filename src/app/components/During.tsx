@@ -28,16 +28,13 @@ const Colors = {
   white: "000000"
 };
 
-const DuringContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: ${SpacingXL} 0 ${SpacingL} 0;
-  gap: ${SpacingM};
-  width: 100vw;
-  background-color: ${Colors.Background};
+const DuringContainer = styled(Section)`
   position: relative;
+  padding: ${SpacingXL} 0 ${SpacingXXL} 0;
+  gap: ${SpacingM};
+  max-width: 100%;
+  background-color: ${Colors.Background};
+  z-index: 0;
 `;
 
 export const SectionTitle = styled.div`
@@ -364,8 +361,7 @@ const Barrel5 = styled(Barrel)`
 
 export default function During() {
   return (
-    <Section id="during">
-    <DuringContainer>
+    <DuringContainer id="during">
       <SectionTitle className={silkscreen.className}> DURING THE EVENT</SectionTitle>
       <TextWrapper>
         Coding is the main part of HackUPC, but we have many more activities
@@ -429,6 +425,5 @@ export default function During() {
         </StyledBodyText>
       </TheMission>
     </DuringContainer>
-    </Section>
   );
 }
