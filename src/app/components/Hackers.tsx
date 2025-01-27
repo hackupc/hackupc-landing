@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import Image from "next/image";
 import {silkscreen} from "@/app/genericComponents/fonts";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { Section } from "@/app/genericComponents/General";
 import {
   Body,
   SectionTitle,
@@ -14,7 +14,6 @@ import {
   SpacingS,
   TitleS
 } from "@/app/genericComponents/tokens";
-import { PrimaryOutlineButton } from "@/app/genericComponents/Buttons";
 
 const Colors = {
   HeroYellow: "#FCFC01",
