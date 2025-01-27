@@ -101,7 +101,7 @@ const EmblaDots = styled.div`
 const EmblaPlay = styled.button`
   -webkit-appearance: none;
   text-decoration: none;
-  cursor: url("/rocket-fire.png"), auto;
+  cursor: pointer, auto;
   display: flex;
   font-size: 1.5rem;
   background-color: black;
