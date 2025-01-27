@@ -22,6 +22,7 @@ import {
   SponsorLogo,
   SponsorUnrevealed
 } from "@/app/genericComponents/Sponsors";
+import { SectionTitle } from "../genericComponents/Typography";
 
 const Colors = {
   Background: "#000000",
@@ -29,7 +30,8 @@ const Colors = {
   Rectangles: "#D9D9D9", 
 };
 
-const SponsorsAndPartnersContainer = styled.div`
+const SponsorsAndPartnersContainer = styled(Section)`
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,17 +44,8 @@ const SponsorsAndPartnersContainer = styled.div`
   z-index: 0;
 `;
 
-export const SectionTitle = styled.div`
+export const StyledSectionTitle = styled(SectionTitle)`
   font-size: ${TitleXL};
-  text-align: center;
-  font-weight: bold;
-  width: fit-content;
-  margin: 0;
-  padding-bottom: ${SpacingM};
-
-  @media (max-width: ${MobileBreakpoint}) {
-    font-size: ${MobileTitleL};
-  }
 `;
 
 const SponsorsBlock = styled.div`
@@ -220,9 +213,9 @@ const BottomLine = styled(MiddleLineBase)`
 
 export default function SponsorsAndPartners() {
   return (
-    <Section id="sponsors">
-    <SponsorsAndPartnersContainer>
-      <SectionTitle className={silkscreen.className}>SPONSORS</SectionTitle>
+    //<Section id="sponsors">
+    <SponsorsAndPartnersContainer id="sponsors">
+      <StyledSectionTitle className={silkscreen.className}>SPONSORS</StyledSectionTitle>
       <LeftLine />
       <RightLine />
       <TopLine />
@@ -326,7 +319,7 @@ export default function SponsorsAndPartners() {
         </SponsorRow>
       </SponsorsBlock>
 
-      <SectionTitle className={silkscreen.className}>PARTNERS</SectionTitle>
+      <StyledSectionTitle className={silkscreen.className}>PARTNERS</StyledSectionTitle>
       <SponsorRow>
         <MiliBox>
           <SponsorLogo
@@ -444,7 +437,6 @@ export default function SponsorsAndPartners() {
           />
         </MiliBox>
       </SponsorRow>
-      </SponsorsAndPartnersContainer>
-    </Section>
+    </SponsorsAndPartnersContainer>
   );
 }
