@@ -1,8 +1,19 @@
 //import styled from "styled-components";
 import styled, { keyframes } from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import { SectionTitle } from "@/app/genericComponents/Typography";
-import {SpacingXXL, SpacingXL, SpacingL, SpacingM, SpacingS } from "@/app/genericComponents/tokens";
+import {silkscreen} from "@/app/genericComponents/fonts";
+//import { SectionTitle } from "@/app/genericComponents/Typography";
+import {
+  MobileBreakpoint,
+  TitleXL, 
+  MobileTitleL,
+  SpacingXXL, 
+  SpacingXL, 
+  SpacingL, 
+  SpacingM, 
+  SpacingS 
+} from "@/app/genericComponents/tokens";
+
 import {
   GigaBox,
   KiloBox,
@@ -29,6 +40,19 @@ const SponsorsAndPartnersContainer = styled.div`
   background-color: ${Colors.Background};
   position: relative;
   z-index: 0;
+`;
+
+export const SectionTitle = styled.div`
+  font-size: ${TitleXL};
+  text-align: center;
+  font-weight: bold;
+  width: fit-content;
+  margin: 0;
+  padding-bottom: ${SpacingM};
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileTitleL};
+  }
 `;
 
 const SponsorsBlock = styled.div`
@@ -144,7 +168,7 @@ export default function SponsorsAndPartners() {
   return (
     <Section id="sponsors">
     <SponsorsAndPartnersContainer>
-      <SectionTitle>SPONSORS</SectionTitle>
+      <SectionTitle className={silkscreen.className}>SPONSORS</SectionTitle>
       <LeftLine />
       <RightLine />
       <TopLine />
@@ -248,7 +272,7 @@ export default function SponsorsAndPartners() {
         </SponsorRow>
       </SponsorsBlock>
 
-      <SectionTitle>PARTNERS</SectionTitle>
+      <SectionTitle className={silkscreen.className}>PARTNERS</SectionTitle>
       <SponsorRow>
         <MiliBox>
           <SponsorLogo
