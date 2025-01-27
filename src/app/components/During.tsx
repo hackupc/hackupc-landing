@@ -4,21 +4,28 @@ import { Section } from "@/app/genericComponents/General";
 import {
   BlockTitle,
   Body,
-  SectionTitle,
+  //SectionTitle,
 } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
+  TitleM,
+  TitleL,
+  MobileTitleL,
+  MobileTitleM,
+  MobileTitleS,
   SpacingXXL,
   SpacingXL,
   SpacingL,
   SpacingM,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
+import {silkscreen} from "@/app/genericComponents/fonts";
 
 const Colors = {
   Background: "#030304",
   Platforms: "#E656CD", 
   Ladders: "#00FFE0", 
+  white: "000000"
 };
 
 const DuringContainer = styled.div`
@@ -26,11 +33,23 @@ const DuringContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0;
-  padding: ${SpacingXL} 0 ${SpacingXXL} 0;
+  padding: ${SpacingXL} 0 ${SpacingL} 0;
   gap: ${SpacingM};
   width: 100vw;
   background-color: ${Colors.Background};
   position: relative;
+`;
+
+export const SectionTitle = styled.div`
+  font-size: ${TitleL};
+  text-align: center;
+  font-weight: bold;
+  width: fit-content;
+  margin: 0;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileTitleL};
+  }
 `;
 
 const TheMission = styled.div`
@@ -44,18 +63,42 @@ const TextWrapper = styled.div`
   text-align: center;
   justify-content: center;
   gap: ${SpacingXS};
-  font-style: oblique;
   display: inline-flex;
-  margin-top: ${SpacingL};
+  margin-top: ${SpacingM};
   margin-bottom: ${SpacingM};
+
   @media (max-width: ${MobileBreakpoint}) {
-    flex-direction: column;
+    text-align: center;
     gap: 0;
   }
 `;
-const StyledTitle = styled(BlockTitle)`
-  margin-bottom: 0;
+
+const StyledTitle = styled(SectionTitle)`
+  font-size: ${TitleM};
+  margin-right: 0px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileTitleM};
+  }
+
+  @media (max-width: 340px) {
+    font-size: ${MobileTitleS};
+  }
 `;
+
+const HackUPCColored = styled(StyledTitle)`
+  color: ${Colors.Ladders};
+  margin-left: 0px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileTitleM};
+  }
+
+  @media (max-width: 340px) {
+    font-size: ${MobileTitleS};
+  }
+`;
+
 const StyledBodyText = styled(Body)`
   max-width: 1000px;
 `;
@@ -143,7 +186,7 @@ const Platform = () => (
 );
 
 const MaxWidthContainer = styled.div`
-  width: 100%;
+  width: 700px;
   max-width: 700px; /* Alinear todo dentro de este ancho */
   display: flex;
   justify-content: space-between;
@@ -168,14 +211,14 @@ const RightLadderContainer = styled(MaxWidthContainer)`
   padding: 0 5%;
 `;
 
-const CoinText = styled.div`
+const CoinText = styled(Body)`
   position: relative;
-  top: 38px; /* Ajusta la distancia entre la plataforma y el texto */
+  top: 38px;
   justify-content: flex-start;
   color: white;
-  font-size: 1.25rem;
   margin-top: -25px;
   margin-bottom: -30px;
+  font-weight: bold;
 
   img {
     margin-top: 2px;
@@ -323,10 +366,10 @@ export default function During() {
   return (
     <Section id="during">
     <DuringContainer>
-      <SectionTitle>DURING THE EVENT</SectionTitle>
-      <Body>
+      <SectionTitle className={silkscreen.className}> DURING THE EVENT</SectionTitle>
+      <TextWrapper>
         Coding is the main part of HackUPC, but we have many more activities
-      </Body>
+      </TextWrapper>
 
       <Barrels />
       <Biene src="/Biene_DK.svg" alt="Biene" />
@@ -375,8 +418,8 @@ export default function During() {
 
       <TheMission>
         <TextWrapper>
-          <StyledTitle> THE MISSION: </StyledTitle>
-          <StyledTitle color={Colors.Ladders}> HACKUPC</StyledTitle>
+          <StyledTitle className={silkscreen.className}>THE MISSION:</StyledTitle>
+          <HackUPCColored className={silkscreen.className}>HACKUPC</HackUPCColored>
         </TextWrapper>
         <StyledBodyText>
         Get ready for your weekend mission! This year, we aim for HackUPC
