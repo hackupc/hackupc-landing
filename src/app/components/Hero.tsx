@@ -39,7 +39,7 @@ const HeroContainer = styled.div`
     url("/red_ghost.svg"),
     url("/orange_ghost.svg"),
     url("/white_ghost.svg"),
-    url("/pink_ghost.svg"),
+    url("/blue_ghost.svg"),
     url("/purple_ghost.svg"),
     url("/hackupcLogoWhite.svg");
   
@@ -200,7 +200,7 @@ const PlayerContainer = styled.div`
   }
 `;
 
-const PlayerCard = styled.div`
+const PlayerCard = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,7 +214,7 @@ const PlayerCard = styled.div`
 `;
 
 const PlayerText = styled.div`
-  font-size: ${TitleS};
+  font-size: ${TitleM};
   font-weight: bold;
   margin-top: ${SpacingS};
 `;
@@ -360,11 +360,11 @@ export default function Hero() {
           url("/red_ghost.svg"), 
           url("/orange_ghost.svg"), 
           url("/white_ghost.svg"), 
-          url("/pink_ghost.svg"), 
+          url("/blue_ghost.svg"), 
           url("/purple_ghost.svg"),
           url("/hackupcLogoWhite.svg"); `,
           animation: showHero ? "moveAll 10s linear infinite" : "none",
-          transition: showHero ? "none" : "background-position 0.3s ease-in-out",
+          transition: "background-position 0.3s ease-in-out",
         }}
       >
         <TitleContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
@@ -376,12 +376,12 @@ export default function Hero() {
         <PlayAsContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
           <PlayAsTitleBox>Play as</PlayAsTitleBox>
           <PlayerContainer>
-            <PlayerCard>
-              <Image src="/red_ghost.svg" width={100} height={100} alt="Player 1" />
+            <PlayerCard href="https://my.hackupc.com/user/signup/hacker/" target="_blank">
+              <Image src="/blue_ghost.svg" width={125} height={125} alt="Player 1" />
               <PlayerText>Hacker</PlayerText>
             </PlayerCard>
-            <PlayerCard>
-              <Image src="/green_ghost.svg" width={100} height={100} alt="Player 2" />
+            <PlayerCard href="https://my.hackupc.com/user/signup/volunteer/" target="_blank">
+              <Image src="/orange_ghost.svg" width={125} height={125} alt="Player 2" />
               <PlayerText>Volunteer</PlayerText>
             </PlayerCard>
           </PlayerContainer>
