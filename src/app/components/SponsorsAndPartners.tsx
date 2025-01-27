@@ -342,10 +342,10 @@ export default function SponsorsAndPartners() {
           />
         </MiliBox>
         <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/cfis.svg"}
-            // imageAlt={"cfis"}
-            // sponsorLink={"https://cfis.upc.edu/"}
+          <SponsorLogo
+            imageSrc={"/Partners/mlh.svg"}
+            imageAlt={"mlh"}
+            sponsorLink={"https://mlh.io/eu"}
           />
         </MiliBox>
         <MiliBox>
@@ -358,9 +358,9 @@ export default function SponsorsAndPartners() {
         </MiliBox>
         <MiliBox>
           <SponsorUnrevealed
-            // imageSrc={"/Partners/mlh.svg"}
-            // imageAlt={"mlh"}
-            // sponsorLink={"https://mlh.io/eu"}
+            // imageSrc={"/Partners/cfis.svg"}
+            // imageAlt={"cfis"}
+            // sponsorLink={"https://cfis.upc.edu/"}
           />
         </MiliBox>
         <MiliBox>
