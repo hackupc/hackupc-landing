@@ -50,7 +50,7 @@ const TextContainer = styled.div`
 `;
 
 const StyledButton = styled(FontAwesomeIcon)`
-  cursor: url("/rocket-fire.png"), auto;
+  cursor: pointer, auto;
   padding: ${SpacingS};
 `;
 

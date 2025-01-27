@@ -37,7 +37,7 @@ export const Neutral200: string = "#EAF7FF";
 export const Neutral100: string = "#F9FDFF";
 
 // Special Colors
-export const BackgroundWithOpacity: string = "rgba(213, 213, 213, 0.7)";
+export const BackgroundWithOpacity: string = "#231F20B3";
 
 // Responsive breakpoints
 export const MobilePixels: number = 640;

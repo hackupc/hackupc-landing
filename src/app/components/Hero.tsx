@@ -119,6 +119,71 @@ const HeroContainer = styled.div`
         50% 50%;
     }
   }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    @keyframes moveAll {
+      0% {
+        background-position: 
+          0 0, 
+          50% 50%, 
+          ${-16 + 80 * 2}px ${-16 + 80 * 1}px, 
+          ${-16 + 80 * 3}px ${-16 + 80 * 4}px, 
+          ${-16 + 80 * 2}px ${-16 + 80 * 5}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 12}px, 
+          ${-16 + 80 * 1}px ${-16 + 80 * 13}px, 
+          ${-16 + 80 * 2}px ${-16 + 80 * 2}px,
+          50% 50%;
+      }
+      25% {
+        background-position: 
+          0 0,
+          55% 55%,
+          ${-16 + 80 * 3}px ${-16 + 80 * 1}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 3}px,
+          ${-16 + 80 * 2}px ${-16 + 80 * 5}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 14}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 13}px,
+          ${-16 + 80 * 2}px ${-16 + 80 * 3}px,
+          50% 45%;
+      }
+      50% {
+        background-position: 
+          0 0,
+          60% 60%,
+          ${-16 + 80 * 4}px ${-16 + 80 * 1}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 2}px,
+          ${-16 + 80 * 2}px ${-16 + 80 * 4}px,
+          ${-16 + 80 * 1}px ${-16 + 80 * 14}px,
+          ${-16 + 80 * 4}px ${-16 + 80 * 13}px,
+          ${-16 + 80 * 2}px ${-16 + 80 * 4}px,
+          45% 50%;
+      }
+      75% {
+        background-position: 
+          0 0,
+          55% 45%,
+          ${-16 + 80 * 3}px ${-16 + 80 * 1}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 3}px,
+          ${-16 + 80 * 2}px ${-16 + 80 * 5}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 14}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 13}px,
+          ${-16 + 80 * 2}px ${-16 + 80 * 3}px,
+          50% 55%;
+      }
+      100% {
+        background-position: 
+          0 0,
+          50% 50%,
+          ${-16 + 80 * 2}px ${-16 + 80 * 1}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 4}px,
+          ${-16 + 80 * 4}px ${-16 + 80 * 5}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 12}px,
+          ${-16 + 80 * 1}px ${-16 + 80 * 13}px,
+          ${-16 + 80 * 2}px ${-16 + 80 * 2}px,
+          50% 50%;
+      }
+    }
+  }
 `;
 
 
@@ -257,6 +322,7 @@ export default function Hero() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+        return; // To allow the game to be played, remove this line.
         e.preventDefault();
         setShowHero(false);
 
