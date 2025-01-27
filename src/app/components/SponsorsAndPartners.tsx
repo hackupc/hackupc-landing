@@ -6,7 +6,6 @@ import {silkscreen} from "@/app/genericComponents/fonts";
 import {
   MobileBreakpoint,
   TitleXL, 
-  MobileTitleL,
   SpacingXXL, 
   SpacingXL, 
   SpacingL, 
@@ -31,16 +30,11 @@ const Colors = {
 };
 
 const SponsorsAndPartnersContainer = styled(Section)`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
+  position: relative;
   padding: ${SpacingXL} 0 ${SpacingXXL} 0;
   gap: ${SpacingM};
-  width: 100vw;
+  max-width: 100%;
   background-color: ${Colors.Background};
-  position: relative;
   z-index: 0;
 `;
 
@@ -173,6 +167,11 @@ const SideLineBase = styled.div`
   width: 20px;
   background-color: white;
   z-index: 1;
+
+  @media (max-width: ${MobileBreakpoint}) {
+      width: 17px;
+  }
+
 `;
 
 const MiddleLineBase = styled.div`
@@ -213,7 +212,6 @@ const BottomLine = styled(MiddleLineBase)`
 
 export default function SponsorsAndPartners() {
   return (
-    //<Section id="sponsors">
     <SponsorsAndPartnersContainer id="sponsors">
       <StyledSectionTitle className={silkscreen.className}>SPONSORS</StyledSectionTitle>
       <LeftLine />
