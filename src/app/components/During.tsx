@@ -11,7 +11,6 @@ import {
   MobileTitleS,
   SpacingXXL,
   SpacingXL,
-  SpacingL,
   SpacingM,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
