@@ -11,6 +11,7 @@ import {
   SpacingL,
   SpacingM,
   SpacingS,
+  MaxScreenSize,
 } from "@/app/genericComponents/tokens";
 
 import {
@@ -50,7 +51,12 @@ const SponsorsBlock = styled.div`
   flex-direction: column;
   align-content: center;
   margin-bottom: ${SpacingL};
+  max-width: ${MaxScreenSize};
   z-index: 2;
+`;
+
+const PartnersBlock = styled.div`
+  max-width: ${MaxScreenSize};
 `;
 
 const SponsorRow = styled.div`
@@ -266,55 +272,57 @@ export default function SponsorsAndPartners() {
       <StyledSectionTitle className={silkscreen.className}>
         PARTNERS
       </StyledSectionTitle>
-      <SponsorRow>
-        <MiliBox>
-          <SponsorLogo
-            imageSrc={"/Partners/upc.svg"}
-            imageAlt={"upc"}
-            sponsorLink={"https://www.upc.edu/"}
-            smallPadding
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorLogo
-            imageSrc={"/Partners/fib.svg"}
-            imageAlt={"fib"}
-            sponsorLink={"https://www.fib.upc.edu/"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorLogo
-            imageSrc={"/Partners/telecos.png"}
-            imageAlt={"telecos"}
-            sponsorLink={"https://telecos.upc.edu/"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorLogo
-            imageSrc={"/Partners/mlh.svg"}
-            imageAlt={"mlh"}
-            sponsorLink={"https://mlh.io/eu"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-          // imageSrc={"/Partners/cfis.svg"}
-          // imageAlt={"cfis"}
-          // sponsorLink={"https://cfis.upc.edu/"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-          // imageSrc={"/Partners/coeinf.png"}
-          // imageAlt={"coeinf"}
-          // sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
-          // smallPadding
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed />
-        </MiliBox>
-      </SponsorRow>
+      <PartnersBlock>
+        <SponsorRow>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/upc.svg"}
+              imageAlt={"upc"}
+              sponsorLink={"https://www.upc.edu/"}
+              smallPadding
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/fib.svg"}
+              imageAlt={"fib"}
+              sponsorLink={"https://www.fib.upc.edu/"}
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/telecos.png"}
+              imageAlt={"telecos"}
+              sponsorLink={"https://telecos.upc.edu/"}
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/mlh.svg"}
+              imageAlt={"mlh"}
+              sponsorLink={"https://mlh.io/eu"}
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorUnrevealed
+            // imageSrc={"/Partners/cfis.svg"}
+            // imageAlt={"cfis"}
+            // sponsorLink={"https://cfis.upc.edu/"}
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorUnrevealed
+            // imageSrc={"/Partners/coeinf.png"}
+            // imageAlt={"coeinf"}
+            // sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
+            // smallPadding
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorUnrevealed />
+          </MiliBox>
+        </SponsorRow>
+      </PartnersBlock>
     </SponsorsAndPartnersContainer>
   );
 }
