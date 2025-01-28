@@ -1,18 +1,18 @@
 import styled from "styled-components";
 import React from "react";
 import Image from "next/image";
-import {silkscreen} from "@/app/genericComponents/fonts";
+import { silkscreen } from "@/app/genericComponents/fonts";
 import { Section } from "@/app/genericComponents/General";
 import {
   Body,
   SectionTitle,
-  SmallTitle
+  SmallTitle,
 } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   SpacingM,
   SpacingS,
-  TitleS
+  TitleS,
 } from "@/app/genericComponents/tokens";
 
 const Colors = {
@@ -33,7 +33,7 @@ const StyledButton = styled.div`
 
   &:hover {
     background-color: ${Colors.HeroBlue};
-    color: #FFFFFF;
+    color: #ffffff;
   }
 `;
 
@@ -71,7 +71,9 @@ export default function Hackers() {
   return (
     <HackersContainer id="hackers">
       <Section>
-        <SectionTitle className={silkscreen.className}>The organization behind HackUPC</SectionTitle>
+        <SectionTitle className={silkscreen.className}>
+          The organization behind HackUPC
+        </SectionTitle>
 
         <StyledSmallTitle>
           Hackers@UPC is a non-profit student organization at Universitat

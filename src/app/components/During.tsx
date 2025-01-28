@@ -1,9 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import {
-  Body,
-  SectionTitle,
-} from "@/app/genericComponents/Typography";
+import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   TitleM,
@@ -14,13 +11,13 @@ import {
   SpacingM,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
-import {silkscreen} from "@/app/genericComponents/fonts";
+import { silkscreen } from "@/app/genericComponents/fonts";
 
 const Colors = {
   Background: "#030304",
-  Platforms: "#E656CD", 
-  Ladders: "#00FFE0", 
-  white: "000000"
+  Platforms: "#E656CD",
+  Ladders: "#00FFE0",
+  white: "000000",
 };
 
 const DuringContainer = styled(Section)`
@@ -143,18 +140,9 @@ const BarrelBack = styled.img`
 
 const Barrels = () => (
   <BarrelContainer>
-    <BarrelBack
-      src="/BarrelBack_DK.svg"
-      alt="Barrel Back"
-    />
-    <BarrelFront1
-      src="/BarrelFront_DK.svg"
-      alt="Barrel Front"
-    />
-    <BarrelFront2
-      src="/BarrelFront_DK.svg"
-      alt="Barrel Front"
-    />
+    <BarrelBack src="/BarrelBack_DK.svg" alt="Barrel Back" />
+    <BarrelFront1 src="/BarrelFront_DK.svg" alt="Barrel Front" />
+    <BarrelFront2 src="/BarrelFront_DK.svg" alt="Barrel Front" />
   </BarrelContainer>
 );
 
@@ -197,7 +185,7 @@ const LeftLadderContainer = styled(MaxWidthContainer)`
   justify-content: flex-start;
   margin-top: 29px;
   margin-bottom: 0px;
-  left: 10%
+  left: 10%;
 `;
 
 const RightLadderContainer = styled(MaxWidthContainer)`
@@ -294,91 +282,97 @@ const Biene = styled.img`
 `;
 
 const Barrel1 = styled(Barrel)`
-   animation-delay: 0s;
+  animation-delay: 0s;
 `;
 
 const Barrel2 = styled(Barrel)`
-   animation-delay: 7s;
+  animation-delay: 7s;
 `;
 
 const Barrel3 = styled(Barrel)`
-   animation-delay: 14s;
+  animation-delay: 14s;
 `;
 
 const Barrel4 = styled(Barrel)`
-   animation-delay: 21s;
+  animation-delay: 21s;
 `;
 
 const Barrel5 = styled(Barrel)`
-   animation-delay: 28s;
+  animation-delay: 28s;
 `;
 
 export default function During() {
   return (
     <DuringContainer id="during">
-      <SectionTitle className={silkscreen.className}> DURING THE EVENT</SectionTitle>
+      <SectionTitle className={silkscreen.className}>
+        {" "}
+        DURING THE EVENT
+      </SectionTitle>
       <StyledBody>
         Coding is the main part of HackUPC, but we have many more activities
       </StyledBody>
 
       <GameContainer>
-      <Barrels />
-      <Biene src="/Biene_DK.svg" alt="Biene" />
-      <Barrel1 src="/BarrelMove_DK.svg" alt="Barrel" />
-      <Barrel2 src="/BarrelMove_DK.svg" alt="Barrel" />
-      <Barrel3 src="/BarrelMove_DK.svg" alt="Barrel" />
-      <Barrel4 src="/BarrelMove_DK.svg" alt="Barrel" />
-      <Barrel5 src="/BarrelMove_DK.svg" alt="Barrel" />
+        <Barrels />
+        <Biene src="/Biene_DK.svg" alt="Biene" />
+        <Barrel1 src="/BarrelMove_DK.svg" alt="Barrel" />
+        <Barrel2 src="/BarrelMove_DK.svg" alt="Barrel" />
+        <Barrel3 src="/BarrelMove_DK.svg" alt="Barrel" />
+        <Barrel4 src="/BarrelMove_DK.svg" alt="Barrel" />
+        <Barrel5 src="/BarrelMove_DK.svg" alt="Barrel" />
 
-      <Platform />
-      <LeftLadderText>
-        <img src="/Coin_DK.svg" alt="Moneda" />
-        Talks & Workshops 
-      </LeftLadderText>
-      <LeftLadder />
+        <Platform />
+        <LeftLadderText>
+          <img src="/Coin_DK.svg" alt="Moneda" />
+          Talks & Workshops
+        </LeftLadderText>
+        <LeftLadder />
 
-      <Platform />
-      <RightLadderText>
-        <img src="/Coin_DK.svg" alt="Moneda" />
-        SlideShare Show
-      </RightLadderText>
-      <RightLadder />
+        <Platform />
+        <RightLadderText>
+          <img src="/Coin_DK.svg" alt="Moneda" />
+          SlideShare Show
+        </RightLadderText>
+        <RightLadder />
 
-      <Platform />
-      <LeftLadderText>
-        <img src="/Coin_DK.svg" alt="Moneda" />
-        Dodgeball
-      </LeftLadderText>
-      <LeftLadder />
+        <Platform />
+        <LeftLadderText>
+          <img src="/Coin_DK.svg" alt="Moneda" />
+          Dodgeball
+        </LeftLadderText>
+        <LeftLadder />
 
-      <Platform />
-      <RightLadderText>
-       <img src="/Coin_DK.svg" alt="Moneda" />
-        Nerf Gun Battle
-      </RightLadderText>
-      <RightLadder />
+        <Platform />
+        <RightLadderText>
+          <img src="/Coin_DK.svg" alt="Moneda" />
+          Nerf Gun Battle
+        </RightLadderText>
+        <RightLadder />
 
-      <Platform />
-      <LeftLadderText>
-      <img src="/Coin_DK.svg" alt="Moneda" />
-        Sticker Exchange
-      </LeftLadderText>
-      <LeftLadder />
+        <Platform />
+        <LeftLadderText>
+          <img src="/Coin_DK.svg" alt="Moneda" />
+          Sticker Exchange
+        </LeftLadderText>
+        <LeftLadder />
 
-      <Platform />
-
+        <Platform />
       </GameContainer>
 
       <TheMission>
         <TextWrapper>
-          <StyledTitle className={silkscreen.className}>THE MISSION:</StyledTitle>
-          <HackUPCColored className={silkscreen.className}>HACKUPC</HackUPCColored>
+          <StyledTitle className={silkscreen.className}>
+            THE MISSION:
+          </StyledTitle>
+          <HackUPCColored className={silkscreen.className}>
+            HACKUPC
+          </HackUPCColored>
         </TextWrapper>
         <Body>
-        Get ready for your weekend mission! This year, we aim for HackUPC
-        to be like a loaded arcade with lots to play with. Have fun, 
-        complete the objectives, and get fantastic surprises. Will you
-        be able to unlock them all?
+          Get ready for your weekend mission! This year, we aim for HackUPC to
+          be like a loaded arcade with lots to play with. Have fun, complete the
+          objectives, and get fantastic surprises. Will you be able to unlock
+          them all?
         </Body>
       </TheMission>
     </DuringContainer>

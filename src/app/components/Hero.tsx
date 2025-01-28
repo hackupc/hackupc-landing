@@ -32,19 +32,14 @@ const HeroContainer = styled.div`
   gap: ${SpacingM};
   width: 100vw;
   background-color: ${Colors.HeroNeutral};
-  background-image: 
-    url("/background_piece.svg"),
-    url("/biene_pacman.svg"),
-    url("/green_ghost.svg"),
-    url("/red_ghost.svg"),
-    url("/orange_ghost.svg"),
-    url("/white_ghost.svg"),
-    url("/blue_ghost.svg"),
-    url("/purple_ghost.svg"),
+  background-image: url("/background_piece.svg"), url("/biene_pacman.svg"),
+    url("/green_ghost.svg"), url("/red_ghost.svg"), url("/orange_ghost.svg"),
+    url("/white_ghost.svg"), url("/blue_ghost.svg"), url("/purple_ghost.svg"),
     url("/hackupcLogoWhite.svg");
-  
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 
+
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size:
     80px 80px,
     32px 32px,
     32px 32px,
@@ -59,19 +54,19 @@ const HeroContainer = styled.div`
 
   @keyframes moveAll {
     0% {
-      background-position: 
-        0 0, 
-        50% 50%, 
-        ${-16 + 80 * 5}px ${-16 + 80 * 3}px, 
-        ${-16 + 80 * 6}px ${-16 + 80 * 9}px, 
+      background-position:
+        0 0,
+        50% 50%,
+        ${-16 + 80 * 5}px ${-16 + 80 * 3}px,
+        ${-16 + 80 * 6}px ${-16 + 80 * 9}px,
         ${-16 + 80 * 7}px ${-16 + 80 * 10}px,
-        ${-16 + 80 * 18}px ${-16 + 80 * 2}px, 
-        ${-16 + 80 * 18}px ${-16 + 80 * 8}px, 
+        ${-16 + 80 * 18}px ${-16 + 80 * 2}px,
+        ${-16 + 80 * 18}px ${-16 + 80 * 8}px,
         ${-16 + 80 * 22}px ${-16 + 80 * 5}px,
         50% 50%;
     }
     25% {
-      background-position: 
+      background-position:
         0 0,
         55% 55%,
         ${-16 + 80 * 7}px ${-16 + 80 * 3}px,
@@ -83,7 +78,7 @@ const HeroContainer = styled.div`
         50% 45%;
     }
     50% {
-      background-position: 
+      background-position:
         0 0,
         60% 60%,
         ${-16 + 80 * 9}px ${-16 + 80 * 3}px,
@@ -95,7 +90,7 @@ const HeroContainer = styled.div`
         45% 50%;
     }
     75% {
-      background-position: 
+      background-position:
         0 0,
         55% 45%,
         ${-16 + 80 * 7}px ${-16 + 80 * 3}px,
@@ -107,7 +102,7 @@ const HeroContainer = styled.div`
         50% 55%;
     }
     100% {
-      background-position: 
+      background-position:
         0 0,
         50% 50%,
         ${-16 + 80 * 5}px ${-16 + 80 * 3}px,
@@ -123,19 +118,19 @@ const HeroContainer = styled.div`
   @media (max-width: ${MobileBreakpoint}) {
     @keyframes moveAll {
       0% {
-        background-position: 
-          0 0, 
-          50% 50%, 
-          ${-16 + 80 * 2}px ${-16 + 80 * 1}px, 
-          ${-16 + 80 * 3}px ${-16 + 80 * 4}px, 
+        background-position:
+          0 0,
+          50% 50%,
+          ${-16 + 80 * 2}px ${-16 + 80 * 1}px,
+          ${-16 + 80 * 3}px ${-16 + 80 * 4}px,
           ${-16 + 80 * 2}px ${-16 + 80 * 5}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 12}px, 
-          ${-16 + 80 * 1}px ${-16 + 80 * 13}px, 
+          ${-16 + 80 * 3}px ${-16 + 80 * 12}px,
+          ${-16 + 80 * 1}px ${-16 + 80 * 13}px,
           ${-16 + 80 * 2}px ${-16 + 80 * 2}px,
           50% 50%;
       }
       25% {
-        background-position: 
+        background-position:
           0 0,
           55% 55%,
           ${-16 + 80 * 3}px ${-16 + 80 * 1}px,
@@ -147,7 +142,7 @@ const HeroContainer = styled.div`
           50% 45%;
       }
       50% {
-        background-position: 
+        background-position:
           0 0,
           60% 60%,
           ${-16 + 80 * 4}px ${-16 + 80 * 1}px,
@@ -159,7 +154,7 @@ const HeroContainer = styled.div`
           45% 50%;
       }
       75% {
-        background-position: 
+        background-position:
           0 0,
           55% 45%,
           ${-16 + 80 * 3}px ${-16 + 80 * 1}px,
@@ -171,7 +166,7 @@ const HeroContainer = styled.div`
           50% 55%;
       }
       100% {
-        background-position: 
+        background-position:
           0 0,
           50% 50%,
           ${-16 + 80 * 2}px ${-16 + 80 * 1}px,
@@ -185,7 +180,6 @@ const HeroContainer = styled.div`
     }
   }
 `;
-
 
 const Title = styled.h1`
   font-size: ${TitleXXL};
@@ -236,7 +230,6 @@ const PlayAsContainer = styled.div`
     width: 90%;
   }
 `;
-
 
 const PlayAsTitleBox = styled.div`
   color: ${Colors.HeroYellow};
@@ -307,7 +300,6 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-
   const [logoPositions, setLogoPositions] = useState(() => {
     const positions = [];
     for (let i = 0; i < 16; i++) {
@@ -349,19 +341,17 @@ export default function Hero() {
           setAnimatedPosition(newPos);
 
           setLogoPositions((logos) =>
-            logos.filter(
-              (logo) => logo.x !== newPos.x || logo.y !== newPos.y
-            )
+            logos.filter((logo) => logo.x !== newPos.x || logo.y !== newPos.y),
           );
 
           setGhostPositions((ghosts) =>
             ghosts.map((ghost) => {
-                if (ghost.x === newPos.x && ghost.y === newPos.y) {
-                  // alert("Sadly, you lost! We hope HackUPC awaits more luck for you!"); --> Alert not working, it's throwing 1000 alerts per second
-                  setShowHero(true);
-                }
+              if (ghost.x === newPos.x && ghost.y === newPos.y) {
+                // alert("Sadly, you lost! We hope HackUPC awaits more luck for you!"); --> Alert not working, it's throwing 1000 alerts per second
+                setShowHero(true);
+              }
               return ghost;
-            })  
+            }),
           );
 
           return newPos;
@@ -396,7 +386,7 @@ export default function Hero() {
               break;
           }
           return newPos;
-        })
+        }),
       );
     }, 500);
 
@@ -406,7 +396,9 @@ export default function Hero() {
   return (
     <>
       <HeroContainer
-        key={showHero ? `${bienePosition.x}-${bienePosition.y}` : `${spriteIndex}`}
+        key={
+          showHero ? `${bienePosition.x}-${bienePosition.y}` : `${spriteIndex}`
+        }
         className={silkscreen.className}
         style={{
           backgroundPosition: `
@@ -421,7 +413,9 @@ export default function Hero() {
           ${logoPositions.map((logo) => `${logo.x}px ${logo.y}px`).join(", ")}`,
           backgroundImage: ` 
           url("/background_piece.svg"), 
-          url(${spriteIndex === 0 ? "/biene_pacman.svg" : "/biene_pacman_2.svg"}), 
+          url(${
+            spriteIndex === 0 ? "/biene_pacman.svg" : "/biene_pacman_2.svg"
+          }), 
           url("/green_ghost.svg"), 
           url("/red_ghost.svg"), 
           url("/orange_ghost.svg"), 
@@ -439,15 +433,33 @@ export default function Hero() {
             <SubText>700 Hackers | 2-4 May 2025 | 36h</SubText>
           </Title>
         </TitleContainer>
-        <PlayAsContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
+        <PlayAsContainer
+          style={{ visibility: showHero ? "visible" : "hidden" }}
+        >
           <PlayAsTitleBox>Play as</PlayAsTitleBox>
           <PlayerContainer>
-            <PlayerCard href="https://my.hackupc.com/user/signup/hacker/" target="_blank">
-              <Image src="/blue_ghost.svg" width={125} height={125} alt="Player 1" />
+            <PlayerCard
+              href="https://my.hackupc.com/user/signup/hacker/"
+              target="_blank"
+            >
+              <Image
+                src="/blue_ghost.svg"
+                width={125}
+                height={125}
+                alt="Player 1"
+              />
               <PlayerText>Hacker</PlayerText>
             </PlayerCard>
-            <PlayerCard href="https://my.hackupc.com/user/signup/volunteer/" target="_blank">
-              <Image src="/orange_ghost.svg" width={125} height={125} alt="Player 2" />
+            <PlayerCard
+              href="https://my.hackupc.com/user/signup/volunteer/"
+              target="_blank"
+            >
+              <Image
+                src="/orange_ghost.svg"
+                width={125}
+                height={125}
+                alt="Player 2"
+              />
               <PlayerText>Volunteer</PlayerText>
             </PlayerCard>
           </PlayerContainer>
@@ -456,5 +468,3 @@ export default function Hero() {
     </>
   );
 }
-
-

@@ -45,5 +45,5 @@ export const Background = styled.div`
   height: 100%;
   min-height: 100vh;
   min-width: 100vw;
-  background-color: #231F20;
+  background-color: #231f20;
 `;
