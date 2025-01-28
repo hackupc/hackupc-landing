@@ -69,7 +69,7 @@ const Question = styled.div`
 
 const QuestionTitle = styled(BodyBold)`
   margin-bottom: ${SpacingXS};
-  cursor: url("/rocket-fire.png"), auto;
+  cursor: pointer, auto;
 `;
 
 
@@ -113,7 +113,6 @@ const CustomBackground = styled(SectionBackground)`
   background-position: center;
   background-position-y: 20px; 
   background-position-x: 20px; 
-  
 `;
 
 function renderAnswer(answers: AnswerOptions[]) {

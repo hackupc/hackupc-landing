@@ -46,8 +46,4 @@ export const Background = styled.div`
   min-height: 100vh;
   min-width: 100vw;
   background-color: #231F20;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    background-image: url("/stars_mobile.jpg");
-  }
 `;

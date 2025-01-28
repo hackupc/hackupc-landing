@@ -14,6 +14,7 @@ import Hero from "./components/Hero";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import ThroughTheYears from "@/app/components/ThroughTheYears/ThroughTheYears";
+import Spacer from "@/app/components/Spacer";
 import { Background } from "@/app/genericComponents/General";
 
 export default function Home() {
@@ -22,17 +23,29 @@ export default function Home() {
       <Background />
       <Header />
       <Hero />
+      <Spacer />
       <About />
+      <Spacer />
       <HowToParticipate />
+      <Spacer />
       <Trailer />
+      <Spacer />
       <During />
+      <Spacer />
       <Live />
+      <Spacer />
       <Provide />
+      <Spacer />
       <FAQs />
+      <Spacer />
       <Socials />
+      <Spacer />
       <SponsorsAndPartners />
+      <Spacer />
       <Hackers />
+      <Spacer />
       <ThroughTheYears />
+      <Spacer />
       <Footer />
     </main>
   );
