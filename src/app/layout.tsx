@@ -8,7 +8,6 @@ import Script from "next/script";
 import { Clarity } from "@/app/metrics/Clarity";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { EventStructuredData } from "@/app/metrics/EventStructuredData";
-import CookiesBanner from "@/app/components/CookiesBanner";
 
 config.autoAddCss = false;
 export const metadata: Metadata = {
@@ -79,7 +78,11 @@ export default function RootLayout({
               style={{ width: "100%" }}
             />
           </a>
-          <CookiesBanner />
+          <Script
+            id="cookieyes"
+            type="text/javascript"
+            src="https://cdn-cookieyes.com/client_data/f0da360b52ebfbe361cbc559/script.js"
+          />
           {children}
           <Clarity />
           <EventStructuredData />
