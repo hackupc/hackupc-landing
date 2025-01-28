@@ -1,50 +1,40 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-import { SecondaryButton } from "@/app/genericComponents/Buttons";
-import { silom } from "@/app/genericComponents/fonts";
+import { silkscreen } from "@/app/genericComponents/fonts";
 import React from "react";
+import Image from "next/image";
 
-const VideoWrapper = styled.div`
-  position: relative;
-  width: 80%;
-  padding-top: 45%;
-  aspect-ratio: 16 / 9;
+// const VideoWrapper = styled.div`
+//   position: relative;
+//   width: 80%;
+//   padding-top: 45%;
+//   aspect-ratio: 16 / 9;
 
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 100%;
-    padding-top: 56.25%;
-  }
-`;
+//   @media (max-width: ${MobileBreakpoint}) {
+//     width: 100%;
+//     padding-top: 56.25%;
+//   }
+// `;
 
-const StyledIframe = styled.iframe`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: ${SpacingS};
-  border: none;
-  overflow: hidden;
-`;
+// const StyledIframe = styled.iframe`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: ${SpacingS};
+//   border: none;
+//   overflow: hidden;
+// `;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  margin-top: ${SpacingM};
-  gap: ${SpacingS};
-  width: 100%;
-`;
 
-/*const shimmerAnimation = keyframes`
+
+const shimmerAnimation = keyframes`
     0% {
         transform: translateX(-100%);
     }
@@ -54,13 +44,18 @@ const ButtonContainer = styled.div`
 `;
 
 const VideoNotAvailable = styled.div`
-  padding: ${SpacingXL};
-  background-color: ${Neutral500};
+  padding: 120px;
+  @media (max-width: ${MobileBreakpoint}) {
+    padding: 60px;
+  }
+  background-color: #00A0B0;
   text-align: center;
   border-radius: ${SpacingS};
   position: relative;
   overflow: hidden;
-  color: ${Neutral300};
+  color: black;
+  font-weight: bold;
+  
 
   &::before {
     content: "";
@@ -77,31 +72,62 @@ const VideoNotAvailable = styled.div`
     );
     animation: ${shimmerAnimation} 3s infinite linear;
   }
-`; */
+`; 
+
+const ConsolePlayer = styled.div`
+  width: 100%;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  background-color: #594F4F;
+  
+  
+`;
+
+const InnerConsole = styled.div`
+background-color: #F4EAD5;
+border-radius: 15px;
+padding: 20px;
+// center the content
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+`;
+
+const StyledButtons = styled(Image)`
+@media (max-width: ${MobileBreakpoint}) {
+  width: 90%;
+}
+  width: 80%;
+  `;
+
+const CustomTitle = styled(SectionTitle)`
+color: #000;
+`;
 
 export default function Trailer() {
   return (
-    <SectionBackground haveBackground id="trailer">
-      <Section>
-        <SectionTitle>Teaser</SectionTitle>
-        {/* <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable> */}
-        <VideoWrapper>
+    <SectionBackground specialBackground="#231F20"> 
+      <Section className={silkscreen.className}>
+
+      <ConsolePlayer>
+        <InnerConsole>
+
+        <CustomTitle className={silkscreen.className}>Teaser</CustomTitle>
+        <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>
+        {/* <VideoWrapper>
           <StyledIframe
-            title="HackUPC 2024 | Trailer"
-            src="https://www.youtube.com/embed/iDinGlzSpbI?si=ZzSusoVrzekuuanx"
-            allowFullScreen
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          title="HackUPC 2024 | Trailer"
+          src="https://www.youtube.com/embed/iDinGlzSpbI?si=ZzSusoVrzekuuanx"
+          allowFullScreenspecialBackground
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
           />
-        </VideoWrapper>
-        <ButtonContainer className={silom.className}>
-          <SecondaryButton
-            href="https://hackersatupc.typeform.com/to/WOhCwF8m"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Subscribe
-          </SecondaryButton>
-        </ButtonContainer>
+          </VideoWrapper> */}
+        
+          <StyledButtons src="/console_buttons.svg" alt="console buttons" width={420} height={120} />
+          </InnerConsole>
+        </ConsolePlayer>
       </Section>
     </SectionBackground>
   );
