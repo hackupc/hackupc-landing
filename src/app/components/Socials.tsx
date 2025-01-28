@@ -70,16 +70,16 @@ const CustomImage = styled(Image)`
   animation: blink 5s infinite;
   @keyframes blink {
     0% {
-      content: url("/biene_ghost_2.svg");
+      content: url("/yellow_ghost_2.svg");
     }
-    30% {
-      content: url("/biene_ghost_2.svg");
+    50% {
+      content: url("/yellow_ghost_2.svg");
     }
-    31% {
-      content: url("/biene_ghost.svg");
+    51% {
+      content: url("/yellow_ghost.svg");
     }
     100% {
-      content: url("/biene_ghost.svg");
+      content: url("/yellow_ghost.svg");
     }
   }
 `;
