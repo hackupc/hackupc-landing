@@ -1,16 +1,17 @@
 //import styled from "styled-components";
 import styled, { keyframes } from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import {silkscreen} from "@/app/genericComponents/fonts";
+import { silkscreen } from "@/app/genericComponents/fonts";
 //import { SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  TitleXL, 
-  SpacingXXL, 
-  SpacingXL, 
-  SpacingL, 
-  SpacingM, 
-  SpacingS 
+  TitleXL,
+  SpacingXXL,
+  SpacingXL,
+  SpacingL,
+  SpacingM,
+  SpacingS,
+  MaxScreenSize,
 } from "@/app/genericComponents/tokens";
 
 import {
@@ -19,14 +20,15 @@ import {
   MegaBox,
   MiliBox,
   SponsorLogo,
-  SponsorUnrevealed
+  SponsorUnrevealed,
+  TeraBox,
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
 
 const Colors = {
   Background: "#000000",
-  Elements: "#FFFFFF", 
-  Rectangles: "#D9D9D9", 
+  Elements: "#FFFFFF",
+  Rectangles: "#D9D9D9",
 };
 
 const SponsorsAndPartnersContainer = styled(Section)`
@@ -49,7 +51,12 @@ const SponsorsBlock = styled.div`
   flex-direction: column;
   align-content: center;
   margin-bottom: ${SpacingL};
+  max-width: ${MaxScreenSize};
   z-index: 2;
+`;
+
+const PartnersBlock = styled.div`
+  max-width: ${MaxScreenSize};
 `;
 
 const SponsorRow = styled.div`
@@ -149,15 +156,15 @@ const moveRightLineMobile = keyframes`
 const Ball = styled.div`
   position: absolute;
   width: 30px;
-  height: 30px; 
+  height: 30px;
   background-color: white;
-  border-radius: 50%; 
+  border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   animation: ${moveBall} 30s linear infinite;
 
   @media (max-width: ${MobileBreakpoint}) {
-      animation: ${moveBallMobile} 30s linear infinite;
+    animation: ${moveBallMobile} 30s linear infinite;
   }
 `;
 
@@ -169,9 +176,8 @@ const SideLineBase = styled.div`
   z-index: 1;
 
   @media (max-width: ${MobileBreakpoint}) {
-      width: 17px;
+    width: 17px;
   }
-
 `;
 
 const MiddleLineBase = styled.div`
@@ -188,7 +194,7 @@ const LeftLine = styled(SideLineBase)`
   animation: ${moveLeftLine} 30s ease-in-out infinite;
 
   @media (max-width: ${MobileBreakpoint}) {
-      animation: ${moveLeftLineMobile} 30s linear infinite;
+    animation: ${moveLeftLineMobile} 30s linear infinite;
   }
 `;
 
@@ -197,7 +203,7 @@ const RightLine = styled(SideLineBase)`
   animation: ${moveRightLine} 30s ease-in-out infinite;
 
   @media (max-width: ${MobileBreakpoint}) {
-      animation: ${moveRightLineMobile} 30s linear infinite;
+    animation: ${moveRightLineMobile} 30s linear infinite;
   }
 `;
 
@@ -209,11 +215,12 @@ const BottomLine = styled(MiddleLineBase)`
   bottom: 0;
 `;
 
-
 export default function SponsorsAndPartners() {
   return (
     <SponsorsAndPartnersContainer id="sponsors">
-      <StyledSectionTitle className={silkscreen.className}>SPONSORS</StyledSectionTitle>
+      <StyledSectionTitle className={silkscreen.className}>
+        SPONSORS
+      </StyledSectionTitle>
       <LeftLine />
       <RightLine />
       <TopLine />
@@ -221,220 +228,101 @@ export default function SponsorsAndPartners() {
       <Ball />
       <SponsorsBlock>
         <SponsorRow>
+          <TeraBox>
+            <SponsorUnrevealed />
+          </TeraBox>
+        </SponsorRow>
+
+        <SponsorRow>
           <GigaBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/intersystems.svg"}
-              // imageAlt={"instersystems"}
-              // sponsorLink={"https://www.intersystems.com/"}
-            />
+            <SponsorUnrevealed />
+          </GigaBox>
+          <GigaBox>
+            <SponsorUnrevealed />
           </GigaBox>
         </SponsorRow>
-
         <SponsorRow>
           <MegaBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/grafana.svg"}
-              // imageAlt={"grafana"}
-              // sponsorLink={"https://grafana.com/"}
-            />
+            <SponsorUnrevealed />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/inditex.svg"}
-              // imageAlt={"inditex"}
-              // sponsorLink={"https://www.zaratalent.com/es/tech/"}
-              // smallPadding
-            />
+            <SponsorUnrevealed />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/travelperk.svg"}
-              // imageAlt={"travelperk"}
-              // sponsorLink={"https://www.travelperk.com/"}
-              // smallPadding
-            />
+            <SponsorUnrevealed />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/vueling.svg"}
-              // imageAlt={"vueling"}
-              // sponsorLink={"https://www.vueling.com/ca"}
-              // smallPadding
-            />
-          </MegaBox>
-        </SponsorRow>
-        <SponsorRow>
-          <MegaBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/seidor.svg"}
-              // imageAlt={"seidor"}
-              // sponsorLink={"https://www.seidor.com"}
-            />
-          </MegaBox>
-          <MegaBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/esa.svg"}
-              // imageAlt={"esa"}
-              // sponsorLink={"https://www.esa.int/"}
-            />
+            <SponsorUnrevealed />
           </MegaBox>
         </SponsorRow>
 
         <SponsorRow>
           <KiloBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/github.svg"}
-              // imageAlt={"github"}
-              // sponsorLink={"https://education.github.com/"}
-            />
+            <SponsorUnrevealed />
           </KiloBox>
           <KiloBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/flanks.svg"}
-              // imageAlt={"flanks"}
-              // sponsorLink={"https://www.flanks.io/"}
-              // smallPadding
-            />
+            <SponsorUnrevealed />
           </KiloBox>
           <KiloBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/bluetab.png"}
-              // imageAlt={"bluetab"}
-              // sponsorLink={"https://www.bluetab.net/es/"}
-              // smallPadding
-            />
+            <SponsorUnrevealed />
           </KiloBox>
-        </SponsorRow>
-
-        <SponsorRow>
-          <MiliBox>
-            <SponsorUnrevealed
-              // imageSrc={"/Sponsors/ithinkupc.svg"}
-              // imageAlt={"ithinkupc"}
-              // sponsorLink={"https://www.ithinkupc.com/es"}
-            />
-          </MiliBox>
         </SponsorRow>
       </SponsorsBlock>
 
-      <StyledSectionTitle className={silkscreen.className}>PARTNERS</StyledSectionTitle>
-      <SponsorRow>
-        <MiliBox>
-          <SponsorLogo
-            imageSrc={"/Partners/upc.svg"}
-            imageAlt={"upc"}
-            sponsorLink={"https://www.upc.edu/"}
-            smallPadding
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorLogo
-            imageSrc={"/Partners/fib.svg"}
-            imageAlt={"fib"}
-            sponsorLink={"https://www.fib.upc.edu/"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorLogo
-            imageSrc={"/Partners/telecos.png"}
-            imageAlt={"telecos"}
-            sponsorLink={"https://telecos.upc.edu/"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorLogo
-            imageSrc={"/Partners/mlh.svg"}
-            imageAlt={"mlh"}
-            sponsorLink={"https://mlh.io/eu"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/carisma_ciber_upc.png"}
-            // imageAlt={"carismatica"}
-            // sponsorLink={"https://carismatica.upc.edu/ca/"}
-            // smallPadding
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
+      <StyledSectionTitle className={silkscreen.className}>
+        PARTNERS
+      </StyledSectionTitle>
+      <PartnersBlock>
+        <SponsorRow>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/upc.svg"}
+              imageAlt={"upc"}
+              sponsorLink={"https://www.upc.edu/"}
+              smallPadding
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/fib.svg"}
+              imageAlt={"fib"}
+              sponsorLink={"https://www.fib.upc.edu/"}
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/telecos.png"}
+              imageAlt={"telecos"}
+              sponsorLink={"https://telecos.upc.edu/"}
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/mlh.svg"}
+              imageAlt={"mlh"}
+              sponsorLink={"https://mlh.io/eu"}
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorUnrevealed
             // imageSrc={"/Partners/cfis.svg"}
             // imageAlt={"cfis"}
             // sponsorLink={"https://cfis.upc.edu/"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorUnrevealed
             // imageSrc={"/Partners/coeinf.png"}
             // imageAlt={"coeinf"}
             // sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
             // smallPadding
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/replexica.svg"}
-            // imageAlt={"replexica"}
-            // sponsorLink={"https://replexica.com/en"}
-            // smallPadding
-          />
-        </MiliBox>
-      </SponsorRow>
-      <SponsorRow>
-        <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/nissin.svg"}
-            // imageAlt={"nissin"}
-            // sponsorLink={"https://www.nissinfoods.com/"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/frit_ravich.png"}
-            // imageAlt={"fritravich"}
-            // sponsorLink={"https://www.fritravich.com/en/"}
-            // smallPadding
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/cocacola.png"}
-            // imageAlt={"cocacola"}
-            // sponsorLink={"https://www.coca-cola.com/"}
-            // smallPadding
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/nestle.svg"}
-            // imageAlt={"nestle"}
-            // sponsorLink={"https://www.nestle.com/"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/incapto.svg"}
-            // imageAlt={"incapto"}
-            // sponsorLink={"https://incapto.com/profesional/"}
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/cacaolat.png"}
-            // imageAlt={"cacaolat"}
-            // sponsorLink={"https://www.cacaolat.es/en"}
-            // smallPadding
-          />
-        </MiliBox>
-        <MiliBox>
-          <SponsorUnrevealed
-            // imageSrc={"/Partners/risi.png"}
-            // imageAlt={"risi"}
-            // sponsorLink={"https://risi.es/es/"}
-            // smallPadding
-          />
-        </MiliBox>
-      </SponsorRow>
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorUnrevealed />
+          </MiliBox>
+        </SponsorRow>
+      </PartnersBlock>
     </SponsorsAndPartnersContainer>
   );
 }
