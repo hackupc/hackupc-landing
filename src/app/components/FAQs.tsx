@@ -15,7 +15,7 @@ import {
   SpacingS,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
-import { SectionBackground } from "@/app/genericComponents/General";
+import { Section, SectionBackground } from "@/app/genericComponents/General";
 import {
   BlockTitle,
   Body,
@@ -68,7 +68,7 @@ const Question = styled.div`
 
 const QuestionTitle = styled(BodyBold)`
   margin-bottom: ${SpacingXS};
-  cursor: pointer, auto;
+  cursor: pointer;
 `;
 
 const BrickSection = styled.div`
@@ -170,165 +170,167 @@ export default function FAQs() {
 
   return (
     <CustomBackground specialBackground={"#29ABE2"} id="faqs">
-      <TitleSpacer>
-        <SectionTitle>FAQs</SectionTitle>
-      </TitleSpacer>
-      <Split>
-        <ColumnsQuestions>
-          <div>
-            <BrickSection>
-              <Image
-                src="/brick_separator.svg"
-                width={163}
-                height={54}
-                alt="Brick block"
-              />
-            </BrickSection>
-            <QuestionsBlock>
-              <BlockTitle color={"white"}>About HackUPC</BlockTitle>
-              {hackupc_faqs.map((faq) => (
-                <Question key={faq.id}>
-                  <Image
-                    src={
-                      activeFaqId === faq.id
-                        ? "/used_question_mark_block.svg"
-                        : "/question_mark_block.svg"
-                    }
-                    width={32}
-                    height={32}
-                    alt="Question Mark Block"
-                    onClick={() => toggleFaq(faq.id)}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <div>
-                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                      {faq.question}
-                    </QuestionTitle>
-                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                      {renderAnswer(faq.answer)}
-                    </QuestionAnswer>
-                  </div>
-                </Question>
-              ))}
-            </QuestionsBlock>
-          </div>
+      <Section>
+        <TitleSpacer>
+          <SectionTitle>FAQs</SectionTitle>
+        </TitleSpacer>
+        <Split>
+          <ColumnsQuestions>
+            <div>
+              <BrickSection>
+                <Image
+                  src="/brick_separator.svg"
+                  width={163}
+                  height={54}
+                  alt="Brick block"
+                />
+              </BrickSection>
+              <QuestionsBlock>
+                <BlockTitle color={"white"}>About HackUPC</BlockTitle>
+                {hackupc_faqs.map((faq) => (
+                  <Question key={faq.id}>
+                    <Image
+                      src={
+                        activeFaqId === faq.id
+                          ? "/used_question_mark_block.svg"
+                          : "/question_mark_block.svg"
+                      }
+                      width={32}
+                      height={32}
+                      alt="Question Mark Block"
+                      onClick={() => toggleFaq(faq.id)}
+                      style={{ cursor: "pointer" }}
+                    />
+                    <div>
+                      <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                        {faq.question}
+                      </QuestionTitle>
+                      <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                        {renderAnswer(faq.answer)}
+                      </QuestionAnswer>
+                    </div>
+                  </Question>
+                ))}
+              </QuestionsBlock>
+            </div>
 
-          <div>
-            <BrickSection>
-              <Image
-                src="/brick_separator.svg"
-                width={163}
-                height={54}
-                alt="Brick block"
-              />
-            </BrickSection>
-            <QuestionsBlock>
-              <BlockTitle color={"white"}>Travel Reimbursement</BlockTitle>
-              {travel_faqs.map((faq) => (
-                <Question key={faq.id}>
-                  <Image
-                    src={
-                      activeFaqId === faq.id
-                        ? "/used_question_mark_block.svg"
-                        : "/question_mark_block.svg"
-                    }
-                    width={32}
-                    height={32}
-                    alt="Question Mark Block"
-                    onClick={() => toggleFaq(faq.id)}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <div>
-                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                      {faq.question}
-                    </QuestionTitle>
-                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                      {renderAnswer(faq.answer)}
-                    </QuestionAnswer>
-                  </div>
-                </Question>
-              ))}
-            </QuestionsBlock>
-          </div>
-        </ColumnsQuestions>
+            <div>
+              <BrickSection>
+                <Image
+                  src="/brick_separator.svg"
+                  width={163}
+                  height={54}
+                  alt="Brick block"
+                />
+              </BrickSection>
+              <QuestionsBlock>
+                <BlockTitle color={"white"}>Travel Reimbursement</BlockTitle>
+                {travel_faqs.map((faq) => (
+                  <Question key={faq.id}>
+                    <Image
+                      src={
+                        activeFaqId === faq.id
+                          ? "/used_question_mark_block.svg"
+                          : "/question_mark_block.svg"
+                      }
+                      width={32}
+                      height={32}
+                      alt="Question Mark Block"
+                      onClick={() => toggleFaq(faq.id)}
+                      style={{ cursor: "pointer" }}
+                    />
+                    <div>
+                      <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                        {faq.question}
+                      </QuestionTitle>
+                      <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                        {renderAnswer(faq.answer)}
+                      </QuestionAnswer>
+                    </div>
+                  </Question>
+                ))}
+              </QuestionsBlock>
+            </div>
+          </ColumnsQuestions>
 
-        <ColumnsQuestions>
-          <div>
-            <BrickSection>
-              <Image
-                src="/brick_separator.svg"
-                width={163}
-                height={54}
-                alt="Brick block"
-              />
-            </BrickSection>
-            <QuestionsBlock>
-              <BlockTitle color={"white"}>Applications</BlockTitle>
-              {applications_faqs.map((faq) => (
-                <Question key={faq.id}>
-                  <Image
-                    src={
-                      activeFaqId === faq.id
-                        ? "/used_question_mark_block.svg"
-                        : "/question_mark_block.svg"
-                    }
-                    width={32}
-                    height={32}
-                    alt="Question Mark Block"
-                    onClick={() => toggleFaq(faq.id)}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <div>
-                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                      {faq.question}
-                    </QuestionTitle>
-                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                      {renderAnswer(faq.answer)}
-                    </QuestionAnswer>
-                  </div>
-                </Question>
-              ))}
-            </QuestionsBlock>
-          </div>
-          <div>
-            <BrickSection>
-              <Image
-                src="/brick_separator.svg"
-                width={163}
-                height={54}
-                alt="Brick block"
-              />
-            </BrickSection>
-            <QuestionsBlock>
-              <BlockTitle color={"white"}>Teams</BlockTitle>
-              {teams_faqs.map((faq) => (
-                <Question key={faq.id}>
-                  <Image
-                    src={
-                      activeFaqId === faq.id
-                        ? "/used_question_mark_block.svg"
-                        : "/question_mark_block.svg"
-                    }
-                    width={32}
-                    height={32}
-                    alt="Question Mark Block"
-                    onClick={() => toggleFaq(faq.id)}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <div>
-                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                      {faq.question}
-                    </QuestionTitle>
-                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                      {renderAnswer(faq.answer)}
-                    </QuestionAnswer>
-                  </div>
-                </Question>
-              ))}
-            </QuestionsBlock>
-          </div>
-        </ColumnsQuestions>
-      </Split>
+          <ColumnsQuestions>
+            <div>
+              <BrickSection>
+                <Image
+                  src="/brick_separator.svg"
+                  width={163}
+                  height={54}
+                  alt="Brick block"
+                />
+              </BrickSection>
+              <QuestionsBlock>
+                <BlockTitle color={"white"}>Applications</BlockTitle>
+                {applications_faqs.map((faq) => (
+                  <Question key={faq.id}>
+                    <Image
+                      src={
+                        activeFaqId === faq.id
+                          ? "/used_question_mark_block.svg"
+                          : "/question_mark_block.svg"
+                      }
+                      width={32}
+                      height={32}
+                      alt="Question Mark Block"
+                      onClick={() => toggleFaq(faq.id)}
+                      style={{ cursor: "pointer" }}
+                    />
+                    <div>
+                      <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                        {faq.question}
+                      </QuestionTitle>
+                      <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                        {renderAnswer(faq.answer)}
+                      </QuestionAnswer>
+                    </div>
+                  </Question>
+                ))}
+              </QuestionsBlock>
+            </div>
+            <div>
+              <BrickSection>
+                <Image
+                  src="/brick_separator.svg"
+                  width={163}
+                  height={54}
+                  alt="Brick block"
+                />
+              </BrickSection>
+              <QuestionsBlock>
+                <BlockTitle color={"white"}>Teams</BlockTitle>
+                {teams_faqs.map((faq) => (
+                  <Question key={faq.id}>
+                    <Image
+                      src={
+                        activeFaqId === faq.id
+                          ? "/used_question_mark_block.svg"
+                          : "/question_mark_block.svg"
+                      }
+                      width={32}
+                      height={32}
+                      alt="Question Mark Block"
+                      onClick={() => toggleFaq(faq.id)}
+                      style={{ cursor: "pointer" }}
+                    />
+                    <div>
+                      <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                        {faq.question}
+                      </QuestionTitle>
+                      <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                        {renderAnswer(faq.answer)}
+                      </QuestionAnswer>
+                    </div>
+                  </Question>
+                ))}
+              </QuestionsBlock>
+            </div>
+          </ColumnsQuestions>
+        </Split>
+      </Section>
     </CustomBackground>
   );
 }
