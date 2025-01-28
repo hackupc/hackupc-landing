@@ -6,8 +6,6 @@ import {
   TitleM,
   MobileTitleM,
   MobileTitleS,
-  SpacingXXL,
-  SpacingXL,
   SpacingM,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
