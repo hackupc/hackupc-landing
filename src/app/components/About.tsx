@@ -38,7 +38,7 @@ const SectionStyled = styled(Section)`
 
 const UnderlineTitle = styled(SectionTitle)`
   border-bottom: 3px solid black;
-  width: 325px;
+  width: 80%;
 `;
 
 const Container = styled.div`
@@ -105,7 +105,7 @@ export default function About() {
                 />
               </ImgSection>
               <BlockTitle color={"#000000"} haveMargin>
-                About HackUPC
+              HackUPC: Coding to the next level
               </BlockTitle>
               <Body>
               HackUPC is the first student hackathon in Spain. Once a year, we aim to provide

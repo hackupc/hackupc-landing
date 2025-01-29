@@ -7,6 +7,7 @@ import {
   SectionTitle,
 } from "@/app/genericComponents/Typography";
 import {
+  MobileBreakpoint,
   Secondary500,
   SpacingM,
   SpacingS,
@@ -23,64 +24,62 @@ const Colors = {
 };
 
 const ProvideSectionWrapper = styled.div`
-  background-image: url("/paintball background mobile.png"); 
-  background-size: 390px 1100px; 
-  background-position: center; 
-  background-repeat: no-repeat;
-  text-align: center;
-  color: white;
+  background-image: url("/paintball background mobile.png");
+    background-size: contain; 
+    background-position: center top; 
+  
+  @media (min-width: ${MobileBreakpoint}) {
+    background-image: url("/provide desktop background.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+  }
 `;
 
 const ProvideHeader = styled(SectionTitle)`
-  font-family: 'Silkscreen', sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'Silkscreen', sans-serif; 
+  src: url('https://fonts.gstatic.com/s/silkscreen/v2/m8JcjfpeG5hcULX7lIph9HFwB-M.woff2') format('woff2'); 
   color: ${Colors.white};  /* title color */
   font-size: 24px;
   margin-bottom: 30px;
   text-transform: uppercase;
   white-space: pre-line; /* Enable line breaks */
-
-  &.silkscreen-regular {
-    font-family: 'Silkscreen', serif;
-    font-weight: 400;
-    font-style: normal;
-  }
 `;
 
 const ProvideBlockWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 26px;
+  gap: 60px;
 `;
 
 const ProvideBlock = styled.div`
   background-color:${Colors.pink}; /* Pink background */
   border-radius: 15px;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
-  min-width: 250px;
-  max-width: 300px;
+  min-width: 80%;
   border: 6px solid ${Colors.white};
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
 const ProvideSubTitle = styled.div`
   background-color:${Colors.blue}; /* Blue background */
   border-radius: 10px;
   padding: 0px;
+  z-index: 1;
+  margin: -23px;
   text-align: center;
-  min-width: 160px;
-  max-width: 300px;
+  min-width: 45%;
   border: 6px solid ${Colors.pink};
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
 const ProvideBody = styled(Body)`
   font-size: 16px;
   line-height: 1.1;
   color: ${Colors.blue};
+  white-space: pre-line; /* Enable line breaks */
 `;
 
 const ProvideSubTitleText = styled(Body)`
@@ -101,7 +100,7 @@ const DividerIcon = styled.div`
 
 const DividerIcon2 = styled.div`
   width: 40px;
-  height: 80px;
+  height: 40px;
   background-image: url("/path-to-divider-icon.svg"); 
   background-size: contain;
   background-position: center;
@@ -122,51 +121,61 @@ export default function Provide() {
   return (
     <ProvideSectionWrapper id="provide">
       <DividerIcon2 />
-      <ProvideHeader className="silkscreen-regular">We Also {"\n"} Provide...</ProvideHeader>
       <ProvideBlockWrapper>
+        <DividerIcon2 />
+        <ProvideHeader>We Also {"\n"} Provide...</ProvideHeader>
+
         <ProvideSubTitle>
-         
-            <ProvideSubTitleText>FOOD</ProvideSubTitleText>
-         
+          <ProvideSubTitleText>FOOD</ProvideSubTitleText>
         </ProvideSubTitle>
-        </ProvideBlockWrapper>
-        <ProvideBlockWrapper>
+      </ProvideBlockWrapper>
+      <ProvideBlockWrapper>
         <ProvideBlock>
           <ProvideBody>
-            We’ve got you completely covered, we even have midnight snacks.
-            Besides, you can serve yourself with cafeteria snacks.
+            We’ve got you completely {"\n"} covered, we even have {"\n"} midnight snacks.
+            Besides, you {"\n"} can serve yourself with {"\n"} cafeteria snacks.
           </ProvideBody>
         </ProvideBlock>
         <DividerIcon />
         <ProvideSubTitle>
-         
-         <ProvideSubTitleText>SLEEPING</ProvideSubTitleText>
-      
+          <ProvideSubTitleText>SLEEPING</ProvideSubTitleText>
         </ProvideSubTitle>
-        </ProvideBlockWrapper>
-        <ProvideBlockWrapper>
+      </ProvideBlockWrapper>
+      <ProvideBlockWrapper>
         <ProvideBlock>
           <ProvideBody>
-            We will provide air mattresses both nights so you can boost your
-            energy levels. Check out the FAQs for more info.
+            We will provide air mattresses both {"\n"} nights so you can boost your
+            energy {"\n"} levels. Check out the FAQs for more info.
           </ProvideBody>
         </ProvideBlock>
-    
         <ProvideSubTitle>
-         
-         <ProvideSubTitleText>SPONSORS</ProvideSubTitleText>
-      
+          <ProvideSubTitleText>SPONSORS</ProvideSubTitleText>
         </ProvideSubTitle>
-        </ProvideBlockWrapper>
-        <ProvideBlockWrapper>
+      </ProvideBlockWrapper>
+      <ProvideBlockWrapper>
         <ProvideBlock>
           <ProvideBody>
-            You can also visit our sponsors' stands or meet them remotely!
-            They'll be available during the day and would love to talk to you!
+            You can also visit our sponsors' stands or {"\n"} meet them remotely!
+            They'll be available {"\n"} during the day and would love to talk to {"\n"} you!
             (you may even get some swag as well).
           </ProvideBody>
         </ProvideBlock>
-        <DividerIcon3 />
+        <div>
+        <Image
+          src="/pinball flipper1.png"
+          alt="flipper 1"
+          width={155}
+          height={85}
+          style={{position: "relative", top: "-100px", left: "-200px"}}
+        />
+        <Image
+          src="/pinball flipper2.png"
+          alt="flipper 2"
+          width={155}
+          height={85}
+          style={{position: "relative", top: "-100px", left: "200px"}}
+        />
+        </div>
       </ProvideBlockWrapper>
     </ProvideSectionWrapper>
   );
