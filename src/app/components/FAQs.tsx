@@ -142,7 +142,7 @@ const Coin = styled(Image)<{ isVisible: boolean }>`
   ${(props) =>
     props.isVisible &&
     css`
-      animation: coinJump 1s cubic-bezier(.57,1.37,.41,.89) forwards;
+      animation: coinJump 1s cubic-bezier(0.57, 1.37, 0.41, 0.89) forwards;
     `}
 
   @keyframes coinJump {
@@ -151,12 +151,10 @@ const Coin = styled(Image)<{ isVisible: boolean }>`
       transform: translateY(0%) rotateY(0deg) rotate(0deg);
     }
     100% {
-      transform: translateY(-200%) rotateY(180deg) rotate(calc(360deg*1.5));
+      transform: translateY(-200%) rotateY(180deg) rotate(calc(360deg * 1.5));
     }
   }
 `;
-
-
 
 function renderAnswer(answers: AnswerOptions[]) {
   return answers.map((answer, index) => {
@@ -208,8 +206,6 @@ function renderAnswer(answers: AnswerOptions[]) {
   });
 }
 
-
-
 export default function FAQs() {
   const [activeFaqId, setActiveFaqId] = useState<null | number>(null);
   const [showCoin, setShowCoin] = useState<null | number>(null);
@@ -224,9 +220,6 @@ export default function FAQs() {
     // If the clicked FAQ is already active, close it, otherwise open the clicked FAQ
     setActiveFaqId(activeFaqId === id ? null : id);
   };
-  
-
-  
 
   return (
     <CustomBackground specialBackground={"#29ABE2"} id="faqs">
@@ -249,7 +242,7 @@ export default function FAQs() {
                 <BlockTitle color={"white"}>About HackUPC</BlockTitle>
                 {hackupc_faqs.map((faq) => (
                   <Question key={faq.id}>
-                     <Coin
+                    <Coin
                       src="/coin.png"
                       width={28}
                       height={28}
@@ -267,7 +260,6 @@ export default function FAQs() {
                       alt="Question Mark Block"
                       onClick={() => toggleFaq(faq.id)}
                       style={{ cursor: "pointer", zIndex: 2 }}
-
                     />
                     <div>
                       <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -360,7 +352,6 @@ export default function FAQs() {
                       alt="Question Mark Block"
                       onClick={() => toggleFaq(faq.id)}
                       style={{ cursor: "pointer", zIndex: 2 }}
-
                     />
                     <div>
                       <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -405,7 +396,6 @@ export default function FAQs() {
                       alt="Question Mark Block"
                       onClick={() => toggleFaq(faq.id)}
                       style={{ cursor: "pointer", zIndex: 2 }}
-
                     />
                     <div>
                       <QuestionTitle onClick={() => toggleFaq(faq.id)}>
