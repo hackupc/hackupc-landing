@@ -102,12 +102,34 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
 `;
 
 const CustomBackground = styled(SectionBackground)`
-  background-image: url("/clouds.svg");
-  background-repeat: repeat-y;
-  background-size: 100% auto;
-  background-position: center;
-  background-position-y: 20px;
-  background-position-x: 20px;
+  background-image: url("/cloud.svg"),
+                    url("/cloud2.svg"),
+                    url("/cloud2.svg"),
+                    url("/cloud.svg"),
+                    url("/cloud.svg"),
+                    url("/cloud2.svg");
+  background-position: 20% 25%,
+                       90% 10%,
+                       10% 65%,
+                       75% 55%,
+                       20% 90%,
+                       90% 85%;
+  background-repeat: no-repeat;
+  background-size: 15%, 
+                  20%, 
+                  15%, 
+                  18%, 
+                  13%, 
+                  9%;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    background-size: 25%,
+                    30%,
+                    25%,
+                    28%,
+                    23%,
+                    19%;
+
 `;
 
 function renderAnswer(answers: AnswerOptions[]) {
