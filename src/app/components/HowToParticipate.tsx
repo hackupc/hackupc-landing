@@ -5,12 +5,10 @@ import { Body, BlockTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   MobileTitleL,
-  Primary100,
-  Secondary500,
+  Secondary100,
   SpacingM,
   SpacingS,
   SpacingXL,
-  SpacingXXL,
   TitleL,
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
@@ -77,9 +75,9 @@ const RoleBlock = styled.div`
   &:nth-child(1)::before,
   &:nth-child(1)::after {
     background: repeating-linear-gradient(
-      90deg,
-      green,
-      green 10px,
+      135deg,
+      #77C914,
+      #77C914 7px,
       transparent 10px,
       transparent 20px
     );
@@ -88,9 +86,9 @@ const RoleBlock = styled.div`
   &:nth-child(2)::before,
   &:nth-child(2)::after {
     background: repeating-linear-gradient(
-      90deg,
-      blue,
-      blue 10px,
+      135deg,
+      #5665FF,
+      #5665FF 7px,
       transparent 10px,
       transparent 20px
     );
@@ -99,9 +97,9 @@ const RoleBlock = styled.div`
   &:nth-child(3)::before,
   &:nth-child(3)::after {
     background: repeating-linear-gradient(
-      90deg,
-      yellow,
-      yellow 10px,
+      135deg,
+      #FCAF01,
+      #FCAF01 7px,
       transparent 10px,
       transparent 20px
     );
@@ -110,9 +108,9 @@ const RoleBlock = styled.div`
   &:nth-child(4)::before,
   &:nth-child(4)::after {
     background: repeating-linear-gradient(
-      90deg,
-      red,
-      red 10px,
+      135deg,
+      #FB3E01,
+      #FB3E01 7px,
       transparent 10px,
       transparent 20px
     );
@@ -124,7 +122,6 @@ const SpecialSection = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0;
-  padding: ${SpacingXL} 0 ${SpacingXXL} 0;
   gap: ${SpacingM};
   width: 100vw;
   background-color: black;
@@ -133,8 +130,6 @@ const SpecialSection = styled.div`
 `;
 
 const ImageIcon = styled(Image)`
-  width: 50px;
-  height: 50px;
   margin-bottom: ${SpacingS};
   &:hover {
     transform: scale(1.5);
@@ -143,7 +138,7 @@ const ImageIcon = styled(Image)`
 
 export const HowToTitle = styled.div`
   font-size: ${TitleL};
-  border: 3px dashed;
+  border: 7px dashed;
   border-radius: 15px;
   padding: 1.5rem;
   text-align: center;
@@ -165,19 +160,19 @@ export default function HowToParticipate() {
     <SpecialSection>
       <Section id="howtoparticipate">
         <HowToTitle className={silkscreen.className}>
-          How to Participate
+          How to<br/>Participate
         </HowToTitle>
         <GridContainer>
           <RoleBlock>
             <ImageIcon
-              src="greenAlien.svg"
-              alt="Mentor"
-              width={50}
-              height={50}
+                src="greenAlien.svg"
+                alt="Mentor"
+                width={50}
+                height={50}
             />
             <BlockTitle
               className={silkscreen.className}
-              color={Secondary500}
+              color={Secondary100}
               haveMargin
             >
               Mentor
@@ -204,7 +199,7 @@ export default function HowToParticipate() {
             />
             <BlockTitle
               className={silkscreen.className}
-              color={Primary100}
+              color={Secondary100}
               haveMargin
             >
               Volunteer
@@ -232,7 +227,7 @@ export default function HowToParticipate() {
             />
             <BlockTitle
               className={silkscreen.className}
-              color={Secondary500}
+              color={Secondary100}
               haveMargin
             >
               Partner
@@ -259,7 +254,7 @@ export default function HowToParticipate() {
             />
             <BlockTitle
               className={silkscreen.className}
-              color={Primary100}
+              color={Secondary100}
               haveMargin
             >
               Sponsor
