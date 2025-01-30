@@ -9,6 +9,7 @@ import {
   SpacingL,
   SpacingM,
   SpacingS,
+  SpacingXXS,
   SpacingXL,
   TitleL,
 } from "@/app/genericComponents/tokens";
@@ -53,68 +54,22 @@ const RoleBlock = styled.div`
   min-height: 250px;
   justify-content: space-between;
   position: relative;
-  border: none;
+  border: ${SpacingXXS} dashed;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    width: calc(100% - 20px);
-    height: 10px;
+  &:nth-child(1) {
+    border-color: #77C914;
   }
 
-  &::before {
-    top: 0;
-    left: 10px;
+  &:nth-child(2) {
+    border-color: #5665FF;
+  } 
+
+  &:nth-child(3) {
+    border-color: #FCAF01;
   }
 
-  &::after {
-    bottom: 0;
-    left: 10px;
-  }
-
-  &:nth-child(1)::before,
-  &:nth-child(1)::after {
-    background: repeating-linear-gradient(
-      135deg,
-      #77C914,
-      #77C914 7px,
-      transparent 10px,
-      transparent 20px
-    );
-  }
-
-  &:nth-child(2)::before,
-  &:nth-child(2)::after {
-    background: repeating-linear-gradient(
-      135deg,
-      #5665FF,
-      #5665FF 7px,
-      transparent 10px,
-      transparent 20px
-    );
-  }
-
-  &:nth-child(3)::before,
-  &:nth-child(3)::after {
-    background: repeating-linear-gradient(
-      135deg,
-      #FCAF01,
-      #FCAF01 7px,
-      transparent 10px,
-      transparent 20px
-    );
-  }
-
-  &:nth-child(4)::before,
-  &:nth-child(4)::after {
-    background: repeating-linear-gradient(
-      135deg,
-      #FB3E01,
-      #FB3E01 7px,
-      transparent 10px,
-      transparent 20px
-    );
+  &:nth-child(4) {
+    border-color: #FB3E01;
   }
 `;
 
@@ -137,7 +92,15 @@ const ImageIcon = styled(Image)`
   }
 `;
 
-export const HowToTitle = styled.div`
+const BlockImageTitle = styled.a`
+  position: absolute;
+  top: -25%;
+  background-color: black;
+  padding: ${SpacingS};
+`;
+
+
+const HowToTitle = styled.div`
   font-size: ${TitleL};
   padding: ${SpacingL};
   text-align: center;
@@ -177,7 +140,7 @@ export const HowToTitle = styled.div`
 const HowToTitleWrapper = styled.div`
   position: relative;
   width: fit-content;
-
+  margin: 0 auto ${SpacingXL};
 
   &::before,
   &::after {
@@ -204,8 +167,21 @@ const HowToTitleWrapper = styled.div`
 `;
 
 const Text = styled(Body)`
-  margin-bottom: auto;
+  position: relative;
+  margin-top: 20%;
+  
 `;
+
+const ColoredButton = styled(SecondaryButton)`
+  background-color: ${(props) => props.color};
+  color: white;
+
+  &:hover {
+    background-color: ${(props) => props.color};
+    filter: brightness(0.75);
+  }
+`;
+
 
 export default function HowToParticipate() {
   return (
@@ -218,112 +194,132 @@ export default function HowToParticipate() {
         </HowToTitleWrapper>
         <GridContainer>
           <RoleBlock>
-            <ImageIcon
-                src="greenAlien.svg"
-                alt="Mentor"
-                width={50}
-                height={50}
-            />
-            <BlockTitle
-              className={silkscreen.className}
-              color={Secondary100}
-              haveMargin
-            >
-              Mentor
-            </BlockTitle>
+              <BlockImageTitle
+                href="https://my.hackupc.com/user/signup/mentor/"
+                target="_blank">
+                <ImageIcon
+                    src="greenAlien.svg"
+                    alt="Mentor"
+                    width={50}
+                    height={50}
+                />
+                <BlockTitle
+                  className={silkscreen.className}
+                  color={Secondary100}
+                  haveMargin
+                >
+                  Mentor
+                </BlockTitle>
+              </BlockImageTitle>
             <Text>
               Help and motivate hackers with your knowledge. Either because you
               are passionate about it, or if you've graduated more than a year
               ago and can't participate as a hacker, apply now as a mentor!
             </Text>
-            <SecondaryButton
+            <ColoredButton
+              color="#77C914"
               className={silkscreen.className}
               href="https://my.hackupc.com/user/signup/mentor/"
+              target="_blank"
             >
               Apply Now
-            </SecondaryButton>
+            </ColoredButton>
           </RoleBlock>
 
           <RoleBlock>
-            <ImageIcon
-              src="blueAlien.svg"
-              alt="Volunteer"
-              width={50}
-              height={50}
-            />
-            <BlockTitle
-              className={silkscreen.className}
-              color={Secondary100}
-              haveMargin
-            >
-              Volunteer
-            </BlockTitle>
+            <BlockImageTitle
+              href="https://my.hackupc.com/user/signup/volunteer/"
+              target="_blank">
+              <ImageIcon
+                src="blueAlien.svg"
+                alt="Volunteer"
+                width={50}
+                height={50}
+              />
+              <BlockTitle
+                className={silkscreen.className}
+                color={Secondary100}
+                haveMargin
+              >
+                Volunteer
+              </BlockTitle>
+            </BlockImageTitle>
             <Text>
               Volunteers make HackUPC possible by assisting the hackers and
               preparing the event. By joining our team of volunteers, you will
               get to know how this amazing event works from the inside, meet
               amazing people and live a great experience!
             </Text>
-            <PrimaryButton
+            <ColoredButton
+              color="#5665FF"
               className={silkscreen.className}
               href="https://my.hackupc.com/user/signup/volunteer/"
+              target="_blank"
             >
               Apply now
-            </PrimaryButton>
+            </ColoredButton>
           </RoleBlock>
 
           <RoleBlock>
-            <ImageIcon
-              src="yellowAlien.svg"
-              alt="Partner"
-              width={50}
-              height={50}
-            />
-            <BlockTitle
-              className={silkscreen.className}
-              color={Secondary100}
-              haveMargin
-            >
-              Partner
-            </BlockTitle>
+            <BlockImageTitle
+              href="mailto:logistics@hackupc.com">
+              <ImageIcon
+                src="yellowAlien.svg"
+                alt="Partner"
+                width={50}
+                height={50}
+              />
+              <BlockTitle
+                className={silkscreen.className}
+                color={Secondary100}
+                haveMargin
+              >
+                Partner
+              </BlockTitle>
+            </BlockImageTitle>
             <Text>
               Gain visibility for your brand, introduce your products to future
               talents. Join us and be remembered as part of this hackathon by
               our participants!
             </Text>
-            <SecondaryOutlineButton
+            <ColoredButton
+              color="#FCAF01"
               className={silkscreen.className}
               href="mailto:logistics@hackupc.com"
             >
               Contact us
-            </SecondaryOutlineButton>
+            </ColoredButton>
           </RoleBlock>
 
           <RoleBlock>
-            <ImageIcon
-              src="redAlien.svg"
-              alt="Sponsor"
-              width={50}
-              height={50}
-            />
-            <BlockTitle
-              className={silkscreen.className}
-              color={Secondary100}
-              haveMargin
-            >
-              Sponsor
-            </BlockTitle>
+            <BlockImageTitle
+              href="mailto:sponsor@hackupc.com">
+              <ImageIcon
+                src="redAlien.svg"
+                alt="Sponsor"
+                width={50}
+                height={50}
+              />
+              <BlockTitle
+                className={silkscreen.className}
+                color={Secondary100}
+                haveMargin
+              >
+                Sponsor
+              </BlockTitle>
+            </BlockImageTitle>
             <Text>
               Don't just put your brand on another wall. Take the chance to
               shape the tech scene of tomorrow by adding real value and making
               it possible for hackers to build something they're proud of.
             </Text>
-            <PrimaryOutlineButton
+            <ColoredButton
+              color="#FB3E01"
               className={silkscreen.className}
               href="mailto:sponsor@hackupc.com"
             >
               Contact us
-            </PrimaryOutlineButton>
+            </ColoredButton>
           </RoleBlock>
         </GridContainer>
       </Section>
