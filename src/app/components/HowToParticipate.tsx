@@ -15,10 +15,7 @@ import {
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
 import {
-  PrimaryButton,
-  PrimaryOutlineButton,
   SecondaryButton,
-  SecondaryOutlineButton,
 } from "@/app/genericComponents/Buttons";
 import { silkscreen } from "@/app/genericComponents/fonts";
 
