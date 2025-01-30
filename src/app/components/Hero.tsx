@@ -194,11 +194,13 @@ const Title = styled.h1`
 `;
 
 const TitleContainer = styled.div`
+  margin-top: ${SpacingM};
   width: 80%;
   max-width: 600px;
   border-top: ${SpacingXS} dotted yellow;
   border-bottom: ${SpacingXS} dotted yellow;
   padding-bottom: ${SpacingM};
+  padding-top: ${SpacingM};
 `;
 
 const SubText = styled.div`
