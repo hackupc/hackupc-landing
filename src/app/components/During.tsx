@@ -5,7 +5,6 @@ import {
   MobileBreakpoint,
   TitleM,
   MobileTitleM,
-  MobileTitleS,
   SpacingM,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
@@ -48,6 +47,8 @@ const TextWrapper = styled.div`
 
   @media (max-width: ${MobileBreakpoint}) {
     text-align: center;
+    display: flex;
+    flex-direction: column;
     gap: 0;
   }
 `;
@@ -59,10 +60,6 @@ const StyledTitle = styled(SectionTitle)`
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileTitleM};
   }
-
-  @media (max-width: 340px) {
-    font-size: ${MobileTitleS};
-  }
 `;
 
 const HackUPCColored = styled(StyledTitle)`
@@ -71,10 +68,7 @@ const HackUPCColored = styled(StyledTitle)`
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileTitleM};
-  }
-
-  @media (max-width: 340px) {
-    font-size: ${MobileTitleS};
+    margin-top: -20px;
   }
 `;
 

@@ -118,7 +118,7 @@ export default function Socials() {
       <Section>
         <BlueContainer>
           <CustomImage
-            src="/biene_ghost.svg"
+            src="/yellow_ghost.svg"
             alt="Ghost Biene"
             width={102}
             height={168}
