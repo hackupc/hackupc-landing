@@ -24,6 +24,8 @@ import {
   SectionTitle,
 } from "@/app/genericComponents/Typography";
 import { AnswerOptions } from "@/app/data/interfaces";
+import { silkscreen } from "@/app/genericComponents/fonts";
+
 
 const TitleSpacer = styled.div`
   padding-top: ${SpacingM};
@@ -224,7 +226,7 @@ export default function FAQs() {
     <CustomBackground specialBackground={"#29ABE2"} id="faqs">
       <Section>
         <TitleSpacer>
-          <SectionTitle>FAQs</SectionTitle>
+          <SectionTitle className={silkscreen.className}>FAQs</SectionTitle>
         </TitleSpacer>
         <Split>
           <ColumnsQuestions>
@@ -238,7 +240,7 @@ export default function FAQs() {
                 />
               </BrickSection>
               <QuestionsBlock>
-                <BlockTitle color={"white"}>About HackUPC</BlockTitle>
+                <BlockTitle className={silkscreen.className} color={"white"}>About HackUPC</BlockTitle>
                 {hackupc_faqs.map((faq) => (
                   <Question key={faq.id}>
                     <Coin
@@ -283,7 +285,7 @@ export default function FAQs() {
                 />
               </BrickSection>
               <QuestionsBlock>
-                <BlockTitle color={"white"}>Travel Reimbursement</BlockTitle>
+                <BlockTitle className={silkscreen.className} color={"white"}>Travel Reimbursement</BlockTitle>
                 {travel_faqs.map((faq) => (
                   <Question key={faq.id}>
                     <Coin
@@ -330,7 +332,7 @@ export default function FAQs() {
                 />
               </BrickSection>
               <QuestionsBlock>
-                <BlockTitle color={"white"}>Applications</BlockTitle>
+                <BlockTitle className={silkscreen.className} color={"white"}>Applications</BlockTitle>
                 {applications_faqs.map((faq) => (
                   <Question key={faq.id}>
                     <Coin
@@ -374,7 +376,7 @@ export default function FAQs() {
                 />
               </BrickSection>
               <QuestionsBlock>
-                <BlockTitle color={"white"}>Teams</BlockTitle>
+                <BlockTitle className={silkscreen.className} color={"white"}>Teams</BlockTitle>
                 {teams_faqs.map((faq) => (
                   <Question key={faq.id}>
                     <Coin
