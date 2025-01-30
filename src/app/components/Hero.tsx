@@ -226,7 +226,8 @@ const PlayAsContainer = styled.div`
   width: 80%;
   max-width: 600px;
   gap: ${SpacingS};
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 20px 4px 4px rgba(0, 0, 0, 0.3);
+
 
   @media (max-width: ${MobileBreakpoint}) {
     width: 90%;
@@ -257,7 +258,6 @@ const PlayerContainer = styled.div`
   flex-direction: row;
   gap: ${SpacingM};
   justify-content: center;
-  box-shadow: 0px 20px 4px 4px rgba(0, 0, 0, 0.3);
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
