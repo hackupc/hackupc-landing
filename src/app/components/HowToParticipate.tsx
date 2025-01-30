@@ -6,6 +6,7 @@ import {
   MobileBreakpoint,
   MobileTitleL,
   Secondary100,
+  SpacingL,
   SpacingM,
   SpacingS,
   SpacingXL,
@@ -52,7 +53,7 @@ const RoleBlock = styled.div`
   min-height: 250px;
   justify-content: space-between;
   position: relative;
-  border: none; /* Remove default border */
+  border: none;
 
   &::before,
   &::after {
@@ -138,16 +139,67 @@ const ImageIcon = styled(Image)`
 
 export const HowToTitle = styled.div`
   font-size: ${TitleL};
-  border: 7px dashed;
-  border-radius: 15px;
-  padding: 1.5rem;
+  padding: ${SpacingL};
   text-align: center;
   font-weight: bold;
   width: fit-content;
-  margin: 0 auto ${SpacingM};
+  margin: 0 auto ${SpacingL};
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20%; 
+    height: 50%;
+    border: 3px dashed;
+  }
+
+  &::before {
+    top: -10px;
+    left: -10px;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  &::after {
+    bottom: -10px;
+    right: -10px;
+    border-left: none;
+    border-top: none;
+  }
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileTitleL};
+  }
+`;
+
+const HowToTitleWrapper = styled.div`
+  position: relative;
+  width: fit-content;
+
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%; 
+    height: 20%;
+    border: 3px dashed;
+  }
+
+  &::before {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  &::after {
+    bottom: 25%;
+    right: 1%;
+    border-left: none;
+    border-top: none;
   }
 `;
 
@@ -159,9 +211,11 @@ export default function HowToParticipate() {
   return (
     <SpecialSection>
       <Section id="howtoparticipate">
-        <HowToTitle className={silkscreen.className}>
-          How to<br/>Participate
-        </HowToTitle>
+        <HowToTitleWrapper>
+          <HowToTitle className={silkscreen.className}>
+            How to<br/>Participate
+          </HowToTitle>
+        </HowToTitleWrapper>
         <GridContainer>
           <RoleBlock>
             <ImageIcon
