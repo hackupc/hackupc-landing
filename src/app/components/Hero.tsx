@@ -257,6 +257,7 @@ const PlayerContainer = styled.div`
   flex-direction: row;
   gap: ${SpacingM};
   justify-content: center;
+  box-shadow: 0px 20px 4px 4px rgba(0, 0, 0, 0.3);
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
@@ -271,10 +272,15 @@ const PlayerCard = styled.a`
   justify-content: center;
   padding: ${SpacingM};
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px dotted ${Colors.HeroBlue};
+  min-width: 50%;
   text-align: center;
   cursor: pointer;
   color: ${Colors.HeroYellow};
+
+  @media (max-width: ${MobileBreakpoint}) {
+    min-width: 100%;
+  }
 `;
 
 const PlayerText = styled.div`
