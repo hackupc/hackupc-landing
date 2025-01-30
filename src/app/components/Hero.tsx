@@ -246,6 +246,10 @@ const PlayAsTitleBox = styled.div`
   margin-top: -${SpacingL};
   align-self: center;
   background-color: ${Colors.HeroBlack};
+  
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 70%;
+  }
 `;
 
 const PlayerContainer = styled.div`
