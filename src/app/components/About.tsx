@@ -11,6 +11,8 @@ import {
   SpacingS,
 } from "@/app/genericComponents/tokens";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { silkscreen } from "@/app/genericComponents/fonts";
+
 
 const SnakeImage = styled(Image)`
   width: 120px; /* Smaller width for the snake image */
@@ -37,7 +39,7 @@ const SectionStyled = styled(Section)`
 
 const UnderlineTitle = styled(SectionTitle)`
   border-bottom: 3px solid black;
-  width: 325px;
+  width: 80%;
 `;
 
 const Container = styled.div`
@@ -67,7 +69,7 @@ export default function About() {
     <div id="about">
       <SectionBackground specialBackground={"#99C11C"}>
         <SectionStyled>
-          <UnderlineTitle>About HackUPC</UnderlineTitle>
+          <UnderlineTitle className={silkscreen.className}>HACKUPC: CODING TO THE NEXT LEVEL</UnderlineTitle>
           <Container>
             <Col>
               <ImgSection>
