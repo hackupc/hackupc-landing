@@ -189,8 +189,8 @@ const HowToTitleWrapper = styled.div`
   }
 
   &::before {
-    top: 10px;
-    left: 10px;
+    top: 1%;
+    left: 1%;
     border-right: none;
     border-bottom: none;
   }
