@@ -5,7 +5,6 @@ import {
   MobileBreakpoint,
   TitleM,
   MobileTitleM,
-  MobileTitleS,
   SpacingM,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
