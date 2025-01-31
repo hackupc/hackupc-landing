@@ -167,6 +167,7 @@ function renderAnswer(answers: AnswerOptions[]) {
             href={answer.link}
             rel="noopener noreferrer"
             target="_blank"
+            style={{ color: "#29ABE2" }}
           >
             {answer.content}
           </BodyLink>
