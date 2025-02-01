@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import {
@@ -65,19 +65,19 @@ export default function About() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    '/snake_0.svg',
-    '/snake_1.svg',
-    '/snake_2.svg',
-    '/snake_3.svg',
-    '/snake_4.svg',
-    '/snake_5.svg',
-    '/snake_6.svg',
-    '/snake_7.svg',
-    '/snake_8.svg',
-    '/snake_7.svg',
-    '/snake_8.svg',
-    '/snake_7.svg',
-    '/snake_8.svg',
+    "/snake_0.svg",
+    "/snake_1.svg",
+    "/snake_2.svg",
+    "/snake_3.svg",
+    "/snake_4.svg",
+    "/snake_5.svg",
+    "/snake_6.svg",
+    "/snake_7.svg",
+    "/snake_8.svg",
+    "/snake_7.svg",
+    "/snake_8.svg",
+    "/snake_7.svg",
+    "/snake_8.svg",
   ];
 
   useEffect(() => {
