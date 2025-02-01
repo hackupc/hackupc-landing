@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styled from "styled-components";
 import Image from "next/image";
 import {
@@ -13,22 +14,18 @@ import {
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { silkscreen } from "@/app/genericComponents/fonts";
 
-
-const SnakeImage = styled(Image)`
-  width: 120px; /* Smaller width for the snake image */
-  height: auto;
-
+const StyledImage = styled(Image)`
   @media (max-width: ${MobileBreakpoint}) {
-    width: 180px; /* Original size for mobile */
+    width: 180px; 
   }
 `;
 
 const AppleImage = styled(Image)`
   padding-top: 8px;
-  display: none; /* Hide by default */
+  display: none;
 
   @media (max-width: ${MobileBreakpoint}) {
-    display: block; /* Show for mobile */
+    display: block; 
   }
 `;
 
@@ -65,6 +62,32 @@ const ImgSection = styled.div`
 `;
 
 export default function About() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    '/snake_0.svg',
+    '/snake_1.svg',
+    '/snake_2.svg',
+    '/snake_3.svg',
+    '/snake_4.svg',
+    '/snake_5.svg',
+    '/snake_6.svg',
+    '/snake_7.svg',
+    '/snake_8.svg',
+    '/snake_7.svg',
+    '/snake_8.svg',
+    '/snake_7.svg',
+    '/snake_8.svg',
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div id="about">
       <SectionBackground specialBackground={"#99C11C"}>
@@ -73,10 +96,10 @@ export default function About() {
           <Container>
             <Col>
               <ImgSection>
-                <SnakeImage
-                  src="/snake.png"
-                  width={172}
-                  height={172}
+                <StyledImage
+                  src={images[currentImageIndex]}
+                  width={120}
+                  height={120}
                   alt="Snake"
                 />
               </ImgSection>
@@ -95,10 +118,10 @@ export default function About() {
             </Col>
             <Col>
               <ImgSection>
-                <Image
+                <StyledImage
                   src="/hackupcLogoBlack.svg"
-                  width={95}
-                  height={95}
+                  width={120}
+                  height={120}
                   alt="HackUPC Logo"
                 />
               </ImgSection>
