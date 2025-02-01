@@ -14,9 +14,7 @@ import {
   TitleL,
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
-import {
-  SecondaryButton,
-} from "@/app/genericComponents/Buttons";
+import { SecondaryButton } from "@/app/genericComponents/Buttons";
 import { silkscreen } from "@/app/genericComponents/fonts";
 
 const GridContainer = styled.div`
@@ -54,19 +52,19 @@ const RoleBlock = styled.div`
   border: ${SpacingXXS} dashed;
 
   &:nth-child(1) {
-    border-color: #77C914;
+    border-color: #77c914;
   }
 
   &:nth-child(2) {
-    border-color: #5665FF;
-  } 
+    border-color: #5665ff;
+  }
 
   &:nth-child(3) {
-    border-color: #FCAF01;
+    border-color: #fcaf01;
   }
 
   &:nth-child(4) {
-    border-color: #FB3E01;
+    border-color: #fb3e01;
   }
 `;
 
@@ -96,7 +94,6 @@ const BlockImageTitle = styled.a`
   padding: ${SpacingS};
 `;
 
-
 const HowToTitle = styled.div`
   font-size: ${TitleL};
   padding: ${SpacingL};
@@ -110,7 +107,7 @@ const HowToTitle = styled.div`
   &::after {
     content: "";
     position: absolute;
-    width: 20%; 
+    width: 20%;
     height: 50%;
     border: 3px dashed;
   }
@@ -143,7 +140,7 @@ const HowToTitleWrapper = styled.div`
   &::after {
     content: "";
     position: absolute;
-    width: 50%; 
+    width: 50%;
     height: 20%;
     border: 3px dashed;
   }
@@ -166,7 +163,6 @@ const HowToTitleWrapper = styled.div`
 const Text = styled(Body)`
   position: relative;
   margin-top: 20%;
-  
 `;
 
 const ColoredButton = styled(SecondaryButton)`
@@ -179,35 +175,37 @@ const ColoredButton = styled(SecondaryButton)`
   }
 `;
 
-
 export default function HowToParticipate() {
   return (
     <SpecialSection>
       <Section id="howtoparticipate">
         <HowToTitleWrapper>
           <HowToTitle className={silkscreen.className}>
-            How to<br/>Participate
+            How to
+            <br />
+            Participate
           </HowToTitle>
         </HowToTitleWrapper>
         <GridContainer>
           <RoleBlock>
-              <BlockImageTitle
-                href="https://my.hackupc.com/user/signup/mentor/"
-                target="_blank">
-                <ImageIcon
-                    src="greenAlien.svg"
-                    alt="Mentor"
-                    width={50}
-                    height={50}
-                />
-                <BlockTitle
-                  className={silkscreen.className}
-                  color={Secondary100}
-                  haveMargin
-                >
-                  Mentor
-                </BlockTitle>
-              </BlockImageTitle>
+            <BlockImageTitle
+              href="https://my.hackupc.com/user/signup/mentor/"
+              target="_blank"
+            >
+              <ImageIcon
+                src="greenAlien.svg"
+                alt="Mentor"
+                width={50}
+                height={50}
+              />
+              <BlockTitle
+                className={silkscreen.className}
+                color={Secondary100}
+                haveMargin
+              >
+                Mentor
+              </BlockTitle>
+            </BlockImageTitle>
             <Text>
               Help and motivate hackers with your knowledge. Either because you
               are passionate about it, or if you've graduated more than a year
@@ -226,7 +224,8 @@ export default function HowToParticipate() {
           <RoleBlock>
             <BlockImageTitle
               href="https://my.hackupc.com/user/signup/volunteer/"
-              target="_blank">
+              target="_blank"
+            >
               <ImageIcon
                 src="blueAlien.svg"
                 alt="Volunteer"
@@ -258,8 +257,7 @@ export default function HowToParticipate() {
           </RoleBlock>
 
           <RoleBlock>
-            <BlockImageTitle
-              href="mailto:logistics@hackupc.com">
+            <BlockImageTitle href="mailto:logistics@hackupc.com">
               <ImageIcon
                 src="yellowAlien.svg"
                 alt="Partner"
@@ -289,8 +287,7 @@ export default function HowToParticipate() {
           </RoleBlock>
 
           <RoleBlock>
-            <BlockImageTitle
-              href="mailto:sponsor@hackupc.com">
+            <BlockImageTitle href="mailto:sponsor@hackupc.com">
               <ImageIcon
                 src="redAlien.svg"
                 alt="Sponsor"

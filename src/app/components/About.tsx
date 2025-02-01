@@ -14,7 +14,10 @@ import {
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { silkscreen } from "@/app/genericComponents/fonts";
 
-const StyledImage = styled(Image)`
+const StyledImage= styled(Image)`
+  width: 120px; /* Smaller width for the snake image */
+  height: auto;
+
   @media (max-width: ${MobileBreakpoint}) {
     width: 180px; 
   }
@@ -92,7 +95,9 @@ export default function About() {
     <div id="about">
       <SectionBackground specialBackground={"#99C11C"}>
         <SectionStyled>
-          <UnderlineTitle className={silkscreen.className}>HACKUPC: CODING TO THE NEXT LEVEL</UnderlineTitle>
+          <UnderlineTitle className={silkscreen.className}>
+            HACKUPC: CODING TO THE NEXT LEVEL
+          </UnderlineTitle>
           <Container>
             <Col>
               <ImgSection>

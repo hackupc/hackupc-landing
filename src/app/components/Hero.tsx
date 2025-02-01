@@ -186,7 +186,6 @@ const Title = styled.h1`
   color: ${Colors.HeroYellow};
   text-transform: uppercase;
   text-align: center;
-  
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${TitleXL};
@@ -202,7 +201,6 @@ const TitleContainer = styled.div`
   padding-bottom: ${SpacingM};
   padding-top: ${SpacingM};
   backdrop-filter: blur(2px);
-
 `;
 
 const SubText = styled.div`
@@ -230,7 +228,6 @@ const PlayAsContainer = styled.div`
   gap: ${SpacingS};
   box-shadow: 0px 20px 4px 4px rgba(0, 0, 0, 0.3);
 
-
   @media (max-width: ${MobileBreakpoint}) {
     width: 90%;
   }
@@ -249,7 +246,7 @@ const PlayAsTitleBox = styled.div`
   margin-top: -${SpacingL};
   align-self: center;
   background-color: ${Colors.HeroBlack};
-  
+
   @media (max-width: ${MobileBreakpoint}) {
     width: 70%;
   }
@@ -444,7 +441,9 @@ export default function Hero() {
         <TitleContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
           <Title>
             HackUPC
-            <SubText className={montserrat.className}>700 Hackers | 2-4 May 2025 | 36h</SubText>
+            <SubText className={montserrat.className}>
+              700 Hackers | 2-4 May 2025 | 36h
+            </SubText>
           </Title>
         </TitleContainer>
         <PlayAsContainer
