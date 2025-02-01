@@ -5,6 +5,7 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
+import { silkscreen } from "../genericComponents/fonts";
 import Image from "next/image";
 import { BodyLink } from "@/app/genericComponents/Typography";
 import { useEffect, useState } from "react";
@@ -26,11 +27,14 @@ const ClickableLogo = styled.div`
   display: flex;
   align-items: center;
   gap: ${SpacingS};
-  cursor: url("/rocket-fire.png"), auto;
+  cursor: pointer, auto;
 `;
 
 const StyledBodyLink = styled(BodyLink)`
   margin-right: 150px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
 
   @media (max-width: ${MobileBreakpoint}) {
     margin-right: 90px;
@@ -76,6 +80,7 @@ export default function Header() {
         href="https://my.hackupc.com/"
         target="_blank"
         rel="noopener noreferrer"
+        className={silkscreen.className}
       >
         Login
       </StyledBodyLink>

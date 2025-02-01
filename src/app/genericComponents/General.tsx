@@ -45,12 +45,5 @@ export const Background = styled.div`
   height: 100%;
   min-height: 100vh;
   min-width: 100vw;
-  background-image: url("/stars_desktop.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    background-image: url("/stars_desktop.jpg");
-  }
+  background-color: #231f20;
 `;

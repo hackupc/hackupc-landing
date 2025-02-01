@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import React from "react";
 import Image from "next/image";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { silkscreen } from "@/app/genericComponents/fonts";
+import { Section } from "@/app/genericComponents/General";
 import {
   Body,
   SectionTitle,
@@ -11,8 +12,34 @@ import {
   MobileBreakpoint,
   SpacingM,
   SpacingS,
+  TitleS,
 } from "@/app/genericComponents/tokens";
-import { PrimaryOutlineButton } from "@/app/genericComponents/Buttons";
+
+const Colors = {
+  HeroYellow: "#FCFC01",
+  HeroBlue: "#0060BF",
+};
+
+const StyledButton = styled.div`
+  background-color: ${Colors.HeroYellow};
+  color: #000000;
+  padding: ${SpacingS} ${SpacingM};
+  border-radius: 8px;
+  margin-top: ${SpacingM};
+  cursor: pointer;
+  font-weight: bold;
+  font-size: ${TitleS};
+  text-align: center;
+
+  &:hover {
+    background-color: ${Colors.HeroBlue};
+    color: #ffffff;
+  }
+`;
+
+const HackersContainer = styled(Section)`
+  max-width; 100%
+`;
 
 const StyledImage = styled(Image)`
   width: 100%;
@@ -42,9 +69,11 @@ const StyledSmallTitle = styled(SmallTitle)`
 
 export default function Hackers() {
   return (
-    <SectionBackground haveBackground id="hackers">
+    <HackersContainer id="hackers">
       <Section>
-        <SectionTitle>The organization behind HackUPC</SectionTitle>
+        <SectionTitle className={silkscreen.className}>
+          The organization behind HackUPC
+        </SectionTitle>
 
         <StyledSmallTitle>
           Hackers@UPC is a non-profit student organization at Universitat
@@ -72,14 +101,16 @@ export default function Hackers() {
           </TextContainer>
         </InformationBlock>
 
-        <PrimaryOutlineButton
+        <StyledButton
+          as="a"
           href="https://hackersatupc.org"
           target="_blank"
           rel="noreferrer"
+          className={silkscreen.className}
         >
           Go to website
-        </PrimaryOutlineButton>
+        </StyledButton>
       </Section>
-    </SectionBackground>
+    </HackersContainer>
   );
 }
