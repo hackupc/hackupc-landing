@@ -11,7 +11,7 @@ import {
   SpacingXS,
 } from "@/app/genericComponents/tokens";
 import styled, { keyframes } from "styled-components";
-import {silkscreen} from "@/app/genericComponents/fonts";
+import { silkscreen } from "@/app/genericComponents/fonts";
 
 const live = keyframes`
   0% {
@@ -62,19 +62,24 @@ export default function Live() {
           When and where will everything happen?
         </BodyBold>
         <Body>
-        In our live page you will find it out! It will be available before HackUPC
-        so that you can prepare everything you might need! And of course it will 
-        be the page you visit to check out all the activities happening during the event.
-        You can also check our <Anchor href="https://live.hackupc.com/" target="_blank"> last year's live page </Anchor> and see what happened. 
+          In our live page you will find it out! It will be available before
+          HackUPC so that you can prepare everything you might need! And of
+          course it will be the page you visit to check out all the activities
+          happening during the event. You can also check our{" "}
+          <Anchor href="https://live.hackupc.com/" target="_blank">
+            {" "}
+            last year's live page{" "}
+          </Anchor>{" "}
+          and see what happened.
         </Body>
       </TextContainer>
-      <PrimaryButton className={silkscreen.className}
+      <PrimaryButton
+        className={silkscreen.className}
         /* href="https://live.hackupc.com/" 
         target="_blank"
         rel="noopener noreferrer" */
         disabled
         style={{ cursor: "not-allowed", opacity: 0.3 }}
-
       >
         Check live
       </PrimaryButton>

@@ -1,48 +1,39 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
 import {
-  BlockTitle,
-  Body,
-  SectionTitle,
-} from "@/app/genericComponents/Typography";
-import {
+  MaxScreenSize,
   MobileBreakpoint,
-  Secondary500,
-  SpacingM,
-  SpacingS,
 } from "@/app/genericComponents/tokens";
-
+import { Body, SectionTitle } from "@/app/genericComponents/Typography";
+import { silkscreen } from "@/app/genericComponents/fonts";
 
 const Colors = {
   pink: "#FF6798",
-  blue: "#0F0030", 
-  white: "#FFFFFF", 
-  black: "#000000", 
-  lightPink: "#FFB6C1", 
-  lightBlue: "#F5F5F5", 
+  blue: "#0F0030",
+  white: "#FFFFFF",
+  black: "#000000",
+  lightPink: "#FFB6C1",
+  lightBlue: "#F5F5F5",
 };
 
 const ProvideSectionWrapper = styled.div`
   background-image: url("/paintball background mobile.png");
-    background-size: contain; 
-    background-position: center top; 
-  
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding-top: 130px;
+
   @media (min-width: ${MobileBreakpoint}) {
     background-image: url("/provide desktop background.png");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    text-align: center;
-    color: white;
+    padding-top: 100px;
   }
 `;
 
 const ProvideHeader = styled(SectionTitle)`
-  font-family: 'Silkscreen', sans-serif; 
-  src: url('https://fonts.gstatic.com/s/silkscreen/v2/m8JcjfpeG5hcULX7lIph9HFwB-M.woff2') format('woff2'); 
-  color: ${Colors.white};  /* title color */
-  font-size: 24px;
+  color: ${Colors.white}; /* title color */
   margin-bottom: 30px;
   text-transform: uppercase;
   white-space: pre-line; /* Enable line breaks */
@@ -53,21 +44,27 @@ const ProvideBlockWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 60px;
+  max-width: 750px;
+  margin: auto;
 `;
 
 const ProvideBlock = styled.div`
-  background-color:${Colors.pink}; /* Pink background */
+  background-color: ${Colors.pink}; /* Pink background */
   border-radius: 15px;
   padding: 25px;
   text-align: center;
   min-width: 80%;
   border: 6px solid ${Colors.white};
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin: 0 40px;
+  }
 `;
 
 const ProvideSubTitle = styled.div`
-  background-color:${Colors.blue}; /* Blue background */
+  background-color: ${Colors.blue}; /* Blue background */
   border-radius: 10px;
-  padding: 0px;
+  padding: 0;
   z-index: 1;
   margin: -23px;
   text-align: center;
@@ -92,38 +89,40 @@ const ProvideSubTitleText = styled(Body)`
 const DividerIcon = styled.div`
   width: 174px;
   height: 64px;
-  background-image: url("/spacer div.png"); 
+  background-image: url("/spacer div.png");
   background-size: 228px 132px;
   background-position: center;
   background-repeat: no-repeat;
 `;
 
-const DividerIcon2 = styled.div`
-  width: 40px;
-  height: 40px;
-  background-image: url("/path-to-divider-icon.svg"); 
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+const FlipperIconRight = styled(Image)`
+  position: relative;
+  top: -90px;
+  left: 170px;
+  transform: scaleX(-1);
+
+  @media (max-width: ${MobileBreakpoint}) {
+    left: 30px;
+  }
 `;
 
-const DividerIcon3 = styled.div`
-  width: 40px;
-  height: 40px;
-  margin: 20px auto;
-  background-image: url("/path-to-divider-icon.svg"); 
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+const FlipperIconLeft = styled(Image)`
+  position: relative;
+  top: -90px;
+  right: 170px;
+  @media (max-width: ${MobileBreakpoint}) {
+    right: 30px;
+  }
 `;
 
 export default function Provide() {
   return (
     <ProvideSectionWrapper id="provide">
-      <DividerIcon2 />
       <ProvideBlockWrapper>
-        <DividerIcon2 />
-        <ProvideHeader>We Also {"\n"} Provide...</ProvideHeader>
+        <ProvideHeader className={silkscreen.className}>
+          We Also <br />
+          Provide...
+        </ProvideHeader>
 
         <ProvideSubTitle>
           <ProvideSubTitleText>FOOD</ProvideSubTitleText>
@@ -132,8 +131,8 @@ export default function Provide() {
       <ProvideBlockWrapper>
         <ProvideBlock>
           <ProvideBody>
-            We’ve got you completely {"\n"} covered, we even have {"\n"} midnight snacks.
-            Besides, you {"\n"} can serve yourself with {"\n"} cafeteria snacks.
+            We’ve got you completely covered, we even have midnight snacks.
+            Besides, you can serve yourself with cafeteria snacks.
           </ProvideBody>
         </ProvideBlock>
         <DividerIcon />
@@ -144,8 +143,8 @@ export default function Provide() {
       <ProvideBlockWrapper>
         <ProvideBlock>
           <ProvideBody>
-            We will provide air mattresses both {"\n"} nights so you can boost your
-            energy {"\n"} levels. Check out the FAQs for more info.
+            We will provide air mattresses both nights so you can boost your
+            energy levels. Check out the FAQs for more info.
           </ProvideBody>
         </ProvideBlock>
         <ProvideSubTitle>
@@ -155,26 +154,24 @@ export default function Provide() {
       <ProvideBlockWrapper>
         <ProvideBlock>
           <ProvideBody>
-            You can also visit our sponsors' stands or {"\n"} meet them remotely!
-            They'll be available {"\n"} during the day and would love to talk to {"\n"} you!
+            You can also visit our sponsors' stands or meet them remotely!
+            They'll be available during the day and would love to talk to you!
             (you may even get some swag as well).
           </ProvideBody>
         </ProvideBlock>
         <div>
-        <Image
-          src="/pinball flipper1.png"
-          alt="flipper 1"
-          width={155}
-          height={85}
-          style={{position: "relative", top: "-100px", left: "-200px"}}
-        />
-        <Image
-          src="/pinball flipper2.png"
-          alt="flipper 2"
-          width={155}
-          height={85}
-          style={{position: "relative", top: "-100px", left: "200px"}}
-        />
+          <FlipperIconLeft
+            src="/pinball flipper2.png"
+            alt="flipper 2"
+            width={155}
+            height={85}
+          />
+          <FlipperIconRight
+            src="/pinball flipper2.png"
+            alt="flipper 2"
+            width={155}
+            height={85}
+          />
         </div>
       </ProvideBlockWrapper>
     </ProvideSectionWrapper>
