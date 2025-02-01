@@ -42,6 +42,7 @@ const SponsorsAndPartnersContainer = styled(Section)`
 
 export const StyledSectionTitle = styled(SectionTitle)`
   font-size: ${TitleXL};
+  z-index: 2;
 `;
 
 const SponsorsBlock = styled.div`
@@ -57,6 +58,7 @@ const SponsorsBlock = styled.div`
 
 const PartnersBlock = styled.div`
   max-width: ${MaxScreenSize};
+  z-index: 2;
 `;
 
 const SponsorRow = styled.div`
