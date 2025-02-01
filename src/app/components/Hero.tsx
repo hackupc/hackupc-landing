@@ -8,13 +8,13 @@ import {
   SpacingXL,
   SpacingXXXL,
   TitleXXL,
-  TitleL,
   TitleM,
   TitleS,
   SpacingL,
   SpacingXS,
+  TitleXL,
 } from "@/app/genericComponents/tokens";
-import { silkscreen } from "@/app/genericComponents/fonts";
+import { montserrat, silkscreen } from "@/app/genericComponents/fonts";
 
 const Colors = {
   HeroYellow: "#FCFC01",
@@ -186,10 +186,10 @@ const Title = styled.h1`
   color: ${Colors.HeroYellow};
   text-transform: uppercase;
   text-align: center;
-  backdrop-filter: blur(2px);
+  
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: ${TitleL};
+    font-size: ${TitleXL};
   }
 `;
 
@@ -201,6 +201,8 @@ const TitleContainer = styled.div`
   border-bottom: ${SpacingXS} dotted yellow;
   padding-bottom: ${SpacingM};
   padding-top: ${SpacingM};
+  backdrop-filter: blur(2px);
+
 `;
 
 const SubText = styled.div`
@@ -209,7 +211,7 @@ const SubText = styled.div`
   text-align: center;
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: ${TitleM};
+    font-size: ${TitleS};
   }
 `;
 
@@ -442,7 +444,7 @@ export default function Hero() {
         <TitleContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
           <Title>
             HackUPC
-            <SubText>700 Hackers | 2-4 May 2025 | 36h</SubText>
+            <SubText className={montserrat.className}>700 Hackers | 2-4 May 2025 | 36h</SubText>
           </Title>
         </TitleContainer>
         <PlayAsContainer
