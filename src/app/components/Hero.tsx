@@ -8,7 +8,6 @@ import {
   SpacingXL,
   SpacingXXXL,
   TitleXXL,
-  TitleL,
   TitleM,
   TitleS,
   SpacingL,
