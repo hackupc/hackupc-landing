@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
 import {
-  MaxScreenSize,
   MobileBreakpoint,
 } from "@/app/genericComponents/tokens";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
