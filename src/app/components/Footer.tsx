@@ -143,7 +143,7 @@ export default function Footer() {
           </BodyLink>
         </Body>
       </SocialsAndOthers>
-      <Body>
+      <Body style={{ textAlign: "center" }}>
         <BodyLink
           href="https://legal.hackersatupc.org/hackupc/terms_and_conditions"
           target="_blank"
