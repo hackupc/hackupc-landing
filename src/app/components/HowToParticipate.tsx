@@ -23,18 +23,6 @@ const GridContainer = styled.div`
   gap: ${SpacingXL};
   text-align: center;
   background-color: black;
-  background-size:
-    80px 80px,
-    40px 40px,
-    40px 40px,
-    40px 40px,
-    40px 40px;
-  background-position:
-    0 0,
-    50% 50%,
-    10% 10%,
-    90% 10%,
-    50% 90%;
 
   @media (max-width: ${MobileBreakpoint}) {
     grid-template-columns: 1fr;
@@ -69,9 +57,6 @@ const RoleBlock = styled.div`
 `;
 
 const SpecialSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 0;
   gap: ${SpacingM};
   width: 100vw;
@@ -113,8 +98,8 @@ const HowToTitle = styled.div`
   }
 
   &::before {
-    top: -10px;
-    left: -10px;
+    top: -12px;
+    left: -9px;
     border-right: none;
     border-bottom: none;
   }
@@ -128,6 +113,11 @@ const HowToTitle = styled.div`
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileTitleL};
+    padding: ${SpacingM};
+
+    &::after {
+      bottom: -25px;
+    }
   }
 `;
 
@@ -162,7 +152,7 @@ const HowToTitleWrapper = styled.div`
 
 const Text = styled(Body)`
   position: relative;
-  margin-top: 20%;
+  margin-top: ${SpacingS};
 `;
 
 const ColoredButton = styled(SecondaryButton)`
@@ -206,6 +196,7 @@ export default function HowToParticipate() {
                 Mentor
               </BlockTitle>
             </BlockImageTitle>
+
             <Text>
               Help and motivate hackers with your knowledge. Either because you
               are passionate about it, or if you've graduated more than a year
