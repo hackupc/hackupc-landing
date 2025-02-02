@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
-import {
-  MobileBreakpoint,
-} from "@/app/genericComponents/tokens";
+import { MobileBreakpoint } from "@/app/genericComponents/tokens";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import { silkscreen } from "@/app/genericComponents/fonts";
 

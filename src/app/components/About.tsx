@@ -14,12 +14,12 @@ import {
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { silkscreen } from "@/app/genericComponents/fonts";
 
-const StyledImage= styled(Image)`
+const StyledImage = styled(Image)`
   width: 120px; /* Smaller width for the snake image */
   height: auto;
 
   @media (max-width: ${MobileBreakpoint}) {
-    width: 180px; 
+    width: 180px;
   }
 `;
 
@@ -28,7 +28,7 @@ const AppleImage = styled(Image)`
   display: none;
 
   @media (max-width: ${MobileBreakpoint}) {
-    display: block; 
+    display: block;
   }
 `;
 
