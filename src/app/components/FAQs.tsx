@@ -102,33 +102,66 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
 `;
 
 const CustomBackground = styled(SectionBackground)`
-  background-image: url("/cloud.svg"),
-                    url("/cloud2.svg"),
-                    url("/cloud2.svg"),
-                    url("/cloud.svg"),
-                    url("/cloud.svg"),
-                    url("/cloud2.svg");
-  background-position: 20% 25%,
-                       90% 10%,
-                       10% 65%,
-                       75% 55%,
-                       20% 90%,
-                       90% 85%;
-  background-repeat: no-repeat;
-  background-size: 15%, 
-                  20%, 
-                  15%, 
-                  18%, 
-                  13%, 
-                  9%;
+  background-image: url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"),
+    url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"),
+    url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"),
+    url("/cloud.svg");
 
-  @media (max-width: ${MobileBreakpoint}) {
-    background-size: 25%,
-                    30%,
-                    25%,
-                    28%,
-                    23%,
-                    19%;
+  background-position:
+    10% 8%,
+    60% 5%,
+    85% 12%,
+    5% 35%,
+    75% 38%,
+    40% 50%,
+    20% 65%,
+    90% 70%,
+    50% 78%,
+    15% 90%,
+    70% 95%,
+    95% 88%;
+
+  background-repeat: no-repeat;
+
+  background-size: 12%, 14%, 10%, 15%, 13%, 16%, 10%, 15%, 12%, 14%, 12%, 16%;
+
+  background-attachment: fixed; /* ✅ Fixes clouds in place */
+
+  animation: moveClouds 10s infinite ease-in-out alternate;
+
+  @keyframes moveClouds {
+    0% {
+      background-position:
+        10% 8%,
+        60% 5%,
+        85% 12%,
+        5% 35%,
+        75% 38%,
+        40% 50%,
+        20% 65%,
+        90% 70%,
+        50% 78%,
+        15% 90%,
+        70% 95%,
+        95% 88%;
+    }
+
+    100% {
+      background-position:
+        12% 10%,
+        58% 3%,
+        87% 14%,
+        8% 33%,
+        78% 40%,
+        42% 52%,
+        22% 63%,
+        88% 72%,
+        52% 80%,
+        18% 92%,
+        72% 93%,
+        97% 86%;
+    }
+  }
 `;
 
 const Coin = styled(Image)<{ isVisible: boolean }>`
