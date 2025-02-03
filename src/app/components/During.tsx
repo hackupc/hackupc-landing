@@ -303,7 +303,7 @@ export default function During() {
           DURING THE EVENT
         </SectionTitle>
         <StyledBody>
-          Coding is the main part of HackUPC, but we have many more activities
+          Coding is the main part of HackUPC, but we have many more activities!
         </StyledBody>
 
         <GameContainer>
