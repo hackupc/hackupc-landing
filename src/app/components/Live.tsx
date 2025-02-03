@@ -68,7 +68,7 @@ export default function Live() {
           happening during the event. You can also check our{" "}
           <Anchor href="https://live.hackupc.com/" target="_blank">
             {" "}
-            last year's live page{" "}
+            last year's live page
           </Anchor>{" "}
           page and see what happened.
         </Body>
