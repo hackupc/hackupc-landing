@@ -33,7 +33,7 @@ const Colors = {
 
 const SponsorsAndPartnersContainer = styled(Section)`
   position: relative;
-  padding: ${SpacingXL} 0 ${SpacingXXL} 0;
+  padding: ${SpacingL} 0 ${SpacingL} 0;
   gap: ${SpacingM};
   max-width: 100%;
   background-color: ${Colors.Background};
@@ -41,7 +41,6 @@ const SponsorsAndPartnersContainer = styled(Section)`
 `;
 
 export const StyledSectionTitle = styled(SectionTitle)`
-  font-size: ${TitleXL};
   z-index: 2;
 `;
 
@@ -184,7 +183,7 @@ const SideLineBase = styled.div`
 
 const MiddleLineBase = styled.div`
   position: absolute;
-  height: 75px;
+  height: 55px;
   width: 5px;
   background-color: white;
   left: 50%;
