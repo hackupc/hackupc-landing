@@ -10,6 +10,7 @@ import {
   MobileBreakpoint,
   SpacingM,
   SpacingS,
+  SpacingXS,
 } from "@/app/genericComponents/tokens";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { silkscreen } from "@/app/genericComponents/fonts";
@@ -34,12 +35,12 @@ const AppleImage = styled(Image)`
 
 const SectionStyled = styled(Section)`
   color: ${"#000000"};
-  padding-bottom: 50px;
 `;
 
 const UnderlineTitle = styled(SectionTitle)`
   border-bottom: 3px solid black;
   width: 80%;
+  padding-bottom: ${SpacingXS};
 `;
 
 const Container = styled.div`
