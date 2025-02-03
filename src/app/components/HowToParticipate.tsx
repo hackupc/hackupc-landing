@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import { Body, BlockTitle } from "@/app/genericComponents/Typography";
+import { BlockTitle, Body } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   MobileTitleL,
@@ -9,8 +9,8 @@ import {
   SpacingL,
   SpacingM,
   SpacingS,
-  SpacingXXS,
   SpacingXL,
+  SpacingXXS,
   TitleL,
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
@@ -131,7 +131,7 @@ const HowToTitle = styled.div`
 const HowToTitleWrapper = styled.div`
   position: relative;
   width: fit-content;
-  margin: 0 auto ${SpacingXL};
+  margin: 0 auto ${SpacingL};
 
   &::before,
   &::after {
