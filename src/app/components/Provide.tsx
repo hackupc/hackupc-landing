@@ -5,7 +5,11 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-import { Body, SectionTitle } from "@/app/genericComponents/Typography";
+import {
+  Body,
+  BodyLink,
+  SectionTitle,
+} from "@/app/genericComponents/Typography";
 import { silkscreen } from "@/app/genericComponents/fonts";
 import { useEffect, useState } from "react";
 import { Section } from "@/app/genericComponents/General";
@@ -127,6 +131,18 @@ const FlipperIconLeft = styled(FlipperIcon)`
   }
 `;
 
+const BodyLinkStyled = styled(BodyLink)`
+  color: ${Colors.lightPink};
+
+  &:hover {
+    color: ${Colors.lightBlue};
+  }
+
+  &:active {
+    color: ${Colors.blue};
+  }
+`;
+
 export default function Provide() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -185,7 +201,9 @@ export default function Provide() {
             <ProvideBlock>
               <ProvideBody>
                 We will provide air mattresses both nights so you can boost your
-                energy levels. Check out the FAQs for more info.
+                energy levels. Check out the{" "}
+                <BodyLinkStyled href={"#faqs"}>FAQs</BodyLinkStyled> for more
+                info.
               </ProvideBody>
             </ProvideBlock>
           </ProvideBlockWrapper>
@@ -195,9 +213,9 @@ export default function Provide() {
             </ProvideSubTitle>
             <ProvideBlock>
               <ProvideBody>
-                You can also visit our sponsors' stands or meet them remotely!
+                You can also visit our sponsors’ stands or meet them remotely!
                 They'll be available during the day and would love to talk to
-                you! (you may even get some swag as well).
+                you! (you may even get some swag as well)
               </ProvideBody>
             </ProvideBlock>
             <div style={{ height: 40 }}>
