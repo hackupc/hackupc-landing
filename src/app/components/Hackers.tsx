@@ -10,7 +10,6 @@ import {
 } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  SpacingL,
   SpacingM,
   SpacingS,
   TitleS,
