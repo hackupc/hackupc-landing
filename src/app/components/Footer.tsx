@@ -36,6 +36,10 @@ const SocialsAndOthers = styled.div`
 
 const BodyLinkYellow = styled(BodyLink)`
   color: #fcfc01;
+
+  &:hover {
+    color: #0060bf;
+  }
 `;
 
 const SocialsBlock = styled.div`
