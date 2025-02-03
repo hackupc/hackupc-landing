@@ -60,15 +60,20 @@ const QuestionsBlock = styled.div`
 
 const Question = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  gap: ${SpacingS};
   padding: ${SpacingXS};
   background-color: rgba(1, 1, 1, 0.5);
   border-radius: 10px;
 `;
 
+const QuestionTitleWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${SpacingS};
+`;
+
 const QuestionTitle = styled(BodyBold)`
-  margin-bottom: ${SpacingXS};
   cursor: pointer;
 `;
 
@@ -98,6 +103,7 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
       opacity: 1;
       height: auto;
       visibility: visible;
+      padding: ${SpacingS};
     `}
 `;
 
@@ -273,33 +279,33 @@ export default function FAQs() {
                 </BlockTitle>
                 {hackupc_faqs.map((faq) => (
                   <Question key={faq.id}>
-                    <Coin
-                      src="/coin.png"
-                      width={28}
-                      height={28}
-                      alt="Coin"
-                      isVisible={showCoin === faq.id}
-                    />
-                    <Image
-                      src={
-                        activeFaqId === faq.id
-                          ? "/used_question_mark_block.svg"
-                          : "/question_mark_block.svg"
-                      }
-                      width={32}
-                      height={32}
-                      alt="Question Mark Block"
-                      onClick={() => toggleFaq(faq.id)}
-                      style={{ cursor: "pointer", zIndex: 2 }}
-                    />
-                    <div>
+                    <QuestionTitleWrap>
+                      <Coin
+                        src="/coin.png"
+                        width={28}
+                        height={28}
+                        alt="Coin"
+                        isVisible={showCoin === faq.id}
+                      />
+                      <Image
+                        src={
+                          activeFaqId === faq.id
+                            ? "/used_question_mark_block.svg"
+                            : "/question_mark_block.svg"
+                        }
+                        width={32}
+                        height={32}
+                        alt="Question Mark Block"
+                        onClick={() => toggleFaq(faq.id)}
+                        style={{ cursor: "pointer", zIndex: 2 }}
+                      />
                       <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                         {faq.question}
                       </QuestionTitle>
-                      <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                        {renderAnswer(faq.answer)}
-                      </QuestionAnswer>
-                    </div>
+                    </QuestionTitleWrap>
+                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                      {renderAnswer(faq.answer)}
+                    </QuestionAnswer>
                   </Question>
                 ))}
               </QuestionsBlock>
@@ -320,33 +326,33 @@ export default function FAQs() {
                 </BlockTitle>
                 {travel_faqs.map((faq) => (
                   <Question key={faq.id}>
-                    <Coin
-                      src="/coin.png"
-                      width={28}
-                      height={28}
-                      alt="Coin"
-                      isVisible={showCoin === faq.id}
-                    />
-                    <Image
-                      src={
-                        activeFaqId === faq.id
-                          ? "/used_question_mark_block.svg"
-                          : "/question_mark_block.svg"
-                      }
-                      width={32}
-                      height={32}
-                      alt="Question Mark Block"
-                      onClick={() => toggleFaq(faq.id)}
-                      style={{ cursor: "pointer", zIndex: 2 }}
-                    />
-                    <div>
+                    <QuestionTitleWrap>
+                      <Coin
+                        src="/coin.png"
+                        width={28}
+                        height={28}
+                        alt="Coin"
+                        isVisible={showCoin === faq.id}
+                      />
+                      <Image
+                        src={
+                          activeFaqId === faq.id
+                            ? "/used_question_mark_block.svg"
+                            : "/question_mark_block.svg"
+                        }
+                        width={32}
+                        height={32}
+                        alt="Question Mark Block"
+                        onClick={() => toggleFaq(faq.id)}
+                        style={{ cursor: "pointer", zIndex: 2 }}
+                      />
                       <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                         {faq.question}
                       </QuestionTitle>
-                      <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                        {renderAnswer(faq.answer)}
-                      </QuestionAnswer>
-                    </div>
+                    </QuestionTitleWrap>
+                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                      {renderAnswer(faq.answer)}
+                    </QuestionAnswer>
                   </Question>
                 ))}
               </QuestionsBlock>
@@ -369,33 +375,33 @@ export default function FAQs() {
                 </BlockTitle>
                 {applications_faqs.map((faq) => (
                   <Question key={faq.id}>
-                    <Coin
-                      src="/coin.png"
-                      width={28}
-                      height={28}
-                      alt="Coin"
-                      isVisible={showCoin === faq.id}
-                    />
-                    <Image
-                      src={
-                        activeFaqId === faq.id
-                          ? "/used_question_mark_block.svg"
-                          : "/question_mark_block.svg"
-                      }
-                      width={32}
-                      height={32}
-                      alt="Question Mark Block"
-                      onClick={() => toggleFaq(faq.id)}
-                      style={{ cursor: "pointer", zIndex: 2 }}
-                    />
-                    <div>
+                    <QuestionTitleWrap>
+                      <Coin
+                        src="/coin.png"
+                        width={28}
+                        height={28}
+                        alt="Coin"
+                        isVisible={showCoin === faq.id}
+                      />
+                      <Image
+                        src={
+                          activeFaqId === faq.id
+                            ? "/used_question_mark_block.svg"
+                            : "/question_mark_block.svg"
+                        }
+                        width={32}
+                        height={32}
+                        alt="Question Mark Block"
+                        onClick={() => toggleFaq(faq.id)}
+                        style={{ cursor: "pointer", zIndex: 2 }}
+                      />
                       <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                         {faq.question}
                       </QuestionTitle>
-                      <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                        {renderAnswer(faq.answer)}
-                      </QuestionAnswer>
-                    </div>
+                    </QuestionTitleWrap>
+                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                      {renderAnswer(faq.answer)}
+                    </QuestionAnswer>
                   </Question>
                 ))}
               </QuestionsBlock>
@@ -415,33 +421,33 @@ export default function FAQs() {
                 </BlockTitle>
                 {teams_faqs.map((faq) => (
                   <Question key={faq.id}>
-                    <Coin
-                      src="/coin.png"
-                      width={28}
-                      height={28}
-                      alt="Coin"
-                      isVisible={showCoin === faq.id}
-                    />
-                    <Image
-                      src={
-                        activeFaqId === faq.id
-                          ? "/used_question_mark_block.svg"
-                          : "/question_mark_block.svg"
-                      }
-                      width={32}
-                      height={32}
-                      alt="Question Mark Block"
-                      onClick={() => toggleFaq(faq.id)}
-                      style={{ cursor: "pointer", zIndex: 2 }}
-                    />
-                    <div>
+                    <QuestionTitleWrap>
+                      <Coin
+                        src="/coin.png"
+                        width={28}
+                        height={28}
+                        alt="Coin"
+                        isVisible={showCoin === faq.id}
+                      />
+                      <Image
+                        src={
+                          activeFaqId === faq.id
+                            ? "/used_question_mark_block.svg"
+                            : "/question_mark_block.svg"
+                        }
+                        width={32}
+                        height={32}
+                        alt="Question Mark Block"
+                        onClick={() => toggleFaq(faq.id)}
+                        style={{ cursor: "pointer", zIndex: 2 }}
+                      />
                       <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                         {faq.question}
                       </QuestionTitle>
-                      <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                        {renderAnswer(faq.answer)}
-                      </QuestionAnswer>
-                    </div>
+                    </QuestionTitleWrap>
+                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                      {renderAnswer(faq.answer)}
+                    </QuestionAnswer>
                   </Question>
                 ))}
               </QuestionsBlock>
