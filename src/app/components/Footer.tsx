@@ -34,6 +34,14 @@ const SocialsAndOthers = styled.div`
   }
 `;
 
+const BodyLinkYellow = styled(BodyLink)`
+  color: #fcfc01;
+
+  &:hover {
+    color: #0060bf;
+  }
+`;
+
 const SocialsBlock = styled.div`
   display: flex;
   align-items: center;
@@ -44,13 +52,13 @@ const SocialsBlock = styled.div`
 export default function Footer() {
   return (
     <Section>
-      <BodyLink
+      <BodyLinkYellow
         href="https://2024.hackupc.com/"
         target="_blank"
         rel="noreferrer"
       >
         2024 site
-      </BodyLink>
+      </BodyLinkYellow>
       <SocialsAndOthers>
         <SocialsBlock>
           <a
@@ -126,57 +134,57 @@ export default function Footer() {
           </a>
         </SocialsBlock>
         <Body>
-          <BodyLink
+          <BodyLinkYellow
             href="https://hacknights.dev/"
             target="_blank"
             rel="noreferrer"
           >
             HackNights
-          </BodyLink>{" "}
+          </BodyLinkYellow>{" "}
           |{" "}
-          <BodyLink
+          <BodyLinkYellow
             href="https://hackersatupc.org/"
             target="_blank"
             rel="noreferrer"
           >
             Hackers@UPC
-          </BodyLink>
+          </BodyLinkYellow>
         </Body>
       </SocialsAndOthers>
-      <Body>
-        <BodyLink
+      <Body style={{ textAlign: "center" }}>
+        <BodyLinkYellow
           href="https://legal.hackersatupc.org/hackupc/terms_and_conditions"
           target="_blank"
           rel="noreferrer"
         >
           Terms and conditions
-        </BodyLink>{" "}
+        </BodyLinkYellow>{" "}
         |{" "}
-        <BodyLink
+        <BodyLinkYellow
           href="https://legal.hackersatupc.org/hackupc/legal_notice"
           target="_blank"
           rel="noreferrer"
         >
           Legal notice
-        </BodyLink>{" "}
+        </BodyLinkYellow>{" "}
         |{" "}
-        <BodyLink
+        <BodyLinkYellow
           href="https://legal.hackersatupc.org/hackupc/privacy_and_cookies"
           target="_blank"
           rel="noreferrer"
         >
           Privacy and cookies
-        </BodyLink>
+        </BodyLinkYellow>
       </Body>
       <Body style={{ marginTop: SpacingXS }}>
         Made with ❤️ by{" "}
-        <BodyLink
+        <BodyLinkYellow
           href="https://hackersatupc.org/"
           target="_blank"
           rel="noreferrer"
         >
           Hackers@UPC
-        </BodyLink>
+        </BodyLinkYellow>
       </Body>
     </Section>
   );

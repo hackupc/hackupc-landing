@@ -2,16 +2,12 @@
 import styled, { keyframes } from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { silkscreen } from "@/app/genericComponents/fonts";
-//import { SectionTitle } from "@/app/genericComponents/Typography";
 import {
+  MaxScreenSize,
   MobileBreakpoint,
-  TitleXL,
-  SpacingXXL,
-  SpacingXL,
   SpacingL,
   SpacingM,
   SpacingS,
-  MaxScreenSize,
 } from "@/app/genericComponents/tokens";
 
 import {
@@ -33,7 +29,7 @@ const Colors = {
 
 const SponsorsAndPartnersContainer = styled(Section)`
   position: relative;
-  padding: ${SpacingXL} 0 ${SpacingXXL} 0;
+  padding: ${SpacingL} 0 ${SpacingL} 0;
   gap: ${SpacingM};
   max-width: 100%;
   background-color: ${Colors.Background};
@@ -41,7 +37,6 @@ const SponsorsAndPartnersContainer = styled(Section)`
 `;
 
 export const StyledSectionTitle = styled(SectionTitle)`
-  font-size: ${TitleXL};
   z-index: 2;
 `;
 
@@ -53,10 +48,12 @@ const SponsorsBlock = styled.div`
   align-content: center;
   margin-bottom: ${SpacingL};
   max-width: ${MaxScreenSize};
+  padding: 0 ${SpacingM};
   z-index: 2;
 `;
 
 const PartnersBlock = styled.div`
+  padding: 0 ${SpacingM};
   max-width: ${MaxScreenSize};
   z-index: 2;
 `;
@@ -184,7 +181,7 @@ const SideLineBase = styled.div`
 
 const MiddleLineBase = styled.div`
   position: absolute;
-  height: 75px;
+  height: 55px;
   width: 5px;
   background-color: white;
   left: 50%;

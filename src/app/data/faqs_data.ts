@@ -8,7 +8,7 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "HackUPC is the first student hackathon in Spain. This will be our tenth edition with lots of side activities to learn new technologies, meet interesting people and have fun. Come and make history with us!",
+          "HackUPC is the first student hackathon in Spain. This will be our eleventh edition with lots of side activities to learn new technologies, meet interesting people and have fun. Come and make history with us!",
       },
     ],
   },
@@ -19,7 +19,7 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "The opening ceremony starts at 7:00 p.m. on Friday, May 3rd. We expect to close this year’s edition by 5:00 p.m. on Sunday, May 5th.",
+          "The opening ceremony starts at 7:00 p.m. on Friday, May 2nd. We expect to close this year’s edition by 5:00 p.m. on Sunday, May 4th.",
       },
     ],
   },
@@ -39,7 +39,7 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          " FIB buildings (A3, A4, A5 and A6) in sunny Barcelona. Expect around 25ºC!",
+          " FIB and ETSETB buildings (A3, A4, A5 and A6) in sunny Barcelona. Expect temperatures from 15ºC to 25ºC!",
       },
     ],
   },
@@ -50,7 +50,7 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "HackUPC is free for all accepted hackers. We will provide you with Wi-Fi, swag, workspaces with power outlets (Type F plug), and meals (including breakfast, lunch, dinner, and snacks during the night). There will be access to the showers in a specific schedule and mattresses to relax in the sleep-enabled classrooms (there will not be one mattress per person).",
+          "HackUPC is free for all accepted hackers. We will provide you with Wi-Fi, swag, workspaces with power outlets (Type F plug), and meals (including breakfast, lunch, dinner, and snacks during the night). There will be access to the showers in a specific schedule and mattresses to relax in the sleep-enabled classrooms (there will not be one mattress per person)",
       },
     ],
   },
@@ -61,7 +61,12 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "You can build any tech-related project. We do not have restrictions over the topic. Some examples are web pages, mobile apps, hardware projects, games, an API... Remember that you can also use a variety of hardware components, from Arduino kits and Raspberry Pi's, to Amazon Echo dots and Myo Arm.",
+          "You can build any tech-related project. We do not have restrictions over the topic. Some examples are web pages, mobile apps, hardware projects, games, an API... Remember that you can also use a variety of hardware components, from Arduino kits and Raspberry Pi's, to Amazon Echo dots and Myo Arm. Once the event starts you will have the catalogue will all the available hardware on ",
+      },
+      {
+        type: "Link",
+        content: "my.hackupc.com",
+        link: "https://my.hackupc.com",
       },
     ],
   },
@@ -83,7 +88,7 @@ export const hackupc_faqs: FAQs[] = [
         options: [
           "Sleeping bag",
           "Comfortable clothes",
-          "Towel, flip-flops, and soap, we encourage all the hackers to take a shower! </br></br>",
+          "Towel, flip-flops, and soap, we encourage all the hackers to take a shower!",
         ],
       },
       {
@@ -100,7 +105,16 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "Projects will mainly be judged based on technical difficulty, innovation, overall learning experience, and also, on their usability and design by a panel of selected judges from the industry.",
+          "Projects will mainly be judged based on technical difficulty, innovation, overall learning experience, and also, on their usability and design by a panel of selected judges from the industry. Check our competition rules on our ",
+      },
+      {
+        type: "Link",
+        content: "live page",
+        link: "https://live.hackupc.com/",
+      },
+      {
+        type: "Text",
+        content: ".",
       },
     ],
   },
@@ -154,7 +168,7 @@ export const travel_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "Of course! The quantity changes depending on where you come from. We are giving up to €50 for Spaniards outside of Catalonia, €120 if you are coming from Europe and up to €200 if you come from outside Europe. We want to give all of you the opportunity to join us! However, you must remember that not all participants will be eligible to receive travel reimbursement. In the end, we have a limited budget, and we want to help our participants, but we are a student organization and we have limited resources.",
+          "Of course! The quantity varies depending on where you come from. We pay half of the travel costs, with a maximum of €50 for Spaniards outside of Catalonia, up to €120 if you are coming from Europe and up to a range between €120 and €200 if you come from outside Europe. We want to give all of you the opportunity to join us! However, note that not all participants will be eligible to receive travel reimbursement. In the end, we have a limited budget, and we want to help our participants, but we are a student organization and we have limited resources.",
       },
     ],
   },
@@ -164,8 +178,17 @@ export const travel_faqs: FAQs[] = [
     answer: [
       {
         type: "Text",
+        content: "All the process will happen through ",
+      },
+      {
+        type: "Link",
+        content: "my.hackupc.com",
+        link: "https://my.hackupc.com",
+      },
+      {
+        type: "Text",
         content:
-          "Once you are accepted to the hackathon, you will need to confirm your spot, and at that moment you will be able to ask for travel reimbursement. Select the option if you want to request it. In case the option doesn't show, that means that we have run out of travel reimbursement. You will then introduce your travel cost, but take in account the receiving amount can change depending on the budget we have left.",
+          ". Once you are accepted to the hackathon, you will need to confirm your spot. At that moment, you will be able to ask for travel reimbursement. Select the option if you want to request it. In case the option doesn't show, that means that we have run out of travel reimbursement. After that, you will need to submit the tickets for your travel expenses, note that we only accept tickets from plane, train, or bus with a minimum total amount of €50.",
       },
     ],
   },
@@ -179,7 +202,7 @@ export const travel_faqs: FAQs[] = [
           "To be able to receive Travel Reimbursement money, you need to match the following criteria:",
         options: [
           "Upload your tickets before 2nd May to our platform (we only accept flight, bus, or train tickets) alongside your PayPal account (we only pay this way).",
-          "The arrival tickets should be after April 26th and the departure tickets should be prior to May 10th.",
+          "The arrival tickets should be after April 25th and the departure tickets should be prior to May 9th.",
           "In the hackathon, it’s mandatory to demo your project to HackUPC judges, presenting only to sponsors will not be considered valid.",
           "The project should follow all the HackUPC rules.",
           "After the hackathon, upload your Devpost link to our platform.",
@@ -219,7 +242,7 @@ export const applications_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "As long as you graduated a year before the event, or later, you can still be accepted as a hacker. Nevertheless, if that isn't your case, and you don't want to miss HackUPC, you can apply as a mentor!",
+          "As long as you graduated a year before the event (May 2nd, 2024), or later, you can still be accepted as a hacker. Nevertheless, if that isn't your case, and you don't want to miss HackUPC, you can apply as a mentor!",
       },
     ],
   },
@@ -245,13 +268,13 @@ export const applications_faqs: FAQs[] = [
       },
       {
         type: "Link",
-        content: "On our Medium page, you can find a great post ",
+        content: "On our Medium page",
         link: "https://medium.com/@hackupc/the-application-process-44853805521f",
       },
       {
         type: "Text",
         content:
-          "in which are detailed all the steps to make your application even greater. Make sure you check it out!",
+          ", you can find a great post in which are detailed all the steps to make your application even greater. Make sure you check it out!",
       },
     ],
   },
@@ -275,7 +298,7 @@ export const applications_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "Don’t worry! If you cannot join your friends in the application, it doesn't mean that you can not join them during the event. But remember that the maximum size team is 4 people.",
+          "If someone in your team has already been accepted you will not be able to join their team. But don’t worry! If you cannot join your friends in the application, it doesn't mean that you can not join them during the event. But remember that the maximum size team is 4 people.",
       },
     ],
   },
@@ -300,7 +323,7 @@ export const teams_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "If myTeam.length <= 4, you're good to go.<br/><br/>" +
+          "If myTeam.size() <= 4, you're good to go.<br/><br/>" +
           "Teams up to 4 members are welcome. Keep in mind that if your team is bigger, you won't be able to participate in any HackUPC competition or challenge, so you should split into multiple teams.",
       },
     ],

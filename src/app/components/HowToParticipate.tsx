@@ -1,17 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import { Body, BlockTitle } from "@/app/genericComponents/Typography";
+import {
+  BlockTitle,
+  Body,
+  SectionTitle,
+} from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  MobileTitleL,
   Secondary100,
   SpacingL,
   SpacingM,
   SpacingS,
-  SpacingXXS,
   SpacingXL,
-  TitleL,
+  SpacingXXS,
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
 import { SecondaryButton } from "@/app/genericComponents/Buttons";
@@ -23,22 +25,33 @@ const GridContainer = styled.div`
   gap: ${SpacingXL};
   text-align: center;
   background-color: black;
-  background-size:
-    80px 80px,
-    40px 40px,
-    40px 40px,
-    40px 40px,
-    40px 40px;
-  background-position:
-    0 0,
-    50% 50%,
-    10% 10%,
-    90% 10%,
-    50% 90%;
 
   @media (max-width: ${MobileBreakpoint}) {
     grid-template-columns: 1fr;
   }
+`;
+
+const ImageIcon = styled(Image)`
+  margin-bottom: ${SpacingS};
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  @keyframes wiggle {
+    0% {
+      transform: translateX(-15px);
+    }
+    50% {
+      transform: translateX(15px);
+    }
+    100% {
+      transform: translateX(-15px);
+    }
+  }
+
+  animation: wiggle 2s infinite ease-in-out;
 `;
 
 const RoleBlock = styled.div`
@@ -46,7 +59,7 @@ const RoleBlock = styled.div`
   flex-direction: column;
   align-items: center;
   padding: ${SpacingM};
-  min-height: 250px;
+  min-height: 300px;
   justify-content: space-between;
   position: relative;
   border: ${SpacingXXS} dashed;
@@ -66,25 +79,38 @@ const RoleBlock = styled.div`
   &:nth-child(4) {
     border-color: #fb3e01;
   }
+
+  &:nth-child(1) ${ImageIcon} {
+    animation-delay: 0s;
+  }
+
+  &:nth-child(2) ${ImageIcon} {
+    animation-delay: 0.3s;
+  }
+
+  &:nth-child(3) ${ImageIcon} {
+    animation-delay: 0.6s;
+  }
+
+  &:nth-child(4) ${ImageIcon} {
+    animation-delay: 0.9s;
+  }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin-top: ${SpacingM};
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
 `;
 
 const SpecialSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 0;
   gap: ${SpacingM};
   width: 100vw;
   background-color: black;
   position: relative;
   z-index: 0;
-`;
-
-const ImageIcon = styled(Image)`
-  margin-bottom: ${SpacingS};
-  &:hover {
-    transform: scale(1.5);
-  }
 `;
 
 const BlockImageTitle = styled.a`
@@ -94,11 +120,8 @@ const BlockImageTitle = styled.a`
   padding: ${SpacingS};
 `;
 
-const HowToTitle = styled.div`
-  font-size: ${TitleL};
+const HowToTitle = styled(SectionTitle)`
   padding: ${SpacingL};
-  text-align: center;
-  font-weight: bold;
   width: fit-content;
   margin: 0 auto ${SpacingL};
   position: relative;
@@ -113,8 +136,8 @@ const HowToTitle = styled.div`
   }
 
   &::before {
-    top: -10px;
-    left: -10px;
+    top: -12px;
+    left: -9px;
     border-right: none;
     border-bottom: none;
   }
@@ -127,14 +150,19 @@ const HowToTitle = styled.div`
   }
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: ${MobileTitleL};
+    padding: ${SpacingM};
+
+    &::after {
+      bottom: -25px;
+    }
   }
 `;
 
 const HowToTitleWrapper = styled.div`
   position: relative;
   width: fit-content;
-  margin: 0 auto ${SpacingXL};
+  margin: 0 auto ${SpacingL};
+  margin-top: ${SpacingS};
 
   &::before,
   &::after {
@@ -162,7 +190,8 @@ const HowToTitleWrapper = styled.div`
 
 const Text = styled(Body)`
   position: relative;
-  margin-top: 20%;
+  margin-top: ${SpacingM};
+  margin-bottom: ${SpacingM};
 `;
 
 const ColoredButton = styled(SecondaryButton)`
@@ -206,10 +235,12 @@ export default function HowToParticipate() {
                 Mentor
               </BlockTitle>
             </BlockImageTitle>
+
             <Text>
-              Help and motivate hackers with your knowledge. Either because you
-              are passionate about it, or if you've graduated more than a year
-              ago and can't participate as a hacker, apply now as a mentor!
+              Help and motivate hackers with your knowledge! If you are
+              passionate about helping, and you can no longer apply as a hacker,
+              we invite you to live the hackathon experience from the other
+              side: Apply as a mentor!
             </Text>
             <ColoredButton
               color="#77C914"
@@ -243,7 +274,7 @@ export default function HowToParticipate() {
             <Text>
               Volunteers make HackUPC possible by assisting the hackers and
               preparing the event. By joining our team of volunteers, you will
-              get to know how this amazing event works from the inside, meet
+              get to know how this incredible event works from the inside, meet
               amazing people and live a great experience!
             </Text>
             <ColoredButton

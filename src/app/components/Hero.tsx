@@ -205,7 +205,7 @@ const TitleContainer = styled.div`
 
 const SubText = styled.div`
   font-size: ${TitleS};
-  color: ${Colors.HeroBlue};
+  color: ${Colors.HeroYellow};
   text-align: center;
 
   @media (max-width: ${MobileBreakpoint}) {
@@ -276,6 +276,11 @@ const PlayerCard = styled.a`
   text-align: center;
   cursor: pointer;
   color: ${Colors.HeroYellow};
+
+  &:hover {
+    background-color: ${Colors.HeroYellow};
+    color: ${Colors.HeroBlack};
+  }
 
   @media (max-width: ${MobileBreakpoint}) {
     min-width: 100%;

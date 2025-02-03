@@ -59,7 +59,7 @@ export default function Live() {
       </StyledSectionTitle>
       <TextContainer>
         <BodyBold style={{ marginBottom: SpacingXS }}>
-          When and where will everything happen?
+          When and where will all of this happen?
         </BodyBold>
         <Body>
           In our live page you will find it out! It will be available before
@@ -68,14 +68,14 @@ export default function Live() {
           happening during the event. You can also check our{" "}
           <Anchor href="https://live.hackupc.com/" target="_blank">
             {" "}
-            last year's live page{" "}
+            last year's live page
           </Anchor>{" "}
-          and see what happened.
+          page and see what happened.
         </Body>
       </TextContainer>
       <PrimaryButton
         className={silkscreen.className}
-        /* href="https://live.hackupc.com/" 
+        /* href="https://live.hackupc.com/"
         target="_blank"
         rel="noopener noreferrer" */
         disabled

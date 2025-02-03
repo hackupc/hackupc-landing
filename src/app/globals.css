@@ -8,15 +8,14 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden; /* Prevents horizontal scrollbar */
+  scroll-behavior: smooth;
 }
 
 body {
   color: white;
-  cursor: url("/rocket.png"), auto;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  cursor: pointer, auto;
 }
