@@ -178,14 +178,14 @@ const PlatformContainer = styled(MaxWidthContainer)`
 const LeftLadderContainer = styled(MaxWidthContainer)`
   justify-content: flex-start;
   margin-top: 29px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   left: 10%;
 `;
 
 const RightLadderContainer = styled(MaxWidthContainer)`
   justify-content: flex-end;
   margin-top: 29px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   right: 10%;
 
   @media (max-width: ${MobileBreakpoint}) {
@@ -251,7 +251,7 @@ const Barrel = styled.img`
 const MoveBiene = keyframes`
   0% { top: 7%; left: 21.5%; opacity: 1;}  /* Comienza en la parte 68% */
   14.28% { top: 7%; left: 21.5%; opacity: 1;} 
-  28.56% { top: 0%; left: 21.5%; opacity: 1;}  /* Llega a la posición 68% */
+  28.56% { top: 0; left: 21.5%; opacity: 1;}  /* Llega a la posición 68% */
   42.84% { top: 7%; left: 21.5%; opacity: 1;} 
   100%  {top: 7%; left: 21.5%; opacity: 1;}  /* Termina en la parte superior */
 `;
@@ -259,7 +259,7 @@ const MoveBiene = keyframes`
 const MoveBieneMobile = keyframes`
   0% { top: 7%; left: 21.5%; opacity: 1;}  /* Comienza en la parte 68% */
   12.28% { top: 7%; left: 21.5%; opacity: 1;} 
-  27.56% { top: 0%; left: 21.5%; opacity: 1;}  /* Llega a la posición 68% */
+  27.56% { top: 0; left: 21.5%; opacity: 1;}  /* Llega a la posición 68% */
   40.84% { top: 7%; left: 21.5%; opacity: 1;} 
   100%  {top: 7%; left: 21.5%; opacity: 1;}  /* Termina en la parte superior */
 `;

@@ -173,12 +173,6 @@ const Coin = styled(Image)<{ isVisible: boolean }>`
   height: 20px;
   z-index: 1;
 
-  ${(props) =>
-    props.isVisible &&
-    css`
-      animation: coinJump 1s cubic-bezier(0.57, 1.37, 0.41, 0.89) forwards;
-    `}
-
   @keyframes coinJump {
     0% {
       opacity: 1;
@@ -188,6 +182,24 @@ const Coin = styled(Image)<{ isVisible: boolean }>`
       transform: translateY(-200%) rotateY(180deg) rotate(calc(360deg * 1.5));
     }
   }
+
+  ${(props) =>
+    props.isVisible &&
+    css`
+      animation: coinJump 1s cubic-bezier(0.57, 1.37, 0.41, 0.89) forwards;
+    `}
+`;
+
+const BodyLinkStyled = styled(BodyLink)`
+  color: #29abe2;
+
+  &:hover {
+    color: #b46f00;
+  }
+
+  &:active {
+    color: #e2b266;
+  }
 `;
 
 function renderAnswer(answers: AnswerOptions[]) {
@@ -195,15 +207,14 @@ function renderAnswer(answers: AnswerOptions[]) {
     switch (answer.type) {
       case "Link":
         return (
-          <BodyLink
+          <BodyLinkStyled
             key={index}
             href={answer.link}
             rel="noopener noreferrer"
             target="_blank"
-            style={{ color: "#29ABE2" }}
           >
             {answer.content}
-          </BodyLink>
+          </BodyLinkStyled>
         );
       case "Enumeration":
         return (
