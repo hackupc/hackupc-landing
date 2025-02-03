@@ -37,7 +37,6 @@ const BlueContainer = styled.div`
   border: 2px solid ${Colors.HeroBlue};
   border-radius: 8px;
   padding: ${SpacingL};
-  margin-top: ${SpacingM};
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;

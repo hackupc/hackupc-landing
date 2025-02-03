@@ -104,7 +104,6 @@ const BlueContainer = styled.div`
   border: 2px solid ${Colors.HeroBlue};
   border-radius: 8px;
   padding: ${SpacingM};
-  margin-top: ${SpacingM};
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
@@ -127,7 +126,7 @@ export default function Socials() {
             Stay tuned, and don't miss a bit
           </StyledSectionTitle>
           <Subtitle>
-            <BlockTitle color={Secondary500}>
+            <BlockTitle color={Colors.HeroBlue}>
               Check our social media networks
             </BlockTitle>
           </Subtitle>
