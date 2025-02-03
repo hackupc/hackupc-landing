@@ -7,6 +7,8 @@ import {
   MobileTitleM,
   SpacingM,
   SpacingXS,
+  SpacingS,
+  SpacingXXS,
 } from "@/app/genericComponents/tokens";
 import { silkscreen } from "@/app/genericComponents/fonts";
 
@@ -43,18 +45,22 @@ const TextWrapper = styled.div`
   gap: ${SpacingXS};
   display: inline-flex;
   margin-top: ${SpacingM};
-  margin-bottom: ${SpacingM};
+  margin-bottom: ${SpacingS};
 
   @media (max-width: ${MobileBreakpoint}) {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: ${SpacingS};
+    margin-top: ${SpacingS};
+    margin-bottom: ${SpacingXS};
   }
 `;
 
-const StyledTitle = styled(SectionTitle)`
+const StyledTitle = styled.div`
   font-size: ${TitleM};
+  text-align: center;
+  font-weight: bold;
   margin-right: 0;
 
   @media (max-width: ${MobileBreakpoint}) {
