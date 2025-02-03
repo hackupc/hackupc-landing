@@ -113,13 +113,13 @@ export default function About() {
                 What is a hackathon?
               </BlockTitle>
               <Body>
-                The word hackathon is a combination of the words "HACK",
-                standing for creative problem-solving, and "MARATHON". These are
-                awesome events full of creativity, technology, and passionate
-                tech-related students of different skill ranges collaborating
-                and creating. During a certain period of time, attendees work in
-                teams to develop apps, games, robots… literally anything you
-                want to build & learn about!
+                The word hackathon is a combination of the words <b>"HACK"</b>,
+                standing for creative problem-solving, and <b>"MARATHON"</b>.
+                These are awesome events full of creativity, technology, and
+                passionate tech-related students of different skill ranges
+                collaborating and creating. During a certain period of time,
+                attendees work in <b>TEAMS</b> to develop apps, games, robots…
+                literally anything you want to <b>BUILD & LEARN</b> about!
               </Body>
             </Col>
             <Col>
@@ -135,13 +135,11 @@ export default function About() {
                 About HackUPC
               </BlockTitle>
               <Body>
-                HackUPC is the first student hackathon in Spain. Once a year, we
-                aim to provide a space for students of all experience levels
-                from all around the world where they can improve and learn new
-                skills, meet awesome people, and overall have a great
-                experience! This year's edition will be the first since the
-                pandemic to have a FULLY IN-PERSON format, meaning that you can
-                only participate by physically attending the event.
+                HackUPC is the first student hackathon in Spain and the biggest
+                one in Europe. Once a year, we aim to provide participants of{" "}
+                <b>all experience levels</b> from <b>all around the world</b>{" "}
+                with a space where they can improve and learn new skills, meet
+                amazing people, and have an overall great experience!
               </Body>
               <ImgSection>
                 <AppleImage
