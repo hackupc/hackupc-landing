@@ -31,6 +31,29 @@ const GridContainer = styled.div`
   }
 `;
 
+const ImageIcon = styled(Image)`
+  margin-bottom: ${SpacingS};
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  @keyframes wiggle {
+    0% {
+      transform: translateX(-15px);
+    }
+    50% {
+      transform: translateX(15px);
+    }
+    100% {
+      transform: translateX(-15px);
+    }
+  }
+
+  animation: wiggle 2s infinite ease-in-out;
+`;
+
 const RoleBlock = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,6 +80,22 @@ const RoleBlock = styled.div`
     border-color: #fb3e01;
   }
 
+  &:nth-child(1) ${ImageIcon} {
+    animation-delay: 0s;
+  }
+
+  &:nth-child(2) ${ImageIcon} {
+    animation-delay: 0.3s;
+  }
+
+  &:nth-child(3) ${ImageIcon} {
+    animation-delay: 0.6s;
+  }
+
+  &:nth-child(4) ${ImageIcon} {
+    animation-delay: 0.9s;
+  }
+
   @media (max-width: ${MobileBreakpoint}) {
     margin-top: ${SpacingM};
     &:nth-child(1) {
@@ -72,13 +111,6 @@ const SpecialSection = styled.div`
   background-color: black;
   position: relative;
   z-index: 0;
-`;
-
-const ImageIcon = styled(Image)`
-  margin-bottom: ${SpacingS};
-  &:hover {
-    transform: scale(1.5);
-  }
 `;
 
 const BlockImageTitle = styled.a`
