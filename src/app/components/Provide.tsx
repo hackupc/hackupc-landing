@@ -107,12 +107,15 @@ const FlipperIcon = styled.img`
   position: relative;
   width: 155px;
   top: -30px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 120px;
+  }
 `;
 
 const Divider = styled.img`
   margin-top: -${SpacingM};
   margin-bottom: -${SpacingS};
-};
 `;
 
 const FlipperIconRight = styled(FlipperIcon)`
@@ -132,14 +135,14 @@ const FlipperIconLeft = styled(FlipperIcon)`
 `;
 
 const BodyLinkStyled = styled(BodyLink)`
-  color: ${Colors.lightPink};
+  color: ${Colors.lightBlue};
 
   &:hover {
-    color: ${Colors.lightBlue};
+    color: ${Colors.blue};
   }
 
   &:active {
-    color: ${Colors.blue};
+    color: ${Colors.lightPink};
   }
 `;
 
