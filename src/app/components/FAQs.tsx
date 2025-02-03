@@ -202,18 +202,6 @@ const BodyLinkStyled = styled(BodyLink)`
   }
 `;
 
-const BodyLinkStyled = styled(BodyLink)`
-  color: #29abe2;
-
-  &:hover {
-    color: #b46f00;
-  }
-
-  &:active {
-    color: #e2b266;
-  }
-`;
-
 function renderAnswer(answers: AnswerOptions[]) {
   return answers.map((answer, index) => {
     switch (answer.type) {
