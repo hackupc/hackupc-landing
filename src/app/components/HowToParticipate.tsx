@@ -54,6 +54,13 @@ const RoleBlock = styled.div`
   &:nth-child(4) {
     border-color: #fb3e01;
   }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin-top: ${SpacingM};
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
 `;
 
 const SpecialSection = styled.div`
