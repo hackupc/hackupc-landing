@@ -237,9 +237,10 @@ export default function HowToParticipate() {
             </BlockImageTitle>
 
             <Text>
-              Help and motivate hackers with your knowledge. Either because you
-              are passionate about it, or if you've graduated more than a year
-              ago and can't participate as a hacker, apply now as a mentor!
+              Help and motivate hackers with your knowledge! If you are
+              passionate about helping, and you can no longer apply as a hacker,
+              we invite you to live the hackathon experience from the other
+              side: Apply as a mentor!
             </Text>
             <ColoredButton
               color="#77C914"
@@ -273,7 +274,7 @@ export default function HowToParticipate() {
             <Text>
               Volunteers make HackUPC possible by assisting the hackers and
               preparing the event. By joining our team of volunteers, you will
-              get to know how this amazing event works from the inside, meet
+              get to know how this incredible event works from the inside, meet
               amazing people and live a great experience!
             </Text>
             <ColoredButton
