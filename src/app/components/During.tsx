@@ -3,12 +3,11 @@ import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  TitleM,
   MobileTitleM,
   SpacingM,
-  SpacingXS,
   SpacingS,
-  SpacingXXS,
+  SpacingXS,
+  TitleM,
 } from "@/app/genericComponents/tokens";
 import { silkscreen } from "@/app/genericComponents/fonts";
 
