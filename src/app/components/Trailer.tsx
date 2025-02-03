@@ -118,15 +118,15 @@ export default function Trailer() {
           <ConsolePlayer>
             <InnerConsole backgroundColor={"#f4ead5"}>
               <CustomTitle className={silkscreen.className}>Teaser</CustomTitle>
-              <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>
-              {/* <VideoWrapper>
-          <StyledIframe
-          title="HackUPC 2024 | Trailer"
-          src="https://www.youtube.com/embed/iDinGlzSpbI?si=ZzSusoVrzekuuanx"
-          allowFullScreenspecialBackground
-          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-          />
-          </VideoWrapper> */}
+              {/*<VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>*/}
+              <VideoWrapper>
+                <StyledIframe
+                  title="HackUPC 2025 | Trailer"
+                  src="https://www.youtube.com/embed/uSQFmtX0wQs?si=XFjHjtCiMloTOm_T"
+                  allowFullScreen
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                />
+              </VideoWrapper>
 
               <StyledButtons
                 src="/console_buttons.svg"
@@ -146,6 +146,7 @@ export default function Trailer() {
                 <StyledIframe
                   title="HackUPC 2024 | Aftermovie"
                   src="https://www.youtube.com/embed/cgfJIZ2udhw?si=r3cj3SZpagO4kzzz"
+                  allowFullScreen
                   allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                 />
               </VideoWrapper>
