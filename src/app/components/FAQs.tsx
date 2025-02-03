@@ -190,20 +190,31 @@ const Coin = styled(Image)<{ isVisible: boolean }>`
   }
 `;
 
+const BodyLinkStyled = styled(BodyLink)`
+  color: #29abe2;
+
+  &:hover {
+    color: #b46f00;
+  }
+
+  &:active {
+    color: #e2b266;
+  }
+`;
+
 function renderAnswer(answers: AnswerOptions[]) {
   return answers.map((answer, index) => {
     switch (answer.type) {
       case "Link":
         return (
-          <BodyLink
+          <BodyLinkStyled
             key={index}
             href={answer.link}
             rel="noopener noreferrer"
             target="_blank"
-            style={{ color: "#29ABE2" }}
           >
             {answer.content}
-          </BodyLink>
+          </BodyLinkStyled>
         );
       case "Enumeration":
         return (
