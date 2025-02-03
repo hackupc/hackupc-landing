@@ -3,6 +3,7 @@ import Image from "next/image";
 import { MobileBreakpoint } from "@/app/genericComponents/tokens";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import { silkscreen } from "@/app/genericComponents/fonts";
+import { useEffect, useState } from "react";
 
 const Colors = {
   pink: "#FF6798",
@@ -30,10 +31,10 @@ const ProvideSectionWrapper = styled.div`
 `;
 
 const ProvideHeader = styled(SectionTitle)`
-  color: ${Colors.white}; /* title color */
+  color: ${Colors.white}; 
   margin-bottom: 30px;
   text-transform: uppercase;
-  white-space: pre-line; /* Enable line breaks */
+  white-space: pre-line; 
 `;
 
 const ProvideBlockWrapper = styled.div`
@@ -46,7 +47,7 @@ const ProvideBlockWrapper = styled.div`
 `;
 
 const ProvideBlock = styled.div`
-  background-color: ${Colors.pink}; /* Pink background */
+  background-color: ${Colors.pink}; 
   border-radius: 15px;
   padding: 25px;
   text-align: center;
@@ -59,7 +60,7 @@ const ProvideBlock = styled.div`
 `;
 
 const ProvideSubTitle = styled.div`
-  background-color: ${Colors.blue}; /* Blue background */
+  background-color: ${Colors.blue}; 
   border-radius: 10px;
   padding: 0;
   z-index: 1;
@@ -73,7 +74,7 @@ const ProvideBody = styled(Body)`
   font-size: 16px;
   line-height: 1.1;
   color: ${Colors.blue};
-  white-space: pre-line; /* Enable line breaks */
+  white-space: pre-line; 
 `;
 
 const ProvideSubTitleText = styled(Body)`
@@ -81,15 +82,6 @@ const ProvideSubTitleText = styled(Body)`
   font-weight: bold;
   line-height: 1.5;
   color: ${Colors.white};
-`;
-
-const DividerIcon = styled.div`
-  width: 174px;
-  height: 64px;
-  background-image: url("/spacer div.png");
-  background-size: 228px 132px;
-  background-position: center;
-  background-repeat: no-repeat;
 `;
 
 const FlipperIconRight = styled(Image)`
@@ -113,6 +105,31 @@ const FlipperIconLeft = styled(Image)`
 `;
 
 export default function Provide() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    "/divider_-1.svg",
+    "/divider_0.svg",
+    "/divider_1.svg",
+    "/divider_2.svg",
+    "/divider_3.svg",
+    "/divider_4.svg",
+    "/divider_5.svg",
+    "/divider_4.svg",
+    "/divider_3.svg",
+    "/divider_2.svg",
+    "/divider_1.svg",
+    "/divider_0.svg",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 125);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <ProvideSectionWrapper id="provide">
       <ProvideBlockWrapper>
@@ -132,7 +149,12 @@ export default function Provide() {
             Besides, you can serve yourself with cafeteria snacks.
           </ProvideBody>
         </ProvideBlock>
-        <DividerIcon />
+        <Image 
+          src={images[currentImageIndex]}
+          alt="divider icon"
+          width={200}
+          height={100}
+        />
         <ProvideSubTitle>
           <ProvideSubTitleText>SLEEPING</ProvideSubTitleText>
         </ProvideSubTitle>
