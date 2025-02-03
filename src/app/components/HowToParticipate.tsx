@@ -1,17 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import { BlockTitle, Body } from "@/app/genericComponents/Typography";
+import {
+  BlockTitle,
+  Body,
+  SectionTitle,
+} from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  MobileTitleL,
   Secondary100,
   SpacingL,
   SpacingM,
   SpacingS,
   SpacingXL,
   SpacingXXS,
-  TitleL,
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
 import { SecondaryButton } from "@/app/genericComponents/Buttons";
@@ -34,7 +36,7 @@ const RoleBlock = styled.div`
   flex-direction: column;
   align-items: center;
   padding: ${SpacingM};
-  min-height: 250px;
+  min-height: 300px;
   justify-content: space-between;
   position: relative;
   border: ${SpacingXXS} dashed;
@@ -86,11 +88,8 @@ const BlockImageTitle = styled.a`
   padding: ${SpacingS};
 `;
 
-const HowToTitle = styled.div`
-  font-size: ${TitleL};
+const HowToTitle = styled(SectionTitle)`
   padding: ${SpacingL};
-  text-align: center;
-  font-weight: bold;
   width: fit-content;
   margin: 0 auto ${SpacingL};
   position: relative;
@@ -119,7 +118,6 @@ const HowToTitle = styled.div`
   }
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: ${MobileTitleL};
     padding: ${SpacingM};
 
     &::after {
@@ -132,6 +130,7 @@ const HowToTitleWrapper = styled.div`
   position: relative;
   width: fit-content;
   margin: 0 auto ${SpacingL};
+  margin-top: ${SpacingS};
 
   &::before,
   &::after {
@@ -159,7 +158,8 @@ const HowToTitleWrapper = styled.div`
 
 const Text = styled(Body)`
   position: relative;
-  margin-top: ${SpacingS};
+  margin-top: ${SpacingM};
+  margin-bottom: ${SpacingM};
 `;
 
 const ColoredButton = styled(SecondaryButton)`
