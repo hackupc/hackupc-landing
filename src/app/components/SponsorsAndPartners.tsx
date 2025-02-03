@@ -48,10 +48,12 @@ const SponsorsBlock = styled.div`
   align-content: center;
   margin-bottom: ${SpacingL};
   max-width: ${MaxScreenSize};
+  padding: 0 ${SpacingM};
   z-index: 2;
 `;
 
 const PartnersBlock = styled.div`
+  padding: 0 ${SpacingM};
   max-width: ${MaxScreenSize};
   z-index: 2;
 `;
