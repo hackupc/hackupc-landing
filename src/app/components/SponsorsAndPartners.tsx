@@ -2,16 +2,12 @@
 import styled, { keyframes } from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { silkscreen } from "@/app/genericComponents/fonts";
-//import { SectionTitle } from "@/app/genericComponents/Typography";
 import {
+  MaxScreenSize,
   MobileBreakpoint,
-  TitleXL,
-  SpacingXXL,
-  SpacingXL,
   SpacingL,
   SpacingM,
   SpacingS,
-  MaxScreenSize,
 } from "@/app/genericComponents/tokens";
 
 import {

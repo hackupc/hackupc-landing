@@ -18,7 +18,6 @@ import { BlockTitle, SectionTitle } from "@/app/genericComponents/Typography";
 import { silkscreen } from "@/app/genericComponents/fonts";
 import {
   MobileBreakpoint,
-  Secondary500,
   SpacingM,
   SpacingS,
   SpacingXS,
