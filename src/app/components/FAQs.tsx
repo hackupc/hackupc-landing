@@ -106,7 +106,6 @@ const CustomBackground = styled(SectionBackground)`
     url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"),
     url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"),
     url("/cloud.svg");
-
   background-position:
     10% 8%,
     60% 5%,
@@ -120,13 +119,9 @@ const CustomBackground = styled(SectionBackground)`
     15% 90%,
     70% 95%,
     95% 88%;
-
   background-repeat: no-repeat;
-
   background-size: 12%, 14%, 10%, 15%, 13%, 16%, 10%, 15%, 12%, 14%, 12%, 16%;
-
   background-attachment: fixed; /* ✅ Fixes clouds in place */
-
   animation: moveClouds 10s infinite ease-in-out alternate;
 
   @keyframes moveClouds {
