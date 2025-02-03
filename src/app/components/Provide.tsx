@@ -79,6 +79,10 @@ const ProvideSubTitle = styled.div`
   min-width: 20%;
   margin-top: -14px;
   border: 6px solid ${Colors.pink};
+
+  @media (max-width: ${MobileBreakpoint}) {
+    min-width: 50%;
+  }
 `;
 
 const ProvideBody = styled(Body)`
