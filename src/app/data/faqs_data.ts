@@ -50,7 +50,7 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "HackUPC is free for all accepted hackers. We will provide you with Wi-Fi, swag, workspaces with power outlets (Type F plug), and meals (including breakfast, lunch, dinner, and snacks during the night). There will be access to the showers in a specific schedule and mattresses to relax in the sleep-enabled classrooms (there will not be one mattress per person)",
+          "HackUPC is free for all accepted hackers. We will provide you with Wi-Fi, swag, workspaces with power outlets (Type F plug), and meals (including breakfast, lunch, dinner, and snacks during the night). There will be access to the showers in a specific schedule (they will be in the gym so if you don't like shared showers, bring also a swimming suit). For the nights we will have mattresses to relax in the sleep-enabled classrooms (there will not be one mattress per person).",
       },
     ],
   },
@@ -88,7 +88,7 @@ export const hackupc_faqs: FAQs[] = [
         options: [
           "Sleeping bag",
           "Comfortable clothes",
-          "Towel, flip-flops, and soap, we encourage all the hackers to take a shower!",
+          "Towel, flip-flops, soap, and if you want also a swimming suit (the showers are shared). We encourage all the hackers to take a shower!",
         ],
       },
       {
@@ -264,7 +264,7 @@ export const applications_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "Try to make a difference amongst other hackers, be creative! However, above all, remember to be humble. ",
+          "Try to make a difference amongst other hackers, tell us why you want to come to HackUPC, and avoid generating a default answer with an AI, as that will probably void your application, be creative and don't use AI! However, above all, remember to be humble. ",
       },
       {
         type: "Link",
@@ -279,7 +279,53 @@ export const applications_faqs: FAQs[] = [
     ],
   },
   {
+    id: 18,
+    question: "When will I be accepted?",
+    answer: [
+      {
+        type: "Text",
+        content:
+          "All your applications are reviewed one by one, by the organizing team. We will do batches of acceptance once a bunch of them are reviewed, stay tuned to our social media to know when this happens and check your email or ",
+      },
+      {
+        type: "Link",
+        content: "MyHackUPC dashboard",
+        link: "https://my.hackupc.com",
+      },
+    ],
+  },
+  {
     id: 19,
+    question: "Why have I not been accepted yet?",
+    answer: [
+      {
+        type: "Text",
+        content:
+          "As mentioned before, all your applications are reviewed one by one, by the organizing team. Check out your status in ",
+      },
+      {
+        type: "Link",
+        content: "MyHackUPC dashboard",
+        link: "https://my.hackupc.com",
+      },
+      {
+        type: "Text",
+        content: ".<br/><br/>",
+      },
+      {
+        type: "List",
+        content: "The status can be:",
+        options: [
+          "<b>Under review</b>, your application is being reviewed by our team, stay patient and make sure you've done a good application",
+          "<b>Action required</b>, there is a problem with your application, please check your email and spam folder, a member of our team may contact you",
+          "<b>Waitlisted</b>, we are sorry to inform that by now we run out of spots, but if we have an available spot in the future we will let you know",
+          "<b>Expired</b>, email us to see if there is still a spot available for you.",
+        ],
+      },
+    ],
+  },
+  {
+    id: 20,
     question: "How does applying in teams work?",
     answer: [
       {
@@ -292,7 +338,7 @@ export const applications_faqs: FAQs[] = [
     ],
   },
   {
-    id: 20,
+    id: 21,
     question: "What if, in the application, I can not join my friends' team?",
     answer: [
       {
@@ -306,7 +352,7 @@ export const applications_faqs: FAQs[] = [
 
 export const teams_faqs: FAQs[] = [
   {
-    id: 21,
+    id: 22,
     question: "What if I don't have a team?",
     answer: [
       {
@@ -317,7 +363,7 @@ export const teams_faqs: FAQs[] = [
     ],
   },
   {
-    id: 22,
+    id: 23,
     question: "What is the max team size?",
     answer: [
       {
@@ -329,7 +375,7 @@ export const teams_faqs: FAQs[] = [
     ],
   },
   {
-    id: 23,
+    id: 24,
     question: "Can I change my team during the hackathon? How?",
     answer: [
       {

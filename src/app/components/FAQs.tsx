@@ -216,6 +216,10 @@ const BlockTitleStyled = styled(BlockTitle)`
   text-shadow: 2px 2px 5px black;
 `;
 
+const SectionTitleStyled = styled(SectionTitle)`
+  text-shadow: 2px 2px 5px black;
+`;
+
 function renderAnswer(answers: AnswerOptions[]) {
   return answers.map((answer, index) => {
     switch (answer.type) {
@@ -285,7 +289,9 @@ export default function FAQs() {
     <CustomBackground specialBackground={"#29ABE2"} id="faqs">
       <Section>
         <TitleSpacer>
-          <SectionTitle className={silkscreen.className}>FAQs</SectionTitle>
+          <SectionTitleStyled className={silkscreen.className}>
+            FAQs
+          </SectionTitleStyled>
         </TitleSpacer>
         <Split>
           <ColumnsQuestions>
