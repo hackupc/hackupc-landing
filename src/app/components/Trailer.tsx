@@ -100,7 +100,7 @@ export default function Trailer() {
           <ConsolePlayer>
             <InnerConsole backgroundColor={"#BC8FD2"}>
               <CustomTitle className={silkscreen.className}>
-                Aftermovie 2024
+                Aftermovie '24
               </CustomTitle>
               <VideoWrapper>
                 <StyledIframe
