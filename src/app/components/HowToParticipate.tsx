@@ -304,9 +304,9 @@ export default function HowToParticipate() {
               </BlockTitle>
             </BlockImageTitle>
             <Text>
-              Gain visibility for your brand, introduce your products to future
-              talents. Join us and be remembered as part of this hackathon by
-              our participants!
+              Boost your brand’s visibility and connect with future talent.
+              Showcase your products and leave a lasting impression on our
+              hackathon participants. Join us today!
             </Text>
             <ColoredButton
               color="#FCAF01"
