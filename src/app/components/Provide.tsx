@@ -186,8 +186,9 @@ export default function Provide() {
             </ProvideSubTitle>
             <ProvideBlock>
               <ProvideBody>
-                We’ve got you completely covered, we even have midnight snacks.
-                Besides, you can serve yourself with cafeteria snacks.
+                We've got you covered, we even have midnight snacks.
+                Occasionally there will be snacks, drinks or coffee to bump your
+                energy.
               </ProvideBody>
             </ProvideBlock>
           </ProvideBlockWrapper>
