@@ -212,7 +212,7 @@ export default function Provide() {
           </ProvideBlockWrapper>
           <ProvideBlockWrapper>
             <ProvideSubTitle>
-              <ProvideSubTitleText>SPONSORS</ProvideSubTitleText>
+              <ProvideSubTitleText>NETWORKING</ProvideSubTitleText>
             </ProvideSubTitle>
             <ProvideBlock>
               <ProvideBody>
