@@ -317,8 +317,8 @@ export const applications_faqs: FAQs[] = [
         content: "The status can be:",
         options: [
           "<b>Under review</b>, your application is being reviewed by our team, stay patient and make sure you've done a good application",
-          "<b>Action required</b>, there is a problem with your application, please check your email and spam folder, a member of our team may contact you",
-          "<b>Waitlisted</b>, we are sorry to inform that by now we run out of spots, but if we have an available spot in the future we will let you know",
+          "<b>Action required</b>, there is a problem with your application, please check your email and spam folder, a member of our team may have contacted you",
+          "<b>Waitlisted</b>, we are sorry to inform that by now we ran out of spots, but if we have an available spot in the future we will let you know",
           "<b>Expired</b>, email us to see if there is still a spot available for you.",
         ],
       },
