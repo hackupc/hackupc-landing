@@ -11,6 +11,7 @@ import {
   SpacingXS,
 } from "@/app/genericComponents/tokens";
 import styled, { keyframes } from "styled-components";
+import { silkscreen } from "@/app/genericComponents/fonts";
 
 const live = keyframes`
   0% {
@@ -43,29 +44,44 @@ const LiveDotAnimated = styled.div`
   width: ${SpacingS};
 `;
 
+const Anchor = styled.a`
+  color: ${Secondary500};
+  text-decoration: underline;
+  cursor: pointer;
+`;
+
 export default function Live() {
   return (
     <Section id="live">
-      <StyledSectionTitle>
+      <StyledSectionTitle className={silkscreen.className}>
         <LiveDotAnimated />
         Live
       </StyledSectionTitle>
       <TextContainer>
         <BodyBold style={{ marginBottom: SpacingXS }}>
-          When and where will everything happen?
+          When and where will all of this happen?
         </BodyBold>
         <Body>
           In our live page you will find it out! It will be available before
-          HackUPC so that you can prepare everything you might need! And also to
-          check out all the activities happening during the event.
+          HackUPC so that you can prepare everything you might need! And of
+          course it will be the page you visit to check out all the activities
+          happening during the event. You can also check our{" "}
+          <Anchor href="https://live.hackupc.com/" target="_blank">
+            {" "}
+            last year's live page
+          </Anchor>{" "}
+          page and see what happened.
         </Body>
       </TextContainer>
       <PrimaryButton
-        href="https://live.hackupc.com/"
+        className={silkscreen.className}
+        /* href="https://live.hackupc.com/"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener noreferrer" */
+        disabled
+        style={{ cursor: "not-allowed", opacity: 0.3 }}
       >
-        Check live
+        In construction
       </PrimaryButton>
     </Section>
   );

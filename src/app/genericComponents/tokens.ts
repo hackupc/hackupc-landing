@@ -18,19 +18,17 @@ export const MobileBodyTextMedium: string = "14px";
 export const MobileBodyTextSmall: string = "13px";
 
 // Colors
-export const Primary500: string = "#240059";
-export const Primary400: string = "#410658";
-export const Primary300: string = "#7F27A2";
-export const Primary200: string = "#C379E0";
-export const Primary100: string = "#E3C3FF";
+export const Primary500: string = "#920967";
+export const Primary400: string = "#D50195";
+export const Primary300: string = "#FF32D3";
+export const Primary200: string = "#FF60E4";
+export const Primary100: string = "#FFC9F8";
 
-export const Secondary800: string = "#9F1D15";
-export const Secondary600: string = "#E4281D";
-export const Secondary500: string = "#E23532";
-export const Secondary400: string = "#FC5C5A";
-export const Secondary300: string = "#FF8886";
-export const Secondary200: string = "#FFBAB6";
-export const Secondary100: string = "#FFDAD5";
+export const Secondary500: string = "#136777";
+export const Secondary400: string = "#02BCC9";
+export const Secondary300: string = "#1EE7F2";
+export const Secondary200: string = "#A3FBFE";
+export const Secondary100: string = "#ECFFFE";
 
 export const Neutral500: string = "#232F34";
 export const Neutral400: string = "#4A6572";
@@ -39,7 +37,7 @@ export const Neutral200: string = "#EAF7FF";
 export const Neutral100: string = "#F9FDFF";
 
 // Special Colors
-export const BackgroundWithOpacity: string = "rgba(19, 3, 51, 0.7)";
+export const BackgroundWithOpacity: string = "#231F20B3";
 
 // Responsive breakpoints
 export const MobilePixels: number = 640;
@@ -54,3 +52,4 @@ export const SpacingM: string = "32px";
 export const SpacingL: string = "64px";
 export const SpacingXL: string = "96px";
 export const SpacingXXL: string = "160px";
+export const SpacingXXXL: string = "240px";
