@@ -125,7 +125,7 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "Since beta 1.0, we support vegan, vegetarian, gluten-free and any type of allergies. As we always say, we’ve got you covered!",
+          "Since beta 1.0, we’ve been able to support a range of dietary preferences, including vegan, vegetarian, gluten-free, and any type of allergies. If you have any specific requirements different than allergies, just select vegetarian or reach out to us and we’ll make sure to take care of you!",
       },
     ],
   },
