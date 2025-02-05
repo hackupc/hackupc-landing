@@ -65,6 +65,11 @@ const Question = styled.div`
   padding: ${SpacingXS};
   background-color: rgba(1, 1, 1, 0.5);
   border-radius: 10px;
+  box-shadow: 2px 2px 8px black;
+`;
+
+const QuestionWithPadding = styled(Question)`
+  padding: ${SpacingM};
 `;
 
 const QuestionTitleWrap = styled.div`
@@ -202,6 +207,19 @@ const BodyLinkStyled = styled(BodyLink)`
   }
 `;
 
+const LastBlock = styled.div`
+  text-align: center;
+  margin-top: ${SpacingL};
+`;
+
+const BlockTitleStyled = styled(BlockTitle)`
+  text-shadow: 2px 2px 5px black;
+`;
+
+const SectionTitleStyled = styled(SectionTitle)`
+  text-shadow: 2px 2px 5px black;
+`;
+
 function renderAnswer(answers: AnswerOptions[]) {
   return answers.map((answer, index) => {
     switch (answer.type) {
@@ -271,7 +289,9 @@ export default function FAQs() {
     <CustomBackground specialBackground={"#29ABE2"} id="faqs">
       <Section>
         <TitleSpacer>
-          <SectionTitle className={silkscreen.className}>FAQs</SectionTitle>
+          <SectionTitleStyled className={silkscreen.className}>
+            FAQs
+          </SectionTitleStyled>
         </TitleSpacer>
         <Split>
           <ColumnsQuestions>
@@ -285,9 +305,9 @@ export default function FAQs() {
                 />
               </BrickSection>
               <QuestionsBlock>
-                <BlockTitle className={silkscreen.className} color={"white"}>
+                <BlockTitleStyled className={silkscreen.className}>
                   About HackUPC
-                </BlockTitle>
+                </BlockTitleStyled>
                 {hackupc_faqs.map((faq) => (
                   <Question key={faq.id}>
                     <QuestionTitleWrap>
@@ -332,9 +352,9 @@ export default function FAQs() {
                 />
               </BrickSection>
               <QuestionsBlock>
-                <BlockTitle className={silkscreen.className} color={"white"}>
+                <BlockTitleStyled className={silkscreen.className}>
                   Travel Reimbursement
-                </BlockTitle>
+                </BlockTitleStyled>
                 {travel_faqs.map((faq) => (
                   <Question key={faq.id}>
                     <QuestionTitleWrap>
@@ -381,9 +401,9 @@ export default function FAQs() {
                 />
               </BrickSection>
               <QuestionsBlock>
-                <BlockTitle className={silkscreen.className} color={"white"}>
+                <BlockTitleStyled className={silkscreen.className}>
                   Applications
-                </BlockTitle>
+                </BlockTitleStyled>
                 {applications_faqs.map((faq) => (
                   <Question key={faq.id}>
                     <QuestionTitleWrap>
@@ -427,9 +447,9 @@ export default function FAQs() {
                 />
               </BrickSection>
               <QuestionsBlock>
-                <BlockTitle className={silkscreen.className} color={"white"}>
+                <BlockTitleStyled className={silkscreen.className}>
                   Teams
-                </BlockTitle>
+                </BlockTitleStyled>
                 {teams_faqs.map((faq) => (
                   <Question key={faq.id}>
                     <QuestionTitleWrap>
@@ -465,6 +485,35 @@ export default function FAQs() {
             </div>
           </ColumnsQuestions>
         </Split>
+
+        <LastBlock>
+          <BrickSection>
+            <Image
+              src="/brick_separator.svg"
+              width={163}
+              height={54}
+              alt="Brick block"
+            />
+          </BrickSection>
+          <BlockTitleStyled className={silkscreen.className} haveMargin>
+            What if I have another question?
+          </BlockTitleStyled>
+          <QuestionWithPadding>
+            <Body style={{ paddingBottom: SpacingS }}>
+              DM us on Instagram at @hackupc or, if you want to contact us via
+              email, drop us a line at{" "}
+              <BodyLinkStyled href="mailto:contact@hackupc.com">
+                contact@hackupc.com
+              </BodyLinkStyled>
+            </Body>
+            <Body>
+              If your issue is related to Travel Reimbursement, write us at{" "}
+              <BodyLinkStyled href="mailto:reimbursements@hackupc.com">
+                reimbursements@hackupc.com
+              </BodyLinkStyled>
+            </Body>
+          </QuestionWithPadding>
+        </LastBlock>
       </Section>
     </CustomBackground>
   );

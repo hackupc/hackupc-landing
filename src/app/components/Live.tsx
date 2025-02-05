@@ -81,7 +81,7 @@ export default function Live() {
         disabled
         style={{ cursor: "not-allowed", opacity: 0.3 }}
       >
-        Check live
+        In construction
       </PrimaryButton>
     </Section>
   );
