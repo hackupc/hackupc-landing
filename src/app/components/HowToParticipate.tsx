@@ -334,9 +334,9 @@ export default function HowToParticipate() {
               </BlockTitle>
             </BlockImageTitle>
             <Text>
-              Don't just put your brand on another wall. Take the chance to
-              shape the tech scene of tomorrow by adding real value and making
-              it possible for hackers to build something they're proud of.
+              Don't just put your brand on another wall. Discover a unique
+              chance to shape the tech scene of tomorrow by adding real value
+              and connecting with the best engineers of the future.
             </Text>
             <ColoredButton
               color="#FB3E01"
