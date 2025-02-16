@@ -1,7 +1,6 @@
-import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { Section } from "@/app/genericComponents/General";
 import {
   MobileBreakpoint,
-  Primary500,
   SpacingM,
   SpacingS,
   SpacingXS,
@@ -35,6 +34,14 @@ const SocialsAndOthers = styled.div`
   }
 `;
 
+const BodyLinkYellow = styled(BodyLink)`
+  color: #fcfc01;
+
+  &:hover {
+    color: #0060bf;
+  }
+`;
+
 const SocialsBlock = styled.div`
   display: flex;
   align-items: center;
@@ -42,150 +49,143 @@ const SocialsBlock = styled.div`
   gap: ${SpacingS};
 `;
 
-const StyledSection = styled(Section)`
-  padding: ${SpacingM};
-  text-align: center;
-`;
-
 export default function Footer() {
   return (
-    <SectionBackground specialBackground={Primary500}>
-      <StyledSection>
-        <BodyLink
-          href="https://2023.hackupc.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          2023 site
-        </BodyLink>
-        <SocialsAndOthers>
-          <SocialsBlock>
-            <a
-              href="mailto:contact@hackupc.com"
-              rel="noopener noreferrer"
-              aria-label="Email"
-            >
-              <FontAwesomeIcon icon={faEnvelope} size="lg" />
-            </a>
-            <a
-              href="https://twitter.com/hackupc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <FontAwesomeIcon icon={faXTwitter} size="lg" />
-            </a>
-            <a
-              href="https://www.instagram.com/hackupc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FontAwesomeIcon icon={faInstagram} size="lg" />
-            </a>
-            <a
-              href="https://www.facebook.com/hackupc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <FontAwesomeIcon icon={faFacebook} size="lg" />
-            </a>
-            <a
-              href="https://linkedin.com/company/hack-upc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Linkedin"
-            >
-              <FontAwesomeIcon icon={faLinkedin} size="lg" />
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Youtube"
-            >
-              <FontAwesomeIcon icon={faYoutube} size="lg" />
-            </a>
-            <a
-              href="https://www.twitch.tv/hackersupc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Youtube"
-            >
-              <FontAwesomeIcon icon={faTwitch} size="lg" />
-            </a>
-            <a
-              href="https://medium.com/@hackupc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Medium"
-            >
-              <FontAwesomeIcon icon={faMedium} size="lg" />
-            </a>
-            <a
-              href="https://github.com/hackupc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Github"
-            >
-              <FontAwesomeIcon icon={faGithub} size="lg" />
-            </a>
-          </SocialsBlock>
-          <Body>
-            <BodyLink
-              href="https://hacknights.dev/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              HackNights
-            </BodyLink>{" "}
-            |{" "}
-            <BodyLink
-              href="https://hackersatupc.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Hackers@UPC
-            </BodyLink>
-          </Body>
-        </SocialsAndOthers>
+    <Section>
+      <BodyLinkYellow
+        href="https://2024.hackupc.com/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        2024 site
+      </BodyLinkYellow>
+      <SocialsAndOthers>
+        <SocialsBlock>
+          <a
+            href="mailto:contact@hackupc.com"
+            rel="noopener noreferrer"
+            aria-label="Email"
+          >
+            <FontAwesomeIcon icon={faEnvelope} size="lg" />
+          </a>
+          <a
+            href="https://twitter.com/hackupc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
+            <FontAwesomeIcon icon={faXTwitter} size="lg" />
+          </a>
+          <a
+            href="https://www.instagram.com/hackupc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon icon={faInstagram} size="lg" />
+          </a>
+          <a
+            href="https://www.facebook.com/hackupc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <FontAwesomeIcon icon={faFacebook} size="lg" />
+          </a>
+          <a
+            href="https://linkedin.com/company/hack-upc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Linkedin"
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="lg" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Youtube"
+          >
+            <FontAwesomeIcon icon={faYoutube} size="lg" />
+          </a>
+          <a
+            href="https://www.twitch.tv/hackersupc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Youtube"
+          >
+            <FontAwesomeIcon icon={faTwitch} size="lg" />
+          </a>
+          <a
+            href="https://medium.com/@hackupc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Medium"
+          >
+            <FontAwesomeIcon icon={faMedium} size="lg" />
+          </a>
+          <a
+            href="https://github.com/hackupc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Github"
+          >
+            <FontAwesomeIcon icon={faGithub} size="lg" />
+          </a>
+        </SocialsBlock>
         <Body>
-          <BodyLink
-            href="https://legal.hackersatupc.org/hackupc/terms_and_conditions"
+          <BodyLinkYellow
+            href="https://hacknights.dev/"
             target="_blank"
             rel="noreferrer"
           >
-            Terms and conditions
-          </BodyLink>{" "}
+            HackNights
+          </BodyLinkYellow>{" "}
           |{" "}
-          <BodyLink
-            href="https://legal.hackersatupc.org/hackupc/legal_notice"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Legal notice
-          </BodyLink>{" "}
-          |{" "}
-          <BodyLink
-            href="https://legal.hackersatupc.org/hackupc/privacy_and_cookies"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Privacy and cookies
-          </BodyLink>
-        </Body>
-        <Body style={{ marginTop: SpacingXS }}>
-          Made with ❤️ by{" "}
-          <BodyLink
+          <BodyLinkYellow
             href="https://hackersatupc.org/"
             target="_blank"
             rel="noreferrer"
           >
             Hackers@UPC
-          </BodyLink>
+          </BodyLinkYellow>
         </Body>
-      </StyledSection>
-    </SectionBackground>
+      </SocialsAndOthers>
+      <Body style={{ textAlign: "center" }}>
+        <BodyLinkYellow
+          href="https://legal.hackersatupc.org/hackupc/terms_and_conditions"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Terms and conditions
+        </BodyLinkYellow>{" "}
+        |{" "}
+        <BodyLinkYellow
+          href="https://legal.hackersatupc.org/hackupc/legal_notice"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Legal notice
+        </BodyLinkYellow>{" "}
+        |{" "}
+        <BodyLinkYellow
+          href="https://legal.hackersatupc.org/hackupc/privacy_and_cookies"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Privacy and cookies
+        </BodyLinkYellow>
+      </Body>
+      <Body style={{ marginTop: SpacingXS }}>
+        Made with ❤️ by{" "}
+        <BodyLinkYellow
+          href="https://hackersatupc.org/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Hackers@UPC
+        </BodyLinkYellow>
+      </Body>
+    </Section>
   );
 }

@@ -41,6 +41,7 @@
     "react/require-default-props": "off",
     "react/no-unescaped-entities": "off",
     "react/react-in-jsx-scope": "off",
+    "@next/next/no-img-element": "off",
     "no-param-reassign": [2, { "props": false }],
     "import/no-extraneous-dependencies": [
       "error",

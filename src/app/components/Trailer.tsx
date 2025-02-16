@@ -1,18 +1,14 @@
 import styled from "styled-components";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
-import {
-  MobileBreakpoint,
-  SpacingM,
-  SpacingS,
-} from "@/app/genericComponents/tokens";
-import { SecondaryButton } from "@/app/genericComponents/Buttons";
-import { silom } from "@/app/genericComponents/fonts";
+import { MobileBreakpoint, SpacingS } from "@/app/genericComponents/tokens";
+import { silkscreen } from "@/app/genericComponents/fonts";
 import React from "react";
+import Image from "next/image";
 
 const VideoWrapper = styled.div`
   position: relative;
-  width: 80%;
+  width: 90%;
   padding-top: 45%;
   aspect-ratio: 16 / 9;
 
@@ -33,75 +29,97 @@ const StyledIframe = styled.iframe`
   overflow: hidden;
 `;
 
-const ButtonContainer = styled.div`
+const ConsolePlayer = styled.div`
+  width: 100%;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  background-color: #594f4f;
+`;
+
+const ConsolesDiv = styled.div`
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    flex-direction: column;
+  }
+`;
+
+const InnerConsole = styled.div<{ backgroundColor: string }>`
+  background-color: ${(props) => props.backgroundColor};
+  border-radius: 15px;
+  padding: 20px;
+  // center the content
   display: flex;
   flex-direction: column;
-  align-content: center;
   align-items: center;
-  justify-content: center;
-  margin-top: ${SpacingM};
-  gap: ${SpacingS};
-  width: 100%;
+  gap: 20px;
 `;
 
-/*const shimmerAnimation = keyframes`
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-`;
-
-const VideoNotAvailable = styled.div`
-  padding: ${SpacingXL};
-  background-color: ${Neutral500};
-  text-align: center;
-  border-radius: ${SpacingS};
-  position: relative;
-  overflow: hidden;
-  color: ${Neutral300};
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      to right,
-      rgba(35, 47, 52, 0) 0%,
-      rgba(255, 255, 255, 0.1) 50%,
-      rgba(35, 47, 52, 0) 100%
-    );
-    animation: ${shimmerAnimation} 3s infinite linear;
+const StyledButtons = styled(Image)`
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 90%;
   }
-`; */
+  width: 80%;
+`;
+
+const CustomTitle = styled(SectionTitle)`
+  margin-bottom: 0;
+  color: #000;
+`;
 
 export default function Trailer() {
   return (
-    <SectionBackground haveBackground id="trailer">
-      <Section>
-        <SectionTitle>Teaser</SectionTitle>
-        {/* <VideoNotAvailable> Teaser coming soon... </VideoNotAvailable> */}
-        <VideoWrapper>
-          <StyledIframe
-            title="HackUPC 2024 | Trailer"
-            src="https://www.youtube.com/embed/iDinGlzSpbI?si=ZzSusoVrzekuuanx"
-            allowFullScreen
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-          />
-        </VideoWrapper>
-        <ButtonContainer className={silom.className}>
-          <SecondaryButton
-            href="https://hackersatupc.typeform.com/to/WOhCwF8m"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Subscribe
-          </SecondaryButton>
-        </ButtonContainer>
+    <SectionBackground specialBackground="#231F20">
+      <Section className={silkscreen.className}>
+        <ConsolesDiv>
+          <ConsolePlayer>
+            <InnerConsole backgroundColor={"#f4ead5"}>
+              <CustomTitle className={silkscreen.className}>Teaser</CustomTitle>
+              {/*<VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>*/}
+              <VideoWrapper>
+                <StyledIframe
+                  title="HackUPC 2025 | Trailer"
+                  src="https://www.youtube.com/embed/uSQFmtX0wQs?si=XFjHjtCiMloTOm_T"
+                  allowFullScreen
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                />
+              </VideoWrapper>
+
+              <StyledButtons
+                src="/console_buttons.svg"
+                alt="console buttons"
+                width={420}
+                height={120}
+              />
+            </InnerConsole>
+          </ConsolePlayer>
+
+          <ConsolePlayer>
+            <InnerConsole backgroundColor={"#BC8FD2"}>
+              <CustomTitle className={silkscreen.className}>
+                Aftermovie '24
+              </CustomTitle>
+              <VideoWrapper>
+                <StyledIframe
+                  title="HackUPC 2024 | Aftermovie"
+                  src="https://www.youtube.com/embed/cgfJIZ2udhw?si=r3cj3SZpagO4kzzz"
+                  allowFullScreen
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                />
+              </VideoWrapper>
+
+              <StyledButtons
+                src="/console_buttons.svg"
+                alt="console buttons"
+                width={420}
+                height={120}
+              />
+            </InnerConsole>
+          </ConsolePlayer>
+        </ConsolesDiv>
       </Section>
     </SectionBackground>
   );
