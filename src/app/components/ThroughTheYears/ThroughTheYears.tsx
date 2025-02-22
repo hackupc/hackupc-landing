@@ -10,9 +10,6 @@ const TetrisContainer = styled.div`
   width: 250px;
   height: 750px;
   background-color: #000;
-  overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 const TetrisPiece = styled.img<{ x: number; y: number; w: number }>`
@@ -38,7 +35,7 @@ export default function ThroughTheYears() {
               rel="noopener noreferrer"
             >
               <TetrisPiece
-                src="/ThroughTheYears/tetris_2024.png"
+                src="/ThroughTheYears/tetris-2024.svg"
                 x={200}
                 y={50}
                 w={50}
@@ -50,9 +47,9 @@ export default function ThroughTheYears() {
               rel="noopener noreferrer"
             >
               <TetrisPiece
-                src="/ThroughTheYears/tetris_2023.png"
+                src="/ThroughTheYears/tetris-2023.svg"
                 x={0}
-                y={200}
+                y={198}
                 w={100}
               />
             </a>
@@ -62,9 +59,9 @@ export default function ThroughTheYears() {
               rel="noopener noreferrer"
             >
               <TetrisPiece
-                src="/ThroughTheYears/tetris_2022.png"
+                src="/ThroughTheYears/tetris-2022.svg"
                 x={0}
-                y={300}
+                y={299}
                 w={150}
               />
             </a>
@@ -74,10 +71,34 @@ export default function ThroughTheYears() {
               rel="noopener noreferrer"
             >
               <TetrisPiece
-                src="/ThroughTheYears/tetris_2021.png"
+                src="/ThroughTheYears/tetris-2021.svg"
                 x={101}
-                y={305}
+                y={300}
                 w={100}
+              />
+            </a>
+            <a
+              href="https://2020.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris-2020.svg"
+                x={0}
+                y={350}
+                w={99}
+              />
+            </a>
+            <a
+              href="https://2019.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris-2019.svg"
+                x={0}
+                y={450}
+                w={150}
               />
             </a>
             <a
@@ -86,9 +107,21 @@ export default function ThroughTheYears() {
               rel="noopener noreferrer"
             >
               <TetrisPiece
-                src="/ThroughTheYears/tetris_2018.png"
+                src="/ThroughTheYears/tetris-2018.svg"
                 x={150}
                 y={450}
+                w={100}
+              />
+            </a>
+            <a
+              href="https://2017w.hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TetrisPiece
+                src="/ThroughTheYears/tetris-2017w.svg"
+                x={1}
+                y={553}
                 w={100}
               />
             </a>
@@ -98,9 +131,9 @@ export default function ThroughTheYears() {
               rel="noopener noreferrer"
             >
               <TetrisPiece
-                src="/ThroughTheYears/tetris_2017f.png"
+                src="/ThroughTheYears/tetris-2017f.svg"
                 x={100}
-                y={550}
+                y={551}
                 w={150}
               />
             </a>
@@ -110,8 +143,8 @@ export default function ThroughTheYears() {
               rel="noopener noreferrer"
             >
               <TetrisPiece
-                src="/ThroughTheYears/tetris_2016w.png"
-                x={151}
+                src="/ThroughTheYears/tetris-2016w.svg"
+                x={149}
                 y={603}
                 w={100}
               />
@@ -122,10 +155,10 @@ export default function ThroughTheYears() {
               rel="noopener noreferrer"
             >
               <TetrisPiece
-                src="/ThroughTheYears/tetris_2016s.png"
+                src="/ThroughTheYears/tetris-2016s.svg"
                 x={0}
-                y={650}
-                w={150}
+                y={649}
+                w={147}
               />
             </a>
           </TetrisContainer>
