@@ -41,15 +41,18 @@ const StatisticsContainer = styled.div`
 `;
 
 const StatisticsItem = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(30px, 1fr) 25px;
   align-items: center;
   margin-bottom: 20px;
-  justify-content: space-between;
+  margin-right: 5px;
 `;
 
-const PieceImage = styled.img<{ w: number }>`
+const PieceImage = styled.img<{ w: number; mr?: number }>`
   width: ${(props) => props.w}px;
   height: auto;
+  justify-self: end;
+  margin-right: ${(props) => props.mr || 0}px;
 `;
 
 const NextContainer = styled.div`
@@ -68,7 +71,12 @@ const NextContainer = styled.div`
   }
 `;
 
-const TetrisPiece = styled.img<{ x: number; y: number; w: number; noHoverEffect?: boolean }>`
+const TetrisPiece = styled.img<{
+  x: number;
+  y: number;
+  w: number;
+  noHoverEffect?: boolean;
+}>`
   position: absolute;
   height: auto;
   width: ${(props) => props.w}px;
@@ -100,24 +108,59 @@ export default function ThroughTheYears() {
               </SmallTitle>
               <div style={{ height: "20px" }} />
               <StatisticsItem>
-                <PieceImage src="/ThroughTheYears/tetris-basic1.svg" w={30} />
-                <span>Editions: 0010</span>
+                <span>Editions</span>
+                <PieceImage
+                  mr={10}
+                  src="/ThroughTheYears/tetris-basic1.svg"
+                  w={20}
+                />
+                <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
+                  0010
+                </span>
               </StatisticsItem>
               <StatisticsItem>
-                <PieceImage src="/ThroughTheYears/tetris-basic5.svg" w={30} />
-                <span>Hackers: 5344</span>
+                <span>Hackers:</span>
+                <PieceImage
+                  mr={10}
+                  src="/ThroughTheYears/tetris-basic5.svg"
+                  w={30}
+                />
+                <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
+                  5344
+                </span>
               </StatisticsItem>
               <StatisticsItem>
-                <PieceImage src="/ThroughTheYears/tetris-basic2.svg" w={30} />
-                <span>Projects: 1102</span>
+                <span>Projects</span>
+                <PieceImage
+                  mr={10}
+                  src="/ThroughTheYears/tetris-basic2.svg"
+                  w={30}
+                />
+                <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
+                  1102
+                </span>
               </StatisticsItem>
               <StatisticsItem>
-                <PieceImage src="/ThroughTheYears/tetris-basic3.svg" w={8} />
-                <span>Volunteers: 0416</span>
+                <span>Volunteers</span>
+                <PieceImage
+                  mr={10}
+                  src="/ThroughTheYears/tetris-basic3.svg"
+                  w={20}
+                />
+                <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
+                  0416
+                </span>
               </StatisticsItem>
               <StatisticsItem>
-                <PieceImage src="/ThroughTheYears/tetris-basic4.svg" w={20} />
-                <span>Prizes: 0352</span>
+                <span>Prizes</span>
+                <PieceImage
+                  mr={10}
+                  src="/ThroughTheYears/tetris-basic4.svg"
+                  w={20}
+                />
+                <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
+                  0352
+                </span>
               </StatisticsItem>
             </StatisticsContainer>
             <TetrisContainer>
