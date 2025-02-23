@@ -119,7 +119,7 @@ export default function ThroughTheYears() {
                 </span>
               </StatisticsItem>
               <StatisticsItem>
-                <span>Hackers:</span>
+                <span>Hackers</span>
                 <PieceImage
                   mr={10}
                   src="/ThroughTheYears/tetris-basic5.svg"
