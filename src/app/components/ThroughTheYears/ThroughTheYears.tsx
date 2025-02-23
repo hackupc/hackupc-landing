@@ -12,6 +12,7 @@ const GameContainer = styled.div`
   position: relative;
   width: 100%;
   height: 750px; /* Full height of the viewport */
+  gap: 15px;
 `;
 
 const TetrisContainer = styled.div`
@@ -19,6 +20,8 @@ const TetrisContainer = styled.div`
   width: 250px;
   height: 750px;
   background-color: #000;
+  outline: 5px solid #fff;
+  border-radius: 10px;s
 `;
 
 const StatisticsContainer = styled.div`
