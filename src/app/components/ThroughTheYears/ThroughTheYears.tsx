@@ -63,12 +63,21 @@ const NextContainer = styled.div`
   }
 `;
 
-const TetrisPiece = styled.img<{ x: number; y: number; w: number }>`
+const TetrisPiece = styled.img<{ x: number; y: number; w: number; noHoverEffect?: boolean }>`
   position: absolute;
   height: auto;
   width: ${(props) => props.w}px;
   left: ${(props) => props.x}px;
   top: ${(props) => props.y}px;
+  z-index: 0;
+  ${(props) =>
+    !props.noHoverEffect &&
+    `
+    &:hover {
+      transform: scale(1.1);
+      z-index: 1;
+    }
+  `}
 `;
 
 export default function ThroughTheYears() {
@@ -155,18 +164,13 @@ export default function ThroughTheYears() {
                   w={100}
                 />
               </a>
-              <a
-                href="https://2020.hackupc.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <TetrisPiece
-                  src="/ThroughTheYears/tetris-2020.svg"
-                  x={0}
-                  y={350}
-                  w={99}
-                />
-              </a>
+              <TetrisPiece
+                src="/ThroughTheYears/tetris-2020.svg"
+                x={0}
+                y={350}
+                w={99}
+                noHoverEffect
+              />
               <a
                 href="https://2019.hackupc.com"
                 target="_blank"
