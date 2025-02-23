@@ -12,7 +12,7 @@ const GameContainer = styled.div`
   position: relative;
   width: 100%;
   height: 750px; /* Full height of the viewport */
-  gap: 15px;
+  gap: 20px;
 `;
 
 const TetrisContainer = styled.div`
@@ -21,7 +21,7 @@ const TetrisContainer = styled.div`
   height: 750px;
   background-color: #000;
   outline: 5px solid #fff;
-  border-radius: 10px;s
+  border-radius: 10px;
 `;
 
 const StatisticsContainer = styled.div`
@@ -32,7 +32,8 @@ const StatisticsContainer = styled.div`
   text-align: center;
   padding: 20px;
   position: relative;
-
+  outline: 5px solid #fff;
+  border-radius: 10px;
   @media (min-width: 800px) {
     display: block;
     align-self: flex-end;
@@ -59,7 +60,8 @@ const NextContainer = styled.div`
   text-align: center;
   padding: 20px;
   position: relative;
-
+  outline: 5px solid #fff;
+  border-radius: 10px;
   @media (min-width: 800px) {
     display: block;
     align-self: flex-start; /* Align with the top of the Tetris container */
@@ -242,7 +244,7 @@ export default function ThroughTheYears() {
                 <TetrisPiece
                   src="/ThroughTheYears/tetris-2016s.svg"
                   x={0}
-                  y={649}
+                  y={650}
                   w={147}
                 />
               </a>
