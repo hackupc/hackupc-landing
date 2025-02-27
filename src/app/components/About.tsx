@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import {
@@ -9,36 +10,37 @@ import {
   MobileBreakpoint,
   SpacingM,
   SpacingS,
+  SpacingXS,
 } from "@/app/genericComponents/tokens";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { silkscreen } from "@/app/genericComponents/fonts";
 
-
-const SnakeImage = styled(Image)`
+const StyledImage = styled(Image)`
   width: 120px; /* Smaller width for the snake image */
   height: auto;
 
   @media (max-width: ${MobileBreakpoint}) {
-    width: 180px; /* Original size for mobile */
+    width: 180px;
   }
 `;
 
 const AppleImage = styled(Image)`
-  padding-top:  8px;
-  display: none; /* Hide by default */
+  padding-top: 8px;
+  display: none;
 
   @media (max-width: ${MobileBreakpoint}) {
-    display: block; /* Show for mobile */
+    display: block;
   }
 `;
 
 const SectionStyled = styled(Section)`
   color: ${"#000000"};
-  padding-bottom: 50px;
 `;
 
 const UnderlineTitle = styled(SectionTitle)`
   border-bottom: 3px solid black;
-  width: 325px;
+  width: 80%;
+  padding-bottom: ${SpacingXS};
 `;
 
 const Container = styled.div`
@@ -47,7 +49,6 @@ const Container = styled.div`
   flex-direction: row;
   gap: ${SpacingM};
   padding: 20px;
-
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
@@ -64,20 +65,47 @@ const ImgSection = styled.div`
   margin-bottom: ${SpacingS};
 `;
 
-
 export default function About() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    "/snake_0.svg",
+    "/snake_1.svg",
+    "/snake_2.svg",
+    "/snake_3.svg",
+    "/snake_4.svg",
+    "/snake_5.svg",
+    "/snake_6.svg",
+    "/snake_7.svg",
+    "/snake_8.svg",
+    "/snake_7.svg",
+    "/snake_8.svg",
+    "/snake_7.svg",
+    "/snake_8.svg",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div id="about">
       <SectionBackground specialBackground={"#99C11C"}>
         <SectionStyled>
-          <UnderlineTitle>About HackUPC</UnderlineTitle>
+          <UnderlineTitle className={silkscreen.className}>
+            HACKUPC: CODING TO THE NEXT LEVEL
+          </UnderlineTitle>
           <Container>
             <Col>
               <ImgSection>
-                <SnakeImage
-                  src="/snake.png"
-                  width={172}
-                  height={172}
+                <StyledImage
+                  src={images[currentImageIndex]}
+                  width={120}
+                  height={120}
                   alt="Snake"
                 />
               </ImgSection>
@@ -85,21 +113,21 @@ export default function About() {
                 What is a hackathon?
               </BlockTitle>
               <Body>
-                The word hackathon is a combination of the words "HACK",
-                standing for creative problem-solving, and "MARATHON".
+                The word hackathon is a combination of the words <b>"HACK"</b>,
+                standing for creative problem-solving, and <b>"MARATHON"</b>.
                 These are awesome events full of creativity, technology, and
                 passionate tech-related students of different skill ranges
                 collaborating and creating. During a certain period of time,
-                attendees work in teams to develop apps, games, robots…
-                literally anything you want to build & learn about!
+                attendees work in <b>TEAMS</b> to develop apps, games, robots…
+                literally anything you want to <b>BUILD & LEARN</b> about!
               </Body>
             </Col>
             <Col>
               <ImgSection>
-                <Image
+                <StyledImage
                   src="/hackupcLogoBlack.svg"
-                  width={95}
-                  height={95}
+                  width={120}
+                  height={120}
                   alt="HackUPC Logo"
                 />
               </ImgSection>
@@ -107,12 +135,11 @@ export default function About() {
                 About HackUPC
               </BlockTitle>
               <Body>
-              HackUPC is the first student hackathon in Spain. Once a year, we aim to provide
-              a space for students of all experience levels from all around the world where they
-              can improve and learn new skills, meet awesome people, and overall have a great 
-              experience! This year's edition will be the first since the pandemic to have a
-              FULLY IN-PERSON format, meaning that you can only participate by physically
-              attending the event.
+                HackUPC is the first student hackathon in Spain and the biggest
+                one in Europe. Once a year, we aim to provide participants of{" "}
+                <b>all experience levels</b> from <b>all around the world</b>{" "}
+                with a space where they can improve and learn new skills, meet
+                amazing people, and have an overall great experience!
               </Body>
               <ImgSection>
                 <AppleImage
@@ -120,7 +147,7 @@ export default function About() {
                   width={28}
                   height={30}
                   alt="manzana snake"
-                /> 
+                />
               </ImgSection>
             </Col>
           </Container>

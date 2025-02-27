@@ -27,12 +27,11 @@ const ClickableLogo = styled.div`
   display: flex;
   align-items: center;
   gap: ${SpacingS};
-  cursor: url("/rocket-fire.png"), auto;
+  cursor: pointer, auto;
 `;
 
 const StyledBodyLink = styled(BodyLink)`
   margin-right: 150px;
-  font-family: ${silkscreen};
   color: white;
   text-transform: uppercase;
   cursor: pointer;
@@ -81,6 +80,7 @@ export default function Header() {
         href="https://my.hackupc.com/"
         target="_blank"
         rel="noopener noreferrer"
+        className={silkscreen.className}
       >
         Login
       </StyledBodyLink>
