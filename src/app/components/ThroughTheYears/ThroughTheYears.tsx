@@ -251,7 +251,7 @@ export default function ThroughTheYears() {
                 <TetrisPiece
                   src="/ThroughTheYears/tetris-2017w.svg"
                   x={1}
-                  y={553}
+                  y={554}
                   w={100}
                 />
               </a>
@@ -287,7 +287,7 @@ export default function ThroughTheYears() {
                 <TetrisPiece
                   src="/ThroughTheYears/tetris-2016s.svg"
                   x={0}
-                  y={650}
+                  y={649}
                   w={147}
                 />
               </a>
