@@ -15,7 +15,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Spacer from "@/app/components/Spacer";
 import { Background } from "@/app/genericComponents/General";
-import ThroughTheYears from "@/app/components/ThroughTheYears/ThroughTheYears";
+import ThroughTheYears from "@/app/components/ThroughTheYears";
 
 export default function Home() {
   return (
