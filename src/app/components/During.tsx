@@ -1,39 +1,37 @@
-//import styled from "styled-components";
 import styled, { keyframes } from "styled-components";
-import { Section } from "@/app/genericComponents/General";
-import {
-  BlockTitle,
-  Body,
-  SectionTitle,
-} from "@/app/genericComponents/Typography";
+import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  SpacingXXL,
-  SpacingXL,
-  SpacingL,
+  MobileTitleM,
   SpacingM,
+  SpacingS,
   SpacingXS,
+  TitleM,
 } from "@/app/genericComponents/tokens";
+import { silkscreen } from "@/app/genericComponents/fonts";
 
 const Colors = {
   Background: "#030304",
-  Platforms: "#E656CD", 
-  Ladders: "#00FFE0", 
+  Platforms: "#E656CD",
+  Ladders: "#00FFE0",
+  white: "000000",
 };
 
-const DuringContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: ${SpacingXL} 0 ${SpacingXXL} 0;
-  gap: ${SpacingM};
-  width: 100vw;
-  background-color: ${Colors.Background};
+const DuringContainer = styled(Section)`
   position: relative;
+  gap: ${SpacingM};
+  z-index: 0;
 `;
 
 const TheMission = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+`;
+
+const StyledBody = styled(Body)`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -44,37 +42,67 @@ const TextWrapper = styled.div`
   text-align: center;
   justify-content: center;
   gap: ${SpacingXS};
-  font-style: oblique;
   display: inline-flex;
-  margin-top: ${SpacingL};
-  margin-bottom: ${SpacingM};
+  margin-top: ${SpacingM};
+  margin-bottom: ${SpacingS};
+
   @media (max-width: ${MobileBreakpoint}) {
+    text-align: center;
+    display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: ${SpacingS};
+    margin-top: ${SpacingS};
+    margin-bottom: ${SpacingXS};
   }
 `;
-const StyledTitle = styled(BlockTitle)`
-  margin-bottom: 0;
+
+const StyledTitle = styled.div`
+  font-size: ${TitleM};
+  text-align: center;
+  font-weight: bold;
+  margin-right: 0;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileTitleM};
+  }
 `;
-const StyledBodyText = styled(Body)`
-  max-width: 1000px;
+
+const HackUPCColored = styled(StyledTitle)`
+  color: ${Colors.Ladders};
+  margin-left: 0;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileTitleM};
+    margin-top: -20px;
+  }
+`;
+
+const GameContainer = styled.div`
+  max-width: 700px;
+  width: 100%;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    max-width: 100%;
+  }
 `;
 
 const BarrelContainer = styled.div`
   position: relative;
-  width: 400px; 
-  height: 200px;
-  display: flex;
-  left; 70%;
+  width: 90%;
+  height: 150px;
+  right: 1px;
   align-items: center;
-  margin-bottom: -30px;
-  margin-top: -40px;
+  margin: 0;
 `;
 
 const BarrelFront1 = styled.img`
   position: absolute;
-  top: 125px;
-  right: 0px;
+  bottom: 0;
+  right: 80px;
   z-index: 2; /* Frente */
 
   @media (max-width: ${MobileBreakpoint}) {
@@ -84,19 +112,19 @@ const BarrelFront1 = styled.img`
 
 const BarrelFront2 = styled.img`
   position: absolute;
-  top: 125px;
-  right: -80px;
+  bottom: 0;
+  right: 0;
   z-index: 2; /* Frente */
 
   @media (max-width: ${MobileBreakpoint}) {
-    right: 0px;
+    right: 0;
   }
 `;
 
 const BarrelBack = styled.img`
   position: absolute;
-  top: 100px;
-  right: -40px;
+  bottom: 25px;
+  right: 40px;
   z-index: 1; /* Detrás */
 
   @media (max-width: ${MobileBreakpoint}) {
@@ -106,21 +134,9 @@ const BarrelBack = styled.img`
 
 const Barrels = () => (
   <BarrelContainer>
-    {/* Barril trasero (en el centro) */}
-    <BarrelBack
-      src="/BarrelBack_DK.svg"
-      alt="Barrel Back"
-    />
-
-    {/* Barriles delanteros */}
-    <BarrelFront1
-      src="/BarrelFront_DK.svg"
-      alt="Barrel Front"
-    />
-    <BarrelFront2
-      src="/BarrelFront_DK.svg"
-      alt="Barrel Front"
-    />
+    <BarrelBack src="/BarrelBack_DK.svg" alt="Barrel Back" />
+    <BarrelFront1 src="/BarrelFront_DK.svg" alt="Barrel Front" />
+    <BarrelFront2 src="/BarrelFront_DK.svg" alt="Barrel Front" />
   </BarrelContainer>
 );
 
@@ -143,8 +159,9 @@ const Platform = () => (
 );
 
 const MaxWidthContainer = styled.div`
-  width: 100%;
+  position: relative;
   max-width: 700px; /* Alinear todo dentro de este ancho */
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `;
@@ -152,30 +169,39 @@ const MaxWidthContainer = styled.div`
 const PlatformContainer = styled(MaxWidthContainer)`
   justify-content: center;
   margin: 0;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    max-width: 100%;
+  }
 `;
 
 const LeftLadderContainer = styled(MaxWidthContainer)`
   justify-content: flex-start;
-  margin-top: -34px;
-  margin-bottom: -31px;
-  padding: 0 5%;
+  margin-top: 29px;
+  margin-bottom: 0;
+  left: 10%;
 `;
 
 const RightLadderContainer = styled(MaxWidthContainer)`
   justify-content: flex-end;
-  margin-top: -34px;
-  margin-bottom: -31px;
-  padding: 0 5%;
+  margin-top: 29px;
+  margin-bottom: 0;
+  right: 10%;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    right: 8%;
+  }
 `;
 
-const CoinText = styled.div`
+const CoinText = styled(Body)`
   position: relative;
-  top: 38px; /* Ajusta la distancia entre la plataforma y el texto */
+  top: 75px;
   justify-content: flex-start;
   color: white;
-  font-size: 1.25rem;
   margin-top: -25px;
   margin-bottom: -30px;
+  font-weight: bold;
+  z-index: 2;
 
   img {
     margin-top: 2px;
@@ -184,115 +210,65 @@ const CoinText = styled.div`
 `;
 
 const LeftLadderText = styled(CoinText)`
-  left: -50px;
+  left: 35%;
 
-  @media (max-width: ${MobileBreakpoint}) {
-    left: -25px;
+  @media (max-width: 450px) {
+    left: 25%;
   }
 `;
 
 const RightLadderText = styled(CoinText)`
-  right: -50px;
+  left: 45%;
 
-  @media (max-width: ${MobileBreakpoint}) {
-    right: -18px;
+  @media (max-width: 450px) {
+    left: 30%;
   }
 `;
 
 const MoveBarrel = keyframes`
-  0% { top: 27.5%; left: 57%; opacity: 1;}
-  14.28% { top: 27.5%; left: 32%; transform: rotate(-1080deg); opacity: 1;}
-  16.66% { top: 35.5%; left: 32%; opacity: 1;}
-  30.94% { top: 35.5%; left: 65%; transform: rotate(1080deg); opacity: 1;}
-  33.32% { top: 43.5%; left: 65%; opacity: 1;}
-  47.60% { top: 43.5%; left: 32%; transform: rotate(-1080deg); opacity: 1;}
-  49.98% { top: 52%; left: 32%; opacity: 1;}
-  64.26% { top: 52%; left: 65%; transform: rotate(1080deg); opacity: 1;}
-  66.64% { top: 60%; left: 65%; opacity: 1;}
-  80.92% { top: 60%; left: 32%; transform: rotate(-1080deg); opacity: 1;}
-  83.30% { top: 68%; left: 32%; opacity: 1;}
-  97.58% { top: 68%; left: 71%; transform: rotate(1080deg); opacity: 1;}
-  100% { top: 75%; left: 71%; opacity: 0; } /* Última línea hacia abajo */
-`;
-
-const MoveBarrelTablet = keyframes`
-  0% { top: 27%; left: 65%; opacity: 1;}
-  14.28% { top: 27%; left: 12%; transform: rotate(-1080deg); opacity: 1;}
-  16.66% { top: 35%; left: 12%; opacity: 1;}
-  30.94% { top: 35%; left: 82%; transform: rotate(1080deg); opacity: 1;}
-  33.32% { top: 43%; left: 82%; opacity: 1;}
-  47.60% { top: 43%; left: 12%; transform: rotate(-1080deg); opacity: 1;}
-  49.98% { top: 51%; left: 12%; opacity: 1;}
-  64.26% { top: 51%; left: 82%; transform: rotate(1080deg); opacity: 1;}
-  66.64% { top: 59%; left: 82%; opacity: 1;}
-  80.92% { top: 59%; left: 12%; transform: rotate(-1080deg); opacity: 1;}
-  83.30% { top: 67%; left: 12%; opacity: 1;}
-  97.58% { top: 67%; left: 88%; transform: rotate(1080deg); opacity: 1;}
-  100% { top: 75%; left: 88%; opacity: 0; } /* Última línea hacia abajo */
-`;
-
-const MoveBarrelMobile = keyframes`
-    0% { top: 26.5%; left: 70%; opacity: 1;}
-    14.28% { top: 26.5%; left: 5%; transform: rotate(-1080deg); opacity: 1;}
-    16.66% { top: 34%; left: 5%; opacity: 1;}
-    30.94% { top: 34%; left: 87%; transform: rotate(1080deg); opacity: 1;}
-    33.32% { top: 41.5%; left: 87%; opacity: 1;}
-    47.60% { top: 41.5%; left: 5%; transform: rotate(-1080deg); opacity: 1;}
-    49.98% { top: 49%; left: 5%; opacity: 1;}
-    64.26% { top: 49%; left: 87%; transform: rotate(1080deg); opacity: 1;}
-    66.64% { top: 56.5%; left: 87%; opacity: 1;}
-    80.92% { top: 56.5%; left: 5%; transform: rotate(-1080deg); opacity: 1;}
-    83.30% { top: 64%; left: 5%; opacity: 1;}
-    97.58% { top: 64%; left: 90%; transform: rotate(1080deg); opacity: 1;}
-    100% { top: 71%; left: 90%; opacity: 0; } /* Última línea hacia abajo */
+  0% { top: 15%; left: 68%; opacity: 1;}
+  14.28% { top: 15%; left: 10%; transform: rotate(-1080deg); opacity: 1;}
+  16.66% { top: 30%; left: 10%; opacity: 1;}
+  30.94% { top: 30%; left: 84%; transform: rotate(1080deg); opacity: 1;}
+  33.32% { top: 45%; left: 84%; opacity: 1;}
+  47.60% { top: 45%; left: 10%; transform: rotate(-1080deg); opacity: 1;}
+  49.98% { top: 60%; left: 10%; opacity: 1;}
+  64.26% { top: 60%; left: 84%; transform: rotate(1080deg); opacity: 1;}
+  66.64% { top: 75.5%; left: 84%; opacity: 1;}
+  80.92% { top: 75.5%; left: 10%; transform: rotate(-1080deg); opacity: 1;}
+  83.30% { top: 91%; left: 10%; opacity: 1;}
+  97.58% { top: 91%; left: 95%; transform: rotate(1080deg); opacity: 1;}
+  100% { top: 99%; left: 95%; opacity: 0; } /* Última línea hacia abajo */
 `;
 
 const Barrel = styled.img`
   position: absolute;
   opacity: 0;
+  z-index: 1;
   animation: ${MoveBarrel} 35s linear infinite;
-
-  @media (max-width: 850px) {
-    animation: ${MoveBarrelTablet} 35s linear infinite;
-  }
-
-  @media (max-width: ${MobileBreakpoint}) {
-    animation: ${MoveBarrelMobile} 35s linear infinite;
-  }
 `;
 
 const MoveBiene = keyframes`
-  0% { top: 23%; left: 35%; opacity: 1;}  /* Comienza en la parte 68% */
-  17.28% { top: 23%; left: 35%; opacity: 1;} 
-  31.56% { top: 19%; left: 35%; opacity: 1;}  /* Llega a la posición 68% */
-  45.84% { top: 23%; left: 35%; opacity: 1;} 
-  100%  {top: 23%; left: 35%; opacity: 1;}  /* Termina en la parte superior */
-`;
-
-const MoveBieneTablet = keyframes`
-  0% { top: 23%; left: 18.5%; opacity: 1;}  /* Comienza en la parte 68% */
-  17.28% { top: 23%; left: 18.5%; opacity: 1;} 
-  31.56% { top: 19%; left: 18.5%; opacity: 1;}  /* Llega a la posición 68% */
-  45.84% { top: 23%; left: 18.5%; opacity: 1;} 
-  100%  {top: 23%; left: 18.5%; opacity: 1;}  /* Termina en la parte superior */
+  0% { top: 7%; left: 21.5%; opacity: 1;}  /* Comienza en la parte 68% */
+  14.28% { top: 7%; left: 21.5%; opacity: 1;} 
+  28.56% { top: 0; left: 21.5%; opacity: 1;}  /* Llega a la posición 68% */
+  42.84% { top: 7%; left: 21.5%; opacity: 1;} 
+  100%  {top: 7%; left: 21.5%; opacity: 1;}  /* Termina en la parte superior */
 `;
 
 const MoveBieneMobile = keyframes`
-  0% { top: 23%; left: 8%; opacity: 1;}  /* Comienza en la parte 68% */
-  17.28% { top: 23%; left: 8%; opacity: 1;} 
-  31.56% { top: 19%; left: 8%; opacity: 1;}  /* Llega a la posición 68% */
-  45.84% { top: 23%; left: 8%; opacity: 1;} 
-  100%  {top: 23%; left: 8%; opacity: 1;}  /* Termina en la parte superior */
+  0% { top: 7%; left: 21.5%; opacity: 1;}  /* Comienza en la parte 68% */
+  12.28% { top: 7%; left: 21.5%; opacity: 1;} 
+  27.56% { top: 0; left: 21.5%; opacity: 1;}  /* Llega a la posición 68% */
+  40.84% { top: 7%; left: 21.5%; opacity: 1;} 
+  100%  {top: 7%; left: 21.5%; opacity: 1;}  /* Termina en la parte superior */
 `;
 
 const Biene = styled.img`
   position: absolute;
   opacity: 0;
   animation: ${MoveBiene} 7s linear infinite 2s;
-
-  @media (max-width: 850px) {
-    animation: ${MoveBieneTablet} 7s linear infinite 2s;
-  }
+  z-index: 2;
 
   @media (max-width: ${MobileBreakpoint}) {
     animation: ${MoveBieneMobile} 7s linear infinite 2s;
@@ -300,92 +276,100 @@ const Biene = styled.img`
 `;
 
 const Barrel1 = styled(Barrel)`
-   animation-delay: 0s;
+  animation-delay: 0s;
 `;
 
 const Barrel2 = styled(Barrel)`
-   animation-delay: 7s;
+  animation-delay: 7s;
 `;
 
 const Barrel3 = styled(Barrel)`
-   animation-delay: 14s;
+  animation-delay: 14s;
 `;
 
 const Barrel4 = styled(Barrel)`
-   animation-delay: 21s;
+  animation-delay: 21s;
 `;
 
 const Barrel5 = styled(Barrel)`
-   animation-delay: 28s;
+  animation-delay: 28s;
 `;
 
 export default function During() {
   return (
-    <Section id="during">
-    <DuringContainer>
-      <SectionTitle>DURING THE EVENT</SectionTitle>
-      <Body>
-        Coding is the main part of HackUPC, but we have many more activities
-      </Body>
+    <SectionBackground specialBackground={Colors.Background}>
+      <DuringContainer id="during">
+        <SectionTitle className={silkscreen.className}>
+          DURING THE EVENT
+        </SectionTitle>
+        <StyledBody>
+          Coding is the main part of HackUPC, but we have many more activities!
+        </StyledBody>
 
-      <Barrels />
-      <Biene src="/Biene_DK.svg" alt="Biene" />
-      <Barrel1 src="/BarrelMove_DK.svg" alt="Barrel" />
-      <Barrel2 src="/BarrelMove_DK.svg" alt="Barrel" />
-      <Barrel3 src="/BarrelMove_DK.svg" alt="Barrel" />
-      <Barrel4 src="/BarrelMove_DK.svg" alt="Barrel" />
-      <Barrel5 src="/BarrelMove_DK.svg" alt="Barrel" />
+        <GameContainer>
+          <Barrels />
+          <Biene src="/Biene_DK.svg" alt="Biene" />
+          <Barrel1 src="/BarrelMove_DK.svg" alt="Barrel" />
+          <Barrel2 src="/BarrelMove_DK.svg" alt="Barrel" />
+          <Barrel3 src="/BarrelMove_DK.svg" alt="Barrel" />
+          <Barrel4 src="/BarrelMove_DK.svg" alt="Barrel" />
+          <Barrel5 src="/BarrelMove_DK.svg" alt="Barrel" />
 
-      <Platform />
-      <LeftLadderText>
-        <img src="/Coin_DK.svg" alt="Moneda" />
-        Talks & Workshops 
-      </LeftLadderText>
-      <LeftLadder />
+          <Platform />
+          <LeftLadderText>
+            <img src="/Coin_DK.svg" alt="Moneda" />
+            Talks & Workshops
+          </LeftLadderText>
+          <LeftLadder />
 
-      <Platform />
-      <RightLadderText>
-        <img src="/Coin_DK.svg" alt="Moneda" />
-        SlideShare Show
-      </RightLadderText>
-      <RightLadder />
+          <Platform />
+          <RightLadderText>
+            <img src="/Coin_DK.svg" alt="Moneda" />
+            SlideShare Show
+          </RightLadderText>
+          <RightLadder />
 
-      <Platform />
-      <LeftLadderText>
-        <img src="/Coin_DK.svg" alt="Moneda" />
-        Dodgeball
-      </LeftLadderText>
-      <LeftLadder />
+          <Platform />
+          <LeftLadderText>
+            <img src="/Coin_DK.svg" alt="Moneda" />
+            Dodgeball
+          </LeftLadderText>
+          <LeftLadder />
 
-      <Platform />
-      <RightLadderText>
-       <img src="/Coin_DK.svg" alt="Moneda" />
-        Nerf Gun Battle
-      </RightLadderText>
-      <RightLadder />
+          <Platform />
+          <RightLadderText>
+            <img src="/Coin_DK.svg" alt="Moneda" />
+            Nerf Gun Battle
+          </RightLadderText>
+          <RightLadder />
 
-      <Platform />
-      <LeftLadderText>
-      <img src="/Coin_DK.svg" alt="Moneda" />
-        Sticker Exchange
-      </LeftLadderText>
-      <LeftLadder />
+          <Platform />
+          <LeftLadderText>
+            <img src="/Coin_DK.svg" alt="Moneda" />
+            Sticker Exchange
+          </LeftLadderText>
+          <LeftLadder />
 
-      <Platform />
+          <Platform />
+        </GameContainer>
 
-      <TheMission>
-        <TextWrapper>
-          <StyledTitle> THE MISSION: </StyledTitle>
-          <StyledTitle color={Colors.Ladders}> HACKUPC</StyledTitle>
-        </TextWrapper>
-        <StyledBodyText>
-        Get ready for your weekend mission! This year, we aim for HackUPC
-        to be like a loaded arcade with lots to play with. Have fun, 
-        complete the objectives, and get fantastic surprises. Will you
-        be able to unlock them all?
-        </StyledBodyText>
-      </TheMission>
-    </DuringContainer>
-    </Section>
+        <TheMission>
+          <TextWrapper>
+            <StyledTitle className={silkscreen.className}>
+              THE MISSION:
+            </StyledTitle>
+            <HackUPCColored className={silkscreen.className}>
+              HACKUPC
+            </HackUPCColored>
+          </TextWrapper>
+          <Body>
+            Get ready for your weekend mission! This year, we aim for HackUPC to
+            be like a loaded arcade with lots to play with. Have fun, complete
+            the objectives, and get fantastic surprises. Will you be able to
+            unlock them all?
+          </Body>
+        </TheMission>
+      </DuringContainer>
+    </SectionBackground>
   );
 }

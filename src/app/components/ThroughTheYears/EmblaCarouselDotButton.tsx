@@ -66,7 +66,7 @@ const EmblaDot = styled.button<{ selectedIndex: boolean }>`
   appearance: none;
   touch-action: manipulation;
   text-decoration: none;
-  cursor: url("/rocket-fire.png"), auto;
+  cursor: pointer, auto;
   border: 0;
   padding: 0.6rem;
   margin: 0.1rem;
