@@ -242,7 +242,7 @@ export default function SponsorsAndPartners() {
         </SponsorRow>
         <SponsorRow>
           <MegaBox>
-          <SponsorLogo
+            <SponsorLogo
               imageSrc={"/Sponsors/skyscanner.svg"}
               imageAlt={"skyscanner"}
               sponsorLink={"https://www.skyscanner.es/"}
