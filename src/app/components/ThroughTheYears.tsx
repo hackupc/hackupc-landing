@@ -26,7 +26,7 @@ const TetrisContainer = styled.div`
 
 const StatisticsContainer = styled.div`
   display: none;
-  width: 200px;
+  width: 230px;
   background: #333;
   color: #fff;
   text-align: center;
