@@ -234,7 +234,12 @@ export default function SponsorsAndPartners() {
 
         <SponsorRow>
           <GigaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/revolut.svg"}
+              imageAlt={"revolut"}
+              sponsorLink={"https://www.revolut.com/talent-programmes/"}
+              smallPadding
+            />
           </GigaBox>
           <GigaBox>
             <SponsorUnrevealed />
