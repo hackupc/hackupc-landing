@@ -313,10 +313,10 @@ export default function SponsorsAndPartners() {
             />
           </MiliBox>
           <MiliBox>
-            <SponsorUnrevealed
-            // imageSrc={"/Partners/cfis.svg"}
-            // imageAlt={"cfis"}
-            // sponsorLink={"https://cfis.upc.edu/"}
+            <SponsorLogo
+              imageSrc={"/Partners/nissin.png"}
+              imageAlt={"nissin"}
+              sponsorLink={"https://www.nissinfoods.com/"}
             />
           </MiliBox>
           <MiliBox>
