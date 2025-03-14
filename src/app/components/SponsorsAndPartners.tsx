@@ -320,11 +320,11 @@ export default function SponsorsAndPartners() {
             />
           </MiliBox>
           <MiliBox>
-            <SponsorUnrevealed
-            // imageSrc={"/Partners/coeinf.png"}
-            // imageAlt={"coeinf"}
-            // sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
-            // smallPadding
+            <SponsorLogo
+              imageSrc={"/Partners/dominos_pizza.png"}
+              imageAlt={"domino's pizza"}
+              sponsorLink={"https://www.dominospizza.es/"}
+              smallPadding
             />
           </MiliBox>
           <MiliBox>
