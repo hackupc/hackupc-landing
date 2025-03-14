@@ -13,9 +13,9 @@ import Hackers from "@/app/components/Hackers";
 import Hero from "./components/Hero";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-// import ThroughTheYears from "@/app/components/ThroughTheYears/ThroughTheYears";
 import Spacer from "@/app/components/Spacer";
 import { Background } from "@/app/genericComponents/General";
+import ThroughTheYears from "@/app/components/ThroughTheYears";
 
 export default function Home() {
   return (
@@ -44,8 +44,8 @@ export default function Home() {
       <Spacer />
       <Hackers />
       <Spacer />
-      {/*<ThroughTheYears />*/}
-      {/*<Spacer />*/}
+      <ThroughTheYears />
+      <Spacer />
       <Footer />
     </main>
   );
