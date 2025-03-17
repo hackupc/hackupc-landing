@@ -18,7 +18,7 @@ const HeaderContainer = styled.div<{ isScrolled: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
   background-color: ${({ isScrolled }) =>
     isScrolled ? BackgroundWithOpacity : "transparent"};
 `;
