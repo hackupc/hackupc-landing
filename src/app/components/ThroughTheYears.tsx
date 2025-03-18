@@ -244,7 +244,7 @@ export default function ThroughTheYears() {
                 />
               </a>
               <a
-                href="https://2017w.hackupc.com"
+                href="https://w2017.hackupc.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -256,7 +256,7 @@ export default function ThroughTheYears() {
                 />
               </a>
               <a
-                href="https://2017f.hackupc.com"
+                href="https://f2017.hackupc.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -268,7 +268,7 @@ export default function ThroughTheYears() {
                 />
               </a>
               <a
-                href="https://2026w.hackupc.com"
+                href="https://f2016.hackupc.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -280,7 +280,7 @@ export default function ThroughTheYears() {
                 />
               </a>
               <a
-                href="https://2016s.hackupc.com"
+                href="https://s2016.hackupc.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
