@@ -256,10 +256,10 @@ export default function SponsorsAndPartners() {
           </MegaBox>
           <MegaBox>
             <SponsorLogo
-            imageSrc={"/Sponsors/grafana.svg"}
-            imageAlt={"grafana"}
-            sponsorLink={"https://grafana.com/"}
-            smallPadding
+              imageSrc={"/Sponsors/grafana.svg"}
+              imageAlt={"grafana"}
+              sponsorLink={"https://grafana.com/"}
+              smallPadding
             />
           </MegaBox>
           <MegaBox>
