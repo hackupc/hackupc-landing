@@ -255,7 +255,12 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/grafana.svg"}
+              imageAlt={"grafana"}
+              sponsorLink={"https://grafana.com/"}
+              smallPadding
+            />
           </MegaBox>
           <MegaBox>
             <SponsorUnrevealed />
