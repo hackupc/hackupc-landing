@@ -333,6 +333,14 @@ export default function SponsorsAndPartners() {
             />
           </MiliBox>
           <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/xurreria_manolo.png"}
+              imageAlt={"Xurreria Manolo"}
+              sponsorLink={"https://www.instagram.com/xurreriacalmanolo"}
+              smallPadding
+            />
+          </MiliBox>
+          <MiliBox>
             <SponsorUnrevealed />
           </MiliBox>
         </SponsorRow>
