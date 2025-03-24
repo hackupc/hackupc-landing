@@ -318,6 +318,11 @@ export default function SponsorsAndPartners() {
             />
           </MiliBox>
           <MiliBox>
+            <SponsorUnrevealed />
+          </MiliBox>
+        </SponsorRow>
+        <SponsorRow>
+          <MiliBox>
             <SponsorLogo
               imageSrc={"/Partners/nissin.png"}
               imageAlt={"nissin"}
@@ -337,6 +342,22 @@ export default function SponsorsAndPartners() {
               imageSrc={"/Partners/xurreria_manolo.png"}
               imageAlt={"Xurreria Manolo"}
               sponsorLink={"https://www.instagram.com/xurreriacalmanolo"}
+              smallPadding
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/risi.png"}
+              imageAlt={"RISI"}
+              sponsorLink={"https://risi.es/es/"}
+              smallPadding
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/frit.png"}
+              imageAlt={"Frit Ravich"}
+              sponsorLink={"https://www.fritravich.com/en/"}
               smallPadding
             />
           </MiliBox>
