@@ -66,7 +66,7 @@ export default function Live() {
           HackUPC so that you can prepare everything you might need! And of
           course it will be the page you visit to check out all the activities
           happening during the event. You can also check our{" "}
-          <Anchor href="https://live.hackupc.com/" target="_blank">
+          <Anchor href="https://2024-live.hackupc.com/" target="_blank">
             {" "}
             last year's live page
           </Anchor>{" "}
@@ -75,13 +75,11 @@ export default function Live() {
       </TextContainer>
       <PrimaryButton
         className={silkscreen.className}
-        /* href="https://live.hackupc.com/"
+        href="https://live.hackupc.com/"
         target="_blank"
-        rel="noopener noreferrer" */
-        disabled
-        style={{ cursor: "not-allowed", opacity: 0.3 }}
+        rel="noopener noreferrer"
       >
-        In construction
+        Check live
       </PrimaryButton>
     </Section>
   );
