@@ -241,9 +241,6 @@ export default function SponsorsAndPartners() {
               smallPadding
             />
           </GigaBox>
-          <GigaBox>
-            <SponsorUnrevealed />
-          </GigaBox>
         </SponsorRow>
         <SponsorRow>
           <MegaBox>
@@ -272,14 +269,21 @@ export default function SponsorsAndPartners() {
 
         <SponsorRow>
           <KiloBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/jetbrains.svg"}
+              imageAlt={"jetbrains"}
+              sponsorLink={"https://www.jetbrains.com/"}
+              smallPadding
+            />
           </KiloBox>
           <KiloBox>
             <SponsorUnrevealed />
           </KiloBox>
-          <KiloBox>
+        </SponsorRow>
+        <SponsorRow>
+          <MiliBox>
             <SponsorUnrevealed />
-          </KiloBox>
+          </MiliBox>
         </SponsorRow>
       </SponsorsBlock>
 
