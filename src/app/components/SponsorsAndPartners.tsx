@@ -272,7 +272,7 @@ export default function SponsorsAndPartners() {
             <SponsorLogo
               imageSrc={"/Sponsors/jetbrains.svg"}
               imageAlt={"jetbrains"}
-              sponsorLink={""}
+              sponsorLink={"https://www.jetbrains.com/"}
               smallPadding
             />
           </KiloBox>
