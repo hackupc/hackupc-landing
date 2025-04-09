@@ -282,7 +282,12 @@ export default function SponsorsAndPartners() {
         </SponsorRow>
         <SponsorRow>
           <MiliBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/ithink.png"}
+              sponsorLink={"https://www.ithink.com/"}
+              imageAlt={"ithink"}
+              smallPadding
+            />
           </MiliBox>
         </SponsorRow>
       </SponsorsBlock>
