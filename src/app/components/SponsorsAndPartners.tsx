@@ -284,7 +284,7 @@ export default function SponsorsAndPartners() {
           <MiliBox>
             <SponsorLogo
               imageSrc={"/Sponsors/ithink.png"}
-              sponsorLink={"https://www.ithink.com/"}
+              sponsorLink={"https://ithinkupc.com/"}
               imageAlt={"ithink"}
               smallPadding
             />
