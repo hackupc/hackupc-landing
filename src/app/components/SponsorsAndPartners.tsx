@@ -321,13 +321,17 @@ export default function SponsorsAndPartners() {
           </MiliBox>
           <MiliBox>
             <SponsorLogo
+              imageSrc={"/Partners/cfis.svg"}
+              imageAlt={"CFIS"}
+              sponsorLink={"https://cfis.upc.edu/"}
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
               imageSrc={"/Partners/mlh.svg"}
               imageAlt={"mlh"}
               sponsorLink={"https://mlh.io/eu"}
             />
-          </MiliBox>
-          <MiliBox>
-            <SponsorUnrevealed />
           </MiliBox>
         </SponsorRow>
         <SponsorRow>
