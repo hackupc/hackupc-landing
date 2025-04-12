@@ -260,7 +260,12 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/vueling.svg"}
+              imageAlt={"vueling"}
+              sponsorLink={"https://www.vueling.com/ca?Currency=EUR"}
+              smallPadding
+            />
           </MegaBox>
           <MegaBox>
             <SponsorUnrevealed />
