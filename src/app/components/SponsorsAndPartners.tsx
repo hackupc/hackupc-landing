@@ -380,7 +380,7 @@ export default function SponsorsAndPartners() {
           </MiliBox>
           <MiliBox>
             <SponsorLogo
-              imageSrc={"/Partners/ministerio.JPG"}
+              imageSrc={"/Partners/ministerio.png"}
               imageAlt={"Ministerio"}
               smallPadding
               sponsorLink={"https://www.siemens-energy.com/global/en/home.html"}
