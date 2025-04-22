@@ -338,6 +338,13 @@ export default function SponsorsAndPartners() {
               sponsorLink={"https://mlh.io/eu"}
             />
           </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/coeinf.png"}
+              imageAlt={"coeinf"}
+              sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
+            />
+          </MiliBox>
         </SponsorRow>
         <SponsorRow>
           <MiliBox>
@@ -380,7 +387,22 @@ export default function SponsorsAndPartners() {
             />
           </MiliBox>
           <MiliBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Partners/nestle_extrafino.jpg"}
+              imageAlt={"Extrafino"}
+              sponsorLink={"https://www.nestle.com/"}
+              smallPadding
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/nestle_kitkat.png"}
+              imageAlt={"KitKat"}
+              sponsorLink={
+                "https://www.nestle.com/brands/chocolate-confectionery/kitkat"
+              }
+              smallPadding
+            />
           </MiliBox>
         </SponsorRow>
       </PartnersBlock>
