@@ -267,7 +267,12 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/vueling.svg"}
+              imageAlt={"vueling"}
+              sponsorLink={"https://www.vueling.com/ca?Currency=EUR"}
+              smallPadding
+            />
           </MegaBox>
           <MegaBox>
             <SponsorUnrevealed />
@@ -337,6 +342,13 @@ export default function SponsorsAndPartners() {
               sponsorLink={"https://mlh.io/eu"}
             />
           </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/coeinf.png"}
+              imageAlt={"coeinf"}
+              sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
+            />
+          </MiliBox>
         </SponsorRow>
         <SponsorRow>
           <MiliBox>
@@ -375,6 +387,24 @@ export default function SponsorsAndPartners() {
               imageSrc={"/Partners/frit.png"}
               imageAlt={"Frit Ravich"}
               sponsorLink={"https://www.fritravich.com/en/"}
+              smallPadding
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/nestle_extrafino.jpg"}
+              imageAlt={"Extrafino"}
+              sponsorLink={"https://www.nestle.com/"}
+              smallPadding
+            />
+          </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/nestle_kitkat.png"}
+              imageAlt={"KitKat"}
+              sponsorLink={
+                "https://www.nestle.com/brands/chocolate-confectionery/kitkat"
+              }
               smallPadding
             />
           </MiliBox>
