@@ -238,6 +238,13 @@ export default function SponsorsAndPartners() {
               imageSrc={"/Sponsors/revolut.svg"}
               imageAlt={"revolut"}
               sponsorLink={"https://www.revolut.com/talent-programmes/"}
+            />
+          </GigaBox>
+          <GigaBox>
+            <SponsorLogo
+              imageSrc={"/Sponsors/SiemensEnergy.png"}
+              imageAlt={"SiemensEnergy"}
+              sponsorLink={"https://www.siemens-energy.com/global/en/home.html"}
               smallPadding
             />
           </GigaBox>
@@ -280,9 +287,6 @@ export default function SponsorsAndPartners() {
               sponsorLink={"https://www.jetbrains.com/"}
               smallPadding
             />
-          </KiloBox>
-          <KiloBox>
-            <SponsorUnrevealed />
           </KiloBox>
         </SponsorRow>
         <SponsorRow>
