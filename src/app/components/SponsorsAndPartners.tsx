@@ -242,7 +242,7 @@ export default function SponsorsAndPartners() {
           </GigaBox>
           <GigaBox>
             <SponsorLogo
-              imageSrc={"/Sponsors/SiemensEnergy.svg"}
+              imageSrc={"/Sponsors/SiemensEnergy.png"}
               imageAlt={"SiemensEnergy"}
               sponsorLink={"https://www.siemens-energy.com/global/en/home.html"}
               smallPadding
@@ -376,14 +376,6 @@ export default function SponsorsAndPartners() {
               imageAlt={"Frit Ravich"}
               sponsorLink={"https://www.fritravich.com/en/"}
               smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/ministerio.png"}
-              imageAlt={"Ministerio"}
-              smallPadding
-              sponsorLink={"https://www.siemens-energy.com/global/en/home.html"}
             />
           </MiliBox>
         </SponsorRow>
