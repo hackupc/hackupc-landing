@@ -280,7 +280,12 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/inditex.svg"}
+              imageAlt={"inditex"}
+              sponsorLink={"https://xtend.inditex.com/"}
+              smallPadding
+            />
           </MegaBox>
         </SponsorRow>
 
