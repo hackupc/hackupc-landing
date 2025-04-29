@@ -228,7 +228,12 @@ export default function SponsorsAndPartners() {
       <SponsorsBlock>
         <SponsorRow>
           <TeraBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/seat.svg"}
+              imageAlt={"seat"}
+              sponsorLink={"https://www.seat.com/"}
+              smallPadding
+            />
           </TeraBox>
         </SponsorRow>
 
