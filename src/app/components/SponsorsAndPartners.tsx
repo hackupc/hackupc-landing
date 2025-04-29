@@ -16,7 +16,6 @@ import {
   MegaBox,
   MiliBox,
   SponsorLogo,
-  SponsorUnrevealed,
   TeraBox,
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
