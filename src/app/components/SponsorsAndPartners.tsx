@@ -425,7 +425,6 @@ export default function SponsorsAndPartners() {
             />
           </MiliBox>
         </SponsorRow>
-        
       </PartnersBlock>
     </SponsorsAndPartnersContainer>
   );
