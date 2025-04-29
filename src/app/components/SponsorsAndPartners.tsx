@@ -408,6 +408,16 @@ export default function SponsorsAndPartners() {
               smallPadding
             />
           </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/cocacola.png"}
+              imageAlt={"Cocacola"}
+              sponsorLink={
+                "https://www.coca-cola.com/es/es"
+              }
+              smallPadding
+            />
+          </MiliBox>
         </SponsorRow>
       </PartnersBlock>
     </SponsorsAndPartnersContainer>
