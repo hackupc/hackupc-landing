@@ -416,7 +416,16 @@ export default function SponsorsAndPartners() {
               smallPadding
             />
           </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/tallerdeso.png"}
+              imageAlt={"Taller De So"}
+              sponsorLink={"https://www.instagram.com/tallerdeso"}
+              smallPadding
+            />
+          </MiliBox>
         </SponsorRow>
+        
       </PartnersBlock>
     </SponsorsAndPartnersContainer>
   );
