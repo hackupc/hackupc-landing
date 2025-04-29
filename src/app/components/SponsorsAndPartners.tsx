@@ -349,6 +349,14 @@ export default function SponsorsAndPartners() {
               sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
             />
           </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/tallerdeso.png"}
+              imageAlt={"Taller De So"}
+              sponsorLink={"https://www.instagram.com/tallerdeso"}
+              smallPadding
+            />
+          </MiliBox>
         </SponsorRow>
         <SponsorRow>
           <MiliBox>
@@ -413,14 +421,6 @@ export default function SponsorsAndPartners() {
               imageSrc={"/Partners/cocacola.png"}
               imageAlt={"Cocacola"}
               sponsorLink={"https://www.coca-cola.com/es/es"}
-              smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/tallerdeso.png"}
-              imageAlt={"Taller De So"}
-              sponsorLink={"https://www.instagram.com/tallerdeso"}
               smallPadding
             />
           </MiliBox>
