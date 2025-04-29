@@ -354,6 +354,14 @@ export default function SponsorsAndPartners() {
               sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
             />
           </MiliBox>
+          <MiliBox>
+            <SponsorLogo
+              imageSrc={"/Partners/tallerdeso.png"}
+              imageAlt={"Taller De So"}
+              sponsorLink={"https://www.instagram.com/tallerdeso"}
+              smallPadding
+            />
+          </MiliBox>
         </SponsorRow>
         <SponsorRow>
           <MiliBox>
