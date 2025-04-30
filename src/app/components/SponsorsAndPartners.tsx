@@ -16,7 +16,6 @@ import {
   MegaBox,
   MiliBox,
   SponsorLogo,
-  SponsorUnrevealed,
   TeraBox,
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
@@ -280,7 +279,12 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/inditex.svg"}
+              imageAlt={"inditex"}
+              sponsorLink={"https://xtend.inditex.com/"}
+              smallPadding
+            />
           </MegaBox>
         </SponsorRow>
 
