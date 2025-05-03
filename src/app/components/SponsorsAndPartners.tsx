@@ -361,7 +361,9 @@ export default function SponsorsAndPartners() {
             <SponsorLogo
               imageSrc={"/Partners/ministerio.png"}
               imageAlt={"Ministerio"}
-              sponsorLink={"https://www.www.siemens-energy.com/global/en/home.html"}
+              sponsorLink={
+                "https://www.www.siemens-energy.com/global/en/home.html"
+              }
               smallPadding
             />
           </MiliBox>
