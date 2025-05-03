@@ -16,7 +16,6 @@ import {
   MegaBox,
   MiliBox,
   SponsorLogo,
-  SponsorUnrevealed,
   TeraBox,
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
@@ -228,7 +227,12 @@ export default function SponsorsAndPartners() {
       <SponsorsBlock>
         <SponsorRow>
           <TeraBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/seat.svg"}
+              imageAlt={"seat"}
+              sponsorLink={"https://www.seat.com/"}
+              smallPadding
+            />
           </TeraBox>
         </SponsorRow>
 
@@ -275,7 +279,12 @@ export default function SponsorsAndPartners() {
             />
           </MegaBox>
           <MegaBox>
-            <SponsorUnrevealed />
+            <SponsorLogo
+              imageSrc={"/Sponsors/inditex.svg"}
+              imageAlt={"inditex"}
+              sponsorLink={"https://xtend.inditex.com/"}
+              smallPadding
+            />
           </MegaBox>
         </SponsorRow>
 
