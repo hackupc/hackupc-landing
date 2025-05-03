@@ -357,15 +357,16 @@ export default function SponsorsAndPartners() {
               smallPadding
             />
           </MiliBox>
-        </SponsorRow>
-        <SponsorRow>
           <MiliBox>
             <SponsorLogo
-              imageSrc={"/Partners/nissin.png"}
-              imageAlt={"nissin"}
-              sponsorLink={"https://www.nissinfoods.com/"}
+              imageSrc={"/Partners/ministerio.png"}
+              imageAlt={"Ministerio"}
+              sponsorLink={"https://www.www.siemens-energy.com/global/en/home.html"}
+              smallPadding
             />
           </MiliBox>
+        </SponsorRow>
+        <SponsorRow>
           <MiliBox>
             <SponsorLogo
               imageSrc={"/Partners/dominos_pizza.png"}
@@ -395,24 +396,6 @@ export default function SponsorsAndPartners() {
               imageSrc={"/Partners/frit.png"}
               imageAlt={"Frit Ravich"}
               sponsorLink={"https://www.fritravich.com/en/"}
-              smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/nestle_extrafino.jpg"}
-              imageAlt={"Extrafino"}
-              sponsorLink={"https://www.nestle.com/"}
-              smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/nestle_kitkat.png"}
-              imageAlt={"KitKat"}
-              sponsorLink={
-                "https://www.nestle.com/brands/chocolate-confectionery/kitkat"
-              }
               smallPadding
             />
           </MiliBox>
