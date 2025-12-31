@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Body,
-  SectionTitle,
-} from "@/app/genericComponents/Typography";
+import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
   SpacingL,
