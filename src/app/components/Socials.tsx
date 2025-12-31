@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -13,9 +12,9 @@ import {
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { Section } from "@/app/genericComponents/General";
 import { BlockTitle, SectionTitle } from "@/app/genericComponents/Typography";
-import { silkscreen } from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 import {
   MobileBreakpoint,
   SpacingM,
@@ -63,24 +62,7 @@ const SocialItem = styled.div`
   }
 `;
 
-const CustomImage = styled(Image)`
-  margin-bottom: ${SpacingM};
-  animation: blink 5s infinite;
-  @keyframes blink {
-    0% {
-      content: url("/yellow_ghost_2.svg");
-    }
-    50% {
-      content: url("/yellow_ghost_2.svg");
-    }
-    51% {
-      content: url("/yellow_ghost.svg");
-    }
-    100% {
-      content: url("/yellow_ghost.svg");
-    }
-  }
-`;
+
 
 const Colors = {
   HeroYellow: "#FCFC01",
@@ -90,16 +72,9 @@ const Colors = {
   HeroBlack80: "rgba(0, 0, 0, 0.8)",
 };
 
-const CustomBackground = styled(SectionBackground)`
-  width: 100vw;
-  background-color: ${Colors.HeroNeutral};
-  background-image: url("/background_piece.svg");
-  background-repeat: repeat;
-  background-size: 80px 80px;
-`;
+
 
 const BlueContainer = styled.div`
-  background-color: ${Colors.HeroBlack80};
   border: 2px solid ${Colors.HeroBlue};
   border-radius: 8px;
   padding: ${SpacingM};
@@ -112,118 +87,111 @@ const BlueContainer = styled.div`
 
 export default function Socials() {
   return (
-    <CustomBackground id="socials">
-      <Section>
-        <BlueContainer>
-          <CustomImage
-            src="/yellow_ghost.svg"
-            alt="Ghost Biene"
-            width={102}
-            height={168}
-          />
-          <StyledSectionTitle className={silkscreen.className}>
-            Stay tuned, and don't miss a bit
-          </StyledSectionTitle>
-          <Subtitle>
-            <BlockTitle color={Colors.HeroBlue}>
-              Check our social media networks
-            </BlockTitle>
-          </Subtitle>
+    <Section id="socials">
+      <BlueContainer>
 
-          <SocialsList>
-            <SocialItem>
-              <a
-                href="mailto:contact@hackupc.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Email"
-              >
-                <FontAwesomeIcon icon={faEnvelope} size="3x" />
-              </a>
-            </SocialItem>
-            <SocialItem>
-              <a
-                href="https://twitter.com/hackupc"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <FontAwesomeIcon icon={faXTwitter} size="3x" />
-              </a>
-            </SocialItem>
-            <SocialItem>
-              <a
-                href="https://www.instagram.com/hackupc/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <FontAwesomeIcon icon={faInstagram} size="3x" />
-              </a>
-            </SocialItem>
-            <SocialItem>
-              <a
-                href="https://www.facebook.com/hackupc"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                <FontAwesomeIcon icon={faFacebook} size="3x" />
-              </a>
-            </SocialItem>
-            <SocialItem>
-              <a
-                href="https://linkedin.com/company/hack-upc"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Email"
-              >
-                <FontAwesomeIcon icon={faLinkedin} size="3x" />
-              </a>
-            </SocialItem>
-            <SocialItem>
-              <a
-                href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Youtube"
-              >
-                <FontAwesomeIcon icon={faYoutube} size="3x" />
-              </a>
-            </SocialItem>
-            <SocialItem>
-              <a
-                href="https://www.twitch.tv/hackersupc"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Youtube"
-              >
-                <FontAwesomeIcon icon={faTwitch} size="3x" />
-              </a>
-            </SocialItem>
-            <SocialItem>
-              <a
-                href="https://medium.com/@hackupc"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Medium"
-              >
-                <FontAwesomeIcon icon={faMedium} size="3x" />
-              </a>
-            </SocialItem>
-            <SocialItem>
-              <a
-                href="https://github.com/hackupc"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Github"
-              >
-                <FontAwesomeIcon icon={faGithub} size="3x" />
-              </a>
-            </SocialItem>
-          </SocialsList>
-        </BlueContainer>
-      </Section>
-    </CustomBackground>
+        <StyledSectionTitle className={lora.className}>
+          Stay tuned, and don't miss a bit
+        </StyledSectionTitle>
+        <Subtitle>
+          <BlockTitle color={Colors.HeroBlue}>
+            Check our social media networks
+          </BlockTitle>
+        </Subtitle>
+
+        <SocialsList>
+          <SocialItem>
+            <a
+              href="mailto:contact@hackupc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+            >
+              <FontAwesomeIcon icon={faEnvelope} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
+              href="https://twitter.com/hackupc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <FontAwesomeIcon icon={faXTwitter} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
+              href="https://www.instagram.com/hackupc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FontAwesomeIcon icon={faInstagram} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
+              href="https://www.facebook.com/hackupc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FontAwesomeIcon icon={faFacebook} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
+              href="https://linkedin.com/company/hack-upc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+            >
+              <FontAwesomeIcon icon={faLinkedin} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
+              href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Youtube"
+            >
+              <FontAwesomeIcon icon={faYoutube} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
+              href="https://www.twitch.tv/hackersupc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Youtube"
+            >
+              <FontAwesomeIcon icon={faTwitch} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
+              href="https://medium.com/@hackupc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Medium"
+            >
+              <FontAwesomeIcon icon={faMedium} size="3x" />
+            </a>
+          </SocialItem>
+          <SocialItem>
+            <a
+              href="https://github.com/hackupc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Github"
+            >
+              <FontAwesomeIcon icon={faGithub} size="3x" />
+            </a>
+          </SocialItem>
+        </SocialsList>
+      </BlueContainer>
+    </Section>
   );
 }

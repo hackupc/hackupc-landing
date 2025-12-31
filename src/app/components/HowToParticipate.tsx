@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import styled from "styled-components";
 import {
   BlockTitle,
@@ -17,42 +16,20 @@ import {
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
 import { SecondaryButton } from "@/app/genericComponents/Buttons";
-import { silkscreen } from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: ${SpacingXL};
   text-align: center;
-  background-color: black;
 
   @media (max-width: ${MobileBreakpoint}) {
     grid-template-columns: 1fr;
   }
 `;
 
-const ImageIcon = styled(Image)`
-  margin-bottom: ${SpacingS};
-  transition: transform 0.3s ease-in-out;
 
-  &:hover {
-    transform: scale(1.5);
-  }
-
-  @keyframes wiggle {
-    0% {
-      transform: translateX(-15px);
-    }
-    50% {
-      transform: translateX(15px);
-    }
-    100% {
-      transform: translateX(-15px);
-    }
-  }
-
-  animation: wiggle 2s infinite ease-in-out;
-`;
 
 const RoleBlock = styled.div`
   display: flex;
@@ -80,21 +57,7 @@ const RoleBlock = styled.div`
     border-color: #fb3e01;
   }
 
-  &:nth-child(1) ${ImageIcon} {
-    animation-delay: 0s;
-  }
 
-  &:nth-child(2) ${ImageIcon} {
-    animation-delay: 0.3s;
-  }
-
-  &:nth-child(3) ${ImageIcon} {
-    animation-delay: 0.6s;
-  }
-
-  &:nth-child(4) ${ImageIcon} {
-    animation-delay: 0.9s;
-  }
 
   @media (max-width: ${MobileBreakpoint}) {
     margin-top: ${SpacingM};
@@ -108,7 +71,6 @@ const SpecialSection = styled.div`
   margin: 0;
   gap: ${SpacingM};
   width: 100vw;
-  background-color: black;
   position: relative;
   z-index: 0;
 `;
@@ -116,7 +78,6 @@ const SpecialSection = styled.div`
 const BlockImageTitle = styled.a`
   position: absolute;
   top: -25%;
-  background-color: black;
   padding: ${SpacingS};
 `;
 
@@ -209,7 +170,7 @@ export default function HowToParticipate() {
     <SpecialSection>
       <Section id="howtoparticipate">
         <HowToTitleWrapper>
-          <HowToTitle className={silkscreen.className}>
+          <HowToTitle className={lora.className}>
             How to
             <br />
             Participate
@@ -221,14 +182,9 @@ export default function HowToParticipate() {
               href="https://my.hackupc.com/user/signup/mentor/"
               target="_blank"
             >
-              <ImageIcon
-                src="greenAlien.svg"
-                alt="Mentor"
-                width={50}
-                height={50}
-              />
+
               <BlockTitle
-                className={silkscreen.className}
+                className={lora.className}
                 color={Secondary100}
                 haveMargin
               >
@@ -244,7 +200,7 @@ export default function HowToParticipate() {
             </Text>
             <ColoredButton
               color="#77C914"
-              className={silkscreen.className}
+              className={lora.className}
               href="https://my.hackupc.com/user/signup/mentor/"
               target="_blank"
             >
@@ -257,14 +213,9 @@ export default function HowToParticipate() {
               href="https://my.hackupc.com/user/signup/volunteer/"
               target="_blank"
             >
-              <ImageIcon
-                src="blueAlien.svg"
-                alt="Volunteer"
-                width={50}
-                height={50}
-              />
+
               <BlockTitle
-                className={silkscreen.className}
+                className={lora.className}
                 color={Secondary100}
                 haveMargin
               >
@@ -279,7 +230,7 @@ export default function HowToParticipate() {
             </Text>
             <ColoredButton
               color="#5665FF"
-              className={silkscreen.className}
+              className={lora.className}
               href="https://my.hackupc.com/user/signup/volunteer/"
               target="_blank"
             >
@@ -289,14 +240,9 @@ export default function HowToParticipate() {
 
           <RoleBlock>
             <BlockImageTitle href="mailto:logistics@hackupc.com">
-              <ImageIcon
-                src="yellowAlien.svg"
-                alt="Partner"
-                width={50}
-                height={50}
-              />
+
               <BlockTitle
-                className={silkscreen.className}
+                className={lora.className}
                 color={Secondary100}
                 haveMargin
               >
@@ -310,7 +256,7 @@ export default function HowToParticipate() {
             </Text>
             <ColoredButton
               color="#FCAF01"
-              className={silkscreen.className}
+              className={lora.className}
               href="mailto:logistics@hackupc.com"
             >
               Contact us
@@ -319,14 +265,9 @@ export default function HowToParticipate() {
 
           <RoleBlock>
             <BlockImageTitle href="mailto:sponsor@hackupc.com">
-              <ImageIcon
-                src="redAlien.svg"
-                alt="Sponsor"
-                width={50}
-                height={50}
-              />
+
               <BlockTitle
-                className={silkscreen.className}
+                className={lora.className}
                 color={Secondary100}
                 haveMargin
               >
@@ -340,7 +281,7 @@ export default function HowToParticipate() {
             </Text>
             <ColoredButton
               color="#FB3E01"
-              className={silkscreen.className}
+              className={lora.className}
               href="mailto:sponsor@hackupc.com"
             >
               Contact us
