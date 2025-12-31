@@ -3,7 +3,6 @@ import {
   MobileBreakpoint,
   SpacingL,
   SpacingM,
-  SpacingS,
 } from "@/app/genericComponents/tokens";
 import {
   Body,
