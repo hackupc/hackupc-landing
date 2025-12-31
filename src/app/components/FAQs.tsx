@@ -8,6 +8,7 @@ import {
 
 import parse from "html-react-parser";
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   MobileBreakpoint,
   SpacingL,
@@ -65,6 +66,7 @@ const Question = styled.div`
   padding: ${SpacingXS};
   border-radius: 10px;
   box-shadow: 2px 2px 8px black;
+  background-color: #6B624E;
 `;
 
 const QuestionWithPadding = styled(Question)`
@@ -77,11 +79,33 @@ const QuestionTitleWrap = styled.div`
   gap: ${SpacingS};
 `;
 
+const TorchWrapper = styled.div`
+  position: relative;
+  width: 24px;
+  height: 40px;
+  cursor: pointer;
+`;
+
+const FireGif = styled(Image)`
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+`;
+
+const TorchIcon = styled(Image)`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
 const QuestionTitle = styled(BodyBold)`
   cursor: pointer;
 `;
 
-const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
+const QuestionAnswer = styled(Body) <{ isVisible: boolean }>`
   transform-origin: top;
   transition:
     transform 0.5s ease,
@@ -91,6 +115,7 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
   line-height: 1.5rem;
   height: 0;
   visibility: hidden;
+  background-color: #6B624E;
 
   ${(props) =>
     props.isVisible &&
@@ -185,137 +210,77 @@ export default function FAQs() {
     setActiveFaqId(activeFaqId === id ? null : id);
   };
 
+  const renderFaq = (faq: any) => (
+    <Question key={faq.id}>
+      <QuestionTitleWrap>
+        <TorchWrapper onClick={() => toggleFaq(faq.id)}>
+          {activeFaqId === faq.id && (
+            <FireGif
+              src="/fire_move.gif"
+              alt="fire"
+              width={50}
+              height={50}
+              unoptimized
+            />
+          )}
+          <TorchIcon
+            src="/torch.svg"
+            alt="torch"
+            width={24}
+            height={24}
+          />
+        </TorchWrapper>
+
+        <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+          {faq.question}
+        </QuestionTitle>
+      </QuestionTitleWrap>
+
+      <QuestionAnswer isVisible={activeFaqId === faq.id}>
+        {renderAnswer(faq.answer)}
+      </QuestionAnswer>
+    </Question>
+  );
+
   return (
     <Section id="faqs">
       <TitleSpacer>
-        <SectionTitleStyled className={lora.className}>FAQs</SectionTitleStyled>
+        <SectionTitleStyled className={lora.className}>
+          FAQs
+        </SectionTitleStyled>
       </TitleSpacer>
+
       <Split>
         <ColumnsQuestions>
-          <div>
-            <QuestionsBlock>
-              <BlockTitleStyled className={lora.className}>
-                About HackUPC
-              </BlockTitleStyled>
-              {hackupc_faqs.map((faq) => (
-                <Question key={faq.id}>
-                  <QuestionTitleWrap>
-                    <span
-                      style={{
-                        cursor: "pointer",
-                        fontSize: "20px",
-                        width: "25px",
-                        textAlign: "center",
-                      }}
-                      onClick={() => toggleFaq(faq.id)}
-                    >
-                      {activeFaqId === faq.id ? "−" : "+"}
-                    </span>
-                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                      {faq.question}
-                    </QuestionTitle>
-                  </QuestionTitleWrap>
-                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                    {renderAnswer(faq.answer)}
-                  </QuestionAnswer>
-                </Question>
-              ))}
-            </QuestionsBlock>
-          </div>
+          <QuestionsBlock>
+            <BlockTitleStyled className={lora.className}>
+              About HackUPC
+            </BlockTitleStyled>
+            {hackupc_faqs.map(renderFaq)}
+          </QuestionsBlock>
 
-          <div>
-            <QuestionsBlock>
-              <BlockTitleStyled className={lora.className}>
-                Travel Reimbursement
-              </BlockTitleStyled>
-              {travel_faqs.map((faq) => (
-                <Question key={faq.id}>
-                  <QuestionTitleWrap>
-                    <span
-                      style={{
-                        cursor: "pointer",
-                        fontSize: "20px",
-                        width: "25px",
-                        textAlign: "center",
-                      }}
-                      onClick={() => toggleFaq(faq.id)}
-                    >
-                      {activeFaqId === faq.id ? "−" : "+"}
-                    </span>
-                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                      {faq.question}
-                    </QuestionTitle>
-                  </QuestionTitleWrap>
-                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                    {renderAnswer(faq.answer)}
-                  </QuestionAnswer>
-                </Question>
-              ))}
-            </QuestionsBlock>
-          </div>
+          <QuestionsBlock>
+            <BlockTitleStyled className={lora.className}>
+              Travel Reimbursement
+            </BlockTitleStyled>
+            {travel_faqs.map(renderFaq)}
+          </QuestionsBlock>
         </ColumnsQuestions>
 
         <ColumnsQuestions>
-          <div>
-            <QuestionsBlock>
-              <BlockTitleStyled className={lora.className}>
-                Applications
-              </BlockTitleStyled>
-              {applications_faqs.map((faq) => (
-                <Question key={faq.id}>
-                  <QuestionTitleWrap>
-                    <span
-                      style={{
-                        cursor: "pointer",
-                        fontSize: "20px",
-                        width: "25px",
-                        textAlign: "center",
-                      }}
-                      onClick={() => toggleFaq(faq.id)}
-                    >
-                      {activeFaqId === faq.id ? "−" : "+"}
-                    </span>
-                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                      {faq.question}
-                    </QuestionTitle>
-                  </QuestionTitleWrap>
-                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                    {renderAnswer(faq.answer)}
-                  </QuestionAnswer>
-                </Question>
-              ))}
-            </QuestionsBlock>
-          </div>
-          <div>
-            <QuestionsBlock>
-              <BlockTitleStyled className={lora.className}>
-                Teams
-              </BlockTitleStyled>
-              {teams_faqs.map((faq) => (
-                <Question key={faq.id}>
-                  <QuestionTitleWrap>
-                    <span
-                      style={{
-                        cursor: "pointer",
-                        fontSize: "20px",
-                        width: "25px",
-                        textAlign: "center",
-                      }}
-                      onClick={() => toggleFaq(faq.id)}
-                    >
-                      {activeFaqId === faq.id ? "−" : "+"}
-                    </span>
-                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                      {faq.question}
-                    </QuestionTitle>
-                  </QuestionTitleWrap>
-                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                    {renderAnswer(faq.answer)}
-                  </QuestionAnswer>
-                </Question>
-              ))}
-            </QuestionsBlock>
-          </div>
+          <QuestionsBlock>
+            <BlockTitleStyled className={lora.className}>
+              Applications
+            </BlockTitleStyled>
+            {applications_faqs.map(renderFaq)}
+          </QuestionsBlock>
+
+          <QuestionsBlock>
+            <BlockTitleStyled className={lora.className}>
+              Teams
+            </BlockTitleStyled>
+            {teams_faqs.map(renderFaq)}
+          </QuestionsBlock>
         </ColumnsQuestions>
       </Split>
 
