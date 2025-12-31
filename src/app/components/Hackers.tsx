@@ -15,16 +15,6 @@ import {
   TitleS,
 } from "@/app/genericComponents/tokens";
 
-const Colors = {
-  HeroYellow: "#FCFC01",
-  HeroBlue: "#0060BF",
-  HeroNeutral: "#231F20",
-  HeroBlack: "#000000",
-  HeroBlack80: "rgba(0, 0, 0, 0.8)",
-};
-
-
-
 const WhiteContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.51);
   border-radius: 10px;
