@@ -429,8 +429,9 @@ export default function Hero() {
           ${logoPositions.map((logo) => `${logo.x}px ${logo.y}px`).join(", ")}`,
           backgroundImage: ` 
           url("/background_piece.svg"), 
-          url(${spriteIndex === 0 ? "/biene_pacman.svg" : "/biene_pacman_2.svg"
-            }), 
+          url(${
+            spriteIndex === 0 ? "/biene_pacman.svg" : "/biene_pacman_2.svg"
+          }), 
           url("/green_ghost.svg"), 
           url("/red_ghost.svg"), 
           url("/orange_ghost.svg"), 

@@ -29,8 +29,6 @@ const GridContainer = styled.div`
   }
 `;
 
-
-
 const RoleBlock = styled.div`
   display: flex;
   flex-direction: column;
@@ -56,8 +54,6 @@ const RoleBlock = styled.div`
   &:nth-child(4) {
     border-color: #fb3e01;
   }
-
-
 
   @media (max-width: ${MobileBreakpoint}) {
     margin-top: ${SpacingM};
@@ -182,7 +178,6 @@ export default function HowToParticipate() {
               href="https://my.hackupc.com/user/signup/mentor/"
               target="_blank"
             >
-
               <BlockTitle
                 className={lora.className}
                 color={Secondary100}
@@ -213,7 +208,6 @@ export default function HowToParticipate() {
               href="https://my.hackupc.com/user/signup/volunteer/"
               target="_blank"
             >
-
               <BlockTitle
                 className={lora.className}
                 color={Secondary100}
@@ -240,7 +234,6 @@ export default function HowToParticipate() {
 
           <RoleBlock>
             <BlockImageTitle href="mailto:logistics@hackupc.com">
-
               <BlockTitle
                 className={lora.className}
                 color={Secondary100}
@@ -265,7 +258,6 @@ export default function HowToParticipate() {
 
           <RoleBlock>
             <BlockImageTitle href="mailto:sponsor@hackupc.com">
-
               <BlockTitle
                 className={lora.className}
                 color={Secondary100}

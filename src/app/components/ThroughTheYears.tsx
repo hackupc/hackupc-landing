@@ -99,9 +99,7 @@ export default function ThroughTheYears() {
         </SectionTitle>
         <GameContainer>
           <StatisticsContainer>
-            <SmallTitle className={lora.className}>
-              Statistics
-            </SmallTitle>
+            <SmallTitle className={lora.className}>Statistics</SmallTitle>
             <div style={{ height: "20px" }} />
             <StatisticsItem>
               <span>Hackers</span>

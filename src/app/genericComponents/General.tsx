@@ -35,4 +35,3 @@ export const Section = styled.div`
     padding: ${SpacingL} ${SpacingM};
   }
 `;
-

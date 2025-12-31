@@ -55,8 +55,6 @@ const InnerConsole = styled.div<{ backgroundColor: string }>`
   gap: 20px;
 `;
 
-
-
 const CustomTitle = styled(SectionTitle)`
   margin-bottom: 0;
 `;
@@ -77,16 +75,12 @@ export default function Trailer() {
                 allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
               />
             </VideoWrapper>
-
-
           </InnerConsole>
         </ConsolePlayer>
 
         <ConsolePlayer>
           <InnerConsole backgroundColor={"#BC8FD2"}>
-            <CustomTitle className={lora.className}>
-              Aftermovie '24
-            </CustomTitle>
+            <CustomTitle className={lora.className}>Aftermovie '24</CustomTitle>
             <VideoWrapper>
               <StyledIframe
                 title="HackUPC 2024 | Aftermovie"
@@ -95,8 +89,6 @@ export default function Trailer() {
                 allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
               />
             </VideoWrapper>
-
-
           </InnerConsole>
         </ConsolePlayer>
       </ConsolesDiv>
