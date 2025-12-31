@@ -62,8 +62,6 @@ const SocialItem = styled.div`
   }
 `;
 
-
-
 const Colors = {
   HeroYellow: "#FCFC01",
   HeroBlue: "#0060BF",
@@ -71,8 +69,6 @@ const Colors = {
   HeroBlack: "#000000",
   HeroBlack80: "rgba(0, 0, 0, 0.8)",
 };
-
-
 
 const BlueContainer = styled.div`
   border: 2px solid ${Colors.HeroBlue};
@@ -89,7 +85,6 @@ export default function Socials() {
   return (
     <Section id="socials">
       <BlueContainer>
-
         <StyledSectionTitle className={lora.className}>
           Stay tuned, and don't miss a bit
         </StyledSectionTitle>

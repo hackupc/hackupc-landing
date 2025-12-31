@@ -12,8 +12,6 @@ import {
 import { lora } from "@/app/genericComponents/fonts";
 import { Section } from "@/app/genericComponents/General";
 
-
-
 const ProvideSectionWrapper = styled.div`
   padding-top: ${SpacingL};
 `;
@@ -76,13 +74,9 @@ const ProvideSubTitleText = styled(Body)`
   line-height: 1.5;
 `;
 
-
-
-const BodyLinkStyled = styled(BodyLink)`
-`;
+const BodyLinkStyled = styled(BodyLink)``;
 
 export default function Provide() {
-
   return (
     <ProvideSectionWrapper id="provide">
       <Section>
@@ -128,7 +122,6 @@ export default function Provide() {
                 you! (you may even get some swag as well)
               </ProvideBody>
             </ProvideBlock>
-
           </ProvideBlockWrapper>
         </ProvideWrapper>
       </Section>

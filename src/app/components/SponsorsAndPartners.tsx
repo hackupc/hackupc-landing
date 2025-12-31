@@ -19,8 +19,6 @@ import {
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
 
-
-
 const SponsorsAndPartnersContainer = styled(Section)`
   position: relative;
   padding: ${SpacingL} 0 ${SpacingL} 0;
@@ -60,8 +58,6 @@ const SponsorRow = styled.div`
   margin-bottom: ${SpacingM};
   z-index: 2;
 `;
-
-
 
 export default function SponsorsAndPartners() {
   return (

@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
-import {
-  SpacingM,
-  SpacingS,
-} from "@/app/genericComponents/tokens";
+import { SpacingM, SpacingS } from "@/app/genericComponents/tokens";
 import { lora } from "@/app/genericComponents/fonts";
 
 const DuringContainer = styled(Section)`
@@ -37,7 +34,7 @@ const StyledTitle = styled.div`
 `;
 
 const HackUPCColored = styled(StyledTitle)`
-  color: #00FFE0;
+  color: #00ffe0;
   margin-left: 0;
 `;
 
@@ -51,27 +48,21 @@ const TheMission = styled.div`
 export default function During() {
   return (
     <DuringContainer id="during">
-      <SectionTitle className={lora.className}>
-        DURING THE EVENT
-      </SectionTitle>
+      <SectionTitle className={lora.className}>DURING THE EVENT</SectionTitle>
       <StyledBody>
         Coding is the main part of HackUPC, but we have many more activities!
       </StyledBody>
 
       <TheMission>
         <TextWrapper>
-          <StyledTitle className={lora.className}>
-            THE MISSION:
-          </StyledTitle>
-          <HackUPCColored className={lora.className}>
-            HACKUPC
-          </HackUPCColored>
+          <StyledTitle className={lora.className}>THE MISSION:</StyledTitle>
+          <HackUPCColored className={lora.className}>HACKUPC</HackUPCColored>
         </TextWrapper>
         <Body>
           Get ready for your weekend mission! This year, we aim for HackUPC to
-          be like a loaded arcade with lots to play with. Have fun, complete
-          the objectives, and get fantastic surprises. Will you be able to
-          unlock them all?
+          be like a loaded arcade with lots to play with. Have fun, complete the
+          objectives, and get fantastic surprises. Will you be able to unlock
+          them all?
         </Body>
       </TheMission>
     </DuringContainer>
