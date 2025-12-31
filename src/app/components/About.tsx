@@ -12,8 +12,8 @@ import {
   SpacingS,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
-import { silkscreen } from "@/app/genericComponents/fonts";
+import { Section } from "@/app/genericComponents/General";
+import { lora } from "@/app/genericComponents/fonts";
 
 const StyledImage = styled(Image)`
   width: 120px; /* Smaller width for the snake image */
@@ -94,65 +94,63 @@ export default function About() {
 
   return (
     <div id="about">
-      <SectionBackground specialBackground={"#99C11C"}>
-        <SectionStyled>
-          <UnderlineTitle className={silkscreen.className}>
-            HACKUPC: CODING TO THE NEXT LEVEL
-          </UnderlineTitle>
-          <Container>
-            <Col>
-              <ImgSection>
-                <StyledImage
-                  src={images[currentImageIndex]}
-                  width={120}
-                  height={120}
-                  alt="Snake"
-                />
-              </ImgSection>
-              <BlockTitle color={"#000000"} haveMargin>
-                What is a hackathon?
-              </BlockTitle>
-              <Body>
-                The word hackathon is a combination of the words <b>"HACK"</b>,
-                standing for creative problem-solving, and <b>"MARATHON"</b>.
-                These are awesome events full of creativity, technology, and
-                passionate tech-related students of different skill ranges
-                collaborating and creating. During a certain period of time,
-                attendees work in <b>TEAMS</b> to develop apps, games, robots…
-                literally anything you want to <b>BUILD & LEARN</b> about!
-              </Body>
-            </Col>
-            <Col>
-              <ImgSection>
-                <StyledImage
-                  src="/hackupcLogoBlack.svg"
-                  width={120}
-                  height={120}
-                  alt="HackUPC Logo"
-                />
-              </ImgSection>
-              <BlockTitle color={"#000000"} haveMargin>
-                About HackUPC
-              </BlockTitle>
-              <Body>
-                HackUPC is the first student hackathon in Spain and the biggest
-                one in Europe. Once a year, we aim to provide participants of{" "}
-                <b>all experience levels</b> from <b>all around the world</b>{" "}
-                with a space where they can improve and learn new skills, meet
-                amazing people, and have an overall great experience!
-              </Body>
-              <ImgSection>
-                <AppleImage
-                  src="/apple.png"
-                  width={28}
-                  height={30}
-                  alt="manzana snake"
-                />
-              </ImgSection>
-            </Col>
-          </Container>
-        </SectionStyled>
-      </SectionBackground>
+      <SectionStyled>
+        <UnderlineTitle className={lora.className}>
+          HACKUPC: CODING TO THE NEXT LEVEL
+        </UnderlineTitle>
+        <Container>
+          <Col>
+            <ImgSection>
+              <StyledImage
+                src={images[currentImageIndex]}
+                width={120}
+                height={120}
+                alt="Snake"
+              />
+            </ImgSection>
+            <BlockTitle color={"#000000"} haveMargin>
+              What is a hackathon?
+            </BlockTitle>
+            <Body>
+              The word hackathon is a combination of the words <b>"HACK"</b>,
+              standing for creative problem-solving, and <b>"MARATHON"</b>.
+              These are awesome events full of creativity, technology, and
+              passionate tech-related students of different skill ranges
+              collaborating and creating. During a certain period of time,
+              attendees work in <b>TEAMS</b> to develop apps, games, robots…
+              literally anything you want to <b>BUILD & LEARN</b> about!
+            </Body>
+          </Col>
+          <Col>
+            <ImgSection>
+              <StyledImage
+                src="/hackupcLogoBlack.svg"
+                width={120}
+                height={120}
+                alt="HackUPC Logo"
+              />
+            </ImgSection>
+            <BlockTitle color={"#000000"} haveMargin>
+              About HackUPC
+            </BlockTitle>
+            <Body>
+              HackUPC is the first student hackathon in Spain and the biggest
+              one in Europe. Once a year, we aim to provide participants of{" "}
+              <b>all experience levels</b> from <b>all around the world</b>{" "}
+              with a space where they can improve and learn new skills, meet
+              amazing people, and have an overall great experience!
+            </Body>
+            <ImgSection>
+              <AppleImage
+                src="/apple.png"
+                width={28}
+                height={30}
+                alt="manzana snake"
+              />
+            </ImgSection>
+          </Col>
+        </Container>
+      </SectionStyled>
     </div>
   );
 }

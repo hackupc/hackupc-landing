@@ -15,7 +15,7 @@ import {
   SpacingS,
   SpacingXS,
 } from "@/app/genericComponents/tokens";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { Section } from "@/app/genericComponents/General";
 import {
   BlockTitle,
   Body,
@@ -24,7 +24,7 @@ import {
   SectionTitle,
 } from "@/app/genericComponents/Typography";
 import { AnswerOptions } from "@/app/data/interfaces";
-import { silkscreen } from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 
 const TitleSpacer = styled.div`
   padding-top: ${SpacingM};
@@ -63,7 +63,6 @@ const Question = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   padding: ${SpacingXS};
-  background-color: rgba(1, 1, 1, 0.5);
   border-radius: 10px;
   box-shadow: 2px 2px 8px black;
 `;
@@ -90,7 +89,7 @@ const BrickSection = styled.div`
   margin-top: ${SpacingS};
 `;
 
-const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
+const QuestionAnswer = styled(Body) <{ isVisible: boolean }>`
   transform-origin: top;
   transition:
     transform 0.5s ease,
@@ -112,65 +111,9 @@ const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
     `}
 `;
 
-const CustomBackground = styled(SectionBackground)`
-  background-image: url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"),
-    url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"),
-    url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"), url("/cloud.svg"),
-    url("/cloud.svg");
-  background-position:
-    10% 8%,
-    60% 5%,
-    85% 12%,
-    5% 35%,
-    75% 38%,
-    40% 50%,
-    20% 65%,
-    90% 70%,
-    50% 78%,
-    15% 90%,
-    70% 95%,
-    95% 88%;
-  background-repeat: no-repeat;
-  background-size: 12%, 14%, 10%, 15%, 13%, 16%, 10%, 15%, 12%, 14%, 12%, 16%;
-  background-attachment: fixed; /* ✅ Fixes clouds in place */
-  animation: moveClouds 10s infinite ease-in-out alternate;
 
-  @keyframes moveClouds {
-    0% {
-      background-position:
-        10% 8%,
-        60% 5%,
-        85% 12%,
-        5% 35%,
-        75% 38%,
-        40% 50%,
-        20% 65%,
-        90% 70%,
-        50% 78%,
-        15% 90%,
-        70% 95%,
-        95% 88%;
-    }
 
-    100% {
-      background-position:
-        12% 10%,
-        58% 3%,
-        87% 14%,
-        8% 33%,
-        78% 40%,
-        42% 52%,
-        22% 63%,
-        88% 72%,
-        52% 80%,
-        18% 92%,
-        72% 93%,
-        97% 86%;
-    }
-  }
-`;
-
-const Coin = styled(Image)<{ isVisible: boolean }>`
+const Coin = styled(Image) <{ isVisible: boolean }>`
   position: absolute;
   opacity: 0;
   margin-left: 6px;
@@ -286,235 +229,233 @@ export default function FAQs() {
   };
 
   return (
-    <CustomBackground specialBackground={"#29ABE2"} id="faqs">
-      <Section>
-        <TitleSpacer>
-          <SectionTitleStyled className={silkscreen.className}>
-            FAQs
-          </SectionTitleStyled>
-        </TitleSpacer>
-        <Split>
-          <ColumnsQuestions>
-            <div>
-              <BrickSection>
-                <Image
-                  src="/brick_separator.svg"
-                  width={163}
-                  height={54}
-                  alt="Brick block"
-                />
-              </BrickSection>
-              <QuestionsBlock>
-                <BlockTitleStyled className={silkscreen.className}>
-                  About HackUPC
-                </BlockTitleStyled>
-                {hackupc_faqs.map((faq) => (
-                  <Question key={faq.id}>
-                    <QuestionTitleWrap>
-                      <Coin
-                        src="/coin.png"
-                        width={28}
-                        height={28}
-                        alt="Coin"
-                        isVisible={showCoin === faq.id}
-                      />
-                      <Image
-                        src={
-                          activeFaqId === faq.id
-                            ? "/used_question_mark_block.svg"
-                            : "/question_mark_block.svg"
-                        }
-                        width={32}
-                        height={32}
-                        alt="Question Mark Block"
-                        onClick={() => toggleFaq(faq.id)}
-                        style={{ cursor: "pointer", zIndex: 2 }}
-                      />
-                      <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                        {faq.question}
-                      </QuestionTitle>
-                    </QuestionTitleWrap>
-                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                      {renderAnswer(faq.answer)}
-                    </QuestionAnswer>
-                  </Question>
-                ))}
-              </QuestionsBlock>
-            </div>
+    <Section id="faqs">
+      <TitleSpacer>
+        <SectionTitleStyled className={lora.className}>
+          FAQs
+        </SectionTitleStyled>
+      </TitleSpacer>
+      <Split>
+        <ColumnsQuestions>
+          <div>
+            <BrickSection>
+              <Image
+                src="/brick_separator.svg"
+                width={163}
+                height={54}
+                alt="Brick block"
+              />
+            </BrickSection>
+            <QuestionsBlock>
+              <BlockTitleStyled className={lora.className}>
+                About HackUPC
+              </BlockTitleStyled>
+              {hackupc_faqs.map((faq) => (
+                <Question key={faq.id}>
+                  <QuestionTitleWrap>
+                    <Coin
+                      src="/coin.png"
+                      width={28}
+                      height={28}
+                      alt="Coin"
+                      isVisible={showCoin === faq.id}
+                    />
+                    <Image
+                      src={
+                        activeFaqId === faq.id
+                          ? "/used_question_mark_block.svg"
+                          : "/question_mark_block.svg"
+                      }
+                      width={32}
+                      height={32}
+                      alt="Question Mark Block"
+                      onClick={() => toggleFaq(faq.id)}
+                      style={{ cursor: "pointer", zIndex: 2 }}
+                    />
+                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                      {faq.question}
+                    </QuestionTitle>
+                  </QuestionTitleWrap>
+                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                    {renderAnswer(faq.answer)}
+                  </QuestionAnswer>
+                </Question>
+              ))}
+            </QuestionsBlock>
+          </div>
 
-            <div>
-              <BrickSection>
-                <Image
-                  src="/brick_separator.svg"
-                  width={163}
-                  height={54}
-                  alt="Brick block"
-                />
-              </BrickSection>
-              <QuestionsBlock>
-                <BlockTitleStyled className={silkscreen.className}>
-                  Travel Reimbursement
-                </BlockTitleStyled>
-                {travel_faqs.map((faq) => (
-                  <Question key={faq.id}>
-                    <QuestionTitleWrap>
-                      <Coin
-                        src="/coin.png"
-                        width={28}
-                        height={28}
-                        alt="Coin"
-                        isVisible={showCoin === faq.id}
-                      />
-                      <Image
-                        src={
-                          activeFaqId === faq.id
-                            ? "/used_question_mark_block.svg"
-                            : "/question_mark_block.svg"
-                        }
-                        width={32}
-                        height={32}
-                        alt="Question Mark Block"
-                        onClick={() => toggleFaq(faq.id)}
-                        style={{ cursor: "pointer", zIndex: 2 }}
-                      />
-                      <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                        {faq.question}
-                      </QuestionTitle>
-                    </QuestionTitleWrap>
-                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                      {renderAnswer(faq.answer)}
-                    </QuestionAnswer>
-                  </Question>
-                ))}
-              </QuestionsBlock>
-            </div>
-          </ColumnsQuestions>
+          <div>
+            <BrickSection>
+              <Image
+                src="/brick_separator.svg"
+                width={163}
+                height={54}
+                alt="Brick block"
+              />
+            </BrickSection>
+            <QuestionsBlock>
+              <BlockTitleStyled className={lora.className}>
+                Travel Reimbursement
+              </BlockTitleStyled>
+              {travel_faqs.map((faq) => (
+                <Question key={faq.id}>
+                  <QuestionTitleWrap>
+                    <Coin
+                      src="/coin.png"
+                      width={28}
+                      height={28}
+                      alt="Coin"
+                      isVisible={showCoin === faq.id}
+                    />
+                    <Image
+                      src={
+                        activeFaqId === faq.id
+                          ? "/used_question_mark_block.svg"
+                          : "/question_mark_block.svg"
+                      }
+                      width={32}
+                      height={32}
+                      alt="Question Mark Block"
+                      onClick={() => toggleFaq(faq.id)}
+                      style={{ cursor: "pointer", zIndex: 2 }}
+                    />
+                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                      {faq.question}
+                    </QuestionTitle>
+                  </QuestionTitleWrap>
+                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                    {renderAnswer(faq.answer)}
+                  </QuestionAnswer>
+                </Question>
+              ))}
+            </QuestionsBlock>
+          </div>
+        </ColumnsQuestions>
 
-          <ColumnsQuestions>
-            <div>
-              <BrickSection>
-                <Image
-                  src="/brick_separator.svg"
-                  width={163}
-                  height={54}
-                  alt="Brick block"
-                />
-              </BrickSection>
-              <QuestionsBlock>
-                <BlockTitleStyled className={silkscreen.className}>
-                  Applications
-                </BlockTitleStyled>
-                {applications_faqs.map((faq) => (
-                  <Question key={faq.id}>
-                    <QuestionTitleWrap>
-                      <Coin
-                        src="/coin.png"
-                        width={28}
-                        height={28}
-                        alt="Coin"
-                        isVisible={showCoin === faq.id}
-                      />
-                      <Image
-                        src={
-                          activeFaqId === faq.id
-                            ? "/used_question_mark_block.svg"
-                            : "/question_mark_block.svg"
-                        }
-                        width={32}
-                        height={32}
-                        alt="Question Mark Block"
-                        onClick={() => toggleFaq(faq.id)}
-                        style={{ cursor: "pointer", zIndex: 2 }}
-                      />
-                      <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                        {faq.question}
-                      </QuestionTitle>
-                    </QuestionTitleWrap>
-                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                      {renderAnswer(faq.answer)}
-                    </QuestionAnswer>
-                  </Question>
-                ))}
-              </QuestionsBlock>
-            </div>
-            <div>
-              <BrickSection>
-                <Image
-                  src="/brick_separator.svg"
-                  width={163}
-                  height={54}
-                  alt="Brick block"
-                />
-              </BrickSection>
-              <QuestionsBlock>
-                <BlockTitleStyled className={silkscreen.className}>
-                  Teams
-                </BlockTitleStyled>
-                {teams_faqs.map((faq) => (
-                  <Question key={faq.id}>
-                    <QuestionTitleWrap>
-                      <Coin
-                        src="/coin.png"
-                        width={28}
-                        height={28}
-                        alt="Coin"
-                        isVisible={showCoin === faq.id}
-                      />
-                      <Image
-                        src={
-                          activeFaqId === faq.id
-                            ? "/used_question_mark_block.svg"
-                            : "/question_mark_block.svg"
-                        }
-                        width={32}
-                        height={32}
-                        alt="Question Mark Block"
-                        onClick={() => toggleFaq(faq.id)}
-                        style={{ cursor: "pointer", zIndex: 2 }}
-                      />
-                      <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-                        {faq.question}
-                      </QuestionTitle>
-                    </QuestionTitleWrap>
-                    <QuestionAnswer isVisible={activeFaqId === faq.id}>
-                      {renderAnswer(faq.answer)}
-                    </QuestionAnswer>
-                  </Question>
-                ))}
-              </QuestionsBlock>
-            </div>
-          </ColumnsQuestions>
-        </Split>
+        <ColumnsQuestions>
+          <div>
+            <BrickSection>
+              <Image
+                src="/brick_separator.svg"
+                width={163}
+                height={54}
+                alt="Brick block"
+              />
+            </BrickSection>
+            <QuestionsBlock>
+              <BlockTitleStyled className={lora.className}>
+                Applications
+              </BlockTitleStyled>
+              {applications_faqs.map((faq) => (
+                <Question key={faq.id}>
+                  <QuestionTitleWrap>
+                    <Coin
+                      src="/coin.png"
+                      width={28}
+                      height={28}
+                      alt="Coin"
+                      isVisible={showCoin === faq.id}
+                    />
+                    <Image
+                      src={
+                        activeFaqId === faq.id
+                          ? "/used_question_mark_block.svg"
+                          : "/question_mark_block.svg"
+                      }
+                      width={32}
+                      height={32}
+                      alt="Question Mark Block"
+                      onClick={() => toggleFaq(faq.id)}
+                      style={{ cursor: "pointer", zIndex: 2 }}
+                    />
+                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                      {faq.question}
+                    </QuestionTitle>
+                  </QuestionTitleWrap>
+                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                    {renderAnswer(faq.answer)}
+                  </QuestionAnswer>
+                </Question>
+              ))}
+            </QuestionsBlock>
+          </div>
+          <div>
+            <BrickSection>
+              <Image
+                src="/brick_separator.svg"
+                width={163}
+                height={54}
+                alt="Brick block"
+              />
+            </BrickSection>
+            <QuestionsBlock>
+              <BlockTitleStyled className={lora.className}>
+                Teams
+              </BlockTitleStyled>
+              {teams_faqs.map((faq) => (
+                <Question key={faq.id}>
+                  <QuestionTitleWrap>
+                    <Coin
+                      src="/coin.png"
+                      width={28}
+                      height={28}
+                      alt="Coin"
+                      isVisible={showCoin === faq.id}
+                    />
+                    <Image
+                      src={
+                        activeFaqId === faq.id
+                          ? "/used_question_mark_block.svg"
+                          : "/question_mark_block.svg"
+                      }
+                      width={32}
+                      height={32}
+                      alt="Question Mark Block"
+                      onClick={() => toggleFaq(faq.id)}
+                      style={{ cursor: "pointer", zIndex: 2 }}
+                    />
+                    <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+                      {faq.question}
+                    </QuestionTitle>
+                  </QuestionTitleWrap>
+                  <QuestionAnswer isVisible={activeFaqId === faq.id}>
+                    {renderAnswer(faq.answer)}
+                  </QuestionAnswer>
+                </Question>
+              ))}
+            </QuestionsBlock>
+          </div>
+        </ColumnsQuestions>
+      </Split>
 
-        <LastBlock>
-          <BrickSection>
-            <Image
-              src="/brick_separator.svg"
-              width={163}
-              height={54}
-              alt="Brick block"
-            />
-          </BrickSection>
-          <BlockTitleStyled className={silkscreen.className} haveMargin>
-            What if I have another question?
-          </BlockTitleStyled>
-          <QuestionWithPadding>
-            <Body style={{ paddingBottom: SpacingS }}>
-              DM us on Instagram at @hackupc or, if you want to contact us via
-              email, drop us a line at{" "}
-              <BodyLinkStyled href="mailto:contact@hackupc.com">
-                contact@hackupc.com
-              </BodyLinkStyled>
-            </Body>
-            <Body>
-              If your issue is related to Travel Reimbursement, write us at{" "}
-              <BodyLinkStyled href="mailto:reimbursements@hackupc.com">
-                reimbursements@hackupc.com
-              </BodyLinkStyled>
-            </Body>
-          </QuestionWithPadding>
-        </LastBlock>
-      </Section>
-    </CustomBackground>
+      <LastBlock>
+        <BrickSection>
+          <Image
+            src="/brick_separator.svg"
+            width={163}
+            height={54}
+            alt="Brick block"
+          />
+        </BrickSection>
+        <BlockTitleStyled className={lora.className} haveMargin>
+          What if I have another question?
+        </BlockTitleStyled>
+        <QuestionWithPadding>
+          <Body style={{ paddingBottom: SpacingS }}>
+            DM us on Instagram at @hackupc or, if you want to contact us via
+            email, drop us a line at{" "}
+            <BodyLinkStyled href="mailto:contact@hackupc.com">
+              contact@hackupc.com
+            </BodyLinkStyled>
+          </Body>
+          <Body>
+            If your issue is related to Travel Reimbursement, write us at{" "}
+            <BodyLinkStyled href="mailto:reimbursements@hackupc.com">
+              reimbursements@hackupc.com
+            </BodyLinkStyled>
+          </Body>
+        </QuestionWithPadding>
+      </LastBlock>
+    </Section>
   );
 }

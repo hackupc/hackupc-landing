@@ -11,7 +11,7 @@ import {
   SpacingXS,
 } from "@/app/genericComponents/tokens";
 import styled, { keyframes } from "styled-components";
-import { silkscreen } from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 
 const live = keyframes`
   0% {
@@ -53,7 +53,7 @@ const Anchor = styled.a`
 export default function Live() {
   return (
     <Section id="live">
-      <StyledSectionTitle className={silkscreen.className}>
+      <StyledSectionTitle className={lora.className}>
         <LiveDotAnimated />
         Live
       </StyledSectionTitle>
@@ -74,7 +74,7 @@ export default function Live() {
         </Body>
       </TextContainer>
       <PrimaryButton
-        className={silkscreen.className}
+        className={lora.className}
         href="https://live.hackupc.com/"
         target="_blank"
         rel="noopener noreferrer"

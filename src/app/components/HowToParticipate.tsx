@@ -17,14 +17,13 @@ import {
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
 import { SecondaryButton } from "@/app/genericComponents/Buttons";
-import { silkscreen } from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: ${SpacingXL};
   text-align: center;
-  background-color: black;
 
   @media (max-width: ${MobileBreakpoint}) {
     grid-template-columns: 1fr;
@@ -108,7 +107,6 @@ const SpecialSection = styled.div`
   margin: 0;
   gap: ${SpacingM};
   width: 100vw;
-  background-color: black;
   position: relative;
   z-index: 0;
 `;
@@ -116,7 +114,6 @@ const SpecialSection = styled.div`
 const BlockImageTitle = styled.a`
   position: absolute;
   top: -25%;
-  background-color: black;
   padding: ${SpacingS};
 `;
 
@@ -209,7 +206,7 @@ export default function HowToParticipate() {
     <SpecialSection>
       <Section id="howtoparticipate">
         <HowToTitleWrapper>
-          <HowToTitle className={silkscreen.className}>
+          <HowToTitle className={lora.className}>
             How to
             <br />
             Participate
@@ -228,7 +225,7 @@ export default function HowToParticipate() {
                 height={50}
               />
               <BlockTitle
-                className={silkscreen.className}
+                className={lora.className}
                 color={Secondary100}
                 haveMargin
               >
@@ -244,7 +241,7 @@ export default function HowToParticipate() {
             </Text>
             <ColoredButton
               color="#77C914"
-              className={silkscreen.className}
+              className={lora.className}
               href="https://my.hackupc.com/user/signup/mentor/"
               target="_blank"
             >
@@ -264,7 +261,7 @@ export default function HowToParticipate() {
                 height={50}
               />
               <BlockTitle
-                className={silkscreen.className}
+                className={lora.className}
                 color={Secondary100}
                 haveMargin
               >
@@ -279,7 +276,7 @@ export default function HowToParticipate() {
             </Text>
             <ColoredButton
               color="#5665FF"
-              className={silkscreen.className}
+              className={lora.className}
               href="https://my.hackupc.com/user/signup/volunteer/"
               target="_blank"
             >
@@ -296,7 +293,7 @@ export default function HowToParticipate() {
                 height={50}
               />
               <BlockTitle
-                className={silkscreen.className}
+                className={lora.className}
                 color={Secondary100}
                 haveMargin
               >
@@ -310,7 +307,7 @@ export default function HowToParticipate() {
             </Text>
             <ColoredButton
               color="#FCAF01"
-              className={silkscreen.className}
+              className={lora.className}
               href="mailto:logistics@hackupc.com"
             >
               Contact us
@@ -326,7 +323,7 @@ export default function HowToParticipate() {
                 height={50}
               />
               <BlockTitle
-                className={silkscreen.className}
+                className={lora.className}
                 color={Secondary100}
                 haveMargin
               >
@@ -340,7 +337,7 @@ export default function HowToParticipate() {
             </Text>
             <ColoredButton
               color="#FB3E01"
-              className={silkscreen.className}
+              className={lora.className}
               href="mailto:sponsor@hackupc.com"
             >
               Contact us

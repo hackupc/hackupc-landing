@@ -10,7 +10,7 @@ import {
   BodyLink,
   SectionTitle,
 } from "@/app/genericComponents/Typography";
-import { silkscreen } from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 import { useEffect, useState } from "react";
 import { Section } from "@/app/genericComponents/General";
 
@@ -24,22 +24,10 @@ const Colors = {
 };
 
 const ProvideSectionWrapper = styled.div`
-  background-image: url("/paintball background mobile.png");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
   padding-top: ${SpacingL};
-
-  @media (min-width: ${MobileBreakpoint}) {
-    background-image: url("/provide desktop background.png");
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-  }
 `;
 
 const ProvideHeader = styled(SectionTitle)`
-  color: ${Colors.white};
   text-transform: uppercase;
   padding-bottom: ${SpacingM};
 `;
@@ -61,12 +49,10 @@ const ProvideWrapper = styled.div`
 `;
 
 const ProvideBlock = styled.div`
-  background-color: ${Colors.pink};
   border-radius: 15px;
   padding: 25px;
   text-align: center;
   min-width: 80%;
-  border: 6px solid ${Colors.white};
 
   @media (max-width: ${MobileBreakpoint}) {
     margin: 0 40px;
@@ -74,7 +60,6 @@ const ProvideBlock = styled.div`
 `;
 
 const ProvideSubTitle = styled.div`
-  background-color: ${Colors.blue};
   border-radius: 10px;
   padding: 0;
   z-index: 1;
@@ -82,7 +67,6 @@ const ProvideSubTitle = styled.div`
   position: absolute;
   min-width: 20%;
   margin-top: -14px;
-  border: 6px solid ${Colors.pink};
 
   @media (max-width: ${MobileBreakpoint}) {
     min-width: 50%;
@@ -92,7 +76,6 @@ const ProvideSubTitle = styled.div`
 const ProvideBody = styled(Body)`
   font-size: 16px;
   line-height: 1.1;
-  color: ${Colors.blue};
   white-space: pre-line;
 `;
 
@@ -100,7 +83,6 @@ const ProvideSubTitleText = styled(Body)`
   font-size: 18px;
   font-weight: bold;
   line-height: 1.5;
-  color: ${Colors.white};
 `;
 
 const FlipperIcon = styled.img`
@@ -135,15 +117,6 @@ const FlipperIconLeft = styled(FlipperIcon)`
 `;
 
 const BodyLinkStyled = styled(BodyLink)`
-  color: ${Colors.lightBlue};
-
-  &:hover {
-    color: ${Colors.blue};
-  }
-
-  &:active {
-    color: ${Colors.lightPink};
-  }
 `;
 
 export default function Provide() {
@@ -175,7 +148,7 @@ export default function Provide() {
   return (
     <ProvideSectionWrapper id="provide">
       <Section>
-        <ProvideHeader className={silkscreen.className}>
+        <ProvideHeader className={lora.className}>
           We Also <br />
           Provide...
         </ProvideHeader>
@@ -192,12 +165,7 @@ export default function Provide() {
               </ProvideBody>
             </ProvideBlock>
           </ProvideBlockWrapper>
-          <Divider
-            src={images[currentImageIndex]}
-            alt="divider icon"
-            width={200}
-            height={100}
-          />
+
           <ProvideBlockWrapper>
             <ProvideSubTitle>
               <ProvideSubTitleText>SLEEPING</ProvideSubTitleText>
@@ -222,10 +190,7 @@ export default function Provide() {
                 you! (you may even get some swag as well)
               </ProvideBody>
             </ProvideBlock>
-            <div style={{ height: 40 }}>
-              <FlipperIconLeft src="/pinball flipper2.png" alt="flipper 2" />
-              <FlipperIconRight src="/pinball flipper2.png" alt="flipper 2" />
-            </div>
+
           </ProvideBlockWrapper>
         </ProvideWrapper>
       </Section>
