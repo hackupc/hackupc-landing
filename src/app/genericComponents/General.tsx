@@ -35,15 +35,3 @@ export const Section = styled.div`
     padding: ${SpacingL} ${SpacingM};
   }
 `;
-
-export const Background = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  min-width: 100vw;
-  background-color: #231f20;
-`;

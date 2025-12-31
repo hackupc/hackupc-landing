@@ -6,7 +6,7 @@ defaults:
 
 on:
   pull_request:
-    branches: [master, develop]
+    branches: [master, develop, 2026]
   workflow_dispatch:
 
 env:

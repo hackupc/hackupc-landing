@@ -17,7 +17,6 @@ import { lora, montserrat } from "@/app/genericComponents/fonts";
 const SpecialSection = styled.div`
   margin: 0;
   width: 100vw;
-  background-image: url('/brick-wall-mobile.svg');
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
