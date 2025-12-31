@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import {
@@ -15,23 +14,7 @@ import {
 import { Section } from "@/app/genericComponents/General";
 import { lora } from "@/app/genericComponents/fonts";
 
-const StyledImage = styled(Image)`
-  width: 120px; /* Smaller width for the snake image */
-  height: auto;
 
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 180px;
-  }
-`;
-
-const AppleImage = styled(Image)`
-  padding-top: 8px;
-  display: none;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    display: block;
-  }
-`;
 
 const SectionStyled = styled(Section)`
   color: ${"#000000"};
@@ -66,31 +49,6 @@ const ImgSection = styled.div`
 `;
 
 export default function About() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const images = [
-    "/snake_0.svg",
-    "/snake_1.svg",
-    "/snake_2.svg",
-    "/snake_3.svg",
-    "/snake_4.svg",
-    "/snake_5.svg",
-    "/snake_6.svg",
-    "/snake_7.svg",
-    "/snake_8.svg",
-    "/snake_7.svg",
-    "/snake_8.svg",
-    "/snake_7.svg",
-    "/snake_8.svg",
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
 
   return (
     <div id="about">
@@ -100,14 +58,7 @@ export default function About() {
         </UnderlineTitle>
         <Container>
           <Col>
-            <ImgSection>
-              <StyledImage
-                src={images[currentImageIndex]}
-                width={120}
-                height={120}
-                alt="Snake"
-              />
-            </ImgSection>
+
             <BlockTitle color={"#000000"} haveMargin>
               What is a hackathon?
             </BlockTitle>
@@ -123,7 +74,7 @@ export default function About() {
           </Col>
           <Col>
             <ImgSection>
-              <StyledImage
+              <Image
                 src="/hackupcLogoBlack.svg"
                 width={120}
                 height={120}
@@ -140,14 +91,7 @@ export default function About() {
               with a space where they can improve and learn new skills, meet
               amazing people, and have an overall great experience!
             </Body>
-            <ImgSection>
-              <AppleImage
-                src="/apple.png"
-                width={28}
-                height={30}
-                alt="manzana snake"
-              />
-            </ImgSection>
+
           </Col>
         </Container>
       </SectionStyled>

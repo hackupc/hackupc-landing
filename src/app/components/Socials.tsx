@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -63,24 +62,7 @@ const SocialItem = styled.div`
   }
 `;
 
-const CustomImage = styled(Image)`
-  margin-bottom: ${SpacingM};
-  animation: blink 5s infinite;
-  @keyframes blink {
-    0% {
-      content: url("/yellow_ghost_2.svg");
-    }
-    50% {
-      content: url("/yellow_ghost_2.svg");
-    }
-    51% {
-      content: url("/yellow_ghost.svg");
-    }
-    100% {
-      content: url("/yellow_ghost.svg");
-    }
-  }
-`;
+
 
 const Colors = {
   HeroYellow: "#FCFC01",
@@ -107,12 +89,7 @@ export default function Socials() {
   return (
     <Section id="socials">
       <BlueContainer>
-        <CustomImage
-          src="/yellow_ghost.svg"
-          alt="Ghost Biene"
-          width={102}
-          height={168}
-        />
+
         <StyledSectionTitle className={lora.className}>
           Stay tuned, and don't miss a bit
         </StyledSectionTitle>

@@ -4,7 +4,6 @@ import { SectionTitle } from "@/app/genericComponents/Typography";
 import { MobileBreakpoint, SpacingS } from "@/app/genericComponents/tokens";
 import { lora } from "@/app/genericComponents/fonts";
 import React from "react";
-import Image from "next/image";
 
 const VideoWrapper = styled.div`
   position: relative;
@@ -56,12 +55,7 @@ const InnerConsole = styled.div<{ backgroundColor: string }>`
   gap: 20px;
 `;
 
-const StyledButtons = styled(Image)`
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 90%;
-  }
-  width: 80%;
-`;
+
 
 const CustomTitle = styled(SectionTitle)`
   margin-bottom: 0;
@@ -84,12 +78,7 @@ export default function Trailer() {
               />
             </VideoWrapper>
 
-            <StyledButtons
-              src="/console_buttons.svg"
-              alt="console buttons"
-              width={420}
-              height={120}
-            />
+
           </InnerConsole>
         </ConsolePlayer>
 
@@ -107,12 +96,7 @@ export default function Trailer() {
               />
             </VideoWrapper>
 
-            <StyledButtons
-              src="/console_buttons.svg"
-              alt="console buttons"
-              width={420}
-              height={120}
-            />
+
           </InnerConsole>
         </ConsolePlayer>
       </ConsolesDiv>

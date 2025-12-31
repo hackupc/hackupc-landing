@@ -3,7 +3,7 @@ import React from "react";
 import { Section } from "@/app/genericComponents/General";
 import { SectionTitle, SmallTitle } from "@/app/genericComponents/Typography";
 import styled from "styled-components";
-import { lora, silkscreen } from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 
 const GameContainer = styled.div`
   display: flex;

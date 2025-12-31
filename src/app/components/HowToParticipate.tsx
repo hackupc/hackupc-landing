@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import styled from "styled-components";
 import {
   BlockTitle,
@@ -30,28 +29,7 @@ const GridContainer = styled.div`
   }
 `;
 
-const ImageIcon = styled(Image)`
-  margin-bottom: ${SpacingS};
-  transition: transform 0.3s ease-in-out;
 
-  &:hover {
-    transform: scale(1.5);
-  }
-
-  @keyframes wiggle {
-    0% {
-      transform: translateX(-15px);
-    }
-    50% {
-      transform: translateX(15px);
-    }
-    100% {
-      transform: translateX(-15px);
-    }
-  }
-
-  animation: wiggle 2s infinite ease-in-out;
-`;
 
 const RoleBlock = styled.div`
   display: flex;
@@ -79,21 +57,7 @@ const RoleBlock = styled.div`
     border-color: #fb3e01;
   }
 
-  &:nth-child(1) ${ImageIcon} {
-    animation-delay: 0s;
-  }
 
-  &:nth-child(2) ${ImageIcon} {
-    animation-delay: 0.3s;
-  }
-
-  &:nth-child(3) ${ImageIcon} {
-    animation-delay: 0.6s;
-  }
-
-  &:nth-child(4) ${ImageIcon} {
-    animation-delay: 0.9s;
-  }
 
   @media (max-width: ${MobileBreakpoint}) {
     margin-top: ${SpacingM};
@@ -218,12 +182,7 @@ export default function HowToParticipate() {
               href="https://my.hackupc.com/user/signup/mentor/"
               target="_blank"
             >
-              <ImageIcon
-                src="greenAlien.svg"
-                alt="Mentor"
-                width={50}
-                height={50}
-              />
+
               <BlockTitle
                 className={lora.className}
                 color={Secondary100}
@@ -254,12 +213,7 @@ export default function HowToParticipate() {
               href="https://my.hackupc.com/user/signup/volunteer/"
               target="_blank"
             >
-              <ImageIcon
-                src="blueAlien.svg"
-                alt="Volunteer"
-                width={50}
-                height={50}
-              />
+
               <BlockTitle
                 className={lora.className}
                 color={Secondary100}
@@ -286,12 +240,7 @@ export default function HowToParticipate() {
 
           <RoleBlock>
             <BlockImageTitle href="mailto:logistics@hackupc.com">
-              <ImageIcon
-                src="yellowAlien.svg"
-                alt="Partner"
-                width={50}
-                height={50}
-              />
+
               <BlockTitle
                 className={lora.className}
                 color={Secondary100}
@@ -316,12 +265,7 @@ export default function HowToParticipate() {
 
           <RoleBlock>
             <BlockImageTitle href="mailto:sponsor@hackupc.com">
-              <ImageIcon
-                src="redAlien.svg"
-                alt="Sponsor"
-                width={50}
-                height={50}
-              />
+
               <BlockTitle
                 className={lora.className}
                 color={Secondary100}

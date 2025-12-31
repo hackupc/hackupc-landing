@@ -11,17 +11,9 @@ import {
   SectionTitle,
 } from "@/app/genericComponents/Typography";
 import { lora } from "@/app/genericComponents/fonts";
-import { useEffect, useState } from "react";
 import { Section } from "@/app/genericComponents/General";
 
-const Colors = {
-  pink: "#FF6798",
-  blue: "#0F0030",
-  white: "#FFFFFF",
-  black: "#000000",
-  lightPink: "#FFB6C1",
-  lightBlue: "#F5F5F5",
-};
+
 
 const ProvideSectionWrapper = styled.div`
   padding-top: ${SpacingL};
@@ -85,65 +77,12 @@ const ProvideSubTitleText = styled(Body)`
   line-height: 1.5;
 `;
 
-const FlipperIcon = styled.img`
-  position: relative;
-  width: 155px;
-  top: -30px;
 
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 120px;
-  }
-`;
-
-const Divider = styled.img`
-  margin-top: -${SpacingM};
-  margin-bottom: -${SpacingS};
-`;
-
-const FlipperIconRight = styled(FlipperIcon)`
-  left: 170px;
-  transform: scaleX(-1);
-
-  @media (max-width: ${MobileBreakpoint}) {
-    left: 30px;
-  }
-`;
-
-const FlipperIconLeft = styled(FlipperIcon)`
-  right: 170px;
-  @media (max-width: ${MobileBreakpoint}) {
-    right: 30px;
-  }
-`;
 
 const BodyLinkStyled = styled(BodyLink)`
 `;
 
 export default function Provide() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const images = [
-    "/divider_-1.svg",
-    "/divider_0.svg",
-    "/divider_1.svg",
-    "/divider_2.svg",
-    "/divider_3.svg",
-    "/divider_4.svg",
-    "/divider_5.svg",
-    "/divider_4.svg",
-    "/divider_3.svg",
-    "/divider_2.svg",
-    "/divider_1.svg",
-    "/divider_0.svg",
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 125);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
 
   return (
     <ProvideSectionWrapper id="provide">

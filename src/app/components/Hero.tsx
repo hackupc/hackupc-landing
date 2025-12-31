@@ -14,7 +14,7 @@ import {
   SpacingXS,
   TitleXL,
 } from "@/app/genericComponents/tokens";
-import { montserrat, silkscreen, lora } from "@/app/genericComponents/fonts";
+import { montserrat, lora } from "@/app/genericComponents/fonts";
 
 const Colors = {
   HeroYellow: "#FCFC01",
@@ -415,7 +415,7 @@ export default function Hero() {
         key={
           showHero ? `${bienePosition.x}-${bienePosition.y}` : `${spriteIndex}`
         }
-        className={silkscreen.className}
+        className={lora.className}
         style={{
           backgroundPosition: `
           0 0, 

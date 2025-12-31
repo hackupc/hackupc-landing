@@ -5,7 +5,7 @@ import {
   teams_faqs,
   travel_faqs,
 } from "@/app/data/faqs_data";
-import Image from "next/image";
+
 import parse from "html-react-parser";
 import React, { useState } from "react";
 import {
@@ -81,13 +81,7 @@ const QuestionTitle = styled(BodyBold)`
   cursor: pointer;
 `;
 
-const BrickSection = styled.div`
-  align-content: center;
-  display: flex;
-  justify-content: center;
-  margin-bottom: ${SpacingS};
-  margin-top: ${SpacingS};
-`;
+
 
 const QuestionAnswer = styled(Body) <{ isVisible: boolean }>`
   transform-origin: top;
@@ -113,30 +107,7 @@ const QuestionAnswer = styled(Body) <{ isVisible: boolean }>`
 
 
 
-const Coin = styled(Image) <{ isVisible: boolean }>`
-  position: absolute;
-  opacity: 0;
-  margin-left: 6px;
-  width: 20px;
-  height: 20px;
-  z-index: 1;
 
-  @keyframes coinJump {
-    0% {
-      opacity: 1;
-      transform: translateY(0%) rotateY(0deg) rotate(0deg);
-    }
-    100% {
-      transform: translateY(-200%) rotateY(180deg) rotate(calc(360deg * 1.5));
-    }
-  }
-
-  ${(props) =>
-    props.isVisible &&
-    css`
-      animation: coinJump 1s cubic-bezier(0.57, 1.37, 0.41, 0.89) forwards;
-    `}
-`;
 
 const BodyLinkStyled = styled(BodyLink)`
   color: #29abe2;
@@ -215,16 +186,8 @@ function renderAnswer(answers: AnswerOptions[]) {
 
 export default function FAQs() {
   const [activeFaqId, setActiveFaqId] = useState<null | number>(null);
-  const [showCoin, setShowCoin] = useState<null | number>(null);
 
   const toggleFaq = (id: number) => {
-    if (activeFaqId !== id) {
-      setShowCoin(id);
-      setTimeout(() => setShowCoin(null), 1000);
-    } else {
-      setShowCoin(null);
-    }
-    // If the clicked FAQ is already active, close it, otherwise open the clicked FAQ
     setActiveFaqId(activeFaqId === id ? null : id);
   };
 
@@ -238,14 +201,7 @@ export default function FAQs() {
       <Split>
         <ColumnsQuestions>
           <div>
-            <BrickSection>
-              <Image
-                src="/brick_separator.svg"
-                width={163}
-                height={54}
-                alt="Brick block"
-              />
-            </BrickSection>
+
             <QuestionsBlock>
               <BlockTitleStyled className={lora.className}>
                 About HackUPC
@@ -253,25 +209,9 @@ export default function FAQs() {
               {hackupc_faqs.map((faq) => (
                 <Question key={faq.id}>
                   <QuestionTitleWrap>
-                    <Coin
-                      src="/coin.png"
-                      width={28}
-                      height={28}
-                      alt="Coin"
-                      isVisible={showCoin === faq.id}
-                    />
-                    <Image
-                      src={
-                        activeFaqId === faq.id
-                          ? "/used_question_mark_block.svg"
-                          : "/question_mark_block.svg"
-                      }
-                      width={32}
-                      height={32}
-                      alt="Question Mark Block"
-                      onClick={() => toggleFaq(faq.id)}
-                      style={{ cursor: "pointer", zIndex: 2 }}
-                    />
+                    <span style={{ cursor: "pointer", fontSize: "20px", width: "25px", textAlign: "center" }} onClick={() => toggleFaq(faq.id)}>
+                      {activeFaqId === faq.id ? "−" : "+"}
+                    </span>
                     <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                       {faq.question}
                     </QuestionTitle>
@@ -285,14 +225,7 @@ export default function FAQs() {
           </div>
 
           <div>
-            <BrickSection>
-              <Image
-                src="/brick_separator.svg"
-                width={163}
-                height={54}
-                alt="Brick block"
-              />
-            </BrickSection>
+
             <QuestionsBlock>
               <BlockTitleStyled className={lora.className}>
                 Travel Reimbursement
@@ -300,25 +233,9 @@ export default function FAQs() {
               {travel_faqs.map((faq) => (
                 <Question key={faq.id}>
                   <QuestionTitleWrap>
-                    <Coin
-                      src="/coin.png"
-                      width={28}
-                      height={28}
-                      alt="Coin"
-                      isVisible={showCoin === faq.id}
-                    />
-                    <Image
-                      src={
-                        activeFaqId === faq.id
-                          ? "/used_question_mark_block.svg"
-                          : "/question_mark_block.svg"
-                      }
-                      width={32}
-                      height={32}
-                      alt="Question Mark Block"
-                      onClick={() => toggleFaq(faq.id)}
-                      style={{ cursor: "pointer", zIndex: 2 }}
-                    />
+                    <span style={{ cursor: "pointer", fontSize: "20px", width: "25px", textAlign: "center" }} onClick={() => toggleFaq(faq.id)}>
+                      {activeFaqId === faq.id ? "−" : "+"}
+                    </span>
                     <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                       {faq.question}
                     </QuestionTitle>
@@ -334,14 +251,7 @@ export default function FAQs() {
 
         <ColumnsQuestions>
           <div>
-            <BrickSection>
-              <Image
-                src="/brick_separator.svg"
-                width={163}
-                height={54}
-                alt="Brick block"
-              />
-            </BrickSection>
+
             <QuestionsBlock>
               <BlockTitleStyled className={lora.className}>
                 Applications
@@ -349,25 +259,9 @@ export default function FAQs() {
               {applications_faqs.map((faq) => (
                 <Question key={faq.id}>
                   <QuestionTitleWrap>
-                    <Coin
-                      src="/coin.png"
-                      width={28}
-                      height={28}
-                      alt="Coin"
-                      isVisible={showCoin === faq.id}
-                    />
-                    <Image
-                      src={
-                        activeFaqId === faq.id
-                          ? "/used_question_mark_block.svg"
-                          : "/question_mark_block.svg"
-                      }
-                      width={32}
-                      height={32}
-                      alt="Question Mark Block"
-                      onClick={() => toggleFaq(faq.id)}
-                      style={{ cursor: "pointer", zIndex: 2 }}
-                    />
+                    <span style={{ cursor: "pointer", fontSize: "20px", width: "25px", textAlign: "center" }} onClick={() => toggleFaq(faq.id)}>
+                      {activeFaqId === faq.id ? "−" : "+"}
+                    </span>
                     <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                       {faq.question}
                     </QuestionTitle>
@@ -380,14 +274,7 @@ export default function FAQs() {
             </QuestionsBlock>
           </div>
           <div>
-            <BrickSection>
-              <Image
-                src="/brick_separator.svg"
-                width={163}
-                height={54}
-                alt="Brick block"
-              />
-            </BrickSection>
+
             <QuestionsBlock>
               <BlockTitleStyled className={lora.className}>
                 Teams
@@ -395,25 +282,9 @@ export default function FAQs() {
               {teams_faqs.map((faq) => (
                 <Question key={faq.id}>
                   <QuestionTitleWrap>
-                    <Coin
-                      src="/coin.png"
-                      width={28}
-                      height={28}
-                      alt="Coin"
-                      isVisible={showCoin === faq.id}
-                    />
-                    <Image
-                      src={
-                        activeFaqId === faq.id
-                          ? "/used_question_mark_block.svg"
-                          : "/question_mark_block.svg"
-                      }
-                      width={32}
-                      height={32}
-                      alt="Question Mark Block"
-                      onClick={() => toggleFaq(faq.id)}
-                      style={{ cursor: "pointer", zIndex: 2 }}
-                    />
+                    <span style={{ cursor: "pointer", fontSize: "20px", width: "25px", textAlign: "center" }} onClick={() => toggleFaq(faq.id)}>
+                      {activeFaqId === faq.id ? "−" : "+"}
+                    </span>
                     <QuestionTitle onClick={() => toggleFaq(faq.id)}>
                       {faq.question}
                     </QuestionTitle>
@@ -429,14 +300,7 @@ export default function FAQs() {
       </Split>
 
       <LastBlock>
-        <BrickSection>
-          <Image
-            src="/brick_separator.svg"
-            width={163}
-            height={54}
-            alt="Brick block"
-          />
-        </BrickSection>
+
         <BlockTitleStyled className={lora.className} haveMargin>
           What if I have another question?
         </BlockTitleStyled>
