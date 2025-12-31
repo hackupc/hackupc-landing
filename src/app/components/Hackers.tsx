@@ -25,11 +25,11 @@ const Colors = {
 
 
 
-const BlueContainer = styled.div`
-  border: 2px solid ${Colors.HeroBlue};
-  border-radius: 8px;
+const WhiteContainer = styled.div`
+  background-color: rgba(255, 255, 255, 0.51);
+  border-radius: 10px;
   padding: ${SpacingM};
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,6 +37,7 @@ const BlueContainer = styled.div`
 `;
 
 const StyledButton = styled.div`
+  background-color: #a3c9a8;
   color: #000000;
   padding: ${SpacingS} ${SpacingM};
   border-radius: 8px;
@@ -45,9 +46,14 @@ const StyledButton = styled.div`
   font-weight: bold;
   font-size: ${TitleS};
   text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.35);
 
   &:hover {
-    color: #ffffff;
+    background-color: #8bb190;
+    color: #000000;
   }
 `;
 
@@ -80,7 +86,7 @@ const StyledSmallTitle = styled(SmallTitle)`
 export default function Hackers() {
   return (
     <Section id="hackers">
-      <BlueContainer>
+      <WhiteContainer>
         <SectionTitle className={lora.className}>
           The organization behind HackUPC
         </SectionTitle>
@@ -120,7 +126,7 @@ export default function Hackers() {
         >
           Go to website
         </StyledButton>
-      </BlueContainer>
+      </WhiteContainer>
     </Section>
   );
 }
