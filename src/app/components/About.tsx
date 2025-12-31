@@ -14,8 +14,6 @@ import {
 import { Section } from "@/app/genericComponents/General";
 import { lora } from "@/app/genericComponents/fonts";
 
-
-
 const SectionStyled = styled(Section)`
   color: ${"#000000"};
 `;
@@ -49,7 +47,6 @@ const ImgSection = styled.div`
 `;
 
 export default function About() {
-
   return (
     <div id="about">
       <SectionStyled>
@@ -58,7 +55,6 @@ export default function About() {
         </UnderlineTitle>
         <Container>
           <Col>
-
             <BlockTitle color={"#000000"} haveMargin>
               What is a hackathon?
             </BlockTitle>
@@ -87,11 +83,10 @@ export default function About() {
             <Body>
               HackUPC is the first student hackathon in Spain and the biggest
               one in Europe. Once a year, we aim to provide participants of{" "}
-              <b>all experience levels</b> from <b>all around the world</b>{" "}
-              with a space where they can improve and learn new skills, meet
-              amazing people, and have an overall great experience!
+              <b>all experience levels</b> from <b>all around the world</b> with
+              a space where they can improve and learn new skills, meet amazing
+              people, and have an overall great experience!
             </Body>
-
           </Col>
         </Container>
       </SectionStyled>

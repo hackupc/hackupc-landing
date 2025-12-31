@@ -81,9 +81,7 @@ const QuestionTitle = styled(BodyBold)`
   cursor: pointer;
 `;
 
-
-
-const QuestionAnswer = styled(Body) <{ isVisible: boolean }>`
+const QuestionAnswer = styled(Body)<{ isVisible: boolean }>`
   transform-origin: top;
   transition:
     transform 0.5s ease,
@@ -104,10 +102,6 @@ const QuestionAnswer = styled(Body) <{ isVisible: boolean }>`
       padding: ${SpacingS};
     `}
 `;
-
-
-
-
 
 const BodyLinkStyled = styled(BodyLink)`
   color: #29abe2;
@@ -194,14 +188,11 @@ export default function FAQs() {
   return (
     <Section id="faqs">
       <TitleSpacer>
-        <SectionTitleStyled className={lora.className}>
-          FAQs
-        </SectionTitleStyled>
+        <SectionTitleStyled className={lora.className}>FAQs</SectionTitleStyled>
       </TitleSpacer>
       <Split>
         <ColumnsQuestions>
           <div>
-
             <QuestionsBlock>
               <BlockTitleStyled className={lora.className}>
                 About HackUPC
@@ -209,7 +200,15 @@ export default function FAQs() {
               {hackupc_faqs.map((faq) => (
                 <Question key={faq.id}>
                   <QuestionTitleWrap>
-                    <span style={{ cursor: "pointer", fontSize: "20px", width: "25px", textAlign: "center" }} onClick={() => toggleFaq(faq.id)}>
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        fontSize: "20px",
+                        width: "25px",
+                        textAlign: "center",
+                      }}
+                      onClick={() => toggleFaq(faq.id)}
+                    >
                       {activeFaqId === faq.id ? "−" : "+"}
                     </span>
                     <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -225,7 +224,6 @@ export default function FAQs() {
           </div>
 
           <div>
-
             <QuestionsBlock>
               <BlockTitleStyled className={lora.className}>
                 Travel Reimbursement
@@ -233,7 +231,15 @@ export default function FAQs() {
               {travel_faqs.map((faq) => (
                 <Question key={faq.id}>
                   <QuestionTitleWrap>
-                    <span style={{ cursor: "pointer", fontSize: "20px", width: "25px", textAlign: "center" }} onClick={() => toggleFaq(faq.id)}>
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        fontSize: "20px",
+                        width: "25px",
+                        textAlign: "center",
+                      }}
+                      onClick={() => toggleFaq(faq.id)}
+                    >
                       {activeFaqId === faq.id ? "−" : "+"}
                     </span>
                     <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -251,7 +257,6 @@ export default function FAQs() {
 
         <ColumnsQuestions>
           <div>
-
             <QuestionsBlock>
               <BlockTitleStyled className={lora.className}>
                 Applications
@@ -259,7 +264,15 @@ export default function FAQs() {
               {applications_faqs.map((faq) => (
                 <Question key={faq.id}>
                   <QuestionTitleWrap>
-                    <span style={{ cursor: "pointer", fontSize: "20px", width: "25px", textAlign: "center" }} onClick={() => toggleFaq(faq.id)}>
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        fontSize: "20px",
+                        width: "25px",
+                        textAlign: "center",
+                      }}
+                      onClick={() => toggleFaq(faq.id)}
+                    >
                       {activeFaqId === faq.id ? "−" : "+"}
                     </span>
                     <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -274,7 +287,6 @@ export default function FAQs() {
             </QuestionsBlock>
           </div>
           <div>
-
             <QuestionsBlock>
               <BlockTitleStyled className={lora.className}>
                 Teams
@@ -282,7 +294,15 @@ export default function FAQs() {
               {teams_faqs.map((faq) => (
                 <Question key={faq.id}>
                   <QuestionTitleWrap>
-                    <span style={{ cursor: "pointer", fontSize: "20px", width: "25px", textAlign: "center" }} onClick={() => toggleFaq(faq.id)}>
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        fontSize: "20px",
+                        width: "25px",
+                        textAlign: "center",
+                      }}
+                      onClick={() => toggleFaq(faq.id)}
+                    >
                       {activeFaqId === faq.id ? "−" : "+"}
                     </span>
                     <QuestionTitle onClick={() => toggleFaq(faq.id)}>
@@ -300,7 +320,6 @@ export default function FAQs() {
       </Split>
 
       <LastBlock>
-
         <BlockTitleStyled className={lora.className} haveMargin>
           What if I have another question?
         </BlockTitleStyled>
