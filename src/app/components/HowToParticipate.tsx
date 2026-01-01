@@ -159,9 +159,7 @@ export default function HowToParticipate() {
   return (
     <SpecialSection>
       <Section id="howtoparticipate">
-        <HowToTitle className={lora.className}>
-          How to Participate
-        </HowToTitle>
+        <HowToTitle className={lora.className}>How to Participate</HowToTitle>
         <GridContainer>
           <PennantWrapper>
             <Pennant color="#A36FAE" />
