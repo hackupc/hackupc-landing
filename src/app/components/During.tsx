@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
-import { MobileBreakpoint, SpacingM, SpacingS } from "@/app/genericComponents/tokens";
+import {
+  MobileBreakpoint,
+  SpacingM,
+  SpacingS,
+} from "@/app/genericComponents/tokens";
 import { lora } from "@/app/genericComponents/fonts";
 
 const DuringContainer = styled(Section)`
@@ -67,7 +71,9 @@ export default function During() {
 
       <TheMission>
         <TextWrapper>
-          <StyledTitle className={lora.className}>THE MISSION: HACKUPC</StyledTitle>
+          <StyledTitle className={lora.className}>
+            THE MISSION: HACKUPC
+          </StyledTitle>
         </TextWrapper>
         <Body>
           Get ready for your weekend mission! This year, we aim for HackUPC to
