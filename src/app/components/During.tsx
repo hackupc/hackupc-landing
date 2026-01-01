@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
-import { SpacingM, SpacingS } from "@/app/genericComponents/tokens";
+import { MobileBreakpoint, SpacingM, SpacingS } from "@/app/genericComponents/tokens";
 import { lora } from "@/app/genericComponents/fonts";
 
 const DuringContainer = styled(Section)`
@@ -33,16 +33,26 @@ const StyledTitle = styled.div`
   margin-right: 0;
 `;
 
-const HackUPCColored = styled(StyledTitle)`
-  color: #00ffe0;
-  margin-left: 0;
-`;
-
 const TheMission = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
   text-align: center;
+`;
+
+const MapImage = styled.img`
+  display: block;
+  margin: 0 auto ${SpacingM};
+  max-width: 100%;
+  height: auto;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 export default function During() {
@@ -53,10 +63,11 @@ export default function During() {
         Coding is the main part of HackUPC, but we have many more activities!
       </StyledBody>
 
+      <MapImage src="/map.svg" alt="Map" />
+
       <TheMission>
         <TextWrapper>
-          <StyledTitle className={lora.className}>THE MISSION:</StyledTitle>
-          <HackUPCColored className={lora.className}>HACKUPC</HackUPCColored>
+          <StyledTitle className={lora.className}>THE MISSION: HACKUPC</StyledTitle>
         </TextWrapper>
         <Body>
           Get ready for your weekend mission! This year, we aim for HackUPC to
