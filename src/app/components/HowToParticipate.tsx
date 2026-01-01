@@ -160,9 +160,7 @@ export default function HowToParticipate() {
     <SpecialSection>
       <Section id="howtoparticipate">
         <HowToTitle className={lora.className}>
-          How to
-          <br />
-          Participate
+          How to Participate
         </HowToTitle>
         <GridContainer>
           <PennantWrapper>
