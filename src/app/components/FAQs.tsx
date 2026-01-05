@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import {
   MobileBreakpoint,
+  Primary500,
   SpacingL,
   SpacingM,
   SpacingS,
@@ -66,7 +67,7 @@ const Question = styled.div`
   padding: ${SpacingXS};
   border-radius: 10px;
   box-shadow: 2px 2px 8px black;
-  background-color: #6B624E;
+  background-color: #5B5340;
 `;
 
 const QuestionWithPadding = styled(Question)`
@@ -103,6 +104,7 @@ const TorchIcon = styled(Image)`
 
 const QuestionTitle = styled(BodyBold)`
   cursor: pointer;
+  color: #FFFFFF;
 `;
 
 const QuestionAnswer = styled(Body) <{ isVisible: boolean }>`
@@ -115,7 +117,7 @@ const QuestionAnswer = styled(Body) <{ isVisible: boolean }>`
   line-height: 1.5rem;
   height: 0;
   visibility: hidden;
-  background-color: #6B624E;
+  background-color: #5B5340;
 
   ${(props) =>
     props.isVisible &&
@@ -146,11 +148,9 @@ const LastBlock = styled.div`
 `;
 
 const BlockTitleStyled = styled(BlockTitle)`
-  text-shadow: 2px 2px 5px black;
-`;
-
-const SectionTitleStyled = styled(SectionTitle)`
-  text-shadow: 2px 2px 5px black;
+  color: #5B5340;
+  background-color: #F0E3D8;
+  padding: ${SpacingXS};
 `;
 
 function renderAnswer(answers: AnswerOptions[]) {
@@ -245,9 +245,9 @@ export default function FAQs() {
   return (
     <Section id="faqs">
       <TitleSpacer>
-        <SectionTitleStyled className={lora.className}>
+        <SectionTitle className={lora.className}>
           FAQs
-        </SectionTitleStyled>
+        </SectionTitle>
       </TitleSpacer>
 
       <Split>
@@ -289,14 +289,14 @@ export default function FAQs() {
           What if I have another question?
         </BlockTitleStyled>
         <QuestionWithPadding>
-          <Body style={{ paddingBottom: SpacingS }}>
+          <Body style={{ paddingBottom: SpacingS, color: "#FFFFFF" }}>
             DM us on Instagram at @hackupc or, if you want to contact us via
             email, drop us a line at{" "}
             <BodyLinkStyled href="mailto:contact@hackupc.com">
               contact@hackupc.com
             </BodyLinkStyled>
           </Body>
-          <Body>
+          <Body style={{ color: "#FFFFFF" }}>
             If your issue is related to Travel Reimbursement, write us at{" "}
             <BodyLinkStyled href="mailto:reimbursements@hackupc.com">
               reimbursements@hackupc.com
