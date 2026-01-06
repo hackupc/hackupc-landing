@@ -418,25 +418,25 @@ export default function Hero() {
         className={lora.className}
         style={{
           backgroundPosition: `
-          0 0, 
+          0 0,
           ${animatedPosition.x}px ${animatedPosition.y}px,
-          ${ghostPositions[0].x}px ${ghostPositions[0].y}px, 
-          ${ghostPositions[1].x}px ${ghostPositions[1].y}px, 
+          ${ghostPositions[0].x}px ${ghostPositions[0].y}px,
+          ${ghostPositions[1].x}px ${ghostPositions[1].y}px,
           ${ghostPositions[2].x}px ${ghostPositions[2].y}px,
           ${ghostPositions[3].x}px ${ghostPositions[3].y}px,
           ${ghostPositions[4].x}px ${ghostPositions[4].y}px,
           ${ghostPositions[5].x}px ${ghostPositions[5].y}px,
           ${logoPositions.map((logo) => `${logo.x}px ${logo.y}px`).join(", ")}`,
-          backgroundImage: ` 
-          url("/background_piece.svg"), 
+          backgroundImage: `
+          url("/background_piece.svg"),
           url(${
             spriteIndex === 0 ? "/biene_pacman.svg" : "/biene_pacman_2.svg"
-          }), 
-          url("/green_ghost.svg"), 
-          url("/red_ghost.svg"), 
-          url("/orange_ghost.svg"), 
-          url("/white_ghost.svg"), 
-          url("/blue_ghost.svg"), 
+          }),
+          url("/green_ghost.svg"),
+          url("/red_ghost.svg"),
+          url("/orange_ghost.svg"),
+          url("/white_ghost.svg"),
+          url("/blue_ghost.svg"),
           url("/purple_ghost.svg"),
           url("/hackupcLogoWhite.svg"); `,
           animation: showHero ? "moveAll 10s linear infinite" : "none",
