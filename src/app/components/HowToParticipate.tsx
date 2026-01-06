@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  SpacingL,
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
@@ -19,7 +18,6 @@ const SpecialSection = styled.div`
   background-repeat: repeat;
   position: relative;
   z-index: 0;
-  padding: ${SpacingL} 0;
 `;
 
 const HowToTitle = styled(SectionTitle)`
