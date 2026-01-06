@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -24,7 +25,14 @@ import {
 
 const StyledSectionTitle = styled(SectionTitle)`
   margin-bottom: ${SpacingS};
+  font-weight: 500;
 `;
+
+const StyledBlockTitle = styled(BlockTitle)`
+  font-weight: 300;
+  font-size: 18px;
+`;
+
 const Subtitle = styled.div`
   display: flex;
   gap: ${SpacingS};
@@ -34,18 +42,6 @@ const Subtitle = styled.div`
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column-reverse;
     gap: ${SpacingXS};
-  }
-`;
-const SocialsList = styled.div`
-  align-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${SpacingM};
-  justify-content: space-around;
-  padding: ${SpacingXS} ${SpacingS};
-  @media (max-width: ${MobileBreakpoint}) {
-    gap: ${SpacingXS};
-    padding: 0 ${SpacingXS};
   }
 `;
 
@@ -62,36 +58,61 @@ const SocialItem = styled.div`
   }
 `;
 
-const Colors = {
-  HeroYellow: "#FCFC01",
-  HeroBlue: "#0060BF",
-  HeroNeutral: "#231F20",
-  HeroBlack: "#000000",
-  HeroBlack80: "rgba(0, 0, 0, 0.8)",
-};
-
-const BlueContainer = styled.div`
-  border: 2px solid ${Colors.HeroBlue};
-  border-radius: 8px;
+const WhiteContainer = styled.div`
+  background-color: rgba(255, 255, 255, 0.51);
+  border-radius: 10px;
   padding: ${SpacingM};
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 `;
+const SocialsList = styled(WhiteContainer)`
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: ${SpacingM};
+  justify-content: space-around;
+  padding: ${SpacingXS} ${SpacingS};
+  @media (max-width: ${MobileBreakpoint}) {
+    gap: ${SpacingXS};
+    padding: 0 ${SpacingXS};
+  }
+`;
+
+const ImgSection = styled.div`
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: ${SpacingS};
+`;
+
+const SocialImage = styled(FontAwesomeIcon)`
+  color: rgba(255, 255, 255, 0.8);
+`;
 
 export default function Socials() {
   return (
     <Section id="socials">
-      <BlueContainer>
+      <WhiteContainer>
+        <ImgSection>
+          <Image
+            src="/bieneDragon.svg"
+            width={102}
+            height={168}
+            alt="Biene dragon"
+          />
+        </ImgSection>
         <StyledSectionTitle className={lora.className}>
           Stay tuned, and don't miss a bit
         </StyledSectionTitle>
         <Subtitle>
-          <BlockTitle color={Colors.HeroBlue}>
+          <StyledBlockTitle color="black">
             Check our social media networks
-          </BlockTitle>
+          </StyledBlockTitle>
         </Subtitle>
 
         <SocialsList>
@@ -102,7 +123,7 @@ export default function Socials() {
               rel="noopener noreferrer"
               aria-label="Email"
             >
-              <FontAwesomeIcon icon={faEnvelope} size="3x" />
+              <SocialImage icon={faEnvelope} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
@@ -112,7 +133,7 @@ export default function Socials() {
               rel="noopener noreferrer"
               aria-label="Twitter"
             >
-              <FontAwesomeIcon icon={faXTwitter} size="3x" />
+              <SocialImage icon={faXTwitter} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
@@ -122,7 +143,7 @@ export default function Socials() {
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <FontAwesomeIcon icon={faInstagram} size="3x" />
+              <SocialImage icon={faInstagram} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
@@ -132,7 +153,7 @@ export default function Socials() {
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <FontAwesomeIcon icon={faFacebook} size="3x" />
+              <SocialImage icon={faFacebook} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
@@ -142,7 +163,7 @@ export default function Socials() {
               rel="noopener noreferrer"
               aria-label="Email"
             >
-              <FontAwesomeIcon icon={faLinkedin} size="3x" />
+              <SocialImage icon={faLinkedin} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
@@ -152,7 +173,7 @@ export default function Socials() {
               rel="noopener noreferrer"
               aria-label="Youtube"
             >
-              <FontAwesomeIcon icon={faYoutube} size="3x" />
+              <SocialImage icon={faYoutube} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
@@ -162,7 +183,7 @@ export default function Socials() {
               rel="noopener noreferrer"
               aria-label="Youtube"
             >
-              <FontAwesomeIcon icon={faTwitch} size="3x" />
+              <SocialImage icon={faTwitch} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
@@ -172,7 +193,7 @@ export default function Socials() {
               rel="noopener noreferrer"
               aria-label="Medium"
             >
-              <FontAwesomeIcon icon={faMedium} size="3x" />
+              <SocialImage icon={faMedium} size="3x" />
             </a>
           </SocialItem>
           <SocialItem>
@@ -182,11 +203,11 @@ export default function Socials() {
               rel="noopener noreferrer"
               aria-label="Github"
             >
-              <FontAwesomeIcon icon={faGithub} size="3x" />
+              <SocialImage icon={faGithub} size="3x" />
             </a>
           </SocialItem>
         </SocialsList>
-      </BlueContainer>
+      </WhiteContainer>
     </Section>
   );
 }
