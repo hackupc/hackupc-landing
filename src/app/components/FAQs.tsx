@@ -5,13 +5,11 @@ import {
   teams_faqs,
   travel_faqs,
 } from "@/app/data/faqs_data";
-
 import parse from "html-react-parser";
 import React, { useState } from "react";
 import Image from "next/image";
 import {
   MobileBreakpoint,
-  Primary500,
   SpacingL,
   SpacingM,
   SpacingS,
@@ -63,14 +61,69 @@ const QuestionsBlock = styled.div`
 const Question = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: ${SpacingS};
+`;
+
+const QuestionBox = styled.div`
+  display: flex;
+  align-items: center;
   padding: ${SpacingXS};
   border-radius: 10px;
   box-shadow: 2px 2px 8px black;
   background-color: #5B5340;
 `;
 
-const QuestionWithPadding = styled(Question)`
+const AnswerInner = styled.div`
+  position: relative;
+  border: 7px solid #897F6A;
+  border-radius: 14px;
+  overflow: hidden;
+`;
+
+const AnswerImageWrapper = styled.div`
+  position: absolute;
+  inset: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+`;
+
+
+const AnswerTextOverlay = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: ${SpacingS};
+  padding: ${SpacingM};
+  color: #5B5340;
+  text-align: center;
+`;
+
+const AnswerBox = styled.div<{ isVisible: boolean }>`
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform-origin: top;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+
+  ${(props) =>
+    props.isVisible &&
+    css`
+      max-height: 1000px; /* suficientemente grande */
+      opacity: 1;
+      padding: ${SpacingS};
+      margin-top: ${SpacingS};
+      border-radius: 14px;
+      box-shadow: 2px 2px 8px black;
+      background-color: #5B5340;
+    `}
+`;
+
+
+const QuestionWithPadding = styled(QuestionBox)`
   padding: ${SpacingM};
 `;
 
@@ -107,38 +160,15 @@ const QuestionTitle = styled(BodyBold)`
   color: #FFFFFF;
 `;
 
-const QuestionAnswer = styled(Body) <{ isVisible: boolean }>`
-  transform-origin: top;
-  transition:
-    transform 0.5s ease,
-    opacity 0.5s ease;
-  transform: scaleY(0);
-  opacity: 0;
-  line-height: 1.5rem;
-  height: 0;
-  visibility: hidden;
-  background-color: #5B5340;
-
-  ${(props) =>
-    props.isVisible &&
-    css`
-      transform: scaleY(1);
-      opacity: 1;
-      height: auto;
-      visibility: visible;
-      padding: ${SpacingS};
-    `}
-`;
-
 const BodyLinkStyled = styled(BodyLink)`
-  color: #29abe2;
+  color: #29ABE2;
 
   &:hover {
-    color: #b46f00;
+    color: #B46F00;
   }
 
   &:active {
-    color: #e2b266;
+    color: #E2B266;
   }
 `;
 
@@ -153,58 +183,53 @@ const BlockTitleStyled = styled(BlockTitle)`
   padding: ${SpacingXS};
 `;
 
-function renderAnswer(answers: AnswerOptions[]) {
+function renderAnswerOverlay(answers: AnswerOptions[]) {
   return answers.map((answer, index) => {
     switch (answer.type) {
       case "Link":
         return (
-          <BodyLinkStyled
-            key={index}
-            href={answer.link}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <BodyLinkStyled key={index} href={answer.link} target="_blank">
             {answer.content}
           </BodyLinkStyled>
         );
       case "Enumeration":
         return (
-          <>
-            <Body style={{ paddingBottom: SpacingXS }}>
-              {parse(answer.content)}
-            </Body>
-            <ol style={{ paddingLeft: SpacingM }}>
+          <div key={index}>
+            <Body style={{ color: "#5B5340" }}>{parse(answer.content)}</Body>
+            <ol>
               {answer.options?.map((option) => (
-                <li style={{ paddingBottom: SpacingXS }} key={option}>
-                  {parse(option)}
+                <li key={option}>
+                  <Body style={{ color: "#5B5340" }}>{parse(option)}</Body>
                 </li>
               ))}
             </ol>
-          </>
+          </div>
         );
       case "List":
         return (
-          <>
-            <Body style={{ paddingBottom: SpacingXS }}>
-              {parse(answer.content)}
-            </Body>
-            <ul style={{ paddingLeft: SpacingM }}>
+          <div key={index}>
+            <Body style={{ color: "#5B5340" }}>{parse(answer.content)}</Body>
+            <ul>
               {answer.options?.map((option) => (
-                <li style={{ paddingBottom: SpacingXS }} key={option}>
-                  {parse(option)}
+                <li key={option}>
+                  <Body style={{ color: "#5B5340" }}>{parse(option)}</Body>
                 </li>
               ))}
             </ul>
-          </>
+          </div>
         );
       default:
-        return <span>{parse(answer.content)}</span>;
+        return (
+          <Body key={index} style={{ color: "#5B5340" }}>
+            {parse(answer.content)}
+          </Body>
+        );
     }
   });
 }
 
 export default function FAQs() {
-  const [activeFaqId, setActiveFaqId] = useState<null | number>(null);
+  const [activeFaqId, setActiveFaqId] = useState<number | null>(null);
 
   const toggleFaq = (id: number) => {
     setActiveFaqId(activeFaqId === id ? null : id);
@@ -212,73 +237,66 @@ export default function FAQs() {
 
   const renderFaq = (faq: any) => (
     <Question key={faq.id}>
-      <QuestionTitleWrap>
-        <TorchWrapper onClick={() => toggleFaq(faq.id)}>
-          {activeFaqId === faq.id && (
-            <FireGif
-              src="/fire_move.gif"
-              alt="fire"
-              width={50}
-              height={50}
-              unoptimized
+      <QuestionBox>
+        <QuestionTitleWrap>
+          <TorchWrapper onClick={() => toggleFaq(faq.id)}>
+            {activeFaqId === faq.id && (
+              <FireGif src="/fire_move.gif" alt="fire" width={50} height={50} unoptimized />
+            )}
+            <TorchIcon src="/torch.svg" alt="torch" width={24} height={24} />
+          </TorchWrapper>
+
+          <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+            {faq.question}
+          </QuestionTitle>
+        </QuestionTitleWrap>
+      </QuestionBox>
+
+      <AnswerBox isVisible={activeFaqId === faq.id}>
+        <AnswerInner>
+          <AnswerImageWrapper>
+            <Image
+              src="/innerimage.svg"
+              alt="answer image"
+              width={500}
+              height={500}
             />
-          )}
-          <TorchIcon
-            src="/torch.svg"
-            alt="torch"
-            width={24}
-            height={24}
-          />
-        </TorchWrapper>
-
-        <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-          {faq.question}
-        </QuestionTitle>
-      </QuestionTitleWrap>
-
-      <QuestionAnswer isVisible={activeFaqId === faq.id}>
-        {renderAnswer(faq.answer)}
-      </QuestionAnswer>
+          </AnswerImageWrapper>
+          <AnswerTextOverlay>
+            {renderAnswerOverlay(faq.answer)}
+          </AnswerTextOverlay>
+        </AnswerInner>
+      </AnswerBox>
     </Question>
   );
 
   return (
     <Section id="faqs">
       <TitleSpacer>
-        <SectionTitle className={lora.className}>
-          FAQs
-        </SectionTitle>
+        <SectionTitle className={lora.className}>FAQs</SectionTitle>
       </TitleSpacer>
 
       <Split>
         <ColumnsQuestions>
           <QuestionsBlock>
-            <BlockTitleStyled className={lora.className}>
-              About HackUPC
-            </BlockTitleStyled>
+            <BlockTitleStyled>About HackUPC</BlockTitleStyled>
             {hackupc_faqs.map(renderFaq)}
           </QuestionsBlock>
 
           <QuestionsBlock>
-            <BlockTitleStyled className={lora.className}>
-              Travel Reimbursement
-            </BlockTitleStyled>
+            <BlockTitleStyled>Travel Reimbursement</BlockTitleStyled>
             {travel_faqs.map(renderFaq)}
           </QuestionsBlock>
         </ColumnsQuestions>
 
         <ColumnsQuestions>
           <QuestionsBlock>
-            <BlockTitleStyled className={lora.className}>
-              Applications
-            </BlockTitleStyled>
+            <BlockTitleStyled>Applications</BlockTitleStyled>
             {applications_faqs.map(renderFaq)}
           </QuestionsBlock>
 
           <QuestionsBlock>
-            <BlockTitleStyled className={lora.className}>
-              Teams
-            </BlockTitleStyled>
+            <BlockTitleStyled>Teams</BlockTitleStyled>
             {teams_faqs.map(renderFaq)}
           </QuestionsBlock>
         </ColumnsQuestions>
