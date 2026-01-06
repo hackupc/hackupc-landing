@@ -44,6 +44,11 @@ const Sections = styled.div`
 
 const Col = styled.div`
   flex: 1;
+  margin: 15px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+  margin: 5px;
+  }
 `;
 
 const ImgSection = styled.div`
