@@ -47,7 +47,7 @@ const Col = styled.div`
   margin: 15px;
 
   @media (max-width: ${MobileBreakpoint}) {
-  margin: 5px;
+    margin: 5px;
   }
 `;
 
@@ -59,11 +59,11 @@ const ImgSection = styled.div`
 `;
 
 const RedBoulded = styled.b`
-  color: #B85353;
+  color: #b85353;
 `;
 
 const GreenBoulded = styled.b`
-  color: #75AA7E;
+  color: #75aa7e;
 `;
 
 export const AboutBody = styled(Body)`
@@ -77,7 +77,8 @@ export default function About() {
       <SectionStyled>
         <Container className={montserrat.className}>
           <UnderlineTitle className={lora.className}>
-            HackUPC:<br />
+            HackUPC:
+            <br />
             code the legend
           </UnderlineTitle>
           <Sections>
@@ -91,20 +92,28 @@ export default function About() {
                 />
               </ImgSection>
               <BlockTitle color={"#000000"} haveMargin>
-                What is a <span style={{ color: "#B85353", fontWeight: "bold" }}>hackathon</span>?
+                What is a{" "}
+                <span style={{ color: "#B85353", fontWeight: "bold" }}>
+                  hackathon
+                </span>
+                ?
               </BlockTitle>
               <AboutBody>
-                The word hackathon is a combination of the words "<RedBoulded>HACK</RedBoulded>",
-                standing for creative problem-solving, and <RedBoulded>"MARATHON"</RedBoulded>.
-                These are awesome events full of creativity, technology, and
+                The word hackathon is a combination of the words "
+                <RedBoulded>HACK</RedBoulded>", standing for creative
+                problem-solving, and <RedBoulded>"MARATHON"</RedBoulded>. These
+                are awesome events full of creativity, technology, and
                 passionate tech-related students of different skill ranges
                 collaborating and creating. During a certain period of time,
-                attendees work in <RedBoulded>TEAMS</RedBoulded> to develop apps, games, robots…
-                literally anything you want to <RedBoulded>BUILD & LEARN</RedBoulded> about!
+                attendees work in <RedBoulded>TEAMS</RedBoulded> to develop
+                apps, games, robots… literally anything you want to{" "}
+                <RedBoulded>BUILD & LEARN</RedBoulded> about!
               </AboutBody>
             </Col>
             <Col>
-              <ImgSection style={{ margin: "25px", marginBottom: "41px" }}> {/* Extra margin to match the other image in sizes */}
+              <ImgSection style={{ margin: "25px", marginBottom: "41px" }}>
+                {" "}
+                {/* Extra margin to match the other image in sizes */}
                 <Image
                   src="/hackupcLogoInGreenFlag.svg"
                   width={150}
@@ -113,14 +122,21 @@ export default function About() {
                 />
               </ImgSection>
               <BlockTitle color={"#000000"} haveMargin>
-                About <span style={{ color: "#75AA7E", fontWeight: "bold" }}>HackUPC</span>
+                About{" "}
+                <span style={{ color: "#75AA7E", fontWeight: "bold" }}>
+                  HackUPC
+                </span>
               </BlockTitle>
               <AboutBody>
-                <GreenBoulded>HackUPC</GreenBoulded> is the first student <GreenBoulded>hackathon</GreenBoulded> in Spain and the biggest
+                <GreenBoulded>HackUPC</GreenBoulded> is the first student{" "}
+                <GreenBoulded>hackathon</GreenBoulded> in Spain and the biggest
                 one in Europe. Once a year, we aim to provide participants of
-                <GreenBoulded> all experience levels</GreenBoulded> from <GreenBoulded>all around the world</GreenBoulded> with
-                a space where they can <GreenBoulded>improve and learn new skills</GreenBoulded>, <GreenBoulded>meet amazing people</GreenBoulded>,
-                and have a <GreenBoulded>great experience</GreenBoulded>!
+                <GreenBoulded> all experience levels</GreenBoulded> from{" "}
+                <GreenBoulded>all around the world</GreenBoulded> with a space
+                where they can{" "}
+                <GreenBoulded>improve and learn new skills</GreenBoulded>,{" "}
+                <GreenBoulded>meet amazing people</GreenBoulded>, and have a{" "}
+                <GreenBoulded>great experience</GreenBoulded>!
               </AboutBody>
             </Col>
           </Sections>

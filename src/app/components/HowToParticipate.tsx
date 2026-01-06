@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  SpacingL,
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
