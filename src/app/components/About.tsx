@@ -10,7 +10,7 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-import { Section } from "@/app/genericComponents/General";
+import { Section, WhiteContainer } from "@/app/genericComponents/General";
 import { lora, montserrat } from "@/app/genericComponents/fonts";
 
 const SectionStyled = styled(Section)`
@@ -24,12 +24,10 @@ const UnderlineTitle = styled(SectionTitle)`
   flex-direction: column;
 `;
 
-const Container = styled.div`
-  display: flex;
+const Container = styled(WhiteContainer)`
   flex-direction: row;
   gap: ${SpacingM};
   padding: 20px;
-  background-color: rgba(245, 245, 245, 0.45);
   flex-direction: column;
 `;
 
