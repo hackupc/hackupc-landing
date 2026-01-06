@@ -9,32 +9,39 @@ import {
   MobileBreakpoint,
   SpacingM,
   SpacingS,
-  SpacingXS,
 } from "@/app/genericComponents/tokens";
 import { Section } from "@/app/genericComponents/General";
-import { lora } from "@/app/genericComponents/fonts";
+import { lora, montserrat } from "@/app/genericComponents/fonts";
 
 const SectionStyled = styled(Section)`
   color: ${"#000000"};
 `;
 
 const UnderlineTitle = styled(SectionTitle)`
-  border-bottom: 3px solid black;
-  width: 80%;
-  padding-bottom: ${SpacingXS};
+  font-weight: normal;
+  width: 100%;
+  margin-bottom: 0px;
+  flex-direction: column;
 `;
 
 const Container = styled.div`
   display: flex;
-  border: 3px solid black;
   flex-direction: row;
   gap: ${SpacingM};
   padding: 20px;
+  background-color: rgba(245, 245, 245, 0.45);
+  flex-direction: column;
+`;
+
+const Sections = styled.div`
+  display: flex;
+  flex-direction: row;
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
   }
 `;
+
 const Col = styled.div`
   flex: 1;
 `;
@@ -46,48 +53,72 @@ const ImgSection = styled.div`
   margin-bottom: ${SpacingS};
 `;
 
+const RedBoulded = styled.b`
+  color: #B85353;
+`;
+
+const GreenBoulded = styled.b`
+  color: #75AA7E;
+`;
+
+export const AboutBody = styled(Body)`
+  font-weight: 500;
+  text-align: left;
+`;
+
 export default function About() {
   return (
     <div id="about">
       <SectionStyled>
-        <UnderlineTitle className={lora.className}>
-          HACKUPC: CODING TO THE NEXT LEVEL
-        </UnderlineTitle>
-        <Container>
-          <Col>
-            <BlockTitle color={"#000000"} haveMargin>
-              What is a hackathon?
-            </BlockTitle>
-            <Body>
-              The word hackathon is a combination of the words <b>"HACK"</b>,
-              standing for creative problem-solving, and <b>"MARATHON"</b>.
-              These are awesome events full of creativity, technology, and
-              passionate tech-related students of different skill ranges
-              collaborating and creating. During a certain period of time,
-              attendees work in <b>TEAMS</b> to develop apps, games, robots…
-              literally anything you want to <b>BUILD & LEARN</b> about!
-            </Body>
-          </Col>
-          <Col>
-            <ImgSection>
-              <Image
-                src="/hackupcLogoBlack.svg"
-                width={120}
-                height={120}
-                alt="HackUPC Logo"
-              />
-            </ImgSection>
-            <BlockTitle color={"#000000"} haveMargin>
-              About HackUPC
-            </BlockTitle>
-            <Body>
-              HackUPC is the first student hackathon in Spain and the biggest
-              one in Europe. Once a year, we aim to provide participants of{" "}
-              <b>all experience levels</b> from <b>all around the world</b> with
-              a space where they can improve and learn new skills, meet amazing
-              people, and have an overall great experience!
-            </Body>
-          </Col>
+        <Container className={montserrat.className}>
+          <UnderlineTitle className={lora.className}>
+            HackUPC:<br />
+            code the legend
+          </UnderlineTitle>
+          <Sections>
+            <Col>
+              <ImgSection>
+                <Image
+                  src="/dragon.svg"
+                  width={200}
+                  height={200}
+                  alt="Dragon"
+                />
+              </ImgSection>
+              <BlockTitle color={"#000000"} haveMargin>
+                What is a <span style={{ color: "#B85353", fontWeight: "bold" }}>hackathon</span>?
+              </BlockTitle>
+              <AboutBody>
+                The word hackathon is a combination of the words "<RedBoulded>HACK</RedBoulded>",
+                standing for creative problem-solving, and <RedBoulded>"MARATHON"</RedBoulded>.
+                These are awesome events full of creativity, technology, and
+                passionate tech-related students of different skill ranges
+                collaborating and creating. During a certain period of time,
+                attendees work in <RedBoulded>TEAMS</RedBoulded> to develop apps, games, robots…
+                literally anything you want to <RedBoulded>BUILD & LEARN</RedBoulded> about!
+              </AboutBody>
+            </Col>
+            <Col>
+              <ImgSection style={{ margin: "25px", marginBottom: "41px" }}> {/* Extra margin to match the other image in sizes */}
+                <Image
+                  src="/hackupcLogoInGreenFlag.svg"
+                  width={150}
+                  height={150}
+                  alt="HackUPC Logo"
+                />
+              </ImgSection>
+              <BlockTitle color={"#000000"} haveMargin>
+                About <span style={{ color: "#75AA7E", fontWeight: "bold" }}>HackUPC</span>
+              </BlockTitle>
+              <AboutBody>
+                <GreenBoulded>HackUPC</GreenBoulded> is the first student <GreenBoulded>hackathon</GreenBoulded> in Spain and the biggest
+                one in Europe. Once a year, we aim to provide participants of
+                <GreenBoulded> all experience levels</GreenBoulded> from <GreenBoulded>all around the world</GreenBoulded> with
+                a space where they can <GreenBoulded>improve and learn new skills</GreenBoulded>, <GreenBoulded>meet amazing people</GreenBoulded>,
+                and have a <GreenBoulded>great experience</GreenBoulded>!
+              </AboutBody>
+            </Col>
+          </Sections>
         </Container>
       </SectionStyled>
     </div>

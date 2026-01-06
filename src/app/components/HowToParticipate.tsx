@@ -19,7 +19,6 @@ const SpecialSection = styled.div`
   background-repeat: repeat;
   position: relative;
   z-index: 0;
-  padding: ${SpacingL} 0;
 `;
 
 const HowToTitle = styled(SectionTitle)`
