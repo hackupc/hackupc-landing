@@ -103,7 +103,6 @@ const CharacterGrid = styled.div`
   justify-content: center;
 
   @media (max-width: ${MobileBreakpoint}) {
-    flex-direction: column;
     align-items: center;
   }
 `;
@@ -167,6 +166,18 @@ const CharacterIconWrapper = styled.div`
   }
 `;
 
+const Choose_Char = styled.img`
+  width: 100%;
+  max-width: 400px; 
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+
+
 export default function Hero() {
   return (
     <HeroContainer>
@@ -183,7 +194,12 @@ export default function Hero() {
       </SkySection>
 
       <WallSection>
-        <span>Choose your character</span>
+        <Choose_Char
+          src="/choose_character.svg"
+          width={120}
+          height={120}
+          alt="Choose Your Character"
+        />
         <CharacterGrid>
           <CharacterCard href="https://my.hackupc.com/user/signup/hacker/" target="_blank">
             <CharacterIconWrapper>
