@@ -11,7 +11,6 @@ import { lora } from "@/app/genericComponents/fonts";
 const DuringContainer = styled(Section)`
   position: relative;
   gap: ${SpacingM};
-  z-index: 100;
 `;
 
 const StyledBody = styled(Body)`
