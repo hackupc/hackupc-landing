@@ -37,6 +37,7 @@ const Split = styled.div`
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
+    gap: ${SpacingS};
   }
 `;
 
@@ -204,7 +205,25 @@ const LastBlock = styled.div`
 const BlockTitleStyled = styled(BlockTitle)`
   color: #5b5340;
   background-color: #f0e3d8;
+  border-radius: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
   padding: ${SpacingXS};
+  padding-right: ${SpacingM};
+
+  @media (max-width: ${MobileBreakpoint}) {
+    border-radius: 0 11px 11px 0;
+    margin-left: calc(-50vw + 50%);
+    margin-top: ${SpacingS};  
+    flex-direction: column;
+    align-self: flex-start;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 `;
 
 function renderAnswerOverlay(answers: AnswerOptions[]) {
