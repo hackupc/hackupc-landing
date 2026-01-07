@@ -22,6 +22,16 @@ const UnderlineTitle = styled(SectionTitle)`
   width: 100%;
   margin-bottom: 0px;
   flex-direction: column;
+
+  .break {
+    display: none; // por defecto en pantallas grandes
+  }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    .break {
+      display: inline; // en pantallas pequeñas, se fuerza salto de línea
+    }
+  }
 `;
 
 const Container = styled(WhiteContainer)`
@@ -76,7 +86,9 @@ export default function About() {
         <Container className={montserrat.className}>
           <UnderlineTitle className={lora.className}>
             HackUPC:
-            <br />
+            <span className="break">
+              <br />
+            </span>{" "}
             code the legend
           </UnderlineTitle>
           <Sections>
