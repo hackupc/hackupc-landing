@@ -64,18 +64,64 @@ const Question = styled.div`
   gap: ${SpacingS};
 `;
 
+const FaqWrapper = styled.div`
+  position: relative;
+`;
+
 const QuestionBox = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   padding: ${SpacingXS};
   border-radius: 10px;
   box-shadow: 2px 2px 8px black;
-  background-color: #5B5340;
+  background-color: #5b5340;
+`;
+
+const SupportImage = styled(Image) <{
+  side: "left" | "right";
+  isVisible: boolean;
+}>`
+  position: absolute;
+  bottom: -47.5px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transition: opacity 0.3s ease;
+
+  ${(props) =>
+    props.side === "left"
+      ? css`
+          left: 75px;
+        `
+      : css`
+          right: 75px;
+        `}
+`;
+
+const AnswerBox = styled.div<{ isVisible: boolean }>`
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform-origin: top;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+
+  ${(props) =>
+    props.isVisible &&
+    css`
+      max-height: 1000px;
+      opacity: 1;
+      padding: ${SpacingXS};
+      margin-top: ${SpacingM};
+      border-radius: 14px;
+      box-shadow: 2px 2px 8px black;
+      background-color: #5b5340;
+    `}
 `;
 
 const AnswerInner = styled.div`
   position: relative;
-  border: 7px solid #897F6A;
+  border: 7px solid #897f6a;
   border-radius: 14px;
   overflow: hidden;
 `;
@@ -91,40 +137,18 @@ const AnswerImageWrapper = styled.div`
   }
 `;
 
-
 const AnswerTextOverlay = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   gap: ${SpacingS};
   padding: ${SpacingM};
-  color: #5B5340;
+  color: #5b5340;
   text-align: center;
 `;
 
-const AnswerBox = styled.div<{ isVisible: boolean }>`
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transform-origin: top;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-
-  ${(props) =>
-    props.isVisible &&
-    css`
-      max-height: 1000px; /* suficientemente grande */
-      opacity: 1;
-      padding: ${SpacingS};
-      margin-top: ${SpacingS};
-      border-radius: 14px;
-      box-shadow: 2px 2px 8px black;
-      background-color: #5B5340;
-    `}
-`;
-
-
 const QuestionWithPadding = styled(QuestionBox)`
-  padding: ${SpacingM};
+  padding: ${SpacingL};
 `;
 
 const QuestionTitleWrap = styled.div`
@@ -157,18 +181,18 @@ const TorchIcon = styled(Image)`
 
 const QuestionTitle = styled(BodyBold)`
   cursor: pointer;
-  color: #FFFFFF;
+  color: #ffffff;
 `;
 
 const BodyLinkStyled = styled(BodyLink)`
-  color: #29ABE2;
+  color: #29abe2;
 
   &:hover {
-    color: #B46F00;
+    color: #b46f00;
   }
 
   &:active {
-    color: #E2B266;
+    color: #e2b266;
   }
 `;
 
@@ -178,8 +202,8 @@ const LastBlock = styled.div`
 `;
 
 const BlockTitleStyled = styled(BlockTitle)`
-  color: #5B5340;
-  background-color: #F0E3D8;
+  color: #5b5340;
+  background-color: #f0e3d8;
   padding: ${SpacingXS};
 `;
 
@@ -237,36 +261,62 @@ export default function FAQs() {
 
   const renderFaq = (faq: any) => (
     <Question key={faq.id}>
-      <QuestionBox>
-        <QuestionTitleWrap>
-          <TorchWrapper onClick={() => toggleFaq(faq.id)}>
-            {activeFaqId === faq.id && (
-              <FireGif src="/fire_move.gif" alt="fire" width={50} height={50} unoptimized />
-            )}
-            <TorchIcon src="/torch.svg" alt="torch" width={24} height={24} />
-          </TorchWrapper>
+      <FaqWrapper>
+        <QuestionBox>
+          <SupportImage
+            src="/suport.svg"
+            alt="support left"
+            width={15}
+            height={55}
+            side="left"
+            isVisible={activeFaqId === faq.id}
+          />
 
-          <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-            {faq.question}
-          </QuestionTitle>
-        </QuestionTitleWrap>
-      </QuestionBox>
+          <SupportImage
+            src="/suport.svg"
+            alt="support right"
+            width={15}
+            height={55}
+            side="right"
+            isVisible={activeFaqId === faq.id}
+          />
 
-      <AnswerBox isVisible={activeFaqId === faq.id}>
-        <AnswerInner>
-          <AnswerImageWrapper>
-            <Image
-              src="/innerimage.svg"
-              alt="answer image"
-              width={500}
-              height={500}
-            />
-          </AnswerImageWrapper>
-          <AnswerTextOverlay>
-            {renderAnswerOverlay(faq.answer)}
-          </AnswerTextOverlay>
-        </AnswerInner>
-      </AnswerBox>
+          <QuestionTitleWrap>
+            <TorchWrapper onClick={() => toggleFaq(faq.id)}>
+              {activeFaqId === faq.id && (
+                <FireGif
+                  src="/fire_move.gif"
+                  alt="fire"
+                  width={50}
+                  height={50}
+                  unoptimized
+                />
+              )}
+              <TorchIcon src="/torch.svg" alt="torch" width={24} height={24} />
+            </TorchWrapper>
+
+            <QuestionTitle onClick={() => toggleFaq(faq.id)}>
+              {faq.question}
+            </QuestionTitle>
+          </QuestionTitleWrap>
+        </QuestionBox>
+
+        <AnswerBox isVisible={activeFaqId === faq.id}>
+          <AnswerInner>
+            <AnswerImageWrapper>
+              <Image
+                src="/innerimage.svg"
+                alt="answer image"
+                width={500}
+                height={500}
+              />
+            </AnswerImageWrapper>
+            <AnswerTextOverlay>
+              {renderAnswerOverlay(faq.answer)}
+            </AnswerTextOverlay>
+          </AnswerInner>
+        </AnswerBox>
+      </FaqWrapper>
     </Question>
   );
 
@@ -308,8 +358,8 @@ export default function FAQs() {
         </BlockTitleStyled>
         <QuestionWithPadding>
           <Body style={{ paddingBottom: SpacingS, color: "#FFFFFF" }}>
-            DM us on Instagram at @hackupc or, if you want to contact us via
-            email, drop us a line at{" "}
+            DM us on Instagram at @hackupc or, if you want to contact us via email,
+            drop us a line at{" "}
             <BodyLinkStyled href="mailto:contact@hackupc.com">
               contact@hackupc.com
             </BodyLinkStyled>
