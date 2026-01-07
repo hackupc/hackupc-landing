@@ -10,11 +10,17 @@ import {
   SpacingL,
   SpacingS,
   SpacingXL,
+  SpacingXXL,
 } from "../genericComponents/tokens";
 import Link from "next/link";
 
+const GrassImageXDesktopDisplacement = "-35px";
+const GrassImageXPhoneDisplacement = "480px";
+const FlowerImageHeight = "150px";
+const FlowerImageWidthWithExtra = "100px";
+
 const StyledSectionTitle = styled(SectionTitle)`
-  margin-bottom: ${SpacingL};
+  margin-bottom: ${SpacingXXL};
 
   .break {
     display: none; // por defecto en pantallas grandes
@@ -31,12 +37,6 @@ export const StyledSection = styled(Section)`
   padding: 0;
   padding-top: ${SpacingL};
 `;
-
-const GrassImageXDisplacement = "60px";
-
-const FlowerImageLateralDisplacement = "25%";
-const FlowerImageHeight = "150px";
-const FlowerImageWidth = "100px";
 
 const GrassContainer = styled.div`
   display: flex;
@@ -59,7 +59,7 @@ const GrassImageSection = styled.div`
   position: absolute;
   width: 100%;
   height: 50px;
-  margin-bottom: ${GrassImageXDisplacement};
+  margin-bottom: ${GrassImageXDesktopDisplacement};
 
   background-image: url("/ThroughTheYears/grass.svg");
   background-repeat: repeat-x;
@@ -67,7 +67,7 @@ const GrassImageSection = styled.div`
   background-size: 200px 50px;
 
   @media (max-width: ${MobileBreakpoint}) {
-    margin-bottom: 580px;
+    margin-bottom: ${GrassImageXPhoneDisplacement};
   }
 `;
 
@@ -77,10 +77,10 @@ const SwordSection = styled.div`
   justify-content: right;
   right: 0;
   z-index: -1;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   @media (max-width: ${MobileBreakpoint}) {
-    margin-bottom: 700px;
+    margin-bottom: 600px;
   }
 `;
 
@@ -90,14 +90,15 @@ const FlowersImageSection = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  height: ${FlowerImageHeight};
 `;
 
 const Flower2025Section = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    top: 10px;
-    left: 25%;
+    top: -70px;
+    left: calc(40% - ${FlowerImageWidthWithExtra});
   }
 `;
 
@@ -105,8 +106,8 @@ const Flower2024Section = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    top: 10px;
-    left: calc(${FlowerImageLateralDisplacement} + ${FlowerImageWidth});
+    top: -70px;
+    left: calc(40%);
   }
 `;
 
@@ -114,8 +115,8 @@ const Flower2023Section = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(2 * ${FlowerImageLateralDisplacement} - ${FlowerImageWidth});
-    top: calc(10px + ${FlowerImageHeight});
+    left: calc(50% - ${FlowerImageWidthWithExtra});
+    top: calc(-70px + ${FlowerImageHeight});
   }
 `;
 
@@ -123,8 +124,8 @@ const Flower2022Section = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(2 * ${FlowerImageLateralDisplacement});
-    top: calc(10px + ${FlowerImageHeight});
+    left: calc(50%);
+    top: calc(-70px + ${FlowerImageHeight});
   }
 `;
 
@@ -132,8 +133,8 @@ const Flower2021Section = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(${FlowerImageLateralDisplacement});
-    top: calc(10px + 2 * ${FlowerImageHeight});
+    left: calc(40% - ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 2 * ${FlowerImageHeight});
   }
 `;
 
@@ -141,8 +142,8 @@ const Flower2020Section = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(${FlowerImageLateralDisplacement} + ${FlowerImageWidth});
-    top: calc(10px + 2 * ${FlowerImageHeight});
+    left: calc(40%);
+    top: calc(-70px + 2 * ${FlowerImageHeight});
   }
 `;
 
@@ -150,8 +151,8 @@ const Flower2019Section = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(${FlowerImageLateralDisplacement} + 2 * ${FlowerImageWidth});
-    top: calc(10px + 2 * ${FlowerImageHeight});
+    left: calc(40% + ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 2 * ${FlowerImageHeight});
   }
 `;
 
@@ -159,8 +160,8 @@ const Flower2018Section = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(2 * ${FlowerImageLateralDisplacement} - ${FlowerImageWidth});
-    top: calc(10px + 3 * ${FlowerImageHeight});
+    left: calc(50% - ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 3 * ${FlowerImageHeight});
   }
 `;
 
@@ -168,8 +169,8 @@ const Flower2017wSection = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(2 * ${FlowerImageLateralDisplacement});
-    top: calc(10px + 3 * ${FlowerImageHeight});
+    left: calc(50%);
+    top: calc(-70px + 3 * ${FlowerImageHeight});
   }
 `;
 
@@ -177,8 +178,8 @@ const Flower2017fSection = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(${FlowerImageLateralDisplacement});
-    top: calc(10px + 4 * ${FlowerImageHeight});
+    left: calc(40% - ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 4 * ${FlowerImageHeight});
   }
 `;
 
@@ -186,8 +187,8 @@ const Flower2016wSection = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(${FlowerImageLateralDisplacement} + ${FlowerImageWidth});
-    top: calc(10px + 4 * ${FlowerImageHeight});
+    left: calc(40%);
+    top: calc(-70px + 4 * ${FlowerImageHeight});
   }
 `;
 
@@ -195,8 +196,8 @@ const Flower2016sSection = styled(FlowersImageSection)`
   @media (max-width: ${MobileBreakpoint}) {
     display: block;
     position: absolute;
-    left: calc(${FlowerImageLateralDisplacement} + 2 * ${FlowerImageWidth});
-    top: calc(10px + 4 * ${FlowerImageHeight});
+    left: calc(40% + ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 4 * ${FlowerImageHeight});
   }
 `;
 
@@ -205,7 +206,7 @@ export default function ThroughTheYears() {
     <div id="ThroughTheYears">
       <StyledSection>
         <StyledSectionTitle className={lora.className}>
-          THROUGH{" "}
+          THROUGHOUT{" "}
           <span className="break">
             <br />
           </span>
@@ -215,8 +216,8 @@ export default function ThroughTheYears() {
           <Image
             src="/ThroughTheYears/sword.svg"
             alt="Sword Image"
-            width={200}
-            height={200}
+            width={144}
+            height={366}
           />
         </SwordSection>
         <GrassImageSection />
