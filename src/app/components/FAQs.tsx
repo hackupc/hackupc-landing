@@ -149,7 +149,12 @@ const AnswerTextOverlay = styled.div`
 `;
 
 const QuestionWithPadding = styled(QuestionBox)`
-  padding: ${SpacingL};
+  padding: ${SpacingM};
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${SpacingS};
 `;
 
 const QuestionTitleWrap = styled.div`
@@ -198,8 +203,11 @@ const BodyLinkStyled = styled(BodyLink)`
 `;
 
 const LastBlock = styled.div`
-  text-align: center;
   margin-top: ${SpacingL};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${SpacingM};
 `;
 
 const BlockTitleStyled = styled(BlockTitle)`
@@ -216,13 +224,24 @@ const BlockTitleStyled = styled(BlockTitle)`
   @media (max-width: ${MobileBreakpoint}) {
     border-radius: 0 11px 11px 0;
     margin-left: calc(-50vw + 50%);
-    margin-top: ${SpacingS};  
+    margin-top: ${SpacingS};
     flex-direction: column;
     align-self: flex-start;
 
     &:first-child {
       margin-top: 0;
     }
+  }
+`;
+
+const LastBlockTitle = styled(BlockTitleStyled)`
+  @media (max-width: ${MobileBreakpoint}) {
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0;
+    border-radius: 11px;
+    padding: ${SpacingXS};
   }
 `;
 
@@ -372,18 +391,20 @@ export default function FAQs() {
       </Split>
 
       <LastBlock>
-        <BlockTitleStyled className={lora.className} haveMargin>
+        <LastBlockTitle className={lora.className}>
           What if I have another question?
-        </BlockTitleStyled>
+        </LastBlockTitle>
+
         <QuestionWithPadding>
-          <Body style={{ paddingBottom: SpacingS, color: "#FFFFFF" }}>
+          <Body style={{ color: "#FFFFFF", textAlign: "center" }}>
             DM us on Instagram at @hackupc or, if you want to contact us via email,
             drop us a line at{" "}
             <BodyLinkStyled href="mailto:contact@hackupc.com">
               contact@hackupc.com
             </BodyLinkStyled>
           </Body>
-          <Body style={{ color: "#FFFFFF" }}>
+
+          <Body style={{ color: "#FFFFFF", textAlign: "center" }}>
             If your issue is related to Travel Reimbursement, write us at{" "}
             <BodyLinkStyled href="mailto:reimbursements@hackupc.com">
               reimbursements@hackupc.com
