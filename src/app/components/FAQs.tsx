@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import {
   MobileBreakpoint,
+  SpacingXL,
   SpacingL,
   SpacingM,
   SpacingS,
@@ -28,6 +29,49 @@ import { lora } from "@/app/genericComponents/fonts";
 
 const TitleSpacer = styled.div`
   padding-top: ${SpacingM};
+  padding-bottom: ${SpacingM};
+  width: 100%;
+`;
+
+const SectionTitleStyled = styled(SectionTitle)`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #5b5340;
+  padding: ${SpacingS};  
+  height: auto; 
+
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 95%;
+  }
+`;
+
+const TitleImageWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -51%);
+  width: 97%; 
+  height: 83%; 
+  z-index: 1;
+  pointer-events: none;
+`;
+
+const TitleImage = styled(Image)`
+  position: absolute;
+  inset: 0;
+  object-fit: fill;  
+`;
+
+const TitleText = styled.span`
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
 `;
 
 const Split = styled.div`
@@ -146,6 +190,7 @@ const AnswerTextOverlay = styled.div`
   padding: ${SpacingM};
   color: #5b5340;
   text-align: center;
+  z-index: 2;
 `;
 
 const QuestionWithPadding = styled(QuestionBox)`
@@ -345,8 +390,7 @@ export default function FAQs() {
               <Image
                 src="/innerimage.svg"
                 alt="answer image"
-                width={500}
-                height={500}
+                fill
               />
             </AnswerImageWrapper>
             <AnswerTextOverlay>
@@ -361,7 +405,16 @@ export default function FAQs() {
   return (
     <Section id="faqs">
       <TitleSpacer>
-        <SectionTitle className={lora.className}>FAQs</SectionTitle>
+        <SectionTitleStyled>
+          <TitleImageWrapper>
+            <TitleImage
+              src="/faqs.svg"
+              alt="FAQs icon"
+              fill
+            />
+          </TitleImageWrapper>
+          <TitleText className={lora.className}>FAQs</TitleText>
+        </SectionTitleStyled>
       </TitleSpacer>
 
       <Split>
