@@ -26,6 +26,12 @@ import {
 import { AnswerOptions } from "@/app/data/interfaces";
 import { lora } from "@/app/genericComponents/fonts";
 
+type Faq = {
+  id: number;
+  question: string;
+  answer: AnswerOptions[];
+};
+
 const TitleSpacer = styled.div`
   padding-top: ${SpacingM};
   padding-bottom: ${SpacingM};
@@ -122,7 +128,7 @@ const QuestionBox = styled.div`
   background-color: #5b5340;
 `;
 
-const SupportImage = styled(Image)<{
+const SupportImage = styled(Image) <{
   side: "left" | "right";
   isVisible: boolean;
 }>`
@@ -343,7 +349,7 @@ export default function FAQs() {
     setActiveFaqId(activeFaqId === id ? null : id);
   };
 
-  const renderFaq = (faq: any) => (
+  const renderFaq = (faq: Faq) => (
     <Question key={faq.id}>
       <FaqWrapper>
         <QuestionBox>
