@@ -13,7 +13,7 @@ import {
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { Section } from "@/app/genericComponents/General";
+import { Section, WhiteContainer } from "@/app/genericComponents/General";
 import { BlockTitle, SectionTitle } from "@/app/genericComponents/Typography";
 import { lora } from "@/app/genericComponents/fonts";
 import {
@@ -58,16 +58,6 @@ const SocialItem = styled.div`
   }
 `;
 
-const WhiteContainer = styled.div`
-  background-color: rgba(255, 255, 255, 0.51);
-  border-radius: 10px;
-  padding: ${SpacingM};
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-`;
 const SocialsList = styled(WhiteContainer)`
   background-color: rgba(0, 0, 0, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
