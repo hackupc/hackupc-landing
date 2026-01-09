@@ -40,8 +40,8 @@ const SectionTitleStyled = styled(SectionTitle)`
   width: 50%;
   margin: 0 auto;
   background-color: #5b5340;
-  padding: ${SpacingS};  
-  height: auto; 
+  padding: ${SpacingS};
+  height: auto;
 
   @media (max-width: ${MobileBreakpoint}) {
     width: 95%;
@@ -53,8 +53,8 @@ const TitleImageWrapper = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -51%);
-  width: 97%; 
-  height: 83%; 
+  width: 97%;
+  height: 83%;
   z-index: 1;
   pointer-events: none;
 `;
@@ -62,7 +62,7 @@ const TitleImageWrapper = styled.div`
 const TitleImage = styled(Image)`
   position: absolute;
   inset: 0;
-  object-fit: fill;  
+  object-fit: fill;
 `;
 
 const TitleText = styled.span`
@@ -122,7 +122,7 @@ const QuestionBox = styled.div`
   background-color: #5b5340;
 `;
 
-const SupportImage = styled(Image) <{
+const SupportImage = styled(Image)<{
   side: "left" | "right";
   isVisible: boolean;
 }>`
@@ -148,7 +148,9 @@ const AnswerBox = styled.div<{ isVisible: boolean }>`
   max-height: 0;
   opacity: 0;
   transform-origin: top;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
 
   ${(props) =>
     props.isVisible &&
@@ -386,11 +388,7 @@ export default function FAQs() {
         <AnswerBox isVisible={activeFaqId === faq.id}>
           <AnswerInner>
             <AnswerImageWrapper>
-              <Image
-                src="/innerimage.svg"
-                alt="answer image"
-                fill
-              />
+              <Image src="/innerimage.svg" alt="answer image" fill />
             </AnswerImageWrapper>
             <AnswerTextOverlay>
               {renderAnswerOverlay(faq.answer)}
@@ -406,11 +404,7 @@ export default function FAQs() {
       <TitleSpacer>
         <SectionTitleStyled>
           <TitleImageWrapper>
-            <TitleImage
-              src="/faqs.svg"
-              alt="FAQs icon"
-              fill
-            />
+            <TitleImage src="/faqs.svg" alt="FAQs icon" fill />
           </TitleImageWrapper>
           <TitleText className={lora.className}>FAQs</TitleText>
         </SectionTitleStyled>
@@ -449,8 +443,8 @@ export default function FAQs() {
 
         <QuestionWithPadding>
           <Body style={{ color: "#FFFFFF", textAlign: "center" }}>
-            DM us on Instagram at @hackupc or, if you want to contact us via email,
-            drop us a line at{" "}
+            DM us on Instagram at @hackupc or, if you want to contact us via
+            email, drop us a line at{" "}
             <BodyLinkStyled href="mailto:contact@hackupc.com">
               contact@hackupc.com
             </BodyLinkStyled>
