@@ -35,3 +35,14 @@ export const Section = styled.div`
     padding: ${SpacingL} ${SpacingM};
   }
 `;
+
+export const WhiteContainer = styled.div`
+  background-color: rgba(255, 255, 255, 0.51);
+  border-radius: 10px;
+  padding: ${SpacingM};
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`;
