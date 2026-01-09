@@ -60,6 +60,7 @@ export const Body = styled.div`
 
   @media (max-width: ${MobileBreakpoint}) {
     font-size: ${MobileBodyText};
+    text-align: center;
   }
 `;
 
