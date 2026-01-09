@@ -11,8 +11,8 @@ import { EventStructuredData } from "@/app/metrics/EventStructuredData";
 
 config.autoAddCss = false;
 export const metadata: Metadata = {
-  title: "HackUPC 2025 | May 2-4 | Student hackathon in Barcelona",
-  description: "Student hackathon in Barcelona on May 2-4 for 36 hours",
+  title: "HackUPC 2026 | April 24-26 | Student hackathon in Barcelona",
+  description: "Student hackathon in Barcelona on April 24-26 for 36 hours",
   authors: { name: "Hackers@UPC", url: "https://hackersatupc.org/" },
   keywords: [
     "Hackathon, Hacker, Student, University, College, Programming, Technology, UPC, Barcelona, Spain",
@@ -21,22 +21,22 @@ export const metadata: Metadata = {
     site: "@hackupc",
     card: "summary_large_image",
     creator: "@hackupc",
-    title: "HackUPC 2025 | May 2-4 | Student hackathon Barcelona",
+    title: "HackUPC 2026 | April 24-26 | Student hackathon Barcelona",
     description:
-      "36 hours student hackathon in Barcelona in May starting on the 2nd ending the 4th",
+      "36 hours student hackathon in Barcelona in April starting on the 24th ending the 26th",
     images: {
       url: "https://hackupc.com/ogimage.png?v=2024",
-      secureUrl: "https://hackupc.com/ogimage.png?v=2024",
-      alt: "HackUPC 2025 | May 2-4 | Student hackathon in Barcelona",
+      secureUrl: "https://hackupc.com/ogimage.png?v=2025",
+      alt: "HackUPC 2026 | April 24-26 | Student hackathon in Barcelona",
     },
   },
   openGraph: {
-    title: "HackUPC 2025 | May 2-4 | Student hackathon Barcelona",
+    title: "HackUPC 2026 | April 24-26 | Student hackathon Barcelona",
     type: "website",
     siteName: "HackUPC",
     locale: "en_GB",
     description:
-      "36 hours student hackathon in Barcelona in May starting on the 2nd ending the 4th",
+      "36 hours student hackathon in Barcelona in April starting on the 24th ending the 26th",
     url: "https://hackupc.com",
     images: {
       url: "https://hackupc.com/ogimage.png?v=2024",
