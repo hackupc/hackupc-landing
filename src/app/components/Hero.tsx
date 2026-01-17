@@ -16,7 +16,7 @@ const Colors = {
   StoneGrey: "#D9D9D9", 
 };
 
-// --- ANIMACIONES ---
+
 const float = keyframes`
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -29,7 +29,6 @@ const fly = keyframes`
   100% { transform: translateX(0px) translateY(0px); }
 `;
 
-// --- ESTILOS GENERALES ---
 
 const HeroContainer = styled.div`
   position: relative;
@@ -112,8 +111,6 @@ const RightCloud = styled(BaseCloud)`
   }
 `;
 
-
-// --- RESTO DE COMPONENTES ---
 
 const LogoContainer = styled.div`
   display: flex;
@@ -241,19 +238,15 @@ export default function Hero() {
   return (
     <HeroContainer>
       <SkySection>
-        {/* Nube Izquierda */}
         <LeftCloud>
           <Image 
             src="/cloud.svg" 
             width={140} 
             height={85} 
             alt="Cloud" 
-            priority // Carga prioritaria para que aparezca rápido
             style={{ width: '100%', height: 'auto' }} 
           />
         </LeftCloud>
-        
-        {/* Nube Derecha */}
         <RightCloud>
           <Image 
             src="/cloud.svg" 
