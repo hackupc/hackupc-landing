@@ -42,47 +42,6 @@ const HeroContainer = styled.div`
   background-color: ${Colors.SkyBlue};
 `;
 
-const NavBar = styled.nav`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: ${SpacingM} ${SpacingXL};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 40;
-  font-family: ${montserrat.style.fontFamily};
-  font-weight: 800;
-  color: #333;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    padding: ${SpacingS} ${SpacingM};
-  }
-`;
-
-const NavLink = styled.a`
-  text-decoration: none;
-  color: inherit;
-  font-size: 16px;
-  cursor: pointer;
-  letter-spacing: 0.5px;
-  &:hover { opacity: 0.7; }
-`;
-
-const MLHBadge = styled.a`
-  position: absolute;
-  top: 0;
-  right: 100px;
-  width: 60px;
-  z-index: 50;
-  
-  @media (max-width: ${MobileBreakpoint}) {
-    right: ${SpacingM};
-    width: 45px;
-  }
-`;
-
 const SkySection = styled.div`
   height: 45%;
   display: flex;
@@ -94,59 +53,65 @@ const SkySection = styled.div`
   padding-bottom: 60px; 
 
   @media (max-width: ${MobileBreakpoint}) {
-    padding-bottom: 60px;
+    padding-bottom: 50px;
+    height: 42%;
   }
 `;
-
-// --- ELEMENTOS DECORATIVOS ---
 
 const DragonWrapper = styled.div`
   position: absolute;
   z-index: 2;
   top: 15%;
-  right: 15%;
+  right: 18%; /* Movido un poco más a la izquierda para separarlo de la nube derecha */
   width: 160px;
   animation: ${fly} 5s ease-in-out infinite;
 
   @media (max-width: ${MobileBreakpoint}) {
-    top: 70px;
+    top: 50px;
     right: auto;
-    left: 20px;
-    width: 80px;
+    left: 10px;
+    width: 75px;
   }
 `;
 
 const BaseCloud = styled.div`
   position: absolute;
-  z-index: 1;
+  z-index: 1; 
   opacity: 0.9;
   animation: ${float} 6s ease-in-out infinite;
+  pointer-events: none;
 `;
 
 const LeftCloud = styled(BaseCloud)`
-  top: 20%;
-  left: 15%; 
+  /* ESCRITORIO: Pegada al borde izquierdo */
+  top: 18%;
+  left: 2%; 
   width: 140px;
 
   @media (max-width: ${MobileBreakpoint}) {
-    top: 100px;
-    left: 5%; 
-    width: 100px;
+    /* MÓVIL: Asomando desde fuera de la pantalla */
+    top: 90px;
+    left: -40px; /* Valor negativo para que solo se vea la mitad */
+    width: 110px; 
     opacity: 0.8;
   }
 `;
 
 const RightCloud = styled(BaseCloud)`
-  top: 30%;
-  right: 25%;
-  width: 100px;
+  /* ESCRITORIO: Pegada al borde derecho */
+  top: 28%;
+  right: 2%;
+  width: 120px;
 
   @media (max-width: ${MobileBreakpoint}) {
-    top: 140px;
-    right: 5%;
-    width: 80px;
+    /* MÓVIL: Asomando desde fuera a la derecha y más abajo */
+    top: 160px;
+    right: -30px; 
+    width: 90px;
+    opacity: 0.8;
   }
 `;
+
 
 // --- RESTO DE COMPONENTES ---
 
@@ -157,6 +122,7 @@ const LogoContainer = styled.div`
   z-index: 10;
   margin-bottom: 10px; 
   width: 100%;
+  position: relative; /* Asegura z-index */
 `;
 
 const WallSection = styled.div`
@@ -190,7 +156,7 @@ const CharacterGrid = styled.div`
   align-items: flex-end;
 
   @media (max-width: ${MobileBreakpoint}) {
-    gap: 20px; 
+    gap: 15px; 
     margin-top: 40px;
   }
 `;
@@ -209,8 +175,8 @@ const CharacterCard = styled.a`
   }
 
   @media (max-width: ${MobileBreakpoint}) {
-    width: 40%; 
-    max-width: 140px;
+    width: 42%; /* Un poco más ancho en móvil */
+    max-width: 150px;
   }
 `;
 
@@ -275,24 +241,27 @@ export default function Hero() {
   return (
     <HeroContainer>
       <SkySection>
-        {/* CORRECCIÓN NUBES: Aumentamos el height y añadimos objectFit */}
+        {/* Nube Izquierda */}
         <LeftCloud>
           <Image 
             src="/cloud.svg" 
             width={140} 
-            height={100} /* Aumentado de 70 a 100 */
+            height={85} 
             alt="Cloud" 
-            style={{ width:'100%', height:'auto', objectFit: 'contain' }} 
+            priority // Carga prioritaria para que aparezca rápido
+            style={{ width: '100%', height: 'auto' }} 
           />
         </LeftCloud>
         
+        {/* Nube Derecha */}
         <RightCloud>
           <Image 
             src="/cloud.svg" 
-            width={100} 
-            height={80} /* Aumentado de 50 a 80 */
+            width={110} 
+            height={70} 
             alt="Cloud" 
-            style={{ width:'100%', height:'auto', objectFit: 'contain' }} 
+            priority
+            style={{ width: '100%', height: 'auto' }} 
           />
         </RightCloud>
         
