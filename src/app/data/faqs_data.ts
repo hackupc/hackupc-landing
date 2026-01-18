@@ -19,7 +19,7 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "The opening ceremony starts at 7:00 p.m. on Friday, May 2nd. We expect to close this year’s edition by 5:00 p.m. on Sunday, May 4th.",
+          "The opening ceremony starts at 7:00 p.m. on Friday, April 24th. We expect to close this year’s edition by 5:00 p.m. on Sunday, April 26th.",
       },
     ],
   },
@@ -201,8 +201,8 @@ export const travel_faqs: FAQs[] = [
         content:
           "To be able to receive Travel Reimbursement money, you need to match the following criteria:",
         options: [
-          "Upload your tickets before 2nd May to our platform (we only accept flight, bus, or train tickets) alongside your PayPal account (we only pay this way).",
-          "The arrival tickets should be after April 25th and the departure tickets should be prior to May 9th.",
+          "Upload your tickets before April 26th to our platform (we only accept flight, bus, or train tickets) alongside your PayPal account (we only pay this way).",
+          "The arrival tickets should be after April 19th and the departure tickets should be prior to 1st May.",
           "In the hackathon, it’s mandatory to demo your project to HackUPC judges, presenting only to sponsors will not be considered valid.",
           "The project should follow all the HackUPC rules.",
           "After the hackathon, upload your Devpost link to our platform.",
@@ -242,7 +242,7 @@ export const applications_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "As long as you graduated a year before the event (May 2nd, 2024), or later, you can still be accepted as a hacker. Nevertheless, if that isn't your case, and you don't want to miss HackUPC, you can apply as a mentor!",
+          "As long as you graduated a year before the event (April 24th, 2025), or later, you can still be accepted as a hacker. Nevertheless, if that isn't your case, and you don't want to miss HackUPC, you can apply as a mentor!",
       },
     ],
   },
