@@ -16,7 +16,7 @@ const PackageBox = ({ width, height }: BoxInput) => styled.div`
   width: ${width};
   height: ${height};
   overflow: hidden;
-  background-color: ${Neutral300};
+  background-color: #BFB39A;
   border-radius: ${SpacingXS};
 `;
 

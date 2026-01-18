@@ -2,21 +2,9 @@ import styled from "styled-components";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
 import { MobileBreakpoint, SpacingS } from "@/app/genericComponents/tokens";
-import { silkscreen } from "@/app/genericComponents/fonts";
-import React from "react";
+import { LoraFont } from "@/app/genericComponents/fonts";
+import React, { useState } from "react";
 import Image from "next/image";
-
-const VideoWrapper = styled.div`
-  position: relative;
-  width: 90%;
-  padding-top: 45%;
-  aspect-ratio: 16 / 9;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 100%;
-    padding-top: 56.25%;
-  }
-`;
 
 const StyledIframe = styled.iframe`
   position: absolute;
@@ -27,14 +15,7 @@ const StyledIframe = styled.iframe`
   border-radius: ${SpacingS};
   border: none;
   overflow: hidden;
-`;
-
-const ConsolePlayer = styled.div`
-  width: 100%;
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 600px;
-  background-color: #594f4f;
+  pointer-events: auto;
 `;
 
 const ConsolesDiv = styled.div`
@@ -47,80 +28,158 @@ const ConsolesDiv = styled.div`
   }
 `;
 
-const InnerConsole = styled.div<{ backgroundColor: string }>`
-  background-color: ${(props) => props.backgroundColor};
-  border-radius: 15px;
-  padding: 20px;
-  // center the content
+const StyledEnvelope = styled(Image)`
+  cursor: pointer;
+  width: 100% !important;
+  height: auto !important;
+  transition: filter 0.2s;
+  &:active {
+    filter: brightness(0.95);
+  }
+`;
+
+const TrailerContainer = styled(Section)`
+  position: relative;
+  padding: ${SpacingS} 0 ${SpacingS} 0;
+  gap: ${SpacingS};
+  max-width: 100%;
+  z-index: 0;
+
+  background-image: url("/Background.svg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: top;
+`;
+
+const Agrupar = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  width: 100%;
 `;
 
-const StyledButtons = styled(Image)`
+const EnvelopeContainer = styled.div<{ isOpen?: boolean }>`
+  position: relative;
+  width: 500px;
+  height: ${(props) => (props.isOpen ? 550 : 350)}px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.3s ease;
+
   @media (max-width: ${MobileBreakpoint}) {
-    width: 90%;
+    width: 95vw;
+    height: ${(props) => (props.isOpen ? "70vw" : "50vw")};
+    min-width: 200px;
+    min-height: 100px;
   }
-  width: 80%;
 `;
 
-const CustomTitle = styled(SectionTitle)`
-  margin-bottom: 0;
-  color: #000;
+const VideoOverlay = styled.div`
+  position: absolute;
+  top: 3%;
+  left: 9%;
+  width: 82%;
+  height: 43%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+  clip-path: polygon(0 30px, 30px 0, calc(100% - 30px) 0, 100% 30px,100% 100%, 0 100%);
+`;
+
+export const StyledSectionTitle = styled(SectionTitle)`
+  position: relative;  
+  width: fit-content;
+  margin: 0 auto 45px auto;
+  padding: 8px 32px 8px 32px;
+  font-size: 32px;
+  background-color: rgba(255, 227, 216, 1);
+  box-shadow: 0px 2px 1px 1px #0000009d;
 `;
 
 export default function Trailer() {
+  const [teaserOpen, setTeaserOpen] = useState(false);
+  const [aftermovieOpen, setAftermovieOpen] = useState(false);
+
   return (
-    <SectionBackground specialBackground="#231F20">
-      <Section className={silkscreen.className}>
+    <TrailerContainer>
+      <Section>
         <ConsolesDiv>
-          <ConsolePlayer>
-            <InnerConsole backgroundColor={"#f4ead5"}>
-              <CustomTitle className={silkscreen.className}>Teaser</CustomTitle>
-              {/*<VideoNotAvailable> Teaser coming soon... </VideoNotAvailable>*/}
-              <VideoWrapper>
-                <StyledIframe
-                  title="HackUPC 2025 | Trailer"
-                  src="https://www.youtube.com/embed/uSQFmtX0wQs?si=XFjHjtCiMloTOm_T"
-                  allowFullScreen
-                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                />
-              </VideoWrapper>
-
-              <StyledButtons
-                src="/console_buttons.svg"
-                alt="console buttons"
-                width={420}
-                height={120}
+          {/* TEASER */}
+          <Agrupar>
+            <StyledSectionTitle
+              className={LoraFont.className}
+              style={{ color: "#191937" }}
+            >
+              Teaser
+            </StyledSectionTitle>
+            <EnvelopeContainer isOpen={teaserOpen}>
+              <StyledEnvelope
+                src={
+                  teaserOpen
+                    ? "/teaser/OpenBlueEnv.svg"
+                    : "/teaser/blueEnvelope.svg"
+                }
+                alt="Open teaser"
+                width={500}
+                height={teaserOpen ? 550 : 350}
+                onClick={() => !teaserOpen && setTeaserOpen(true)}
+                style={{ zIndex: 1, cursor: teaserOpen ? "default" : "pointer" }}
+                priority
               />
-            </InnerConsole>
-          </ConsolePlayer>
+              {teaserOpen && (
+                <VideoOverlay>
+                  <StyledIframe
+                    title="HackUPC 2025 | Trailer"
+                    src="https://www.youtube.com/embed/uSQFmtX0wQs?si=XFjHjtCiMloTOm_T&autoplay=1"
+                    allowFullScreen
+                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </VideoOverlay>
+              )}
+            </EnvelopeContainer>
+          </Agrupar>
 
-          <ConsolePlayer>
-            <InnerConsole backgroundColor={"#BC8FD2"}>
-              <CustomTitle className={silkscreen.className}>
-                Aftermovie '24
-              </CustomTitle>
-              <VideoWrapper>
-                <StyledIframe
-                  title="HackUPC 2024 | Aftermovie"
-                  src="https://www.youtube.com/embed/cgfJIZ2udhw?si=r3cj3SZpagO4kzzz"
-                  allowFullScreen
-                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                />
-              </VideoWrapper>
-
-              <StyledButtons
-                src="/console_buttons.svg"
-                alt="console buttons"
-                width={420}
-                height={120}
+          {/* AFTERMOVIE */}
+          <Agrupar>
+            <StyledSectionTitle
+              className={LoraFont.className}
+              style={{ color: "#2C5332" }}
+            >
+              Aftermovie
+            </StyledSectionTitle>
+            <EnvelopeContainer isOpen={aftermovieOpen}>
+              <StyledEnvelope
+                src={
+                  aftermovieOpen
+                    ? "/teaser/OpenGreenEnv.svg"
+                    : "/teaser/greenEnvelope.svg"
+                }
+                alt="Open aftermovie"
+                width={500}
+                height={aftermovieOpen ? 550 : 350}
+                onClick={() => !aftermovieOpen && setAftermovieOpen(true)}
+                style={{ zIndex: 1, cursor: aftermovieOpen ? "default" : "pointer" }}
+                priority
               />
-            </InnerConsole>
-          </ConsolePlayer>
+              {aftermovieOpen && (
+                <VideoOverlay>
+                  <StyledIframe
+                    title="HackUPC 2025 | Aftermovie"
+                    src="https://www.youtube.com/embed/9BGYprMJLQw?autoplay=1"
+                    allowFullScreen
+                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </VideoOverlay>
+              )}
+            </EnvelopeContainer>
+          </Agrupar>
         </ConsolesDiv>
       </Section>
-    </SectionBackground>
+    </TrailerContainer>
   );
 }
