@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Section, SectionBackground } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
 import { MobileBreakpoint, SpacingS } from "@/app/genericComponents/tokens";
-import { LoraFont } from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -112,7 +112,7 @@ export default function Trailer() {
           {/* TEASER */}
           <Agrupar>
             <StyledSectionTitle
-              className={LoraFont.className}
+              className={lora.className}
               style={{ color: "#191937" }}
             >
               Teaser
@@ -147,7 +147,7 @@ export default function Trailer() {
           {/* AFTERMOVIE */}
           <Agrupar>
             <StyledSectionTitle
-              className={LoraFont.className}
+              className={lora.className}
               style={{ color: "#2C5332" }}
             >
               Aftermovie

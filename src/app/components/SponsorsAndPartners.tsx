@@ -1,7 +1,7 @@
 //import styled from "styled-components";
 import styled, { keyframes } from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import { LoraFont } from "@/app/genericComponents/fonts";
+import { lora} from "@/app/genericComponents/fonts";
 import {
   MaxScreenSize,
   MobileBreakpoint,
@@ -115,7 +115,7 @@ export default function SponsorsAndPartners() {
   return (
     <SponsorsAndPartnersContainer id="sponsors">
       <ContentOverlay>
-        <StyledSectionTitle className={LoraFont.className}>
+        <StyledSectionTitle className={lora.className}>
           S P O N S O R S
         </StyledSectionTitle>
         <SponsorsBlock>
@@ -204,7 +204,7 @@ export default function SponsorsAndPartners() {
           </SponsorRow>
         </SponsorsBlock>
 
-        <StyledSectionTitle className={LoraFont.className}>
+        <StyledSectionTitle className={lora.className}>
           P A R T N E R S
         </StyledSectionTitle>
         <PartnersBlock>
