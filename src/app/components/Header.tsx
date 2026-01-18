@@ -28,6 +28,7 @@ const ClickableLogo = styled.div`
   align-items: center;
   gap: ${SpacingS};
   cursor: pointer, auto;
+  color: white;
 `;
 
 const StyledBodyLink = styled(BodyLink)`
