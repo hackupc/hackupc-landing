@@ -1,10 +1,9 @@
 //import styled from "styled-components";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import { lora} from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 import {
   MaxScreenSize,
-  MobileBreakpoint,
   SpacingL,
   SpacingM,
   SpacingS,
@@ -19,12 +18,6 @@ import {
   TeraBox,
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
-
-const Colors = {
-  Background: "#000000",
-  Elements: "#FFFFFF",
-  Rectangles: "#D9D9D9",
-};
 
 const SponsorsAndPartnersContainer = styled(Section)`
   position: relative;
