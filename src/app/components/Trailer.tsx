@@ -44,11 +44,6 @@ const TrailerContainer = styled(Section)`
   gap: ${SpacingS};
   max-width: 100%;
   z-index: 0;
-
-  background-image: url("/Background.svg");
-  background-repeat: repeat;
-  background-size: cover;
-  background-position: top;
 `;
 
 const Agrupar = styled.div`
