@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  Neutral300,
-  SpacingS,
-  SpacingXS,
-} from "@/app/genericComponents/tokens";
+import { SpacingS, SpacingXS } from "@/app/genericComponents/tokens";
 import { BodyBold } from "@/app/genericComponents/Typography";
 
 interface BoxInput {
@@ -16,7 +12,7 @@ const PackageBox = ({ width, height }: BoxInput) => styled.div`
   width: ${width};
   height: ${height};
   overflow: hidden;
-  background-color: #BFB39A;
+  background-color: #bfb39a;
   border-radius: ${SpacingXS};
 `;
 

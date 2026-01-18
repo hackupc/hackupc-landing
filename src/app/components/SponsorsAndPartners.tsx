@@ -240,7 +240,9 @@ export default function SponsorsAndPartners() {
                 <SponsorLogo
                   imageSrc={"/Partners/coeinf.png"}
                   imageAlt={"coeinf"}
-                  sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
+                  sponsorLink={
+                    "https://enginyeriainformatica.cat/dones-coeinf/"
+                  }
                 />
               </MiliBox>
               <MiliBox>
