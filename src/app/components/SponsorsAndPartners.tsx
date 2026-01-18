@@ -1,10 +1,9 @@
 //import styled from "styled-components";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
-import { lora} from "@/app/genericComponents/fonts";
+import { lora } from "@/app/genericComponents/fonts";
 import {
   MaxScreenSize,
-  MobileBreakpoint,
   SpacingL,
   SpacingM,
   SpacingS,
@@ -19,12 +18,6 @@ import {
   TeraBox,
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
-
-const Colors = {
-  Background: "#000000",
-  Elements: "#FFFFFF",
-  Rectangles: "#D9D9D9",
-};
 
 const SponsorsAndPartnersContainer = styled(Section)`
   position: relative;
@@ -47,15 +40,15 @@ const ContentOverlay = styled.div`
 `;
 
 export const StyledSectionTitle = styled(SectionTitle)`
-  position: relative;  
+  position: relative;
   color: #000000;
   width: fit-content;
-  
+
   margin: 0 auto 45px auto;
   padding: 8px 32px 8px 32px;
   font-size: 32px;
   background-color: rgba(161, 200, 168, 1);
-  
+
   /* Left */
   &::before {
     content: "";
@@ -64,9 +57,9 @@ export const StyledSectionTitle = styled(SectionTitle)`
     left: -54px;
     width: 92px;
     height: 62px;
-    background-color: #65936Dff;
+    background-color: #65936dff;
     z-index: -1;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%,0% 100%, 20% 50%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 20% 50%);
   }
 
   /* Right */
@@ -77,7 +70,7 @@ export const StyledSectionTitle = styled(SectionTitle)`
     right: -54px;
     width: 92px;
     height: 62px;
-    background-color: #65936Dff;
+    background-color: #65936dff;
     z-index: -1;
     clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%);
   }
@@ -142,7 +135,9 @@ export default function SponsorsAndPartners() {
               <SponsorLogo
                 imageSrc={"/Sponsors/SiemensEnergy.png"}
                 imageAlt={"SiemensEnergy"}
-                sponsorLink={"https://www.siemens-energy.com/global/en/home.html"}
+                sponsorLink={
+                  "https://www.siemens-energy.com/global/en/home.html"
+                }
                 smallPadding
               />
             </GigaBox>

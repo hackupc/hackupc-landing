@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
+import { Section } from "@/app/genericComponents/General";
 import { SectionTitle } from "@/app/genericComponents/Typography";
 import { MobileBreakpoint, SpacingS } from "@/app/genericComponents/tokens";
 import { lora } from "@/app/genericComponents/fonts";
@@ -69,10 +69,10 @@ const EnvelopeContainer = styled.div<{ isOpen?: boolean }>`
   transition: height 0.3s ease;
 
   @media (max-width: ${MobileBreakpoint}) {
-    width: 95vw;
-    height: ${(props) => (props.isOpen ? "70vw" : "50vw")};
+    width: 90vw;
+    height: ${(props) => (props.isOpen ? "auto" : "auto")};
     min-width: 200px;
-    min-height: 100px;
+    aspect-ratio: 500 / ${(props) => (props.isOpen ? 550 : 350)};
   }
 `;
 
@@ -88,11 +88,29 @@ const VideoOverlay = styled.div`
   justify-content: center;
   pointer-events: none;
   overflow: hidden;
-  clip-path: polygon(0 30px, 30px 0, calc(100% - 30px) 0, 100% 30px,100% 100%, 0 100%);
+  clip-path: polygon(
+    0 1.8rem,
+    1.8rem 0,
+    calc(100% - 1.8rem) 0,
+    100% 1.8rem,
+    100% 100%,
+    0 100%
+  );
+
+  @media (max-width: ${MobileBreakpoint}) {
+    clip-path: polygon(
+      0 2.3rem,
+      2.3rem 0,
+      calc(100% - 2.3rem) 0,
+      100% 2.3rem,
+      100% 100%,
+      0 100%
+    );
+  }
 `;
 
 export const StyledSectionTitle = styled(SectionTitle)`
-  position: relative;  
+  position: relative;
   width: fit-content;
   margin: 0 auto 45px auto;
   padding: 8px 32px 8px 32px;
@@ -128,7 +146,10 @@ export default function Trailer() {
                 width={500}
                 height={teaserOpen ? 550 : 350}
                 onClick={() => !teaserOpen && setTeaserOpen(true)}
-                style={{ zIndex: 1, cursor: teaserOpen ? "default" : "pointer" }}
+                style={{
+                  zIndex: 1,
+                  cursor: teaserOpen ? "default" : "pointer",
+                }}
                 priority
               />
               {teaserOpen && (
@@ -163,7 +184,10 @@ export default function Trailer() {
                 width={500}
                 height={aftermovieOpen ? 550 : 350}
                 onClick={() => !aftermovieOpen && setAftermovieOpen(true)}
-                style={{ zIndex: 1, cursor: aftermovieOpen ? "default" : "pointer" }}
+                style={{
+                  zIndex: 1,
+                  cursor: aftermovieOpen ? "default" : "pointer",
+                }}
                 priority
               />
               {aftermovieOpen && (
