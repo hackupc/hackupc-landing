@@ -36,14 +36,13 @@ export const Section = styled.div`
   }
 `;
 
-export const Background = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  min-width: 100vw;
-  background-color: #231f20;
+export const WhiteContainer = styled.div`
+  background-color: rgba(255, 255, 255, 0.51);
+  border-radius: 10px;
+  padding: ${SpacingM};
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 `;

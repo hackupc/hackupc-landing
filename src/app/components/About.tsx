@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import {
@@ -10,52 +9,54 @@ import {
   MobileBreakpoint,
   SpacingM,
   SpacingS,
-  SpacingXS,
 } from "@/app/genericComponents/tokens";
-import { Section, SectionBackground } from "@/app/genericComponents/General";
-import { silkscreen } from "@/app/genericComponents/fonts";
-
-const StyledImage = styled(Image)`
-  width: 120px; /* Smaller width for the snake image */
-  height: auto;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    width: 180px;
-  }
-`;
-
-const AppleImage = styled(Image)`
-  padding-top: 8px;
-  display: none;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    display: block;
-  }
-`;
+import { Section, WhiteContainer } from "@/app/genericComponents/General";
+import { lora, montserrat } from "@/app/genericComponents/fonts";
 
 const SectionStyled = styled(Section)`
   color: ${"#000000"};
 `;
 
 const UnderlineTitle = styled(SectionTitle)`
-  border-bottom: 3px solid black;
-  width: 80%;
-  padding-bottom: ${SpacingXS};
+  font-weight: normal;
+  width: 100%;
+  margin-bottom: 0px;
+  flex-direction: column;
+
+  .break {
+    display: none; // por defecto en pantallas grandes
+  }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    .break {
+      display: inline; // en pantallas pequeñas, se fuerza salto de línea
+    }
+  }
 `;
 
-const Container = styled.div`
-  display: flex;
-  border: 3px solid black;
+const Container = styled(WhiteContainer)`
   flex-direction: row;
   gap: ${SpacingM};
   padding: 20px;
+  flex-direction: column;
+`;
+
+const Sections = styled.div`
+  display: flex;
+  flex-direction: row;
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
   }
 `;
+
 const Col = styled.div`
   flex: 1;
+  margin: 15px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin: 5px;
+  }
 `;
 
 const ImgSection = styled.div`
@@ -65,94 +66,92 @@ const ImgSection = styled.div`
   margin-bottom: ${SpacingS};
 `;
 
+const RedBoulded = styled.b`
+  color: #b85353;
+`;
+
+const GreenBoulded = styled.b`
+  color: #75aa7e;
+`;
+
+export const AboutBody = styled(Body)`
+  font-weight: 500;
+  text-align: left;
+`;
+
 export default function About() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const images = [
-    "/snake_0.svg",
-    "/snake_1.svg",
-    "/snake_2.svg",
-    "/snake_3.svg",
-    "/snake_4.svg",
-    "/snake_5.svg",
-    "/snake_6.svg",
-    "/snake_7.svg",
-    "/snake_8.svg",
-    "/snake_7.svg",
-    "/snake_8.svg",
-    "/snake_7.svg",
-    "/snake_8.svg",
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
   return (
     <div id="about">
-      <SectionBackground specialBackground={"#99C11C"}>
-        <SectionStyled>
-          <UnderlineTitle className={silkscreen.className}>
-            HACKUPC: CODING TO THE NEXT LEVEL
+      <SectionStyled>
+        <Container className={montserrat.className}>
+          <UnderlineTitle className={lora.className}>
+            HackUPC:
+            <span className="break">
+              <br />
+            </span>{" "}
+            code the legend
           </UnderlineTitle>
-          <Container>
+          <Sections>
             <Col>
               <ImgSection>
-                <StyledImage
-                  src={images[currentImageIndex]}
-                  width={120}
-                  height={120}
-                  alt="Snake"
+                <Image
+                  src="/dragon.svg"
+                  width={200}
+                  height={200}
+                  alt="Dragon"
                 />
               </ImgSection>
               <BlockTitle color={"#000000"} haveMargin>
-                What is a hackathon?
+                What is a{" "}
+                <span style={{ color: "#B85353", fontWeight: "bold" }}>
+                  hackathon
+                </span>
+                ?
               </BlockTitle>
-              <Body>
-                The word hackathon is a combination of the words <b>"HACK"</b>,
-                standing for creative problem-solving, and <b>"MARATHON"</b>.
-                These are awesome events full of creativity, technology, and
+              <AboutBody>
+                The word hackathon is a combination of the words "
+                <RedBoulded>HACK</RedBoulded>", standing for creative
+                problem-solving, and <RedBoulded>"MARATHON"</RedBoulded>. These
+                are awesome events full of creativity, technology, and
                 passionate tech-related students of different skill ranges
                 collaborating and creating. During a certain period of time,
-                attendees work in <b>TEAMS</b> to develop apps, games, robots…
-                literally anything you want to <b>BUILD & LEARN</b> about!
-              </Body>
+                attendees work in <RedBoulded>TEAMS</RedBoulded> to develop
+                apps, games, robots… literally anything you want to{" "}
+                <RedBoulded>BUILD & LEARN</RedBoulded> about!
+              </AboutBody>
             </Col>
             <Col>
-              <ImgSection>
-                <StyledImage
-                  src="/hackupcLogoBlack.svg"
-                  width={120}
-                  height={120}
+              <ImgSection style={{ margin: "25px", marginBottom: "41px" }}>
+                {" "}
+                {/* Extra margin to match the other image in sizes */}
+                <Image
+                  src="/hackupcLogoInGreenFlag.svg"
+                  width={150}
+                  height={150}
                   alt="HackUPC Logo"
                 />
               </ImgSection>
               <BlockTitle color={"#000000"} haveMargin>
-                About HackUPC
+                About{" "}
+                <span style={{ color: "#75AA7E", fontWeight: "bold" }}>
+                  HackUPC
+                </span>
               </BlockTitle>
-              <Body>
-                HackUPC is the first student hackathon in Spain and the biggest
-                one in Europe. Once a year, we aim to provide participants of{" "}
-                <b>all experience levels</b> from <b>all around the world</b>{" "}
-                with a space where they can improve and learn new skills, meet
-                amazing people, and have an overall great experience!
-              </Body>
-              <ImgSection>
-                <AppleImage
-                  src="/apple.png"
-                  width={28}
-                  height={30}
-                  alt="manzana snake"
-                />
-              </ImgSection>
+              <AboutBody>
+                <GreenBoulded>HackUPC</GreenBoulded> is the first student{" "}
+                <GreenBoulded>hackathon</GreenBoulded> in Spain and the biggest
+                one in Europe. Once a year, we aim to provide participants of
+                <GreenBoulded> all experience levels</GreenBoulded> from{" "}
+                <GreenBoulded>all around the world</GreenBoulded> with a space
+                where they can{" "}
+                <GreenBoulded>improve and learn new skills</GreenBoulded>,{" "}
+                <GreenBoulded>meet amazing people</GreenBoulded>, and have a{" "}
+                <GreenBoulded>great experience</GreenBoulded>!
+              </AboutBody>
             </Col>
-          </Container>
-        </SectionStyled>
-      </SectionBackground>
+          </Sections>
+        </Container>
+      </SectionStyled>
     </div>
   );
 }

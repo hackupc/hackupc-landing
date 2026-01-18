@@ -14,7 +14,7 @@ import {
   SpacingXS,
   TitleXL,
 } from "@/app/genericComponents/tokens";
-import { montserrat, silkscreen } from "@/app/genericComponents/fonts";
+import { montserrat, lora } from "@/app/genericComponents/fonts";
 
 const Colors = {
   HeroYellow: "#FCFC01",
@@ -415,28 +415,28 @@ export default function Hero() {
         key={
           showHero ? `${bienePosition.x}-${bienePosition.y}` : `${spriteIndex}`
         }
-        className={silkscreen.className}
+        className={lora.className}
         style={{
           backgroundPosition: `
-          0 0, 
+          0 0,
           ${animatedPosition.x}px ${animatedPosition.y}px,
-          ${ghostPositions[0].x}px ${ghostPositions[0].y}px, 
-          ${ghostPositions[1].x}px ${ghostPositions[1].y}px, 
+          ${ghostPositions[0].x}px ${ghostPositions[0].y}px,
+          ${ghostPositions[1].x}px ${ghostPositions[1].y}px,
           ${ghostPositions[2].x}px ${ghostPositions[2].y}px,
           ${ghostPositions[3].x}px ${ghostPositions[3].y}px,
           ${ghostPositions[4].x}px ${ghostPositions[4].y}px,
           ${ghostPositions[5].x}px ${ghostPositions[5].y}px,
           ${logoPositions.map((logo) => `${logo.x}px ${logo.y}px`).join(", ")}`,
-          backgroundImage: ` 
-          url("/background_piece.svg"), 
+          backgroundImage: `
+          url("/background_piece.svg"),
           url(${
             spriteIndex === 0 ? "/biene_pacman.svg" : "/biene_pacman_2.svg"
-          }), 
-          url("/green_ghost.svg"), 
-          url("/red_ghost.svg"), 
-          url("/orange_ghost.svg"), 
-          url("/white_ghost.svg"), 
-          url("/blue_ghost.svg"), 
+          }),
+          url("/green_ghost.svg"),
+          url("/red_ghost.svg"),
+          url("/orange_ghost.svg"),
+          url("/white_ghost.svg"),
+          url("/blue_ghost.svg"),
           url("/purple_ghost.svg"),
           url("/hackupcLogoWhite.svg"); `,
           animation: showHero ? "moveAll 10s linear infinite" : "none",
@@ -444,7 +444,7 @@ export default function Hero() {
         }}
       >
         <TitleContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
-          <Title>
+          <Title className={lora.className}>
             HackUPC
             <SubText className={montserrat.className}>
               700 Hackers | 2-4 May 2025 | 36h
@@ -454,7 +454,7 @@ export default function Hero() {
         <PlayAsContainer
           style={{ visibility: showHero ? "visible" : "hidden" }}
         >
-          <PlayAsTitleBox>Play as</PlayAsTitleBox>
+          <PlayAsTitleBox className={lora.className}>Play as</PlayAsTitleBox>
           <PlayerContainer>
             <PlayerCard
               href="https://my.hackupc.com/user/signup/hacker/"
