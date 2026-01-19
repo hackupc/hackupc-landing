@@ -11,7 +11,7 @@ import { lora } from "@/app/genericComponents/fonts";
 const DuringContainer = styled(Section)`
   position: relative;
   gap: ${SpacingM};
-  z-index: 100;
+  z-index: 1;
 `;
 
 const StyledBody = styled(Body)`
@@ -19,6 +19,7 @@ const StyledBody = styled(Body)`
   flex-direction: column;
   position: relative;
   text-align: center;
+  font-weight: bold;
 `;
 
 const TextWrapper = styled.div`
@@ -33,7 +34,6 @@ const TextWrapper = styled.div`
 const StyledTitle = styled.div`
   font-size: 1.5rem;
   text-align: center;
-  font-weight: bold;
   margin-right: 0;
 `;
 
@@ -44,18 +44,27 @@ const TheMission = styled.div`
   text-align: center;
 `;
 
-const MapImage = styled.img`
+const MapImageBase = styled.img`
   display: block;
-  margin: 0 auto ${SpacingM};
+  margin: auto;
   max-width: 100%;
   height: auto;
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+`;
 
+const MobileMapImage = styled(MapImageBase)`
+  @media (min-width: ${MobileBreakpoint}) {
+    display: none;
+  }
+`;
+
+const DesktopMapImage = styled(MapImageBase)`
   @media (max-width: ${MobileBreakpoint}) {
-    position: relative;
-    width: 100vw;
-    max-width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;
   }
 `;
 
@@ -67,7 +76,8 @@ export default function During() {
         Coding is the main part of HackUPC, but we have many more activities!
       </StyledBody>
 
-      <MapImage src="/map.svg" alt="Map" />
+      <MobileMapImage src="/map.svg" alt="Map Mobile" />
+      <DesktopMapImage src="/map_desktop.svg" alt="Map Desktop" />
 
       <TheMission>
         <TextWrapper>

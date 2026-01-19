@@ -1,317 +1,349 @@
 import React from "react";
+import Image from "next/image";
 
 import { Section } from "@/app/genericComponents/General";
-import { SectionTitle, SmallTitle } from "@/app/genericComponents/Typography";
+import { SectionTitle } from "@/app/genericComponents/Typography";
 import styled from "styled-components";
 import { lora } from "@/app/genericComponents/fonts";
+import {
+  MobileBreakpoint,
+  SpacingL,
+  SpacingS,
+  SpacingXL,
+  SpacingXXL,
+} from "../genericComponents/tokens";
+import Link from "next/link";
 
-const GameContainer = styled.div`
-  display: flex;
-  justify-content: center; /* Center Tetris container horizontally */
-  align-items: center; /* Align containers vertically */
-  position: relative;
-  width: 100%;
-  height: 750px; /* Full height of the viewport */
-  gap: 20px;
-`;
+const GrassImageXDesktopDisplacement = "-35px";
+const GrassImageXPhoneDisplacement = "480px";
+const FlowerImageHeight = "150px";
+const FlowerImageWidthWithExtra = "100px";
 
-const TetrisContainer = styled.div`
-  position: relative;
-  width: 250px;
-  height: 750px;
-  outline: 5px solid #000;
-  border-radius: 10px;
-`;
+const StyledSectionTitle = styled(SectionTitle)`
+  margin-bottom: ${SpacingXXL};
 
-const StatisticsContainer = styled.div`
-  display: none;
-  width: 230px;
-  color: #000;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  outline: 5px solid #000;
-  border-radius: 10px;
-  @media (min-width: 800px) {
-    display: block;
-    align-self: flex-end;
+  .break {
+    display: none; // por defecto en pantallas grandes
   }
-`;
 
-const StatisticsItem = styled.div`
-  display: grid;
-  grid-template-columns: auto minmax(30px, 1fr) 25px;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-right: 5px;
-`;
-
-const PieceImage = styled.img<{ w: number; mr?: number }>`
-  width: ${(props) => props.w}px;
-  height: auto;
-  justify-self: end;
-  margin-right: ${(props) => props.mr || 0}px;
-`;
-
-const NextContainer = styled.div`
-  display: none;
-  width: 200px;
-  color: #000;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  outline: 5px solid #000;
-  border-radius: 10px;
-  @media (min-width: 800px) {
-    display: block;
-    align-self: flex-start; /* Align with the top of the Tetris container */
-  }
-`;
-
-const TetrisPiece = styled.img<{
-  x: number;
-  y: number;
-  w: number;
-  noHoverEffect?: boolean;
-}>`
-  position: absolute;
-  height: auto;
-  width: ${(props) => props.w}px;
-  left: ${(props) => props.x}px;
-  top: ${(props) => props.y}px;
-  z-index: 0;
-  ${(props) =>
-    !props.noHoverEffect &&
-    `
-    &:hover {
-      transform: scale(1.1);
-      z-index: 1;
+  @media (max-width: ${MobileBreakpoint}) {
+    .break {
+      display: inline; // en pantallas pequeñas, se fuerza salto de línea
     }
-  `}
+  }
+`;
+
+export const StyledSection = styled(Section)`
+  padding: 0;
+  padding-top: ${SpacingL};
+`;
+
+const GrassContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  background-color: #65936d;
+  width: 100vw;
+  height: 100%;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    display: flex;
+    margin-top: ${SpacingXL};
+    padding-bottom: ${SpacingXL};
+    height: calc(${FlowerImageHeight} * 4 + ${SpacingS});
+  }
+`;
+
+const GrassImageSection = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  margin-bottom: ${GrassImageXDesktopDisplacement};
+
+  background-image: url("/ThroughTheYears/grass.svg");
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: 200px 50px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin-bottom: ${GrassImageXPhoneDisplacement};
+  }
+`;
+
+const SwordSection = styled.div`
+  align-content: right;
+  position: absolute;
+  justify-content: right;
+  right: 0;
+  z-index: -1;
+  margin-bottom: 50px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin-bottom: 600px;
+  }
+`;
+
+const FlowersImageSection = styled.div`
+  position: relative;
+  align-content: space-between;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: ${FlowerImageHeight};
+`;
+
+const Flower2025Section = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    top: -70px;
+    left: calc(40% - ${FlowerImageWidthWithExtra});
+  }
+`;
+
+const Flower2024Section = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    top: -70px;
+    left: calc(40%);
+  }
+`;
+
+const Flower2023Section = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(50% - ${FlowerImageWidthWithExtra});
+    top: calc(-70px + ${FlowerImageHeight});
+  }
+`;
+
+const Flower2022Section = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(50%);
+    top: calc(-70px + ${FlowerImageHeight});
+  }
+`;
+
+const Flower2021Section = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(40% - ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 2 * ${FlowerImageHeight});
+  }
+`;
+
+const Flower2020Section = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(40%);
+    top: calc(-70px + 2 * ${FlowerImageHeight});
+  }
+`;
+
+const Flower2019Section = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(40% + ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 2 * ${FlowerImageHeight});
+  }
+`;
+
+const Flower2018Section = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(50% - ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 3 * ${FlowerImageHeight});
+  }
+`;
+
+const Flower2017wSection = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(50%);
+    top: calc(-70px + 3 * ${FlowerImageHeight});
+  }
+`;
+
+const Flower2017fSection = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(40% - ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 4 * ${FlowerImageHeight});
+  }
+`;
+
+const Flower2016wSection = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(40%);
+    top: calc(-70px + 4 * ${FlowerImageHeight});
+  }
+`;
+
+const Flower2016sSection = styled(FlowersImageSection)`
+  @media (max-width: ${MobileBreakpoint}) {
+    display: block;
+    position: absolute;
+    left: calc(40% + ${FlowerImageWidthWithExtra});
+    top: calc(-70px + 4 * ${FlowerImageHeight});
+  }
 `;
 
 export default function ThroughTheYears() {
   return (
     <div id="ThroughTheYears">
-      <Section>
-        <SectionTitle className={lora.className}>
-          Through The Years
-        </SectionTitle>
-        <GameContainer>
-          <StatisticsContainer>
-            <SmallTitle className={lora.className}>Statistics</SmallTitle>
-            <div style={{ height: "20px" }} />
-            <StatisticsItem>
-              <span>Hackers</span>
-              <PieceImage
-                mr={10}
-                src="/ThroughTheYears/tetris-basic1.svg"
-                w={20}
+      <StyledSection>
+        <StyledSectionTitle className={lora.className}>
+          THROUGHOUT{" "}
+          <span className="break">
+            <br />
+          </span>
+          THE YEARS
+        </StyledSectionTitle>
+        <SwordSection>
+          <Image
+            src="/ThroughTheYears/sword.svg"
+            alt="Sword Image"
+            width={144}
+            height={366}
+          />
+        </SwordSection>
+        <GrassImageSection />
+        <GrassContainer>
+          <GrassContainer>
+            <Flower2025Section>
+              <Link href="https://2025.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2025.svg"
+                  alt="2025 Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2025Section>
+            <Flower2024Section>
+              <Link href="https://2024.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2024.svg"
+                  alt="2024 Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2024Section>
+            <Flower2023Section>
+              <Link href="https://2023.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2023.svg"
+                  alt="2023 Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2023Section>
+            <Flower2022Section>
+              <Link href="https://2022.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2022.svg"
+                  alt="2022 Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2022Section>
+            <Flower2021Section>
+              <Link href="https://2021.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2021.svg"
+                  alt="2021 Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2021Section>
+            <Flower2020Section>
+              <Image
+                src="/ThroughTheYears/2020.svg"
+                alt="2020 Image"
+                width={75}
+                height={150}
               />
-              <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
-                5344
-              </span>
-            </StatisticsItem>
-            <StatisticsItem>
-              <span>Volunteers</span>
-              <PieceImage
-                mr={10}
-                src="/ThroughTheYears/tetris-basic5.svg"
-                w={30}
-              />
-              <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
-                0416
-              </span>
-            </StatisticsItem>
-            <StatisticsItem>
-              <span>Sponsors</span>
-              <PieceImage
-                mr={10}
-                src="/ThroughTheYears/tetris-basic2.svg"
-                w={30}
-              />
-              <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
-                0111
-              </span>
-            </StatisticsItem>
-            <StatisticsItem>
-              <span>Projects</span>
-              <PieceImage
-                mr={10}
-                src="/ThroughTheYears/tetris-basic3.svg"
-                w={20}
-              />
-              <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
-                1102
-              </span>
-            </StatisticsItem>
-            <StatisticsItem>
-              <span>Pizzas</span>
-              <PieceImage
-                mr={10}
-                src="/ThroughTheYears/tetris-basic4.svg"
-                w={20}
-              />
-              <span style={{ fontFamily: "Courier New, Courier, monospace" }}>
-                2505
-              </span>
-            </StatisticsItem>
-          </StatisticsContainer>
-          <TetrisContainer>
-            <a
-              href="https://2024.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2024.svg"
-                x={200}
-                y={50}
-                w={50}
-              />
-            </a>
-            <a
-              href="https://2023.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2023.svg"
-                x={0}
-                y={198}
-                w={100}
-              />
-            </a>
-            <a
-              href="https://2022.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2022.svg"
-                x={0}
-                y={299}
-                w={150}
-              />
-            </a>
-            <a
-              href="https://2021.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2021.svg"
-                x={101}
-                y={300}
-                w={100}
-              />
-            </a>
-            <TetrisPiece
-              src="/ThroughTheYears/tetris-2020.svg"
-              x={0}
-              y={350}
-              w={99}
-              noHoverEffect
-            />
-            <a
-              href="https://2019.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2019.svg"
-                x={0}
-                y={450}
-                w={150}
-              />
-            </a>
-            <a
-              href="https://2018.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2018.svg"
-                x={150}
-                y={450}
-                w={100}
-              />
-            </a>
-            <a
-              href="https://w2017.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2017w.svg"
-                x={1}
-                y={554}
-                w={100}
-              />
-            </a>
-            <a
-              href="https://f2017.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2017f.svg"
-                x={100}
-                y={551}
-                w={150}
-              />
-            </a>
-            <a
-              href="https://f2016.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2016w.svg"
-                x={149}
-                y={603}
-                w={100}
-              />
-            </a>
-            <a
-              href="https://s2016.hackupc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TetrisPiece
-                src="/ThroughTheYears/tetris-2016s.svg"
-                x={0}
-                y={649}
-                w={147}
-              />
-            </a>
-          </TetrisContainer>
-          <NextContainer>
-            <SmallTitle className={lora.className}>Next</SmallTitle>
-            <div style={{ height: "20px" }} />
-            <PieceImage w={100} src="/ThroughTheYears/tetris-2025.svg" />
-            <div style={{ height: "20px" }} />
-            <div
-              style={{
-                position: "relative",
-                width: "100px",
-                height: "100px",
-              }}
-            >
-              <PieceImage
-                w={120}
-                src="/ThroughTheYears/tetris-next.svg"
-                style={{ position: "absolute", top: 30, left: 20 }}
-              />
-              <PieceImage
-                w={60}
-                src="/ThroughTheYears/question.png"
-                style={{ position: "absolute", top: 0, left: 50 }}
-              />
-            </div>
-          </NextContainer>
-        </GameContainer>
-      </Section>
+            </Flower2020Section>
+            <Flower2019Section>
+              <Link href="https://2019.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2019.svg"
+                  alt="2019 Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2019Section>
+            <Flower2018Section>
+              <Link href="https://2018.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2018.svg"
+                  alt="2018 Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2018Section>
+            <Flower2017wSection>
+              <Link href="https://w2017.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2017w.svg"
+                  alt="2017w Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2017wSection>
+            <Flower2017fSection>
+              <Link href="https://f2017.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2017f.svg"
+                  alt="2017f Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2017fSection>
+            <Flower2016wSection>
+              <Link href="https://w2016.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2016w.svg"
+                  alt="2016w Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2016wSection>
+            <Flower2016sSection>
+              <Link href="https://s2016.hackupc.com" passHref>
+                <Image
+                  src="/ThroughTheYears/2016s.svg"
+                  alt="2016s Image"
+                  width={75}
+                  height={150}
+                />
+              </Link>
+            </Flower2016sSection>
+          </GrassContainer>
+        </GrassContainer>
+      </StyledSection>
     </div>
   );
 }
