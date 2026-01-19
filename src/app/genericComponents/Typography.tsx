@@ -23,7 +23,6 @@ import {
 export const SectionTitle = styled.div`
   font-size: ${TitleL};
   text-align: center;
-  font-weight: bold;
   margin-bottom: ${SpacingM};
 
   @media (max-width: ${MobileBreakpoint}) {
@@ -37,7 +36,6 @@ interface BlockTitleProps {
 }
 
 export const BlockTitle = styled.div<BlockTitleProps>`
-  font-weight: bold;
   font-size: ${TitleM};
   margin-bottom: ${(props) => (props.haveMargin ? SpacingS : "0")};
   color: ${(props) => props.color || "white"};

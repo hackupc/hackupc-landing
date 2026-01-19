@@ -18,7 +18,7 @@ const HeaderContainer = styled.div<{ isScrolled: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
+  z-index: 10;
   background-color: ${({ isScrolled }) =>
     isScrolled ? BackgroundWithOpacity : "transparent"};
 `;
@@ -28,6 +28,7 @@ const ClickableLogo = styled.div`
   align-items: center;
   gap: ${SpacingS};
   cursor: pointer, auto;
+  color: white;
 `;
 
 const StyledBodyLink = styled(BodyLink)`
