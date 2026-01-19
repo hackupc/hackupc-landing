@@ -17,7 +17,10 @@ body {
   background-color: #cac9c9;
   background-image: url("/maons.svg");
   background-repeat: repeat;
-  background-position: -60px 0;
+
+  @media (max-width: 640px) {
+    background-image: url("/maons_mobile.svg");
+  }
 }
 
 a {

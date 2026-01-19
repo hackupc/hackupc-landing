@@ -1,13 +1,17 @@
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { MobileBreakpoint } from "@/app/genericComponents/tokens";
+import {
+  MobileBreakpoint,
+  MobileTitleS,
+  SpacingL,
+  SpacingM,
+  TitleS,
+} from "@/app/genericComponents/tokens";
 import { montserrat } from "@/app/genericComponents/fonts";
 
 const Colors = {
-  SkyBlue: "#AADEFE",
-  MedievalGreen: "#75AA7E",
   Black: "#000000",
-  StoneGrey: "#D9D9D9",
+  Grey: "#CAC9C9",
 };
 
 const float = keyframes`
@@ -25,8 +29,7 @@ const fly = keyframes`
 const HeroContainer = styled.div`
   position: relative;
   width: 100vw;
-  min-height: 120vh;
-  background-color: ${Colors.SkyBlue};
+  min-height: 180vh;
   overflow-x: hidden;
 
   @media (max-width: ${MobileBreakpoint}) {
@@ -34,35 +37,24 @@ const HeroContainer = styled.div`
   }
 `;
 
-const SkySection = styled.div`
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  position: relative;
-  width: 100%;
-  padding-bottom: 80px;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    height: 58vh;
-    padding-bottom: 60px;
-  }
-`;
-
 const DragonWrapper = styled.div`
   position: absolute;
   z-index: 2;
-  top: 15%;
-  right: 18%;
+  top: 10%;
+  right: 10%;
   width: 250px;
+  height: 180px;
   animation: ${fly} 5s ease-in-out infinite;
 
+  img {
+    object-fit: contain;
+  }
+
   @media (max-width: ${MobileBreakpoint}) {
-    top: 120px;      
-    right: 10px;     
-    left: auto;
-    width: 105px;
+    top: 120px;
+    right: 10px;
+    width: 100px;
+    height: 80px;
   }
 `;
 
@@ -72,98 +64,129 @@ const BaseCloud = styled.div`
   opacity: 0.9;
   animation: ${float} 6s ease-in-out infinite;
   pointer-events: none;
+
+  img {
+    object-fit: contain;
+  }
 `;
 
 const LeftCloud = styled(BaseCloud)`
-  top: 48%;
+  top: 33%;
   left: 2%;
-  width: 140px;
+  width: 180px;
+  height: 100px;
 
-  @media (max-width: ${MobileBreakpoint}) { 
-    left: -40px;
-    width: 110px;
+  @media (max-width: ${MobileBreakpoint}) {
+    top: 10%;
+    left: 2%;
+    width: 120px;
+    height: 70px;
   }
 `;
 
 const RightCloud = styled(BaseCloud)`
   top: 38%;
-  right: 2%;
-  width: 120px;
+  right: 4%;
+  width: 200px;
+  height: 110px;
 
   @media (max-width: ${MobileBreakpoint}) {
-  top: 58%;
-    right: -30px;
-    width: 90px;
+    top: 20%;
+    right: 2%;
+    width: 100px;
+    height: 60px;
   }
 `;
 
 const CenterCloudLeft = styled(BaseCloud)`
-  top: 22%;
-  left: 32%;
-  width: 180px;
+  top: 15%;
+  left: 22%;
+  width: 230px;
+  height: 120px;
 
   @media (max-width: ${MobileBreakpoint}) {
-    display: none;    
+    display: none;
   }
 `;
 
 const CenterCloudRight = styled(BaseCloud)`
-  top: 60%;
-  right: 20%;
-  width: 115px;
+  top: 28%;
+  right: 32%;
+  width: 200px;
+  height: 120px;
 
   @media (max-width: ${MobileBreakpoint}) {
-    display: none;    
+    display: none;
   }
 `;
 
 const LogoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
-  width: 100%;
-`;
-
-const WallSection = styled.div`
-  min-height: 70vh;
-  width: 100%;
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: url("/muralla.svg");
-  background-repeat: repeat-x;
-  padding-top: 120px;
+  justify-content: center;
+  z-index: 3;
+`;
+
+const DesktopLogo = styled.div`
+  margin-top: 260px;
+  display: block;
 
   @media (max-width: ${MobileBreakpoint}) {
-    min-height: 50vh;
+    display: none;
+  }
+`;
+
+const MobileLogo = styled.div`
+  display: none;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin-top: 220px;
+    display: block;
+  }
+`;
+
+const CharactersSection = styled.div`
+  position: relative;
+  margin-top: 620px;
+  margin-bottom: ${SpacingL};
+  z-index: 3;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin: ${SpacingM};
   }
 `;
 
 const RibbonContainer = styled.div`
   position: absolute;
-  top: 150px;
+  top: -120px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    top: -60px;
+  }
+`;
+
+const RibbonImageWrapper = styled.div`
+  position: relative;
+  width: clamp(280px, 90vw, 480px);
+  aspect-ratio: 45 / 8;
 `;
 
 const CharacterGrid = styled.div`
   display: flex;
-  gap: 100px;
-  margin-top: 120px;
-  z-index: 1;
+  gap: 30px;
+  margin-top: 100px;
   width: 100%;
   justify-content: center;
   align-items: flex-end;
 
   @media (max-width: ${MobileBreakpoint}) {
-    gap: 20px;
-    margin-top: 80px;
+    gap: 70px;
+    margin-top: 220px;
   }
 `;
 
@@ -221,23 +244,23 @@ const CharacterImg = styled(Image)`
 `;
 
 const CharacterLabel = styled.div`
-  background-color: ${Colors.StoneGrey};
+  background-color: ${Colors.Grey};
   width: 100%;
   padding: 10px 0;
   text-align: center;
   color: ${Colors.Black};
-  font-weight: 900;
   font-family: ${montserrat.style.fontFamily};
-  font-size: 14px;
+  font-size: ${TitleS};
+  font-weight: bold;
   letter-spacing: 1px;
-  z-index: 1;
   border-radius: 4px;
   box-shadow: 0 5px 0 #999;
   text-transform: uppercase;
   margin-top: -12px;
+  z-index: 2;
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: 11px;
+    font-size: ${MobileTitleS};
     padding: 8px 0;
   }
 `;
@@ -245,28 +268,39 @@ const CharacterLabel = styled.div`
 export default function Hero() {
   return (
     <HeroContainer>
-      <SkySection>
-        <LeftCloud>
-          <Image src="/cloud.svg" width={140} height={85} alt="Cloud" />
-        </LeftCloud>
+      <LeftCloud>
+        <Image src="/cloud.svg" fill alt="Cloud" />
+      </LeftCloud>
 
-        <CenterCloudLeft>
-          <Image src="/cloud.svg" width={180} height={95} alt="Cloud" />
-        </CenterCloudLeft>
+      <CenterCloudLeft>
+        <Image src="/cloud.svg" fill alt="Cloud" />
+      </CenterCloudLeft>
 
-        <CenterCloudRight>
-          <Image src="/cloud.svg" width={120} height={70} alt="Cloud" />
-        </CenterCloudRight>
+      <CenterCloudRight>
+        <Image src="/cloud.svg" fill alt="Cloud" />
+      </CenterCloudRight>
 
-        <RightCloud>
-          <Image src="/cloud.svg" width={110} height={70} alt="Cloud" />
-        </RightCloud>
+      <RightCloud>
+        <Image src="/cloud.svg" fill alt="Cloud" />
+      </RightCloud>
 
-        <DragonWrapper>
-          <Image src="/dragon.svg" width={160} height={120} alt="Dragon" />
-        </DragonWrapper>
+      <DragonWrapper>
+        <Image src="/dragon.svg" fill alt="Dragon" />
+      </DragonWrapper>
 
-        <LogoContainer>
+      <LogoContainer>
+        <DesktopLogo>
+          <Image
+            src="/main_logo_desktop.svg"
+            width={700}
+            height={260}
+            alt="Hack UPC"
+            priority
+            style={{ maxWidth: "90vw", height: "auto" }}
+          />
+        </DesktopLogo>
+
+        <MobileLogo>
           <Image
             src="/main_logo.svg"
             width={550}
@@ -275,38 +309,55 @@ export default function Hero() {
             priority
             style={{ maxWidth: "90vw", height: "auto" }}
           />
-        </LogoContainer>
-      </SkySection>
+        </MobileLogo>
+      </LogoContainer>
 
-      <WallSection>
+      <CharactersSection>
         <RibbonContainer>
-          <Image
-            src="/choose_character.svg"
-            width={450}
-            height={80}
-            alt="Choose Your Character"
-            style={{ maxWidth: "90vw", height: "auto" }}
-          />
+          <RibbonImageWrapper>
+            <Image
+              src="/choose_character.svg"
+              fill
+              alt="Choose Your Character"
+              style={{ objectFit: "contain" }}
+            />
+          </RibbonImageWrapper>
         </RibbonContainer>
 
         <CharacterGrid>
-          <CharacterCard href="https://my.hackupc.com/user/signup/hacker/" target="_blank">
+          <CharacterCard
+            href="https://my.hackupc.com/user/signup/hacker/"
+            target="_blank"
+          >
             <StackedImages>
               <ArchBg src="/arch.svg" fill alt="Arch" />
-              <CharacterImg src="/hacker.svg" width={150} height={150} alt="Hacker" />
+              <CharacterImg
+                src="/hacker.svg"
+                width={150}
+                height={150}
+                alt="Hacker"
+              />
             </StackedImages>
             <CharacterLabel>HACKER</CharacterLabel>
           </CharacterCard>
 
-          <CharacterCard href="https://my.hackupc.com/user/signup/volunteer/" target="_blank">
+          <CharacterCard
+            href="https://my.hackupc.com/user/signup/volunteer/"
+            target="_blank"
+          >
             <StackedImages>
               <ArchBg src="/arch.svg" fill alt="Arch" />
-              <CharacterImg src="/volunteer.svg" width={150} height={150} alt="Volunteer" />
+              <CharacterImg
+                src="/volunteer.svg"
+                width={150}
+                height={150}
+                alt="Volunteer"
+              />
             </StackedImages>
             <CharacterLabel>VOLUNTEER</CharacterLabel>
           </CharacterCard>
         </CharacterGrid>
-      </WallSection>
+      </CharactersSection>
     </HeroContainer>
   );
 }
