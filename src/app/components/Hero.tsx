@@ -236,7 +236,7 @@ const CharacterImg = styled(Image)`
   width: 70%;
   height: auto;
   margin-bottom: 30px;
-  filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
 
   @media (max-width: ${MobileBreakpoint}) {
     margin-bottom: 20px;
