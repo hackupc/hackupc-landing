@@ -206,7 +206,7 @@ export const travel_faqs: FAQs[] = [
           "<b>Reimbursement Amount</b>:<br/>• The reimbursed amount will be the minimum between 50% of your travel expenses and the maximum amount assigned to your destination, determined by the organizing team based on budget and demand.",
           "<b>Project Requirements</b>:<br/>• You must demo a valid project to the HackUPC judges (presenting only to sponsors is not sufficient).<br/>• The project must follow all HackUPC rules.<br/>• Your Devpost username must reasonably resemble your real name.<br/>• The GitHub repository and Devpost completeness will be evaluated (e.g. regular commits, all required Devpost sections).",
           "<b>Attendance</b>:<br/>• You must be able to demonstrate active participation and minimum attendance at the event. Participation in meals, workshops, activities, and other official events may be considered.",
-          "<b>Post-Event</b>:<br/>• After the hackathon, you must upload your Devpost link to the platform."
+          "<b>Post-Event</b>:<br/>• After the hackathon, you must upload your Devpost link to the platform.",
         ],
       },
     ],
