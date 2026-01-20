@@ -1,4 +1,3 @@
-//import styled from "styled-components";
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { lora } from "@/app/genericComponents/fonts";
@@ -8,13 +7,12 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-
 import {
   GigaBox,
   KiloBox,
   MegaBox,
   MiliBox,
-  SponsorLogo,
+  SponsorUnrevealed,
   TeraBox,
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
@@ -27,8 +25,48 @@ const SponsorsAndPartnersContainer = styled(Section)`
   z-index: 0;
 `;
 
+const ContentOverlay = styled.div`
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 ${SpacingM};
+  padding: ${SpacingL} 0;
+  z-index: 1;
+`;
+
 export const StyledSectionTitle = styled(SectionTitle)`
-  z-index: 2;
+  position: relative;
+  color: #000000;
+  width: fit-content;
+
+  margin: 0 auto 45px auto;
+  padding: 8px 32px 8px 32px;
+  font-size: 32px;
+  background-color: rgba(161, 200, 168, 1);
+
+  /* Left */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: -54px;
+    width: 92px;
+    height: 62px;
+    background-color: #65936dff;
+    z-index: -1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 20% 50%);
+  }
+
+  /* Right */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: -54px;
+    width: 92px;
+    height: 62px;
+    background-color: #65936dff;
+    z-index: -1;
+    clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%);
+  }
 `;
 
 const SponsorsBlock = styled.div`
@@ -62,206 +100,103 @@ const SponsorRow = styled.div`
 export default function SponsorsAndPartners() {
   return (
     <SponsorsAndPartnersContainer id="sponsors">
-      <StyledSectionTitle className={lora.className}>
-        SPONSORS
-      </StyledSectionTitle>
+      <section>
+        <ContentOverlay>
+          <StyledSectionTitle className={lora.className}>
+            S P O N S O R S
+          </StyledSectionTitle>
+          <SponsorsBlock>
+            <SponsorRow>
+              <TeraBox>
+                <SponsorUnrevealed />
+              </TeraBox>
+            </SponsorRow>
 
-      <SponsorsBlock>
-        <SponsorRow>
-          <TeraBox>
-            <SponsorLogo
-              imageSrc={"/Sponsors/seat.svg"}
-              imageAlt={"seat"}
-              sponsorLink={"https://www.seat.com/"}
-              smallPadding
-            />
-          </TeraBox>
-        </SponsorRow>
+            <SponsorRow>
+              <GigaBox>
+                <SponsorUnrevealed />
+              </GigaBox>
+              <GigaBox>
+                <SponsorUnrevealed />
+              </GigaBox>
+            </SponsorRow>
+            <SponsorRow>
+              <MegaBox>
+                <SponsorUnrevealed />
+              </MegaBox>
+              <MegaBox>
+                <SponsorUnrevealed />
+              </MegaBox>
+              <MegaBox>
+                <SponsorUnrevealed />
+              </MegaBox>
+              <MegaBox>
+                <SponsorUnrevealed />
+              </MegaBox>
+            </SponsorRow>
 
-        <SponsorRow>
-          <GigaBox>
-            <SponsorLogo
-              imageSrc={"/Sponsors/revolut.svg"}
-              imageAlt={"revolut"}
-              sponsorLink={"https://www.revolut.com/talent-programmes/"}
-            />
-          </GigaBox>
-          <GigaBox>
-            <SponsorLogo
-              imageSrc={"/Sponsors/SiemensEnergy.png"}
-              imageAlt={"SiemensEnergy"}
-              sponsorLink={"https://www.siemens-energy.com/global/en/home.html"}
-              smallPadding
-            />
-          </GigaBox>
-        </SponsorRow>
-        <SponsorRow>
-          <MegaBox>
-            <SponsorLogo
-              imageSrc={"/Sponsors/skyscanner.svg"}
-              imageAlt={"skyscanner"}
-              sponsorLink={"https://www.skyscanner.es/"}
-              smallPadding
-            />
-          </MegaBox>
-          <MegaBox>
-            <SponsorLogo
-              imageSrc={"/Sponsors/grafana.svg"}
-              imageAlt={"grafana"}
-              sponsorLink={"https://grafana.com/"}
-              smallPadding
-            />
-          </MegaBox>
-          <MegaBox>
-            <SponsorLogo
-              imageSrc={"/Sponsors/vueling.svg"}
-              imageAlt={"vueling"}
-              sponsorLink={"https://www.vueling.com/ca?Currency=EUR"}
-              smallPadding
-            />
-          </MegaBox>
-          <MegaBox>
-            <SponsorLogo
-              imageSrc={"/Sponsors/inditex.svg"}
-              imageAlt={"inditex"}
-              sponsorLink={"https://xtend.inditex.com/"}
-              smallPadding
-            />
-          </MegaBox>
-        </SponsorRow>
+            <SponsorRow>
+              <KiloBox>
+                <SponsorUnrevealed />
+              </KiloBox>
+            </SponsorRow>
+            <SponsorRow>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+            </SponsorRow>
+          </SponsorsBlock>
 
-        <SponsorRow>
-          <KiloBox>
-            <SponsorLogo
-              imageSrc={"/Sponsors/jetbrains.svg"}
-              imageAlt={"jetbrains"}
-              sponsorLink={"https://www.jetbrains.com/"}
-              smallPadding
-            />
-          </KiloBox>
-        </SponsorRow>
-        <SponsorRow>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Sponsors/ithink.png"}
-              sponsorLink={"https://ithinkupc.com/"}
-              imageAlt={"ithink"}
-              smallPadding
-            />
-          </MiliBox>
-        </SponsorRow>
-      </SponsorsBlock>
-
-      <StyledSectionTitle className={lora.className}>
-        PARTNERS
-      </StyledSectionTitle>
-      <PartnersBlock>
-        <SponsorRow>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/upc.svg"}
-              imageAlt={"upc"}
-              sponsorLink={"https://www.upc.edu/"}
-              smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/fib.svg"}
-              imageAlt={"fib"}
-              sponsorLink={"https://www.fib.upc.edu/"}
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/telecos.png"}
-              imageAlt={"telecos"}
-              sponsorLink={"https://telecos.upc.edu/"}
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/cfis.svg"}
-              imageAlt={"CFIS"}
-              sponsorLink={"https://cfis.upc.edu/"}
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/mlh.svg"}
-              imageAlt={"mlh"}
-              sponsorLink={"https://mlh.io/eu"}
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/coeinf.png"}
-              imageAlt={"coeinf"}
-              sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/tallerdeso.png"}
-              imageAlt={"Taller De So"}
-              sponsorLink={"https://www.instagram.com/tallerdeso"}
-              smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/ministerio.png"}
-              imageAlt={"Ministerio"}
-              sponsorLink={
-                "https://www.www.siemens-energy.com/global/en/home.html"
-              }
-              smallPadding
-            />
-          </MiliBox>
-        </SponsorRow>
-        <SponsorRow>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/dominos_pizza.png"}
-              imageAlt={"domino's pizza"}
-              sponsorLink={"https://www.dominospizza.es/"}
-              smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/xurreria_manolo.png"}
-              imageAlt={"Xurreria Manolo"}
-              sponsorLink={"https://www.instagram.com/xurreriacalmanolo"}
-              smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/risi.png"}
-              imageAlt={"RISI"}
-              sponsorLink={"https://risi.es/es/"}
-              smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/frit.png"}
-              imageAlt={"Frit Ravich"}
-              sponsorLink={"https://www.fritravich.com/en/"}
-              smallPadding
-            />
-          </MiliBox>
-          <MiliBox>
-            <SponsorLogo
-              imageSrc={"/Partners/cocacola.png"}
-              imageAlt={"Cocacola"}
-              sponsorLink={"https://www.coca-cola.com/es/es"}
-              smallPadding
-            />
-          </MiliBox>
-        </SponsorRow>
-      </PartnersBlock>
+          <StyledSectionTitle className={lora.className}>
+            P A R T N E R S
+          </StyledSectionTitle>
+          <PartnersBlock>
+            <SponsorRow>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+            </SponsorRow>
+            <SponsorRow>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+              <MiliBox>
+                <SponsorUnrevealed />
+              </MiliBox>
+            </SponsorRow>
+          </PartnersBlock>
+        </ContentOverlay>
+      </section>
     </SponsorsAndPartnersContainer>
   );
 }
