@@ -95,7 +95,7 @@ export default function About() {
             <Col>
               <ImgSection>
                 <Image
-                  src="/dragon.svg"
+                  src="/drac_1.svg"
                   width={200}
                   height={200}
                   alt="Dragon"
