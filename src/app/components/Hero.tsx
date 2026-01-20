@@ -20,10 +20,31 @@ const float = keyframes`
   100% { transform: translateY(0px); }
 `;
 
-const fly = keyframes`
-  0% { transform: translateX(0px) translateY(0px); }
-  50% { transform: translateX(-15px) translateY(5px); }
-  100% { transform: translateX(0px) translateY(0px); }
+const flyRoundTrip = keyframes`
+  0% { transform: translateX(20vw) translateY(20px) scaleX(1); }
+  12% { transform: translateX(-15vw) translateY(-20px) scaleX(1); }
+  25% { transform: translateX(-50vw) translateY(-40px) scaleX(1); }
+  37% { transform: translateX(-85vw) translateY(-10px) scaleX(1); }
+  
+  49.9% { transform: translateX(-120vw) translateY(60px) scaleX(1); } 
+  
+  50% { transform: translateX(-120vw) translateY(60px) scaleX(-1); }
+
+  62% { transform: translateX(-85vw) translateY(-10px) scaleX(-1); }
+  75% { transform: translateX(-50vw) translateY(-40px) scaleX(-1); }
+  87% { transform: translateX(-15vw) translateY(-20px) scaleX(-1); }
+  
+  100% { transform: translateX(20vw) translateY(20px) scaleX(-1); }
+`;
+
+const flapVisible = keyframes`
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+`;
+
+const flapHidden = keyframes`
+  0%, 50% { opacity: 0; }
+  50.01%, 100% { opacity: 1; }
 `;
 
 const HeroContainer = styled.div`
@@ -44,17 +65,33 @@ const DragonWrapper = styled.div`
   right: 10%;
   width: 250px;
   height: 180px;
-  animation: ${fly} 5s ease-in-out infinite;
-
-  img {
-    object-fit: contain;
-  }
+  animation: ${flyRoundTrip} 40s linear infinite;
 
   @media (max-width: ${MobileBreakpoint}) {
     top: 120px;
     right: 10px;
     width: 100px;
     height: 80px;
+  }
+`;
+
+const DragonFrame = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img {
+    object-fit: contain;
+  }
+
+  &:first-child {
+    animation: ${flapVisible} 0.4s steps(1) infinite;
+  }
+
+  &:last-child {
+    animation: ${flapHidden} 0.4s steps(1) infinite;
   }
 `;
 
@@ -178,7 +215,7 @@ const RibbonImageWrapper = styled.div`
 
 const CharacterGrid = styled.div`
   display: flex;
-  gap: 30px;
+  gap: 150px;
   margin-top: 100px;
   width: 100%;
   justify-content: center;
@@ -285,7 +322,12 @@ export default function Hero() {
       </RightCloud>
 
       <DragonWrapper>
-        <Image src="/dragon.svg" fill alt="Dragon" />
+        <DragonFrame>
+          <Image src="/drac_1.svg" fill alt="Dragon Frame 1" />
+        </DragonFrame>
+        <DragonFrame>
+          <Image src="/drac_2.svg" fill alt="Dragon Frame 2" />
+        </DragonFrame>
       </DragonWrapper>
 
       <LogoContainer>
@@ -332,7 +374,7 @@ export default function Hero() {
             <StackedImages>
               <ArchBg src="/arch.svg" fill alt="Arch" />
               <CharacterImg
-                src="/hacker.svg"
+                src="/cavaller.svg"
                 width={150}
                 height={150}
                 alt="Hacker"
@@ -348,7 +390,7 @@ export default function Hero() {
             <StackedImages>
               <ArchBg src="/arch.svg" fill alt="Arch" />
               <CharacterImg
-                src="/volunteer.svg"
+                src="/princesa.svg"
                 width={150}
                 height={150}
                 alt="Volunteer"
