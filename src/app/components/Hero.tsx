@@ -1,488 +1,363 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import {
   MobileBreakpoint,
-  SpacingM,
-  SpacingS,
-  SpacingXL,
-  SpacingXXXL,
-  TitleXXL,
-  TitleM,
-  TitleS,
+  MobileTitleS,
   SpacingL,
-  SpacingXS,
-  TitleXL,
+  SpacingM,
+  TitleS,
 } from "@/app/genericComponents/tokens";
-import { montserrat, lora } from "@/app/genericComponents/fonts";
+import { montserrat } from "@/app/genericComponents/fonts";
 
 const Colors = {
-  HeroYellow: "#FCFC01",
-  HeroBlue: "#0060BF",
-  HeroNeutral: "#231F20",
-  HeroBlack: "#000000",
+  Black: "#000000",
+  Grey: "#CAC9C9",
 };
 
+const float = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+`;
+
+const fly = keyframes`
+  0% { transform: translateX(0px) translateY(0px); }
+  50% { transform: translateX(-15px) translateY(5px); }
+  100% { transform: translateX(0px) translateY(0px); }
+`;
+
 const HeroContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: ${SpacingXL} 0 ${SpacingXXXL} 0;
-  gap: ${SpacingM};
+  position: relative;
   width: 100vw;
-  background-color: ${Colors.HeroNeutral};
-  background-image: url("/background_piece.svg"), url("/biene_pacman.svg"),
-    url("/green_ghost.svg"), url("/red_ghost.svg"), url("/orange_ghost.svg"),
-    url("/white_ghost.svg"), url("/blue_ghost.svg"), url("/purple_ghost.svg"),
-    url("/hackupcLogoWhite.svg");
+  min-height: 180vh;
+  overflow-x: hidden;
 
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat,
-    no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size:
-    80px 80px,
-    32px 32px,
-    32px 32px,
-    32px 32px,
-    32px 32px,
-    32px 32px,
-    32px 32px,
-    32px 32px,
-    32px 32px;
+  @media (max-width: ${MobileBreakpoint}) {
+    min-height: 100vh;
+  }
+`;
 
-  animation: moveAll 10s linear infinite;
+const DragonWrapper = styled.div`
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  right: 10%;
+  width: 250px;
+  height: 180px;
+  animation: ${fly} 5s ease-in-out infinite;
 
-  @keyframes moveAll {
-    0% {
-      background-position:
-        0 0,
-        50% 50%,
-        ${-16 + 80 * 5}px ${-16 + 80 * 3}px,
-        ${-16 + 80 * 6}px ${-16 + 80 * 9}px,
-        ${-16 + 80 * 7}px ${-16 + 80 * 10}px,
-        ${-16 + 80 * 18}px ${-16 + 80 * 2}px,
-        ${-16 + 80 * 18}px ${-16 + 80 * 8}px,
-        ${-16 + 80 * 22}px ${-16 + 80 * 5}px,
-        50% 50%;
-    }
-    25% {
-      background-position:
-        0 0,
-        55% 55%,
-        ${-16 + 80 * 7}px ${-16 + 80 * 3}px,
-        ${-16 + 80 * 6}px ${-16 + 80 * 7}px,
-        ${-16 + 80 * 5}px ${-16 + 80 * 10}px,
-        ${-16 + 80 * 20}px ${-16 + 80 * 2}px,
-        ${-16 + 80 * 20}px ${-16 + 80 * 8}px,
-        ${-16 + 80 * 22}px ${-16 + 80 * 7}px,
-        50% 45%;
-    }
-    50% {
-      background-position:
-        0 0,
-        60% 60%,
-        ${-16 + 80 * 9}px ${-16 + 80 * 3}px,
-        ${-16 + 80 * 6}px ${-16 + 80 * 5}px,
-        ${-16 + 80 * 5}px ${-16 + 80 * 8}px,
-        ${-16 + 80 * 22}px ${-16 + 80 * 2}px,
-        ${-16 + 80 * 20}px ${-16 + 80 * 10}px,
-        ${-16 + 80 * 22}px ${-16 + 80 * 9}px,
-        45% 50%;
-    }
-    75% {
-      background-position:
-        0 0,
-        55% 45%,
-        ${-16 + 80 * 7}px ${-16 + 80 * 3}px,
-        ${-16 + 80 * 6}px ${-16 + 80 * 7}px,
-        ${-16 + 80 * 5}px ${-16 + 80 * 10}px,
-        ${-16 + 80 * 20}px ${-16 + 80 * 2}px,
-        ${-16 + 80 * 20}px ${-16 + 80 * 8}px,
-        ${-16 + 80 * 22}px ${-16 + 80 * 7}px,
-        50% 55%;
-    }
-    100% {
-      background-position:
-        0 0,
-        50% 50%,
-        ${-16 + 80 * 5}px ${-16 + 80 * 3}px,
-        ${-16 + 80 * 6}px ${-16 + 80 * 9}px,
-        ${-16 + 80 * 7}px ${-16 + 80 * 10}px,
-        ${-16 + 80 * 18}px ${-16 + 80 * 2}px,
-        ${-16 + 80 * 18}px ${-16 + 80 * 8}px,
-        ${-16 + 80 * 22}px ${-16 + 80 * 5}px,
-        50% 50%;
-    }
+  img {
+    object-fit: contain;
   }
 
   @media (max-width: ${MobileBreakpoint}) {
-    @keyframes moveAll {
-      0% {
-        background-position:
-          0 0,
-          50% 50%,
-          ${-16 + 80 * 2}px ${-16 + 80 * 1}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 4}px,
-          ${-16 + 80 * 2}px ${-16 + 80 * 5}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 12}px,
-          ${-16 + 80 * 1}px ${-16 + 80 * 13}px,
-          ${-16 + 80 * 2}px ${-16 + 80 * 2}px,
-          50% 50%;
-      }
-      25% {
-        background-position:
-          0 0,
-          55% 55%,
-          ${-16 + 80 * 3}px ${-16 + 80 * 1}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 3}px,
-          ${-16 + 80 * 2}px ${-16 + 80 * 5}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 14}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 13}px,
-          ${-16 + 80 * 2}px ${-16 + 80 * 3}px,
-          50% 45%;
-      }
-      50% {
-        background-position:
-          0 0,
-          60% 60%,
-          ${-16 + 80 * 4}px ${-16 + 80 * 1}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 2}px,
-          ${-16 + 80 * 2}px ${-16 + 80 * 4}px,
-          ${-16 + 80 * 1}px ${-16 + 80 * 14}px,
-          ${-16 + 80 * 4}px ${-16 + 80 * 13}px,
-          ${-16 + 80 * 2}px ${-16 + 80 * 4}px,
-          45% 50%;
-      }
-      75% {
-        background-position:
-          0 0,
-          55% 45%,
-          ${-16 + 80 * 3}px ${-16 + 80 * 1}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 3}px,
-          ${-16 + 80 * 2}px ${-16 + 80 * 5}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 14}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 13}px,
-          ${-16 + 80 * 2}px ${-16 + 80 * 3}px,
-          50% 55%;
-      }
-      100% {
-        background-position:
-          0 0,
-          50% 50%,
-          ${-16 + 80 * 2}px ${-16 + 80 * 1}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 4}px,
-          ${-16 + 80 * 4}px ${-16 + 80 * 5}px,
-          ${-16 + 80 * 3}px ${-16 + 80 * 12}px,
-          ${-16 + 80 * 1}px ${-16 + 80 * 13}px,
-          ${-16 + 80 * 2}px ${-16 + 80 * 2}px,
-          50% 50%;
-      }
-    }
+    top: 120px;
+    right: 10px;
+    width: 100px;
+    height: 80px;
   }
 `;
 
-const Title = styled.h1`
-  font-size: ${TitleXXL};
-  color: ${Colors.HeroYellow};
-  text-transform: uppercase;
-  text-align: center;
+const BaseCloud = styled.div`
+  position: absolute;
+  z-index: 1;
+  opacity: 0.9;
+  animation: ${float} 6s ease-in-out infinite;
+  pointer-events: none;
+
+  img {
+    object-fit: contain;
+  }
+`;
+
+const LeftCloud = styled(BaseCloud)`
+  top: 33%;
+  left: 2%;
+  width: 180px;
+  height: 100px;
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: ${TitleXL};
+    top: 10%;
+    left: 2%;
+    width: 120px;
+    height: 70px;
   }
 `;
 
-const TitleContainer = styled.div`
-  margin-top: ${SpacingM};
-  width: 80%;
-  max-width: 600px;
-  border-top: ${SpacingXS} dotted yellow;
-  border-bottom: ${SpacingXS} dotted yellow;
-  padding-bottom: ${SpacingM};
-  padding-top: ${SpacingM};
-  backdrop-filter: blur(2px);
-`;
-
-const SubText = styled.div`
-  font-size: ${TitleS};
-  color: ${Colors.HeroYellow};
-  text-align: center;
+const RightCloud = styled(BaseCloud)`
+  top: 38%;
+  right: 4%;
+  width: 200px;
+  height: 110px;
 
   @media (max-width: ${MobileBreakpoint}) {
-    font-size: ${TitleS};
+    top: 20%;
+    right: 2%;
+    width: 100px;
+    height: 60px;
   }
 `;
 
-const PlayAsContainer = styled.div`
+const CenterCloudLeft = styled(BaseCloud)`
+  top: 15%;
+  left: 22%;
+  width: 230px;
+  height: 120px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    display: none;
+  }
+`;
+
+const CenterCloudRight = styled(BaseCloud)`
+  top: 28%;
+  right: 32%;
+  width: 200px;
+  height: 120px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    display: none;
+  }
+`;
+
+const LogoContainer = styled.div`
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: ${Colors.HeroBlack};
-  border: 2px solid ${Colors.HeroBlue};
-  border-radius: 8px;
-  padding: ${SpacingM};
-  margin-top: ${SpacingM};
-  width: 80%;
-  max-width: 600px;
-  gap: ${SpacingS};
-  box-shadow: 0px 20px 4px 4px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  z-index: 3;
+`;
+
+const DesktopLogo = styled.div`
+  margin-top: 260px;
+  display: block;
 
   @media (max-width: ${MobileBreakpoint}) {
-    width: 90%;
+    display: none;
   }
 `;
 
-const PlayAsTitleBox = styled.div`
-  color: ${Colors.HeroYellow};
-  padding: ${SpacingS};
-  border-radius: 8px;
-  border: 2px solid ${Colors.HeroBlue};
-  font-size: ${TitleM};
-  font-weight: bold;
-  text-align: center;
-  width: 50%;
-  margin-bottom: ${SpacingS};
-  margin-top: -${SpacingL};
-  align-self: center;
-  background-color: ${Colors.HeroBlack};
+const MobileLogo = styled.div`
+  display: none;
 
   @media (max-width: ${MobileBreakpoint}) {
-    width: 70%;
+    margin-top: 220px;
+    display: block;
   }
 `;
 
-const PlayerContainer = styled.div`
+const CharactersSection = styled.div`
+  position: relative;
+  margin-top: 620px;
+  margin-bottom: ${SpacingL};
+  z-index: 3;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin: ${SpacingM};
+  }
+`;
+
+const RibbonContainer = styled.div`
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  gap: ${SpacingM};
   justify-content: center;
 
   @media (max-width: ${MobileBreakpoint}) {
-    flex-direction: column;
-    align-items: center;
+    top: -60px;
   }
 `;
 
-const PlayerCard = styled.a`
+const RibbonImageWrapper = styled.div`
+  position: relative;
+  width: clamp(280px, 90vw, 480px);
+  aspect-ratio: 45 / 8;
+`;
+
+const CharacterGrid = styled.div`
+  display: flex;
+  gap: 30px;
+  margin-top: 100px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    gap: 70px;
+    margin-top: 220px;
+  }
+`;
+
+const CharacterCard = styled.a`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: ${SpacingM};
-  border-radius: 8px;
-  border: 2px dotted ${Colors.HeroBlue};
-  min-width: 50%;
-  text-align: center;
-  cursor: pointer;
-  color: ${Colors.HeroYellow};
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  width: 180px;
 
   &:hover {
-    background-color: ${Colors.HeroYellow};
-    color: ${Colors.HeroBlack};
+    transform: translateY(-5px);
   }
 
   @media (max-width: ${MobileBreakpoint}) {
-    min-width: 100%;
+    width: 42%;
+    max-width: 150px;
   }
 `;
 
-const PlayerText = styled.div`
-  font-size: ${TitleM};
+const StackedImages = styled.div`
+  position: relative;
+  width: 100%;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    height: 140px;
+  }
+`;
+
+const ArchBg = styled(Image)`
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  object-fit: contain;
+  object-position: bottom;
+`;
+
+const CharacterImg = styled(Image)`
+  position: relative;
+  z-index: 2;
+  width: 70%;
+  height: auto;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+
+  @media (max-width: ${MobileBreakpoint}) {
+    margin-bottom: 20px;
+  }
+`;
+
+const CharacterLabel = styled.div`
+  background-color: ${Colors.Grey};
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: ${Colors.Black};
+  font-family: ${montserrat.style.fontFamily};
+  font-size: ${TitleS};
   font-weight: bold;
-  margin-top: ${SpacingS};
+  letter-spacing: 1px;
+  border-radius: 4px;
+  box-shadow: 0 5px 0 #999;
+  text-transform: uppercase;
+  margin-top: -12px;
+  z-index: 2;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    font-size: ${MobileTitleS};
+    padding: 8px 0;
+  }
 `;
 
 export default function Hero() {
-  const [showHero, setShowHero] = useState(true);
-  const [bienePosition, setBienePosition] = useState({ x: 64, y: 64 });
-  const [animatedPosition, setAnimatedPosition] = useState({ x: 64, y: 64 });
-  const [ghostPositions, setGhostPositions] = useState([
-    { x: -16 + 80 * 5, y: -16 + 80 * 3 }, // green
-    { x: -16 + 80 * 6, y: -16 + 80 * 9 }, // red
-    { x: -16 + 80 * 7, y: -16 + 80 * 10 }, // orange
-    { x: -16 + 80 * 8, y: -16 + 80 * 6 }, // white
-    { x: -16 + 80 * 9, y: -16 + 80 * 8 }, // pink
-    { x: -16 + 80 * 10, y: -16 + 80 * 5 }, // purple
-  ]);
-
-  const [spriteIndex, setSpriteIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSpriteIndex((prev) => (prev === 0 ? 1 : 0));
-    }, 250);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const [logoPositions, setLogoPositions] = useState(() => {
-    const positions = [];
-    for (let i = 0; i < 16; i++) {
-      positions.push({
-        x: -16 + Math.floor(Math.random() * 10) * 80,
-        y: -16 + Math.floor(Math.random() * 10) * 80,
-      });
-    }
-    return positions;
-  });
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
-        return; // To allow the game to be played, remove this line.
-        e.preventDefault();
-        setShowHero(false);
-
-        const screenW = window.innerWidth - 80;
-        const screenH = window.innerHeight - 64;
-
-        setBienePosition((prev) => {
-          const newPos = { ...prev };
-          switch (e.key) {
-            case "ArrowUp":
-              newPos.y = Math.max(64, prev.y - 80);
-              break;
-            case "ArrowDown":
-              newPos.y = Math.min(screenH, prev.y + 80);
-              break;
-            case "ArrowLeft":
-              newPos.x = Math.max(64, prev.x - 80);
-              break;
-            default: // ArrowRight
-              newPos.x = Math.min(screenW, prev.x + 80);
-              break;
-          }
-
-          setAnimatedPosition(newPos);
-
-          setLogoPositions((logos) =>
-            logos.filter((logo) => logo.x !== newPos.x || logo.y !== newPos.y),
-          );
-
-          setGhostPositions((ghosts) =>
-            ghosts.map((ghost) => {
-              if (ghost.x === newPos.x && ghost.y === newPos.y) {
-                // alert("Sadly, you lost! We hope HackUPC awaits more luck for you!"); --> Alert not working, it's throwing 1000 alerts per second
-                setShowHero(true);
-              }
-              return ghost;
-            }),
-          );
-
-          return newPos;
-        });
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const screenW = window.innerWidth - 80;
-      const screenH = window.innerHeight - 64;
-      setGhostPositions((prevPositions) =>
-        prevPositions.map((pos) => {
-          const direction = Math.floor(Math.random() * 4);
-          const newPos = { ...pos };
-          switch (direction) {
-            case 0: // up
-              newPos.y = Math.max(64, pos.y - 80);
-              break;
-            case 1: // down
-              newPos.y = Math.min(screenH, pos.y + 80);
-              break;
-            case 2: // left
-              newPos.x = Math.max(64, pos.x - 80);
-              break;
-            default: // right
-              newPos.x = Math.min(screenW, pos.x + 80);
-              break;
-          }
-          return newPos;
-        }),
-      );
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <>
-      <HeroContainer
-        key={
-          showHero ? `${bienePosition.x}-${bienePosition.y}` : `${spriteIndex}`
-        }
-        className={lora.className}
-        style={{
-          backgroundPosition: `
-          0 0,
-          ${animatedPosition.x}px ${animatedPosition.y}px,
-          ${ghostPositions[0].x}px ${ghostPositions[0].y}px,
-          ${ghostPositions[1].x}px ${ghostPositions[1].y}px,
-          ${ghostPositions[2].x}px ${ghostPositions[2].y}px,
-          ${ghostPositions[3].x}px ${ghostPositions[3].y}px,
-          ${ghostPositions[4].x}px ${ghostPositions[4].y}px,
-          ${ghostPositions[5].x}px ${ghostPositions[5].y}px,
-          ${logoPositions.map((logo) => `${logo.x}px ${logo.y}px`).join(", ")}`,
-          backgroundImage: `
-          url("/background_piece.svg"),
-          url(${
-            spriteIndex === 0 ? "/biene_pacman.svg" : "/biene_pacman_2.svg"
-          }),
-          url("/green_ghost.svg"),
-          url("/red_ghost.svg"),
-          url("/orange_ghost.svg"),
-          url("/white_ghost.svg"),
-          url("/blue_ghost.svg"),
-          url("/purple_ghost.svg"),
-          url("/hackupcLogoWhite.svg"); `,
-          animation: showHero ? "moveAll 10s linear infinite" : "none",
-          transition: "background-position 0.3s ease-in-out",
-        }}
-      >
-        <TitleContainer style={{ visibility: showHero ? "visible" : "hidden" }}>
-          <Title className={lora.className}>
-            HackUPC
-            <SubText className={montserrat.className}>
-              700 Hackers | 2-4 May 2025 | 36h
-            </SubText>
-          </Title>
-        </TitleContainer>
-        <PlayAsContainer
-          style={{ visibility: showHero ? "visible" : "hidden" }}
-        >
-          <PlayAsTitleBox className={lora.className}>Play as</PlayAsTitleBox>
-          <PlayerContainer>
-            <PlayerCard
-              href="https://my.hackupc.com/user/signup/hacker/"
-              target="_blank"
-            >
-              <Image
-                src="/blue_ghost.svg"
-                width={125}
-                height={125}
-                alt="Player 1"
+    <HeroContainer>
+      <LeftCloud>
+        <Image src="/cloud.svg" fill alt="Cloud" />
+      </LeftCloud>
+
+      <CenterCloudLeft>
+        <Image src="/cloud.svg" fill alt="Cloud" />
+      </CenterCloudLeft>
+
+      <CenterCloudRight>
+        <Image src="/cloud.svg" fill alt="Cloud" />
+      </CenterCloudRight>
+
+      <RightCloud>
+        <Image src="/cloud.svg" fill alt="Cloud" />
+      </RightCloud>
+
+      <DragonWrapper>
+        <Image src="/dragon.svg" fill alt="Dragon" />
+      </DragonWrapper>
+
+      <LogoContainer>
+        <DesktopLogo>
+          <Image
+            src="/main_logo_desktop.svg"
+            width={700}
+            height={260}
+            alt="Hack UPC"
+            priority
+            style={{ maxWidth: "90vw", height: "auto" }}
+          />
+        </DesktopLogo>
+
+        <MobileLogo>
+          <Image
+            src="/main_logo.svg"
+            width={550}
+            height={250}
+            alt="Hack UPC"
+            priority
+            style={{ maxWidth: "90vw", height: "auto" }}
+          />
+        </MobileLogo>
+      </LogoContainer>
+
+      <CharactersSection>
+        <RibbonContainer>
+          <RibbonImageWrapper>
+            <Image
+              src="/choose_character.svg"
+              fill
+              alt="Choose Your Character"
+              style={{ objectFit: "contain" }}
+            />
+          </RibbonImageWrapper>
+        </RibbonContainer>
+
+        <CharacterGrid>
+          <CharacterCard
+            href="https://my.hackupc.com/user/signup/hacker/"
+            target="_blank"
+          >
+            <StackedImages>
+              <ArchBg src="/arch.svg" fill alt="Arch" />
+              <CharacterImg
+                src="/hacker.svg"
+                width={150}
+                height={150}
+                alt="Hacker"
               />
-              <PlayerText>Hacker</PlayerText>
-            </PlayerCard>
-            <PlayerCard
-              href="https://my.hackupc.com/user/signup/volunteer/"
-              target="_blank"
-            >
-              <Image
-                src="/orange_ghost.svg"
-                width={125}
-                height={125}
-                alt="Player 2"
+            </StackedImages>
+            <CharacterLabel>HACKER</CharacterLabel>
+          </CharacterCard>
+
+          <CharacterCard
+            href="https://my.hackupc.com/user/signup/volunteer/"
+            target="_blank"
+          >
+            <StackedImages>
+              <ArchBg src="/arch.svg" fill alt="Arch" />
+              <CharacterImg
+                src="/volunteer.svg"
+                width={150}
+                height={150}
+                alt="Volunteer"
               />
-              <PlayerText>Volunteer</PlayerText>
-            </PlayerCard>
-          </PlayerContainer>
-        </PlayAsContainer>
-      </HeroContainer>
-    </>
+            </StackedImages>
+            <CharacterLabel>VOLUNTEER</CharacterLabel>
+          </CharacterCard>
+        </CharacterGrid>
+      </CharactersSection>
+    </HeroContainer>
   );
 }

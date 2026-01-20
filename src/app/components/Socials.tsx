@@ -59,8 +59,8 @@ const SocialItem = styled.div`
 `;
 
 const SocialsList = styled(WhiteContainer)`
-  background-color: rgba(0, 0, 0, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0);
   align-content: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -81,7 +81,7 @@ const ImgSection = styled.div`
 `;
 
 const SocialImage = styled(FontAwesomeIcon)`
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(91, 83, 64, 0.8);
 `;
 
 export default function Socials() {

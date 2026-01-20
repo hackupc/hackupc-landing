@@ -19,7 +19,7 @@ export const hackupc_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "The opening ceremony starts at 7:00 p.m. on Friday, May 2nd. We expect to close this year’s edition by 5:00 p.m. on Sunday, May 4th.",
+          "The opening ceremony starts at 7:00 p.m. on Friday, April 24th. We expect to close this year’s edition by 5:00 p.m. on Sunday, April 26th.",
       },
     ],
   },
@@ -199,13 +199,14 @@ export const travel_faqs: FAQs[] = [
       {
         type: "Enumeration",
         content:
-          "To be able to receive Travel Reimbursement money, you need to match the following criteria:",
+          "To be eligible for Travel Reimbursement, participants must meet all of the following criteria:",
         options: [
-          "Upload your tickets before 2nd May to our platform (we only accept flight, bus, or train tickets) alongside your PayPal account (we only pay this way).",
-          "The arrival tickets should be after April 25th and the departure tickets should be prior to May 9th.",
-          "In the hackathon, it’s mandatory to demo your project to HackUPC judges, presenting only to sponsors will not be considered valid.",
-          "The project should follow all the HackUPC rules.",
-          "After the hackathon, upload your Devpost link to our platform.",
+          "<b>Confirmation & Receipts</b>:<br/>• After confirming your spot at HackUPC, you must upload your travel receipts (plane, train, or bus) before the start of the event.<br/>• Receipts must be in your name and include price breakdown, purchase date, and travel dates.",
+          "<b>Travel Dates</b>:<br/>• Travel dates must be within one week before or one week after the event, i.e. from April 21st to May 5th (both included).",
+          "<b>Reimbursement Amount</b>:<br/>• The reimbursed amount will be the minimum between 50% of your travel expenses and the maximum amount assigned to your destination, determined by the organizing team based on budget and demand.",
+          "<b>Project Requirements</b>:<br/>• You must demo a valid project to the HackUPC judges (presenting only to sponsors is not sufficient).<br/>• The project must follow all HackUPC rules.<br/>• Your Devpost username must reasonably resemble your real name.<br/>• The GitHub repository and Devpost completeness will be evaluated (e.g. regular commits, all required Devpost sections).",
+          "<b>Attendance</b>:<br/>• You must be able to demonstrate active participation and minimum attendance at the event. Participation in meals, workshops, activities, and other official events may be considered.",
+          "<b>Post-Event</b>:<br/>• After the hackathon, you must upload your Devpost link to the platform.",
         ],
       },
     ],
@@ -242,7 +243,7 @@ export const applications_faqs: FAQs[] = [
       {
         type: "Text",
         content:
-          "As long as you graduated a year before the event (May 2nd, 2024), or later, you can still be accepted as a hacker. Nevertheless, if that isn't your case, and you don't want to miss HackUPC, you can apply as a mentor!",
+          "As long as you graduated a year before the event (April 24th, 2025), or later, you can still be accepted as a hacker. Nevertheless, if that isn't your case, and you don't want to miss HackUPC, you can apply as a mentor!",
       },
     ],
   },

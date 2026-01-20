@@ -86,10 +86,10 @@ export default function During() {
           </StyledTitle>
         </TextWrapper>
         <Body>
-          Get ready for your weekend mission! This year, we aim for HackUPC to
-          be like a loaded arcade with lots to play with. Have fun, complete the
-          objectives, and get fantastic surprises. Will you be able to unlock
-          them all?
+          Your weekend quest awaits! This year, HackUPC becomes a medieval
+          adventure filled with challenges to conquer. Forge your own path by
+          overcoming mighty trials, and see if you can rise as a true hero. Will
+          your legend be told in generations?
         </Body>
       </TheMission>
     </DuringContainer>
