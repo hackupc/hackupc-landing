@@ -15,6 +15,7 @@ import {
   MegaBox,
   MiliBox,
   SponsorLogo,
+  SponsorUnrevealed,
   TeraBox,
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
@@ -110,87 +111,41 @@ export default function SponsorsAndPartners() {
           <SponsorsBlock>
             <SponsorRow>
               <TeraBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/seat.svg"}
-                  imageAlt={"seat"}
-                  sponsorLink={"https://www.seat.com/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </TeraBox>
             </SponsorRow>
 
             <SponsorRow>
               <GigaBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/revolut.svg"}
-                  imageAlt={"revolut"}
-                  sponsorLink={"https://www.revolut.com/talent-programmes/"}
-                />
+                <SponsorUnrevealed />
               </GigaBox>
               <GigaBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/SiemensEnergy.png"}
-                  imageAlt={"SiemensEnergy"}
-                  sponsorLink={
-                    "https://www.siemens-energy.com/global/en/home.html"
-                  }
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </GigaBox>
             </SponsorRow>
             <SponsorRow>
               <MegaBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/skyscanner.svg"}
-                  imageAlt={"skyscanner"}
-                  sponsorLink={"https://www.skyscanner.es/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MegaBox>
               <MegaBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/grafana.svg"}
-                  imageAlt={"grafana"}
-                  sponsorLink={"https://grafana.com/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MegaBox>
               <MegaBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/vueling.svg"}
-                  imageAlt={"vueling"}
-                  sponsorLink={"https://www.vueling.com/ca?Currency=EUR"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MegaBox>
               <MegaBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/inditex.svg"}
-                  imageAlt={"inditex"}
-                  sponsorLink={"https://xtend.inditex.com/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MegaBox>
             </SponsorRow>
 
             <SponsorRow>
               <KiloBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/jetbrains.svg"}
-                  imageAlt={"jetbrains"}
-                  sponsorLink={"https://www.jetbrains.com/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </KiloBox>
             </SponsorRow>
             <SponsorRow>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/ithink.png"}
-                  sponsorLink={"https://ithinkupc.com/"}
-                  imageAlt={"ithink"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
             </SponsorRow>
           </SponsorsBlock>
@@ -201,109 +156,45 @@ export default function SponsorsAndPartners() {
           <PartnersBlock>
             <SponsorRow>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/upc.svg"}
-                  imageAlt={"upc"}
-                  sponsorLink={"https://www.upc.edu/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/fib.svg"}
-                  imageAlt={"fib"}
-                  sponsorLink={"https://www.fib.upc.edu/"}
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/telecos.png"}
-                  imageAlt={"telecos"}
-                  sponsorLink={"https://telecos.upc.edu/"}
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/cfis.svg"}
-                  imageAlt={"CFIS"}
-                  sponsorLink={"https://cfis.upc.edu/"}
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/mlh.svg"}
-                  imageAlt={"mlh"}
-                  sponsorLink={"https://mlh.io/eu"}
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/coeinf.png"}
-                  imageAlt={"coeinf"}
-                  sponsorLink={
-                    "https://enginyeriainformatica.cat/dones-coeinf/"
-                  }
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/tallerdeso.png"}
-                  imageAlt={"Taller De So"}
-                  sponsorLink={"https://www.instagram.com/tallerdeso"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/ministerio.png"}
-                  imageAlt={"Ministerio"}
-                  sponsorLink={
-                    "https://www.www.siemens-energy.com/global/en/home.html"
-                  }
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
             </SponsorRow>
             <SponsorRow>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/dominos_pizza.png"}
-                  imageAlt={"domino's pizza"}
-                  sponsorLink={"https://www.dominospizza.es/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/xurreria_manolo.png"}
-                  imageAlt={"Xurreria Manolo"}
-                  sponsorLink={"https://www.instagram.com/xurreriacalmanolo"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/risi.png"}
-                  imageAlt={"RISI"}
-                  sponsorLink={"https://risi.es/es/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/frit.png"}
-                  imageAlt={"Frit Ravich"}
-                  sponsorLink={"https://www.fritravich.com/en/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/cocacola.png"}
-                  imageAlt={"Cocacola"}
-                  sponsorLink={"https://www.coca-cola.com/es/es"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
             </SponsorRow>
           </PartnersBlock>
