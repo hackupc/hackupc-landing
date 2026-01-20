@@ -29,10 +29,11 @@ const SponsorsAndPartnersContainer = styled(Section)`
 `;
 
 const ContentOverlay = styled.div`
+  position: relative;
   background-color: rgba(255, 255, 255, 0.5);
   margin: 0 ${SpacingM};
   padding: ${SpacingL} 0;
-  z-index: 1;
+  z-index: -3;
 `;
 
 export const StyledSectionTitle = styled(SectionTitle)`
