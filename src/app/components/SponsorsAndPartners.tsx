@@ -1,4 +1,3 @@
-//import styled from "styled-components";
 import styled from "styled-components";
 import { Section } from "@/app/genericComponents/General";
 import { lora } from "@/app/genericComponents/fonts";
@@ -8,7 +7,6 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-
 import {
   GigaBox,
   KiloBox,
