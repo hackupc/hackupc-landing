@@ -43,26 +43,19 @@ const SectionTitleStyled = styled(SectionTitle)`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  
-  padding: ${SpacingM} clamp(4rem, 15vw, 12rem); 
+
+  padding: ${SpacingM} clamp(4rem, 15vw, 12rem);
   background-image: url("/faqs.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain; 
+  background-size: contain;
   width: 100%;
-  max-width: 700px; 
+  max-width: 700px;
 
   @media (max-width: ${MobileBreakpoint}) {
     padding: ${SpacingS} clamp(2rem, 20vw, 6rem);
-    max-width: 95%;
+    background-image: url("/faqsmobile.svg");
   }
-`;
-
-const TitleText = styled.span`
-  position: relative;
-  flex: 1;
-  text-align: center;
-  white-space: nowrap;
 `;
 
 const Split = styled.div`
@@ -114,7 +107,7 @@ const QuestionBox = styled.div`
   background-color: #5b5340;
 `;
 
-const SupportImage = styled(Image) <{
+const SupportImage = styled(Image)<{
   side: "left" | "right";
   isVisible: boolean;
 }>`
@@ -276,14 +269,19 @@ const BlockTitleStyled = styled(BlockTitle)`
 `;
 
 const LastBlockTitle = styled(BlockTitleStyled)`
+  width: auto;
+  justify-content: center;
+  text-align: center;
+  padding-left: ${SpacingM};
+  padding-right: ${SpacingM};
+  border-radius: 11px;
+
   @media (max-width: ${MobileBreakpoint}) {
     align-self: center;
     justify-content: center;
     text-align: center;
     margin-left: 0;
-    border-radius: 11px;
     padding: ${SpacingXS} ${SpacingM};
-    padding-right: ${SpacingM};
   }
 `;
 
@@ -395,9 +393,7 @@ export default function FAQs() {
   return (
     <Section id="faqs">
       <TitleSpacer>
-        <SectionTitleStyled className={lora.className}>
-          FAQs
-        </SectionTitleStyled>
+        <SectionTitleStyled className={lora.className}>FAQs</SectionTitleStyled>
       </TitleSpacer>
 
       <Split>
