@@ -95,7 +95,7 @@ export default function SponsorsAndPartners() {
       <SponsorsAndPartnersContainer>
         <ContentOverlay>
           <StyledSectionTitle className={lora.className}>
-            S P O N S O R S
+            SPONSORS
           </StyledSectionTitle>
           <SponsorsBlock>
             <SponsorRow>
@@ -140,7 +140,7 @@ export default function SponsorsAndPartners() {
           </SponsorsBlock>
 
           <StyledSectionTitle className={lora.className}>
-            P A R T N E R S
+            PARTNERS
           </StyledSectionTitle>
           <PartnersBlock>
             <SponsorRow>
