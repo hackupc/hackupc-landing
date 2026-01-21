@@ -302,20 +302,20 @@ export default function ThroughTheYears() {
               </Link>
             </Flower2018Section>
             <Flower2017wSection>
-              <Link href="https://w2017.hackupc.com" passHref>
+              <Link href="https://f2017.hackupc.com" passHref>
                 <Image
-                  src="/ThroughTheYears/2017w.svg"
-                  alt="2017w Image"
+                  src="/ThroughTheYears/2017f.svg"
+                  alt="2017f Image"
                   width={75}
                   height={150}
                 />
               </Link>
             </Flower2017wSection>
             <Flower2017fSection>
-              <Link href="https://f2017.hackupc.com" passHref>
+              <Link href="https://w2017.hackupc.com" passHref>
                 <Image
-                  src="/ThroughTheYears/2017f.svg"
-                  alt="2017f Image"
+                  src="/ThroughTheYears/2017w.svg"
+                  alt="2017w Image"
                   width={75}
                   height={150}
                 />
