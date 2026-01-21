@@ -36,7 +36,7 @@ const ProvideWrapper = styled.div`
   display: flex;
   gap: calc(${SpacingM} + 10px);
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 ${SpacingM};
@@ -54,7 +54,8 @@ const ProvideCard = styled.div`
   max-width: 360px;
 
   @media (max-width: ${ProvideBreakpoint}) {
-    max-width: 300px;
+    width: 120%;
+    max-width: 340px;
   }
 `;
 
@@ -98,7 +99,7 @@ const ProvideLabel = styled.div<{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000000;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
@@ -117,7 +118,7 @@ const ProvideBody = styled(Body)`
   margin: 0;
 
   @media (max-width: ${ProvideBreakpoint}) {
-    font-size: 13px;
+    font-size: 12px;
   }
 `;
 
