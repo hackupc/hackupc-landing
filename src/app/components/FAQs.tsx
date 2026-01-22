@@ -107,7 +107,7 @@ const QuestionBox = styled.div`
   background-color: #5b5340;
 `;
 
-const SupportImage = styled(Image)<{
+const SupportImage = styled(Image) <{
   side: "left" | "right";
   isVisible: boolean;
 }>`
@@ -129,7 +129,6 @@ const SupportImage = styled(Image)<{
 `;
 
 const AnswerBox = styled.div<{ isVisible: boolean }>`
-  overflow: hidden;
   max-height: 0;
   opacity: 0;
   transform-origin: top;
@@ -140,7 +139,7 @@ const AnswerBox = styled.div<{ isVisible: boolean }>`
   ${(props) =>
     props.isVisible &&
     `
-      max-height: 1000px;
+      max-height: 10000px;
       opacity: 1;
       padding: ${SpacingXS};
       margin-top: ${SpacingM};
@@ -158,7 +157,6 @@ const AnswerInner = styled.div`
 `;
 
 const AnswerImageWrapper = styled.div`
-  position: absolute;
   inset: 0;
 
   img {
