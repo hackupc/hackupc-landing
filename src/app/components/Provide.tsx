@@ -118,7 +118,7 @@ const ProvideBody = styled(Body)`
   margin: 0;
 
   @media (max-width: ${ProvideBreakpoint}) {
-    font-size: 12px;
+    font-size: 13px;
   }
 `;
 

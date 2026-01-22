@@ -22,9 +22,11 @@ const ConsolesDiv = styled.div`
   display: flex;
   justify-content: space-around;
   gap: 30px;
+  width: 100%;
 
   @media (max-width: ${MobileBreakpoint}) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -52,22 +54,25 @@ const Agrupar = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  text-align: center;
 `;
 
 const EnvelopeContainer = styled.div<{ isOpen?: boolean }>`
   position: relative;
-  width: 500px;
-  height: ${(props) => (props.isOpen ? 550 : 350)}px;
+  width: min(500px, calc(50vw - 80px));
+  height: auto;
+  aspect-ratio: 500 / ${(props) => (props.isOpen ? 550 : 350)};
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: height 0.3s ease;
+  transition: aspect-ratio 0.3s ease;
+  margin: 0 auto;
+  box-sizing: border-box;
 
   @media (max-width: ${MobileBreakpoint}) {
-    width: 90vw;
-    height: ${(props) => (props.isOpen ? "auto" : "auto")};
+    width: 100%;
+    max-width: 500px;
     min-width: 200px;
-    aspect-ratio: 500 / ${(props) => (props.isOpen ? 550 : 350)};
   }
 `;
 
@@ -140,10 +145,10 @@ export default function Trailer() {
                 alt="Open teaser"
                 width={500}
                 height={teaserOpen ? 550 : 350}
-                onClick={() => !teaserOpen && setTeaserOpen(true)}
+                onClick={() => setTeaserOpen((open) => !open)}
                 style={{
                   zIndex: 1,
-                  cursor: teaserOpen ? "default" : "pointer",
+                  cursor: "pointer",
                 }}
                 priority
               />
@@ -178,10 +183,10 @@ export default function Trailer() {
                 alt="Open aftermovie"
                 width={500}
                 height={aftermovieOpen ? 550 : 350}
-                onClick={() => !aftermovieOpen && setAftermovieOpen(true)}
+                onClick={() => setAftermovieOpen((open) => !open)}
                 style={{
                   zIndex: 1,
-                  cursor: aftermovieOpen ? "default" : "pointer",
+                  cursor: "pointer",
                 }}
                 priority
               />
