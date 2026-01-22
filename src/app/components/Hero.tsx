@@ -115,6 +115,11 @@ const LeftCloud = styled(BaseCloud)`
   left: 2%;
   width: 180px;
   height: 100px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    top: 20%;
+    left: 3%;
+  }
 `;
 
 const RightCloud = styled(BaseCloud)`
@@ -122,6 +127,10 @@ const RightCloud = styled(BaseCloud)`
   right: 4%;
   width: 200px;
   height: 110px;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    right: 1%;
+  }
 `;
 
 const CenterCloudLeft = styled(BaseCloud)`
