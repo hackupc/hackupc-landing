@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 import {
+  MaxScreenSize,
   MobileBreakpoint,
   MobileTitleS,
   SpacingL,
@@ -49,13 +50,10 @@ const flapHidden = keyframes`
 
 const HeroContainer = styled.div`
   position: relative;
-  width: 100vw;
-  min-height: 180vh;
+  width: 100%;
+  max-width: ${MaxScreenSize};
+  margin: 0 auto;
   overflow-x: hidden;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    min-height: 100vh;
-  }
 `;
 
 const DragonWrapper = styled.div`
