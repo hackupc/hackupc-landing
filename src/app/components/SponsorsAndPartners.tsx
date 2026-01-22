@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Section } from "@/app/genericComponents/General";
+import { Section, WhiteContainer } from "@/app/genericComponents/General";
 import { lora } from "@/app/genericComponents/fonts";
 import {
   MaxScreenSize,
@@ -17,26 +17,18 @@ import {
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
 
-const SponsorsAndPartnersContainer = styled(Section)`
-  position: relative;
-  padding: ${SpacingL} 0 ${SpacingL} 0;
-  gap: ${SpacingM};
-  max-width: 100%;
+const SponsorsAndPartnersContainer = styled(WhiteContainer)`
   z-index: 0;
 `;
 
 const ContentOverlay = styled.div`
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: 0 ${SpacingM};
   padding: ${SpacingL} 0;
-  z-index: 1;
 `;
 
 export const StyledSectionTitle = styled(SectionTitle)`
   position: relative;
   color: #000000;
   width: fit-content;
-
   margin: 0 auto 45px auto;
   padding: 8px 32px 8px 32px;
   font-size: 32px;
@@ -99,11 +91,11 @@ const SponsorRow = styled.div`
 
 export default function SponsorsAndPartners() {
   return (
-    <SponsorsAndPartnersContainer id="sponsors">
-      <section>
+    <Section id="sponsors">
+      <SponsorsAndPartnersContainer>
         <ContentOverlay>
           <StyledSectionTitle className={lora.className}>
-            S P O N S O R S
+            SPONSORS
           </StyledSectionTitle>
           <SponsorsBlock>
             <SponsorRow>
@@ -148,7 +140,7 @@ export default function SponsorsAndPartners() {
           </SponsorsBlock>
 
           <StyledSectionTitle className={lora.className}>
-            P A R T N E R S
+            PARTNERS
           </StyledSectionTitle>
           <PartnersBlock>
             <SponsorRow>
@@ -196,7 +188,7 @@ export default function SponsorsAndPartners() {
             </SponsorRow>
           </PartnersBlock>
         </ContentOverlay>
-      </section>
-    </SponsorsAndPartnersContainer>
+      </SponsorsAndPartnersContainer>
+    </Section>
   );
 }

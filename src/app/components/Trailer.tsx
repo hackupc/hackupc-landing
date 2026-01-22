@@ -125,7 +125,7 @@ export default function Trailer() {
 
   return (
     <TrailerContainer>
-      <Section>
+      <Section style={{ paddingLeft: 0, paddingRight: 0 }}>
         <ConsolesDiv>
           {/* TEASER */}
           <Agrupar>
