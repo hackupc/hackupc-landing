@@ -53,21 +53,29 @@ const HeroContainer = styled.div`
   width: 100%;
   max-width: ${MaxScreenSize};
   margin: 0 auto;
-  overflow-x: hidden;
 `;
 
-const DragonWrapper = styled.div`
+const DragonViewport = styled.div`
   position: absolute;
-  z-index: 2;
   top: 10%;
-  right: 10%;
-  width: 250px;
-  height: 180px;
-  animation: ${flyRoundTrip} 40s linear infinite;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 2;
 
   @media (max-width: ${MobileBreakpoint}) {
     top: 120px;
-    right: 10px;
+  }
+`;
+
+const DragonWrapper = styled.div`
+  position: relative;
+  width: 250px;
+  height: 180px;
+  animation: ${flyRoundTrip} 40s linear infinite;
+  will-change: transform;
+
+  @media (max-width: ${MobileBreakpoint}) {
     width: 100px;
     height: 80px;
   }
@@ -75,10 +83,7 @@ const DragonWrapper = styled.div`
 
 const DragonFrame = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   img {
     object-fit: contain;
@@ -110,13 +115,6 @@ const LeftCloud = styled(BaseCloud)`
   left: 2%;
   width: 180px;
   height: 100px;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    top: 10%;
-    left: 2%;
-    width: 120px;
-    height: 70px;
-  }
 `;
 
 const RightCloud = styled(BaseCloud)`
@@ -124,13 +122,6 @@ const RightCloud = styled(BaseCloud)`
   right: 4%;
   width: 200px;
   height: 110px;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    top: 20%;
-    right: 2%;
-    width: 100px;
-    height: 60px;
-  }
 `;
 
 const CenterCloudLeft = styled(BaseCloud)`
@@ -164,7 +155,6 @@ const LogoContainer = styled.div`
 
 const DesktopLogo = styled.div`
   margin-top: 260px;
-  display: block;
 
   @media (max-width: ${MobileBreakpoint}) {
     display: none;
@@ -182,7 +172,7 @@ const MobileLogo = styled.div`
 
 const CharactersSection = styled.div`
   position: relative;
-  margin-top: 620px;
+  margin-top: 520px;
   margin-bottom: ${SpacingL};
   z-index: 3;
 
@@ -302,102 +292,93 @@ const CharacterLabel = styled.div`
 
 export default function Hero() {
   return (
-    <HeroContainer>
-      <LeftCloud>
-        <Image src="/cloud.svg" fill alt="Cloud" />
-      </LeftCloud>
+    <>
+      <DragonViewport>
+        <DragonWrapper>
+          <DragonFrame>
+            <Image src="/drac_1.svg" fill alt="Dragon Frame 1" />
+          </DragonFrame>
+          <DragonFrame>
+            <Image src="/drac_2.svg" fill alt="Dragon Frame 2" />
+          </DragonFrame>
+        </DragonWrapper>
+      </DragonViewport>
 
-      <CenterCloudLeft>
-        <Image src="/cloud.svg" fill alt="Cloud" />
-      </CenterCloudLeft>
+      <HeroContainer>
+        <LeftCloud>
+          <Image src="/cloud.svg" fill alt="Cloud" />
+        </LeftCloud>
 
-      <CenterCloudRight>
-        <Image src="/cloud.svg" fill alt="Cloud" />
-      </CenterCloudRight>
+        <CenterCloudLeft>
+          <Image src="/cloud.svg" fill alt="Cloud" />
+        </CenterCloudLeft>
 
-      <RightCloud>
-        <Image src="/cloud.svg" fill alt="Cloud" />
-      </RightCloud>
+        <CenterCloudRight>
+          <Image src="/cloud.svg" fill alt="Cloud" />
+        </CenterCloudRight>
 
-      <DragonWrapper>
-        <DragonFrame>
-          <Image src="/drac_1.svg" fill alt="Dragon Frame 1" />
-        </DragonFrame>
-        <DragonFrame>
-          <Image src="/drac_2.svg" fill alt="Dragon Frame 2" />
-        </DragonFrame>
-      </DragonWrapper>
+        <RightCloud>
+          <Image src="/cloud.svg" fill alt="Cloud" />
+        </RightCloud>
 
-      <LogoContainer>
-        <DesktopLogo>
-          <Image
-            src="/main_logo_desktop.svg"
-            width={700}
-            height={260}
-            alt="Hack UPC"
-            priority
-            style={{ maxWidth: "90vw", height: "auto" }}
-          />
-        </DesktopLogo>
-
-        <MobileLogo>
-          <Image
-            src="/main_logo.svg"
-            width={550}
-            height={250}
-            alt="Hack UPC"
-            priority
-            style={{ maxWidth: "90vw", height: "auto" }}
-          />
-        </MobileLogo>
-      </LogoContainer>
-
-      <CharactersSection>
-        <RibbonContainer>
-          <RibbonImageWrapper>
+        <LogoContainer>
+          <DesktopLogo>
             <Image
-              src="/choose_character.svg"
-              fill
-              alt="Choose Your Character"
-              style={{ objectFit: "contain" }}
+              src="/main_logo_desktop.svg"
+              width={700}
+              height={260}
+              alt="Hack UPC"
+              priority
             />
-          </RibbonImageWrapper>
-        </RibbonContainer>
+          </DesktopLogo>
 
-        <CharacterGrid>
-          <CharacterCard
-            href="https://my.hackupc.com/user/signup/hacker/"
-            target="_blank"
-          >
-            <StackedImages>
-              <ArchBg src="/arch.svg" fill alt="Arch" />
-              <CharacterImg
-                src="/cavaller.svg"
-                width={150}
-                height={150}
-                alt="Hacker"
-              />
-            </StackedImages>
-            <CharacterLabel>HACKER</CharacterLabel>
-          </CharacterCard>
+          <MobileLogo>
+            <Image
+              src="/main_logo.svg"
+              width={374}
+              height={170}
+              alt="Hack UPC"
+              priority
+            />
+          </MobileLogo>
+        </LogoContainer>
 
-          <CharacterCard
-            href="https://my.hackupc.com/user/signup/volunteer/"
-            target="_blank"
-          >
-            <StackedImages>
-              <ArchBg src="/arch.svg" fill alt="Arch" />
-              <CharacterImg
-                src="/princesa.svg"
-                width={150}
-                height={150}
-                alt="Volunteer"
-              />
-            </StackedImages>
-            <CharacterLabel>VOLUNTEER</CharacterLabel>
-          </CharacterCard>
-        </CharacterGrid>
-      </CharactersSection>
-    </HeroContainer>
+        <CharactersSection>
+          <RibbonContainer>
+            <RibbonImageWrapper>
+              <Image src="/choose_character.svg" fill alt="Choose character" />
+            </RibbonImageWrapper>
+          </RibbonContainer>
+
+          <CharacterGrid>
+            <CharacterCard href="#" target="_blank">
+              <StackedImages>
+                <ArchBg src="/arch.svg" fill alt="Arch" />
+                <CharacterImg
+                  src="/cavaller.svg"
+                  width={150}
+                  height={150}
+                  alt=""
+                />
+              </StackedImages>
+              <CharacterLabel>HACKER</CharacterLabel>
+            </CharacterCard>
+
+            <CharacterCard href="#" target="_blank">
+              <StackedImages>
+                <ArchBg src="/arch.svg" fill alt="Arch" />
+                <CharacterImg
+                  src="/princesa.svg"
+                  width={150}
+                  height={150}
+                  alt=""
+                />
+              </StackedImages>
+              <CharacterLabel>VOLUNTEER</CharacterLabel>
+            </CharacterCard>
+          </CharacterGrid>
+        </CharactersSection>
+      </HeroContainer>
+    </>
   );
 }
