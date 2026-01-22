@@ -48,7 +48,7 @@ export const EventStructuredData = () => {
               "@type": "RegisterAction",
               target: "https://my.hackupc.com/",
             },
-            image: "https://hackupc.com/ogimage.png?v=2024",
+            image: "https://hackupc.com/og_image2026.png",
             maximumAttendeeCapacity: 500,
             isAccessibleForFree: true,
             offers: {
