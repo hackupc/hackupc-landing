@@ -107,7 +107,7 @@ const QuestionBox = styled.div`
   background-color: #5b5340;
 `;
 
-const SupportImage = styled(Image) <{
+const SupportImage = styled(Image)<{
   side: "left" | "right";
   isVisible: boolean;
 }>`
