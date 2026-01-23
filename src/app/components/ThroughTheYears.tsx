@@ -13,8 +13,10 @@ import {
   SpacingXXL,
 } from "../genericComponents/tokens";
 import Link from "next/link";
+import EmblaCarousel from "../genericComponents/EmblaCarousel";
+import { EmblaOptionsType } from "embla-carousel";
 
-const GrassImageXDesktopDisplacement = "-35px";
+const GrassImageXDesktopDisplacement = "-10px";
 const GrassImageXPhoneDisplacement = "480px";
 const FlowerImageHeight = "150px";
 const FlowerImageWidthWithExtra = "100px";
@@ -31,6 +33,14 @@ const StyledSectionTitle = styled(SectionTitle)`
       display: inline; // en pantallas pequeñas, se fuerza salto de línea
     }
   }
+`;
+
+export const StyledCarouselSection = styled(Section)`
+  padding: 0;
+  padding-top: ${SpacingL};
+  margin: 0;
+  flex-direction: column;
+  max-width: 100%;
 `;
 
 export const StyledSection = styled(Section)`
@@ -201,7 +211,97 @@ const Flower2016sSection = styled(FlowersImageSection)`
   }
 `;
 
+const PREVIOUS_EDITIONS = [
+  {
+    img: "/ThroughTheYears/2016s.svg",
+    url: "https://s2016.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2016w.svg",
+    url: "https://f2016.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2017f.svg",
+    url: "https://f2017.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2017w.svg",
+    url: "https://w2017.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2018.svg",
+    url: "https://2018.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2019.svg",
+    url: "https://2019.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2020.svg",
+    url: "",
+  },
+  {
+    img: "/ThroughTheYears/2021.svg",
+    url: "https://2021.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2022.svg",
+    url: "https://2022.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2023.svg",
+    url: "https://2023.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2024.svg",
+    url: "https://2024.hackupc.com/",
+  },
+  {
+    img: "/ThroughTheYears/2025.svg",
+    url: "https://2025.hackupc.com",
+  },
+];
+
+const OPTIONS: EmblaOptionsType = {
+  align: "start",
+  loop: true,
+  slidesToScroll: 2,
+};
+
 export default function ThroughTheYears() {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () =>
+      setIsMobile(window.innerWidth <= parseInt(MobileBreakpoint));
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  if (!isMobile) {
+    return (
+      <StyledCarouselSection>
+        <StyledSectionTitle className={lora.className}>
+          THROUGHOUT{" "}
+          <span className="break">
+            <br />
+          </span>
+          THE YEARS
+        </StyledSectionTitle>
+        <SwordSection>
+          <Image
+            src="/ThroughTheYears/sword.svg"
+            alt="Sword Image"
+            width={144}
+            height={366}
+          />
+        </SwordSection>
+        <GrassImageSection />
+        <EmblaCarousel slides={PREVIOUS_EDITIONS} options={OPTIONS} />
+      </StyledCarouselSection>
+    );
+  }
   return (
     <div id="ThroughTheYears">
       <StyledSection>
