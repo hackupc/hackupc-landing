@@ -30,12 +30,23 @@ const ConsolesDiv = styled.div`
   }
 `;
 
-const StyledEnvelope = styled(Image)`
+const StyledEnvelope = styled(Image) <{ isOpen?: boolean }>`
   cursor: pointer;
   width: 100% !important;
   height: auto !important;
-  transition: filter 0.2s;
+  transition: transform 0.2s ease, filter 0.2s ease;
+
+  ${({ isOpen }) =>
+    !isOpen &&
+    `
+      &:hover {
+        transform: scale(1.03);
+        filter: brightness(1.05);
+      }
+    `}
+
   &:active {
+    transform: scale(0.98);
     filter: brightness(0.95);
   }
 `;
@@ -127,7 +138,6 @@ export default function Trailer() {
     <TrailerContainer>
       <Section style={{ paddingLeft: 0, paddingRight: 0 }}>
         <ConsolesDiv>
-          {/* TEASER */}
           <Agrupar>
             <StyledSectionTitle
               className={lora.className}
@@ -146,11 +156,9 @@ export default function Trailer() {
                 width={500}
                 height={teaserOpen ? 550 : 350}
                 onClick={() => setTeaserOpen((open) => !open)}
-                style={{
-                  zIndex: 1,
-                  cursor: "pointer",
-                }}
+                style={{ zIndex: 1 }}
                 priority
+                isOpen={teaserOpen}
               />
               {teaserOpen && (
                 <VideoOverlay>
@@ -165,7 +173,6 @@ export default function Trailer() {
             </EnvelopeContainer>
           </Agrupar>
 
-          {/* AFTERMOVIE */}
           <Agrupar>
             <StyledSectionTitle
               className={lora.className}
@@ -184,11 +191,9 @@ export default function Trailer() {
                 width={500}
                 height={aftermovieOpen ? 550 : 350}
                 onClick={() => setAftermovieOpen((open) => !open)}
-                style={{
-                  zIndex: 1,
-                  cursor: "pointer",
-                }}
+                style={{ zIndex: 1 }}
                 priority
+                isOpen={aftermovieOpen}
               />
               {aftermovieOpen && (
                 <VideoOverlay>
