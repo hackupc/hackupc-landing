@@ -107,7 +107,7 @@ const QuestionBox = styled.div`
   cursor: pointer;
 `;
 
-const SupportImage = styled(Image) <{
+const SupportImage = styled(Image)<{
   side: "left" | "right";
   isVisible: boolean;
 }>`
@@ -423,8 +423,8 @@ export default function FAQs() {
 
         <QuestionWithPadding>
           <Body style={{ color: "#FFFFFF", textAlign: "center" }}>
-            DM us on Instagram at @hackupc or, if you want to contact us via email,
-            drop us a line at{" "}
+            DM us on Instagram at @hackupc or, if you want to contact us via
+            email, drop us a line at{" "}
             <BodyLinkStyled href="mailto:contact@hackupc.com">
               contact@hackupc.com
             </BodyLinkStyled>
