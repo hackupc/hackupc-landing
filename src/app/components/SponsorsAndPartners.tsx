@@ -12,6 +12,7 @@ import {
   KiloBox,
   MegaBox,
   MiliBox,
+  SponsorLogo,
   SponsorUnrevealed,
   TeraBox,
 } from "@/app/genericComponents/Sponsors";
@@ -114,7 +115,12 @@ export default function SponsorsAndPartners() {
             </SponsorRow>
             <SponsorRow>
               <MegaBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/jetbrains.svg"}
+                  imageAlt={"jetbrains"}
+                  sponsorLink={"https://www.jetbrains.com/"}
+                  smallPadding
+                />
               </MegaBox>
               <MegaBox>
                 <SponsorUnrevealed />
@@ -132,11 +138,6 @@ export default function SponsorsAndPartners() {
                 <SponsorUnrevealed />
               </KiloBox>
             </SponsorRow>
-            <SponsorRow>
-              <MiliBox>
-                <SponsorUnrevealed />
-              </MiliBox>
-            </SponsorRow>
           </SponsorsBlock>
 
           <StyledSectionTitle className={lora.className}>
@@ -145,33 +146,67 @@ export default function SponsorsAndPartners() {
           <PartnersBlock>
             <SponsorRow>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/upc.svg"}
+                  imageAlt={"upc"}
+                  sponsorLink={"https://www.upc.edu/"}
+                  smallPadding
+                />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/fib.svg"}
+                  imageAlt={"fib"}
+                  sponsorLink={"https://www.fib.upc.edu/"}
+                />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/telecos.png"}
+                  imageAlt={"telecos"}
+                  sponsorLink={"https://telecos.upc.edu/"}
+                />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/cfis.svg"}
+                  imageAlt={"CFIS"}
+                  sponsorLink={"https://cfis.upc.edu/"}
+                />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/mlh.svg"}
+                  imageAlt={"mlh"}
+                  sponsorLink={"https://mlh.io/eu"}
+                />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/coeinf.png"}
+                  imageAlt={"coeinf"}
+                  sponsorLink={"https://enginyeriainformatica.cat/dones-coeinf/"}
+                />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
-              </MiliBox>
-              <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/tallerdeso.png"}
+                  imageAlt={"Taller De So"}
+                  sponsorLink={"https://www.instagram.com/tallerdeso"}
+                  smallPadding
+                />
               </MiliBox>
             </SponsorRow>
             <SponsorRow>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/ministerio.png"}
+                  imageAlt={"Ministerio"}
+                  sponsorLink={
+                    "https://www.www.siemens-energy.com/global/en/home.html"
+                  }
+                  smallPadding
+                />
               </MiliBox>
               <MiliBox>
                 <SponsorUnrevealed />
