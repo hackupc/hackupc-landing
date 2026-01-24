@@ -18,6 +18,12 @@ body {
   background-image: url("/maons.svg");
   background-repeat: repeat;
 
+  @media (min-width: 2300px) {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+  }
+
   @media (max-width: 640px) {
     background-image: url("/maons_mobile.svg");
   }
