@@ -363,7 +363,12 @@ export default function Hero() {
             <CharacterCard>
               <StackedImages>
                 <ArchBg src="/arch.svg" fill alt="Arch" />
-                <CharacterImg src="/cavaller.svg" width={150} height={150} alt="" />
+                <CharacterImg
+                  src="/cavaller.svg"
+                  width={150}
+                  height={150}
+                  alt=""
+                />
               </StackedImages>
               <CharacterLabel>HACKER</CharacterLabel>
               <ComingSoon data-coming-soon>Coming soon</ComingSoon>
@@ -372,7 +377,12 @@ export default function Hero() {
             <CharacterCard>
               <StackedImages>
                 <ArchBg src="/arch.svg" fill alt="Arch" />
-                <CharacterImg src="/princesa.svg" width={150} height={150} alt="" />
+                <CharacterImg
+                  src="/princesa.svg"
+                  width={150}
+                  height={150}
+                  alt=""
+                />
               </StackedImages>
               <CharacterLabel>VOLUNTEER</CharacterLabel>
               <ComingSoon data-coming-soon>Coming soon</ComingSoon>

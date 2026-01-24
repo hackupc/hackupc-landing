@@ -40,7 +40,7 @@ const StyledBodyLink = styled(BodyLink)`
   cursor: pointer;
 
   &:hover {
-    color: ${HackUPCRed}; 
+    color: ${HackUPCRed};
   }
 
   @media (max-width: ${MobileBreakpoint}) {
