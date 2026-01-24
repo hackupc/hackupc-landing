@@ -10,6 +10,8 @@ import Image from "next/image";
 import { BodyLink } from "@/app/genericComponents/Typography";
 import { useEffect, useState } from "react";
 
+const HackUPCRed = "#C72C2C";
+
 const HeaderContainer = styled.div<{ isScrolled: boolean }>`
   position: fixed;
   top: 0;
@@ -37,6 +39,10 @@ const StyledBodyLink = styled(BodyLink)`
   text-transform: uppercase;
   cursor: pointer;
 
+  &:hover {
+    color: ${HackUPCRed};
+  }
+
   @media (max-width: ${MobileBreakpoint}) {
     margin-right: 90px;
   }
@@ -52,7 +58,6 @@ export default function Header() {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
