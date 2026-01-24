@@ -75,7 +75,10 @@ export default function RootLayout({
             <img
               src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-red.svg"
               alt="Major League Hacking 2026 Hackathon Season"
-              style={{ width: "100%" }}
+              style={{
+                width: "100%",
+                filter: "brightness(0.85) saturate(0.7)",
+              }}
             />
           </a>
           <Script
