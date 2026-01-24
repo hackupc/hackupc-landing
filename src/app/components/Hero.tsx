@@ -184,13 +184,13 @@ const RibbonContainer = styled.div`
 
 const RibbonImageWrapper = styled.div`
   position: relative;
-  width: clamp(280px, 90vw, 480px);
+  width: clamp(320px, 95vw, 620px);
   aspect-ratio: 45 / 8;
 `;
 
 const CharacterGrid = styled.div`
   display: flex;
-  gap: 150px;
+  gap: 75px;
   margin-top: 100px;
   justify-content: center;
 
@@ -205,7 +205,7 @@ const CharacterCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 180px;
+  width: 220px;
   cursor: not-allowed;
   transition: transform 0.2s ease;
 
@@ -257,7 +257,7 @@ const ComingSoon = styled.div`
 const StackedImages = styled.div`
   position: relative;
   width: 100%;
-  height: 190px;
+  height: 230px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
