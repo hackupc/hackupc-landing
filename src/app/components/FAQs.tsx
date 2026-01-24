@@ -43,7 +43,6 @@ const SectionTitleStyled = styled(SectionTitle)`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-
   padding: ${SpacingM} clamp(4rem, 15vw, 12rem);
   background-image: url("/faqs.svg");
   background-repeat: no-repeat;
@@ -105,6 +104,7 @@ const QuestionBox = styled.div`
   border-radius: 10px;
   box-shadow: 2px 2px 8px black;
   background-color: #5b5340;
+  cursor: pointer;
 `;
 
 const SupportImage = styled(Image)<{
@@ -196,7 +196,6 @@ const TorchWrapper = styled.div`
   position: relative;
   width: 24px;
   height: 40px;
-  cursor: pointer;
 `;
 
 const FireGif = styled(Image)`
@@ -215,7 +214,6 @@ const TorchIcon = styled(Image)`
 `;
 
 const QuestionTitle = styled(BodyBold)`
-  cursor: pointer;
   color: #ffffff;
 `;
 
@@ -338,7 +336,7 @@ export default function FAQs() {
   const renderFaq = (faq: Faq) => (
     <Question key={faq.id}>
       <FaqWrapper>
-        <QuestionBox>
+        <QuestionBox onClick={() => toggleFaq(faq.id)}>
           <SupportImage
             src="/suport.svg"
             alt="support left"
@@ -356,7 +354,7 @@ export default function FAQs() {
             isVisible={activeFaqId === faq.id}
           />
           <QuestionTitleWrap>
-            <TorchWrapper onClick={() => toggleFaq(faq.id)}>
+            <TorchWrapper>
               {activeFaqId === faq.id && (
                 <FireGif
                   src="/fire_move.gif"
@@ -368,9 +366,7 @@ export default function FAQs() {
               )}
               <TorchIcon src="/torch.svg" alt="torch" width={24} height={24} />
             </TorchWrapper>
-            <QuestionTitle onClick={() => toggleFaq(faq.id)}>
-              {faq.question}
-            </QuestionTitle>
+            <QuestionTitle>{faq.question}</QuestionTitle>
           </QuestionTitleWrap>
         </QuestionBox>
 
