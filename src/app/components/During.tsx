@@ -3,7 +3,6 @@ import { Section } from "@/app/genericComponents/General";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
-  MaxScreenSize,
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
