@@ -26,15 +26,11 @@ const flyRoundTrip = keyframes`
   12% { transform: translateX(-15vw) translateY(-20px) scaleX(1); }
   25% { transform: translateX(-50vw) translateY(-40px) scaleX(1); }
   37% { transform: translateX(-85vw) translateY(-10px) scaleX(1); }
-  
   49.9% { transform: translateX(-120vw) translateY(60px) scaleX(1); } 
-  
   50% { transform: translateX(-120vw) translateY(60px) scaleX(-1); }
-
   62% { transform: translateX(-85vw) translateY(-10px) scaleX(-1); }
   75% { transform: translateX(-50vw) translateY(-40px) scaleX(-1); }
   87% { transform: translateX(-15vw) translateY(-20px) scaleX(-1); }
-  
   100% { transform: translateX(20vw) translateY(20px) scaleX(-1); }
 `;
 
@@ -73,7 +69,6 @@ const DragonWrapper = styled.div`
   width: 250px;
   height: 180px;
   animation: ${flyRoundTrip} 40s linear infinite;
-  will-change: transform;
 
   @media (max-width: ${MobileBreakpoint}) {
     width: 100px;
@@ -104,10 +99,6 @@ const BaseCloud = styled.div`
   opacity: 0.9;
   animation: ${float} 6s ease-in-out infinite;
   pointer-events: none;
-
-  img {
-    object-fit: contain;
-  }
 `;
 
 const LeftCloud = styled(BaseCloud)`
@@ -115,11 +106,6 @@ const LeftCloud = styled(BaseCloud)`
   left: 2%;
   width: 180px;
   height: 100px;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    top: 20%;
-    left: 3%;
-  }
 `;
 
 const RightCloud = styled(BaseCloud)`
@@ -127,10 +113,6 @@ const RightCloud = styled(BaseCloud)`
   right: 4%;
   width: 200px;
   height: 110px;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    right: 1%;
-  }
 `;
 
 const CenterCloudLeft = styled(BaseCloud)`
@@ -198,10 +180,6 @@ const RibbonContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    top: -60px;
-  }
 `;
 
 const RibbonImageWrapper = styled.div`
@@ -214,9 +192,7 @@ const CharacterGrid = styled.div`
   display: flex;
   gap: 150px;
   margin-top: 100px;
-  width: 100%;
   justify-content: center;
-  align-items: flex-end;
 
   @media (max-width: ${MobileBreakpoint}) {
     gap: 70px;
@@ -224,23 +200,58 @@ const CharacterGrid = styled.div`
   }
 `;
 
-const CharacterCard = styled.a`
+const CharacterCard = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none;
-  transition: transform 0.2s ease;
   width: 180px;
+  cursor: not-allowed;
+  transition: transform 0.2s ease;
 
   &:hover {
     transform: translateY(-5px);
+  }
+
+  &:hover div[data-coming-soon] {
+    opacity: 1;
   }
 
   @media (max-width: ${MobileBreakpoint}) {
     width: 42%;
     max-width: 150px;
   }
+`;
+
+const ComingSoon = styled.div`
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(1px);
+  color: ${Colors.Black};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ${montserrat.style.fontFamily};
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 5;
+
+  border-top-left-radius: 160px;
+  border-top-right-radius: 160px;
+
+  clip-path: polygon(
+    0% 100%,
+    100% 100%,
+    90% 12%,
+    75% 0%,
+    50% -4%,
+    25% 0%,
+    10% 12%
+  );
 `;
 
 const StackedImages = styled.div`
@@ -250,10 +261,6 @@ const StackedImages = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-
-  @media (max-width: ${MobileBreakpoint}) {
-    height: 140px;
-  }
 `;
 
 const ArchBg = styled(Image)`
@@ -268,13 +275,8 @@ const CharacterImg = styled(Image)`
   position: relative;
   z-index: 2;
   width: 70%;
-  height: auto;
   margin-bottom: 30px;
   filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
-
-  @media (max-width: ${MobileBreakpoint}) {
-    margin-bottom: 20px;
-  }
 `;
 
 const CharacterLabel = styled.div`
@@ -337,7 +339,6 @@ export default function Hero() {
               width={700}
               height={260}
               alt="Hack UPC"
-              priority
             />
           </DesktopLogo>
 
@@ -347,7 +348,6 @@ export default function Hero() {
               width={374}
               height={170}
               alt="Hack UPC"
-              priority
             />
           </MobileLogo>
         </LogoContainer>
@@ -360,30 +360,22 @@ export default function Hero() {
           </RibbonContainer>
 
           <CharacterGrid>
-            <CharacterCard href="#" target="_blank">
+            <CharacterCard>
               <StackedImages>
                 <ArchBg src="/arch.svg" fill alt="Arch" />
-                <CharacterImg
-                  src="/cavaller.svg"
-                  width={150}
-                  height={150}
-                  alt=""
-                />
+                <CharacterImg src="/cavaller.svg" width={150} height={150} alt="" />
               </StackedImages>
               <CharacterLabel>HACKER</CharacterLabel>
+              <ComingSoon data-coming-soon>Coming soon</ComingSoon>
             </CharacterCard>
 
-            <CharacterCard href="#" target="_blank">
+            <CharacterCard>
               <StackedImages>
                 <ArchBg src="/arch.svg" fill alt="Arch" />
-                <CharacterImg
-                  src="/princesa.svg"
-                  width={150}
-                  height={150}
-                  alt=""
-                />
+                <CharacterImg src="/princesa.svg" width={150} height={150} alt="" />
               </StackedImages>
               <CharacterLabel>VOLUNTEER</CharacterLabel>
+              <ComingSoon data-coming-soon>Coming soon</ComingSoon>
             </CharacterCard>
           </CharacterGrid>
         </CharactersSection>
