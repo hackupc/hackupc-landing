@@ -217,7 +217,7 @@ const PREVIOUS_EDITIONS = [
     url: "https://s2016.hackupc.com/",
   },
   {
-    img: "/ThroughTheYears/2016w.svg",
+    img: "/ThroughTheYears/2016f.svg",
     url: "https://f2016.hackupc.com/",
   },
   {
