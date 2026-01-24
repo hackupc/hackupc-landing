@@ -113,7 +113,12 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   return (
     <Embla>
       <ArrowButton className="embla__prev" onClick={scrollPrev}>
-        <img src="/ThroughTheYears/LeftArrow.svg" alt="Previous" />
+        <Image
+          src="/ThroughTheYears/LeftArrow.svg"
+          alt="Previous"
+          width="100"
+          height="75"
+        />
       </ArrowButton>
       <EmblaViewport ref={emblaRef}>
         <EmblaContainer>
@@ -143,7 +148,12 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
         </EmblaContainer>
       </EmblaViewport>
       <ArrowButton className="embla__next" onClick={scrollNext}>
-        <img src="/ThroughTheYears/RightArrow.svg" alt="Next" />
+        <Image
+          src="/ThroughTheYears/RightArrow.svg"
+          alt="Next"
+          width="100"
+          height="75"
+        />
       </ArrowButton>
     </Embla>
   );
