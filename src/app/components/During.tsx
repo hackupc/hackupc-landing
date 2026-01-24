@@ -47,18 +47,14 @@ const TheMission = styled.div`
 
 const MapImageBase = styled.img`
   display: block;
-  margin: auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  position: relative;
-  width: 100vw;
-  max-width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: ${SpacingM} auto;
 
-  @media (min-width: ${MaxScreenSize}) {
-    width: ${MaxScreenSize};
-    max-width: ${MaxScreenSize};
+  @media (min-width: ${MobileBreakpoint}) and (max-width: 1600px) {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
   }
 `;
 
