@@ -3,6 +3,7 @@ import { Section } from "@/app/genericComponents/General";
 import { Body, SectionTitle } from "@/app/genericComponents/Typography";
 import {
   MobileBreakpoint,
+  MaxScreenSize,
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
@@ -54,6 +55,11 @@ const MapImageBase = styled.img`
   max-width: 100vw;
   left: 50%;
   transform: translateX(-50%);
+
+  @media (min-width: ${MaxScreenSize}) {
+    width: ${MaxScreenSize};
+    max-width: ${MaxScreenSize};
+  }
 `;
 
 const MobileMapImage = styled(MapImageBase)`
