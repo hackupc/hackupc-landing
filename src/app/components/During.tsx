@@ -61,6 +61,12 @@ const MobileMapImage = styled(MapImageBase)`
   @media (min-width: ${MobileBreakpoint}) {
     display: none;
   }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
 `;
 
 const DesktopMapImage = styled(MapImageBase)`
