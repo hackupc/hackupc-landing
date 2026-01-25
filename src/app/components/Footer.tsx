@@ -22,8 +22,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const FooterWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   background-color: #65936d;
+  margin-top: -1px;
 `;
 
 const SocialsAndOthers = styled.div`

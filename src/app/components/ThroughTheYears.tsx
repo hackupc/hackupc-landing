@@ -422,10 +422,10 @@ export default function ThroughTheYears() {
               </Link>
             </Flower2017fSection>
             <Flower2016wSection>
-              <Link href="https://w2016.hackupc.com" passHref>
+              <Link href="https://f2016.hackupc.com" passHref>
                 <Image
-                  src="/ThroughTheYears/2016w.svg"
-                  alt="2016w Image"
+                  src="/ThroughTheYears/2016f.svg"
+                  alt="2016f Image"
                   width={75}
                   height={150}
                 />

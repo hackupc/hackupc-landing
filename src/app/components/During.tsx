@@ -14,6 +14,10 @@ const DuringContainer = styled(Section)`
   z-index: 1;
 `;
 
+const StyledSectionTitle = styled(SectionTitle)`
+  margin-bottom: 0px;
+`;
+
 const StyledBody = styled(Body)`
   display: flex;
   flex-direction: column;
@@ -61,6 +65,12 @@ const MobileMapImage = styled(MapImageBase)`
   @media (min-width: ${MobileBreakpoint}) {
     display: none;
   }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
 `;
 
 const DesktopMapImage = styled(MapImageBase)`
@@ -72,7 +82,9 @@ const DesktopMapImage = styled(MapImageBase)`
 export default function During() {
   return (
     <DuringContainer id="during">
-      <SectionTitle className={lora.className}>DURING THE EVENT</SectionTitle>
+      <StyledSectionTitle className={lora.className}>
+        DURING THE EVENT
+      </StyledSectionTitle>
       <StyledBody>
         Coding is the main part of HackUPC, but we have many more activities!
       </StyledBody>

@@ -5,6 +5,7 @@ import {
   MobileBreakpoint,
   SpacingL,
   SpacingM,
+  SpacingS,
 } from "@/app/genericComponents/tokens";
 
 interface SectionProps {
@@ -22,7 +23,7 @@ export const SectionBackground = styled.div<SectionProps>`
 `;
 
 export const Section = styled.div`
-  padding: ${SpacingL};
+  padding: ${SpacingM};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +40,7 @@ export const Section = styled.div`
 export const WhiteContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.51);
   border-radius: 10px;
-  padding: ${SpacingM};
+  padding: ${SpacingS};
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
