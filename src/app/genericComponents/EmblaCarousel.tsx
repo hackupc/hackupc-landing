@@ -9,6 +9,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
+import { MaxScreenSize } from "./tokens";
 
 type Edition = {
   url: string;
@@ -23,8 +24,9 @@ type PropType = {
 const Embla = styled.div`
   position: relative;
   display: flex;
-  max-width: 100%;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   padding-top: 20px;
   background-color: #65936d;
   --slide-spacing: 1rem;
@@ -37,6 +39,8 @@ const Embla = styled.div`
 
 const EmblaViewport = styled.div`
   overflow: hidden;
+  max-width: ${MaxScreenSize};
+  width: 100%;
 `;
 
 const EmblaContainer = styled.div`

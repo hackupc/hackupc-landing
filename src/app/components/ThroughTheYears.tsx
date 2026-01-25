@@ -11,6 +11,7 @@ import {
   SpacingS,
   SpacingXL,
   SpacingXXL,
+  MaxScreenSize,
 } from "../genericComponents/tokens";
 import Link from "next/link";
 import EmblaCarousel from "../genericComponents/EmblaCarousel";
@@ -40,12 +41,28 @@ export const StyledCarouselSection = styled(Section)`
   padding-top: ${SpacingL};
   margin: 0;
   flex-direction: column;
-  max-width: 100%;
+  width: 100%;
+  max-width: none;
+  position: relative;
+`;
+
+const ContentWrapper = styled.div`
+  max-width: ${MaxScreenSize};
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 `;
 
 export const StyledSection = styled(Section)`
   padding: 0;
   padding-top: ${SpacingL};
+  background-color: #65936d;
+  width: 100vw;
+  max-width: none;
+  height: 100%;
 `;
 
 const GrassContainer = styled.div`
@@ -53,9 +70,6 @@ const GrassContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  background-color: #65936d;
-  width: 100vw;
-  height: 100%;
 
   @media (max-width: ${MobileBreakpoint}) {
     display: flex;
@@ -282,21 +296,23 @@ export default function ThroughTheYears() {
   if (!isMobile) {
     return (
       <StyledCarouselSection>
-        <StyledSectionTitle className={lora.className}>
-          THROUGHOUT{" "}
-          <span className="break">
-            <br />
-          </span>
-          THE YEARS
-        </StyledSectionTitle>
-        <SwordSection>
-          <Image
-            src="/ThroughTheYears/sword.svg"
-            alt="Sword Image"
-            width={144}
-            height={366}
-          />
-        </SwordSection>
+        <ContentWrapper>
+          <StyledSectionTitle className={lora.className}>
+            THROUGHOUT{" "}
+            <span className="break">
+              <br />
+            </span>
+            THE YEARS
+          </StyledSectionTitle>
+          <SwordSection>
+            <Image
+              src="/ThroughTheYears/sword.svg"
+              alt="Sword Image"
+              width={144}
+              height={366}
+            />
+          </SwordSection>
+        </ContentWrapper>
         <GrassImageSection />
         <EmblaCarousel slides={PREVIOUS_EDITIONS} options={OPTIONS} />
       </StyledCarouselSection>
