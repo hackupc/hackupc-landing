@@ -84,6 +84,16 @@ const ArrowButton = styled.button`
   justify-content: center;
 `;
 
+const RightArrowButton = styled(ArrowButton)`
+  margin-left: 10px;
+  margin-right: 20px;
+`;
+
+const LeftArrowButton = styled(ArrowButton)`
+  margin-left: 20px;
+  margin-right: 10px;
+`;
+
 const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, []);
 
@@ -116,14 +126,14 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
 
   return (
     <Embla>
-      <ArrowButton className="embla__prev" onClick={scrollPrev}>
+      <LeftArrowButton className="embla__prev" onClick={scrollPrev}>
         <Image
           src="/ThroughTheYears/LeftArrow.svg"
           alt="Previous"
           width="100"
           height="75"
         />
-      </ArrowButton>
+      </LeftArrowButton>
       <EmblaViewport ref={emblaRef}>
         <EmblaContainer>
           {slides.map((edition, index) => (
@@ -151,14 +161,14 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
           ))}
         </EmblaContainer>
       </EmblaViewport>
-      <ArrowButton className="embla__next" onClick={scrollNext}>
+      <RightArrowButton className="embla__next" onClick={scrollNext}>
         <Image
           src="/ThroughTheYears/RightArrow.svg"
           alt="Next"
           width="100"
           height="75"
         />
-      </ArrowButton>
+      </RightArrowButton>
     </Embla>
   );
 };
