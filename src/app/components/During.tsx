@@ -54,7 +54,7 @@ const MapImageBase = styled.img`
   height: auto;
   margin: ${SpacingM} auto;
 
-  @media (min-width: ${MobileBreakpoint}) {
+  @media (min-width: ${MobileBreakpoint}) and (max-width: 1600px) {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
@@ -82,9 +82,7 @@ const DesktopMapImage = styled(MapImageBase)`
 export default function During() {
   return (
     <DuringContainer id="during">
-      <StyledSectionTitle className={lora.className}>
-        DURING THE EVENT
-      </StyledSectionTitle>
+      <StyledSectionTitle className={lora.className}>DURING THE EVENT</StyledSectionTitle>
       <StyledBody>
         Coding is the main part of HackUPC, but we have many more activities!
       </StyledBody>
