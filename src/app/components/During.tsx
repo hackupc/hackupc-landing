@@ -82,7 +82,9 @@ const DesktopMapImage = styled(MapImageBase)`
 export default function During() {
   return (
     <DuringContainer id="during">
-      <StyledSectionTitle className={lora.className}>DURING THE EVENT</StyledSectionTitle>
+      <StyledSectionTitle className={lora.className}>
+        DURING THE EVENT
+      </StyledSectionTitle>
       <StyledBody>
         Coding is the main part of HackUPC, but we have many more activities!
       </StyledBody>
