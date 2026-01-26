@@ -48,8 +48,12 @@ const TheMission = styled.div`
   text-align: center;
   padding: 0 150px 0 150px;
 
-  @media (max-width: 1000px) {
+  @media (min-width: ${MobileBreakpoint}) and (max-width: 1000px) {
     padding: 0 15% 0 15%;
+  }
+
+  @media (max-width: ${MobileBreakpoint}) {
+    padding: 0;
   }
 `;
 
