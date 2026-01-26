@@ -191,24 +191,12 @@ export default function SponsorsAndPartners() {
                 />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/tallerdeso.png"}
-                  imageAlt={"Taller De So"}
-                  sponsorLink={"https://www.instagram.com/tallerdeso"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
             </SponsorRow>
             <SponsorRow>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/ministerio.png"}
-                  imageAlt={"Ministerio"}
-                  sponsorLink={
-                    "https://www.www.siemens-energy.com/global/en/home.html"
-                  }
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
                 <SponsorUnrevealed />
