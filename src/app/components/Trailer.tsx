@@ -166,7 +166,7 @@ export default function Trailer() {
                 <VideoOverlay>
                   <StyledIframe
                     title="HackUPC 2026 | Trailer"
-                    src="https://youtu.be/LNyLL68ZWOE"
+                    src="https://www.youtube.com/embed/LNyLL68ZWOE?si=t57JC0fSVfxJtMOL"
                     allowFullScreen
                     allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                   />
