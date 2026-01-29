@@ -5,10 +5,12 @@ import {
   SpacingM,
   SpacingS,
 } from "@/app/genericComponents/tokens";
-import { silkscreen } from "../genericComponents/fonts";
+import { lora } from "../genericComponents/fonts";
 import Image from "next/image";
 import { BodyLink } from "@/app/genericComponents/Typography";
 import { useEffect, useState } from "react";
+
+const HackUPCRed = "#C72C2C";
 
 const HeaderContainer = styled.div<{ isScrolled: boolean }>`
   position: fixed;
@@ -18,7 +20,7 @@ const HeaderContainer = styled.div<{ isScrolled: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
+  z-index: 10;
   background-color: ${({ isScrolled }) =>
     isScrolled ? BackgroundWithOpacity : "transparent"};
 `;
@@ -28,6 +30,7 @@ const ClickableLogo = styled.div`
   align-items: center;
   gap: ${SpacingS};
   cursor: pointer, auto;
+  color: white;
 `;
 
 const StyledBodyLink = styled(BodyLink)`
@@ -35,6 +38,10 @@ const StyledBodyLink = styled(BodyLink)`
   color: white;
   text-transform: uppercase;
   cursor: pointer;
+
+  &:hover {
+    color: ${HackUPCRed};
+  }
 
   @media (max-width: ${MobileBreakpoint}) {
     margin-right: 90px;
@@ -51,7 +58,6 @@ export default function Header() {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -80,7 +86,7 @@ export default function Header() {
         href="https://my.hackupc.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className={silkscreen.className}
+        className={lora.className}
       >
         Login
       </StyledBodyLink>
