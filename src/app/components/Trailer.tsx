@@ -30,7 +30,7 @@ const ConsolesDiv = styled.div`
   }
 `;
 
-const StyledEnvelope = styled(Image) <{ isOpen?: boolean }>`
+const StyledEnvelope = styled(Image)<{ isOpen?: boolean }>`
   cursor: pointer;
   width: 100% !important;
   height: auto !important;
