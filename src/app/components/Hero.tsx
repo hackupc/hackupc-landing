@@ -174,18 +174,27 @@ const CharactersSection = styled.div`
 
 const RibbonContainer = styled.div`
   position: absolute;
-  top: -120px;
+  top: -130px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    top: -70px;
+  }
 `;
 
 const RibbonImageWrapper = styled.div`
   position: relative;
   width: clamp(320px, 95vw, 620px);
   aspect-ratio: 45 / 8;
+
+  @media (max-width: ${MobileBreakpoint}) {
+    width: clamp(360px, 100vw, 620px);
+    aspect-ratio: 45 / 6;
+  }
 `;
 
 const CharacterGrid = styled.div`
@@ -195,7 +204,7 @@ const CharacterGrid = styled.div`
   justify-content: center;
 
   @media (max-width: ${MobileBreakpoint}) {
-    gap: 70px;
+    gap: 40px;
     margin-top: 220px;
   }
 `;
@@ -218,8 +227,8 @@ const CharacterCard = styled.div`
   }
 
   @media (max-width: ${MobileBreakpoint}) {
-    width: 42%;
-    max-width: 150px;
+    width: 150px;
+    flex: 0 0 150px;
   }
 `;
 
@@ -252,12 +261,22 @@ const ComingSoon = styled.div`
     25% 0%,
     10% 12%
   );
+
+  @media (max-width: ${MobileBreakpoint}) {
+    inset: auto 0 0 0;
+    height: 85%;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
 `;
 
 const StackedImages = styled.div`
   position: relative;
   width: 100%;
   height: 230px;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -275,6 +294,7 @@ const CharacterImg = styled(Image)`
   position: relative;
   z-index: 2;
   width: 70%;
+  height: auto;
   margin-bottom: 30px;
   filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
 `;

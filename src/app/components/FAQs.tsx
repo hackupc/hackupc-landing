@@ -76,6 +76,7 @@ const ColumnsQuestions = styled.div`
 
   @media (max-width: ${MobileBreakpoint}) {
     width: 100%;
+    gap: 0px;
   }
 `;
 
@@ -84,6 +85,12 @@ const QuestionsBlock = styled.div`
   flex-direction: column;
   padding: ${SpacingS};
   gap: ${SpacingS};
+`;
+
+const ApplicationQuestionsBlock = styled(QuestionsBlock)`
+  @media (max-width: ${MobileBreakpoint}) {
+    padding-top: 0px;
+  }
 `;
 
 const Question = styled.div`
@@ -404,10 +411,10 @@ export default function FAQs() {
         </ColumnsQuestions>
 
         <ColumnsQuestions>
-          <QuestionsBlock>
+          <ApplicationQuestionsBlock>
             <BlockTitleStyled>Applications</BlockTitleStyled>
             {applications_faqs.map(renderFaq)}
-          </QuestionsBlock>
+          </ApplicationQuestionsBlock>
 
           <QuestionsBlock>
             <BlockTitleStyled>Teams</BlockTitleStyled>

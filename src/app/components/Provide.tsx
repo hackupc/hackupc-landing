@@ -34,7 +34,7 @@ const ProvideHeader = styled(SectionTitle)`
 
 const ProvideWrapper = styled.div`
   display: flex;
-  gap: calc(${SpacingM} + 10px);
+  gap: calc(${SpacingM} + 30px);
   justify-content: center;
   align-items: center;
   max-width: 1200px;
@@ -51,11 +51,13 @@ const ProvideWrapper = styled.div`
 const ProvideCard = styled.div`
   position: relative;
   width: 100%;
-  max-width: 360px;
+  max-width: 320px;
+  flex: 1 1 320px;
 
   @media (max-width: ${ProvideBreakpoint}) {
     width: 120%;
     max-width: 340px;
+    flex: none;
   }
 `;
 
@@ -66,22 +68,53 @@ const ProvideBackground = styled.img`
   margin-left: -2.5%;
 `;
 
-const ProvideContent = styled.div`
+const ProvideContentBase = styled.div`
   position: absolute;
-  top: 10%;
-  left: 7%;
-  right: 7%;
-  bottom: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 25px;
   text-align: center;
+  padding: 0 25px;
+`;
+
+const ProvideContentFood = styled(ProvideContentBase)`
+  top: 18%;
+  left: 7%;
+  right: 7%;
+  bottom: 20%;
 
   @media (max-width: ${ProvideBreakpoint}) {
-    top: 6%;
+    top: 15%;
     bottom: 18%;
+    padding: 0 28px;
+  }
+`;
+
+const ProvideContentSleeping = styled(ProvideContentBase)`
+  top: 5%;
+  left: 7%;
+  right: 7%;
+  bottom: 20%;
+  padding: 0 25px;
+
+  @media (max-width: ${ProvideBreakpoint}) {
+    top: 5%;
+    bottom: 25%;
+    padding: 0 28px;
+  }
+`;
+
+const ProvideContentSponsors = styled(ProvideContentBase)`
+  top: 18%;
+  left: 5%;
+  right: 5%;
+  bottom: 20%;
+  padding: 0 25px;
+
+  @media (max-width: ${ProvideBreakpoint}) {
+    top: 8%;
+    bottom: 15%;
     padding: 0 28px;
   }
 `;
@@ -137,26 +170,26 @@ export default function Provide() {
         <ProvideWrapper>
           <ProvideCard>
             <ProvideBackground src="/Provide/food.svg" alt="Food" />
-            <ProvideContent>
+            <ProvideContentFood>
               <ProvideBody className={montserrat.className}>
                 We've got you covered, we even have midnight snacks. Throughout
                 the event there will be snacks, drinks, and coffee to revive
                 your energy.
               </ProvideBody>
-            </ProvideContent>
+            </ProvideContentFood>
             <ProvideLabel className={montserrat.className}>Food</ProvideLabel>
           </ProvideCard>
 
           <ProvideCard>
             <ProvideBackground src="/Provide/sleeping.svg" alt="Sleeping" />
-            <ProvideContent>
+            <ProvideContentSleeping>
               <ProvideBody className={montserrat.className}>
                 We will provide some air mattresses both nights so you may
                 descend into a deep slumber. While supplies last! Check out the{" "}
                 <BodyLinkStyled href={"#faqs"}>FAQs</BodyLinkStyled> for more
                 info.
               </ProvideBody>
-            </ProvideContent>
+            </ProvideContentSleeping>
             <ProvideLabel className={montserrat.className} $isSleeping>
               Sleeping
             </ProvideLabel>
@@ -164,13 +197,13 @@ export default function Provide() {
 
           <ProvideCard>
             <ProvideBackground src="/Provide/sponsors.svg" alt="Sponsors" />
-            <ProvideContent>
+            <ProvideContentSponsors>
               <ProvideBody className={montserrat.className}>
                 You can also visit our sponsors' stands or meet them remotely!
                 They'll be available during the day and would love to talk to
                 you! (You might get some swag as well)
               </ProvideBody>
-            </ProvideContent>
+            </ProvideContentSponsors>
             <ProvideLabel className={montserrat.className} $isSponsors>
               Sponsors
             </ProvideLabel>
