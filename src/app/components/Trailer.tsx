@@ -30,7 +30,7 @@ const ConsolesDiv = styled.div`
   }
 `;
 
-const StyledEnvelope = styled(Image)<{ isOpen?: boolean }>`
+const StyledEnvelope = styled(Image) <{ isOpen?: boolean }>`
   cursor: pointer;
   width: 100% !important;
   height: auto !important;
@@ -165,8 +165,8 @@ export default function Trailer() {
               {teaserOpen && (
                 <VideoOverlay>
                   <StyledIframe
-                    title="HackUPC 2025 | Trailer"
-                    src="https://www.youtube.com/embed/uSQFmtX0wQs?si=XFjHjtCiMloTOm_T&autoplay=1"
+                    title="HackUPC 2026 | Trailer"
+                    src="https://youtu.be/LNyLL68ZWOE"
                     allowFullScreen
                     allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                   />
