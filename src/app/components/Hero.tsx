@@ -209,66 +209,21 @@ const CharacterGrid = styled.div`
   }
 `;
 
-const CharacterCard = styled.div`
+const CharacterCard = styled.a`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 220px;
-  cursor: not-allowed;
   transition: transform 0.2s ease;
 
   &:hover {
     transform: translateY(-5px);
   }
 
-  &:hover div[data-coming-soon] {
-    opacity: 1;
-  }
-
   @media (max-width: ${MobileBreakpoint}) {
     width: 150px;
     flex: 0 0 150px;
-  }
-`;
-
-const ComingSoon = styled.div`
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(1px);
-  color: ${Colors.Black};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: ${montserrat.style.fontFamily};
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  z-index: 5;
-
-  border-top-left-radius: 160px;
-  border-top-right-radius: 160px;
-
-  clip-path: polygon(
-    0% 100%,
-    100% 100%,
-    90% 12%,
-    75% 0%,
-    50% -4%,
-    25% 0%,
-    10% 12%
-  );
-
-  @media (max-width: ${MobileBreakpoint}) {
-    inset: auto 0 0 0;
-    height: 85%;
-    border-top-left-radius: 60px;
-    border-top-right-radius: 60px;
-    letter-spacing: 1px;
-    font-size: 14px;
   }
 `;
 
@@ -380,7 +335,10 @@ export default function Hero() {
           </RibbonContainer>
 
           <CharacterGrid>
-            <CharacterCard>
+            <CharacterCard
+              href="https://my.hackupc.com/user/signup/hacker/"
+              target="_blank"
+            >
               <StackedImages>
                 <ArchBg src="/arch.svg" fill alt="Arch" />
                 <CharacterImg
@@ -391,10 +349,12 @@ export default function Hero() {
                 />
               </StackedImages>
               <CharacterLabel>HACKER</CharacterLabel>
-              <ComingSoon data-coming-soon>Coming soon</ComingSoon>
             </CharacterCard>
 
-            <CharacterCard>
+            <CharacterCard
+              href="https://my.hackupc.com/user/signup/volunteer/"
+              target="_blank"
+            >
               <StackedImages>
                 <ArchBg src="/arch.svg" fill alt="Arch" />
                 <CharacterImg
@@ -405,7 +365,6 @@ export default function Hero() {
                 />
               </StackedImages>
               <CharacterLabel>VOLUNTEER</CharacterLabel>
-              <ComingSoon data-coming-soon>Coming soon</ComingSoon>
             </CharacterCard>
           </CharacterGrid>
         </CharactersSection>
