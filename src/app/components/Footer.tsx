@@ -142,7 +142,7 @@ export default function Footer() {
           </SocialsBlock>
           <Body>
             <BodyLinkYellow
-              href="https://hacknights.dev/"
+              href="https://hacknights.hackersatupc.org/"
               target="_blank"
               rel="noreferrer"
             >
