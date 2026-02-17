@@ -195,7 +195,7 @@ export default function SponsorsAndPartners() {
                   imageSrc={"/Partners/nissin.png"}
                   imageAlt={"nissin"}
                   sponsorLink={"https://www.nissinfoods.com/"}
-                    />
+                />
               </MiliBox>
             </SponsorRow>
             <SponsorRow>
