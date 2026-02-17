@@ -107,12 +107,7 @@ export default function SponsorsAndPartners() {
 
             <SponsorRow>
               <GigaBox>
-                <SponsorLogo
-                  imageSrc={"/Sponsors/bending_spoons.svg"}
-                  imageAlt={"bendingspoons"}
-                  sponsorLink={"https://www.bendingspoons.com/"}
-                  smallPadding
-                />
+                <SponsorUnrevealed />
               </GigaBox>
               <GigaBox>
                 <SponsorUnrevealed />
@@ -160,7 +155,7 @@ export default function SponsorsAndPartners() {
               </MiliBox>
               <MiliBox>
                 <SponsorLogo
-                  imageSrc={"/Partners/fib.svg"}
+                  imageSrc={"/Partners/fib50.svg"}
                   imageAlt={"fib"}
                   sponsorLink={"https://www.fib.upc.edu/"}
                 />
@@ -196,7 +191,11 @@ export default function SponsorsAndPartners() {
                 />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/nissin.png"}
+                  imageAlt={"nissin"}
+                  sponsorLink={"https://www.nissinfoods.com/"}
+                    />
               </MiliBox>
             </SponsorRow>
             <SponsorRow>
