@@ -107,7 +107,12 @@ export default function SponsorsAndPartners() {
 
             <SponsorRow>
               <GigaBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/bending_spoons.svg"}
+                  imageAlt={"bendingspoons"}
+                  sponsorLink={"https://www.bendingspoons.com/"}
+                  smallPadding
+                />
               </GigaBox>
               <GigaBox>
                 <SponsorUnrevealed />
