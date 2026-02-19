@@ -160,7 +160,7 @@ export default function SponsorsAndPartners() {
               </MiliBox>
               <MiliBox>
                 <SponsorLogo
-                  imageSrc={"/Partners/fib.svg"}
+                  imageSrc={"/Partners/fib50.svg"}
                   imageAlt={"fib"}
                   sponsorLink={"https://www.fib.upc.edu/"}
                 />
@@ -196,7 +196,11 @@ export default function SponsorsAndPartners() {
                 />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/nissin.png"}
+                  imageAlt={"nissin"}
+                  sponsorLink={"https://www.nissinfoods.com/"}
+                />
               </MiliBox>
             </SponsorRow>
             <SponsorRow>
