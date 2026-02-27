@@ -219,7 +219,11 @@ export default function SponsorsAndPartners() {
                 />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/club_mate.png"}
+                  imageAlt={"clubmate"}
+                  sponsorLink={"https://www.clubmate.es/"}
+                />
               </MiliBox>
               <MiliBox>
                 <SponsorUnrevealed />
