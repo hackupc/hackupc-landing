@@ -202,7 +202,7 @@ export const travel_faqs: FAQs[] = [
           "To be eligible for Travel Reimbursement, participants must meet all of the following criteria:",
         options: [
           "<b>Confirmation & Receipts</b>:<br/>• After confirming your spot at HackUPC, you must upload your travel receipts (plane, train, or bus) before the start of the event.<br/>• Receipts must be in your name and include price breakdown, purchase date, and travel dates.",
-          "<b>Travel Dates</b>:<br/>• Travel dates must be within one week before or one week after the event, i.e. from April 21st to May 5th (both included).",
+          "<b>Travel Dates</b>:<br/>• Travel dates must be within one week before or one week after the event, i.e. from April 17th to May 1st (both included).",
           "<b>Reimbursement Amount</b>:<br/>• The reimbursed amount will be the minimum between 50% of your travel expenses and the maximum amount assigned to your destination, determined by the organizing team based on budget and demand.",
           "<b>Project Requirements</b>:<br/>• You must demo a valid project to the HackUPC judges (presenting only to sponsors is not sufficient).<br/>• The project must follow all HackUPC rules.<br/>• Your Devpost username must reasonably resemble your real name.<br/>• The GitHub repository and Devpost completeness will be evaluated (e.g. regular commits, all required Devpost sections).",
           "<b>Attendance</b>:<br/>• You must be able to demonstrate active participation and minimum attendance at the event. Participation in meals, workshops, activities, and other official events may be considered.",
