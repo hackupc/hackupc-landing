@@ -107,7 +107,12 @@ export default function SponsorsAndPartners() {
 
             <SponsorRow>
               <GigaBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/HP.png"}
+                  imageAlt={"HP"}
+                  sponsorLink={"https://www.hp.com/"}
+                  smallPadding
+                />
               </GigaBox>
               <GigaBox>
                 <SponsorUnrevealed />
@@ -123,10 +128,20 @@ export default function SponsorsAndPartners() {
                 />
               </MegaBox>
               <MegaBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/Smadex.svg"}
+                  imageAlt={"Smadex"}
+                  sponsorLink={"https://www.smadex.com/"}
+                  smallPadding
+                />
               </MegaBox>
               <MegaBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/Skyscanner.png"}
+                  imageAlt={"Skyscanner"}
+                  sponsorLink={"https://www.skyscanner.com/"}
+                  smallPadding
+                />
               </MegaBox>
               <MegaBox>
                 <SponsorUnrevealed />
@@ -135,7 +150,12 @@ export default function SponsorsAndPartners() {
 
             <SponsorRow>
               <KiloBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/Airbus.png"}
+                  imageAlt={"Airbus"}
+                  sponsorLink={"https://www.airbus.com/"}
+                  smallPadding
+                />
               </KiloBox>
             </SponsorRow>
           </SponsorsBlock>
