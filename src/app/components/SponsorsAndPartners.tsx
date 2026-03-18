@@ -115,7 +115,12 @@ export default function SponsorsAndPartners() {
                 />
               </GigaBox>
               <GigaBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/HP.png"}
+                  imageAlt={"HP"}
+                  sponsorLink={"https://www.hp.com/"}
+                  smallPadding
+                />
               </GigaBox>
             </SponsorRow>
             <SponsorRow>
@@ -128,10 +133,20 @@ export default function SponsorsAndPartners() {
                 />
               </MegaBox>
               <MegaBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/Smadex.svg"}
+                  imageAlt={"Smadex"}
+                  sponsorLink={"https://www.smadex.com/"}
+                  smallPadding
+                />
               </MegaBox>
               <MegaBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/Skyscanner.png"}
+                  imageAlt={"Skyscanner"}
+                  sponsorLink={"https://www.skyscanner.com/"}
+                  smallPadding
+                />
               </MegaBox>
               <MegaBox>
                 <SponsorUnrevealed />
@@ -140,7 +155,12 @@ export default function SponsorsAndPartners() {
 
             <SponsorRow>
               <KiloBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/Airbus.png"}
+                  imageAlt={"Airbus"}
+                  sponsorLink={"https://www.airbus.com/"}
+                  smallPadding
+                />
               </KiloBox>
             </SponsorRow>
           </SponsorsBlock>
@@ -160,7 +180,7 @@ export default function SponsorsAndPartners() {
               </MiliBox>
               <MiliBox>
                 <SponsorLogo
-                  imageSrc={"/Partners/fib50.svg"}
+                  imageSrc={"/Partners/fib.svg"}
                   imageAlt={"fib"}
                   sponsorLink={"https://www.fib.upc.edu/"}
                 />
@@ -196,34 +216,18 @@ export default function SponsorsAndPartners() {
                 />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/nissin.png"}
-                  imageAlt={"nissin"}
-                  sponsorLink={"https://www.nissinfoods.com/"}
-                />
+                <SponsorUnrevealed />
               </MiliBox>
             </SponsorRow>
             <SponsorRow>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/granini.png"}
-                  imageAlt={"granini"}
-                  sponsorLink={"https://www.granini.com/"}
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/nestle.svg"}
-                  imageAlt={"nestle"}
-                  sponsorLink={"https://www.nestle.com/"}
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/club_mate.png"}
-                  imageAlt={"clubmate"}
-                  sponsorLink={"https://www.clubmate.es/"}
-                />
+                <SponsorUnrevealed />
               </MiliBox>
               <MiliBox>
                 <SponsorUnrevealed />
