@@ -180,7 +180,7 @@ export default function SponsorsAndPartners() {
               </MiliBox>
               <MiliBox>
                 <SponsorLogo
-                  imageSrc={"/Partners/fib.svg"}
+                  imageSrc={"/Partners/fib50.svg"}
                   imageAlt={"fib"}
                   sponsorLink={"https://www.fib.upc.edu/"}
                 />
@@ -216,18 +216,34 @@ export default function SponsorsAndPartners() {
                 />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/granini.png"}
+                  imageAlt={"granini"}
+                  sponsorLink={"https://www.granini.com/"}
+                />
               </MiliBox>
             </SponsorRow>
             <SponsorRow>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/nissin.png"}
+                  imageAlt={"nissin"}
+                  sponsorLink={"https://www.nissinfoods.com/"}
+                />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/club_mate.png"}
+                  imageAlt={"club_mate"}
+                  sponsorLink={"https://www.club-mate.com/"}
+                />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/nestle.svg"}
+                  imageAlt={"nestle"}
+                  sponsorLink={"https://www.nestle.com/"}
+                />
               </MiliBox>
               <MiliBox>
                 <SponsorUnrevealed />
