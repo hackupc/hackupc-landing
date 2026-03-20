@@ -240,7 +240,7 @@ export default function SponsorsAndPartners() {
               </MiliBox>
               <MiliBox>
                 <SponsorLogo
-                  imageSrc={"/Partners/nestle.png"}
+                  imageSrc={"/Partners/nestle.svg"}
                   imageAlt={"nestle"}
                   sponsorLink={"https://www.nestle.com/"}
                 />
