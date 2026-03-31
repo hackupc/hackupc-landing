@@ -246,10 +246,27 @@ export default function SponsorsAndPartners() {
                 />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/daim.png"}
+                  imageAlt={"daim"}
+                  sponsorLink={
+                    "https://bakerandbaker.eu/es-es/products/our-licensed-brands/daim"
+                  }
+                />
               </MiliBox>
               <MiliBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Partners/chupachups.png"}
+                  imageAlt={"chupachups"}
+                  sponsorLink={"https://www.chupachups.es/"}
+                />
+              </MiliBox>
+              <MiliBox>
+                <SponsorLogo
+                  imageSrc={"/Partners/caprice.png"}
+                  imageAlt={"caprice"}
+                  sponsorLink={"https://papadopoulou.gr/en/brand/caprice/"}
+                />
               </MiliBox>
             </SponsorRow>
           </PartnersBlock>
