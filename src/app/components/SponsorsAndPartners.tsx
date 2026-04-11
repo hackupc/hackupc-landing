@@ -14,7 +14,6 @@ import {
   MiliBox,
   SponsorLogo,
   SponsorUnrevealed,
-  TeraBox,
 } from "@/app/genericComponents/Sponsors";
 import { SectionTitle } from "../genericComponents/Typography";
 
@@ -100,12 +99,6 @@ export default function SponsorsAndPartners() {
           </StyledSectionTitle>
           <SponsorsBlock>
             <SponsorRow>
-              <TeraBox>
-                <SponsorUnrevealed />
-              </TeraBox>
-            </SponsorRow>
-
-            <SponsorRow>
               <GigaBox>
                 <SponsorLogo
                   imageSrc={"/Sponsors/bending_spoons.svg"}
@@ -119,6 +112,22 @@ export default function SponsorsAndPartners() {
                   imageSrc={"/Sponsors/HP.png"}
                   imageAlt={"HP"}
                   sponsorLink={"https://www.hp.com/"}
+                  smallPadding
+                />
+              </GigaBox>
+              <GigaBox>
+                <SponsorLogo
+                  imageSrc={"/Sponsors/pears.svg"}
+                  imageAlt={"pears"}
+                  sponsorLink={"https://pears.com"}
+                  smallPadding
+                />
+              </GigaBox>
+              <GigaBox>
+                <SponsorLogo
+                  imageSrc={"/Sponsors/mecalux.svg"}
+                  imageAlt={"mecalux"}
+                  sponsorLink={"https://www.mecalux.es"}
                   smallPadding
                 />
               </GigaBox>
