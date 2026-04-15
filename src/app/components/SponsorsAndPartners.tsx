@@ -165,7 +165,7 @@ export default function SponsorsAndPartners() {
             <SponsorRow>
               <KiloBox>
                 <SponsorLogo
-                  imageSrc={"/Sponsors/Airbus.png"}
+                  imageSrc={"/Sponsors/airbus.svg"}
                   imageAlt={"Airbus"}
                   sponsorLink={"https://www.airbus.com/"}
                   smallPadding
