@@ -45,11 +45,13 @@ const LiveDotAnimated = styled.div`
   width: ${SpacingS};
 `;
 
-const Anchor = styled.a`
+{
+  /*const Anchor = styled.a`
   color: ${Secondary500};
   text-decoration: underline;
   cursor: pointer;
-`;
+`;*/
+}
 
 const StyledButton = styled.div`
   background-color: #a3c9a8;
@@ -99,7 +101,7 @@ export default function Live() {
             In our live page you will find it out! It will be available before
             HackUPC so that you can prepare everything you might need! And of
             course it will be the page you visit to check out all the activities
-            happening during the event. 
+            happening during the event.
             {/*You can also check our{" "}
             <Anchor href="https://2025-live.hackupc.com/" target="_blank">
               {" "}
