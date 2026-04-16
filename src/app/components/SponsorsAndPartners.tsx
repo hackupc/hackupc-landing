@@ -131,6 +131,14 @@ export default function SponsorsAndPartners() {
                   smallPadding
                 />
               </GigaBox>
+              <GigaBox>
+                <SponsorLogo
+                  imageSrc={"/Sponsors/inditexTech.png"}
+                  imageAlt={"inditexTech"}
+                  sponsorLink={"https://www.inditexcareers.com"}
+                  smallPadding
+                />
+              </GigaBox>
             </SponsorRow>
             <SponsorRow>
               <MegaBox>
@@ -158,7 +166,12 @@ export default function SponsorsAndPartners() {
                 />
               </MegaBox>
               <MegaBox>
-                <SponsorUnrevealed />
+                <SponsorLogo
+                  imageSrc={"/Sponsors/qualcomm.png"}
+                  imageAlt={"Qualcomm"}
+                  sponsorLink={"https://www.qualcomm.com/"}
+                  smallPadding
+                />
               </MegaBox>
             </SponsorRow>
 
