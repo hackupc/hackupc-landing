@@ -117,7 +117,7 @@ export default function Live() {
           rel="noreferrer"
           className={lora.className}
         >
-          LIVE
+          CHECK LIVE
         </StyledButton>
       </WhiteContainer>
     </Section>
