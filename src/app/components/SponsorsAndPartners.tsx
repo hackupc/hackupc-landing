@@ -222,6 +222,13 @@ export default function SponsorsAndPartners() {
               </MiliBox>
               <MiliBox>
                 <SponsorLogo
+                  imageSrc={"/Partners/thinkupc.svg"}
+                  imageAlt={"thinkupc"}
+                  sponsorLink={"https://www.thinkupc.com/en/"}
+                />
+              </MiliBox>
+              <MiliBox>
+                <SponsorLogo
                   imageSrc={"/Partners/mlh.svg"}
                   imageAlt={"mlh"}
                   sponsorLink={"https://mlh.io/eu"}
@@ -287,13 +294,6 @@ export default function SponsorsAndPartners() {
                   imageSrc={"/Partners/caprice.png"}
                   imageAlt={"caprice"}
                   sponsorLink={"https://papadopoulou.gr/en/brand/caprice/"}
-                />
-              </MiliBox>
-              <MiliBox>
-                <SponsorLogo
-                  imageSrc={"/Partners/thinkupc.svg"}
-                  imageAlt={"thinkupc"}
-                  sponsorLink={"https://www.thinkupc.com/en/"}
                 />
               </MiliBox>
             </SponsorRow>
