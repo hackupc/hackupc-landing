@@ -184,6 +184,15 @@ export default function SponsorsAndPartners() {
                 />
               </KiloBox>
             </SponsorRow>
+            <SponsorRow>
+              <MiliBox>
+                <SponsorLogo
+                  imageSrc={"/Partners/thinkupc.svg"}
+                  imageAlt={"thinkupc"}
+                  sponsorLink={"https://www.thinkupc.com/en/"}
+                />
+              </MiliBox>
+            </SponsorRow>
           </SponsorsBlock>
 
           <StyledSectionTitle className={lora.className}>
@@ -222,13 +231,6 @@ export default function SponsorsAndPartners() {
               </MiliBox>
               <MiliBox>
                 <SponsorLogo
-                  imageSrc={"/Partners/thinkupc.svg"}
-                  imageAlt={"thinkupc"}
-                  sponsorLink={"https://www.thinkupc.com/en/"}
-                />
-              </MiliBox>
-              <MiliBox>
-                <SponsorLogo
                   imageSrc={"/Partners/mlh.svg"}
                   imageAlt={"mlh"}
                   sponsorLink={"https://mlh.io/eu"}
@@ -243,8 +245,6 @@ export default function SponsorsAndPartners() {
                   }
                 />
               </MiliBox>
-            </SponsorRow>
-            <SponsorRow>
               <MiliBox>
                 <SponsorLogo
                   imageSrc={"/Partners/granini.png"}
@@ -252,6 +252,8 @@ export default function SponsorsAndPartners() {
                   sponsorLink={"https://www.granini.com/"}
                 />
               </MiliBox>
+            </SponsorRow>
+            <SponsorRow>
               <MiliBox>
                 <SponsorLogo
                   imageSrc={"/Partners/nissin.png"}
