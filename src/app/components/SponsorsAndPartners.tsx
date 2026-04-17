@@ -243,6 +243,8 @@ export default function SponsorsAndPartners() {
                   }
                 />
               </MiliBox>
+            </SponsorRow>
+            <SponsorRow>
               <MiliBox>
                 <SponsorLogo
                   imageSrc={"/Partners/granini.png"}
@@ -250,8 +252,6 @@ export default function SponsorsAndPartners() {
                   sponsorLink={"https://www.granini.com/"}
                 />
               </MiliBox>
-            </SponsorRow>
-            <SponsorRow>
               <MiliBox>
                 <SponsorLogo
                   imageSrc={"/Partners/nissin.png"}
