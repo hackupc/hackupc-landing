@@ -289,6 +289,13 @@ export default function SponsorsAndPartners() {
                   sponsorLink={"https://papadopoulou.gr/en/brand/caprice/"}
                 />
               </MiliBox>
+              <MiliBox>
+                <SponsorLogo
+                  imageSrc={"/Partners/thinkupc.svg"}
+                  imageAlt={"thinkupc"}
+                  sponsorLink={"https://www.thinkupc.com/en/"}
+                />
+              </MiliBox>
             </SponsorRow>
           </PartnersBlock>
         </ContentOverlay>
