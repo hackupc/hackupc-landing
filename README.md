@@ -1,7 +1,7 @@
 # HackUPC Landing Page
 
 [![NPM 10.2.5](https://img.shields.io/badge/npm-10.2.5-blue.svg)](https://www.npmjs.com/package/npm/v/10.2.5)
-[![Node.js 20.10.0](https://img.shields.io/badge/node-20.10.0-green.svg)](https://nodejs.org/en/download/releases/)
+[![Node.js 22.23.4](https://img.shields.io/badge/node-22.23.4-green.svg)](https://nodejs.org/en/download/releases/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5865fbbe-4f1a-41b2-ac97-b787dd7feb3c/deploy-status)](https://app.netlify.com/sites/roaring-valkyrie-eb612f/deploys)
 [![](https://github.com/hackupc/new_hackupc/actions/workflows/hackupc_ci.yml/badge.svg)](https://github.com/hackupc/new_hackupc/actions/workflows/hackupc_ci.yml)
 
@@ -13,7 +13,7 @@
 
 ### Prerequisites
 
-- Install [Node.js](https://nodejs.org/en/download/) (v20.10.0 or newer) in your computer.
+- Install [Node.js](https://nodejs.org/en/download/) (v22.23.4 or newer) in your computer.
 - Have a text editor or IDE installed, like [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/).
 
 ### Installation
