@@ -38,3 +38,6 @@ jobs:
 
       - name: 🦄 Check lint (eslint)
         run: pnpm check-lint
+
+      - name: 🏗 Build (static export)
+        run: pnpm build
