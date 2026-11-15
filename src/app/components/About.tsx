@@ -101,7 +101,7 @@ export default function About() {
                   alt="Dragon"
                 />
               </ImgSection>
-              <BlockTitle color={"#000000"} haveMargin>
+              <BlockTitle color={"#000000"} $haveMargin>
                 What is a{" "}
                 <span style={{ color: "#B85353", fontWeight: "bold" }}>
                   hackathon
@@ -131,7 +131,7 @@ export default function About() {
                   alt="HackUPC Logo"
                 />
               </ImgSection>
-              <BlockTitle color={"#000000"} haveMargin>
+              <BlockTitle color={"#000000"} $haveMargin>
                 About{" "}
                 <span style={{ color: "#75AA7E", fontWeight: "bold" }}>
                   HackUPC

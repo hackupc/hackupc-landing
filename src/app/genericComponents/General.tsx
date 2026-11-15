@@ -9,16 +9,16 @@ import {
 } from "@/app/genericComponents/tokens";
 
 interface SectionProps {
-  haveBackground?: boolean;
-  specialBackground?: string;
+  $haveBackground?: boolean;
+  $specialBackground?: string;
 }
 
 export const SectionBackground = styled.div<SectionProps>`
   background-color: ${(props) =>
-    props.haveBackground
+    props.$haveBackground
       ? BackgroundWithOpacity
-      : props.specialBackground
-        ? props.specialBackground
+      : props.$specialBackground
+        ? props.$specialBackground
         : "transparent"};
 `;
 

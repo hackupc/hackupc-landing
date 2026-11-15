@@ -61,11 +61,11 @@ const BoxContainerUnrevealed = styled.div`
   cursor: help;
 `;
 
-const SponsorImage = styled.img<{ smallPadding?: boolean }>`
+const SponsorImage = styled.img<{ $smallPadding?: boolean }>`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: ${(props) => (props.smallPadding ? SpacingXS : SpacingS)};
+  padding: ${(props) => (props.$smallPadding ? SpacingXS : SpacingS)};
 `;
 
 const HoverText = styled(BodyBold)`
@@ -99,7 +99,11 @@ export function SponsorLogo(props: SponsorLogoProps) {
 
   return (
     <BoxContainer href={sponsorLink} target="_blank" rel="noopener noreferrer">
-      <SponsorImage src={imageSrc} alt={imageAlt} smallPadding={smallPadding} />
+      <SponsorImage
+        src={imageSrc}
+        alt={imageAlt}
+        $smallPadding={smallPadding}
+      />
       <HoverText>Go to website</HoverText>
     </BoxContainer>
   );
