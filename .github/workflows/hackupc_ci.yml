@@ -19,18 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🏗 Setup repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: 🏗 Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version-file: .nvmrc
+          cache: pnpm
 
       - name: 📦 Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: 🦄 Check format (prettier)
-        run: npm run check-format
+        run: pnpm check-format
 
       - name: 🦄 Check lint (eslint)
-        run: npm run check-lint
+        run: pnpm check-lint
