@@ -68,3 +68,12 @@ pnpm check-format
 ## Deployment
 
 The app is being deployed in [Netlify](https://www.netlify.com/), the deployment is automatic when a new commit is pushed to the `master` branch. But it's generating previews for every pull request, so you can see the changes before merging.
+
+The site is built as a [static export](https://nextjs.org/docs/app/guides/static-exports) (`output: "export"` in `next.config.js`): `pnpm build` generates plain HTML/CSS/JS in the `out/` folder, which is what Netlify publishes. No Next.js server runs in production, so server-only features (API routes, Server Actions, middleware, image optimization, etc.) are not available.
+
+To preview the production build locally:
+
+```bash
+pnpm build
+pnpm start
+```

@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "pnpm dlx serve@14 out",
     "lint": "eslint . --fix",
     "check-lint": "eslint .",
     "format": "prettier --write .",
