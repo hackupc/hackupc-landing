@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import "../globals.css";
 import styled from "styled-components";
 import {
@@ -54,22 +54,27 @@ const StyledButton = styled(FontAwesomeIcon)`
   padding: ${SpacingS};
 `;
 
-export default function CookiesBanner() {
-  const [isVisible, setIsVisible] = useState(false);
+const subscribeToStorage = (callback: () => void) => {
+  window.addEventListener("storage", callback);
+  return () => window.removeEventListener("storage", callback);
+};
 
-  useEffect(() => {
-    const cookiesAccepted = window.localStorage.getItem("cookies");
-    if (cookiesAccepted !== "1") {
-      setIsVisible(true); // Show the notice if cookies not accepted
-    }
-  }, []);
+export default function CookiesBanner() {
+  // Read the consent from localStorage on the client. On the server (and in the
+  // prerendered HTML) we report it as accepted so the banner is not rendered.
+  const cookiesAccepted = useSyncExternalStore(
+    subscribeToStorage,
+    () => window.localStorage.getItem("cookies") === "1",
+    () => true,
+  );
+  const [isDismissed, setIsDismissed] = useState(false);
 
   const handleClose = () => {
     window.localStorage.setItem("cookies", "1"); // Mark as accepted
-    setIsVisible(false); // Hide the notice
+    setIsDismissed(true); // Hide the notice
   };
 
-  if (!isVisible) {
+  if (cookiesAccepted || isDismissed) {
     return null;
   }
 

@@ -71,7 +71,6 @@ export default function RootLayout({
             target="_blank"
             rel="noreferrer"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-red.svg"
               alt="Major League Hacking 2026 Hackathon Season"
