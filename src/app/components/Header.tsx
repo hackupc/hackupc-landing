@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 const HackUPCRed = "#C72C2C";
 
-const HeaderContainer = styled.div<{ isScrolled: boolean }>`
+const HeaderContainer = styled.div<{ $isScrolled: boolean }>`
   position: fixed;
   top: 0;
   width: 100%;
@@ -21,8 +21,8 @@ const HeaderContainer = styled.div<{ isScrolled: boolean }>`
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  background-color: ${({ isScrolled }) =>
-    isScrolled ? BackgroundWithOpacity : "transparent"};
+  background-color: ${({ $isScrolled }) =>
+    $isScrolled ? BackgroundWithOpacity : "transparent"};
 `;
 
 const ClickableLogo = styled.div`
@@ -64,7 +64,7 @@ export default function Header() {
   }, []);
 
   return (
-    <HeaderContainer isScrolled={isScrolled}>
+    <HeaderContainer $isScrolled={isScrolled}>
       <ClickableLogo
         onClick={() => {
           window.scroll({

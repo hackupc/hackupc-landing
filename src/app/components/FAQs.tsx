@@ -115,18 +115,18 @@ const QuestionBox = styled.div`
 `;
 
 const SupportImage = styled(Image)<{
-  side: "left" | "right";
-  isVisible: boolean;
+  $side: "left" | "right";
+  $isVisible: boolean;
 }>`
   position: absolute;
   bottom: -47.5px;
   z-index: 1;
   pointer-events: none;
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  opacity: ${(props) => (props.$isVisible ? 1 : 0)};
   transition: opacity 0.3s ease;
 
   ${(props) =>
-    props.side === "left"
+    props.$side === "left"
       ? `
           left: 75px;
         `
@@ -135,7 +135,7 @@ const SupportImage = styled(Image)<{
         `}
 `;
 
-const AnswerBox = styled.div<{ isVisible: boolean }>`
+const AnswerBox = styled.div<{ $isVisible: boolean }>`
   max-height: 0;
   opacity: 0;
   transform-origin: top;
@@ -144,7 +144,7 @@ const AnswerBox = styled.div<{ isVisible: boolean }>`
     opacity 0.3s ease;
 
   ${(props) =>
-    props.isVisible &&
+    props.$isVisible &&
     `
       max-height: 10000px;
       opacity: 1;
@@ -349,16 +349,16 @@ export default function FAQs() {
             alt="support left"
             width={15}
             height={55}
-            side="left"
-            isVisible={activeFaqId === faq.id}
+            $side="left"
+            $isVisible={activeFaqId === faq.id}
           />
           <SupportImage
             src="/suport.svg"
             alt="support right"
             width={15}
             height={55}
-            side="right"
-            isVisible={activeFaqId === faq.id}
+            $side="right"
+            $isVisible={activeFaqId === faq.id}
           />
           <QuestionTitleWrap>
             <TorchWrapper>
@@ -377,7 +377,7 @@ export default function FAQs() {
           </QuestionTitleWrap>
         </QuestionBox>
 
-        <AnswerBox isVisible={activeFaqId === faq.id}>
+        <AnswerBox $isVisible={activeFaqId === faq.id}>
           <AnswerInner>
             <AnswerImageWrapper>
               <Image src="/innerimage.svg" alt="answer image" fill />

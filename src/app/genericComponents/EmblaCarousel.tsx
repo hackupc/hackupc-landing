@@ -1,5 +1,4 @@
 import React, { useCallback } from "react";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   EmblaEventType,

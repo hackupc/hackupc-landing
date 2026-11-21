@@ -1,0 +1,12 @@
+# Supply-chain hardening: do not install versions published less than 7 days ago
+# (most compromised packages are detected and pulled within hours).
+minimumReleaseAge: 10080
+
+# Dependency install scripts are blocked by default. Explicitly decide each one here.
+allowBuilds:
+  # Font Awesome postinstall only prints a license banner.
+  "@fortawesome/fontawesome-common-types": false
+  "@fortawesome/fontawesome-svg-core": false
+  "@fortawesome/free-brands-svg-icons": false
+  "@fortawesome/free-regular-svg-icons": false
+  "@fortawesome/free-solid-svg-icons": false

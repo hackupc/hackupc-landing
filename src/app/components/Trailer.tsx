@@ -30,7 +30,7 @@ const ConsolesDiv = styled.div`
   }
 `;
 
-const StyledEnvelope = styled(Image)<{ isOpen?: boolean }>`
+const StyledEnvelope = styled(Image)<{ $isOpen?: boolean }>`
   cursor: pointer;
   width: 100% !important;
   height: auto !important;
@@ -38,8 +38,8 @@ const StyledEnvelope = styled(Image)<{ isOpen?: boolean }>`
     transform 0.2s ease,
     filter 0.2s ease;
 
-  ${({ isOpen }) =>
-    !isOpen &&
+  ${({ $isOpen }) =>
+    !$isOpen &&
     `
       &:hover {
         transform: scale(1.03);
@@ -70,11 +70,11 @@ const Agrupar = styled.div`
   text-align: center;
 `;
 
-const EnvelopeContainer = styled.div<{ isOpen?: boolean }>`
+const EnvelopeContainer = styled.div<{ $isOpen?: boolean }>`
   position: relative;
   width: min(500px, calc(50vw - 80px));
   height: auto;
-  aspect-ratio: 500 / ${(props) => (props.isOpen ? 550 : 350)};
+  aspect-ratio: 500 / ${(props) => (props.$isOpen ? 550 : 350)};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,7 +147,7 @@ export default function Trailer() {
             >
               Teaser
             </StyledSectionTitle>
-            <EnvelopeContainer isOpen={teaserOpen}>
+            <EnvelopeContainer $isOpen={teaserOpen}>
               <StyledEnvelope
                 src={
                   teaserOpen
@@ -160,7 +160,7 @@ export default function Trailer() {
                 onClick={() => setTeaserOpen((open) => !open)}
                 style={{ zIndex: 1 }}
                 priority
-                isOpen={teaserOpen}
+                $isOpen={teaserOpen}
               />
               {teaserOpen && (
                 <VideoOverlay>
@@ -182,7 +182,7 @@ export default function Trailer() {
             >
               Aftermovie
             </StyledSectionTitle>
-            <EnvelopeContainer isOpen={aftermovieOpen}>
+            <EnvelopeContainer $isOpen={aftermovieOpen}>
               <StyledEnvelope
                 src={
                   aftermovieOpen
@@ -195,7 +195,7 @@ export default function Trailer() {
                 onClick={() => setAftermovieOpen((open) => !open)}
                 style={{ zIndex: 1 }}
                 priority
-                isOpen={aftermovieOpen}
+                $isOpen={aftermovieOpen}
               />
               {aftermovieOpen && (
                 <VideoOverlay>
